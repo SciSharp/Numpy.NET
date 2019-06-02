@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numpy", "src\Numpy\Numpy.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numpy.UnitTest", "test\Numpy.UnitTest\Numpy.UnitTest.csproj", "{1B69F24E-8C60-421D-B11B-5306ED7A060E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{25D84E98-E107-45C9-A0EC-0B25E24DA607}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatmulExample", "src\Examples\MatmulExample\MatmulExample.csproj", "{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{1B69F24E-8C60-421D-B11B-5306ED7A060E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B69F24E-8C60-421D-B11B-5306ED7A060E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B69F24E-8C60-421D-B11B-5306ED7A060E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EB08541-5168-443C-B524-A5CB7E7C613D}
