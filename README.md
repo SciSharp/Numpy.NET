@@ -20,7 +20,8 @@ var a2 = np.arange(80000).reshape(200, 400);
 var result = np.matmul(a1, a2);
 ```
 
-Numpy and Intellisense: a developer-friendly combination.
+Numpy and Intellisense: a developer-friendly combination:
+
 ![Numpy Intellisense](doc/img/numpy_intellisense.png)
 
 ## How does it work?
