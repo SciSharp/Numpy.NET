@@ -206,9 +206,9 @@ namespace Numpy
         /// <summary>
         /// Return self//value. 
         /// </summary>
-        public static NDarray floordiv(NDarray a, ValueType obj)
+        public NDarray floordiv(NDarray a, ValueType obj)
         {
-            return new NDarray(a.self.InvokeMethod("__floordiv__", obj.ToPython()));
+            return new NDarray(self.InvokeMethod("__floordiv__", obj.ToPython()));
         }
 
         // Return self%value.
@@ -220,17 +220,17 @@ namespace Numpy
         /// <summary>
         /// Return divmod(value). 
         /// </summary>
-        public static NDarray divmod(NDarray a, ValueType obj)
+        public NDarray divmod(ValueType obj)
         {
-            return new NDarray(a.self.InvokeMethod("__divmod__", obj.ToPython()));
+            return new NDarray(self.InvokeMethod("__divmod__", obj.ToPython()));
         }
 
         /// <summary>
         /// Return pow(value). 
         /// </summary>
-        public static NDarray pow(NDarray a, ValueType obj)
+        public NDarray pow(ValueType obj)
         {
-            return new NDarray(a.self.InvokeMethod("__pow__", obj.ToPython()));
+            return new NDarray(self.InvokeMethod("__pow__", obj.ToPython()));
         }
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace Numpy
         /// </summary>
         public NDarray idiv(ValueType obj)
         {
-            return new NDarray(self.InvokeMethod("__idiv__", obj.ToPython()));
+            return new NDarray(self.InvokeMethod("__itruediv__", obj.ToPython()));
         }
 
         /// <summary>
