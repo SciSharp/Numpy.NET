@@ -68,7 +68,7 @@ The SciSharp team is also developing a pure C# port of NumPy called [NumSharp](h
 
 The vast majority of Numpy.NET's code is generated using [CodeMinion](https://github.com/SciSharp/CodeMinion) by parsing the documentation at [docs.scipy.org/doc/numpy/](docs.scipy.org/doc/numpy/). This allowed us to wrap most of the `numpy`-API in just two weeks. The rest of the API can be completed in a few more weeks, especially if there is popular demand. 
 
-### Competion status
+### Completion status
 
 TODO: information about completion status API categories
 
