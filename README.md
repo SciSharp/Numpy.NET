@@ -3,6 +3,7 @@ Numpy.NET brings the awesome Python package [NumPy](https://www.numpy.org/) to t
 
 ## Example
 
+Python:
 ```python
 import numpy as np
 a1=np.arange(60000).reshape(300, 200)
@@ -10,6 +11,7 @@ a2=np.arange(80000).reshape(200, 400)
 result=np.matmul(a1, a2)
 ```
 
+C#:
 ```csharp
 using Numpy;
 // ... 
@@ -18,6 +20,8 @@ var a2 = np.arange(80000).reshape(200, 400);
 var result = np.matmul(a1, a2);
 ```
 
+Numpy and Intellisense: a developer-friendly combination.
+![Numpy Intellisense](doc/img/numpy_intellisense.png)
 
 ## How does it work?
 
