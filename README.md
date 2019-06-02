@@ -96,7 +96,7 @@ In NumPy you can write `a*=2` which doubles each element of array `a`. C# doesn'
 | <<=    | ilshift() |
 | >>=    | irshift() |
 | &=     | iand() |
-| |=     | ior() |
+| \|=    | ior() |
 | ^=     | ixor() |
 
 **(Possible) scalar return types:**
