@@ -59,9 +59,58 @@ The SciSharp team is also developing a pure C# port of NumPy called [NumSharp](h
 
 The vast majority of Numpy.NET's code is generated using [CodeMinion](https://github.com/SciSharp/CodeMinion) by parsing the documentation at [docs.scipy.org/doc/numpy/](docs.scipy.org/doc/numpy/). This allowed us to wrap most of the `numpy`-API in just two weeks. The rest of the API can be completed in a few more weeks, especially if there is popular demand. 
 
-## API Completion
-
 TODO: information about completed API categories
+
+## Documentation
+
+Since we have taken great care to make Numpy.NET as similar to NumPy itself, you can, for the most part, rely on the official [NumPy manual](https://docs.scipy.org/doc/numpy/). 
+
+### Differences between Numpy.NET and NumPy
+
+As you have seen in the example above, apart from language syntax and idioms, usage of Numpy.NET is almost identical to Python. However, there are some differences which can not be resolved due to lack of language support in C#. 
+
+**Slice syntax:**
+C# doesn't support the colon syntax in indexers i.e. `[:, 1]`. However, by allowing to pass a string with *Python slicing syntax* we circumvented it, i.e. `[":, 1"]`. Only the `...` operator is not yet implemented, as it is not very important. 
+
+**Unrepresentable operators:**
+Python operators that are not supported in C# are exposed as instance methods of `NDarray`:
+
+| Python | C# |
+| ------ | ------ |
+| //     | floordiv() |
+| **     | pow() |
+
+
+**Inplace modification:**
+In NumPy you can write `a*=2` which doubles each element of array `a`. C# doesn't have a `*=` operator and consequently overloading it in a Python fashion is not possible. This limitation is overcome by exposing inplace operator functions which all start with an 'i'. So duplicating all elements of array `a` is written like this in C#: `a.imul(2);`. The following table lists all inplace operators and their pendant in C#
+
+| Python | C# |
+| ------ | ------ |
+| +=     | iadd() |
+| -=     | isub() |
+| \*=    | imul() |
+| /=     | idiv() or itruediv() |
+| //=    | ifloordiv() |
+| %=     | imod() |
+| \*\*=  | ipow() |
+| <<=    | ilshift() |
+| >>=    | irshift() |
+| &=     | iand() |
+| |=     | ior() |
+| ^=     | ixor() |
+
+**(Possible) scalar return types:**
+In NumPy a function like `np.sqrt(a)` can either return a scalar or an array, depending on the value passed into it. In C# we are trying to solve this by creating overloads for every scalar type in addition to the original function that takes an array and returns an array. This bloats the API however and hasn't been done for most functions and for some it isn't possible at all due to language limitations. The alternative is to cast value types to an array (NDarray can represent scalars too):
+
+So a simple `root = np.sqrt(2)` needs to be written somewhat clumsily like this in C#: `var root = (double)np.sqrt((NDarray)2.0);` until overloads for every value type are added in time for your convenience. In any case, the main use case for NumPy functions is to operate on the elements of arrays, which is convenient enough:
+
+```csharp
+var a = np.arange(100); // => { 0, 1, 2, ... , 98, 99 }
+var roots = np.sqrt(a); // => { 0.0, 1.0, 1.414, ..., 9.899, 9.950 }
+```
+
+**Complex numbers:**
+Python has native support of complex numbers, something the C# language is lacking as well. Converting complex results to and from NumPy is not implemented at all. 
 
 ## Versions and Compatibility
 
