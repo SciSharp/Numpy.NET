@@ -26,15 +26,15 @@ The SciSharp team is also developing a pure C# port of NumPy called [NumSharp](h
 | Dependencies  | CPython / NumPy                       | C++ dlls for certain operations |
 | Setup         | Reference Nuget-Package               | Reference Nuget-Package |
 | Completeness  | Large parts are wrapped               | A small subset of most important functions is ported |
-| Development   | Fast, due to automated API generation | Very slow, due to lack of manpower |
-| Correctness   | Same results as in Python guaranteed  | There are many subtle differences |
-| Actuality     | Can easily keep up with `numpy` dev   | Will always trail way behind, due to lack of manpower |
+| Development   | Fast, due to automated API generation | Slow, due to lack of manpower |
+| Correctness   | Same results as in Python guaranteed  | There are subtle differences |
+| Actuality     | Can easily keep up with `numpy` dev   | Will trail behind, due to lack of manpower |
 | GPU support   | None                                  | Using a GPU backend for calculatons possible, per design |
 | Performance   | TODO: measure                         | TODO: measure |
 
 ## Code generation
 
-The vast majority of Numpy.NET's code is generated using [CodeMinion](https://github.com/SciSharp/CodeMinion) by parsing the documentation at [docs.scipy.org/doc/numpy/](docs.scipy.org/doc/numpy/). This allowed us to wrap most of the `numpy`-API in just two weeks. The rest of the API can be completed in a few more weeks if there is popular demand. 
+The vast majority of Numpy.NET's code is generated using [CodeMinion](https://github.com/SciSharp/CodeMinion) by parsing the documentation at [docs.scipy.org/doc/numpy/](docs.scipy.org/doc/numpy/). This allowed us to wrap most of the `numpy`-API in just two weeks. The rest of the API can be completed in a few more weeks, especially if there is popular demand. 
 
 ## API Completion
 
@@ -46,11 +46,15 @@ Currently, Numpy.NET is targeting .NET Standard (on Windows) and packages the fo
 * Python 3.7: (python-3.7.3-embed-amd64.zip)
 * NumPy 1.16 (numpy-1.16.3-cp37-cp37m-win_amd64.whl)
 
-To make Numpy.NET support Linux a separate version of [Python.Included]() packaging linux binaries of Python needs to be made and a version of Numpy.NET that packages a linux-compatible NumPy wheel. 
+To make Numpy.NET support Linux a separate version of [Python.Included](https://github.com/henon/Python.Included) packaging linux binaries of Python needs to be made and a version of Numpy.NET that packages a linux-compatible NumPy wheel. 
 
 ## License
 
 Numpy.NET packages and distributes `Python`, `pythonnet` as well as `numpy`. All these dependencies imprint their license conditions upon Numpy.NET. The C# wrapper itself is MIT License. 
 
+* Python: [PSF License](https://docs.python.org/3/license.html)
+* Python for .NET (pythonnet): [MIT License](http://pythonnet.github.io/LICENSE)
+* NumPy: [BSD License](https://www.numpy.org/license.html#license)
+* Numpy.NET: [MIT License](./LICENSE)
 
 
