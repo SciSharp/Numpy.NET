@@ -70,7 +70,35 @@ The vast majority of Numpy.NET's code is generated using [CodeMinion](https://gi
 
 ### Completion status
 
-TODO: information about completion status API categories
+The following API categories have been generated (if checked off)
+ - [x] Array creation routines 
+ - [x] Array manipulation routines
+ - [x] Binary operations
+ - [ ] String operations
+ - [ ] Datetime Support Functions
+ - [ ] Data type routines
+ - [x] Optionally Scipy-accelerated routines(numpy.dual)
+ - [ ] Mathematical functions with automatic domain(numpy.emath)
+ - [ ] Floating point error handling
+ - [ ] Discrete Fourier Transform(numpy.fft)
+ - [ ] Financial functions
+ - [ ] Functional programming
+ - [ ] NumPy-specific help functions
+ - [ ] Indexing routines
+ - [ ] Input and output
+ - [x] Linear algebra(numpy.linalg)
+ - [x] Logic functions
+ - [ ] Masked array operations
+ - [x] Mathematical functions
+ - [ ] Matrix library(numpy.matlib)
+ - [ ] Miscellaneous routines
+ - [ ] Padding Arrays
+ - [ ] Polynomials
+ - [x] Random sampling(numpy.random)
+ - [ ] Set routines
+ - [x] Sorting, searching, and counting
+ - [x] Statistics
+ - [ ] Window functions
 
 ### Auto-generated Unit-Tests
 
