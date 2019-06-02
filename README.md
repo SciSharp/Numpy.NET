@@ -38,7 +38,16 @@ In my experience, calling `numpy` from C# is about 4 times slower than calling i
 
 All of `numpy` is centered around the `ndarray` class which allows you to pass a huge chunk of data into the `C` routines and let them execute all kinds of operations on the elements efficiently without the need for looping over the data. So if you are manipulating arrays or matrices with thousands or hundreds of thousands of elements, the call overhead will be neglegible. 
 
-The most performance sensitive aspect is creating an `NDarray` from a `C#` array, since the data has to be moved from the `CLR` into the `Python` interpreter. `pythonnet` does not optimize for passing large arrays from `C#` to `Python` but we still found a way to do that very efficiently. When creating an array with `np.array( ... )` we internally use `Marshal.Copy` to copy the entiry `C#`-array's memory into the `numpy`-array's storage. And to efficiently retrieve computation results from `numpy` there is a method called `GetData<T>` which will copy the data back to `C#` in the same way.
+The most performance sensitive aspect is creating an `NDarray` from a `C#` array, since the data has to be moved from the `CLR` into the `Python` interpreter. `pythonnet` does not optimize for passing large arrays from `C#` to `Python` but we still found a way to do that very efficiently. When creating an array with `np.array( ... )` we internally use `Marshal.Copy` to copy the entiry `C#`-array's memory into the `numpy`-array's storage. And to efficiently retrieve computation results from `numpy` there is a method called `GetData<T>` which will copy the data back to `C#` in the same way:
+
+```csharp
+// create a 2D-shaped NDarray<int> from an int[]
+var m = np.array(new int[] {1, 2, 3, 4});
+// calculate the cosine of each element
+var result = np.cos(m);
+// get the floating point data of the result NDarray back to C#
+var data = result.GetData<double>(); // double[] { 0.54030231, -0.41614684, -0.9899925 , -0.65364362 }
+```
 
 ## Numpy.NET vs NumSharp
 
@@ -59,18 +68,44 @@ The SciSharp team is also developing a pure C# port of NumPy called [NumSharp](h
 
 The vast majority of Numpy.NET's code is generated using [CodeMinion](https://github.com/SciSharp/CodeMinion) by parsing the documentation at [docs.scipy.org/doc/numpy/](docs.scipy.org/doc/numpy/). This allowed us to wrap most of the `numpy`-API in just two weeks. The rest of the API can be completed in a few more weeks, especially if there is popular demand. 
 
-TODO: information about completed API categories
+### Competion status
+
+TODO: information about completion status API categories
+
+### Auto-generated Unit-Tests
+
+We even generated hundreds of unit tests from all the examples found on the NumPy documentation. Most of them don't compile without fixing them because we did not go so far as to employ a Python-To-C# converter. Instead, the tests are set up with a commented out Python-console log that shows what the expected results are and a commented out block of somewhat C#-ified Python code that doesn't compile without manual editing. 
+
+Another reason why this process can not be totally automated is the fact that NumPy obviously changed the way how arrays are printed out on the console after most of the examples where written (they removed extra spaces between the elements). This means that oftentimes the results needs to be reformatted manually for the test to pass.
+
+Getting more unit tests to run is very easy though, and a good portion have already been processed to show that Numpy.NET really works. If you are interested in working on the test suite, please join in and help. You'll learn a lot about NumPy on the way.
 
 ## Documentation
 
 Since we have taken great care to make Numpy.NET as similar to NumPy itself, you can, for the most part, rely on the official [NumPy manual](https://docs.scipy.org/doc/numpy/). 
 
+### Creating multi-dimensional NDarrays from C# arrays
+
+Creating an `NDarray` from data is easy. Just pass the C# array into `np.array(...)`. You can pass 1D, 2D and 3D C# arrays into it. 
+
+```csharp
+// create a 2D NDarray
+var m = np.array(new int[,] {{1, 2}, {3, 4}}); // the NDarray represents a 2 by 2 matrix
+```
+
+Another even more efficient way (saves one array copy operation) is to pass the data as a one-dimensional array and just reshape the NDarray. 
+
+```csharp
+// create a 2D NDarray
+var m = np.array(new int[] {1, 2, 3, 4}).reshape(2,2); // the reshaped NDarray represents a 2 by 2 matrix
+```
+
 ### Differences between Numpy.NET and NumPy
 
-As you have seen in the example above, apart from language syntax and idioms, usage of Numpy.NET is almost identical to Python. However, there are some differences which can not be resolved due to lack of language support in C#. 
+As you have seen, apart from language syntax and idioms, usage of Numpy.NET is almost identical to Python. However, due to lack of language support in C#, there are some differences which you should be aware of.
 
-#### Slice syntax
-C# doesn't support the colon syntax in indexers i.e. `[:, 1]`. However, by allowing to pass a string with *Python slicing syntax* we circumvented it, i.e. `[":, 1"]`. Only the `...` operator is not yet implemented, as it is not very important. 
+#### Array slicing syntax
+You can access parts of an NDarray using [array slicing](https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#arrays-indexing). C# doesn't support the colon syntax in indexers i.e. `a[:, 1]`. However, by allowing to pass a string we circumvented this limitation, i.e. `a[":, 1"]`. Only the `...` operator is not yet implemented, as it is not very important. 
 
 #### Variable argument lists
 Some NumPy functions like `reshape` allow variable argument lists at the beginning of the parameter list. This of course is not allowed in C#, which supports a variable argument list only as the last parameter. In case of `reshape` the solution was to replace the variable argument list that specifies the dimensions of the reshaped array by a `Shape` object which takes a variable list of dimensions in its constructor: 
@@ -124,7 +159,7 @@ var roots = np.sqrt(a); // => { 0.0, 1.0, 1.414, ..., 9.899, 9.950 }
 ```
 
 #### Complex numbers
-Python has native support of complex numbers, something the C# language is lacking as well. Converting complex results to and from NumPy is not implemented at all. 
+Python has native support of complex numbers, something the C# language is lacking as well. Converting complex results to and from NumPy is not implemented at all (yet). Please step forward if you want to work on this. 
 
 ## Versions and Compatibility
 
@@ -132,7 +167,7 @@ Currently, Numpy.NET is targeting .NET Standard (on Windows) and packages the fo
 * Python 3.7: (python-3.7.3-embed-amd64.zip)
 * NumPy 1.16 (numpy-1.16.3-cp37-cp37m-win_amd64.whl)
 
-To make Numpy.NET support Linux a separate version of [Python.Included](https://github.com/henon/Python.Included) packaging linux binaries of Python needs to be made and a version of Numpy.NET that packages a linux-compatible NumPy wheel. 
+To make Numpy.NET support Linux a separate version of [Python.Included](https://github.com/henon/Python.Included) packaging linux binaries of Python needs to be made and a version of Numpy.NET that packages a linux-compatible NumPy wheel. If you are interested, you may work on this issue. 
 
 ## License
 
