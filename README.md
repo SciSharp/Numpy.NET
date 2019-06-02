@@ -3,6 +3,22 @@ Numpy.NET brings the awesome Python package [NumPy](https://www.numpy.org/) to t
 
 ## Example
 
+```python
+import numpy as np
+a1=np.arange(60000).reshape(300, 200)
+a2=np.arange(80000).reshape(200, 400)
+result=np.matmul(a1, a2)
+```
+
+```csharp
+using Numpy;
+// ... 
+var a1 = np.arange(60000).reshape(300, 200);
+var a2 = np.arange(80000).reshape(200, 400);
+var result = np.matmul(a1, a2);
+```
+
+
 ## How does it work?
 
 Numpy.NET uses [Python for .NET](http://pythonnet.github.io/) to call into the Python module `numpy`. However, this does not mean that it depends on a local Python installation! Numpy.NET.dll uses [Python.Included](https://github.com/henon/Python.Included) which packages embedded Python 3.7 and automatically deploys it in the user's home directory upon first execution. On subsequent runs, it will find Python already deployed and therefor doesn't install it again. Numpy.NET also packages the NumPy wheel and installs it into the embedded Python installation when not yet installed. 
@@ -13,9 +29,11 @@ Long story short: as a .NET Developer **you don't need to worry about Python** a
 
 You might ask how calling into Python affects performance. As always, it depends on your usage. Don't forget that `numpy`'s number crunching algorithms are written in `C` so the thin `pythonnet` and `Python` layers on top won't have a significant impact if you are working with larger amounds of data. 
 
-All of `numpy` is centered around the `ndarray` class which allows you to pass a huge chunk of data into the `C` routines and let them execute all kinds of operations on them efficiently. So if you are manipulating arrays or matrices with thousands or hundreds of thousands of elements, the overhead will be neglegible.
+In my experience, calling `numpy` from C# is about 4 times slower than calling it directly in `Python` while the execution time of the called operation is of course equal. So if you have an algorithm that needs to call into `numpy` in a nested loop, Numpy.NET may not be for you due to the call overhead. 
 
-*Array creation* actually has the most impact on performance since the data has to be moved from the `CLR` into the `Python` interpreter. `pythonnet` does not optimize for passing large arrays from `C#` to `Python` but we still found a way to do that very efficiently. When creating an array with `np.array( ... )` we internally use `Marshal.Copy` to copy the entiry `C#`-array's memory into the `numpy`-array's storage. And to efficiently retrieve computation results from `numpy` there is a method called `GetData<T>` which will copy the data back to `C#`.
+All of `numpy` is centered around the `ndarray` class which allows you to pass a huge chunk of data into the `C` routines and let them execute all kinds of operations on the elements efficiently without the need for looping over the data. So if you are manipulating arrays or matrices with thousands or hundreds of thousands of elements, the call overhead will be neglegible. 
+
+The most performance sensitive aspect is creating an `NDarray` from a `C#` array, since the data has to be moved from the `CLR` into the `Python` interpreter. `pythonnet` does not optimize for passing large arrays from `C#` to `Python` but we still found a way to do that very efficiently. When creating an array with `np.array( ... )` we internally use `Marshal.Copy` to copy the entiry `C#`-array's memory into the `numpy`-array's storage. And to efficiently retrieve computation results from `numpy` there is a method called `GetData<T>` which will copy the data back to `C#` in the same way.
 
 ## Numpy.NET vs NumSharp
 
