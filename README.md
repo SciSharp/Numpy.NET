@@ -74,31 +74,31 @@ The following API categories have been generated (if checked off)
  - [x] Array creation routines 
  - [x] Array manipulation routines
  - [x] Binary operations
- - [ ] String operations
- - [ ] Datetime Support Functions
- - [ ] Data type routines
+ - [x] String operations
+ - [x] Datetime Support Functions
+ - [x] Data type routines
  - [x] Optionally Scipy-accelerated routines(numpy.dual)
- - [ ] Mathematical functions with automatic domain(numpy.emath)
  - [ ] Floating point error handling
- - [ ] Discrete Fourier Transform(numpy.fft)
- - [ ] Financial functions
+ - [x] Discrete Fourier Transform(numpy.fft)
+ - [x] Financial functions
  - [ ] Functional programming
- - [ ] NumPy-specific help functions
- - [ ] Indexing routines
- - [ ] Input and output
+ - [x] Indexing routines
+ - [x] Input and output
  - [x] Linear algebra(numpy.linalg)
  - [x] Logic functions
  - [ ] Masked array operations
  - [x] Mathematical functions
  - [ ] Matrix library(numpy.matlib)
  - [ ] Miscellaneous routines
- - [ ] Padding Arrays
+ - [x] Padding Arrays
  - [ ] Polynomials
  - [x] Random sampling(numpy.random)
- - [ ] Set routines
+ - [x] Set routines
  - [x] Sorting, searching, and counting
  - [x] Statistics
- - [ ] Window functions
+ - [x] Window functions
+ 
+ Over 500 functions of all 1800 have been generated, most of the missing functions are duplicates on Matrix, Chararray, Record etc. 
 
 ### Auto-generated Unit-Tests
 
