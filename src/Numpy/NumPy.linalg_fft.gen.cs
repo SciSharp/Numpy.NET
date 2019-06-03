@@ -47,7 +47,7 @@ namespace Numpy
         /// Upper or lower-triangular Cholesky factor of a.  Returns a
         /// matrix object if a is a matrix object.
         /// </returns>
-        public NDarray cholesky(NDarray a)
+        public NDarray linalg_cholesky(NDarray a)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -78,7 +78,7 @@ namespace Numpy
         /// <returns>
         /// Determinant of a.
         /// </returns>
-        public NDarray det(NDarray a)
+        public NDarray linalg_det(NDarray a)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -146,7 +146,7 @@ namespace Numpy
         /// column v[:,i] is the eigenvector corresponding to the
         /// eigenvalue w[i].
         /// </returns>
-        public (NDarray, NDarray) eig(NDarray a)
+        public (NDarray, NDarray) linalg_eig(NDarray a)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -206,7 +206,7 @@ namespace Numpy
         /// to the eigenvalue w[i].  Will return a matrix object if a is
         /// a matrix object.
         /// </returns>
-        public (NDarray, NDarray) eigh(NDarray a, string UPLO = "L")
+        public (NDarray, NDarray) linalg_eigh(NDarray a, string UPLO = "L")
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -244,7 +244,7 @@ namespace Numpy
         /// They are not necessarily ordered, nor are they necessarily
         /// real for real matrices.
         /// </returns>
-        public NDarray eigvals(NDarray a)
+        public NDarray linalg_eigvals(NDarray a)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -286,7 +286,7 @@ namespace Numpy
         /// The eigenvalues in ascending order, each repeated according to
         /// its multiplicity.
         /// </returns>
-        public NDarray eigvalsh(NDarray a, string UPLO = "L")
+        public NDarray linalg_eigvalsh(NDarray a, string UPLO = "L")
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -318,7 +318,7 @@ namespace Numpy
         /// <returns>
         /// (Multiplicative) inverse of the matrix a.
         /// </returns>
-        public NDarray inv(NDarray a)
+        public NDarray linalg_inv(NDarray a)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -377,7 +377,7 @@ namespace Numpy
         /// s
         /// Singular values of a.
         /// </returns>
-        public (NDarray, NDarray, int, NDarray) lstsq(NDarray a, NDarray b, float? rcond = null)
+        public (NDarray, NDarray, int, NDarray) linalg_lstsq(NDarray a, NDarray b, float? rcond = null)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -432,7 +432,7 @@ namespace Numpy
         /// The pseudo-inverse of a. If a is a matrix instance, then so
         /// is B.
         /// </returns>
-        public NDarray pinv(NDarray a, float rcond = 1e-15f)
+        public NDarray linalg_pinv(NDarray a, float rcond = 1e-15f)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -476,7 +476,7 @@ namespace Numpy
         /// <returns>
         /// Solution to the system a x = b.  Returned shape is identical to b.
         /// </returns>
-        public NDarray solve(NDarray a, NDarray b)
+        public NDarray linalg_solve(NDarray a, NDarray b)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -554,7 +554,7 @@ namespace Numpy
         /// depends on the value of full_matrices. Only returned when
         /// compute_uv is True.
         /// </returns>
-        public (NDarray, NDarray, NDarray) svd(NDarray a, bool? full_matrices = true, bool? compute_uv = true)
+        public (NDarray, NDarray, NDarray) linalg_svd(NDarray a, bool? full_matrices = true, bool? compute_uv = true)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -610,7 +610,7 @@ namespace Numpy
         /// The truncated or zero-padded input, transformed along the axis
         /// indicated by axis, or the last one if axis is not specified.
         /// </returns>
-        public NDarray fft(NDarray a, int? n = null, int? axis = -1, string norm = null)
+        public NDarray fft_fft(NDarray a, int? n = null, int? axis = -1, string norm = null)
         {
             //auto-generated code, do not change
             var fft = self.GetAttr("fft");
@@ -673,7 +673,7 @@ namespace Numpy
         /// The truncated or zero-padded input, transformed along the axes
         /// indicated by axes, or the last two axes if axes is not given.
         /// </returns>
-        public NDarray fft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
+        public NDarray fft_fft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
         {
             //auto-generated code, do not change
             var fft = self.GetAttr("fft");
@@ -733,7 +733,7 @@ namespace Numpy
         /// indicated by axes, or by a combination of s and a,
         /// as explained in the parameters section above.
         /// </returns>
-        public NDarray fftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
+        public NDarray fft_fftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
         {
             //auto-generated code, do not change
             var fft = self.GetAttr("fft");
@@ -794,7 +794,7 @@ namespace Numpy
         /// The truncated or zero-padded input, transformed along the axis
         /// indicated by axis, or the last one if axis is not specified.
         /// </returns>
-        public NDarray ifft(NDarray a, int? n = null, int? axis = -1, string norm = null)
+        public NDarray fft_ifft(NDarray a, int? n = null, int? axis = -1, string norm = null)
         {
             //auto-generated code, do not change
             var fft = self.GetAttr("fft");
@@ -863,7 +863,7 @@ namespace Numpy
         /// The truncated or zero-padded input, transformed along the axes
         /// indicated by axes, or the last two axes if axes is not given.
         /// </returns>
-        public NDarray ifft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
+        public NDarray fft_ifft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
         {
             //auto-generated code, do not change
             var fft = self.GetAttr("fft");
@@ -931,7 +931,7 @@ namespace Numpy
         /// indicated by axes, or by a combination of s or a,
         /// as explained in the parameters section above.
         /// </returns>
-        public NDarray ifftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
+        public NDarray fft_ifftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
         {
             //auto-generated code, do not change
             var fft = self.GetAttr("fft");

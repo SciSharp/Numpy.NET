@@ -49,7 +49,7 @@ namespace Numpy
             /// matrix object if a is a matrix object.
             /// </returns>
             public static NDarray cholesky(NDarray a)
-                => NumPy.Instance.cholesky(a);
+                => NumPy.Instance.linalg_cholesky(a);
         }
         
         public static partial class linalg {
@@ -71,7 +71,7 @@ namespace Numpy
             /// Determinant of a.
             /// </returns>
             public static NDarray det(NDarray a)
-                => NumPy.Instance.det(a);
+                => NumPy.Instance.linalg_det(a);
         }
         
         public static partial class linalg {
@@ -130,7 +130,7 @@ namespace Numpy
             /// eigenvalue w[i].
             /// </returns>
             public static (NDarray, NDarray) eig(NDarray a)
-                => NumPy.Instance.eig(a);
+                => NumPy.Instance.linalg_eig(a);
         }
         
         public static partial class linalg {
@@ -180,7 +180,7 @@ namespace Numpy
             /// a matrix object.
             /// </returns>
             public static (NDarray, NDarray) eigh(NDarray a, string UPLO = "L")
-                => NumPy.Instance.eigh(a, UPLO:UPLO);
+                => NumPy.Instance.linalg_eigh(a, UPLO:UPLO);
         }
         
         public static partial class linalg {
@@ -207,7 +207,7 @@ namespace Numpy
             /// real for real matrices.
             /// </returns>
             public static NDarray eigvals(NDarray a)
-                => NumPy.Instance.eigvals(a);
+                => NumPy.Instance.linalg_eigvals(a);
         }
         
         public static partial class linalg {
@@ -240,7 +240,7 @@ namespace Numpy
             /// its multiplicity.
             /// </returns>
             public static NDarray eigvalsh(NDarray a, string UPLO = "L")
-                => NumPy.Instance.eigvalsh(a, UPLO:UPLO);
+                => NumPy.Instance.linalg_eigvalsh(a, UPLO:UPLO);
         }
         
         public static partial class linalg {
@@ -262,7 +262,7 @@ namespace Numpy
             /// (Multiplicative) inverse of the matrix a.
             /// </returns>
             public static NDarray inv(NDarray a)
-                => NumPy.Instance.inv(a);
+                => NumPy.Instance.linalg_inv(a);
         }
         
         public static partial class linalg {
@@ -312,7 +312,7 @@ namespace Numpy
             /// Singular values of a.
             /// </returns>
             public static (NDarray, NDarray, int, NDarray) lstsq(NDarray a, NDarray b, float? rcond = null)
-                => NumPy.Instance.lstsq(a, b, rcond:rcond);
+                => NumPy.Instance.linalg_lstsq(a, b, rcond:rcond);
         }
         
         public static partial class linalg {
@@ -355,7 +355,7 @@ namespace Numpy
             /// is B.
             /// </returns>
             public static NDarray pinv(NDarray a, float rcond = 1e-15f)
-                => NumPy.Instance.pinv(a, rcond);
+                => NumPy.Instance.linalg_pinv(a, rcond);
         }
         
         public static partial class linalg {
@@ -389,7 +389,7 @@ namespace Numpy
             /// Solution to the system a x = b.  Returned shape is identical to b.
             /// </returns>
             public static NDarray solve(NDarray a, NDarray b)
-                => NumPy.Instance.solve(a, b);
+                => NumPy.Instance.linalg_solve(a, b);
         }
         
         public static partial class linalg {
@@ -457,7 +457,7 @@ namespace Numpy
             /// compute_uv is True.
             /// </returns>
             public static (NDarray, NDarray, NDarray) svd(NDarray a, bool? full_matrices = true, bool? compute_uv = true)
-                => NumPy.Instance.svd(a, full_matrices:full_matrices, compute_uv:compute_uv);
+                => NumPy.Instance.linalg_svd(a, full_matrices:full_matrices, compute_uv:compute_uv);
         }
         
         public static partial class fft {
@@ -501,7 +501,7 @@ namespace Numpy
             /// indicated by axis, or the last one if axis is not specified.
             /// </returns>
             public static NDarray fft_(NDarray a, int? n = null, int? axis = -1, string norm = null)
-                => NumPy.Instance.fft(a, n:n, axis:axis, norm:norm);
+                => NumPy.Instance.fft_fft(a, n:n, axis:axis, norm:norm);
         }
         
         public static partial class fft {
@@ -552,7 +552,7 @@ namespace Numpy
             /// indicated by axes, or the last two axes if axes is not given.
             /// </returns>
             public static NDarray fft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft2(a, s:s, axes:axes, norm:norm);
+                => NumPy.Instance.fft_fft2(a, s:s, axes:axes, norm:norm);
         }
         
         public static partial class fft {
@@ -600,7 +600,7 @@ namespace Numpy
             /// as explained in the parameters section above.
             /// </returns>
             public static NDarray fftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fftn(a, s:s, axes:axes, norm:norm);
+                => NumPy.Instance.fft_fftn(a, s:s, axes:axes, norm:norm);
         }
         
         public static partial class fft {
@@ -649,7 +649,7 @@ namespace Numpy
             /// indicated by axis, or the last one if axis is not specified.
             /// </returns>
             public static NDarray ifft(NDarray a, int? n = null, int? axis = -1, string norm = null)
-                => NumPy.Instance.ifft(a, n:n, axis:axis, norm:norm);
+                => NumPy.Instance.fft_ifft(a, n:n, axis:axis, norm:norm);
         }
         
         public static partial class fft {
@@ -706,7 +706,7 @@ namespace Numpy
             /// indicated by axes, or the last two axes if axes is not given.
             /// </returns>
             public static NDarray ifft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.ifft2(a, s:s, axes:axes, norm:norm);
+                => NumPy.Instance.fft_ifft2(a, s:s, axes:axes, norm:norm);
         }
         
         public static partial class fft {
@@ -762,7 +762,7 @@ namespace Numpy
             /// as explained in the parameters section above.
             /// </returns>
             public static NDarray ifftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.ifftn(a, s:s, axes:axes, norm:norm);
+                => NumPy.Instance.fft_ifftn(a, s:s, axes:axes, norm:norm);
         }
         
         /// <summary>

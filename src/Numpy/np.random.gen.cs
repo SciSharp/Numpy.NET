@@ -43,7 +43,7 @@ namespace Numpy
             /// Random values.
             /// </returns>
             public static NDarray rand(int? d1 = null, int? d0 = null)
-                => NumPy.Instance.rand(d1:d1, d0:d0);
+                => NumPy.Instance.random_rand(d1:d1, d0:d0);
         }
         
         public static partial class random {
@@ -81,7 +81,7 @@ namespace Numpy
             /// no parameters were supplied.
             /// </returns>
             public static NDarray randn(int? d1 = null, int? d0 = null)
-                => NumPy.Instance.randn(d1:d1, d0:d0);
+                => NumPy.Instance.random_randn(d1:d1, d0:d0);
         }
         
         public static partial class random {
@@ -117,7 +117,7 @@ namespace Numpy
             /// distribution, or a single such random int if size not provided.
             /// </returns>
             public static NDarray<int> randint(int low, int? high = null, int[] size = null, Dtype dtype = null)
-                => NumPy.Instance.randint(low, high:high, size:size, dtype:dtype);
+                => NumPy.Instance.random_randint(low, high:high, size:size, dtype:dtype);
         }
         
         public static partial class random {
@@ -156,7 +156,7 @@ namespace Numpy
             /// distribution, or a single such random int if size not provided.
             /// </returns>
             public static NDarray<int> random_integers(int low, int? high = null, int[] size = null)
-                => NumPy.Instance.random_integers(low, high:high, size:size);
+                => NumPy.Instance.random_random_integers(low, high:high, size:size);
         }
         
         public static partial class random {
@@ -177,7 +177,7 @@ namespace Numpy
             /// case a single float is returned).
             /// </returns>
             public static NDarray<float> random_sample(int[] size = null)
-                => NumPy.Instance.random_sample(size:size);
+                => NumPy.Instance.random_random_sample(size:size);
         }
         
         public static partial class random {
@@ -198,7 +198,7 @@ namespace Numpy
             /// case a single float is returned).
             /// </returns>
             public static NDarray<float> random_(int[] size = null)
-                => NumPy.Instance.random(size:size);
+                => NumPy.Instance.random_random(size:size);
         }
         
         public static partial class random {
@@ -219,7 +219,7 @@ namespace Numpy
             /// case a single float is returned).
             /// </returns>
             public static NDarray<float> ranf(int[] size = null)
-                => NumPy.Instance.ranf(size:size);
+                => NumPy.Instance.random_ranf(size:size);
         }
         
         public static partial class random {
@@ -240,7 +240,7 @@ namespace Numpy
             /// case a single float is returned).
             /// </returns>
             public static NDarray<float> sample(int[] size = null)
-                => NumPy.Instance.sample(size:size);
+                => NumPy.Instance.random_sample(size:size);
         }
         
         public static partial class random {
@@ -268,7 +268,7 @@ namespace Numpy
             /// The generated random samples
             /// </returns>
             public static NDarray choice(NDarray a, int[] size = null, bool? replace = true, NDarray p = null)
-                => NumPy.Instance.choice(a, size:size, replace:replace, p:p);
+                => NumPy.Instance.random_choice(a, size:size, replace:replace, p:p);
         }
         
         public static partial class random {
@@ -296,7 +296,7 @@ namespace Numpy
             /// The generated random samples
             /// </returns>
             public static NDarray choice(int a, int[] size = null, bool? replace = true, NDarray p = null)
-                => NumPy.Instance.choice(a, size:size, replace:replace, p:p);
+                => NumPy.Instance.random_choice(a, size:size, replace:replace, p:p);
         }
         
         public static partial class random {
@@ -310,7 +310,7 @@ namespace Numpy
             /// String of length length.
             /// </returns>
             public static string bytes(int length)
-                => NumPy.Instance.bytes(length);
+                => NumPy.Instance.random_bytes(length);
         }
         
         public static partial class random {
@@ -325,7 +325,7 @@ namespace Numpy
             /// The array or list to be shuffled.
             /// </param>
             public static void shuffle(NDarray x)
-                => NumPy.Instance.shuffle(x);
+                => NumPy.Instance.random_shuffle(x);
         }
         
         public static partial class random {
@@ -344,7 +344,7 @@ namespace Numpy
             /// Permuted sequence or array range.
             /// </returns>
             public static NDarray permutation(NDarray x)
-                => NumPy.Instance.permutation(x);
+                => NumPy.Instance.random_permutation(x);
         }
         
         public static partial class random {
@@ -363,7 +363,7 @@ namespace Numpy
             /// Permuted sequence or array range.
             /// </returns>
             public static NDarray permutation(int x)
-                => NumPy.Instance.permutation(x);
+                => NumPy.Instance.random_permutation(x);
         }
         
         public static partial class random {
@@ -394,7 +394,7 @@ namespace Numpy
             /// Drawn samples from the parameterized beta distribution.
             /// </returns>
             public static NDarray beta(NDarray<float> a, NDarray<float> b, int[] size = null)
-                => NumPy.Instance.beta(a, b, size:size);
+                => NumPy.Instance.random_beta(a, b, size:size);
         }
         
         public static partial class random {
@@ -441,7 +441,7 @@ namespace Numpy
             /// each sample is equal to the number of successes over the n trials.
             /// </returns>
             public static NDarray binomial(NDarray<int> n, NDarray<float> p, int[] size = null)
-                => NumPy.Instance.binomial(n, p, size:size);
+                => NumPy.Instance.random_binomial(n, p, size:size);
         }
         
         public static partial class random {
@@ -488,7 +488,7 @@ namespace Numpy
             /// each sample is equal to the number of successes over the n trials.
             /// </returns>
             public static NDarray binomial(int n, NDarray<float> p, int[] size = null)
-                => NumPy.Instance.binomial(n, p, size:size);
+                => NumPy.Instance.random_binomial(n, p, size:size);
         }
         
         public static partial class random {
@@ -526,7 +526,7 @@ namespace Numpy
             /// Drawn samples from the parameterized chi-square distribution.
             /// </returns>
             public static NDarray chisquare(NDarray<float> df, int[] size = null)
-                => NumPy.Instance.chisquare(df, size:size);
+                => NumPy.Instance.random_chisquare(df, size:size);
         }
         
         public static partial class random {
@@ -561,7 +561,7 @@ namespace Numpy
             /// The drawn samples, of shape (size, alpha.ndim).
             /// </returns>
             public static NDarray dirichlet(NDarray alpha, int[] size = null)
-                => NumPy.Instance.dirichlet(alpha, size:size);
+                => NumPy.Instance.random_dirichlet(alpha, size:size);
         }
         
         public static partial class random {
@@ -595,7 +595,7 @@ namespace Numpy
             /// Drawn samples from the parameterized exponential distribution.
             /// </returns>
             public static NDarray exponential(NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.exponential(scale, size:size);
+                => NumPy.Instance.random_exponential(scale, size:size);
         }
         
         public static partial class random {
@@ -640,7 +640,7 @@ namespace Numpy
             /// Drawn samples from the parameterized Fisher distribution.
             /// </returns>
             public static NDarray f(NDarray<float> dfnum, NDarray<float> dfden, int[] size = null)
-                => NumPy.Instance.f(dfnum, dfden, size:size);
+                => NumPy.Instance.random_f(dfnum, dfden, size:size);
         }
         
         public static partial class random {
@@ -681,7 +681,7 @@ namespace Numpy
             /// Drawn samples from the parameterized gamma distribution.
             /// </returns>
             public static NDarray gamma(Shape shape, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.gamma(shape, scale:scale, size:size);
+                => NumPy.Instance.random_gamma(shape, scale:scale, size:size);
         }
         
         public static partial class random {
@@ -711,7 +711,7 @@ namespace Numpy
             /// Drawn samples from the parameterized geometric distribution.
             /// </returns>
             public static NDarray geometric(NDarray<float> p, int[] size = null)
-                => NumPy.Instance.geometric(p, size:size);
+                => NumPy.Instance.random_geometric(p, size:size);
         }
         
         public static partial class random {
@@ -769,7 +769,7 @@ namespace Numpy
             /// Drawn samples from the parameterized Gumbel distribution.
             /// </returns>
             public static NDarray gumbel(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.gumbel(loc:loc, scale:scale, size:size);
+                => NumPy.Instance.random_gumbel(loc:loc, scale:scale, size:size);
         }
         
         public static partial class random {
@@ -824,7 +824,7 @@ namespace Numpy
             /// Drawn samples from the parameterized hypergeometric distribution.
             /// </returns>
             public static NDarray hypergeometric(NDarray<int> ngood, NDarray<int> nbad, NDarray<int> nsample, int[] size = null)
-                => NumPy.Instance.hypergeometric(ngood, nbad, nsample, size:size);
+                => NumPy.Instance.random_hypergeometric(ngood, nbad, nsample, size:size);
         }
         
         public static partial class random {
@@ -866,7 +866,7 @@ namespace Numpy
             /// Drawn samples from the parameterized Laplace distribution.
             /// </returns>
             public static NDarray laplace(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.laplace(loc:loc, scale:scale, size:size);
+                => NumPy.Instance.random_laplace(loc:loc, scale:scale, size:size);
         }
         
         public static partial class random {
@@ -907,7 +907,7 @@ namespace Numpy
             /// Drawn samples from the parameterized logistic distribution.
             /// </returns>
             public static NDarray logistic(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.logistic(loc:loc, scale:scale, size:size);
+                => NumPy.Instance.random_logistic(loc:loc, scale:scale, size:size);
         }
         
         public static partial class random {
@@ -952,7 +952,7 @@ namespace Numpy
             /// Drawn samples from the parameterized log-normal distribution.
             /// </returns>
             public static NDarray lognormal(NDarray<float> mean = null, NDarray<float> sigma = null, int[] size = null)
-                => NumPy.Instance.lognormal(mean:mean, sigma:sigma, size:size);
+                => NumPy.Instance.random_lognormal(mean:mean, sigma:sigma, size:size);
         }
         
         public static partial class random {
@@ -988,7 +988,7 @@ namespace Numpy
             /// Drawn samples from the parameterized logarithmic series distribution.
             /// </returns>
             public static NDarray logseries(NDarray<float> p, int[] size = null)
-                => NumPy.Instance.logseries(p, size:size);
+                => NumPy.Instance.random_logseries(p, size:size);
         }
         
         public static partial class random {
@@ -1025,7 +1025,7 @@ namespace Numpy
             /// value drawn from the distribution.
             /// </returns>
             public static NDarray multinomial(int n, NDarray<float> pvals, int[] size = null)
-                => NumPy.Instance.multinomial(n, pvals, size:size);
+                => NumPy.Instance.random_multinomial(n, pvals, size:size);
         }
         
         public static partial class random {
@@ -1094,7 +1094,7 @@ namespace Numpy
             /// value drawn from the distribution.
             /// </returns>
             public static NDarray multivariate_normal(NDarray mean, NDarray cov, int[] size = null, string check_valid = null, float? tol = null)
-                => NumPy.Instance.multivariate_normal(mean, cov, size:size, check_valid:check_valid, tol:tol);
+                => NumPy.Instance.random_multivariate_normal(mean, cov, size:size, check_valid:check_valid, tol:tol);
         }
         
         public static partial class random {
@@ -1139,7 +1139,7 @@ namespace Numpy
             /// occurred before a total of n successes was reached.
             /// </returns>
             public static NDarray negative_binomial(NDarray<int> n, NDarray<float> p, int[] size = null)
-                => NumPy.Instance.negative_binomial(n, p, size:size);
+                => NumPy.Instance.random_negative_binomial(n, p, size:size);
         }
         
         public static partial class random {
@@ -1179,7 +1179,7 @@ namespace Numpy
             /// Drawn samples from the parameterized noncentral chi-square distribution.
             /// </returns>
             public static NDarray noncentral_chisquare(NDarray<float> df, NDarray<float> nonc, int[] size = null)
-                => NumPy.Instance.noncentral_chisquare(df, nonc, size:size);
+                => NumPy.Instance.random_noncentral_chisquare(df, nonc, size:size);
         }
         
         public static partial class random {
@@ -1222,7 +1222,7 @@ namespace Numpy
             /// Drawn samples from the parameterized noncentral Fisher distribution.
             /// </returns>
             public static NDarray noncentral_f(NDarray<float> dfnum, NDarray<float> dfden, NDarray<float> nonc, int[] size = null)
-                => NumPy.Instance.noncentral_f(dfnum, dfden, nonc, size:size);
+                => NumPy.Instance.random_noncentral_f(dfnum, dfden, nonc, size:size);
         }
         
         public static partial class random {
@@ -1271,7 +1271,7 @@ namespace Numpy
             /// Drawn samples from the parameterized normal distribution.
             /// </returns>
             public static NDarray normal(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.normal(loc:loc, scale:scale, size:size);
+                => NumPy.Instance.random_normal(loc:loc, scale:scale, size:size);
         }
         
         public static partial class random {
@@ -1328,7 +1328,7 @@ namespace Numpy
             /// Drawn samples from the parameterized Pareto distribution.
             /// </returns>
             public static NDarray pareto(NDarray<float> a, int[] size = null)
-                => NumPy.Instance.pareto(a, size:size);
+                => NumPy.Instance.random_pareto(a, size:size);
         }
         
         public static partial class random {
@@ -1367,7 +1367,43 @@ namespace Numpy
             /// Drawn samples from the parameterized Poisson distribution.
             /// </returns>
             public static NDarray poisson(NDarray<float> lam = null, int[] size = null)
-                => NumPy.Instance.poisson(lam:lam, size:size);
+                => NumPy.Instance.random_poisson(lam:lam, size:size);
+        }
+        
+        public static partial class random {
+            /// <summary>
+            /// Draws samples in [0, 1] from a power distribution with positive
+            /// exponent a - 1.
+            /// 
+            /// Also known as the power function distribution.
+            /// 
+            /// Notes
+            /// 
+            /// The probability density function is
+            /// 
+            /// The power function distribution is just the inverse of the Pareto
+            /// distribution. It may also be seen as a special case of the Beta
+            /// distribution.
+            /// 
+            /// It is used, for example, in modeling the over-reporting of insurance
+            /// claims.
+            /// 
+            /// References
+            /// </summary>
+            /// <param name="a">
+            /// Parameter of the distribution. Should be greater than zero.
+            /// </param>
+            /// <param name="size">
+            /// Output shape.  If the given shape is, e.g., (m, n, k), then
+            /// m * n * k samples are drawn.  If size is None (default),
+            /// a single value is returned if a is a scalar.  Otherwise,
+            /// np.array(a).size samples are drawn.
+            /// </param>
+            /// <returns>
+            /// Drawn samples from the parameterized power distribution.
+            /// </returns>
+            public static NDarray power(NDarray<float> a, int[] size = null)
+                => NumPy.Instance.random_power(a, size:size);
         }
         
         public static partial class random {
@@ -1401,7 +1437,7 @@ namespace Numpy
             /// Drawn samples from the parameterized Rayleigh distribution.
             /// </returns>
             public static NDarray rayleigh(NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.rayleigh(scale:scale, size:size);
+                => NumPy.Instance.random_rayleigh(scale:scale, size:size);
         }
         
         public static partial class random {
@@ -1438,7 +1474,7 @@ namespace Numpy
             /// The drawn samples.
             /// </returns>
             public static NDarray standard_cauchy(int[] size = null)
-                => NumPy.Instance.standard_cauchy(size:size);
+                => NumPy.Instance.random_standard_cauchy(size:size);
         }
         
         public static partial class random {
@@ -1457,7 +1493,7 @@ namespace Numpy
             /// Drawn samples.
             /// </returns>
             public static NDarray standard_exponential(int[] size = null)
-                => NumPy.Instance.standard_exponential(size:size);
+                => NumPy.Instance.random_standard_exponential(size:size);
         }
         
         public static partial class random {
@@ -1493,7 +1529,7 @@ namespace Numpy
             /// Drawn samples from the parameterized standard gamma distribution.
             /// </returns>
             public static NDarray standard_gamma(Shape shape, int[] size = null)
-                => NumPy.Instance.standard_gamma(shape, size:size);
+                => NumPy.Instance.random_standard_gamma(shape, size:size);
         }
         
         public static partial class random {
@@ -1509,7 +1545,7 @@ namespace Numpy
             /// Drawn samples.
             /// </returns>
             public static NDarray standard_normal(int[] size = null)
-                => NumPy.Instance.standard_normal(size:size);
+                => NumPy.Instance.random_standard_normal(size:size);
         }
         
         public static partial class random {
@@ -1550,7 +1586,7 @@ namespace Numpy
             /// Drawn samples from the parameterized standard Student’s t distribution.
             /// </returns>
             public static NDarray standard_t(NDarray<float> df, int[] size = null)
-                => NumPy.Instance.standard_t(df, size:size);
+                => NumPy.Instance.random_standard_t(df, size:size);
         }
         
         public static partial class random {
@@ -1595,7 +1631,7 @@ namespace Numpy
             /// Drawn samples from the parameterized triangular distribution.
             /// </returns>
             public static NDarray triangular(NDarray<float> left, NDarray<float> mode, NDarray<float> right, int[] size = null)
-                => NumPy.Instance.triangular(left, mode, right, size:size);
+                => NumPy.Instance.random_triangular(left, mode, right, size:size);
         }
         
         public static partial class random {
@@ -1637,7 +1673,7 @@ namespace Numpy
             /// Drawn samples from the parameterized uniform distribution.
             /// </returns>
             public static NDarray uniform(NDarray<float> low = null, NDarray<float> high = null, int[] size = null)
-                => NumPy.Instance.uniform(low:low, high:high, size:size);
+                => NumPy.Instance.random_uniform(low:low, high:high, size:size);
         }
         
         public static partial class random {
@@ -1683,7 +1719,7 @@ namespace Numpy
             /// Drawn samples from the parameterized von Mises distribution.
             /// </returns>
             public static NDarray vonmises(NDarray<float> mu, NDarray<float> kappa, int[] size = null)
-                => NumPy.Instance.vonmises(mu, kappa, size:size);
+                => NumPy.Instance.random_vonmises(mu, kappa, size:size);
         }
         
         public static partial class random {
@@ -1726,7 +1762,7 @@ namespace Numpy
             /// Drawn samples from the parameterized Wald distribution.
             /// </returns>
             public static NDarray wald(NDarray<float> mean, NDarray<float> scale, int[] size = null)
-                => NumPy.Instance.wald(mean, scale, size:size);
+                => NumPy.Instance.random_wald(mean, scale, size:size);
         }
         
         public static partial class random {
@@ -1774,7 +1810,7 @@ namespace Numpy
             /// Drawn samples from the parameterized Weibull distribution.
             /// </returns>
             public static NDarray weibull(NDarray<float> a, int[] size = null)
-                => NumPy.Instance.weibull(a, size:size);
+                => NumPy.Instance.random_weibull(a, size:size);
         }
         
         public static partial class random {
@@ -1814,7 +1850,7 @@ namespace Numpy
             /// Drawn samples from the parameterized Zipf distribution.
             /// </returns>
             public static NDarray zipf(NDarray<float> a, int[] size = null)
-                => NumPy.Instance.zipf(a, size:size);
+                => NumPy.Instance.random_zipf(a, size:size);
         }
         
         public static partial class random {
@@ -1857,7 +1893,7 @@ namespace Numpy
             /// the clock otherwise.
             /// </param>
             public static void RandomState(int? seed = null)
-                => NumPy.Instance.RandomState(seed:seed);
+                => NumPy.Instance.random_RandomState(seed:seed);
         }
         
         public static partial class random {
@@ -1900,7 +1936,7 @@ namespace Numpy
             /// the clock otherwise.
             /// </param>
             public static void RandomState(NDarray seed = null)
-                => NumPy.Instance.RandomState(seed:seed);
+                => NumPy.Instance.random_RandomState(seed:seed);
         }
         
         public static partial class random {
@@ -1915,7 +1951,7 @@ namespace Numpy
             /// Must be convertible to 32 bit unsigned integers.
             /// </param>
             public static void seed(int? seed = null)
-                => NumPy.Instance.seed(seed:seed);
+                => NumPy.Instance.random_seed(seed:seed);
         }
         
         public static partial class random {
@@ -1930,7 +1966,7 @@ namespace Numpy
             /// Must be convertible to 32 bit unsigned integers.
             /// </param>
             public static void seed(NDarray seed = null)
-                => NumPy.Instance.seed(seed:seed);
+                => NumPy.Instance.random_seed(seed:seed);
         }
         
         /*
@@ -1953,7 +1989,7 @@ namespace Numpy
             /// The returned tuple has the following items:
             /// </returns>
             public static tuple(str get_state(tuple(str @out = null)
-                => NumPy.Instance.get_state(@out:@out);
+                => NumPy.Instance.random_get_state(@out:@out);
         }
         */
         
@@ -1984,7 +2020,7 @@ namespace Numpy
             /// Returns ‘None’ on success.
             /// </returns>
             public static None set_state(tuple(str state)
-                => NumPy.Instance.set_state(state);
+                => NumPy.Instance.random_set_state(state);
         }
         */
         

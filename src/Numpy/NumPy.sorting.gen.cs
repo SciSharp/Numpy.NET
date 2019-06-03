@@ -180,6 +180,41 @@ namespace Numpy
         }
         
         /// <summary>
+        /// Sort an array, in-place.
+        /// 
+        /// Notes
+        /// 
+        /// See sort for notes on the different sorting algorithms.
+        /// </summary>
+        /// <param name="axis">
+        /// Axis along which to sort. Default is -1, which means sort along the
+        /// last axis.
+        /// </param>
+        /// <param name="kind">
+        /// Sorting algorithm. Default is ‘quicksort’.
+        /// </param>
+        /// <param name="order">
+        /// When a is an array with fields defined, this argument specifies
+        /// which fields to compare first, second, etc.  A single field can
+        /// be specified as a string, and not all fields need be specified,
+        /// but unspecified fields will still be used, in the order in which
+        /// they come up in the dtype, to break ties.
+        /// </param>
+        public void sort(int? axis = -1, string kind = null, string order = null)
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!=null) kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("sort", pyargs, kwargs);
+        }
+        
+        /// <summary>
         /// Return a copy of an array sorted along the first axis.
         /// 
         /// Notes
@@ -520,39 +555,6 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the indices of the elements that are non-zero.
-        /// 
-        /// Returns a tuple of arrays, one for each dimension of a,
-        /// containing the indices of the non-zero elements in that
-        /// dimension. The values in a are always tested and returned in
-        /// row-major, C-style order. The corresponding non-zero
-        /// values can be obtained with:
-        /// 
-        /// To group the indices by element, rather than dimension, use:
-        /// 
-        /// The result of this is always a 2-D array, with a row for
-        /// each non-zero element.
-        /// </summary>
-        /// <param name="a">
-        /// Input array.
-        /// </param>
-        /// <returns>
-        /// Indices of elements that are non-zero.
-        /// </returns>
-        public NDarray[] nonzero(NDarray a)
-        {
-            //auto-generated code, do not change
-            var __self__=self;
-            var pyargs=ToTuple(new object[]
-            {
-                a,
-            });
-            var kwargs=new PyDict();
-            dynamic py = __self__.InvokeMethod("nonzero", pyargs, kwargs);
-            return ToCsharp<NDarray[]>(py);
-        }
-        
-        /// <summary>
         /// Return indices that are non-zero in the flattened version of a.
         /// 
         /// This is equivalent to np.nonzero(np.ravel(a))[0].
@@ -574,43 +576,6 @@ namespace Numpy
             });
             var kwargs=new PyDict();
             dynamic py = __self__.InvokeMethod("flatnonzero", pyargs, kwargs);
-            return ToCsharp<NDarray>(py);
-        }
-        
-        /// <summary>
-        /// Return elements chosen from x or y depending on condition.
-        /// 
-        /// Notes
-        /// 
-        /// If all the arrays are 1-D, where is equivalent to:
-        /// </summary>
-        /// <param name="condition">
-        /// Where True, yield x, otherwise yield y.
-        /// </param>
-        /// <param name="y">
-        /// Values from which to choose. x, y and condition need to be
-        /// broadcastable to some shape.
-        /// </param>
-        /// <param name="x">
-        /// Values from which to choose. x, y and condition need to be
-        /// broadcastable to some shape.
-        /// </param>
-        /// <returns>
-        /// An array with elements from x where condition is True, and elements
-        /// from y elsewhere.
-        /// </returns>
-        public NDarray @where(NDarray condition, NDarray y, NDarray x)
-        {
-            //auto-generated code, do not change
-            var __self__=self;
-            var pyargs=ToTuple(new object[]
-            {
-                condition,
-                y,
-                x,
-            });
-            var kwargs=new PyDict();
-            dynamic py = __self__.InvokeMethod("where", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }
         

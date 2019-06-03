@@ -79,7 +79,7 @@ namespace Numpy.UnitTest
             // 
 
             var given = np.random.randint(2, size: new int[] { 10 });
-            Assert.LessOrEqual((int)np.sum(given), 10);
+            Assert.LessOrEqual( (int)np.sum(given), 10);
             given = np.random.randint(1, size: new int[] { 10 });
             var expected =
                "array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])";
@@ -91,7 +91,7 @@ namespace Numpy.UnitTest
             //        [3, 2, 2, 0]])
             // 
 
-            given = np.random.randint(5, size: new int[] { 2, 4 });
+             given=  np.random.randint(5, size:new int[]{2, 4});
             Assert.LessOrEqual((int)given.max(), 4);
             Assert.GreaterOrEqual((int)given.min(), 0);
         }

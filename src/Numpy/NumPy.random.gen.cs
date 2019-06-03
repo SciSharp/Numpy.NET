@@ -41,7 +41,7 @@ namespace Numpy
         /// <returns>
         /// Random values.
         /// </returns>
-        public NDarray rand(int? d1 = null, int? d0 = null)
+        public NDarray random_rand(int? d1 = null, int? d0 = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -89,7 +89,7 @@ namespace Numpy
         /// the standard normal distribution, or a single such float if
         /// no parameters were supplied.
         /// </returns>
-        public NDarray randn(int? d1 = null, int? d0 = null)
+        public NDarray random_randn(int? d1 = null, int? d0 = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -135,7 +135,7 @@ namespace Numpy
         /// size-shaped array of random integers from the appropriate
         /// distribution, or a single such random int if size not provided.
         /// </returns>
-        public NDarray<int> randint(int low, int? high = null, int[] size = null, Dtype dtype = null)
+        public NDarray<int> random_randint(int low, int? high = null, int[] size = null, Dtype dtype = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -186,7 +186,7 @@ namespace Numpy
         /// size-shaped array of random integers from the appropriate
         /// distribution, or a single such random int if size not provided.
         /// </returns>
-        public NDarray<int> random_integers(int low, int? high = null, int[] size = null)
+        public NDarray<int> random_random_integers(int low, int? high = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -218,7 +218,7 @@ namespace Numpy
         /// Array of random floats of shape size (unless size=None, in which
         /// case a single float is returned).
         /// </returns>
-        public NDarray<float> random_sample(int[] size = null)
+        public NDarray<float> random_random_sample(int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -248,7 +248,7 @@ namespace Numpy
         /// Array of random floats of shape size (unless size=None, in which
         /// case a single float is returned).
         /// </returns>
-        public NDarray<float> random(int[] size = null)
+        public NDarray<float> random_random(int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -278,7 +278,7 @@ namespace Numpy
         /// Array of random floats of shape size (unless size=None, in which
         /// case a single float is returned).
         /// </returns>
-        public NDarray<float> ranf(int[] size = null)
+        public NDarray<float> random_ranf(int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -308,7 +308,7 @@ namespace Numpy
         /// Array of random floats of shape size (unless size=None, in which
         /// case a single float is returned).
         /// </returns>
-        public NDarray<float> sample(int[] size = null)
+        public NDarray<float> random_sample(int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -345,7 +345,7 @@ namespace Numpy
         /// <returns>
         /// The generated random samples
         /// </returns>
-        public NDarray choice(NDarray a, int[] size = null, bool? replace = true, NDarray p = null)
+        public NDarray random_choice(NDarray a, int[] size = null, bool? replace = true, NDarray p = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -385,7 +385,7 @@ namespace Numpy
         /// <returns>
         /// The generated random samples
         /// </returns>
-        public NDarray choice(int a, int[] size = null, bool? replace = true, NDarray p = null)
+        public NDarray random_choice(int a, int[] size = null, bool? replace = true, NDarray p = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -411,7 +411,7 @@ namespace Numpy
         /// <returns>
         /// String of length length.
         /// </returns>
-        public string bytes(int length)
+        public string random_bytes(int length)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -435,7 +435,7 @@ namespace Numpy
         /// <param name="x">
         /// The array or list to be shuffled.
         /// </param>
-        public void shuffle(NDarray x)
+        public void random_shuffle(NDarray x)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -462,7 +462,7 @@ namespace Numpy
         /// <returns>
         /// Permuted sequence or array range.
         /// </returns>
-        public NDarray permutation(NDarray x)
+        public NDarray random_permutation(NDarray x)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -490,7 +490,7 @@ namespace Numpy
         /// <returns>
         /// Permuted sequence or array range.
         /// </returns>
-        public NDarray permutation(int x)
+        public NDarray random_permutation(int x)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -530,7 +530,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized beta distribution.
         /// </returns>
-        public NDarray beta(NDarray<float> a, NDarray<float> b, int[] size = null)
+        public NDarray random_beta(NDarray<float> a, NDarray<float> b, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -588,7 +588,7 @@ namespace Numpy
         /// Drawn samples from the parameterized binomial distribution, where
         /// each sample is equal to the number of successes over the n trials.
         /// </returns>
-        public NDarray binomial(NDarray<int> n, NDarray<float> p, int[] size = null)
+        public NDarray random_binomial(NDarray<int> n, NDarray<float> p, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -646,7 +646,7 @@ namespace Numpy
         /// Drawn samples from the parameterized binomial distribution, where
         /// each sample is equal to the number of successes over the n trials.
         /// </returns>
-        public NDarray binomial(int n, NDarray<float> p, int[] size = null)
+        public NDarray random_binomial(int n, NDarray<float> p, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -695,7 +695,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized chi-square distribution.
         /// </returns>
-        public NDarray chisquare(NDarray<float> df, int[] size = null)
+        public NDarray random_chisquare(NDarray<float> df, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -740,7 +740,7 @@ namespace Numpy
         /// <returns>
         /// The drawn samples, of shape (size, alpha.ndim).
         /// </returns>
-        public NDarray dirichlet(NDarray alpha, int[] size = null)
+        public NDarray random_dirichlet(NDarray alpha, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -784,7 +784,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized exponential distribution.
         /// </returns>
-        public NDarray exponential(NDarray<float> scale = null, int[] size = null)
+        public NDarray random_exponential(NDarray<float> scale = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -839,7 +839,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Fisher distribution.
         /// </returns>
-        public NDarray f(NDarray<float> dfnum, NDarray<float> dfden, int[] size = null)
+        public NDarray random_f(NDarray<float> dfnum, NDarray<float> dfden, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -891,7 +891,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized gamma distribution.
         /// </returns>
-        public NDarray gamma(Shape shape, NDarray<float> scale = null, int[] size = null)
+        public NDarray random_gamma(Shape shape, NDarray<float> scale = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -932,7 +932,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized geometric distribution.
         /// </returns>
-        public NDarray geometric(NDarray<float> p, int[] size = null)
+        public NDarray random_geometric(NDarray<float> p, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1000,7 +1000,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Gumbel distribution.
         /// </returns>
-        public NDarray gumbel(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
+        public NDarray random_gumbel(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1066,7 +1066,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized hypergeometric distribution.
         /// </returns>
-        public NDarray hypergeometric(NDarray<int> ngood, NDarray<int> nbad, NDarray<int> nsample, int[] size = null)
+        public NDarray random_hypergeometric(NDarray<int> ngood, NDarray<int> nbad, NDarray<int> nsample, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1120,7 +1120,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Laplace distribution.
         /// </returns>
-        public NDarray laplace(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
+        public NDarray random_laplace(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1172,7 +1172,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized logistic distribution.
         /// </returns>
-        public NDarray logistic(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
+        public NDarray random_logistic(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1228,7 +1228,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized log-normal distribution.
         /// </returns>
-        public NDarray lognormal(NDarray<float> mean = null, NDarray<float> sigma = null, int[] size = null)
+        public NDarray random_lognormal(NDarray<float> mean = null, NDarray<float> sigma = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1275,7 +1275,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized logarithmic series distribution.
         /// </returns>
-        public NDarray logseries(NDarray<float> p, int[] size = null)
+        public NDarray random_logseries(NDarray<float> p, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1322,7 +1322,7 @@ namespace Numpy
         /// In other words, each entry out[i,j,...,:] is an N-dimensional
         /// value drawn from the distribution.
         /// </returns>
-        public NDarray multinomial(int n, NDarray<float> pvals, int[] size = null)
+        public NDarray random_multinomial(int n, NDarray<float> pvals, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1402,7 +1402,7 @@ namespace Numpy
         /// In other words, each entry out[i,j,...,:] is an N-dimensional
         /// value drawn from the distribution.
         /// </returns>
-        public NDarray multivariate_normal(NDarray mean, NDarray cov, int[] size = null, string check_valid = null, float? tol = null)
+        public NDarray random_multivariate_normal(NDarray mean, NDarray cov, int[] size = null, string check_valid = null, float? tol = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1460,7 +1460,7 @@ namespace Numpy
         /// where each sample is equal to N, the number of failures that
         /// occurred before a total of n successes was reached.
         /// </returns>
-        public NDarray negative_binomial(NDarray<int> n, NDarray<float> p, int[] size = null)
+        public NDarray random_negative_binomial(NDarray<int> n, NDarray<float> p, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1511,7 +1511,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized noncentral chi-square distribution.
         /// </returns>
-        public NDarray noncentral_chisquare(NDarray<float> df, NDarray<float> nonc, int[] size = null)
+        public NDarray random_noncentral_chisquare(NDarray<float> df, NDarray<float> nonc, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1565,7 +1565,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized noncentral Fisher distribution.
         /// </returns>
-        public NDarray noncentral_f(NDarray<float> dfnum, NDarray<float> dfden, NDarray<float> nonc, int[] size = null)
+        public NDarray random_noncentral_f(NDarray<float> dfnum, NDarray<float> dfden, NDarray<float> nonc, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1626,7 +1626,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized normal distribution.
         /// </returns>
-        public NDarray normal(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
+        public NDarray random_normal(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1694,7 +1694,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Pareto distribution.
         /// </returns>
-        public NDarray pareto(NDarray<float> a, int[] size = null)
+        public NDarray random_pareto(NDarray<float> a, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1743,7 +1743,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Poisson distribution.
         /// </returns>
-        public NDarray poisson(NDarray<float> lam = null, int[] size = null)
+        public NDarray random_poisson(NDarray<float> lam = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1755,6 +1755,52 @@ namespace Numpy
             if (lam!=null) kwargs["lam"]=ToPython(lam);
             if (size!=null) kwargs["size"]=ToPython(size);
             dynamic py = __self__.InvokeMethod("poisson", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
+        
+        /// <summary>
+        /// Draws samples in [0, 1] from a power distribution with positive
+        /// exponent a - 1.
+        /// 
+        /// Also known as the power function distribution.
+        /// 
+        /// Notes
+        /// 
+        /// The probability density function is
+        /// 
+        /// The power function distribution is just the inverse of the Pareto
+        /// distribution. It may also be seen as a special case of the Beta
+        /// distribution.
+        /// 
+        /// It is used, for example, in modeling the over-reporting of insurance
+        /// claims.
+        /// 
+        /// References
+        /// </summary>
+        /// <param name="a">
+        /// Parameter of the distribution. Should be greater than zero.
+        /// </param>
+        /// <param name="size">
+        /// Output shape.  If the given shape is, e.g., (m, n, k), then
+        /// m * n * k samples are drawn.  If size is None (default),
+        /// a single value is returned if a is a scalar.  Otherwise,
+        /// np.array(a).size samples are drawn.
+        /// </param>
+        /// <returns>
+        /// Drawn samples from the parameterized power distribution.
+        /// </returns>
+        public NDarray random_power(NDarray<float> a, int[] size = null)
+        {
+            //auto-generated code, do not change
+            var random = self.GetAttr("random");
+            var __self__=random;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (size!=null) kwargs["size"]=ToPython(size);
+            dynamic py = __self__.InvokeMethod("power", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }
         
@@ -1787,7 +1833,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Rayleigh distribution.
         /// </returns>
-        public NDarray rayleigh(NDarray<float> scale = null, int[] size = null)
+        public NDarray random_rayleigh(NDarray<float> scale = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1834,7 +1880,7 @@ namespace Numpy
         /// <returns>
         /// The drawn samples.
         /// </returns>
-        public NDarray standard_cauchy(int[] size = null)
+        public NDarray random_standard_cauchy(int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1862,7 +1908,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples.
         /// </returns>
-        public NDarray standard_exponential(int[] size = null)
+        public NDarray random_standard_exponential(int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1907,7 +1953,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized standard gamma distribution.
         /// </returns>
-        public NDarray standard_gamma(Shape shape, int[] size = null)
+        public NDarray random_standard_gamma(Shape shape, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1933,7 +1979,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples.
         /// </returns>
-        public NDarray standard_normal(int[] size = null)
+        public NDarray random_standard_normal(int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1983,7 +2029,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized standard Student’s t distribution.
         /// </returns>
-        public NDarray standard_t(NDarray<float> df, int[] size = null)
+        public NDarray random_standard_t(NDarray<float> df, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2038,7 +2084,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized triangular distribution.
         /// </returns>
-        public NDarray triangular(NDarray<float> left, NDarray<float> mode, NDarray<float> right, int[] size = null)
+        public NDarray random_triangular(NDarray<float> left, NDarray<float> mode, NDarray<float> right, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2092,7 +2138,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized uniform distribution.
         /// </returns>
-        public NDarray uniform(NDarray<float> low = null, NDarray<float> high = null, int[] size = null)
+        public NDarray random_uniform(NDarray<float> low = null, NDarray<float> high = null, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2149,7 +2195,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized von Mises distribution.
         /// </returns>
-        public NDarray vonmises(NDarray<float> mu, NDarray<float> kappa, int[] size = null)
+        public NDarray random_vonmises(NDarray<float> mu, NDarray<float> kappa, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2203,7 +2249,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Wald distribution.
         /// </returns>
-        public NDarray wald(NDarray<float> mean, NDarray<float> scale, int[] size = null)
+        public NDarray random_wald(NDarray<float> mean, NDarray<float> scale, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2262,7 +2308,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Weibull distribution.
         /// </returns>
-        public NDarray weibull(NDarray<float> a, int[] size = null)
+        public NDarray random_weibull(NDarray<float> a, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2312,7 +2358,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples from the parameterized Zipf distribution.
         /// </returns>
-        public NDarray zipf(NDarray<float> a, int[] size = null)
+        public NDarray random_zipf(NDarray<float> a, int[] size = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2365,7 +2411,7 @@ namespace Numpy
         /// /dev/urandom (or the Windows analogue) if available or seed from
         /// the clock otherwise.
         /// </param>
-        public void RandomState(int? seed = null)
+        public void random_RandomState(int? seed = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2416,7 +2462,7 @@ namespace Numpy
         /// /dev/urandom (or the Windows analogue) if available or seed from
         /// the clock otherwise.
         /// </param>
-        public void RandomState(NDarray seed = null)
+        public void random_RandomState(NDarray seed = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2439,7 +2485,7 @@ namespace Numpy
         /// Seed for RandomState.
         /// Must be convertible to 32 bit unsigned integers.
         /// </param>
-        public void seed(int? seed = null)
+        public void random_seed(int? seed = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2462,7 +2508,7 @@ namespace Numpy
         /// Seed for RandomState.
         /// Must be convertible to 32 bit unsigned integers.
         /// </param>
-        public void seed(NDarray seed = null)
+        public void random_seed(NDarray seed = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2493,7 +2539,7 @@ namespace Numpy
         /// <returns>
         /// The returned tuple has the following items:
         /// </returns>
-        public tuple(str get_state(tuple(str @out = null)
+        public tuple(str random_get_state(tuple(str @out = null)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2533,7 +2579,7 @@ namespace Numpy
         /// <returns>
         /// Returns ‘None’ on success.
         /// </returns>
-        public None set_state(tuple(str state)
+        public None random_set_state(tuple(str state)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");

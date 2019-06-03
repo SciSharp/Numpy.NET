@@ -1533,6 +1533,61 @@ namespace Numpy
         }
         
         /// <summary>
+        /// Create a chararray.
+        /// 
+        /// Versus a regular NumPy array of type str or unicode, this
+        /// class adds the following functionality:
+        /// </summary>
+        /// <param name="itemsize">
+        /// itemsize is the number of characters per scalar in the
+        /// resulting array.  If itemsize is None, and obj is an
+        /// object array or a Python list, the itemsize will be
+        /// automatically determined.  If itemsize is provided and obj
+        /// is of type str or unicode, then the obj string will be
+        /// chunked into itemsize pieces.
+        /// </param>
+        /// <param name="copy">
+        /// If true (default), then the object is copied.  Otherwise, a copy
+        /// will only be made if __array__ returns a copy, if obj is a
+        /// nested sequence, or if a copy is needed to satisfy any of the other
+        /// requirements (itemsize, unicode, order, etc.).
+        /// </param>
+        /// <param name="unicode">
+        /// When true, the resulting chararray can contain Unicode
+        /// characters, when false only 8-bit characters.  If unicode is
+        /// None and obj is one of the following:
+        /// 
+        /// then the unicode setting of the output array will be
+        /// automatically determined.
+        /// </param>
+        /// <param name="order">
+        /// Specify the order of the array.  If order is ‘C’ (default), then the
+        /// array will be in C-contiguous order (last-index varies the
+        /// fastest).  If order is ‘F’, then the returned array
+        /// will be in Fortran-contiguous order (first-index varies the
+        /// fastest).  If order is ‘A’, then the returned array may
+        /// be in any order (either C-, Fortran-contiguous, or even
+        /// discontiguous).
+        /// </param>
+        public void core_defchararray_array(string[] obj, int? itemsize = null, bool? copy = true, bool? unicode = null, string order = null)
+        {
+            //auto-generated code, do not change
+            var core = self.GetAttr("core");
+            var defchararray = core.GetAttr("defchararray");
+            var __self__=defchararray;
+            var pyargs=ToTuple(new object[]
+            {
+                obj,
+            });
+            var kwargs=new PyDict();
+            if (itemsize!=null) kwargs["itemsize"]=ToPython(itemsize);
+            if (copy!=true) kwargs["copy"]=ToPython(copy);
+            if (unicode!=null) kwargs["unicode"]=ToPython(unicode);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("array", pyargs, kwargs);
+        }
+        
+        /// <summary>
         /// Provides a convenient view on arrays of string and unicode values.
         /// 
         /// Versus a regular NumPy array of type str or unicode, this
@@ -1590,6 +1645,53 @@ namespace Numpy
             if (strides!=null) kwargs["strides"]=ToPython(strides);
             if (order!=null) kwargs["order"]=ToPython(order);
             dynamic py = __self__.InvokeMethod("chararray", pyargs, kwargs);
+        }
+        
+        /// <summary>
+        /// Convert the input to a chararray, copying the data only if
+        /// necessary.
+        /// 
+        /// Versus a regular NumPy array of type str or unicode, this
+        /// class adds the following functionality:
+        /// </summary>
+        /// <param name="itemsize">
+        /// itemsize is the number of characters per scalar in the
+        /// resulting array.  If itemsize is None, and obj is an
+        /// object array or a Python list, the itemsize will be
+        /// automatically determined.  If itemsize is provided and obj
+        /// is of type str or unicode, then the obj string will be
+        /// chunked into itemsize pieces.
+        /// </param>
+        /// <param name="unicode">
+        /// When true, the resulting chararray can contain Unicode
+        /// characters, when false only 8-bit characters.  If unicode is
+        /// None and obj is one of the following:
+        /// 
+        /// then the unicode setting of the output array will be
+        /// automatically determined.
+        /// </param>
+        /// <param name="order">
+        /// Specify the order of the array.  If order is ‘C’ (default), then the
+        /// array will be in C-contiguous order (last-index varies the
+        /// fastest).  If order is ‘F’, then the returned array
+        /// will be in Fortran-contiguous order (first-index varies the
+        /// fastest).
+        /// </param>
+        public void core_defchararray_asarray(string[] obj, int? itemsize = null, bool? unicode = null, string order = null)
+        {
+            //auto-generated code, do not change
+            var core = self.GetAttr("core");
+            var defchararray = core.GetAttr("defchararray");
+            var __self__=defchararray;
+            var pyargs=ToTuple(new object[]
+            {
+                obj,
+            });
+            var kwargs=new PyDict();
+            if (itemsize!=null) kwargs["itemsize"]=ToPython(itemsize);
+            if (unicode!=null) kwargs["unicode"]=ToPython(unicode);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("asarray", pyargs, kwargs);
         }
         
         /// <summary>

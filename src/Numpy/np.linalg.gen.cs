@@ -79,7 +79,7 @@ namespace Numpy
             /// Returns the dot product of the supplied arrays.
             /// </returns>
             public static NDarray multi_dot(NDarray[] arrays)
-                => NumPy.Instance.multi_dot(arrays);
+                => NumPy.Instance.linalg_multi_dot(arrays);
         }
         
         /// <summary>
@@ -420,7 +420,7 @@ namespace Numpy
             /// negative the elements are floating-point.
             /// </returns>
             public static NDarray matrix_power(NDarray a, int n)
-                => NumPy.Instance.matrix_power(a, n);
+                => NumPy.Instance.linalg_matrix_power(a, n);
         }
         
         /// <summary>
@@ -506,7 +506,7 @@ namespace Numpy
             /// reflectors. In the deprecated  ‘economic’ mode only h is returned.
             /// </returns>
             public static (NDarray, NDarray, NDarray) qr(NDarray a, string mode = "reduced")
-                => NumPy.Instance.qr(a, mode:mode);
+                => NumPy.Instance.linalg_qr(a, mode:mode);
         }
         
         /*
@@ -539,7 +539,7 @@ namespace Numpy
             /// The condition number of the matrix. May be infinite.
             /// </returns>
             public static {float cond(NDarray x, {None p = null)
-                => NumPy.Instance.cond(x, p:p);
+                => NumPy.Instance.linalg_cond(x, p:p);
         }
         */
         
@@ -605,7 +605,7 @@ namespace Numpy
             /// Defaults to False.
             /// </param>
             public static int matrix_rank(NDarray M, NDarray tol = null, bool? hermitian = false)
-                => NumPy.Instance.matrix_rank(M, tol:tol, hermitian:hermitian);
+                => NumPy.Instance.linalg_matrix_rank(M, tol:tol, hermitian:hermitian);
         }
         
         public static partial class linalg {
@@ -638,7 +638,7 @@ namespace Numpy
             /// The natural log of the absolute value of the determinant.
             /// </returns>
             public static (NDarray, NDarray) slogdet(NDarray a)
-                => NumPy.Instance.slogdet(a);
+                => NumPy.Instance.linalg_slogdet(a);
         }
         
         /// <summary>
@@ -710,7 +710,7 @@ namespace Numpy
             /// If None (default), no reordering is done.
             /// </param>
             public static NDarray tensorsolve(NDarray a, NDarray b, int[] axes = null)
-                => NumPy.Instance.tensorsolve(a, b, axes:axes);
+                => NumPy.Instance.linalg_tensorsolve(a, b, axes:axes);
         }
         
         public static partial class linalg {
@@ -734,7 +734,7 @@ namespace Numpy
             /// a’s tensordot inverse, shape a.shape[ind:] + a.shape[:ind].
             /// </returns>
             public static NDarray tensorinv(NDarray a, int? ind = 2)
-                => NumPy.Instance.tensorinv(a, ind:ind);
+                => NumPy.Instance.linalg_tensorinv(a, ind:ind);
         }
         
         public static partial class linalg {
@@ -747,7 +747,7 @@ namespace Numpy
             /// function.
             /// </summary>
             public static void LinAlgError()
-                => NumPy.Instance.LinAlgError();
+                => NumPy.Instance.linalg_LinAlgError();
         }
         
         

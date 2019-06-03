@@ -89,7 +89,7 @@ namespace Numpy
         /// <returns>
         /// Returns the dot product of the supplied arrays.
         /// </returns>
-        public NDarray multi_dot(NDarray[] arrays)
+        public NDarray linalg_multi_dot(NDarray[] arrays)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -526,7 +526,7 @@ namespace Numpy
         /// elements is the same as those of M. If the exponent is
         /// negative the elements are floating-point.
         /// </returns>
-        public NDarray matrix_power(NDarray a, int n)
+        public NDarray linalg_matrix_power(NDarray a, int n)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -633,7 +633,7 @@ namespace Numpy
         /// along with r. The tau array contains scaling factors for the
         /// reflectors. In the deprecated  ‘economic’ mode only h is returned.
         /// </returns>
-        public (NDarray, NDarray, NDarray) qr(NDarray a, string mode = "reduced")
+        public (NDarray, NDarray, NDarray) linalg_qr(NDarray a, string mode = "reduced")
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -677,7 +677,7 @@ namespace Numpy
         /// <returns>
         /// The condition number of the matrix. May be infinite.
         /// </returns>
-        public {float cond(NDarray x, {None p = null)
+        public {float linalg_cond(NDarray x, {None p = null)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -753,7 +753,7 @@ namespace Numpy
         /// enabling a more efficient method for finding singular values.
         /// Defaults to False.
         /// </param>
-        public int matrix_rank(NDarray M, NDarray tol = null, bool? hermitian = false)
+        public int linalg_matrix_rank(NDarray M, NDarray tol = null, bool? hermitian = false)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -797,7 +797,7 @@ namespace Numpy
         /// logdet
         /// The natural log of the absolute value of the determinant.
         /// </returns>
-        public (NDarray, NDarray) slogdet(NDarray a)
+        public (NDarray, NDarray) linalg_slogdet(NDarray a)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -894,7 +894,7 @@ namespace Numpy
         /// Axes in a to reorder to the right, before inversion.
         /// If None (default), no reordering is done.
         /// </param>
-        public NDarray tensorsolve(NDarray a, NDarray b, int[] axes = null)
+        public NDarray linalg_tensorsolve(NDarray a, NDarray b, int[] axes = null)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -929,7 +929,7 @@ namespace Numpy
         /// <returns>
         /// a’s tensordot inverse, shape a.shape[ind:] + a.shape[:ind].
         /// </returns>
-        public NDarray tensorinv(NDarray a, int? ind = 2)
+        public NDarray linalg_tensorinv(NDarray a, int? ind = 2)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -952,7 +952,7 @@ namespace Numpy
         /// Algebra-related condition would prevent further correct execution of the
         /// function.
         /// </summary>
-        public void LinAlgError()
+        public void linalg_LinAlgError()
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
