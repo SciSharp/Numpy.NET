@@ -48,6 +48,9 @@ var result = np.cos(m);
 // get the floating point data of the result NDarray back to C#
 var data = result.GetData<double>(); // double[] { 0.54030231, -0.41614684, -0.9899925 , -0.65364362 }
 ```
+## Installation
+
+Just reference [Numpy](https://www.nuget.org/packages/Numpy/1.0.0) via Nuget and you are good to go. Thanks to [Python.Included](https://github.com/henon/Python.Included) it doesn't require a local Python installation or will not clash with existing installations. 
 
 ## Numpy.NET vs NumSharp
 
