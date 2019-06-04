@@ -4,6 +4,17 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>Numpy</RootNamespace>
     <AssemblyName>Numpy</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Meinrad Recheis</Authors>
+    <Product>Numpy.NET</Product>
+    <PackageId>Numpy</PackageId>
+    <Description>C# bindings for NumPy - a fundamental library for scientific computing, machine learning and AI. Does not require a local Python installation!
+</Description>
+    <Copyright>2019 - Meinrad Recheis</Copyright>
+    <PackageProjectUrl>https://github.com/SciSharp/Numpy.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
+    <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy</PackageTags>
+    <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,12 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Python.Included">
-      <HintPath>DependsOn\Python.Included.dll</HintPath>
-    </Reference>
-    <Reference Include="Python.Runtime">
-      <HintPath>DependsOn\Python.Runtime.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Python.Included" Version="3.7.3" />
   </ItemGroup>
 
 </Project>
