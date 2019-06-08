@@ -24,6 +24,15 @@ Numpy and Intellisense: a developer-friendly combination:
 
 ![Numpy Intellisense](doc/img/numpy_intellisense.png)
 
+## Installation
+If you want to use Numpy.NET you have two options:
+
+### Numpy.dll
+Just reference [Numpy](https://www.nuget.org/packages/Numpy/1.0.0) via Nuget and you are good to go. Thanks to [Python.Included](https://github.com/henon/Python.Included) it doesn't require a local Python installation or will not clash with existing installations. 
+
+### Numpy.Bare.dll 
+In certain use cases you might not want the packaged Python and NumPy packages. In that case you reference [Numpy.Bare](https://www.nuget.org/packages/Numpy.Bare/1.0.0) via Nuget. You will need Python 3.7 and Numpy 1.16 installed for it to work. 
+
 ## How does it work?
 
 Numpy.NET uses [Python for .NET](http://pythonnet.github.io/) to call into the Python module `numpy`. However, this does not mean that it depends on a local Python installation! Numpy.NET.dll uses [Python.Included](https://github.com/henon/Python.Included) which packages embedded Python 3.7 and automatically deploys it in the user's home directory upon first execution. On subsequent runs, it will find Python already deployed and therefor doesn't install it again. Numpy.NET also packages the NumPy wheel and installs it into the embedded Python installation when not yet installed. 
@@ -48,9 +57,6 @@ var result = np.cos(m);
 // get the floating point data of the result NDarray back to C#
 var data = result.GetData<double>(); // double[] { 0.54030231, -0.41614684, -0.9899925 , -0.65364362 }
 ```
-## Installation
-
-Just reference [Numpy](https://www.nuget.org/packages/Numpy/1.0.0) via Nuget and you are good to go. Thanks to [Python.Included](https://github.com/henon/Python.Included) it doesn't require a local Python installation or will not clash with existing installations. 
 
 ## Numpy.NET vs NumSharp
 
