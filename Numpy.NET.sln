@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numpy.UnitTest", "test\Nump
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{25D84E98-E107-45C9-A0EC-0B25E24DA607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatmulExample", "src\Examples\MatmulExample\MatmulExample.csproj", "{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatmulExample", "src\Examples\MatmulExample\MatmulExample.csproj", "{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numpy.Bare", "src\Numpy.Bare\Numpy.Bare.csproj", "{DA501219-D114-4ED1-9B34-C39CC0480D04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numpy.Bare.UnitTest", "test\Numpy.UnitTest\Numpy.Bare.UnitTest.csproj", "{3E69A902-0C8F-4FF4-BA27-EAB9D2E08FEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,14 @@ Global
 		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA501219-D114-4ED1-9B34-C39CC0480D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA501219-D114-4ED1-9B34-C39CC0480D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA501219-D114-4ED1-9B34-C39CC0480D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA501219-D114-4ED1-9B34-C39CC0480D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E69A902-0C8F-4FF4-BA27-EAB9D2E08FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E69A902-0C8F-4FF4-BA27-EAB9D2E08FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E69A902-0C8F-4FF4-BA27-EAB9D2E08FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E69A902-0C8F-4FF4-BA27-EAB9D2E08FEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

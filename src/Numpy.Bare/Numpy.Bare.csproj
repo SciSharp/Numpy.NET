@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Numpy</RootNamespace>
+    <AssemblyName>Numpy.Bare</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Meinrad Recheis</Authors>
+    <Product>Numpy.NET</Product>
+    <PackageId>Numpy.Bare</PackageId>
+    <Description>C# bindings for NumPy - a fundamental library for scientific computing, machine learning and AI. Does require Python 3.7 with NumPy 1.16 installed!
+</Description>
+    <Copyright>2019 - Meinrad Recheis</Copyright>
+    <PackageProjectUrl>https://github.com/SciSharp/Numpy.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
+    <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy</PackageTags>
+    <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Python.Runtime.NETStandard" Version="3.7.0" />
+  </ItemGroup>
+
+</Project>
