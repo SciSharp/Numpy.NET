@@ -57,27 +57,26 @@ var result = np.cos(m);
 // get the floating point data of the result NDarray back to C#
 var data = result.GetData<double>(); // double[] { 0.54030231, -0.41614684, -0.9899925 , -0.65364362 }
 ```
-## Multi-threading considerations
-Python/NumPy doesn't have real multi-threading support. There is no advantage to calling `numpy` functions from different threads because `pythonnet` requires you to use the Global Interpreter Lock (GIL) when doing so: 
+## Multi-threading
+Python/NumPy doesn't have real multi-threading support. There is no advantage to calling `numpy` functions from different threads because `pythonnet` requires you to use the Global Interpreter Lock (GIL) when doing so. If you must call Python from a thread other than the main thread you first must release the main thread's mutex by calling `PythonEngine.BeginAllowThreads()` or you'll have a deadlock: 
 
 ```csharp
 var a = np.arange(1000);
 var b = np.arange(1000);
+
+// https://github.com/pythonnet/pythonnet/issues/109
+PythonEngine.BeginAllowThreads();
+
 Task.Run(()=> {
   // when running on different threads you must lock!
   using (Py.GIL())
   {
     np.matmul(a, b);
   }
-});
-Task.Run(()=> {
-  // when running on different threads at the same time you must lock or you will get an exception!
-  using (Py.GIL())
-  {
-    np.matmul(a, b);
-  }
-});
+}).Wait();
 ```
+
+Above example only serves as a reference how to call `numpy` from a different thread than the main thread. Having multiple background threads that call into Python doesn't give you multi-core processing though because of the requirement to lock the GIL. Not doing so will result in access violation exceptions. 
 
 ## Numpy.NET vs NumSharp
 
