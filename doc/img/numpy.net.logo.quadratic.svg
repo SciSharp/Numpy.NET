@@ -9,22 +9,22 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="307.31738"
-   height="95.964478"
-   viewBox="0 0 81.311057 25.390601"
+   width="133.34013"
+   height="133.34013"
+   viewBox="0 0 35.279577 35.279577"
    version="1.1"
    id="svg8"
-   sodipodi:docname="numpy.net.logo.svg"
-   inkscape:export-filename="numpy.net.logo512.png"
-   inkscape:export-xdpi="159.93889"
-   inkscape:export-ydpi="159.93889"
+   sodipodi:docname="numpy.net.logo.quadratic.svg"
+   inkscape:export-filename="numpy.net.logo.quadratic512.png"
+   inkscape:export-xdpi="368.62119"
+   inkscape:export-ydpi="368.62119"
    inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <defs
      id="defs2">
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
        inkscape:vp_x="0 : 17.639789 : 1"
-       inkscape:vp_y="0 : 999.99999 : 0"
+       inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_z="35.279577 : 17.639789 : 1"
        inkscape:persp3d-origin="17.639789 : 11.759859 : 1"
        id="perspective1831" />
@@ -37,8 +37,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="114.98095"
-     inkscape:cy="98.084966"
+     inkscape:cx="2.0251464"
+     inkscape:cy="-81.360111"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -63,7 +63,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -71,7 +71,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-12.438207,-310.06381)">
+     transform="translate(-12.294398,-262.38861)">
     <g
        id="g1525">
       <rect
