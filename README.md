@@ -1,5 +1,5 @@
 # Numpy.NET
-Numpy.NET is the most complete .NET binding for [NumPy](https://www.numpy.org/), THE fundamental library for scientific computing, machine learning and AI in Python. Numpy.NET empowers .NET developers to leverage NumPy's extensive functionality including multi-dimensional arrays and matrices, linear algebra, FFT and many more via a compatible strong typed API. 
+Numpy.NET is the most complete .NET binding for [NumPy](https://www.numpy.org/), which is a fundamental library for scientific computing, machine learning and AI in Python. Numpy.NET empowers .NET developers with extensive functionality including multi-dimensional arrays and matrices, linear algebra, FFT and many more via a compatible strong typed API. Several other SciSharp projects like [Keras.NET](https://github.com/SciSharp/Keras.NET) and [Torch.NET](https://github.com/SciSharp/Torch.NET) depend on Numpy.NET. 
 
 ## Example
 
