@@ -1,5 +1,5 @@
 # Numpy.NET
-Numpy.NET brings the awesome Python package [NumPy](https://www.numpy.org/) to the .NET world. NumPy is THE fundamental library for scientific computing, machine learning and AI in Python. Numpy.NET empowers .NET developers to leverage NumPy's extensive functionality including multi-dimensional arrays and matrices, linear algebra, FFT and many more via a compatible strong typed API. 
+Numpy.NET is the most complete .NET binding for [NumPy](https://www.numpy.org/), THE fundamental library for scientific computing, machine learning and AI in Python. Numpy.NET empowers .NET developers to leverage NumPy's extensive functionality including multi-dimensional arrays and matrices, linear algebra, FFT and many more via a compatible strong typed API. 
 
 ## Example
 
@@ -92,6 +92,8 @@ The SciSharp team is also developing a pure C# port of NumPy called [NumSharp](h
 | Actuality     | Can easily keep up with `numpy` dev   | Will trail behind, due to lack of manpower |
 | GPU support   | None                                  | Using a GPU backend for calculatons possible, per design |
 | Performance   | TODO: measure                         | TODO: measure |
+
+There are a couple of other NumPy ports out there featuring subsets of the original library. The only one that matches Numpy.NET in terms of completeness is the IronPython package `numpy` which is out of date. The SciSharp team is committed to keeping Numpy.NET up to date with the original library and to feature as much of the original functionality as possible.
 
 ## Code generation
 
