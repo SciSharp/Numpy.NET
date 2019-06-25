@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -40,7 +40,7 @@ namespace Numpy
         /// If this is a tuple of ints, the minimum is selected over multiple axes,
         /// instead of a single axis or all the axes as before.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result.  Must
         /// be of the same shape and buffer length as the expected output.
         /// See doc.ufuncs (Section “Output arguments”) for more details.
@@ -105,7 +105,7 @@ namespace Numpy
         /// If this is a tuple of ints, the maximum is selected over multiple axes,
         /// instead of a single axis or all the axes as before.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result.  Must
         /// be of the same shape and buffer length as the expected output.
         /// See doc.ufuncs (Section “Output arguments”) for more details.
@@ -169,7 +169,7 @@ namespace Numpy
         /// Axis or axes along which the minimum is computed. The default is to compute
         /// the minimum of the flattened array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  The default
         /// is None; if provided, it must have the same shape as the
         /// expected output, but the type will be cast if necessary.  See
@@ -228,7 +228,7 @@ namespace Numpy
         /// Axis or axes along which the maximum is computed. The default is to compute
         /// the maximum of the flattened array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  The default
         /// is None; if provided, it must have the same shape as the
         /// expected output, but the type will be cast if necessary.  See
@@ -281,7 +281,7 @@ namespace Numpy
         /// If this is a tuple of ints, a reduction is performed on multiple
         /// axes, instead of a single axis or all the axes as before.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type of the output values will be cast if necessary.
@@ -345,7 +345,7 @@ namespace Numpy
         /// default is to compute the percentile(s) along a flattened
         /// version of the array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -417,7 +417,7 @@ namespace Numpy
         /// Percentile or sequence of percentiles to compute, which must be between
         /// 0 and 100 inclusive.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -489,7 +489,7 @@ namespace Numpy
         /// default is to compute the percentile(s) along a flattened
         /// version of the array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -569,7 +569,7 @@ namespace Numpy
         /// Percentile or sequence of percentiles to compute, which must be between
         /// 0 and 100 inclusive.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -638,7 +638,7 @@ namespace Numpy
         /// default is to compute the quantile(s) along a flattened
         /// version of the array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -709,7 +709,7 @@ namespace Numpy
         /// Quantile or sequence of quantiles to compute, which must be between
         /// 0 and 1 inclusive.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -770,7 +770,7 @@ namespace Numpy
         /// default is to compute the quantile(s) along a flattened
         /// version of the array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -839,7 +839,7 @@ namespace Numpy
         /// Quantile or sequence of quantiles to compute, which must be between
         /// 0 and 1 inclusive.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -901,7 +901,7 @@ namespace Numpy
         /// is to compute the median along a flattened version of the array.
         /// A sequence of axes is supported since version 1.9.0.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -959,7 +959,7 @@ namespace Numpy
         /// <param name="a">
         /// Input array or object that can be converted to an array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -1138,7 +1138,7 @@ namespace Numpy
         /// is float64; for floating point inputs, it is the same as the
         /// input dtype.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  The default
         /// is None; if provided, it must have the same shape as the
         /// expected output, but the type will be cast if necessary.
@@ -1206,7 +1206,7 @@ namespace Numpy
         /// is float64; for floating point inputs, it is the same as the
         /// input dtype.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  The default
         /// is None; if provided, it must have the same shape as the
         /// expected output, but the type will be cast if necessary.
@@ -1277,7 +1277,7 @@ namespace Numpy
         /// integer type the default is float64, for arrays of float types it is
         /// the same as the array type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must have
         /// the same shape as the expected output but the type (of the calculated
         /// values) will be cast if necessary.
@@ -1359,7 +1359,7 @@ namespace Numpy
         /// integer type the default is float64, for arrays of float types it is
         /// the same as the array type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must have
         /// the same shape as the expected output but the type (of the calculated
         /// values) will be cast if necessary.
@@ -1433,7 +1433,7 @@ namespace Numpy
         /// the default is float32; for arrays of float types it is the same as
         /// the array type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  It must have
         /// the same shape as the expected output, but the type is cast if
         /// necessary.
@@ -1513,7 +1513,7 @@ namespace Numpy
         /// the default is float32; for arrays of float types it is the same as
         /// the array type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  It must have
         /// the same shape as the expected output, but the type is cast if
         /// necessary.
@@ -1563,7 +1563,7 @@ namespace Numpy
         /// is to compute the median along a flattened version of the array.
         /// A sequence of axes is supported since version 1.9.0.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -1627,7 +1627,7 @@ namespace Numpy
         /// <param name="a">
         /// Input array or object that can be converted to an array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must
         /// have the same shape and buffer length as the expected output,
         /// but the type (of the output) will be cast if necessary.
@@ -1696,7 +1696,7 @@ namespace Numpy
         /// is float64; for inexact inputs, it is the same as the input
         /// dtype.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  The default
         /// is None; if provided, it must have the same shape as the
         /// expected output, but the type will be cast if necessary.  See
@@ -1763,7 +1763,7 @@ namespace Numpy
         /// is float64; for inexact inputs, it is the same as the input
         /// dtype.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  The default
         /// is None; if provided, it must have the same shape as the
         /// expected output, but the type will be cast if necessary.  See
@@ -1837,7 +1837,7 @@ namespace Numpy
         /// integer type the default is float64, for arrays of float types it
         /// is the same as the array type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must have
         /// the same shape as the expected output but the type (of the
         /// calculated values) will be cast if necessary.
@@ -1925,7 +1925,7 @@ namespace Numpy
         /// integer type the default is float64, for arrays of float types it
         /// is the same as the array type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternative output array in which to place the result. It must have
         /// the same shape as the expected output but the type (of the
         /// calculated values) will be cast if necessary.
@@ -2004,7 +2004,7 @@ namespace Numpy
         /// the default is float32; for arrays of float types it is the same as
         /// the array type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  It must have
         /// the same shape as the expected output, but the type is cast if
         /// necessary.
@@ -2086,7 +2086,7 @@ namespace Numpy
         /// the default is float32; for arrays of float types it is the same as
         /// the array type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  It must have
         /// the same shape as the expected output, but the type is cast if
         /// necessary.

@@ -54,7 +54,7 @@ namespace Numpy
         
         
         //auto-generated
-        protected PyTuple ToTuple(Array input)
+        public PyTuple ToTuple(Array input)
         {
             var array = new PyObject[input.Length];
             for (int i = 0; i < input.Length; i++)
@@ -65,16 +65,18 @@ namespace Numpy
         }
         
         //auto-generated
-        protected PyObject ToPython(object obj)
+        public PyObject ToPython(object obj)
         {
             if (obj == null) return Runtime.GetPyNone();
             switch (obj)
             {
                 // basic types
                 case int o: return new PyInt(o);
+                case long o: return new PyLong(o);
                 case float o: return new PyFloat(o);
                 case double o: return new PyFloat(o);
                 case string o: return new PyString(o);
+                case bool o: return ConverterExtension.ToPython(o);
                 case PyObject o: return o;
                 // sequence types
                 case Array o: return ToTuple(o);
@@ -87,7 +89,7 @@ namespace Numpy
         }
         
         //auto-generated
-        protected T ToCsharp<T>(dynamic pyobj)
+        public T ToCsharp<T>(dynamic pyobj)
         {
             switch (typeof(T).Name)
             {
@@ -107,13 +109,29 @@ namespace Numpy
                    default: throw new NotImplementedException($"Type NDarray<{typeof(T).GenericTypeArguments[0].Name}> missing. Add it to 'ToCsharpConversions'");
                 }
                 break;
+                case "NDarray[]":
+                   var po = pyobj as PyObject;
+                   var len = po.Length();
+                   var rv = new NDarray[len];
+                   for (int i = 0; i < len; i++)
+                       rv[i] = ToCsharp<NDarray>(po[i]);
+                   return (T) (object) rv;
                 case "Matrix": return (T)(object)new Matrix(pyobj);
-                default: return (T)pyobj;
+                default:
+                try
+                {
+                    return pyobj.As<T>();
+                }
+                catch (Exception e)
+                {
+                    throw new NotImplementedException($"conversion from {typeof(T).Name} to {pyobj.__class__} not implemented", e);
+                    return default(T);
+                }
             }
         }
         
         //auto-generated
-        protected T SharpToSharp<T>(object obj)
+        public T SharpToSharp<T>(object obj)
         {
             if (obj == null) return default(T);
             switch (obj)

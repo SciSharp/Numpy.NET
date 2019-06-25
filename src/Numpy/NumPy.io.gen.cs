@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -1114,7 +1114,7 @@ namespace Numpy
         /// <param name="number">
         /// The value to convert. Positive and negative values are handled.
         /// </param>
-        /// <param name="@base">
+        /// <param name="base">
         /// Convert number to the base number system. The valid range is 2-36,
         /// the default value is 2.
         /// </param>

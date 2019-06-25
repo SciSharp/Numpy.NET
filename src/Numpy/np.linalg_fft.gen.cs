@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -355,7 +355,7 @@ namespace Numpy
             /// is B.
             /// </returns>
             public static NDarray pinv(NDarray a, float rcond = 1e-15f)
-                => NumPy.Instance.linalg_pinv(a, rcond);
+                => NumPy.Instance.linalg_pinv(a, rcond:rcond);
         }
         
         public static partial class linalg {

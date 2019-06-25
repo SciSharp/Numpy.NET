@@ -34,9 +34,7 @@ namespace Numpy
         public NDarray core_defchararray_add(string[] x1, string[] x2)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 x1,
@@ -60,9 +58,7 @@ namespace Numpy
         public NDarray core_defchararray_multiply(string[] a, int[] i)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -87,9 +83,7 @@ namespace Numpy
         public NDarray core_defchararray_mod(string[] a, NDarray values)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -115,12 +109,10 @@ namespace Numpy
         /// Output array of str or unicode, depending on input
         /// types
         /// </returns>
-        public NDarray core_defchararray_capitalize(string[] a)
+        public NDarray core_defchararray_capitalize(params string[] a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -149,9 +141,7 @@ namespace Numpy
         public NDarray core_defchararray_center(string[] a, int width, string fillchar = " ")
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -183,9 +173,7 @@ namespace Numpy
         public NDarray core_defchararray_decode(string[] a, string encoding = null, string errors = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -217,9 +205,7 @@ namespace Numpy
         public NDarray core_defchararray_encode(string[] a, string encoding = null, string errors = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -243,9 +229,7 @@ namespace Numpy
         public NDarray core_defchararray_join(string[] sep, string[] seq)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 sep,
@@ -274,9 +258,7 @@ namespace Numpy
         public NDarray core_defchararray_ljust(string[] a, int width, string fillchar = " ")
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -304,9 +286,7 @@ namespace Numpy
         public NDarray core_defchararray_lower(NDarray a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -338,9 +318,7 @@ namespace Numpy
         public NDarray core_defchararray_lstrip(NDarray a, string chars = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -376,9 +354,7 @@ namespace Numpy
         public NDarray core_defchararray_partition(NDarray a, string sep)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -405,9 +381,7 @@ namespace Numpy
         public NDarray core_defchararray_replace(string[] a, string @new, string old, int? count = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -438,9 +412,7 @@ namespace Numpy
         public NDarray core_defchararray_rjust(string[] a, int width, string fillchar = " ")
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -477,9 +449,7 @@ namespace Numpy
         public NDarray core_defchararray_rpartition(string[] a, string sep)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -513,9 +483,7 @@ namespace Numpy
         public NDarray core_defchararray_rsplit(string[] a, string sep = null, int? maxsplit = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -546,9 +514,7 @@ namespace Numpy
         public NDarray core_defchararray_rstrip(string[] a, string chars = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -578,9 +544,7 @@ namespace Numpy
         public NDarray core_defchararray_split(string[] a, string sep = null, int? maxsplit = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -608,9 +572,7 @@ namespace Numpy
         public NDarray core_defchararray_splitlines(string[] a, bool? keepends = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -640,9 +602,7 @@ namespace Numpy
         public NDarray core_defchararray_strip(string[] a, string chars = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -670,9 +630,7 @@ namespace Numpy
         public NDarray core_defchararray_swapcase(NDarray a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -701,9 +659,7 @@ namespace Numpy
         public NDarray core_defchararray_title(NDarray a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -727,9 +683,7 @@ namespace Numpy
         public NDarray core_defchararray_translate(string[] a, string table, string deletechars)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -757,9 +711,7 @@ namespace Numpy
         public NDarray core_defchararray_upper(NDarray a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -786,9 +738,7 @@ namespace Numpy
         public NDarray core_defchararray_zfill(NDarray a, int width)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -818,9 +768,7 @@ namespace Numpy
         public NDarray core_defchararray_equal(string[] x2, string[] x1)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 x2,
@@ -850,9 +798,7 @@ namespace Numpy
         public NDarray core_defchararray_not_equal(string[] x2, string[] x1)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 x2,
@@ -883,9 +829,7 @@ namespace Numpy
         public NDarray core_defchararray_greater_equal(string[] x2, string[] x1)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 x2,
@@ -915,9 +859,7 @@ namespace Numpy
         public NDarray core_defchararray_less_equal(string[] x2, string[] x1)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 x2,
@@ -947,9 +889,7 @@ namespace Numpy
         public NDarray core_defchararray_greater(string[] x2, string[] x1)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 x2,
@@ -979,9 +919,7 @@ namespace Numpy
         public NDarray core_defchararray_less(string[] x2, string[] x1)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 x2,
@@ -1015,9 +953,7 @@ namespace Numpy
         public NDarray core_defchararray_count(string[] a, string sub, int? end = null, int? start = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1054,9 +990,7 @@ namespace Numpy
         public NDarray core_defchararray_find(string[] a, string sub, int? end = null, int? start = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1080,9 +1014,7 @@ namespace Numpy
         public NDarray core_defchararray_index(string[] a, string sub, int? end = null, int? start = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1106,12 +1038,10 @@ namespace Numpy
         /// <returns>
         /// Output array of bools
         /// </returns>
-        public NDarray core_defchararray_isalpha(string[] a)
+        public NDarray core_defchararray_isalpha(params string[] a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1140,9 +1070,7 @@ namespace Numpy
         public NDarray core_defchararray_isdecimal(NDarray a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1163,12 +1091,10 @@ namespace Numpy
         /// <returns>
         /// Output array of bools
         /// </returns>
-        public NDarray core_defchararray_isdigit(string[] a)
+        public NDarray core_defchararray_isdigit(params string[] a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1190,12 +1116,10 @@ namespace Numpy
         /// <returns>
         /// Output array of bools
         /// </returns>
-        public NDarray core_defchararray_islower(string[] a)
+        public NDarray core_defchararray_islower(params string[] a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1224,9 +1148,7 @@ namespace Numpy
         public NDarray core_defchararray_isnumeric(NDarray a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1248,12 +1170,10 @@ namespace Numpy
         /// <returns>
         /// Output array of bools
         /// </returns>
-        public NDarray core_defchararray_isspace(string[] a)
+        public NDarray core_defchararray_isspace(params string[] a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1274,12 +1194,10 @@ namespace Numpy
         /// <returns>
         /// Output array of bools
         /// </returns>
-        public NDarray core_defchararray_istitle(string[] a)
+        public NDarray core_defchararray_istitle(params string[] a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1301,12 +1219,10 @@ namespace Numpy
         /// <returns>
         /// Output array of bools
         /// </returns>
-        public NDarray core_defchararray_isupper(string[] a)
+        public NDarray core_defchararray_isupper(params string[] a)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1337,9 +1253,7 @@ namespace Numpy
         public NDarray core_defchararray_rfind(string[] a, string sub, int? end = null, int? start = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1364,9 +1278,7 @@ namespace Numpy
         public NDarray core_defchararray_rindex(string[] a, string sub, int? end = null, int? start = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1399,9 +1311,7 @@ namespace Numpy
         public NDarray core_defchararray_startswith(string[] a, string prefix, int? end = null, int? start = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 a,
@@ -1459,9 +1369,7 @@ namespace Numpy
         public void core_defchararray_chararray(Shape shape, int? itemsize = null, bool? unicode = null, int? buffer = null, int? offset = null, int[] strides = null, string order = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 shape,

@@ -90,7 +90,7 @@ namespace Numpy
                 /// Output array of str or unicode, depending on input
                 /// types
                 /// </returns>
-                public static NDarray capitalize(string[] a)
+                public static NDarray capitalize(params string[] a)
                     => NumPy.Instance.core_defchararray_capitalize(a);
             }
         }
@@ -791,7 +791,7 @@ namespace Numpy
                 /// <returns>
                 /// Output array of bools
                 /// </returns>
-                public static NDarray isalpha(string[] a)
+                public static NDarray isalpha(params string[] a)
                     => NumPy.Instance.core_defchararray_isalpha(a);
             }
         }
@@ -832,7 +832,7 @@ namespace Numpy
                 /// <returns>
                 /// Output array of bools
                 /// </returns>
-                public static NDarray isdigit(string[] a)
+                public static NDarray isdigit(params string[] a)
                     => NumPy.Instance.core_defchararray_isdigit(a);
             }
         }
@@ -851,7 +851,7 @@ namespace Numpy
                 /// <returns>
                 /// Output array of bools
                 /// </returns>
-                public static NDarray islower(string[] a)
+                public static NDarray islower(params string[] a)
                     => NumPy.Instance.core_defchararray_islower(a);
             }
         }
@@ -893,7 +893,7 @@ namespace Numpy
                 /// <returns>
                 /// Output array of bools
                 /// </returns>
-                public static NDarray isspace(string[] a)
+                public static NDarray isspace(params string[] a)
                     => NumPy.Instance.core_defchararray_isspace(a);
             }
         }
@@ -911,7 +911,7 @@ namespace Numpy
                 /// <returns>
                 /// Output array of bools
                 /// </returns>
-                public static NDarray istitle(string[] a)
+                public static NDarray istitle(params string[] a)
                     => NumPy.Instance.core_defchararray_istitle(a);
             }
         }
@@ -930,7 +930,7 @@ namespace Numpy
                 /// <returns>
                 /// Output array of bools
                 /// </returns>
-                public static NDarray isupper(string[] a)
+                public static NDarray isupper(params string[] a)
                     => NumPy.Instance.core_defchararray_isupper(a);
             }
         }

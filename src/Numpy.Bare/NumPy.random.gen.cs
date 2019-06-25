@@ -217,7 +217,7 @@ namespace Numpy
         /// Array of random floats of shape size (unless size=None, in which
         /// case a single float is returned).
         /// </returns>
-        public NDarray<float> random_random_sample(int[] size = null)
+        public NDarray<float> random_random_sample(params int[] size)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -247,7 +247,7 @@ namespace Numpy
         /// Array of random floats of shape size (unless size=None, in which
         /// case a single float is returned).
         /// </returns>
-        public NDarray<float> random_random(int[] size = null)
+        public NDarray<float> random_random(params int[] size)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -277,7 +277,7 @@ namespace Numpy
         /// Array of random floats of shape size (unless size=None, in which
         /// case a single float is returned).
         /// </returns>
-        public NDarray<float> random_ranf(int[] size = null)
+        public NDarray<float> random_ranf(params int[] size)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -307,7 +307,7 @@ namespace Numpy
         /// Array of random floats of shape size (unless size=None, in which
         /// case a single float is returned).
         /// </returns>
-        public NDarray<float> random_sample(int[] size = null)
+        public NDarray<float> random_sample(params int[] size)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -790,9 +790,9 @@ namespace Numpy
             var __self__=random;
             var pyargs=ToTuple(new object[]
             {
-                scale,
             });
             var kwargs=new PyDict();
+            if (scale!=null) kwargs["scale"]=ToPython(scale);
             if (size!=null) kwargs["size"]=ToPython(size);
             dynamic py = __self__.InvokeMethod("exponential", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
@@ -1879,7 +1879,7 @@ namespace Numpy
         /// <returns>
         /// The drawn samples.
         /// </returns>
-        public NDarray random_standard_cauchy(int[] size = null)
+        public NDarray random_standard_cauchy(params int[] size)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1907,7 +1907,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples.
         /// </returns>
-        public NDarray random_standard_exponential(int[] size = null)
+        public NDarray random_standard_exponential(params int[] size)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -1978,7 +1978,7 @@ namespace Numpy
         /// <returns>
         /// Drawn samples.
         /// </returns>
-        public NDarray random_standard_normal(int[] size = null)
+        public NDarray random_standard_normal(params int[] size)
         {
             //auto-generated code, do not change
             var random = self.GetAttr("random");
@@ -2532,7 +2532,7 @@ namespace Numpy
         /// random distributions in NumPy. If the internal state is manually altered,
         /// the user should know exactly what he/she is doing.
         /// </summary>
-        /// <param name="@out">
+        /// <param name="out">
         /// The returned tuple has the following items:
         /// </param>
         /// <returns>

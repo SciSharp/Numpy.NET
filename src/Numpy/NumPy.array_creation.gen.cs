@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -1305,11 +1305,11 @@ namespace Numpy
             var pyargs=ToTuple(new object[]
             {
                 file,
-                dtype,
-                count,
-                sep,
             });
             var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (count!=-1) kwargs["count"]=ToPython(count);
+            if (sep!="") kwargs["sep"]=ToPython(sep);
             dynamic py = __self__.InvokeMethod("fromfile", pyargs, kwargs);
         }
         
@@ -1398,7 +1398,7 @@ namespace Numpy
         /// <summary>
         /// A new 1-D array initialized from text data in a string.
         /// </summary>
-        /// <param name="@string">
+        /// <param name="string">
         /// A string containing the data.
         /// </param>
         /// <param name="dtype">
@@ -1572,9 +1572,7 @@ namespace Numpy
         public void core_defchararray_array(string[] obj, int? itemsize = null, bool? copy = true, bool? unicode = null, string order = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 obj,
@@ -1680,9 +1678,7 @@ namespace Numpy
         public void core_defchararray_asarray(string[] obj, int? itemsize = null, bool? unicode = null, string order = null)
         {
             //auto-generated code, do not change
-            var core = self.GetAttr("core");
-            var defchararray = core.GetAttr("defchararray");
-            var __self__=defchararray;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 obj,
@@ -2407,7 +2403,7 @@ namespace Numpy
         /// If true, stop is the last sample. Otherwise, it is not included.
         /// Default is True.
         /// </param>
-        /// <param name="@base">
+        /// <param name="base">
         /// The base of the log space. The step size between the elements in
         /// ln(samples) / ln(base) (or log_base(samples)) is uniform.
         /// Default is 10.0.

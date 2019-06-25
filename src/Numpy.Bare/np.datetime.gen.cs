@@ -38,7 +38,7 @@ namespace Numpy
         /// An array of strings the same shape as arr.
         /// </returns>
         public static NDarray datetime_as_string(string[] arr, string unit, string timezone = "naive", string casting = "same_kind")
-            => NumPy.Instance.datetime_as_string(arr, unit, timezone, casting);
+            => NumPy.Instance.datetime_as_string(arr, unit, timezone:timezone, casting:casting);
         
         /// <summary>
         /// Get information about the step size of a date or time type.
@@ -121,7 +121,7 @@ namespace Numpy
         /// parameter is provided, neither weekmask nor holidays may be
         /// provided.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, this array is filled with the result.
         /// </param>
         /// <returns>
@@ -167,7 +167,7 @@ namespace Numpy
         /// parameter is provided, neither weekmask nor holidays may be
         /// provided.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, this array is filled with the result.
         /// </param>
         /// <returns>
@@ -212,7 +212,7 @@ namespace Numpy
         /// parameter is provided, neither weekmask nor holidays may be
         /// provided.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, this array is filled with the result.
         /// </param>
         /// <returns>

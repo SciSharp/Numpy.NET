@@ -168,7 +168,7 @@ namespace Numpy
         /// <param name="rep">
         /// The object of which the type is returned.
         /// </param>
-        /// <param name="@default">
+        /// <param name="default">
         /// If given, this is returned for objects whose types can not be
         /// determined. If not given, None is returned for those objects.
         /// </param>
@@ -372,7 +372,7 @@ namespace Numpy
         /// <summary>
         /// Return a description for the given data type code.
         /// </summary>
-        /// <param name="@char">
+        /// <param name="char">
         /// Data type code.
         /// </param>
         /// <returns>
@@ -412,7 +412,7 @@ namespace Numpy
         /// The set of characters that the returned character is chosen from.
         /// The default set is ‘GDFgdf’.
         /// </param>
-        /// <param name="@default">
+        /// <param name="default">
         /// The default character, this is returned if none of the characters in
         /// typechars matches a character in typeset.
         /// </param>

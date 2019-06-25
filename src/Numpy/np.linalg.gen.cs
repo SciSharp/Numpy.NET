@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -26,7 +26,7 @@ namespace Numpy
         /// <param name="b">
         /// Second argument.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Output argument. This must have the exact kind that would be returned
         /// if it was not used. In particular, it must have the right type, must be
         /// C-contiguous, and its dtype must be the dtype that would be returned
@@ -78,7 +78,7 @@ namespace Numpy
             /// <returns>
             /// Returns the dot product of the supplied arrays.
             /// </returns>
-            public static NDarray multi_dot(NDarray[] arrays)
+            public static NDarray multi_dot(params NDarray[] arrays)
                 => NumPy.Instance.linalg_multi_dot(arrays);
         }
         
@@ -152,7 +152,7 @@ namespace Numpy
         /// Second input vector.  Input is flattened if
         /// not already 1-dimensional.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location where the result is stored
         /// </param>
         /// <returns>
@@ -179,7 +179,7 @@ namespace Numpy
         /// <param name="x1">
         /// Input arrays, scalars not allowed.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that matches the signature (n,k),(k,m)-&gt;(n,m). If not
         /// provided or None, a freshly-allocated array is returned.
@@ -221,7 +221,7 @@ namespace Numpy
         /// Tensors to “dot”.
         /// </param>
         public static NDarray tensordot(NDarray b, NDarray a, int[] axes = null)
-            => NumPy.Instance.tensordot(b, a, axes);
+            => NumPy.Instance.tensordot(b, a, axes:axes);
         
         /// <summary>
         /// Evaluates the Einstein summation convention on the operands.
@@ -326,7 +326,7 @@ namespace Numpy
         /// <param name="operands">
         /// These are the arrays for the operation.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the calculation is done into this array.
         /// </param>
         /// <param name="dtype">
@@ -394,7 +394,7 @@ namespace Numpy
         /// A printable representation of the einsum path.
         /// </returns>
         public static (list of tuples, string) einsum_path(string subscripts, NDarray[] operands, {bool optimize = "greedy")
-            => NumPy.Instance.einsum_path(subscripts, operands, optimize);
+            => NumPy.Instance.einsum_path(subscripts, operands, optimize:optimize);
         */
         
         public static partial class linalg {
@@ -676,7 +676,7 @@ namespace Numpy
         /// precision, then the default integer precision is used. Otherwise,
         /// the precision is the same as that of a.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Array into which the output is placed. Its type is preserved and
         /// it must be of the right shape to hold the output.
         /// </param>

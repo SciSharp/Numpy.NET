@@ -177,7 +177,7 @@ namespace Numpy
         /// N arrays with N dimensions each, with N the number of input
         /// sequences. Together these arrays form an open mesh.
         /// </returns>
-        public static NDarray[] ix_(NDarray[] args)
+        public static NDarray[] ix_(params NDarray[] args)
             => NumPy.Instance.ix_(args);
         
         /*
@@ -296,7 +296,7 @@ namespace Numpy
         /// mask_func(np.ones((n, n)), k) is True.
         /// </returns>
         public static NDarray[] mask_indices(int n, Delegate mask_func, int k = 0)
-            => NumPy.Instance.mask_indices(n, mask_func, k);
+            => NumPy.Instance.mask_indices(n, mask_func, k:k);
         
         /// <summary>
         /// Return the indices for the lower-triangle of an (n, m) array.
@@ -417,7 +417,7 @@ namespace Numpy
         /// The axis over which to select values. By default, the flattened
         /// input array is used.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the result will be placed in this array. It should
         /// be of the appropriate shape and dtype.
         /// </param>
@@ -504,7 +504,7 @@ namespace Numpy
         /// its outermost dimension (i.e., the one corresponding to
         /// choices.shape[0]) is taken as defining the “sequence”.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the result will be inserted into this array. It should
         /// be of the appropriate shape and dtype.
         /// </param>
@@ -536,7 +536,7 @@ namespace Numpy
         /// Axis along which to take slices. If None (default), work on the
         /// flattened array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Output array.  Its type is preserved and it must be of the right
         /// shape to hold the output.
         /// </param>
@@ -620,7 +620,7 @@ namespace Numpy
         /// The list of arrays from which the output elements are taken. It has
         /// to be of the same length as condlist.
         /// </param>
-        /// <param name="@default">
+        /// <param name="default">
         /// The element inserted in output when all conditions evaluate to False.
         /// </param>
         /// <returns>
@@ -814,7 +814,7 @@ namespace Numpy
         /// with this option. This affects only tall matrices.
         /// </param>
         public static void fill_diagonal(NDarray a, ValueType val, bool wrap = false)
-            => NumPy.Instance.fill_diagonal(a, val, wrap);
+            => NumPy.Instance.fill_diagonal(a, val, wrap:wrap);
         
         /*
         /// <summary>
@@ -902,7 +902,7 @@ namespace Numpy
         /// <param name="args">
         /// The size of each dimension of the array.
         /// </param>
-        public static void ndindex(int[] args)
+        public static void ndindex(params int[] args)
             => NumPy.Instance.ndindex(args);
         
         /*
@@ -924,7 +924,7 @@ namespace Numpy
         /// An nditer for each item in axes, outermost first
         /// </returns>
         public static tuple of nditer nested_iters(NDarray op, int[] axes = null)
-            => NumPy.Instance.nested_iters(op, axes);
+            => NumPy.Instance.nested_iters(op, axes:axes);
         */
         
         /// <summary>
@@ -970,7 +970,7 @@ namespace Numpy
             /// returned the process continues from the next dimension, until all
             /// elements have been read.
             /// </summary>
-            /// <param name="@var">
+            /// <param name="var">
             /// The object to iterate over.
             /// </param>
             /// <param name="buf_size">

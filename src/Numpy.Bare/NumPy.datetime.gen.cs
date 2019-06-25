@@ -45,10 +45,10 @@ namespace Numpy
             {
                 arr,
                 unit,
-                timezone,
-                casting,
             });
             var kwargs=new PyDict();
+            if (timezone!="naive") kwargs["timezone"]=ToPython(timezone);
+            if (casting!="same_kind") kwargs["casting"]=ToPython(casting);
             dynamic py = __self__.InvokeMethod("datetime_as_string", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }
@@ -156,7 +156,7 @@ namespace Numpy
         /// parameter is provided, neither weekmask nor holidays may be
         /// provided.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, this array is filled with the result.
         /// </param>
         /// <returns>
@@ -216,7 +216,7 @@ namespace Numpy
         /// parameter is provided, neither weekmask nor holidays may be
         /// provided.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, this array is filled with the result.
         /// </param>
         /// <returns>
@@ -277,7 +277,7 @@ namespace Numpy
         /// parameter is provided, neither weekmask nor holidays may be
         /// provided.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, this array is filled with the result.
         /// </param>
         /// <returns>

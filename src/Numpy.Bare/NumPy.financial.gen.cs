@@ -39,7 +39,7 @@ namespace Numpy
         /// <param name="pv">
         /// Present value
         /// </param>
-        /// <param name="@when">
+        /// <param name="when">
         /// When payments are due (‘begin’ (1) or ‘end’ (0)).
         /// Defaults to {‘end’, 0}.
         /// </param>
@@ -90,7 +90,7 @@ namespace Numpy
         /// <param name="fv">
         /// Future value
         /// </param>
-        /// <param name="@when">
+        /// <param name="when">
         /// When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         /// <returns>
@@ -184,7 +184,7 @@ namespace Numpy
         /// <param name="fv">
         /// Future value (default = 0)
         /// </param>
-        /// <param name="@when">
+        /// <param name="when">
         /// When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         /// <returns>
@@ -229,7 +229,7 @@ namespace Numpy
         /// <param name="fv">
         /// Future value
         /// </param>
-        /// <param name="@when">
+        /// <param name="when">
         /// When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         public void ppmt(NDarray rate, NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
@@ -274,7 +274,7 @@ namespace Numpy
         /// <param name="fv">
         /// Future value
         /// </param>
-        /// <param name="@when">
+        /// <param name="when">
         /// When payments are due (‘begin’ (1) or ‘end’ (0)).
         /// Defaults to {‘end’, 0}.
         /// </param>
@@ -404,7 +404,7 @@ namespace Numpy
         /// <param name="fv">
         /// Future value
         /// </param>
-        /// <param name="@when">
+        /// <param name="when">
         /// When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         public void nper(NDarray rate, NDarray pmt, NDarray pv, NDarray fv = null, string @when = "end")
@@ -455,7 +455,7 @@ namespace Numpy
         /// <param name="fv">
         /// Future value
         /// </param>
-        /// <param name="@when">
+        /// <param name="when">
         /// When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         /// <param name="guess">

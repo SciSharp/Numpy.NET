@@ -354,7 +354,7 @@ namespace Numpy
             /// is B.
             /// </returns>
             public static NDarray pinv(NDarray a, float rcond = 1e-15f)
-                => NumPy.Instance.linalg_pinv(a, rcond);
+                => NumPy.Instance.linalg_pinv(a, rcond:rcond);
         }
         
         public static partial class linalg {

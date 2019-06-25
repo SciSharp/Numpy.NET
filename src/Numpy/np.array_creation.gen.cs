@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -517,7 +517,7 @@ namespace Numpy
         /// and a copy is forced by a change in dtype, then the order of the result is
         /// not necessarily ‘C’ as expected. This is likely a bug.
         /// </summary>
-        /// <param name="@object">
+        /// <param name="object">
         /// An array, any object exposing the array interface, an object whose
         /// __array__ method returns an array, or any (nested) sequence.
         /// </param>
@@ -567,7 +567,7 @@ namespace Numpy
         /// and a copy is forced by a change in dtype, then the order of the result is
         /// not necessarily ‘C’ as expected. This is likely a bug.
         /// </summary>
-        /// <param name="@object">
+        /// <param name="object">
         /// An array, any object exposing the array interface, an object whose
         /// __array__ method returns an array, or any (nested) sequence.
         /// </param>
@@ -617,7 +617,7 @@ namespace Numpy
         /// and a copy is forced by a change in dtype, then the order of the result is
         /// not necessarily ‘C’ as expected. This is likely a bug.
         /// </summary>
-        /// <param name="@object">
+        /// <param name="object">
         /// An array, any object exposing the array interface, an object whose
         /// __array__ method returns an array, or any (nested) sequence.
         /// </param>
@@ -1033,7 +1033,7 @@ namespace Numpy
         /// whitespace.
         /// </param>
         public static void fromfile(string file, Dtype dtype = null, int count = -1, string sep = "")
-            => NumPy.Instance.fromfile(file, dtype, count, sep);
+            => NumPy.Instance.fromfile(file, dtype:dtype, count:count, sep:sep);
         
         /// <summary>
         /// Construct an array by executing a function over each coordinate.
@@ -1096,7 +1096,7 @@ namespace Numpy
         /// <summary>
         /// A new 1-D array initialized from text data in a string.
         /// </summary>
-        /// <param name="@string">
+        /// <param name="string">
         /// A string containing the data.
         /// </param>
         /// <param name="dtype">
@@ -1869,7 +1869,7 @@ namespace Numpy
         /// If true, stop is the last sample. Otherwise, it is not included.
         /// Default is True.
         /// </param>
-        /// <param name="@base">
+        /// <param name="base">
         /// The base of the log space. The step size between the elements in
         /// ln(samples) / ln(base) (or log_base(samples)) is uniform.
         /// Default is 10.0.

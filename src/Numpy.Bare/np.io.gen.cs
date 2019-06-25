@@ -852,7 +852,7 @@ namespace Numpy
         /// <param name="number">
         /// The value to convert. Positive and negative values are handled.
         /// </param>
-        /// <param name="@base">
+        /// <param name="base">
         /// Convert number to the base number system. The valid range is 2-36,
         /// the default value is 2.
         /// </param>

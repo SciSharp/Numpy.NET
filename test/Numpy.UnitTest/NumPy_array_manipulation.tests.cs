@@ -18,7 +18,7 @@ namespace Numpy.UnitTest
     [TestClass]
     public class NumPy_array_manipulationTest : BaseTestCase
     {
-        
+
         [TestMethod]
         public void reshapeTest()
         {
@@ -29,14 +29,14 @@ namespace Numpy.UnitTest
             // array([1, 4, 2, 5, 3, 6])
             // 
 
-            var a = np.array(new [,]{{1,2,3}, {4,5,6}});
-             var given=  np.reshape(a, 6);
-            var expected=
+            var a = np.array(new[,] { { 1, 2, 3 }, { 4, 5, 6 } });
+            var given = np.reshape(a, 6);
+            var expected =
                 "array([1, 2, 3, 4, 5, 6])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.reshape(a, new Shape(6), order:"F");
-             expected=
-                "array([1, 4, 2, 5, 3, 6])";
+            given = np.reshape(a, new Shape(6), order: "F");
+            expected =
+               "array([1, 4, 2, 5, 3, 6])";
             Assert.AreEqual(expected, given.repr);
             // >>> np.reshape(a, (3,-1))       # the unspecified value is inferred to be 2
             // array([[1, 2],
@@ -45,60 +45,60 @@ namespace Numpy.UnitTest
             // 
 
             given = np.reshape(a, 3, -1);       // the unspecified value is inferred to be 2;
-             expected=
-                "array([[1, 2],\n" +
-                "       [3, 4],\n" +
-                "       [5, 6]])";
+            expected =
+               "array([[1, 2],\n" +
+               "       [3, 4],\n" +
+               "       [5, 6]])";
             Assert.AreEqual(expected, given.repr);
         }
-        
-        
+
+
         [TestMethod]
         public void ravelTest()
         {
             // It is equivalent to reshape(-1, order=order).
-            
+
             // >>> x = np.array([[1, 2, 3], [4, 5, 6]])
             // >>> print(np.ravel(x))
             // [1 2 3 4 5 6]
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.array({{1, 2, 3}, {4, 5, 6}});
              given=  print(np.ravel(x));
             var expected=
                 "[1 2 3 4 5 6]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> print(x.reshape(-1))
             // [1 2 3 4 5 6]
             // 
-            
-            #if TODO
+
+#if TODO
              given=  print(x.reshape(-1));
              expected=
                 "[1 2 3 4 5 6]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> print(np.ravel(x, order='F'))
             // [1 4 2 5 3 6]
             // 
-            
-            #if TODO
+
+#if TODO
              given=  print(np.ravel(x, order='F'));
              expected=
                 "[1 4 2 5 3 6]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // When order is ‘A’, it will preserve the array’s ‘C’ or ‘F’ ordering:
-            
+
             // >>> print(np.ravel(x.T))
             // [1 4 2 5 3 6]
             // >>> print(np.ravel(x.T, order='A'))
             // [1 2 3 4 5 6]
             // 
-            
-            #if TODO
+
+#if TODO
              given=  print(np.ravel(x.T));
              expected=
                 "[1 4 2 5 3 6]";
@@ -107,10 +107,10 @@ namespace Numpy.UnitTest
              expected=
                 "[1 2 3 4 5 6]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // When order is ‘K’, it will preserve orderings that are neither ‘C’
             // nor ‘F’, but won’t reverse axes:
-            
+
             // >>> a = np.arange(3)[::-1]; a
             // array([2, 1, 0])
             // >>> a.ravel(order='C')
@@ -118,8 +118,8 @@ namespace Numpy.UnitTest
             // >>> a.ravel(order='K')
             // array([2, 1, 0])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(3){::-1}; a;
              expected=
                 "array([2, 1, 0])";
@@ -132,7 +132,7 @@ namespace Numpy.UnitTest
              expected=
                 "array([2, 1, 0])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.arange(12).reshape(2,3,2).swapaxes(1,2); a
             // array([[[ 0,  2,  4],
             //         [ 1,  3,  5]],
@@ -143,8 +143,8 @@ namespace Numpy.UnitTest
             // >>> a.ravel(order='K')
             // array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(12).reshape(2,3,2).swapaxes(1,2); a;
              expected=
                 "array([[[ 0,  2,  4],\n" +
@@ -160,10 +160,10 @@ namespace Numpy.UnitTest
              expected=
                 "array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void flattenTest()
         {
@@ -173,8 +173,8 @@ namespace Numpy.UnitTest
             // >>> a.flatten('F')
             // array([1, 3, 2, 4])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({{1,2}, {3,4}});
              given=  a.flatten();
             var expected=
@@ -184,10 +184,10 @@ namespace Numpy.UnitTest
              expected=
                 "array([1, 3, 2, 4])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void moveaxisTest()
         {
@@ -197,8 +197,8 @@ namespace Numpy.UnitTest
             // >>> np.moveaxis(x, -1, 0).shape
             // (5, 3, 4)
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.zeros((3, 4, 5));
              given=  np.moveaxis(x, 0, -1).shape;
             var expected=
@@ -208,9 +208,9 @@ namespace Numpy.UnitTest
              expected=
                 "(5, 3, 4)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // These all achieve the same result:
-            
+
             // >>> np.transpose(x).shape
             // (5, 4, 3)
             // >>> np.swapaxes(x, 0, -1).shape
@@ -220,8 +220,8 @@ namespace Numpy.UnitTest
             // >>> np.moveaxis(x, [0, 1, 2], [-1, -2, -3]).shape
             // (5, 4, 3)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.transpose(x).shape;
              expected=
                 "(5, 4, 3)";
@@ -238,10 +238,10 @@ namespace Numpy.UnitTest
              expected=
                 "(5, 4, 3)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void rollaxisTest()
         {
@@ -253,8 +253,8 @@ namespace Numpy.UnitTest
             // >>> np.rollaxis(a, 1, 4).shape
             // (3, 5, 6, 4)
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.ones((3,4,5,6));
              given=  np.rollaxis(a, 3, 1).shape;
             var expected=
@@ -268,10 +268,10 @@ namespace Numpy.UnitTest
              expected=
                 "(3, 5, 6, 4)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void swapaxesTest()
         {
@@ -281,8 +281,8 @@ namespace Numpy.UnitTest
             //        [2],
             //        [3]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.array({{1,2,3}});
              given=  np.swapaxes(x,0,1);
             var expected=
@@ -290,7 +290,7 @@ namespace Numpy.UnitTest
                 "       [2],\n" +
                 "       [3]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.array([[[0,1],[2,3]],[[4,5],[6,7]]])
             // >>> x
             // array([[[0, 1],
@@ -298,8 +298,8 @@ namespace Numpy.UnitTest
             //        [[4, 5],
             //         [6, 7]]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.array({{{0,1},{2,3}},{{4,5},{6,7}}});
              given=  x;
              expected=
@@ -308,15 +308,15 @@ namespace Numpy.UnitTest
                 "       [[4, 5],\n" +
                 "        [6, 7]]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.swapaxes(x,0,2)
             // array([[[0, 4],
             //         [2, 6]],
             //        [[1, 5],
             //         [3, 7]]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.swapaxes(x,0,2);
              expected=
                 "array([[[0, 4],\n" +
@@ -324,10 +324,10 @@ namespace Numpy.UnitTest
                 "       [[1, 5],\n" +
                 "        [3, 7]]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void transposeTest()
         {
@@ -336,55 +336,55 @@ namespace Numpy.UnitTest
             // array([[0, 1],
             //        [2, 3]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.arange(4).reshape((2,2));
              given=  x;
             var expected=
                 "array([[0, 1],\n" +
                 "       [2, 3]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.transpose(x)
             // array([[0, 2],
             //        [1, 3]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.transpose(x);
              expected=
                 "array([[0, 2],\n" +
                 "       [1, 3]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.ones((1, 2, 3))
             // >>> np.transpose(x, (1, 0, 2)).shape
             // (2, 1, 3)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.ones((1, 2, 3));
              given=  np.transpose(x, (1, 0, 2)).shape;
              expected=
                 "(2, 1, 3)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void atleast_1dTest()
         {
             // >>> np.atleast_1d(1.0)
             // array([ 1.])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.atleast_1d(1.0);
             var expected=
                 "array([ 1.])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.arange(9.0).reshape(3,3)
             // >>> np.atleast_1d(x)
             // array([[ 0.,  1.,  2.],
@@ -393,8 +393,8 @@ namespace Numpy.UnitTest
             // >>> np.atleast_1d(x) is x
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.arange(9.0).reshape(3,3);
              given=  np.atleast_1d(x);
              expected=
@@ -406,41 +406,41 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.atleast_1d(1, [3, 4])
             // [array([1]), array([3, 4])]
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.atleast_1d(1, {3, 4});
              expected=
                 "[array([1]), array([3, 4])]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void atleast_2dTest()
         {
             // >>> np.atleast_2d(3.0)
             // array([[ 3.]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.atleast_2d(3.0);
             var expected=
                 "array([[ 3.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.arange(3.0)
             // >>> np.atleast_2d(x)
             // array([[ 0.,  1.,  2.]])
             // >>> np.atleast_2d(x).base is x
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.arange(3.0);
              given=  np.atleast_2d(x);
              expected=
@@ -450,53 +450,53 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.atleast_2d(1, [1, 2], [[1, 2]])
             // [array([[1]]), array([[1, 2]]), array([[1, 2]])]
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.atleast_2d(1, {1, 2}, {{1, 2}});
              expected=
                 "[array([[1]]), array([[1, 2]]), array([[1, 2]])]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void atleast_3dTest()
         {
             // >>> np.atleast_3d(3.0)
             // array([[[ 3.]]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.atleast_3d(3.0);
             var expected=
                 "array([[[ 3.]]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.arange(3.0)
             // >>> np.atleast_3d(x).shape
             // (1, 3, 1)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.arange(3.0);
              given=  np.atleast_3d(x).shape;
              expected=
                 "(1, 3, 1)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.arange(12.0).reshape(4,3)
             // >>> np.atleast_3d(x).shape
             // (4, 3, 1)
             // >>> np.atleast_3d(x).base is x.base  # x is a reshape, so not base itself
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.arange(12.0).reshape(4,3);
              given=  np.atleast_3d(x).shape;
              expected=
@@ -506,7 +506,7 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> for arr in np.atleast_3d([1, 2], [[1, 2]], [[[1, 2]]]):
             // ...     print(arr, arr.shape)
             // ...
@@ -516,8 +516,8 @@ namespace Numpy.UnitTest
             //   [2]]] (1, 2, 1)
             // [[[1 2]]] (1, 1, 2)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  for arr in np.atleast_3d({1, 2}, {{1, 2}}, {{{1, 2}}}):;
              expected=
                 "...     print(arr, arr.shape)\n" +
@@ -528,25 +528,25 @@ namespace Numpy.UnitTest
                 "  [2]]] (1, 2, 1)\n" +
                 "[[[1 2]]] (1, 1, 2)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void broadcastTest()
         {
             // Manually adding two vectors, using broadcasting:
-            
+
             // >>> x = np.array([[1], [2], [3]])
             // >>> y = np.array([4, 5, 6])
             // >>> b = np.broadcast(x, y)
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.array({{1}, {2}, {3}});
              given=  y = np.array({4, 5, 6});
              given=  b = np.broadcast(x, y);
-            #endif
+#endif
             // >>> out = np.empty(b.shape)
             // >>> out.flat = [u+v for (u,v) in b]
             // >>> out
@@ -554,8 +554,8 @@ namespace Numpy.UnitTest
             //        [ 6.,  7.,  8.],
             //        [ 7.,  8.,  9.]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  out = np.empty(b.shape);
              given=  out.flat = [u+v for (u,v) in b];
              given=  out;
@@ -564,31 +564,31 @@ namespace Numpy.UnitTest
                 "       [ 6.,  7.,  8.],\n" +
                 "       [ 7.,  8.,  9.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Compare against built-in broadcasting:
-            
+
             // >>> x + y
             // array([[5, 6, 7],
             //        [6, 7, 8],
             //        [7, 8, 9]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x + y;
              expected=
                 "array([[5, 6, 7],\n" +
                 "       [6, 7, 8],\n" +
                 "       [7, 8, 9]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.array([1, 2, 3])
             // >>> y = np.array([[4], [5], [6]])
             // >>> b = np.broadcast(x, y)
             // >>> b.nd
             // 2
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.array({1, 2, 3});
              given=  y = np.array({{4}, {5}, {6}});
              given=  b = np.broadcast(x, y);
@@ -596,12 +596,12 @@ namespace Numpy.UnitTest
              expected=
                 "2";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Methods
-            
+
         }
-        
-        
+
+
         [TestMethod]
         public void broadcast_toTest()
         {
@@ -611,8 +611,8 @@ namespace Numpy.UnitTest
             //        [1, 2, 3],
             //        [1, 2, 3]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.array({1, 2, 3});
              given=  np.broadcast_to(x, (3, 3));
             var expected=
@@ -620,10 +620,10 @@ namespace Numpy.UnitTest
                 "       [1, 2, 3],\n" +
                 "       [1, 2, 3]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void broadcast_arraysTest()
         {
@@ -634,8 +634,8 @@ namespace Numpy.UnitTest
             //        [1, 2, 3]]), array([[4, 4, 4],
             //        [5, 5, 5]])]
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.array({{1,2,3}});
              given=  y = np.array({{4},{5}});
              given=  np.broadcast_arrays(x, y);
@@ -644,27 +644,27 @@ namespace Numpy.UnitTest
                 "       [1, 2, 3]]), array([[4, 4, 4],\n" +
                 "       [5, 5, 5]])]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Here is a useful idiom for getting contiguous copies instead of
             // non-contiguous views.
-            
+
             // >>> [np.array(a) for a in np.broadcast_arrays(x, y)]
             // [array([[1, 2, 3],
             //        [1, 2, 3]]), array([[4, 4, 4],
             //        [5, 5, 5]])]
             // 
-            
-            #if TODO
+
+#if TODO
              given=  {np.array(a) for a in np.broadcast_arrays(x, y)};
              expected=
                 "[array([[1, 2, 3],\n" +
                 "       [1, 2, 3]]), array([[4, 4, 4],\n" +
                 "       [5, 5, 5]])]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void expand_dimsTest()
         {
@@ -672,24 +672,24 @@ namespace Numpy.UnitTest
             // >>> x.shape
             // (2,)
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.array({1,2});
              given=  x.shape;
             var expected=
                 "(2,)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // The following is equivalent to x[np.newaxis,:] or x[np.newaxis]:
-            
+
             // >>> y = np.expand_dims(x, axis=0)
             // >>> y
             // array([[1, 2]])
             // >>> y.shape
             // (1, 2)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  y = np.expand_dims(x, axis=0);
              given=  y;
              expected=
@@ -699,7 +699,7 @@ namespace Numpy.UnitTest
              expected=
                 "(1, 2)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> y = np.expand_dims(x, axis=1)  # Equivalent to x[:,np.newaxis]
             // >>> y
             // array([[1],
@@ -707,8 +707,8 @@ namespace Numpy.UnitTest
             // >>> y.shape
             // (2, 1)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  y = np.expand_dims(x, axis=1)  # Equivalent to x{:,np.newaxis};
              given=  y;
              expected=
@@ -719,23 +719,23 @@ namespace Numpy.UnitTest
              expected=
                 "(2, 1)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Note that some examples may use None instead of np.newaxis.  These
             // are the same objects:
-            
+
             // >>> np.newaxis is None
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.newaxis is None;
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void squeezeTest()
         {
@@ -753,8 +753,8 @@ namespace Numpy.UnitTest
             // >>> np.squeeze(x, axis=2).shape
             // (1, 3)
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.array({{{0}, {1}, {2}}});
              given=  x.shape;
             var expected=
@@ -778,10 +778,10 @@ namespace Numpy.UnitTest
              expected=
                 "(1, 3)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void asfarrayTest()
         {
@@ -792,8 +792,8 @@ namespace Numpy.UnitTest
             // >>> np.asfarray([2, 3], dtype='int8')
             // array([ 2.,  3.])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.asfarray({2, 3});
             var expected=
                 "array([ 2.,  3.])";
@@ -806,10 +806,10 @@ namespace Numpy.UnitTest
              expected=
                 "array([ 2.,  3.])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void asfortranarrayTest()
         {
@@ -820,8 +820,8 @@ namespace Numpy.UnitTest
             // >>> y.flags['F_CONTIGUOUS']
             // True
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.arange(6).reshape(2,3);
              given=  y = np.asfortranarray(x);
              given=  x.flags['F_CONTIGUOUS'];
@@ -832,33 +832,33 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Note: This function returns an array with at least one-dimension (1-d) 
             // so it will not preserve 0-d arrays.
-            
+
         }
-        
-        
+
+
         [TestMethod]
         public void asarray_chkfiniteTest()
         {
             // Convert a list into an array.  If all elements are finite
             // asarray_chkfinite is identical to asarray.
-            
+
             // >>> a = [1, 2]
             // >>> np.asarray_chkfinite(a, dtype=float)
             // array([1., 2.])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = [1, 2];
              given=  np.asarray_chkfinite(a, dtype=float);
             var expected=
                 "array([1., 2.])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Raises ValueError if array_like contains Nans or Infs.
-            
+
             // >>> a = [1, 2, np.inf]
             // >>> try:
             // ...     np.asarray_chkfinite(a)
@@ -867,8 +867,8 @@ namespace Numpy.UnitTest
             // ...
             // ValueError
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = {1, 2, np.inf};
              given=  try:;
              expected=
@@ -878,26 +878,26 @@ namespace Numpy.UnitTest
                 "...\n" +
                 "ValueError";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void asscalarTest()
         {
             // >>> np.asscalar(np.array([24]))
             // 24
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.asscalar(np.array({24}));
             var expected=
                 "24";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void requireTest()
         {
@@ -911,8 +911,8 @@ namespace Numpy.UnitTest
             //   WRITEBACKIFCOPY : False
             //   UPDATEIFCOPY : False
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.arange(6).reshape(2,3);
              given=  x.flags;
             var expected=
@@ -924,7 +924,7 @@ namespace Numpy.UnitTest
                 "  WRITEBACKIFCOPY : False\n" +
                 "  UPDATEIFCOPY : False";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> y = np.require(x, dtype=np.float32, requirements=['A', 'O', 'W', 'F'])
             // >>> y.flags
             //   C_CONTIGUOUS : False
@@ -935,8 +935,8 @@ namespace Numpy.UnitTest
             //   WRITEBACKIFCOPY : False
             //   UPDATEIFCOPY : False
             // 
-            
-            #if TODO
+
+#if TODO
              given=  y = np.require(x, dtype=np.float32, requirements={'A', 'O', 'W', 'F'});
              given=  y.flags;
              expected=
@@ -948,10 +948,10 @@ namespace Numpy.UnitTest
                 "  WRITEBACKIFCOPY : False\n" +
                 "  UPDATEIFCOPY : False";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void concatenateTest()
         {
@@ -967,8 +967,8 @@ namespace Numpy.UnitTest
             // >>> np.concatenate((a, b), axis=None)
             // array([1, 2, 3, 4, 5, 6])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({{1, 2}, {3, 4}});
              given=  b = np.array({{5, 6}});
              given=  np.concatenate((a, b), axis=0);
@@ -986,9 +986,9 @@ namespace Numpy.UnitTest
              expected=
                 "array([1, 2, 3, 4, 5, 6])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // This function will not preserve masking of MaskedArray inputs.
-            
+
             // >>> a = np.ma.arange(3)
             // >>> a[1] = np.ma.masked
             // >>> b = np.arange(2, 5)
@@ -1007,8 +1007,8 @@ namespace Numpy.UnitTest
             //              mask=[False,  True, False, False, False, False],
             //        fill_value=999999)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.ma.arange(3);
              given=  a{1} = np.ma.masked;
              given=  b = np.arange(2, 5);
@@ -1034,10 +1034,10 @@ namespace Numpy.UnitTest
                 "             mask=[False,  True, False, False, False, False],\n" +
                 "       fill_value=999999)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void stackTest()
         {
@@ -1045,42 +1045,42 @@ namespace Numpy.UnitTest
             // >>> np.stack(arrays, axis=0).shape
             // (10, 3, 4)
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  arrays = {np.random.randn(3, 4) for _ in range(10)};
              given=  np.stack(arrays, axis=0).shape;
             var expected=
                 "(10, 3, 4)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.stack(arrays, axis=1).shape
             // (3, 10, 4)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.stack(arrays, axis=1).shape;
              expected=
                 "(3, 10, 4)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.stack(arrays, axis=2).shape
             // (3, 4, 10)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.stack(arrays, axis=2).shape;
              expected=
                 "(3, 4, 10)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.array([1, 2, 3])
             // >>> b = np.array([2, 3, 4])
             // >>> np.stack((a, b))
             // array([[1, 2, 3],
             //        [2, 3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({1, 2, 3});
              given=  b = np.array({2, 3, 4});
              given=  np.stack((a, b));
@@ -1088,24 +1088,24 @@ namespace Numpy.UnitTest
                 "array([[1, 2, 3],\n" +
                 "       [2, 3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.stack((a, b), axis=-1)
             // array([[1, 2],
             //        [2, 3],
             //        [3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.stack((a, b), axis=-1);
              expected=
                 "array([[1, 2],\n" +
                 "       [2, 3],\n" +
                 "       [3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void column_stackTest()
         {
@@ -1116,8 +1116,8 @@ namespace Numpy.UnitTest
             //        [2, 3],
             //        [3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array((1,2,3));
              given=  b = np.array((2,3,4));
              given=  np.column_stack((a,b));
@@ -1126,10 +1126,10 @@ namespace Numpy.UnitTest
                 "       [2, 3],\n" +
                 "       [3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void dstackTest()
         {
@@ -1140,8 +1140,8 @@ namespace Numpy.UnitTest
             //         [2, 3],
             //         [3, 4]]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array((1,2,3));
              given=  b = np.array((2,3,4));
              given=  np.dstack((a,b));
@@ -1150,7 +1150,7 @@ namespace Numpy.UnitTest
                 "        [2, 3],\n" +
                 "        [3, 4]]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.array([[1],[2],[3]])
             // >>> b = np.array([[2],[3],[4]])
             // >>> np.dstack((a,b))
@@ -1158,8 +1158,8 @@ namespace Numpy.UnitTest
             //        [[2, 3]],
             //        [[3, 4]]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({{1},{2},{3}});
              given=  b = np.array({{2},{3},{4}});
              given=  np.dstack((a,b));
@@ -1168,10 +1168,10 @@ namespace Numpy.UnitTest
                 "       [[2, 3]],\n" +
                 "       [[3, 4]]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void hstackTest()
         {
@@ -1186,8 +1186,8 @@ namespace Numpy.UnitTest
             //        [2, 3],
             //        [3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array((1,2,3));
              given=  b = np.array((2,3,4));
              given=  np.hstack((a,b));
@@ -1202,10 +1202,10 @@ namespace Numpy.UnitTest
                 "       [2, 3],\n" +
                 "       [3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void vstackTest()
         {
@@ -1215,8 +1215,8 @@ namespace Numpy.UnitTest
             // array([[1, 2, 3],
             //        [2, 3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({1, 2, 3});
              given=  b = np.array({2, 3, 4});
              given=  np.vstack((a,b));
@@ -1224,7 +1224,7 @@ namespace Numpy.UnitTest
                 "array([[1, 2, 3],\n" +
                 "       [2, 3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.array([[1], [2], [3]])
             // >>> b = np.array([[2], [3], [4]])
             // >>> np.vstack((a,b))
@@ -1235,8 +1235,8 @@ namespace Numpy.UnitTest
             //        [3],
             //        [4]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({{1}, {2}, {3}});
              given=  b = np.array({{2}, {3}, {4}});
              given=  np.vstack((a,b));
@@ -1248,15 +1248,15 @@ namespace Numpy.UnitTest
                 "       [3],\n" +
                 "       [4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void blockTest()
         {
             // The most common use of this function is to build a block matrix
-            
+
             // >>> A = np.eye(2) * 2
             // >>> B = np.eye(3) * 3
             // >>> np.block([
@@ -1269,8 +1269,8 @@ namespace Numpy.UnitTest
             //        [ 1.,  1.,  0.,  3.,  0.],
             //        [ 1.,  1.,  0.,  0.,  3.]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  A = np.eye(2) * 2;
              given=  B = np.eye(3) * 3;
              given=  np.block({;
@@ -1284,41 +1284,41 @@ namespace Numpy.UnitTest
                 "       [ 1.,  1.,  0.,  3.,  0.],\n" +
                 "       [ 1.,  1.,  0.,  0.,  3.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // With a list of depth 1, block can be used as hstack
-            
+
             // >>> np.block([1, 2, 3])              # hstack([1, 2, 3])
             // array([1, 2, 3])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.block({1, 2, 3})              # hstack({1, 2, 3});
              expected=
                 "array([1, 2, 3])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.array([1, 2, 3])
             // >>> b = np.array([2, 3, 4])
             // >>> np.block([a, b, 10])             # hstack([a, b, 10])
             // array([1, 2, 3, 2, 3, 4, 10])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({1, 2, 3});
              given=  b = np.array({2, 3, 4});
              given=  np.block({a, b, 10})             # hstack({a, b, 10});
              expected=
                 "array([1, 2, 3, 2, 3, 4, 10])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> A = np.ones((2, 2), int)
             // >>> B = 2 * A
             // >>> np.block([A, B])                 # hstack([A, B])
             // array([[1, 1, 2, 2],
             //        [1, 1, 2, 2]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  A = np.ones((2, 2), int);
              given=  B = 2 * A;
              given=  np.block({A, B})                 # hstack({A, B});
@@ -1326,17 +1326,17 @@ namespace Numpy.UnitTest
                 "array([[1, 1, 2, 2],\n" +
                 "       [1, 1, 2, 2]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // With a list of depth 2, block can be used in place of vstack:
-            
+
             // >>> a = np.array([1, 2, 3])
             // >>> b = np.array([2, 3, 4])
             // >>> np.block([[a], [b]])             # vstack([a, b])
             // array([[1, 2, 3],
             //        [2, 3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({1, 2, 3});
              given=  b = np.array({2, 3, 4});
              given=  np.block({{a}, {b}})             # vstack({a, b});
@@ -1344,7 +1344,7 @@ namespace Numpy.UnitTest
                 "array([[1, 2, 3],\n" +
                 "       [2, 3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> A = np.ones((2, 2), int)
             // >>> B = 2 * A
             // >>> np.block([[A], [B]])             # vstack([A, B])
@@ -1353,8 +1353,8 @@ namespace Numpy.UnitTest
             //        [2, 2],
             //        [2, 2]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  A = np.ones((2, 2), int);
              given=  B = 2 * A;
              given=  np.block({{A}, {B}})             # vstack({A, B});
@@ -1364,9 +1364,9 @@ namespace Numpy.UnitTest
                 "       [2, 2],\n" +
                 "       [2, 2]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // It can also be used in places of atleast_1d and atleast_2d
-            
+
             // >>> a = np.array(0)
             // >>> b = np.array([1])
             // >>> np.block([a])                    # atleast_1d(a)
@@ -1374,8 +1374,8 @@ namespace Numpy.UnitTest
             // >>> np.block([b])                    # atleast_1d(b)
             // array([1])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array(0);
              given=  b = np.array({1});
              given=  np.block({a})                    # atleast_1d(a);
@@ -1386,14 +1386,14 @@ namespace Numpy.UnitTest
              expected=
                 "array([1])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.block([[a]])                  # atleast_2d(a)
             // array([[0]])
             // >>> np.block([[b]])                  # atleast_2d(b)
             // array([[1]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.block({{a}})                  # atleast_2d(a);
              expected=
                 "array([[0]])";
@@ -1402,10 +1402,10 @@ namespace Numpy.UnitTest
              expected=
                 "array([[1]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void splitTest()
         {
@@ -1413,14 +1413,14 @@ namespace Numpy.UnitTest
             // >>> np.split(x, 3)
             // [array([ 0.,  1.,  2.]), array([ 3.,  4.,  5.]), array([ 6.,  7.,  8.])]
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.arange(9.0);
              given=  np.split(x, 3);
             var expected=
                 "[array([ 0.,  1.,  2.]), array([ 3.,  4.,  5.]), array([ 6.,  7.,  8.])]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.arange(8.0)
             // >>> np.split(x, [3, 5, 6, 10])
             // [array([ 0.,  1.,  2.]),
@@ -1429,8 +1429,8 @@ namespace Numpy.UnitTest
             //  array([ 6.,  7.]),
             //  array([], dtype=float64)]
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.arange(8.0);
              given=  np.split(x, {3, 5, 6, 10});
              expected=
@@ -1440,10 +1440,10 @@ namespace Numpy.UnitTest
                 " array([ 6.,  7.]),\n" +
                 " array([], dtype=float64)]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void tileTest()
         {
@@ -1457,8 +1457,8 @@ namespace Numpy.UnitTest
             // array([[[0, 1, 2, 0, 1, 2]],
             //        [[0, 1, 2, 0, 1, 2]]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({0, 1, 2});
              given=  np.tile(a, 2);
             var expected=
@@ -1474,7 +1474,7 @@ namespace Numpy.UnitTest
                 "array([[[0, 1, 2, 0, 1, 2]],\n" +
                 "       [[0, 1, 2, 0, 1, 2]]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> b = np.array([[1, 2], [3, 4]])
             // >>> np.tile(b, 2)
             // array([[1, 2, 1, 2],
@@ -1485,8 +1485,8 @@ namespace Numpy.UnitTest
             //        [1, 2],
             //        [3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  b = np.array({{1, 2}, {3, 4}});
              given=  np.tile(b, 2);
              expected=
@@ -1500,7 +1500,7 @@ namespace Numpy.UnitTest
                 "       [1, 2],\n" +
                 "       [3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> c = np.array([1,2,3,4])
             // >>> np.tile(c,(4,1))
             // array([[1, 2, 3, 4],
@@ -1508,8 +1508,8 @@ namespace Numpy.UnitTest
             //        [1, 2, 3, 4],
             //        [1, 2, 3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  c = np.array({1,2,3,4});
              given=  np.tile(c,(4,1));
              expected=
@@ -1518,10 +1518,10 @@ namespace Numpy.UnitTest
                 "       [1, 2, 3, 4],\n" +
                 "       [1, 2, 3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void repeatTest()
         {
@@ -1538,8 +1538,8 @@ namespace Numpy.UnitTest
             //        [3, 4],
             //        [3, 4]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.repeat(3, 4);
             var expected=
                 "array([3, 3, 3, 3])";
@@ -1560,10 +1560,10 @@ namespace Numpy.UnitTest
                 "       [3, 4],\n" +
                 "       [3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void deleteTest()
         {
@@ -1576,8 +1576,8 @@ namespace Numpy.UnitTest
             // array([[ 1,  2,  3,  4],
             //        [ 9, 10, 11, 12]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  arr = np.array({{1,2,3,4}, {5,6,7,8}, {9,10,11,12}});
              given=  arr;
             var expected=
@@ -1590,7 +1590,7 @@ namespace Numpy.UnitTest
                 "array([[ 1,  2,  3,  4],\n" +
                 "       [ 9, 10, 11, 12]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.delete(arr, np.s_[::2], 1)
             // array([[ 2,  4],
             //        [ 6,  8],
@@ -1598,8 +1598,8 @@ namespace Numpy.UnitTest
             // >>> np.delete(arr, [1,3,5], None)
             // array([ 1,  3,  5,  7,  8,  9, 10, 11, 12])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.delete(arr, np.s_{::2}, 1);
              expected=
                 "array([[ 2,  4],\n" +
@@ -1610,10 +1610,10 @@ namespace Numpy.UnitTest
              expected=
                 "array([ 1,  3,  5,  7,  8,  9, 10, 11, 12])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void insertTest()
         {
@@ -1629,8 +1629,8 @@ namespace Numpy.UnitTest
             //        [2, 5, 2],
             //        [3, 5, 3]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({{1, 1}, {2, 2}, {3, 3}});
              given=  a;
             var expected=
@@ -1648,9 +1648,9 @@ namespace Numpy.UnitTest
                 "       [2, 5, 2],\n" +
                 "       [3, 5, 3]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Difference between sequence and scalars:
-            
+
             // >>> np.insert(a, [1], [[1],[2],[3]], axis=1)
             // array([[1, 1, 1],
             //        [2, 2, 2],
@@ -1659,8 +1659,8 @@ namespace Numpy.UnitTest
             // ...                np.insert(a, [1], [[1],[2],[3]], axis=1))
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.insert(a, {1}, {{1},{2},{3}}, axis=1);
              expected=
                 "array([[1, 1, 1],\n" +
@@ -1672,15 +1672,15 @@ namespace Numpy.UnitTest
                 "...                np.insert(a, [1], [[1],[2],[3]], axis=1))\n" +
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> b = a.flatten()
             // >>> b
             // array([1, 1, 2, 2, 3, 3])
             // >>> np.insert(b, [2, 2], [5, 6])
             // array([1, 1, 5, 6, 2, 2, 3, 3])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  b = a.flatten();
              given=  b;
              expected=
@@ -1690,35 +1690,35 @@ namespace Numpy.UnitTest
              expected=
                 "array([1, 1, 5, 6, 2, 2, 3, 3])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.insert(b, slice(2, 4), [5, 6])
             // array([1, 1, 5, 2, 6, 2, 3, 3])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.insert(b, slice(2, 4), {5, 6});
              expected=
                 "array([1, 1, 5, 2, 6, 2, 3, 3])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.insert(b, [2, 2], [7.13, False]) # type casting
             // array([1, 1, 7, 0, 2, 2, 3, 3])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.insert(b, {2, 2}, {7.13, False}) # type casting;
              expected=
                 "array([1, 1, 7, 0, 2, 2, 3, 3])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x = np.arange(8).reshape(2, 4)
             // >>> idx = (1, 3)
             // >>> np.insert(x, idx, 999, axis=1)
             // array([[  0, 999,   1,   2, 999,   3],
             //        [  4, 999,   5,   6, 999,   7]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.arange(8).reshape(2, 4);
              given=  idx = (1, 3);
              given=  np.insert(x, idx, 999, axis=1);
@@ -1726,25 +1726,25 @@ namespace Numpy.UnitTest
                 "array([[  0, 999,   1,   2, 999,   3],\n" +
                 "       [  4, 999,   5,   6, 999,   7]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void appendTest()
         {
             // >>> np.append([1, 2, 3], [[4, 5, 6], [7, 8, 9]])
             // array([1, 2, 3, 4, 5, 6, 7, 8, 9])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.append({1, 2, 3}, {{4, 5, 6}, {7, 8, 9}});
             var expected=
                 "array([1, 2, 3, 4, 5, 6, 7, 8, 9])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // When axis is specified, values must have the correct shape.
-            
+
             // >>> np.append([[1, 2, 3], [4, 5, 6]], [[7, 8, 9]], axis=0)
             // array([[1, 2, 3],
             //        [4, 5, 6],
@@ -1754,8 +1754,8 @@ namespace Numpy.UnitTest
             // ...
             // ValueError: arrays must have same number of dimensions
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.append({{1, 2, 3}, {4, 5, 6}}, {{7, 8, 9}}, axis=0);
              expected=
                 "array([[1, 2, 3],\n" +
@@ -1768,10 +1768,10 @@ namespace Numpy.UnitTest
                 "...\n" +
                 "ValueError: arrays must have same number of dimensions";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void resizeTest()
         {
@@ -1785,8 +1785,8 @@ namespace Numpy.UnitTest
             // array([[0, 1, 2, 3],
             //        [0, 1, 2, 3]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a=np.array({{0,1},{2,3}});
              given=  np.resize(a,(2,3));
             var expected=
@@ -1802,10 +1802,10 @@ namespace Numpy.UnitTest
                 "array([[0, 1, 2, 3],\n" +
                 "       [0, 1, 2, 3]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void trim_zerosTest()
         {
@@ -1813,39 +1813,38 @@ namespace Numpy.UnitTest
             // >>> np.trim_zeros(a)
             // array([1, 2, 3, 0, 2, 1])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array((0, 0, 0, 1, 2, 3, 0, 2, 1, 0));
              given=  np.trim_zeros(a);
             var expected=
                 "array([1, 2, 3, 0, 2, 1])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.trim_zeros(a, 'b')
             // array([0, 0, 0, 1, 2, 3, 0, 2, 1])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.trim_zeros(a, 'b');
              expected=
                 "array([0, 0, 0, 1, 2, 3, 0, 2, 1])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // The input data type is preserved, list/tuple in means list/tuple out.
-            
+
             // >>> np.trim_zeros([0, 1, 2, 0])
             // [1, 2]
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.trim_zeros({0, 1, 2, 0});
              expected=
                 "[1, 2]";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
         [TestMethod]
         public void uniqueTest()
         {
@@ -1855,34 +1854,32 @@ namespace Numpy.UnitTest
             // >>> np.unique(a)
             // array([1, 2, 3])
             // 
-            
-            #if TODO
-            var given=  np.unique({1, 1, 2, 2, 3, 3});
-            var expected=
+
+            var given = np.unique(new[] { 1, 1, 2, 2, 3, 3 });
+            var expected =
                 "array([1, 2, 3])";
             Assert.AreEqual(expected, given.repr);
-             given=  a = np.array({{1, 1}, {2, 3}});
-             given=  np.unique(a);
-             expected=
-                "array([1, 2, 3])";
+            var a = np.array(new[,] { { 1, 1 }, { 2, 3 } });
+            given = np.unique(a);
+            expected =
+               "array([1, 2, 3])";
             Assert.AreEqual(expected, given.repr);
-            #endif
             // Return the unique rows of a 2D array
-            
+
             // >>> a = np.array([[1, 0, 0], [1, 0, 0], [2, 3, 4]])
             // >>> np.unique(a, axis=0)
             // array([[1, 0, 0], [2, 3, 4]])
             // 
-            
-            #if TODO
-             given=  a = np.array({{1, 0, 0}, {1, 0, 0}, {2, 3, 4}});
-             given=  np.unique(a, axis=0);
-             expected=
-                "array([[1, 0, 0], [2, 3, 4]])";
+
+
+            a = np.array(new[,] { { 1, 0, 0 }, { 1, 0, 0 }, { 2, 3, 4 } });
+            given = np.unique(a, axis: 0);
+            expected =
+                "array([[1, 0, 0],\n       [2, 3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+
             // Return the indices of the original array that give the unique values:
-            
+
             // >>> a = np.array(['a', 'b', 'b', 'c', 'a'])
             // >>> u, indices = np.unique(a, return_index=True)
             // >>> u
@@ -1894,27 +1891,25 @@ namespace Numpy.UnitTest
             // array(['a', 'b', 'c'],
             //        dtype='|S1')
             // 
-            
-            #if TODO
-             given=  a = np.array({'a', 'b', 'b', 'c', 'a'});
-             given=  u, indices = np.unique(a, return_index=True);
-             given=  u;
-             expected=
-                "array(['a', 'b', 'c'],\n" +
-                "       dtype='|S1')";
+
+            var a1 = np.array(new[] { 1, 2, 2, 3, 1 });
+            var rv = np.unique(a1, return_index: true, return_inverse: false, return_counts: false);
+            var (u, indices) = (rv[0], rv[1]);
+            given = u;
+            expected =
+               "array([1, 2, 3])";
             Assert.AreEqual(expected, given.repr);
-             given=  indices;
-             expected=
-                "array([0, 1, 3])";
+            given = indices;
+            expected =
+               "array([0, 1, 3], dtype=int64)";
             Assert.AreEqual(expected, given.repr);
-             given=  a[indices];
-             expected=
-                "array(['a', 'b', 'c'],\n" +
-                "       dtype='|S1')";
+            given = a1[indices];
+            expected =
+                "array([1, 2, 3])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+
             // Reconstruct the input array from the unique values:
-            
+
             // >>> a = np.array([1, 2, 6, 4, 2, 3, 2])
             // >>> u, indices = np.unique(a, return_inverse=True)
             // >>> u
@@ -1924,26 +1919,24 @@ namespace Numpy.UnitTest
             // >>> u[indices]
             // array([1, 2, 6, 4, 2, 3, 2])
             // 
-            
-            #if TODO
-             given=  a = np.array({1, 2, 6, 4, 2, 3, 2});
-             given=  u, indices = np.unique(a, return_inverse=True);
-             given=  u;
-             expected=
-                "array([1, 2, 3, 4, 6])";
+
+            a = np.array(new[] { 1, 2, 6, 4, 2, 3, 2 });
+            rv = np.unique(a, return_inverse: true, return_counts: false, return_index: false);
+            (u, indices) = (rv[0], rv[1]);
+            given = u;
+            expected =
+               "array([1, 2, 3, 4, 6])";
             Assert.AreEqual(expected, given.repr);
-             given=  indices;
-             expected=
-                "array([0, 1, 4, 3, 1, 2, 1])";
+            given = indices;
+            expected =
+               "array([0, 1, 4, 3, 1, 2, 1], dtype=int64)";
             Assert.AreEqual(expected, given.repr);
-             given=  u[indices];
-             expected=
-                "array([1, 2, 6, 4, 2, 3, 2])";
+            given = u[indices];
+            expected =
+               "array([1, 2, 6, 4, 2, 3, 2])";
             Assert.AreEqual(expected, given.repr);
-            #endif
         }
-        
-        
+
         [TestMethod]
         public void flipTest()
         {
@@ -1977,8 +1970,8 @@ namespace Numpy.UnitTest
             // >>> np.all(flip(A,2) == A[:,:,::-1,...])
             // True
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  A = np.arange(8).reshape((2,2,2));
              given=  A;
             var expected=
@@ -2020,10 +2013,10 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void fliplrTest()
         {
@@ -2037,8 +2030,8 @@ namespace Numpy.UnitTest
             //        [ 0.,  2.,  0.],
             //        [ 3.,  0.,  0.]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  A = np.diag({1.,2.,3.});
              given=  A;
             var expected=
@@ -2052,22 +2045,22 @@ namespace Numpy.UnitTest
                 "       [ 0.,  2.,  0.],\n" +
                 "       [ 3.,  0.,  0.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> A = np.random.randn(2,3,5)
             // >>> np.all(np.fliplr(A) == A[:,::-1,...])
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  A = np.random.randn(2,3,5);
              given=  np.all(np.fliplr(A) == A{:,::-1,...});
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void flipudTest()
         {
@@ -2081,8 +2074,8 @@ namespace Numpy.UnitTest
             //        [ 0.,  2.,  0.],
             //        [ 1.,  0.,  0.]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  A = np.diag({1.0, 2, 3});
              given=  A;
             var expected=
@@ -2096,32 +2089,32 @@ namespace Numpy.UnitTest
                 "       [ 0.,  2.,  0.],\n" +
                 "       [ 1.,  0.,  0.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> A = np.random.randn(2,3,5)
             // >>> np.all(np.flipud(A) == A[::-1,...])
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  A = np.random.randn(2,3,5);
              given=  np.all(np.flipud(A) == A{::-1,...});
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.flipud([1,2])
             // array([2, 1])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.flipud({1,2});
              expected=
                 "array([2, 1])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void rollTest()
         {
@@ -2129,14 +2122,14 @@ namespace Numpy.UnitTest
             // >>> np.roll(x, 2)
             // array([8, 9, 0, 1, 2, 3, 4, 5, 6, 7])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  x = np.arange(10);
              given=  np.roll(x, 2);
             var expected=
                 "array([8, 9, 0, 1, 2, 3, 4, 5, 6, 7])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> x2 = np.reshape(x, (2,5))
             // >>> x2
             // array([[0, 1, 2, 3, 4],
@@ -2151,8 +2144,8 @@ namespace Numpy.UnitTest
             // array([[4, 0, 1, 2, 3],
             //        [9, 5, 6, 7, 8]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x2 = np.reshape(x, (2,5));
              given=  x2;
              expected=
@@ -2174,10 +2167,10 @@ namespace Numpy.UnitTest
                 "array([[4, 0, 1, 2, 3],\n" +
                 "       [9, 5, 6, 7, 8]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void rot90Test()
         {
@@ -2198,8 +2191,8 @@ namespace Numpy.UnitTest
             //        [[5, 7],
             //         [4, 6]]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  m = np.array({{1,2},{3,4}}, int);
              given=  m;
             var expected=
@@ -2224,8 +2217,8 @@ namespace Numpy.UnitTest
                 "       [[5, 7],\n" +
                 "        [4, 6]]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
+
     }
 }

@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -89,7 +89,7 @@ namespace Numpy
         /// Only provided if return_indices is True.
         /// </returns>
         public static (NDarray, NDarray, NDarray) intersect1d(NDarray ar2, NDarray ar1, bool assume_unique = false, bool return_indices = false)
-            => NumPy.Instance.intersect1d(ar2, ar1, assume_unique, return_indices);
+            => NumPy.Instance.intersect1d(ar2, ar1, assume_unique:assume_unique, return_indices:return_indices);
         
         /// <summary>
         /// Calculates element in test_elements, broadcasting over element only.
@@ -155,7 +155,7 @@ namespace Numpy
         /// if the input is sorted.
         /// </returns>
         public static NDarray setdiff1d(NDarray ar1, NDarray ar2, bool assume_unique = false)
-            => NumPy.Instance.setdiff1d(ar1, ar2, assume_unique);
+            => NumPy.Instance.setdiff1d(ar1, ar2, assume_unique:assume_unique);
         
         /// <summary>
         /// Find the set exclusive-or of two arrays.
@@ -178,7 +178,7 @@ namespace Numpy
         /// arrays.
         /// </returns>
         public static NDarray setxor1d(NDarray ar2, NDarray ar1, bool assume_unique = false)
-            => NumPy.Instance.setxor1d(ar2, ar1, assume_unique);
+            => NumPy.Instance.setxor1d(ar2, ar1, assume_unique:assume_unique);
         
         /// <summary>
         /// Find the union of two arrays.

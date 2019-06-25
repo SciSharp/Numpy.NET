@@ -36,7 +36,7 @@ namespace Numpy
         /// If this is a tuple of ints, a reduction is performed on multiple
         /// axes, instead of a single axis or all the axes as before.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.
         /// It must have the same shape as the expected output and its
         /// type is preserved (e.g., if dtype(out) is float, the result
@@ -124,7 +124,7 @@ namespace Numpy
         /// If this is a tuple of ints, a reduction is performed on multiple
         /// axes, instead of a single axis or all the axes as before.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Alternate output array in which to place the result.  It must have
         /// the same shape as the expected output and its type is preserved
         /// (e.g., if it is of type float, then it will remain so, returning
@@ -212,13 +212,13 @@ namespace Numpy
         /// <param name="x">
         /// Input values.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -260,13 +260,13 @@ namespace Numpy
         /// <param name="x">
         /// Input values
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -300,13 +300,13 @@ namespace Numpy
         /// <param name="x">
         /// Input array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -335,13 +335,13 @@ namespace Numpy
         /// <param name="x">
         /// Input array with datetime or timedelta data type.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -379,7 +379,7 @@ namespace Numpy
         /// <param name="x">
         /// The input array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A boolean array with the same shape and type as x to store the
         /// result.
         /// </param>
@@ -617,13 +617,13 @@ namespace Numpy
         /// <param name="x1">
         /// Input arrays. x1 and x2 must be of the same shape.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -659,13 +659,13 @@ namespace Numpy
         /// Logical OR is applied to the elements of x1 and x2.
         /// They have to be of the same shape.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -696,13 +696,13 @@ namespace Numpy
         /// <param name="x">
         /// Logical NOT is applied to the elements of x.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -737,13 +737,13 @@ namespace Numpy
         /// Logical XOR is applied to the elements of x1 and x2.  They must
         /// be broadcastable to the same shape.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -823,11 +823,11 @@ namespace Numpy
             {
                 b,
                 a,
-                rtol,
-                atol,
-                equal_nan,
             });
             var kwargs=new PyDict();
+            if (rtol!=1e-05f) kwargs["rtol"]=ToPython(rtol);
+            if (atol!=1e-08f) kwargs["atol"]=ToPython(atol);
+            if (equal_nan!=false) kwargs["equal_nan"]=ToPython(equal_nan);
             dynamic py = __self__.InvokeMethod("allclose", pyargs, kwargs);
             return ToCsharp<bool>(py);
         }
@@ -885,11 +885,11 @@ namespace Numpy
             {
                 b,
                 a,
-                rtol,
-                atol,
-                equal_nan,
             });
             var kwargs=new PyDict();
+            if (rtol!=1e-05f) kwargs["rtol"]=ToPython(rtol);
+            if (atol!=1e-08f) kwargs["atol"]=ToPython(atol);
+            if (equal_nan!=false) kwargs["equal_nan"]=ToPython(equal_nan);
             dynamic py = __self__.InvokeMethod("isclose", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }
@@ -962,13 +962,13 @@ namespace Numpy
         /// broadcastable to a common shape (which may be the shape of one or
         /// the other).
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -1006,13 +1006,13 @@ namespace Numpy
         /// broadcastable to a common shape (which may be the shape of one or
         /// the other).
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -1050,13 +1050,13 @@ namespace Numpy
         /// broadcastable to a common shape (which may be the shape of one or
         /// the other).
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -1094,13 +1094,13 @@ namespace Numpy
         /// broadcastable to a common shape (which may be the shape of one or
         /// the other).
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -1134,13 +1134,13 @@ namespace Numpy
         /// <param name="x1">
         /// Input arrays of the same shape.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>
@@ -1174,13 +1174,13 @@ namespace Numpy
         /// <param name="x1">
         /// Input arrays.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that the inputs broadcast to. If not provided or None,
         /// a freshly-allocated array is returned. A tuple (possible only as a
         /// keyword argument) must have length equal to the number of outputs.
         /// </param>
-        /// <param name="@where">
+        /// <param name="where">
         /// Values of True indicate to calculate the ufunc at that position, values
         /// of False indicate to leave the value in the output alone.
         /// </param>

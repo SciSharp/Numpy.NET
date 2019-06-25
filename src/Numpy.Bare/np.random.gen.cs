@@ -175,7 +175,7 @@ namespace Numpy
             /// Array of random floats of shape size (unless size=None, in which
             /// case a single float is returned).
             /// </returns>
-            public static NDarray<float> random_sample(int[] size = null)
+            public static NDarray<float> random_sample(params int[] size)
                 => NumPy.Instance.random_random_sample(size:size);
         }
         
@@ -196,7 +196,7 @@ namespace Numpy
             /// Array of random floats of shape size (unless size=None, in which
             /// case a single float is returned).
             /// </returns>
-            public static NDarray<float> random_(int[] size = null)
+            public static NDarray<float> random_(params int[] size)
                 => NumPy.Instance.random_random(size:size);
         }
         
@@ -217,7 +217,7 @@ namespace Numpy
             /// Array of random floats of shape size (unless size=None, in which
             /// case a single float is returned).
             /// </returns>
-            public static NDarray<float> ranf(int[] size = null)
+            public static NDarray<float> ranf(params int[] size)
                 => NumPy.Instance.random_ranf(size:size);
         }
         
@@ -238,7 +238,7 @@ namespace Numpy
             /// Array of random floats of shape size (unless size=None, in which
             /// case a single float is returned).
             /// </returns>
-            public static NDarray<float> sample(int[] size = null)
+            public static NDarray<float> sample(params int[] size)
                 => NumPy.Instance.random_sample(size:size);
         }
         
@@ -594,7 +594,7 @@ namespace Numpy
             /// Drawn samples from the parameterized exponential distribution.
             /// </returns>
             public static NDarray exponential(NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.random_exponential(scale, size:size);
+                => NumPy.Instance.random_exponential(scale:scale, size:size);
         }
         
         public static partial class random {
@@ -1472,7 +1472,7 @@ namespace Numpy
             /// <returns>
             /// The drawn samples.
             /// </returns>
-            public static NDarray standard_cauchy(int[] size = null)
+            public static NDarray standard_cauchy(params int[] size)
                 => NumPy.Instance.random_standard_cauchy(size:size);
         }
         
@@ -1491,7 +1491,7 @@ namespace Numpy
             /// <returns>
             /// Drawn samples.
             /// </returns>
-            public static NDarray standard_exponential(int[] size = null)
+            public static NDarray standard_exponential(params int[] size)
                 => NumPy.Instance.random_standard_exponential(size:size);
         }
         
@@ -1543,7 +1543,7 @@ namespace Numpy
             /// <returns>
             /// Drawn samples.
             /// </returns>
-            public static NDarray standard_normal(int[] size = null)
+            public static NDarray standard_normal(params int[] size)
                 => NumPy.Instance.random_standard_normal(size:size);
         }
         
@@ -1981,7 +1981,7 @@ namespace Numpy
             /// random distributions in NumPy. If the internal state is manually altered,
             /// the user should know exactly what he/she is doing.
             /// </summary>
-            /// <param name="@out">
+            /// <param name="out">
             /// The returned tuple has the following items:
             /// </param>
             /// <returns>

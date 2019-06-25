@@ -25,7 +25,7 @@ namespace Numpy
         /// <param name="b">
         /// Second argument.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Output argument. This must have the exact kind that would be returned
         /// if it was not used. In particular, it must have the right type, must be
         /// C-contiguous, and its dtype must be the dtype that would be returned
@@ -88,7 +88,7 @@ namespace Numpy
         /// <returns>
         /// Returns the dot product of the supplied arrays.
         /// </returns>
-        public NDarray linalg_multi_dot(NDarray[] arrays)
+        public NDarray linalg_multi_dot(params NDarray[] arrays)
         {
             //auto-generated code, do not change
             var linalg = self.GetAttr("linalg");
@@ -194,7 +194,7 @@ namespace Numpy
         /// Second input vector.  Input is flattened if
         /// not already 1-dimensional.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location where the result is stored
         /// </param>
         /// <returns>
@@ -233,7 +233,7 @@ namespace Numpy
         /// <param name="x1">
         /// Input arrays, scalars not allowed.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// A location into which the result is stored. If provided, it must have
         /// a shape that matches the signature (n,k),(k,m)-&gt;(n,m). If not
         /// provided or None, a freshly-allocated array is returned.
@@ -294,9 +294,9 @@ namespace Numpy
             {
                 b,
                 a,
-                axes,
             });
             var kwargs=new PyDict();
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
             dynamic py = __self__.InvokeMethod("tensordot", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }
@@ -404,7 +404,7 @@ namespace Numpy
         /// <param name="operands">
         /// These are the arrays for the operation.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the calculation is done into this array.
         /// </param>
         /// <param name="dtype">
@@ -495,9 +495,9 @@ namespace Numpy
             {
                 subscripts,
                 operands,
-                optimize,
             });
             var kwargs=new PyDict();
+            if (optimize!="greedy") kwargs["optimize"]=ToPython(optimize);
             dynamic py = __self__.InvokeMethod("einsum_path", pyargs, kwargs);
             var t = py as PyTuple;
             return (ToCsharp<list of tuples>(t[0]), ToCsharp<string>(t[1]));
@@ -846,7 +846,7 @@ namespace Numpy
         /// precision, then the default integer precision is used. Otherwise,
         /// the precision is the same as that of a.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Array into which the output is placed. Its type is preserved and
         /// it must be of the right shape to hold the output.
         /// </param>

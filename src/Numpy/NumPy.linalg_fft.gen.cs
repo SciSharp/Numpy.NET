@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -440,9 +440,9 @@ namespace Numpy
             var pyargs=ToTuple(new object[]
             {
                 a,
-                rcond,
             });
             var kwargs=new PyDict();
+            if (rcond!=1e-15f) kwargs["rcond"]=ToPython(rcond);
             dynamic py = __self__.InvokeMethod("pinv", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }

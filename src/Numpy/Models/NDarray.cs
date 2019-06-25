@@ -29,6 +29,8 @@ namespace Numpy
             // note: this implementation works only for device CPU
             long ptr = PyObject.ctypes.data;
             int size = PyObject.size;
+            if (size==0)
+                return new T[0];
             object array = null;
             if (typeof(T) == typeof(byte)) array = new byte[size];
             else if (typeof(T) == typeof(short)) array = new short[size];

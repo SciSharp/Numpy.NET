@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -408,7 +408,7 @@ namespace Numpy
         /// By default, the index is into the flattened array, otherwise
         /// along the specified axis.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the result will be inserted into this array. It should
         /// be of the appropriate shape and dtype.
         /// </param>
@@ -474,7 +474,7 @@ namespace Numpy
         /// By default, the index is into the flattened array, otherwise
         /// along the specified axis.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the result will be inserted into this array. It should
         /// be of the appropriate shape and dtype.
         /// </param>

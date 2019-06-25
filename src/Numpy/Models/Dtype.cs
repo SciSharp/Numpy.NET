@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.Text;
 using Python.Runtime;
 
@@ -36,6 +37,8 @@ namespace Numpy
                 case ulong o: return np.uint64;
                 case float o: return np.float32;
                 case double o: return np.float64;
+                case string o: return np.unicode_;
+                case char o: return np.unicode_;
                 case bool[] o: return np.bool8;
                 case byte[] o: return np.@byte;
                 case short[] o: return np.int16;
@@ -43,6 +46,8 @@ namespace Numpy
                 case long[] o: return np.int64;
                 case float[] o: return np.float32;
                 case double[] o: return np.float64;
+                case string[] o: return np.unicode_;
+                case char[] o: return np.unicode_;
                 case bool[,] o: return np.bool8;
                 case byte[,] o: return np.uint8;
                 case short[,] o: return np.int16;
@@ -50,6 +55,8 @@ namespace Numpy
                 case long[,] o: return np.int64;
                 case float[,] o: return np.float32;
                 case double[,] o: return np.float64;
+                case string[,] o: return np.unicode_;
+                case char[,] o: return np.unicode_;
                 case bool[,,] o: return np.bool8;
                 case byte[,,] o: return np.uint8;
                 case short[,,] o: return np.int16;
@@ -57,6 +64,8 @@ namespace Numpy
                 case long[,,] o: return np.int64;
                 case float[,,] o: return np.float32;
                 case double[,,] o: return np.float64;
+                case string[,,] o: return np.unicode_;
+                case char[,,] o: return np.unicode_;
                 default: throw new ArgumentException("Can not convert type of given object to dtype: " + obj.GetType());
             }
         }

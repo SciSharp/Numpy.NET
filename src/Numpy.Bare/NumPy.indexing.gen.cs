@@ -223,7 +223,7 @@ namespace Numpy
         /// N arrays with N dimensions each, with N the number of input
         /// sequences. Together these arrays form an open mesh.
         /// </returns>
-        public NDarray[] ix_(NDarray[] args)
+        public NDarray[] ix_(params NDarray[] args)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -403,9 +403,9 @@ namespace Numpy
             {
                 n,
                 mask_func,
-                k,
             });
             var kwargs=new PyDict();
+            if (k!=0) kwargs["k"]=ToPython(k);
             dynamic py = __self__.InvokeMethod("mask_indices", pyargs, kwargs);
             return ToCsharp<NDarray[]>(py);
         }
@@ -574,7 +574,7 @@ namespace Numpy
         /// The axis over which to select values. By default, the flattened
         /// input array is used.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the result will be placed in this array. It should
         /// be of the appropriate shape and dtype.
         /// </param>
@@ -686,7 +686,7 @@ namespace Numpy
         /// its outermost dimension (i.e., the one corresponding to
         /// choices.shape[0]) is taken as defining the “sequence”.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the result will be inserted into this array. It should
         /// be of the appropriate shape and dtype.
         /// </param>
@@ -731,7 +731,7 @@ namespace Numpy
         /// Axis along which to take slices. If None (default), work on the
         /// flattened array.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// Output array.  Its type is preserved and it must be of the right
         /// shape to hold the output.
         /// </param>
@@ -841,7 +841,7 @@ namespace Numpy
         /// The list of arrays from which the output elements are taken. It has
         /// to be of the same length as condlist.
         /// </param>
-        /// <param name="@default">
+        /// <param name="default">
         /// The element inserted in output when all conditions evaluate to False.
         /// </param>
         /// <returns>
@@ -909,9 +909,7 @@ namespace Numpy
         public NDarray lib_stride_tricks_as_strided(NDarray x, Shape shape = null, int[] strides = null, bool? subok = false, bool? writeable = true)
         {
             //auto-generated code, do not change
-            var lib = self.GetAttr("lib");
-            var stride_tricks = lib.GetAttr("stride_tricks");
-            var __self__=stride_tricks;
+            var __self__=self;
             var pyargs=ToTuple(new object[]
             {
                 x,
@@ -1112,9 +1110,9 @@ namespace Numpy
             {
                 a,
                 val,
-                wrap,
             });
             var kwargs=new PyDict();
+            if (wrap!=false) kwargs["wrap"]=ToPython(wrap);
             dynamic py = __self__.InvokeMethod("fill_diagonal", pyargs, kwargs);
         }
         
@@ -1230,7 +1228,7 @@ namespace Numpy
         /// <param name="args">
         /// The size of each dimension of the array.
         /// </param>
-        public void ndindex(int[] args)
+        public void ndindex(params int[] args)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1267,9 +1265,9 @@ namespace Numpy
             var pyargs=ToTuple(new object[]
             {
                 op,
-                axes,
             });
             var kwargs=new PyDict();
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
             dynamic py = __self__.InvokeMethod("nested_iters", pyargs, kwargs);
             return ToCsharp<tuple of nditer>(py);
         }
@@ -1321,7 +1319,7 @@ namespace Numpy
         /// returned the process continues from the next dimension, until all
         /// elements have been read.
         /// </summary>
-        /// <param name="@var">
+        /// <param name="var">
         /// The object to iterate over.
         /// </param>
         /// <param name="buf_size">

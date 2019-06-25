@@ -9,8 +9,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
-using Python.Included;
 using Numpy.Models;
+using Python.Included;
 
 namespace Numpy
 {
@@ -109,10 +109,10 @@ namespace Numpy
             {
                 ar2,
                 ar1,
-                assume_unique,
-                return_indices,
             });
             var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            if (return_indices!=false) kwargs["return_indices"]=ToPython(return_indices);
             dynamic py = __self__.InvokeMethod("intersect1d", pyargs, kwargs);
             var t = py as PyTuple;
             return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
@@ -202,9 +202,9 @@ namespace Numpy
             {
                 ar1,
                 ar2,
-                assume_unique,
             });
             var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
             dynamic py = __self__.InvokeMethod("setdiff1d", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }
@@ -237,9 +237,9 @@ namespace Numpy
             {
                 ar2,
                 ar1,
-                assume_unique,
             });
             var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
             dynamic py = __self__.InvokeMethod("setxor1d", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }

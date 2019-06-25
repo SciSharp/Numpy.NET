@@ -439,9 +439,9 @@ namespace Numpy
             var pyargs=ToTuple(new object[]
             {
                 a,
-                rcond,
             });
             var kwargs=new PyDict();
+            if (rcond!=1e-15f) kwargs["rcond"]=ToPython(rcond);
             dynamic py = __self__.InvokeMethod("pinv", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }

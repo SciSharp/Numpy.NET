@@ -311,7 +311,7 @@ namespace Numpy
         /// By default, the index is into the flattened array, otherwise
         /// along the specified axis.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the result will be inserted into this array. It should
         /// be of the appropriate shape and dtype.
         /// </param>
@@ -354,7 +354,7 @@ namespace Numpy
         /// By default, the index is into the flattened array, otherwise
         /// along the specified axis.
         /// </param>
-        /// <param name="@out">
+        /// <param name="out">
         /// If provided, the result will be inserted into this array. It should
         /// be of the appropriate shape and dtype.
         /// </param>
