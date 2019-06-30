@@ -17,23 +17,25 @@ namespace Numpy
     {
         
         /// <summary>
-        /// Copy an element of an array to a standard Python scalar and return it.
-        /// 
-        /// Notes
-        /// 
-        /// When the data type of a is longdouble or clongdouble, item() returns
-        /// a scalar array object because there is no available Python scalar that
-        /// would not lose information. Void arrays return a buffer object for item(),
-        /// unless fields are defined, in which case a tuple is returned.
-        /// 
-        /// item is very similar to a[args], except, instead of an array scalar,
-        /// a standard Python scalar is returned. This can be useful for speeding up
-        /// access to elements of the array and doing arithmetic on elements of the
-        /// array using Python’s optimized math.
+        ///	Copy an element of an array to a standard Python scalar and return it.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	When the data type of a is longdouble or clongdouble, item() returns
+        ///	a scalar array object because there is no available Python scalar that
+        ///	would not lose information.<br></br>
+        ///	 Void arrays return a buffer object for item(),
+        ///	unless fields are defined, in which case a tuple is returned.<br></br>
+        ///	
+        ///	item is very similar to a[args], except, instead of an array scalar,
+        ///	a standard Python scalar is returned.<br></br>
+        ///	 This can be useful for speeding up
+        ///	access to elements of the array and doing arithmetic on elements of the
+        ///	array using Python’s optimized math.
         /// </summary>
         /// <returns>
-        /// A copy of the specified element of the array as a suitable
-        /// Python scalar
+        ///	A copy of the specified element of the array as a suitable
+        ///	Python scalar
         /// </returns>
         public T item<T>(params int[] args)
         {
@@ -50,17 +52,18 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// Return the array as a (possibly nested) list.
-        /// 
-        /// Return a copy of the array data as a (nested) Python list.
-        /// Data items are converted to the nearest compatible Python type.
-        /// 
-        /// Notes
-        /// 
-        /// The array may be recreated, a = np.array(a.tolist()).
+        ///	Return the array as a (possibly nested) list.<br></br>
+        ///	
+        ///	Return a copy of the array data as a (nested) Python list.<br></br>
+        ///	
+        ///	Data items are converted to the nearest compatible Python type.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The array may be recreated, a = np.array(a.tolist()).
         /// </summary>
         /// <returns>
-        /// The possibly nested list of array elements.
+        ///	The possibly nested list of array elements.
         /// </returns>
         public List<T> tolist<T>()
         {
@@ -72,38 +75,44 @@ namespace Numpy
         */
         
         /// <summary>
-        /// Write array to a file as text or binary (default).
-        /// 
-        /// Data is always written in ‘C’ order, independent of the order of a.
-        /// The data produced by this method can be recovered using the function
-        /// fromfile().
-        /// 
-        /// Notes
-        /// 
-        /// This is a convenience function for quick storage of array data.
-        /// Information on endianness and precision is lost, so this method is not a
-        /// good choice for files intended to archive data or transport data between
-        /// machines with different endianness. Some of these problems can be overcome
-        /// by outputting the data as text files, at the expense of speed and file
-        /// size.
-        /// 
-        /// When fid is a file object, array contents are directly written to the
-        /// file, bypassing the file object’s write method. As a result, tofile
-        /// cannot be used with files objects supporting compression (e.g., GzipFile)
-        /// or file-like objects that do not support fileno() (e.g., BytesIO).
+        ///	Write array to a file as text or binary (default).<br></br>
+        ///	
+        ///	Data is always written in ‘C’ order, independent of the order of a.<br></br>
+        ///	
+        ///	The data produced by this method can be recovered using the function
+        ///	fromfile().<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	This is a convenience function for quick storage of array data.<br></br>
+        ///	
+        ///	Information on endianness and precision is lost, so this method is not a
+        ///	good choice for files intended to archive data or transport data between
+        ///	machines with different endianness.<br></br>
+        ///	 Some of these problems can be overcome
+        ///	by outputting the data as text files, at the expense of speed and file
+        ///	size.<br></br>
+        ///	
+        ///	When fid is a file object, array contents are directly written to the
+        ///	file, bypassing the file object’s write method.<br></br>
+        ///	 As a result, tofile
+        ///	cannot be used with files objects supporting compression (e.g., GzipFile)
+        ///	or file-like objects that do not support fileno() (e.g., BytesIO).
         /// </summary>
         /// <param name="fid">
-        /// An open file object, or a string containing a filename.
+        ///	An open file object, or a string containing a filename.
         /// </param>
         /// <param name="sep">
-        /// Separator between array items for text output.
-        /// If “” (empty), a binary file is written, equivalent to
-        /// file.write(a.tobytes()).
+        ///	Separator between array items for text output.<br></br>
+        ///	
+        ///	If “” (empty), a binary file is written, equivalent to
+        ///	file.write(a.tobytes()).
         /// </param>
         /// <param name="format">
-        /// Format string for text file output.
-        /// Each entry in the array is formatted to text by first converting
-        /// it to the closest Python type, and then using “format” % item.
+        ///	Format string for text file output.<br></br>
+        ///	
+        ///	Each entry in the array is formatted to text by first converting
+        ///	it to the closest Python type, and then using “format” % item.
         /// </param>
         public void tofile(string fid, string sep, string format)
         {
@@ -120,11 +129,12 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Dump a pickle of the array to the specified file.
-        /// The array can be read back with pickle.load or numpy.load.
+        ///	Dump a pickle of the array to the specified file.<br></br>
+        ///	
+        ///	The array can be read back with pickle.load or numpy.load.
         /// </summary>
         /// <param name="file">
-        /// A string naming the dump file.
+        ///	A string naming the dump file.
         /// </param>
         public void dump(string file)
         {
@@ -139,8 +149,9 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns the pickle of the array as a string.
-        /// pickle.loads or numpy.loads will convert the string back to an array.
+        ///	Returns the pickle of the array as a string.<br></br>
+        ///	
+        ///	pickle.loads or numpy.loads will convert the string back to an array.
         /// </summary>
         public void dumps()
         {
@@ -150,45 +161,50 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Copy of the array, cast to a specified type.
-        /// 
-        /// Notes
-        /// 
-        /// Starting in NumPy 1.9, astype method now returns an error if the string
-        /// dtype to cast to is not long enough in ‘safe’ casting mode to hold the max
-        /// value of integer/float array that is being casted. Previously the casting
-        /// was allowed even if the result was truncated.
+        ///	Copy of the array, cast to a specified type.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Starting in NumPy 1.9, astype method now returns an error if the string
+        ///	dtype to cast to is not long enough in ‘safe’ casting mode to hold the max
+        ///	value of integer/float array that is being casted.<br></br>
+        ///	 Previously the casting
+        ///	was allowed even if the result was truncated.
         /// </summary>
         /// <param name="dtype">
-        /// Typecode or data-type to which the array is cast.
+        ///	Typecode or data-type to which the array is cast.
         /// </param>
         /// <param name="order">
-        /// Controls the memory layout order of the result.
-        /// ‘C’ means C order, ‘F’ means Fortran order, ‘A’
-        /// means ‘F’ order if all the arrays are Fortran contiguous,
-        /// ‘C’ order otherwise, and ‘K’ means as close to the
-        /// order the array elements appear in memory as possible.
-        /// Default is ‘K’.
+        ///	Controls the memory layout order of the result.<br></br>
+        ///	
+        ///	‘C’ means C order, ‘F’ means Fortran order, ‘A’
+        ///	means ‘F’ order if all the arrays are Fortran contiguous,
+        ///	‘C’ order otherwise, and ‘K’ means as close to the
+        ///	order the array elements appear in memory as possible.<br></br>
+        ///	
+        ///	Default is ‘K’.
         /// </param>
         /// <param name="casting">
-        /// Controls what kind of data casting may occur. Defaults to ‘unsafe’
-        /// for backwards compatibility.
+        ///	Controls what kind of data casting may occur.<br></br>
+        ///	Defaults to ‘unsafe’
+        ///	for backwards compatibility.
         /// </param>
         /// <param name="subok">
-        /// If True, then sub-classes will be passed-through (default), otherwise
-        /// the returned array will be forced to be a base-class array.
+        ///	If True, then sub-classes will be passed-through (default), otherwise
+        ///	the returned array will be forced to be a base-class array.
         /// </param>
         /// <param name="copy">
-        /// By default, astype always returns a newly allocated array. If this
-        /// is set to false, and the dtype, order, and subok
-        /// requirements are satisfied, the input array is returned instead
-        /// of a copy.
+        ///	By default, astype always returns a newly allocated array.<br></br>
+        ///	If this
+        ///	is set to false, and the dtype, order, and subok
+        ///	requirements are satisfied, the input array is returned instead
+        ///	of a copy.
         /// </param>
         /// <returns>
-        /// Unless copy is False and the other conditions for returning the input
-        /// array are satisfied (see description for copy input parameter), arr_t
-        /// is a new array of the same shape as the input array, with dtype, order
-        /// given by dtype, order.
+        ///	Unless copy is False and the other conditions for returning the input
+        ///	array are satisfied (see description for copy input parameter), arr_t
+        ///	is a new array of the same shape as the input array, with dtype, order
+        ///	given by dtype, order.
         /// </returns>
         public NDarray astype(Dtype dtype, string order = null, string casting = null, bool? subok = null, bool? copy = null)
         {
@@ -208,17 +224,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Swap the bytes of the array elements
-        /// 
-        /// Toggle between low-endian and big-endian data representation by
-        /// returning a byteswapped array, optionally swapped in-place.
+        ///	Swap the bytes of the array elements
+        ///	
+        ///	Toggle between low-endian and big-endian data representation by
+        ///	returning a byteswapped array, optionally swapped in-place.
         /// </summary>
         /// <param name="inplace">
-        /// If True, swap bytes in-place, default is False.
+        ///	If True, swap bytes in-place, default is False.
         /// </param>
         /// <returns>
-        /// The byteswapped array. If inplace is True, this is
-        /// a view to self.
+        ///	The byteswapped array.<br></br>
+        ///	 If inplace is True, this is
+        ///	a view to self.
         /// </returns>
         public NDarray byteswap(bool? inplace = null)
         {
@@ -234,15 +251,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a copy of the array.
+        ///	Return a copy of the array.
         /// </summary>
         /// <param name="order">
-        /// Controls the memory layout of the copy. ‘C’ means C-order,
-        /// ‘F’ means F-order, ‘A’ means ‘F’ if a is Fortran contiguous,
-        /// ‘C’ otherwise. ‘K’ means match the layout of a as closely
-        /// as possible. (Note that this function and numpy.copy are very
-        /// similar, but have different default values for their order=
-        /// arguments.)
+        ///	Controls the memory layout of the copy.<br></br>
+        ///	‘C’ means C-order,
+        ///	‘F’ means F-order, ‘A’ means ‘F’ if a is Fortran contiguous,
+        ///	‘C’ otherwise.<br></br>
+        ///	‘K’ means match the layout of a as closely
+        ///	as possible.<br></br>
+        ///	(Note that this function and numpy.copy are very
+        ///	similar, but have different default values for their order=
+        ///	arguments.)
         /// </param>
         public void copy(string order = null)
         {
@@ -257,21 +277,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a field of the given array as a certain type.
-        /// 
-        /// A field is a view of the array data with a given data-type. The values in
-        /// the view are determined by the given type and the offset into the current
-        /// array in bytes. The offset needs to be such that the view dtype fits in the
-        /// array dtype; for example an array of dtype complex128 has 16-byte elements.
-        /// If taking a view with a 32-bit integer (4 bytes), the offset needs to be
-        /// between 0 and 12 bytes.
+        ///	Returns a field of the given array as a certain type.<br></br>
+        ///	
+        ///	A field is a view of the array data with a given data-type.<br></br>
+        ///	 The values in
+        ///	the view are determined by the given type and the offset into the current
+        ///	array in bytes.<br></br>
+        ///	 The offset needs to be such that the view dtype fits in the
+        ///	array dtype; for example an array of dtype complex128 has 16-byte elements.<br></br>
+        ///	
+        ///	If taking a view with a 32-bit integer (4 bytes), the offset needs to be
+        ///	between 0 and 12 bytes.
         /// </summary>
         /// <param name="dtype">
-        /// The data type of the view. The dtype size of the view can not be larger
-        /// than that of the array itself.
+        ///	The data type of the view.<br></br>
+        ///	The dtype size of the view can not be larger
+        ///	than that of the array itself.
         /// </param>
         /// <param name="offset">
-        /// Number of bytes to skip before beginning the element view.
+        ///	Number of bytes to skip before beginning the element view.
         /// </param>
         public void getfield(Dtype dtype, int offset)
         {
@@ -287,47 +311,53 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Set array flags WRITEABLE, ALIGNED, (WRITEBACKIFCOPY and UPDATEIFCOPY),
-        /// respectively.
-        /// 
-        /// These Boolean-valued flags affect how numpy interprets the memory
-        /// area used by a (see Notes below). The ALIGNED flag can only
-        /// be set to True if the data is actually aligned according to the type.
-        /// The WRITEBACKIFCOPY and (deprecated) UPDATEIFCOPY flags can never be set
-        /// to True. The flag WRITEABLE can only be set to True if the array owns its
-        /// own memory, or the ultimate owner of the memory exposes a writeable buffer
-        /// interface, or is a string. (The exception for string is made so that
-        /// unpickling can be done without copying memory.)
-        /// 
-        /// Notes
-        /// 
-        /// Array flags provide information about how the memory area used
-        /// for the array is to be interpreted. There are 7 Boolean flags
-        /// in use, only four of which can be changed by the user:
-        /// WRITEBACKIFCOPY, UPDATEIFCOPY, WRITEABLE, and ALIGNED.
-        /// 
-        /// WRITEABLE (W) the data area can be written to;
-        /// 
-        /// ALIGNED (A) the data and strides are aligned appropriately for the hardware
-        /// (as determined by the compiler);
-        /// 
-        /// UPDATEIFCOPY (U) (deprecated), replaced by WRITEBACKIFCOPY;
-        /// 
-        /// WRITEBACKIFCOPY (X) this array is a copy of some other array (referenced
-        /// by .base). When the C-API function PyArray_ResolveWritebackIfCopy is
-        /// called, the base array will be updated with the contents of this array.
-        /// 
-        /// All flags can be accessed using the single (upper case) letter as well
-        /// as the full name.
+        ///	Set array flags WRITEABLE, ALIGNED, (WRITEBACKIFCOPY and UPDATEIFCOPY),
+        ///	respectively.<br></br>
+        ///	
+        ///	These Boolean-valued flags affect how numpy interprets the memory
+        ///	area used by a (see Notes below).<br></br>
+        ///	 The ALIGNED flag can only
+        ///	be set to True if the data is actually aligned according to the type.<br></br>
+        ///	
+        ///	The WRITEBACKIFCOPY and (deprecated) UPDATEIFCOPY flags can never be set
+        ///	to True.<br></br>
+        ///	 The flag WRITEABLE can only be set to True if the array owns its
+        ///	own memory, or the ultimate owner of the memory exposes a writeable buffer
+        ///	interface, or is a string.<br></br>
+        ///	 (The exception for string is made so that
+        ///	unpickling can be done without copying memory.)
+        ///	
+        ///	Notes
+        ///	
+        ///	Array flags provide information about how the memory area used
+        ///	for the array is to be interpreted.<br></br>
+        ///	 There are 7 Boolean flags
+        ///	in use, only four of which can be changed by the user:
+        ///	WRITEBACKIFCOPY, UPDATEIFCOPY, WRITEABLE, and ALIGNED.<br></br>
+        ///	
+        ///	WRITEABLE (W) the data area can be written to;
+        ///	
+        ///	ALIGNED (A) the data and strides are aligned appropriately for the hardware
+        ///	(as determined by the compiler);
+        ///	
+        ///	UPDATEIFCOPY (U) (deprecated), replaced by WRITEBACKIFCOPY;
+        ///	
+        ///	WRITEBACKIFCOPY (X) this array is a copy of some other array (referenced
+        ///	by .base).<br></br>
+        ///	 When the C-API function PyArray_ResolveWritebackIfCopy is
+        ///	called, the base array will be updated with the contents of this array.<br></br>
+        ///	
+        ///	All flags can be accessed using the single (upper case) letter as well
+        ///	as the full name.
         /// </summary>
         /// <param name="write">
-        /// Describes whether or not a can be written to.
+        ///	Describes whether or not a can be written to.
         /// </param>
         /// <param name="align">
-        /// Describes whether or not a is aligned properly for its type.
+        ///	Describes whether or not a is aligned properly for its type.
         /// </param>
         /// <param name="uic">
-        /// Describes whether or not a is a copy of another “base” array.
+        ///	Describes whether or not a is a copy of another “base” array.
         /// </param>
         public void setflags(bool? write = null, bool? align = null, bool? uic = null)
         {
@@ -344,10 +374,10 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Fill the array with a scalar value.
+        ///	Fill the array with a scalar value.
         /// </summary>
         /// <param name="value">
-        /// All elements of a will be assigned this value.
+        ///	All elements of a will be assigned this value.
         /// </param>
         public void fill(ValueType @value)
         {
@@ -362,18 +392,21 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a view of the array with axes transposed.
-        /// 
-        /// For a 1-D array, this has no effect. (To change between column and
-        /// row vectors, first cast the 1-D array into a matrix object.)
-        /// For a 2-D array, this is the usual matrix transpose.
-        /// For an n-D array, if axes are given, their order indicates how the
-        /// axes are permuted (see Examples). If axes are not provided and
-        /// a.shape = (i[0], i[1], ... i[n-2], i[n-1]), then
-        /// a.transpose().shape = (i[n-1], i[n-2], ... i[1], i[0]).
+        ///	Returns a view of the array with axes transposed.<br></br>
+        ///	
+        ///	For a 1-D array, this has no effect.<br></br>
+        ///	 (To change between column and
+        ///	row vectors, first cast the 1-D array into a matrix object.)
+        ///	For a 2-D array, this is the usual matrix transpose.<br></br>
+        ///	
+        ///	For an n-D array, if axes are given, their order indicates how the
+        ///	axes are permuted (see Examples).<br></br>
+        ///	 If axes are not provided and
+        ///	a.shape = (i[0], i[1], ... i[n-2], i[n-1]), then
+        ///	a.transpose().shape = (i[n-1], i[n-2], ... i[1], i[0]).
         /// </summary>
         /// <returns>
-        /// View of a, with axes suitably permuted.
+        ///	View of a, with axes suitably permuted.
         /// </returns>
         public NDarray transpose(params int[] axes)
         {
@@ -389,19 +422,23 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a copy of the array collapsed into one dimension.
+        ///	Return a copy of the array collapsed into one dimension.
         /// </summary>
         /// <param name="order">
-        /// ‘C’ means to flatten in row-major (C-style) order.
-        /// ‘F’ means to flatten in column-major (Fortran-
-        /// style) order. ‘A’ means to flatten in column-major
-        /// order if a is Fortran contiguous in memory,
-        /// row-major order otherwise. ‘K’ means to flatten
-        /// a in the order the elements occur in memory.
-        /// The default is ‘C’.
+        ///	‘C’ means to flatten in row-major (C-style) order.<br></br>
+        ///	
+        ///	‘F’ means to flatten in column-major (Fortran-
+        ///	style) order.<br></br>
+        ///	‘A’ means to flatten in column-major
+        ///	order if a is Fortran contiguous in memory,
+        ///	row-major order otherwise.<br></br>
+        ///	‘K’ means to flatten
+        ///	a in the order the elements occur in memory.<br></br>
+        ///	
+        ///	The default is ‘C’.
         /// </param>
         /// <returns>
-        /// A copy of the input array, flattened to one dimension.
+        ///	A copy of the input array, flattened to one dimension.
         /// </returns>
         public NDarray flatten(string order = null)
         {
@@ -417,16 +454,17 @@ namespace Numpy
         }
         
         /// <summary>
-        /// For unpickling.
-        /// 
-        /// The state argument must be a sequence that contains the following
-        /// elements:
+        ///	For unpickling.<br></br>
+        ///	
+        ///	The state argument must be a sequence that contains the following
+        ///	elements:
         /// </summary>
         /// <param name="version">
-        /// optional pickle version. If omitted defaults to 0.
+        ///	optional pickle version.<br></br>
+        ///	If omitted defaults to 0.
         /// </param>
         /// <param name="rawdata">
-        /// a binary string with the data (or a list if ‘a’ is an object array)
+        ///	a binary string with the data (or a list if ‘a’ is an object array)
         /// </param>
         public void __setstate__(int version, Shape shape, Dtype dtype, bool isFortran, string rawdata)
         {
@@ -445,47 +483,56 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Gives a new shape to an array without changing its data.
-        /// 
-        /// Notes
-        /// 
-        /// It is not always possible to change the shape of an array without
-        /// copying the data. If you want an error to be raised when the data is copied,
-        /// you should assign the new shape to the shape attribute of the array:
-        /// 
-        /// The order keyword gives the index ordering both for fetching the values
-        /// from a, and then placing the values into the output array.
-        /// For example, let’s say you have an array:
-        /// 
-        /// You can think of reshaping as first raveling the array (using the given
-        /// index order), then inserting the elements from the raveled array into the
-        /// new array using the same kind of index ordering as was used for the
-        /// raveling.
+        ///	Gives a new shape to an array without changing its data.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	It is not always possible to change the shape of an array without
+        ///	copying the data.<br></br>
+        ///	 If you want an error to be raised when the data is copied,
+        ///	you should assign the new shape to the shape attribute of the array:
+        ///	
+        ///	The order keyword gives the index ordering both for fetching the values
+        ///	from a, and then placing the values into the output array.<br></br>
+        ///	
+        ///	For example, let’s say you have an array:
+        ///	
+        ///	You can think of reshaping as first raveling the array (using the given
+        ///	index order), then inserting the elements from the raveled array into the
+        ///	new array using the same kind of index ordering as was used for the
+        ///	raveling.
         /// </summary>
         /// <param name="newshape">
-        /// The new shape should be compatible with the original shape. If
-        /// an integer, then the result will be a 1-D array of that length.
-        /// One shape dimension can be -1. In this case, the value is
-        /// inferred from the length of the array and remaining dimensions.
+        ///	The new shape should be compatible with the original shape.<br></br>
+        ///	If
+        ///	an integer, then the result will be a 1-D array of that length.<br></br>
+        ///	
+        ///	One shape dimension can be -1. In this case, the value is
+        ///	inferred from the length of the array and remaining dimensions.
         /// </param>
         /// <param name="order">
-        /// Read the elements of a using this index order, and place the
-        /// elements into the reshaped array using this index order.  ‘C’
-        /// means to read / write the elements using C-like index order,
-        /// with the last axis index changing fastest, back to the first
-        /// axis index changing slowest. ‘F’ means to read / write the
-        /// elements using Fortran-like index order, with the first index
-        /// changing fastest, and the last index changing slowest. Note that
-        /// the ‘C’ and ‘F’ options take no account of the memory layout of
-        /// the underlying array, and only refer to the order of indexing.
-        /// ‘A’ means to read / write the elements in Fortran-like index
-        /// order if a is Fortran contiguous in memory, C-like order
-        /// otherwise.
+        ///	Read the elements of a using this index order, and place the
+        ///	elements into the reshaped array using this index order.<br></br>
+        ///	‘C’
+        ///	means to read / write the elements using C-like index order,
+        ///	with the last axis index changing fastest, back to the first
+        ///	axis index changing slowest.<br></br>
+        ///	‘F’ means to read / write the
+        ///	elements using Fortran-like index order, with the first index
+        ///	changing fastest, and the last index changing slowest.<br></br>
+        ///	Note that
+        ///	the ‘C’ and ‘F’ options take no account of the memory layout of
+        ///	the underlying array, and only refer to the order of indexing.<br></br>
+        ///	
+        ///	‘A’ means to read / write the elements in Fortran-like index
+        ///	order if a is Fortran contiguous in memory, C-like order
+        ///	otherwise.
         /// </param>
         /// <returns>
-        /// This will be a new view object if possible; otherwise, it will
-        /// be a copy.  Note there is no guarantee of the memory layout (C- or
-        /// Fortran- contiguous) of the returned array.
+        ///	This will be a new view object if possible; otherwise, it will
+        ///	be a copy.<br></br>
+        ///	  Note there is no guarantee of the memory layout (C- or
+        ///	Fortran- contiguous) of the returned array.
         /// </returns>
         public NDarray reshape(Shape newshape, string order = null)
         {
@@ -495,47 +542,58 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a contiguous flattened array.
-        /// 
-        /// A 1-D array, containing the elements of the input, is returned.  A copy is
-        /// made only if needed.
-        /// 
-        /// As of NumPy 1.10, the returned array will have the same type as the input
-        /// array. (for example, a masked array will be returned for a masked array
-        /// input)
-        /// 
-        /// Notes
-        /// 
-        /// In row-major, C-style order, in two dimensions, the row index
-        /// varies the slowest, and the column index the quickest.  This can
-        /// be generalized to multiple dimensions, where row-major order
-        /// implies that the index along the first axis varies slowest, and
-        /// the index along the last quickest.  The opposite holds for
-        /// column-major, Fortran-style index ordering.
-        /// 
-        /// When a view is desired in as many cases as possible, arr.reshape(-1)
-        /// may be preferable.
+        ///	Return a contiguous flattened array.<br></br>
+        ///	
+        ///	A 1-D array, containing the elements of the input, is returned.<br></br>
+        ///	  A copy is
+        ///	made only if needed.<br></br>
+        ///	
+        ///	As of NumPy 1.10, the returned array will have the same type as the input
+        ///	array.<br></br>
+        ///	 (for example, a masked array will be returned for a masked array
+        ///	input)
+        ///	
+        ///	Notes
+        ///	
+        ///	In row-major, C-style order, in two dimensions, the row index
+        ///	varies the slowest, and the column index the quickest.<br></br>
+        ///	  This can
+        ///	be generalized to multiple dimensions, where row-major order
+        ///	implies that the index along the first axis varies slowest, and
+        ///	the index along the last quickest.<br></br>
+        ///	  The opposite holds for
+        ///	column-major, Fortran-style index ordering.<br></br>
+        ///	
+        ///	When a view is desired in as many cases as possible, arr.reshape(-1)
+        ///	may be preferable.
         /// </summary>
         /// <param name="order">
-        /// The elements of a are read using this index order. ‘C’ means
-        /// to index the elements in row-major, C-style order,
-        /// with the last axis index changing fastest, back to the first
-        /// axis index changing slowest.  ‘F’ means to index the elements
-        /// in column-major, Fortran-style order, with the
-        /// first index changing fastest, and the last index changing
-        /// slowest. Note that the ‘C’ and ‘F’ options take no account of
-        /// the memory layout of the underlying array, and only refer to
-        /// the order of axis indexing.  ‘A’ means to read the elements in
-        /// Fortran-like index order if a is Fortran contiguous in
-        /// memory, C-like order otherwise.  ‘K’ means to read the
-        /// elements in the order they occur in memory, except for
-        /// reversing the data when strides are negative.  By default, ‘C’
-        /// index order is used.
+        ///	The elements of a are read using this index order.<br></br>
+        ///	‘C’ means
+        ///	to index the elements in row-major, C-style order,
+        ///	with the last axis index changing fastest, back to the first
+        ///	axis index changing slowest.<br></br>
+        ///	‘F’ means to index the elements
+        ///	in column-major, Fortran-style order, with the
+        ///	first index changing fastest, and the last index changing
+        ///	slowest.<br></br>
+        ///	Note that the ‘C’ and ‘F’ options take no account of
+        ///	the memory layout of the underlying array, and only refer to
+        ///	the order of axis indexing.<br></br>
+        ///	‘A’ means to read the elements in
+        ///	Fortran-like index order if a is Fortran contiguous in
+        ///	memory, C-like order otherwise.<br></br>
+        ///	‘K’ means to read the
+        ///	elements in the order they occur in memory, except for
+        ///	reversing the data when strides are negative.<br></br>
+        ///	By default, ‘C’
+        ///	index order is used.
         /// </param>
         /// <returns>
-        /// y is an array of the same subtype as a, with shape (a.size,).
-        /// Note that matrices are special cased for backward compatibility, if a
-        /// is a matrix, then y is a 1-D ndarray.
+        ///	y is an array of the same subtype as a, with shape (a.size,).<br></br>
+        ///	
+        ///	Note that matrices are special cased for backward compatibility, if a
+        ///	is a matrix, then y is a 1-D ndarray.
         /// </returns>
         public NDarray ravel(string order = null)
         {
@@ -545,19 +603,22 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Move axes of an array to new positions.
-        /// 
-        /// Other axes remain in their original order.
+        ///	Move axes of an array to new positions.<br></br>
+        ///	
+        ///	Other axes remain in their original order.
         /// </summary>
         /// <param name="source">
-        /// Original positions of the axes to move. These must be unique.
+        ///	Original positions of the axes to move.<br></br>
+        ///	These must be unique.
         /// </param>
         /// <param name="destination">
-        /// Destination positions for each of the original axes. These must also be
-        /// unique.
+        ///	Destination positions for each of the original axes.<br></br>
+        ///	These must also be
+        ///	unique.
         /// </param>
         /// <returns>
-        /// Array with moved axes. This array is a view of the input array.
+        ///	Array with moved axes.<br></br>
+        ///	 This array is a view of the input array.
         /// </returns>
         public NDarray moveaxis(int[] source, int[] destination)
         {
@@ -567,24 +628,28 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Roll the specified axis backwards, until it lies in a given position.
-        /// 
-        /// This function continues to be supported for backward compatibility, but you
-        /// should prefer moveaxis. The moveaxis function was added in NumPy
-        /// 1.11.
+        ///	Roll the specified axis backwards, until it lies in a given position.<br></br>
+        ///	
+        ///	This function continues to be supported for backward compatibility, but you
+        ///	should prefer moveaxis.<br></br>
+        ///	 The moveaxis function was added in NumPy
+        ///	1.11.
         /// </summary>
         /// <param name="axis">
-        /// The axis to roll backwards.  The positions of the other axes do not
-        /// change relative to one another.
+        ///	The axis to roll backwards.<br></br>
+        ///	The positions of the other axes do not
+        ///	change relative to one another.
         /// </param>
         /// <param name="start">
-        /// The axis is rolled until it lies before this position.  The default,
-        /// 0, results in a “complete” roll.
+        ///	The axis is rolled until it lies before this position.<br></br>
+        ///	The default,
+        ///	0, results in a “complete” roll.
         /// </param>
         /// <returns>
-        /// For NumPy &gt;= 1.10.0 a view of a is always returned. For earlier
-        /// NumPy versions a view of a is returned only if the order of the
-        /// axes is changed, otherwise the input array is returned.
+        ///	For NumPy &gt;= 1.10.0 a view of a is always returned.<br></br>
+        ///	 For earlier
+        ///	NumPy versions a view of a is returned only if the order of the
+        ///	axes is changed, otherwise the input array is returned.
         /// </returns>
         public NDarray rollaxis(int axis, int? start = 0)
         {
@@ -594,19 +659,20 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Interchange two axes of an array.
+        ///	Interchange two axes of an array.
         /// </summary>
         /// <param name="axis1">
-        /// First axis.
+        ///	First axis.
         /// </param>
         /// <param name="axis2">
-        /// Second axis.
+        ///	Second axis.
         /// </param>
         /// <returns>
-        /// For NumPy &gt;= 1.10.0, if a is an ndarray, then a view of a is
-        /// returned; otherwise a new array is created. For earlier NumPy
-        /// versions a view of a is returned only if the order of the
-        /// axes is changed, otherwise the input array is returned.
+        ///	For NumPy &gt;= 1.10.0, if a is an ndarray, then a view of a is
+        ///	returned; otherwise a new array is created.<br></br>
+        ///	 For earlier NumPy
+        ///	versions a view of a is returned only if the order of the
+        ///	axes is changed, otherwise the input array is returned.
         /// </returns>
         public NDarray swapaxes(int axis1, int axis2)
         {
@@ -616,16 +682,17 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Produce an object that mimics broadcasting.
+        ///	Produce an object that mimics broadcasting.
         /// </summary>
         /// <param name="in1">
-        /// Input parameters.
+        ///	Input parameters.
         /// </param>
         /// <returns>
-        /// Broadcast the input parameters against one another, and
-        /// return an object that encapsulates the result.
-        /// Amongst others, it has shape and nd properties, and
-        /// may be used as an iterator.
+        ///	Broadcast the input parameters against one another, and
+        ///	return an object that encapsulates the result.<br></br>
+        ///	
+        ///	Amongst others, it has shape and nd properties, and
+        ///	may be used as an iterator.
         /// </returns>
         public NDarray broadcast(NDarray in1)
         {
@@ -635,21 +702,23 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Broadcast an array to a new shape.
-        /// 
-        /// Notes
+        ///	Broadcast an array to a new shape.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         /// <param name="shape">
-        /// The shape of the desired array.
+        ///	The shape of the desired array.
         /// </param>
         /// <param name="subok">
-        /// If True, then sub-classes will be passed-through, otherwise
-        /// the returned array will be forced to be a base-class array (default).
+        ///	If True, then sub-classes will be passed-through, otherwise
+        ///	the returned array will be forced to be a base-class array (default).
         /// </param>
         /// <returns>
-        /// A readonly view on the original array with the given shape. It is
-        /// typically not contiguous. Furthermore, more than one element of a
-        /// broadcasted array may refer to a single memory location.
+        ///	A readonly view on the original array with the given shape.<br></br>
+        ///	 It is
+        ///	typically not contiguous.<br></br>
+        ///	 Furthermore, more than one element of a
+        ///	broadcasted array may refer to a single memory location.
         /// </returns>
         public NDarray broadcast_to(Shape shape, bool? subok = false)
         {
@@ -659,17 +728,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Expand the shape of an array.
-        /// 
-        /// Insert a new axis that will appear at the axis position in the expanded
-        /// array shape.
+        ///	Expand the shape of an array.<br></br>
+        ///	
+        ///	Insert a new axis that will appear at the axis position in the expanded
+        ///	array shape.
         /// </summary>
         /// <param name="axis">
-        /// Position in the expanded axes where the new axis is placed.
+        ///	Position in the expanded axes where the new axis is placed.
         /// </param>
         /// <returns>
-        /// Output array. The number of dimensions is one greater than that of
-        /// the input array.
+        ///	Output array.<br></br>
+        ///	 The number of dimensions is one greater than that of
+        ///	the input array.
         /// </returns>
         public NDarray expand_dims(int axis)
         {
@@ -679,17 +749,19 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Remove single-dimensional entries from the shape of an array.
+        ///	Remove single-dimensional entries from the shape of an array.
         /// </summary>
         /// <param name="axis">
-        /// Selects a subset of the single-dimensional entries in the
-        /// shape. If an axis is selected with shape entry greater than
-        /// one, an error is raised.
+        ///	Selects a subset of the single-dimensional entries in the
+        ///	shape.<br></br>
+        ///	If an axis is selected with shape entry greater than
+        ///	one, an error is raised.
         /// </param>
         /// <returns>
-        /// The input array, but with all or a subset of the
-        /// dimensions of length 1 removed. This is always a itself
-        /// or a view into a.
+        ///	The input array, but with all or a subset of the
+        ///	dimensions of length 1 removed.<br></br>
+        ///	 This is always a itself
+        ///	or a view into a.
         /// </returns>
         public NDarray squeeze(params int[] axis)
         {
@@ -699,14 +771,15 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return an array converted to a float type.
+        ///	Return an array converted to a float type.
         /// </summary>
         /// <param name="dtype">
-        /// Float type code to coerce input array a.  If dtype is one of the
-        /// ‘int’ dtypes, it is replaced with float64.
+        ///	Float type code to coerce input array a.<br></br>
+        ///	If dtype is one of the
+        ///	‘int’ dtypes, it is replaced with float64.
         /// </param>
         /// <returns>
-        /// The input a as a float ndarray.
+        ///	The input a as a float ndarray.
         /// </returns>
         public NDarray asfarray(Dtype dtype = null)
         {
@@ -716,13 +789,13 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return an array (ndim &gt;= 1) laid out in Fortran order in memory.
+        ///	Return an array (ndim &gt;= 1) laid out in Fortran order in memory.
         /// </summary>
         /// <param name="dtype">
-        /// By default, the data-type is inferred from the input data.
+        ///	By default, the data-type is inferred from the input data.
         /// </param>
         /// <returns>
-        /// The input a in Fortran, or column-major, order.
+        ///	The input a in Fortran, or column-major, order.
         /// </returns>
         public NDarray asfortranarray(Dtype dtype = null)
         {
@@ -732,20 +805,23 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Convert the input to an array, checking for NaNs or Infs.
+        ///	Convert the input to an array, checking for NaNs or Infs.
         /// </summary>
         /// <param name="dtype">
-        /// By default, the data-type is inferred from the input data.
+        ///	By default, the data-type is inferred from the input data.
         /// </param>
         /// <param name="order">
-        /// Whether to use row-major (C-style) or
-        /// column-major (Fortran-style) memory representation.
-        /// Defaults to ‘C’.
+        ///	Whether to use row-major (C-style) or
+        ///	column-major (Fortran-style) memory representation.<br></br>
+        ///	
+        ///	Defaults to ‘C’.
         /// </param>
         /// <returns>
-        /// Array interpretation of a.  No copy is performed if the input
-        /// is already an ndarray.  If a is a subclass of ndarray, a base
-        /// class ndarray is returned.
+        ///	Array interpretation of a.<br></br>
+        ///	  No copy is performed if the input
+        ///	is already an ndarray.<br></br>
+        ///	  If a is a subclass of ndarray, a base
+        ///	class ndarray is returned.
         /// </returns>
         public NDarray asarray_chkfinite(Dtype dtype = null, string order = null)
         {
@@ -755,23 +831,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return an ndarray of the provided type that satisfies requirements.
-        /// 
-        /// This function is useful to be sure that an array with the correct flags
-        /// is returned for passing to compiled code (perhaps through ctypes).
-        /// 
-        /// Notes
-        /// 
-        /// The returned array will be guaranteed to have the listed requirements
-        /// by making a copy if needed.
+        ///	Return an ndarray of the provided type that satisfies requirements.<br></br>
+        ///	
+        ///	This function is useful to be sure that an array with the correct flags
+        ///	is returned for passing to compiled code (perhaps through ctypes).<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The returned array will be guaranteed to have the listed requirements
+        ///	by making a copy if needed.
         /// </summary>
         /// <param name="dtype">
-        /// The required data-type. If None preserve the current dtype. If your
-        /// application requires the data to be in native byteorder, include
-        /// a byteorder specification as a part of the dtype specification.
+        ///	The required data-type.<br></br>
+        ///	If None preserve the current dtype.<br></br>
+        ///	If your
+        ///	application requires the data to be in native byteorder, include
+        ///	a byteorder specification as a part of the dtype specification.
         /// </param>
         /// <param name="requirements">
-        /// The requirements list can be any of the following
+        ///	The requirements list can be any of the following
         /// </param>
         public NDarray require(Dtype dtype, string[] requirements = null)
         {
@@ -781,25 +859,27 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Split an array into multiple sub-arrays.
+        ///	Split an array into multiple sub-arrays.
         /// </summary>
         /// <param name="indices_or_sections">
-        /// If indices_or_sections is an integer, N, the array will be divided
-        /// into N equal arrays along axis.  If such a split is not possible,
-        /// an error is raised.
-        /// 
-        /// If indices_or_sections is a 1-D array of sorted integers, the entries
-        /// indicate where along axis the array is split.  For example,
-        /// [2, 3] would, for axis=0, result in
-        /// 
-        /// If an index exceeds the dimension of the array along axis,
-        /// an empty sub-array is returned correspondingly.
+        ///	If indices_or_sections is an integer, N, the array will be divided
+        ///	into N equal arrays along axis.<br></br>
+        ///	If such a split is not possible,
+        ///	an error is raised.<br></br>
+        ///	
+        ///	If indices_or_sections is a 1-D array of sorted integers, the entries
+        ///	indicate where along axis the array is split.<br></br>
+        ///	For example,
+        ///	[2, 3] would, for axis=0, result in
+        ///	
+        ///	If an index exceeds the dimension of the array along axis,
+        ///	an empty sub-array is returned correspondingly.
         /// </param>
         /// <param name="axis">
-        /// The axis along which to split, default is 0.
+        ///	The axis along which to split, default is 0.
         /// </param>
         /// <returns>
-        /// A list of sub-arrays.
+        ///	A list of sub-arrays.
         /// </returns>
         public NDarray[] split(int[] indices_or_sections, int? axis = 0)
         {
@@ -809,29 +889,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Construct an array by repeating A the number of times given by reps.
-        /// 
-        /// If reps has length d, the result will have dimension of
-        /// max(d, A.ndim).
-        /// 
-        /// If A.ndim &lt; d, A is promoted to be d-dimensional by prepending new
-        /// axes. So a shape (3,) array is promoted to (1, 3) for 2-D replication,
-        /// or shape (1, 1, 3) for 3-D replication. If this is not the desired
-        /// behavior, promote A to d-dimensions manually before calling this
-        /// function.
-        /// 
-        /// If A.ndim &gt; d, reps is promoted to A.ndim by pre-pending 1’s to it.
-        /// Thus for an A of shape (2, 3, 4, 5), a reps of (2, 2) is treated as
-        /// (1, 1, 2, 2).
-        /// 
-        /// Note : Although tile may be used for broadcasting, it is strongly
-        /// recommended to use numpy’s broadcasting operations and functions.
+        ///	Construct an array by repeating A the number of times given by reps.<br></br>
+        ///	
+        ///	If reps has length d, the result will have dimension of
+        ///	max(d, A.ndim).<br></br>
+        ///	
+        ///	If A.ndim &lt; d, A is promoted to be d-dimensional by prepending new
+        ///	axes.<br></br>
+        ///	 So a shape (3,) array is promoted to (1, 3) for 2-D replication,
+        ///	or shape (1, 1, 3) for 3-D replication.<br></br>
+        ///	 If this is not the desired
+        ///	behavior, promote A to d-dimensions manually before calling this
+        ///	function.<br></br>
+        ///	
+        ///	If A.ndim &gt; d, reps is promoted to A.ndim by pre-pending 1’s to it.<br></br>
+        ///	
+        ///	Thus for an A of shape (2, 3, 4, 5), a reps of (2, 2) is treated as
+        ///	(1, 1, 2, 2).<br></br>
+        ///	
+        ///	Note : Although tile may be used for broadcasting, it is strongly
+        ///	recommended to use numpy’s broadcasting operations and functions.
         /// </summary>
         /// <param name="reps">
-        /// The number of repetitions of A along each axis.
+        ///	The number of repetitions of A along each axis.
         /// </param>
         /// <returns>
-        /// The tiled output array.
+        ///	The tiled output array.
         /// </returns>
         public NDarray tile(NDarray reps)
         {
@@ -841,19 +924,21 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Repeat elements of an array.
+        ///	Repeat elements of an array.
         /// </summary>
         /// <param name="repeats">
-        /// The number of repetitions for each element.  repeats is broadcasted
-        /// to fit the shape of the given axis.
+        ///	The number of repetitions for each element.<br></br>
+        ///	repeats is broadcasted
+        ///	to fit the shape of the given axis.
         /// </param>
         /// <param name="axis">
-        /// The axis along which to repeat values.  By default, use the
-        /// flattened input array, and return a flat output array.
+        ///	The axis along which to repeat values.<br></br>
+        ///	By default, use the
+        ///	flattened input array, and return a flat output array.
         /// </param>
         /// <returns>
-        /// Output array which has the same shape as a, except along
-        /// the given axis.
+        ///	Output array which has the same shape as a, except along
+        ///	the given axis.
         /// </returns>
         public NDarray repeat(int[] repeats, int? axis = null)
         {
@@ -863,28 +948,33 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a new array with sub-arrays along an axis deleted. For a one
-        /// dimensional array, this returns those entries not returned by
-        /// arr[obj].
-        /// 
-        /// Notes
-        /// 
-        /// Often it is preferable to use a boolean mask. For example:
-        /// 
-        /// Is equivalent to np.delete(arr, [0,2,4], axis=0), but allows further
-        /// use of mask.
+        ///	Return a new array with sub-arrays along an axis deleted.<br></br>
+        ///	 For a one
+        ///	dimensional array, this returns those entries not returned by
+        ///	arr[obj].<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Often it is preferable to use a boolean mask.<br></br>
+        ///	 For example:
+        ///	
+        ///	Is equivalent to np.delete(arr, [0,2,4], axis=0), but allows further
+        ///	use of mask.
         /// </summary>
         /// <param name="obj">
-        /// Indicate which sub-arrays to remove.
+        ///	Indicate which sub-arrays to remove.
         /// </param>
         /// <param name="axis">
-        /// The axis along which to delete the subarray defined by obj.
-        /// If axis is None, obj is applied to the flattened array.
+        ///	The axis along which to delete the subarray defined by obj.<br></br>
+        ///	
+        ///	If axis is None, obj is applied to the flattened array.
         /// </param>
         /// <returns>
-        /// A copy of arr with the elements specified by obj removed. Note
-        /// that delete does not occur in-place. If axis is None, out is
-        /// a flattened array.
+        ///	A copy of arr with the elements specified by obj removed.<br></br>
+        ///	 Note
+        ///	that delete does not occur in-place.<br></br>
+        ///	 If axis is None, out is
+        ///	a flattened array.
         /// </returns>
         public NDarray delete(Slice obj, int? axis = null)
         {
@@ -894,36 +984,41 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Insert values along the given axis before the given indices.
-        /// 
-        /// Notes
-        /// 
-        /// Note that for higher dimensional inserts obj=0 behaves very different
-        /// from obj=[0] just like arr[:,0,:] = values is different from
-        /// arr[:,[0],:] = values.
+        ///	Insert values along the given axis before the given indices.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Note that for higher dimensional inserts obj=0 behaves very different
+        ///	from obj=[0] just like arr[:,0,:] = values is different from
+        ///	arr[:,[0],:] = values.
         /// </summary>
         /// <param name="obj">
-        /// Object that defines the index or indices before which values is
-        /// inserted.
-        /// 
-        /// Support for multiple insertions when obj is a single scalar or a
-        /// sequence with one element (similar to calling insert multiple
-        /// times).
+        ///	Object that defines the index or indices before which values is
+        ///	inserted.<br></br>
+        ///	
+        ///	Support for multiple insertions when obj is a single scalar or a
+        ///	sequence with one element (similar to calling insert multiple
+        ///	times).
         /// </param>
         /// <param name="values">
-        /// Values to insert into arr. If the type of values is different
-        /// from that of arr, values is converted to the type of arr.
-        /// values should be shaped so that arr[...,obj,...] = values
-        /// is legal.
+        ///	Values to insert into arr.<br></br>
+        ///	If the type of values is different
+        ///	from that of arr, values is converted to the type of arr.<br></br>
+        ///	
+        ///	values should be shaped so that arr[...,obj,...] = values
+        ///	is legal.
         /// </param>
         /// <param name="axis">
-        /// Axis along which to insert values.  If axis is None then arr
-        /// is flattened first.
+        ///	Axis along which to insert values.<br></br>
+        ///	If axis is None then arr
+        ///	is flattened first.
         /// </param>
         /// <returns>
-        /// A copy of arr with values inserted.  Note that insert
-        /// does not occur in-place: a new array is returned. If
-        /// axis is None, out is a flattened array.
+        ///	A copy of arr with values inserted.<br></br>
+        ///	  Note that insert
+        ///	does not occur in-place: a new array is returned.<br></br>
+        ///	 If
+        ///	axis is None, out is a flattened array.
         /// </returns>
         public NDarray insert(int obj = 0, NDarray values = null, int? axis = null)
         {
@@ -933,22 +1028,27 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Append values to the end of an array.
+        ///	Append values to the end of an array.
         /// </summary>
         /// <param name="values">
-        /// These values are appended to a copy of arr.  It must be of the
-        /// correct shape (the same shape as arr, excluding axis).  If
-        /// axis is not specified, values can be any shape and will be
-        /// flattened before use.
+        ///	These values are appended to a copy of arr.<br></br>
+        ///	It must be of the
+        ///	correct shape (the same shape as arr, excluding axis).<br></br>
+        ///	If
+        ///	axis is not specified, values can be any shape and will be
+        ///	flattened before use.
         /// </param>
         /// <param name="axis">
-        /// The axis along which values are appended.  If axis is not
-        /// given, both arr and values are flattened before use.
+        ///	The axis along which values are appended.<br></br>
+        ///	If axis is not
+        ///	given, both arr and values are flattened before use.
         /// </param>
         /// <returns>
-        /// A copy of arr with values appended to axis.  Note that
-        /// append does not occur in-place: a new array is allocated and
-        /// filled.  If axis is None, out is a flattened array.
+        ///	A copy of arr with values appended to axis.<br></br>
+        ///	  Note that
+        ///	append does not occur in-place: a new array is allocated and
+        ///	filled.<br></br>
+        ///	  If axis is None, out is a flattened array.
         /// </returns>
         public NDarray append(NDarray values, int? axis = null)
         {
@@ -958,15 +1058,17 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Trim the leading and/or trailing zeros from a 1-D array or sequence.
+        ///	Trim the leading and/or trailing zeros from a 1-D array or sequence.
         /// </summary>
         /// <param name="trim">
-        /// A string with ‘f’ representing trim from front and ‘b’ to trim from
-        /// back. Default is ‘fb’, trim zeros from both front and back of the
-        /// array.
+        ///	A string with ‘f’ representing trim from front and ‘b’ to trim from
+        ///	back.<br></br>
+        ///	Default is ‘fb’, trim zeros from both front and back of the
+        ///	array.
         /// </param>
         /// <returns>
-        /// The result of trimming the input. The input data type is preserved.
+        ///	The result of trimming the input.<br></br>
+        ///	 The input data type is preserved.
         /// </returns>
         public NDarray trim_zeros(string trim = "fb")
         {
@@ -976,32 +1078,40 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Find the unique elements of an array.
-        /// 
-        /// Returns the sorted unique elements of an array. There are three optional
-        /// outputs in addition to the unique elements:
-        /// 
-        /// Notes
-        /// 
-        /// When an axis is specified the subarrays indexed by the axis are sorted.
-        /// This is done by making the specified axis the first dimension of the array
-        /// and then flattening the subarrays in C order. The flattened subarrays are
-        /// then viewed as a structured type with each element given a label, with the
-        /// effect that we end up with a 1-D array of structured types that can be
-        /// treated in the same way as any other 1-D array. The result is that the
-        /// flattened subarrays are sorted in lexicographic order starting with the
-        /// first element.
+        ///	Find the unique elements of an array.<br></br>
+        ///	
+        ///	Returns the sorted unique elements of an array.<br></br>
+        ///	 There are three optional
+        ///	outputs in addition to the unique elements:
+        ///	
+        ///	Notes
+        ///	
+        ///	When an axis is specified the subarrays indexed by the axis are sorted.<br></br>
+        ///	
+        ///	This is done by making the specified axis the first dimension of the array
+        ///	and then flattening the subarrays in C order.<br></br>
+        ///	 The flattened subarrays are
+        ///	then viewed as a structured type with each element given a label, with the
+        ///	effect that we end up with a 1-D array of structured types that can be
+        ///	treated in the same way as any other 1-D array.<br></br>
+        ///	 The result is that the
+        ///	flattened subarrays are sorted in lexicographic order starting with the
+        ///	first element.
         /// </summary>
         /// <param name="axis">
-        /// The axis to operate on. If None, ar will be flattened. If an integer,
-        /// the subarrays indexed by the given axis will be flattened and treated
-        /// as the elements of a 1-D array with the dimension of the given axis,
-        /// see the notes for more details.  Object arrays or structured arrays
-        /// that contain objects are not supported if the axis kwarg is used. The
-        /// default is None.
+        ///	The axis to operate on.<br></br>
+        ///	If None, ar will be flattened.<br></br>
+        ///	If an integer,
+        ///	the subarrays indexed by the given axis will be flattened and treated
+        ///	as the elements of a 1-D array with the dimension of the given axis,
+        ///	see the notes for more details.<br></br>
+        ///	Object arrays or structured arrays
+        ///	that contain objects are not supported if the axis kwarg is used.<br></br>
+        ///	The
+        ///	default is None.
         /// </param>
         /// <returns>
-        /// The sorted unique values.
+        ///	The sorted unique values.
         /// </returns>
         public NDarray unique(int? axis = null)
         {
@@ -1011,44 +1121,52 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Find the unique elements of an array.
-        /// 
-        /// Returns the sorted unique elements of an array. There are three optional
-        /// outputs in addition to the unique elements:
-        /// 
-        /// Notes
-        /// 
-        /// When an axis is specified the subarrays indexed by the axis are sorted.
-        /// This is done by making the specified axis the first dimension of the array
-        /// and then flattening the subarrays in C order. The flattened subarrays are
-        /// then viewed as a structured type with each element given a label, with the
-        /// effect that we end up with a 1-D array of structured types that can be
-        /// treated in the same way as any other 1-D array. The result is that the
-        /// flattened subarrays are sorted in lexicographic order starting with the
-        /// first element.
+        ///	Find the unique elements of an array.<br></br>
+        ///	
+        ///	Returns the sorted unique elements of an array.<br></br>
+        ///	 There are three optional
+        ///	outputs in addition to the unique elements:
+        ///	
+        ///	Notes
+        ///	
+        ///	When an axis is specified the subarrays indexed by the axis are sorted.<br></br>
+        ///	
+        ///	This is done by making the specified axis the first dimension of the array
+        ///	and then flattening the subarrays in C order.<br></br>
+        ///	 The flattened subarrays are
+        ///	then viewed as a structured type with each element given a label, with the
+        ///	effect that we end up with a 1-D array of structured types that can be
+        ///	treated in the same way as any other 1-D array.<br></br>
+        ///	 The result is that the
+        ///	flattened subarrays are sorted in lexicographic order starting with the
+        ///	first element.
         /// </summary>
         /// <param name="return_index">
-        /// If True, also return the indices of ar (along the specified axis,
-        /// if provided, or in the flattened array) that result in the unique array.
+        ///	If True, also return the indices of ar (along the specified axis,
+        ///	if provided, or in the flattened array) that result in the unique array.
         /// </param>
         /// <param name="return_inverse">
-        /// If True, also return the indices of the unique array (for the specified
-        /// axis, if provided) that can be used to reconstruct ar.
+        ///	If True, also return the indices of the unique array (for the specified
+        ///	axis, if provided) that can be used to reconstruct ar.
         /// </param>
         /// <param name="return_counts">
-        /// If True, also return the number of times each unique item appears
-        /// in ar.
+        ///	If True, also return the number of times each unique item appears
+        ///	in ar.
         /// </param>
         /// <param name="axis">
-        /// The axis to operate on. If None, ar will be flattened. If an integer,
-        /// the subarrays indexed by the given axis will be flattened and treated
-        /// as the elements of a 1-D array with the dimension of the given axis,
-        /// see the notes for more details.  Object arrays or structured arrays
-        /// that contain objects are not supported if the axis kwarg is used. The
-        /// default is None.
+        ///	The axis to operate on.<br></br>
+        ///	If None, ar will be flattened.<br></br>
+        ///	If an integer,
+        ///	the subarrays indexed by the given axis will be flattened and treated
+        ///	as the elements of a 1-D array with the dimension of the given axis,
+        ///	see the notes for more details.<br></br>
+        ///	Object arrays or structured arrays
+        ///	that contain objects are not supported if the axis kwarg is used.<br></br>
+        ///	The
+        ///	default is None.
         /// </param>
         /// <returns>
-        /// The sorted unique values.
+        ///	The sorted unique values.
         /// </returns>
         public NDarray[] unique(bool return_index, bool return_inverse, bool return_counts, int? axis = null)
         {
@@ -1058,35 +1176,38 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Reverse the order of elements in an array along the given axis.
-        /// 
-        /// The shape of the array is preserved, but the elements are reordered.
-        /// 
-        /// Notes
-        /// 
-        /// flip(m, 0) is equivalent to flipud(m).
-        /// 
-        /// flip(m, 1) is equivalent to fliplr(m).
-        /// 
-        /// flip(m, n) corresponds to m[...,::-1,...] with ::-1 at position n.
-        /// 
-        /// flip(m) corresponds to m[::-1,::-1,...,::-1] with ::-1 at all
-        /// positions.
-        /// 
-        /// flip(m, (0, 1)) corresponds to m[::-1,::-1,...] with ::-1 at
-        /// position 0 and position 1.
+        ///	Reverse the order of elements in an array along the given axis.<br></br>
+        ///	
+        ///	The shape of the array is preserved, but the elements are reordered.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	flip(m, 0) is equivalent to flipud(m).<br></br>
+        ///	
+        ///	flip(m, 1) is equivalent to fliplr(m).<br></br>
+        ///	
+        ///	flip(m, n) corresponds to m[...,::-1,...] with ::-1 at position n.<br></br>
+        ///	
+        ///	flip(m) corresponds to m[::-1,::-1,...,::-1] with ::-1 at all
+        ///	positions.<br></br>
+        ///	
+        ///	flip(m, (0, 1)) corresponds to m[::-1,::-1,...] with ::-1 at
+        ///	position 0 and position 1.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which to flip over. The default,
-        /// axis=None, will flip over all of the axes of the input array.
-        /// If axis is negative it counts from the last to the first axis.
-        /// 
-        /// If axis is a tuple of ints, flipping is performed on all of the axes
-        /// specified in the tuple.
+        ///	Axis or axes along which to flip over.<br></br>
+        ///	The default,
+        ///	axis=None, will flip over all of the axes of the input array.<br></br>
+        ///	
+        ///	If axis is negative it counts from the last to the first axis.<br></br>
+        ///	
+        ///	If axis is a tuple of ints, flipping is performed on all of the axes
+        ///	specified in the tuple.
         /// </param>
         /// <returns>
-        /// A view of m with the entries of axis reversed.  Since a view is
-        /// returned, this operation is done in constant time.
+        ///	A view of m with the entries of axis reversed.<br></br>
+        ///	  Since a view is
+        ///	returned, this operation is done in constant time.
         /// </returns>
         public NDarray flip(params int[] axis)
         {
@@ -1096,18 +1217,21 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Flip array in the left/right direction.
-        /// 
-        /// Flip the entries in each row in the left/right direction.
-        /// Columns are preserved, but appear in a different order than before.
-        /// 
-        /// Notes
-        /// 
-        /// Equivalent to m[:,::-1]. Requires the array to be at least 2-D.
+        ///	Flip array in the left/right direction.<br></br>
+        ///	
+        ///	Flip the entries in each row in the left/right direction.<br></br>
+        ///	
+        ///	Columns are preserved, but appear in a different order than before.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Equivalent to m[:,::-1].<br></br>
+        ///	 Requires the array to be at least 2-D.
         /// </summary>
         /// <returns>
-        /// A view of m with the columns reversed.  Since a view
-        /// is returned, this operation is .
+        ///	A view of m with the columns reversed.<br></br>
+        ///	  Since a view
+        ///	is returned, this operation is .
         /// </returns>
         public NDarray fliplr()
         {
@@ -1117,19 +1241,22 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Flip array in the up/down direction.
-        /// 
-        /// Flip the entries in each column in the up/down direction.
-        /// Rows are preserved, but appear in a different order than before.
-        /// 
-        /// Notes
-        /// 
-        /// Equivalent to m[::-1,...].
-        /// Does not require the array to be two-dimensional.
+        ///	Flip array in the up/down direction.<br></br>
+        ///	
+        ///	Flip the entries in each column in the up/down direction.<br></br>
+        ///	
+        ///	Rows are preserved, but appear in a different order than before.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Equivalent to m[::-1,...].<br></br>
+        ///	
+        ///	Does not require the array to be two-dimensional.
         /// </summary>
         /// <returns>
-        /// A view of m with the rows reversed.  Since a view is
-        /// returned, this operation is .
+        ///	A view of m with the rows reversed.<br></br>
+        ///	  Since a view is
+        ///	returned, this operation is .
         /// </returns>
         public NDarray flipud()
         {
@@ -1139,29 +1266,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Roll array elements along a given axis.
-        /// 
-        /// Elements that roll beyond the last position are re-introduced at
-        /// the first.
-        /// 
-        /// Notes
-        /// 
-        /// Supports rolling over multiple dimensions simultaneously.
+        ///	Roll array elements along a given axis.<br></br>
+        ///	
+        ///	Elements that roll beyond the last position are re-introduced at
+        ///	the first.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Supports rolling over multiple dimensions simultaneously.
         /// </summary>
         /// <param name="shift">
-        /// The number of places by which elements are shifted.  If a tuple,
-        /// then axis must be a tuple of the same size, and each of the
-        /// given axes is shifted by the corresponding number.  If an int
-        /// while axis is a tuple of ints, then the same value is used for
-        /// all given axes.
+        ///	The number of places by which elements are shifted.<br></br>
+        ///	If a tuple,
+        ///	then axis must be a tuple of the same size, and each of the
+        ///	given axes is shifted by the corresponding number.<br></br>
+        ///	If an int
+        ///	while axis is a tuple of ints, then the same value is used for
+        ///	all given axes.
         /// </param>
         /// <param name="axis">
-        /// Axis or axes along which elements are shifted.  By default, the
-        /// array is flattened before shifting, after which the original
-        /// shape is restored.
+        ///	Axis or axes along which elements are shifted.<br></br>
+        ///	By default, the
+        ///	array is flattened before shifting, after which the original
+        ///	shape is restored.
         /// </param>
         /// <returns>
-        /// Output array, with the same shape as a.
+        ///	Output array, with the same shape as a.
         /// </returns>
         public NDarray roll(int[] shift, int[] axis = null)
         {
@@ -1171,24 +1301,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Rotate an array by 90 degrees in the plane specified by axes.
-        /// 
-        /// Rotation direction is from the first towards the second axis.
-        /// 
-        /// Notes
-        /// 
-        /// rot90(m, k=1, axes=(1,0)) is the reverse of rot90(m, k=1, axes=(0,1))
-        /// rot90(m, k=1, axes=(1,0)) is equivalent to rot90(m, k=-1, axes=(0,1))
+        ///	Rotate an array by 90 degrees in the plane specified by axes.<br></br>
+        ///	
+        ///	Rotation direction is from the first towards the second axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	rot90(m, k=1, axes=(1,0)) is the reverse of rot90(m, k=1, axes=(0,1))
+        ///	rot90(m, k=1, axes=(1,0)) is equivalent to rot90(m, k=-1, axes=(0,1))
         /// </summary>
         /// <param name="k">
-        /// Number of times the array is rotated by 90 degrees.
+        ///	Number of times the array is rotated by 90 degrees.
         /// </param>
         /// <param name="axes">
-        /// The array is rotated in the plane defined by the axes.
-        /// Axes must be different.
+        ///	The array is rotated in the plane defined by the axes.<br></br>
+        ///	
+        ///	Axes must be different.
         /// </param>
         /// <returns>
-        /// A rotated view of m.
+        ///	A rotated view of m.
         /// </returns>
         public NDarray rot90(int k = 1, int[] axes = null)
         {
@@ -1198,28 +1329,33 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the bit-wise AND of two arrays element-wise.
-        /// 
-        /// Computes the bit-wise AND of the underlying binary representation of
-        /// the integers in the input arrays. This ufunc implements the C/Python
-        /// operator &amp;.
+        ///	Compute the bit-wise AND of two arrays element-wise.<br></br>
+        ///	
+        ///	Computes the bit-wise AND of the underlying binary representation of
+        ///	the integers in the input arrays.<br></br>
+        ///	 This ufunc implements the C/Python
+        ///	operator &amp;.
         /// </summary>
         /// <param name="x1">
-        /// Only integer and boolean types are handled.
+        ///	Only integer and boolean types are handled.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Result.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Result.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray bitwise_and(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -1229,28 +1365,33 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the bit-wise OR of two arrays element-wise.
-        /// 
-        /// Computes the bit-wise OR of the underlying binary representation of
-        /// the integers in the input arrays. This ufunc implements the C/Python
-        /// operator |.
+        ///	Compute the bit-wise OR of two arrays element-wise.<br></br>
+        ///	
+        ///	Computes the bit-wise OR of the underlying binary representation of
+        ///	the integers in the input arrays.<br></br>
+        ///	 This ufunc implements the C/Python
+        ///	operator |.
         /// </summary>
         /// <param name="x1">
-        /// Only integer and boolean types are handled.
+        ///	Only integer and boolean types are handled.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Result.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Result.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray bitwise_or(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -1260,28 +1401,33 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the bit-wise XOR of two arrays element-wise.
-        /// 
-        /// Computes the bit-wise XOR of the underlying binary representation of
-        /// the integers in the input arrays. This ufunc implements the C/Python
-        /// operator ^.
+        ///	Compute the bit-wise XOR of two arrays element-wise.<br></br>
+        ///	
+        ///	Computes the bit-wise XOR of the underlying binary representation of
+        ///	the integers in the input arrays.<br></br>
+        ///	 This ufunc implements the C/Python
+        ///	operator ^.
         /// </summary>
         /// <param name="x1">
-        /// Only integer and boolean types are handled.
+        ///	Only integer and boolean types are handled.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Result.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Result.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray bitwise_xor(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -1291,38 +1437,46 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute bit-wise inversion, or bit-wise NOT, element-wise.
-        /// 
-        /// Computes the bit-wise NOT of the underlying binary representation of
-        /// the integers in the input arrays. This ufunc implements the C/Python
-        /// operator ~.
-        /// 
-        /// For signed integer inputs, the two’s complement is returned.  In a
-        /// two’s-complement system negative numbers are represented by the two’s
-        /// complement of the absolute value. This is the most common method of
-        /// representing signed integers on computers [1]. A N-bit
-        /// two’s-complement system can represent every integer in the range
-        ///  to .
-        /// 
-        /// Notes
-        /// 
-        /// bitwise_not is an alias for invert:
-        /// 
-        /// References
+        ///	Compute bit-wise inversion, or bit-wise NOT, element-wise.<br></br>
+        ///	
+        ///	Computes the bit-wise NOT of the underlying binary representation of
+        ///	the integers in the input arrays.<br></br>
+        ///	 This ufunc implements the C/Python
+        ///	operator ~.
+        ///	
+        ///	For signed integer inputs, the two’s complement is returned.<br></br>
+        ///	  In a
+        ///	two’s-complement system negative numbers are represented by the two’s
+        ///	complement of the absolute value.<br></br>
+        ///	 This is the most common method of
+        ///	representing signed integers on computers [1].<br></br>
+        ///	 A N-bit
+        ///	two’s-complement system can represent every integer in the range
+        ///	 to .
+        ///	
+        ///	Notes
+        ///	
+        ///	bitwise_not is an alias for invert:
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Result.
-        /// This is a scalar if x is a scalar.
+        ///	Result.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray invert(NDarray @out = null, NDarray @where = null)
         {
@@ -1332,28 +1486,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Shift the bits of an integer to the right.
-        /// 
-        /// Bits are shifted to the right x2.  Because the internal
-        /// representation of numbers is in binary format, this operation is
-        /// equivalent to dividing x1 by 2**x2.
+        ///	Shift the bits of an integer to the right.<br></br>
+        ///	
+        ///	Bits are shifted to the right x2.  Because the internal
+        ///	representation of numbers is in binary format, this operation is
+        ///	equivalent to dividing x1 by 2**x2.
         /// </summary>
         /// <param name="x2">
-        /// Number of bits to remove at the right of x1.
+        ///	Number of bits to remove at the right of x1.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Return x1 with bits shifted x2 times to the right.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Return x1 with bits shifted x2 times to the right.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray right_shift(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -1363,19 +1521,21 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Packs the elements of a binary-valued array into bits in a uint8 array.
-        /// 
-        /// The result is padded to full bytes by inserting zero bits at the end.
+        ///	Packs the elements of a binary-valued array into bits in a uint8 array.<br></br>
+        ///	
+        ///	The result is padded to full bytes by inserting zero bits at the end.
         /// </summary>
         /// <param name="axis">
-        /// The dimension over which bit-packing is done.
-        /// None implies packing the flattened array.
+        ///	The dimension over which bit-packing is done.<br></br>
+        ///	
+        ///	None implies packing the flattened array.
         /// </param>
         /// <returns>
-        /// Array of type uint8 whose elements represent bits corresponding to the
-        /// logical (0 or nonzero) value of the input elements. The shape of
-        /// packed has the same number of dimensions as the input (unless axis
-        /// is None, in which case the output is 1-D).
+        ///	Array of type uint8 whose elements represent bits corresponding to the
+        ///	logical (0 or nonzero) value of the input elements.<br></br>
+        ///	 The shape of
+        ///	packed has the same number of dimensions as the input (unless axis
+        ///	is None, in which case the output is 1-D).
         /// </returns>
         public NDarray packbits(int? axis = null)
         {
@@ -1385,19 +1545,21 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Unpacks elements of a uint8 array into a binary-valued output array.
-        /// 
-        /// Each element of myarray represents a bit-field that should be unpacked
-        /// into a binary-valued output array. The shape of the output array is either
-        /// 1-D (if axis is None) or the same shape as the input array with unpacking
-        /// done along the axis specified.
+        ///	Unpacks elements of a uint8 array into a binary-valued output array.<br></br>
+        ///	
+        ///	Each element of myarray represents a bit-field that should be unpacked
+        ///	into a binary-valued output array.<br></br>
+        ///	 The shape of the output array is either
+        ///	1-D (if axis is None) or the same shape as the input array with unpacking
+        ///	done along the axis specified.
         /// </summary>
         /// <param name="axis">
-        /// The dimension over which bit-unpacking is done.
-        /// None implies unpacking the flattened array.
+        ///	The dimension over which bit-unpacking is done.<br></br>
+        ///	
+        ///	None implies unpacking the flattened array.
         /// </param>
         /// <returns>
-        /// The elements are binary-valued (0 or 1).
+        ///	The elements are binary-valued (0 or 1).
         /// </returns>
         public NDarray unpackbits(int? axis = null)
         {
@@ -1407,17 +1569,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// For scalar a, returns the data type with the smallest size
-        /// and smallest scalar kind which can hold its value.  For non-scalar
-        /// array a, returns the vector’s dtype unmodified.
-        /// 
-        /// Floating point values are not demoted to integers,
-        /// and complex values are not demoted to floats.
-        /// 
-        /// Notes
+        ///	For scalar a, returns the data type with the smallest size
+        ///	and smallest scalar kind which can hold its value.<br></br>
+        ///	  For non-scalar
+        ///	array a, returns the vector’s dtype unmodified.<br></br>
+        ///	
+        ///	Floating point values are not demoted to integers,
+        ///	and complex values are not demoted to floats.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         /// <returns>
-        /// The minimal data type.
+        ///	The minimal data type.
         /// </returns>
         public Dtype min_scalar_type()
         {
@@ -1427,21 +1590,23 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a scalar type which is common to the input arrays.
-        /// 
-        /// The return type will always be an inexact (i.e. floating point) scalar
-        /// type, even if all the arrays are integer arrays. If one of the inputs is
-        /// an integer array, the minimum precision type that is returned is a
-        /// 64-bit floating point dtype.
-        /// 
-        /// All input arrays except int64 and uint64 can be safely cast to the
-        /// returned dtype without loss of information.
+        ///	Return a scalar type which is common to the input arrays.<br></br>
+        ///	
+        ///	The return type will always be an inexact (i.e.<br></br>
+        ///	 floating point) scalar
+        ///	type, even if all the arrays are integer arrays.<br></br>
+        ///	 If one of the inputs is
+        ///	an integer array, the minimum precision type that is returned is a
+        ///	64-bit floating point dtype.<br></br>
+        ///	
+        ///	All input arrays except int64 and uint64 can be safely cast to the
+        ///	returned dtype without loss of information.
         /// </summary>
         /// <param name="array1">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <returns>
-        /// Data type code.
+        ///	Data type code.
         /// </returns>
         public Dtype common_type(NDarray array1)
         {
@@ -1451,25 +1616,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Modified Bessel function of the first kind, order 0.
-        /// 
-        /// Usually denoted .  This function does broadcast, but will not
-        /// “up-cast” int dtype arguments unless accompanied by at least one float or
-        /// complex dtype argument (see Raises below).
-        /// 
-        /// Notes
-        /// 
-        /// We use the algorithm published by Clenshaw [1] and referenced by
-        /// Abramowitz and Stegun [2], for which the function domain is
-        /// partitioned into the two intervals [0,8] and (8,inf), and Chebyshev
-        /// polynomial expansions are employed in each interval. Relative error on
-        /// the domain [0,30] using IEEE arithmetic is documented [3] as having a
-        /// peak of 5.8e-16 with an rms of 1.4e-16 (n = 30000).
-        /// 
-        /// References
+        ///	Modified Bessel function of the first kind, order 0.<br></br>
+        ///	
+        ///	Usually denoted .  This function does broadcast, but will not
+        ///	“up-cast” int dtype arguments unless accompanied by at least one float or
+        ///	complex dtype argument (see Raises below).<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	We use the algorithm published by Clenshaw [1] and referenced by
+        ///	Abramowitz and Stegun [2], for which the function domain is
+        ///	partitioned into the two intervals [0,8] and (8,inf), and Chebyshev
+        ///	polynomial expansions are employed in each interval.<br></br>
+        ///	 Relative error on
+        ///	the domain [0,30] using IEEE arithmetic is documented [3] as having a
+        ///	peak of 5.8e-16 with an rms of 1.4e-16 (n = 30000).<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <returns>
-        /// The modified Bessel function evaluated at each of the elements of x.
+        ///	The modified Bessel function evaluated at each of the elements of x.
         /// </returns>
         public NDarray i0()
         {
@@ -1479,33 +1645,37 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the future value.
-        /// 
-        /// Notes
-        /// 
-        /// The future value is computed by solving the equation:
-        /// 
-        /// or, when rate == 0:
-        /// 
-        /// References
+        ///	Compute the future value.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The future value is computed by solving the equation:
+        ///	
+        ///	or, when rate == 0:
+        ///	
+        ///	References
         /// </summary>
         /// <param name="nper">
-        /// Number of compounding periods
+        ///	Number of compounding periods
         /// </param>
         /// <param name="pmt">
-        /// Payment
+        ///	Payment
         /// </param>
         /// <param name="pv">
-        /// Present value
+        ///	Present value
         /// </param>
         /// <param name="when">
-        /// When payments are due (‘begin’ (1) or ‘end’ (0)).
-        /// Defaults to {‘end’, 0}.
+        ///	When payments are due (‘begin’ (1) or ‘end’ (0)).<br></br>
+        ///	
+        ///	Defaults to {‘end’, 0}.
         /// </param>
         /// <returns>
-        /// Future values.  If all input is scalar, returns a scalar float.  If
-        /// any input is array_like, returns future values for each input element.
-        /// If multiple inputs are array_like, they all must have the same shape.
+        ///	Future values.<br></br>
+        ///	  If all input is scalar, returns a scalar float.<br></br>
+        ///	  If
+        ///	any input is array_like, returns future values for each input element.<br></br>
+        ///	
+        ///	If multiple inputs are array_like, they all must have the same shape.
         /// </returns>
         public NDarray fv(NDarray nper, NDarray pmt, NDarray pv, string @when = "end")
         {
@@ -1515,32 +1685,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the present value.
-        /// 
-        /// Notes
-        /// 
-        /// The present value is computed by solving the equation:
-        /// 
-        /// or, when rate = 0:
-        /// 
-        /// for pv, which is then returned.
-        /// 
-        /// References
+        ///	Compute the present value.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The present value is computed by solving the equation:
+        ///	
+        ///	or, when rate = 0:
+        ///	
+        ///	for pv, which is then returned.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="nper">
-        /// Number of compounding periods
+        ///	Number of compounding periods
         /// </param>
         /// <param name="pmt">
-        /// Payment
+        ///	Payment
         /// </param>
         /// <param name="fv">
-        /// Future value
+        ///	Future value
         /// </param>
         /// <param name="when">
-        /// When payments are due (‘begin’ (1) or ‘end’ (0))
+        ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         /// <returns>
-        /// Present value of a series of payments or investments.
+        ///	Present value of a series of payments or investments.
         /// </returns>
         public NDarray pv(NDarray nper, NDarray pmt, NDarray fv = null, string @when = "end")
         {
@@ -1550,42 +1720,46 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the payment against loan principal plus interest.
-        /// 
-        /// Notes
-        /// 
-        /// The payment is computed by solving the equation:
-        /// 
-        /// or, when rate == 0:
-        /// 
-        /// for pmt.
-        /// 
-        /// Note that computing a monthly mortgage payment is only
-        /// one use for this function.  For example, pmt returns the
-        /// periodic deposit one must make to achieve a specified
-        /// future balance given an initial deposit, a fixed,
-        /// periodically compounded interest rate, and the total
-        /// number of periods.
-        /// 
-        /// References
+        ///	Compute the payment against loan principal plus interest.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The payment is computed by solving the equation:
+        ///	
+        ///	or, when rate == 0:
+        ///	
+        ///	for pmt.<br></br>
+        ///	
+        ///	Note that computing a monthly mortgage payment is only
+        ///	one use for this function.<br></br>
+        ///	  For example, pmt returns the
+        ///	periodic deposit one must make to achieve a specified
+        ///	future balance given an initial deposit, a fixed,
+        ///	periodically compounded interest rate, and the total
+        ///	number of periods.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="nper">
-        /// Number of compounding periods
+        ///	Number of compounding periods
         /// </param>
         /// <param name="pv">
-        /// Present value
+        ///	Present value
         /// </param>
         /// <param name="fv">
-        /// Future value (default = 0)
+        ///	Future value (default = 0)
         /// </param>
         /// <param name="when">
-        /// When payments are due (‘begin’ (1) or ‘end’ (0))
+        ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         /// <returns>
-        /// Payment against loan plus interest.  If all input is scalar, returns a
-        /// scalar float.  If any input is array_like, returns payment for each
-        /// input element. If multiple inputs are array_like, they all must have
-        /// the same shape.
+        ///	Payment against loan plus interest.<br></br>
+        ///	  If all input is scalar, returns a
+        ///	scalar float.<br></br>
+        ///	  If any input is array_like, returns payment for each
+        ///	input element.<br></br>
+        ///	 If multiple inputs are array_like, they all must have
+        ///	the same shape.
         /// </returns>
         public NDarray pmt(NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
@@ -1595,23 +1769,24 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the payment against loan principal.
+        ///	Compute the payment against loan principal.
         /// </summary>
         /// <param name="per">
-        /// Amount paid against the loan changes.  The per is the period of
-        /// interest.
+        ///	Amount paid against the loan changes.<br></br>
+        ///	The per is the period of
+        ///	interest.
         /// </param>
         /// <param name="nper">
-        /// Number of compounding periods
+        ///	Number of compounding periods
         /// </param>
         /// <param name="pv">
-        /// Present value
+        ///	Present value
         /// </param>
         /// <param name="fv">
-        /// Future value
+        ///	Future value
         /// </param>
         /// <param name="when">
-        /// When payments are due (‘begin’ (1) or ‘end’ (0))
+        ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         public void ppmt(NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
@@ -1621,36 +1796,41 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the interest portion of a payment.
-        /// 
-        /// Notes
-        /// 
-        /// The total payment is made up of payment against principal plus interest.
-        /// 
-        /// pmt = ppmt + ipmt
+        ///	Compute the interest portion of a payment.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The total payment is made up of payment against principal plus interest.<br></br>
+        ///	
+        ///	pmt = ppmt + ipmt
         /// </summary>
         /// <param name="per">
-        /// Interest paid against the loan changes during the life or the loan.
-        /// The per is the payment period to calculate the interest amount.
+        ///	Interest paid against the loan changes during the life or the loan.<br></br>
+        ///	
+        ///	The per is the payment period to calculate the interest amount.
         /// </param>
         /// <param name="nper">
-        /// Number of compounding periods
+        ///	Number of compounding periods
         /// </param>
         /// <param name="pv">
-        /// Present value
+        ///	Present value
         /// </param>
         /// <param name="fv">
-        /// Future value
+        ///	Future value
         /// </param>
         /// <param name="when">
-        /// When payments are due (‘begin’ (1) or ‘end’ (0)).
-        /// Defaults to {‘end’, 0}.
+        ///	When payments are due (‘begin’ (1) or ‘end’ (0)).<br></br>
+        ///	
+        ///	Defaults to {‘end’, 0}.
         /// </param>
         /// <returns>
-        /// Interest portion of payment.  If all input is scalar, returns a scalar
-        /// float.  If any input is array_like, returns interest payment for each
-        /// input element. If multiple inputs are array_like, they all must have
-        /// the same shape.
+        ///	Interest portion of payment.<br></br>
+        ///	  If all input is scalar, returns a scalar
+        ///	float.<br></br>
+        ///	  If any input is array_like, returns interest payment for each
+        ///	input element.<br></br>
+        ///	 If multiple inputs are array_like, they all must have
+        ///	the same shape.
         /// </returns>
         public NDarray ipmt(NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
@@ -1660,32 +1840,33 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the Internal Rate of Return (IRR).
-        /// 
-        /// This is the “average” periodically compounded rate of return
-        /// that gives a net present value of 0.0; for a more complete explanation,
-        /// see Notes below.
-        /// 
-        /// decimal.Decimal type is not supported.
-        /// 
-        /// Notes
-        /// 
-        /// The IRR is perhaps best understood through an example (illustrated
-        /// using np.irr in the Examples section below).  Suppose one invests 100
-        /// units and then makes the following withdrawals at regular (fixed)
-        /// intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one’s 100
-        /// unit investment yields 173 units; however, due to the combination of
-        /// compounding and the periodic withdrawals, the “average” rate of return
-        /// is neither simply 0.73/4 nor (1.73)^0.25-1.  Rather, it is the solution
-        /// (for ) of the equation:
-        /// 
-        /// In general, for values ,
-        /// irr is the solution of the equation: [G]
-        /// 
-        /// References
+        ///	Return the Internal Rate of Return (IRR).<br></br>
+        ///	
+        ///	This is the “average” periodically compounded rate of return
+        ///	that gives a net present value of 0.0; for a more complete explanation,
+        ///	see Notes below.<br></br>
+        ///	
+        ///	decimal.Decimal type is not supported.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The IRR is perhaps best understood through an example (illustrated
+        ///	using np.irr in the Examples section below).<br></br>
+        ///	  Suppose one invests 100
+        ///	units and then makes the following withdrawals at regular (fixed)
+        ///	intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one’s 100
+        ///	unit investment yields 173 units; however, due to the combination of
+        ///	compounding and the periodic withdrawals, the “average” rate of return
+        ///	is neither simply 0.73/4 nor (1.73)^0.25-1.  Rather, it is the solution
+        ///	(for ) of the equation:
+        ///	
+        ///	In general, for values ,
+        ///	irr is the solution of the equation: [G]
+        ///	
+        ///	References
         /// </summary>
         /// <returns>
-        /// Internal Rate of Return for periodic input values.
+        ///	Internal Rate of Return for periodic input values.
         /// </returns>
         public float irr()
         {
@@ -1695,16 +1876,16 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Modified internal rate of return.
+        ///	Modified internal rate of return.
         /// </summary>
         /// <param name="finance_rate">
-        /// Interest rate paid on the cash flows
+        ///	Interest rate paid on the cash flows
         /// </param>
         /// <param name="reinvest_rate">
-        /// Interest rate received on the cash flows upon reinvestment
+        ///	Interest rate received on the cash flows upon reinvestment
         /// </param>
         /// <returns>
-        /// Modified internal rate of return
+        ///	Modified internal rate of return
         /// </returns>
         public float mirr(ValueType finance_rate, ValueType reinvest_rate)
         {
@@ -1714,27 +1895,27 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the number of periodic payments.
-        /// 
-        /// decimal.Decimal type is not supported.
-        /// 
-        /// Notes
-        /// 
-        /// The number of periods nper is computed by solving the equation:
-        /// 
-        /// but if rate = 0 then:
+        ///	Compute the number of periodic payments.<br></br>
+        ///	
+        ///	decimal.Decimal type is not supported.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The number of periods nper is computed by solving the equation:
+        ///	
+        ///	but if rate = 0 then:
         /// </summary>
         /// <param name="pmt">
-        /// Payment
+        ///	Payment
         /// </param>
         /// <param name="pv">
-        /// Present value
+        ///	Present value
         /// </param>
         /// <param name="fv">
-        /// Future value
+        ///	Future value
         /// </param>
         /// <param name="when">
-        /// When payments are due (‘begin’ (1) or ‘end’ (0))
+        ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         public void nper(NDarray pmt, NDarray pv, NDarray fv = null, string @when = "end")
         {
@@ -1744,45 +1925,52 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the rate of interest per period.
-        /// 
-        /// Notes
-        /// 
-        /// The rate of interest is computed by iteratively solving the
-        /// (non-linear) equation:
-        /// 
-        /// for rate.
-        /// 
-        /// References
-        /// 
-        /// Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May). Open Document
-        /// Format for Office Applications (OpenDocument)v1.2, Part 2: Recalculated
-        /// Formula (OpenFormula) Format - Annotated Version, Pre-Draft 12.
-        /// Organization for the Advancement of Structured Information Standards
-        /// (OASIS). Billerica, MA, USA. [ODT Document]. Available:
-        /// http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula
-        /// OpenDocument-formula-20090508.odt
+        ///	Compute the rate of interest per period.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The rate of interest is computed by iteratively solving the
+        ///	(non-linear) equation:
+        ///	
+        ///	for rate.<br></br>
+        ///	
+        ///	References
+        ///	
+        ///	Wheeler, D.<br></br>
+        ///	 A., E.<br></br>
+        ///	 Rathke, and R.<br></br>
+        ///	 Weir (Eds.) (2009, May).<br></br>
+        ///	 Open Document
+        ///	Format for Office Applications (OpenDocument)v1.2, Part 2: Recalculated
+        ///	Formula (OpenFormula) Format - Annotated Version, Pre-Draft 12.
+        ///	Organization for the Advancement of Structured Information Standards
+        ///	(OASIS).<br></br>
+        ///	 Billerica, MA, USA.<br></br>
+        ///	 [ODT Document].<br></br>
+        ///	 Available:
+        ///	http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula
+        ///	OpenDocument-formula-20090508.odt
         /// </summary>
         /// <param name="pmt">
-        /// Payment
+        ///	Payment
         /// </param>
         /// <param name="pv">
-        /// Present value
+        ///	Present value
         /// </param>
         /// <param name="fv">
-        /// Future value
+        ///	Future value
         /// </param>
         /// <param name="when">
-        /// When payments are due (‘begin’ (1) or ‘end’ (0))
+        ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         /// <param name="guess">
-        /// Starting guess for solving the rate of interest, default 0.1
+        ///	Starting guess for solving the rate of interest, default 0.1
         /// </param>
         /// <param name="tol">
-        /// Required tolerance for the solution, default 1e-6
+        ///	Required tolerance for the solution, default 1e-6
         /// </param>
         /// <param name="maxiter">
-        /// Maximum iterations in finding the solution
+        ///	Maximum iterations in finding the solution
         /// </param>
         public void rate(NDarray pmt, NDarray pv, NDarray fv, string @when = "end", double? guess = null, double? tol = null, int? maxiter = 100)
         {
@@ -1792,21 +1980,23 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the indices of the elements that are non-zero.
-        /// 
-        /// Returns a tuple of arrays, one for each dimension of a,
-        /// containing the indices of the non-zero elements in that
-        /// dimension. The values in a are always tested and returned in
-        /// row-major, C-style order. The corresponding non-zero
-        /// values can be obtained with:
-        /// 
-        /// To group the indices by element, rather than dimension, use:
-        /// 
-        /// The result of this is always a 2-D array, with a row for
-        /// each non-zero element.
+        ///	Return the indices of the elements that are non-zero.<br></br>
+        ///	
+        ///	Returns a tuple of arrays, one for each dimension of a,
+        ///	containing the indices of the non-zero elements in that
+        ///	dimension.<br></br>
+        ///	 The values in a are always tested and returned in
+        ///	row-major, C-style order.<br></br>
+        ///	 The corresponding non-zero
+        ///	values can be obtained with:
+        ///	
+        ///	To group the indices by element, rather than dimension, use:
+        ///	
+        ///	The result of this is always a 2-D array, with a row for
+        ///	each non-zero element.
         /// </summary>
         /// <returns>
-        /// Indices of elements that are non-zero.
+        ///	Indices of elements that are non-zero.
         /// </returns>
         public NDarray[] nonzero()
         {
@@ -1816,23 +2006,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return elements chosen from x or y depending on condition.
-        /// 
-        /// Notes
-        /// 
-        /// If all the arrays are 1-D, where is equivalent to:
+        ///	Return elements chosen from x or y depending on condition.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If all the arrays are 1-D, where is equivalent to:
         /// </summary>
         /// <param name="y">
-        /// Values from which to choose. x, y and condition need to be
-        /// broadcastable to some shape.
+        ///	Values from which to choose.<br></br>
+        ///	x, y and condition need to be
+        ///	broadcastable to some shape.
         /// </param>
         /// <param name="x">
-        /// Values from which to choose. x, y and condition need to be
-        /// broadcastable to some shape.
+        ///	Values from which to choose.<br></br>
+        ///	x, y and condition need to be
+        ///	broadcastable to some shape.
         /// </param>
         /// <returns>
-        /// An array with elements from x where condition is True, and elements
-        /// from y elsewhere.
+        ///	An array with elements from x where condition is True, and elements
+        ///	from y elsewhere.
         /// </returns>
         public NDarray @where(NDarray y, NDarray x)
         {
@@ -1842,19 +2034,19 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Converts a flat index or array of flat indices into a tuple
-        /// of coordinate arrays.
+        ///	Converts a flat index or array of flat indices into a tuple
+        ///	of coordinate arrays.
         /// </summary>
         /// <param name="shape">
-        /// The shape of the array to use for unraveling indices.
+        ///	The shape of the array to use for unraveling indices.
         /// </param>
         /// <param name="order">
-        /// Determines whether the indices should be viewed as indexing in
-        /// row-major (C-style) or column-major (Fortran-style) order.
+        ///	Determines whether the indices should be viewed as indexing in
+        ///	row-major (C-style) or column-major (Fortran-style) order.
         /// </param>
         /// <returns>
-        /// Each array in the tuple has the same shape as the indices
-        /// array.
+        ///	Each array in the tuple has the same shape as the indices
+        ///	array.
         /// </returns>
         public NDarray[] unravel_index(Shape shape, string order = null)
         {
@@ -1864,11 +2056,11 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the indices to access the main diagonal of an n-dimensional array.
-        /// 
-        /// See diag_indices for full details.
-        /// 
-        /// Notes
+        ///	Return the indices to access the main diagonal of an n-dimensional array.<br></br>
+        ///	
+        ///	See diag_indices for full details.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         public void diag_indices_from()
         {
@@ -1878,14 +2070,14 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the indices for the lower-triangle of arr.
-        /// 
-        /// See tril_indices for full details.
-        /// 
-        /// Notes
+        ///	Return the indices for the lower-triangle of arr.<br></br>
+        ///	
+        ///	See tril_indices for full details.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         /// <param name="k">
-        /// Diagonal offset (see tril for details).
+        ///	Diagonal offset (see tril for details).
         /// </param>
         public void tril_indices_from(int? k = 0)
         {
@@ -1895,17 +2087,17 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the indices for the upper-triangle of arr.
-        /// 
-        /// See triu_indices for full details.
-        /// 
-        /// Notes
+        ///	Return the indices for the upper-triangle of arr.<br></br>
+        ///	
+        ///	See triu_indices for full details.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         /// <param name="k">
-        /// Diagonal offset (see triu for details).
+        ///	Diagonal offset (see triu for details).
         /// </param>
         /// <returns>
-        /// Indices for the upper-triangle of arr.
+        ///	Indices for the upper-triangle of arr.
         /// </returns>
         public NDarray[] triu_indices_from(int? k = 0)
         {
@@ -1915,31 +2107,34 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Take values from the input array by matching 1d index and data slices.
-        /// 
-        /// This iterates over matching 1d slices oriented along the specified axis in
-        /// the index and data arrays, and uses the former to look up values in the
-        /// latter. These slices can be different lengths.
-        /// 
-        /// Functions returning an index along an axis, like argsort and
-        /// argpartition, produce suitable indices for this function.
-        /// 
-        /// Notes
-        /// 
-        /// This is equivalent to (but faster than) the following use of ndindex and
-        /// s_, which sets each of ii and kk to a tuple of indices:
-        /// 
-        /// Equivalently, eliminating the inner loop, the last two lines would be:
+        ///	Take values from the input array by matching 1d index and data slices.<br></br>
+        ///	
+        ///	This iterates over matching 1d slices oriented along the specified axis in
+        ///	the index and data arrays, and uses the former to look up values in the
+        ///	latter.<br></br>
+        ///	 These slices can be different lengths.<br></br>
+        ///	
+        ///	Functions returning an index along an axis, like argsort and
+        ///	argpartition, produce suitable indices for this function.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	This is equivalent to (but faster than) the following use of ndindex and
+        ///	s_, which sets each of ii and kk to a tuple of indices:
+        ///	
+        ///	Equivalently, eliminating the inner loop, the last two lines would be:
         /// </summary>
         /// <param name="indices">
-        /// Indices to take along each 1d slice of arr. This must match the
-        /// dimension of arr, but dimensions Ni and Nj only need to broadcast
-        /// against arr.
+        ///	Indices to take along each 1d slice of arr.<br></br>
+        ///	This must match the
+        ///	dimension of arr, but dimensions Ni and Nj only need to broadcast
+        ///	against arr.
         /// </param>
         /// <param name="axis">
-        /// The axis to take 1d slices along. If axis is None, the input array is
-        /// treated as if it had first been flattened to 1d, for consistency with
-        /// sort and argsort.
+        ///	The axis to take 1d slices along.<br></br>
+        ///	If axis is None, the input array is
+        ///	treated as if it had first been flattened to 1d, for consistency with
+        ///	sort and argsort.
         /// </param>
         public void take_along_axis(NDarray indices, int axis)
         {
@@ -1949,59 +2144,69 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return specified diagonals.
-        /// 
-        /// If a is 2-D, returns the diagonal of a with the given offset,
-        /// i.e., the collection of elements of the form a[i, i+offset].  If
-        /// a has more than two dimensions, then the axes specified by axis1
-        /// and axis2 are used to determine the 2-D sub-array whose diagonal is
-        /// returned.  The shape of the resulting array can be determined by
-        /// removing axis1 and axis2 and appending an index to the right equal
-        /// to the size of the resulting diagonals.
-        /// 
-        /// In versions of NumPy prior to 1.7, this function always returned a new,
-        /// independent array containing a copy of the values in the diagonal.
-        /// 
-        /// In NumPy 1.7 and 1.8, it continues to return a copy of the diagonal,
-        /// but depending on this fact is deprecated. Writing to the resulting
-        /// array continues to work as it used to, but a FutureWarning is issued.
-        /// 
-        /// Starting in NumPy 1.9 it returns a read-only view on the original array.
-        /// Attempting to write to the resulting array will produce an error.
-        /// 
-        /// In some future release, it will return a read/write view and writing to
-        /// the returned array will alter your original array.  The returned array
-        /// will have the same type as the input array.
-        /// 
-        /// If you don’t write to the array returned by this function, then you can
-        /// just ignore all of the above.
-        /// 
-        /// If you depend on the current behavior, then we suggest copying the
-        /// returned array explicitly, i.e., use np.diagonal(a).copy() instead
-        /// of just np.diagonal(a). This will work with both past and future
-        /// versions of NumPy.
+        ///	Return specified diagonals.<br></br>
+        ///	
+        ///	If a is 2-D, returns the diagonal of a with the given offset,
+        ///	i.e., the collection of elements of the form a[i, i+offset].<br></br>
+        ///	  If
+        ///	a has more than two dimensions, then the axes specified by axis1
+        ///	and axis2 are used to determine the 2-D sub-array whose diagonal is
+        ///	returned.<br></br>
+        ///	  The shape of the resulting array can be determined by
+        ///	removing axis1 and axis2 and appending an index to the right equal
+        ///	to the size of the resulting diagonals.<br></br>
+        ///	
+        ///	In versions of NumPy prior to 1.7, this function always returned a new,
+        ///	independent array containing a copy of the values in the diagonal.<br></br>
+        ///	
+        ///	In NumPy 1.7 and 1.8, it continues to return a copy of the diagonal,
+        ///	but depending on this fact is deprecated.<br></br>
+        ///	 Writing to the resulting
+        ///	array continues to work as it used to, but a FutureWarning is issued.<br></br>
+        ///	
+        ///	Starting in NumPy 1.9 it returns a read-only view on the original array.<br></br>
+        ///	
+        ///	Attempting to write to the resulting array will produce an error.<br></br>
+        ///	
+        ///	In some future release, it will return a read/write view and writing to
+        ///	the returned array will alter your original array.<br></br>
+        ///	  The returned array
+        ///	will have the same type as the input array.<br></br>
+        ///	
+        ///	If you don’t write to the array returned by this function, then you can
+        ///	just ignore all of the above.<br></br>
+        ///	
+        ///	If you depend on the current behavior, then we suggest copying the
+        ///	returned array explicitly, i.e., use np.diagonal(a).copy() instead
+        ///	of just np.diagonal(a).<br></br>
+        ///	 This will work with both past and future
+        ///	versions of NumPy.
         /// </summary>
         /// <param name="offset">
-        /// Offset of the diagonal from the main diagonal.  Can be positive or
-        /// negative.  Defaults to main diagonal (0).
+        ///	Offset of the diagonal from the main diagonal.<br></br>
+        ///	Can be positive or
+        ///	negative.<br></br>
+        ///	Defaults to main diagonal (0).
         /// </param>
         /// <param name="axis1">
-        /// Axis to be used as the first axis of the 2-D sub-arrays from which
-        /// the diagonals should be taken.  Defaults to first axis (0).
+        ///	Axis to be used as the first axis of the 2-D sub-arrays from which
+        ///	the diagonals should be taken.<br></br>
+        ///	Defaults to first axis (0).
         /// </param>
         /// <param name="axis2">
-        /// Axis to be used as the second axis of the 2-D sub-arrays from
-        /// which the diagonals should be taken. Defaults to second axis (1).
+        ///	Axis to be used as the second axis of the 2-D sub-arrays from
+        ///	which the diagonals should be taken.<br></br>
+        ///	Defaults to second axis (1).
         /// </param>
         /// <returns>
-        /// If a is 2-D, then a 1-D array containing the diagonal and of the
-        /// same type as a is returned unless a is a matrix, in which case
-        /// a 1-D array rather than a (2-D) matrix is returned in order to
-        /// maintain backward compatibility.
-        /// 
-        /// If a.ndim &gt; 2, then the dimensions specified by axis1 and axis2
-        /// are removed, and a new axis inserted at the end corresponding to the
-        /// diagonal.
+        ///	If a is 2-D, then a 1-D array containing the diagonal and of the
+        ///	same type as a is returned unless a is a matrix, in which case
+        ///	a 1-D array rather than a (2-D) matrix is returned in order to
+        ///	maintain backward compatibility.<br></br>
+        ///	
+        ///	If a.ndim &gt; 2, then the dimensions specified by axis1 and axis2
+        ///	are removed, and a new axis inserted at the end corresponding to the
+        ///	diagonal.
         /// </returns>
         public NDarray diagonal(int? offset = 0, int? axis1 = 0, int? axis2 = 1)
         {
@@ -2011,23 +2216,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Change elements of an array based on conditional and input values.
-        /// 
-        /// Similar to np.copyto(arr, vals, where=mask), the difference is that
-        /// place uses the first N elements of vals, where N is the number of
-        /// True values in mask, while copyto uses the elements where mask
-        /// is True.
-        /// 
-        /// Note that extract does the exact opposite of place.
+        ///	Change elements of an array based on conditional and input values.<br></br>
+        ///	
+        ///	Similar to np.copyto(arr, vals, where=mask), the difference is that
+        ///	place uses the first N elements of vals, where N is the number of
+        ///	True values in mask, while copyto uses the elements where mask
+        ///	is True.<br></br>
+        ///	
+        ///	Note that extract does the exact opposite of place.
         /// </summary>
         /// <param name="mask">
-        /// Boolean mask array. Must have the same size as a.
+        ///	Boolean mask array.<br></br>
+        ///	Must have the same size as a.
         /// </param>
         /// <param name="vals">
-        /// Values to put into a. Only the first N elements are used, where
-        /// N is the number of True values in mask. If vals is smaller
-        /// than N, it will be repeated, and if elements of a are to be masked,
-        /// this sequence must be non-empty.
+        ///	Values to put into a.<br></br>
+        ///	Only the first N elements are used, where
+        ///	N is the number of True values in mask.<br></br>
+        ///	If vals is smaller
+        ///	than N, it will be repeated, and if elements of a are to be masked,
+        ///	this sequence must be non-empty.
         /// </param>
         public void place(NDarray mask, NDarray vals)
         {
@@ -2037,24 +2245,27 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Replaces specified elements of an array with given values.
-        /// 
-        /// The indexing works on the flattened target array. put is roughly
-        /// equivalent to:
+        ///	Replaces specified elements of an array with given values.<br></br>
+        ///	
+        ///	The indexing works on the flattened target array.<br></br>
+        ///	 put is roughly
+        ///	equivalent to:
         /// </summary>
         /// <param name="ind">
-        /// Target indices, interpreted as integers.
+        ///	Target indices, interpreted as integers.
         /// </param>
         /// <param name="v">
-        /// Values to place in a at target indices. If v is shorter than
-        /// ind it will be repeated as necessary.
+        ///	Values to place in a at target indices.<br></br>
+        ///	If v is shorter than
+        ///	ind it will be repeated as necessary.
         /// </param>
         /// <param name="mode">
-        /// Specifies how out-of-bounds indices will behave.
-        /// 
-        /// ‘clip’ mode means that all indices that are too large are replaced
-        /// by the index that addresses the last element along that axis. Note
-        /// that this disables indexing with negative numbers.
+        ///	Specifies how out-of-bounds indices will behave.<br></br>
+        ///	
+        ///	‘clip’ mode means that all indices that are too large are replaced
+        ///	by the index that addresses the last element along that axis.<br></br>
+        ///	Note
+        ///	that this disables indexing with negative numbers.
         /// </param>
         public void put(NDarray ind, NDarray v, string mode = "raise")
         {
@@ -2064,34 +2275,38 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Put values into the destination array by matching 1d index and data slices.
-        /// 
-        /// This iterates over matching 1d slices oriented along the specified axis in
-        /// the index and data arrays, and uses the former to place values into the
-        /// latter. These slices can be different lengths.
-        /// 
-        /// Functions returning an index along an axis, like argsort and
-        /// argpartition, produce suitable indices for this function.
-        /// 
-        /// Notes
-        /// 
-        /// This is equivalent to (but faster than) the following use of ndindex and
-        /// s_, which sets each of ii and kk to a tuple of indices:
-        /// 
-        /// Equivalently, eliminating the inner loop, the last two lines would be:
+        ///	Put values into the destination array by matching 1d index and data slices.<br></br>
+        ///	
+        ///	This iterates over matching 1d slices oriented along the specified axis in
+        ///	the index and data arrays, and uses the former to place values into the
+        ///	latter.<br></br>
+        ///	 These slices can be different lengths.<br></br>
+        ///	
+        ///	Functions returning an index along an axis, like argsort and
+        ///	argpartition, produce suitable indices for this function.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	This is equivalent to (but faster than) the following use of ndindex and
+        ///	s_, which sets each of ii and kk to a tuple of indices:
+        ///	
+        ///	Equivalently, eliminating the inner loop, the last two lines would be:
         /// </summary>
         /// <param name="indices">
-        /// Indices to change along each 1d slice of arr. This must match the
-        /// dimension of arr, but dimensions in Ni and Nj may be 1 to broadcast
-        /// against arr.
+        ///	Indices to change along each 1d slice of arr.<br></br>
+        ///	This must match the
+        ///	dimension of arr, but dimensions in Ni and Nj may be 1 to broadcast
+        ///	against arr.
         /// </param>
         /// <param name="values">
-        /// values to insert at those indices. Its shape and dimension are
-        /// broadcast to match that of indices.
+        ///	values to insert at those indices.<br></br>
+        ///	Its shape and dimension are
+        ///	broadcast to match that of indices.
         /// </param>
         /// <param name="axis">
-        /// The axis to take 1d slices along. If axis is None, the destination
-        /// array is treated as if a flattened 1d view had been created of it.
+        ///	The axis to take 1d slices along.<br></br>
+        ///	If axis is None, the destination
+        ///	array is treated as if a flattened 1d view had been created of it.
         /// </param>
         public void put_along_axis(NDarray indices, NDarray[] values, int axis)
         {
@@ -2101,19 +2316,22 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Changes elements of an array based on conditional and input values.
-        /// 
-        /// Sets a.flat[n] = values[n] for each n where mask.flat[n]==True.
-        /// 
-        /// If values is not the same size as a and mask then it will repeat.
-        /// This gives behavior different from a[mask] = values.
+        ///	Changes elements of an array based on conditional and input values.<br></br>
+        ///	
+        ///	Sets a.flat[n] = values[n] for each n where mask.flat[n]==True.<br></br>
+        ///	
+        ///	If values is not the same size as a and mask then it will repeat.<br></br>
+        ///	
+        ///	This gives behavior different from a[mask] = values.
         /// </summary>
         /// <param name="mask">
-        /// Boolean mask array. It has to be the same shape as a.
+        ///	Boolean mask array.<br></br>
+        ///	It has to be the same shape as a.
         /// </param>
         /// <param name="values">
-        /// Values to put into a where mask is True. If values is smaller
-        /// than a it will be repeated.
+        ///	Values to put into a where mask is True.<br></br>
+        ///	If values is smaller
+        ///	than a it will be repeated.
         /// </param>
         public void putmask(NDarray mask, NDarray values)
         {
@@ -2123,26 +2341,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Fill the main diagonal of the given array of any dimensionality.
-        /// 
-        /// For an array a with a.ndim &gt;= 2, the diagonal is the list of
-        /// locations with indices a[i, ..., i] all identical. This function
-        /// modifies the input array in-place, it does not return a value.
-        /// 
-        /// Notes
-        /// 
-        /// This functionality can be obtained via diag_indices, but internally
-        /// this version uses a much faster implementation that never constructs the
-        /// indices and uses simple slicing.
+        ///	Fill the main diagonal of the given array of any dimensionality.<br></br>
+        ///	
+        ///	For an array a with a.ndim &gt;= 2, the diagonal is the list of
+        ///	locations with indices a[i, ..., i] all identical.<br></br>
+        ///	 This function
+        ///	modifies the input array in-place, it does not return a value.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	This functionality can be obtained via diag_indices, but internally
+        ///	this version uses a much faster implementation that never constructs the
+        ///	indices and uses simple slicing.
         /// </summary>
         /// <param name="val">
-        /// Value to be written on the diagonal, its type must be compatible with
-        /// that of the array a.
+        ///	Value to be written on the diagonal, its type must be compatible with
+        ///	that of the array a.
         /// </param>
         /// <param name="wrap">
-        /// For tall matrices in NumPy version up to 1.6.2, the
-        /// diagonal “wrapped” after N columns. You can have this behavior
-        /// with this option. This affects only tall matrices.
+        ///	For tall matrices in NumPy version up to 1.6.2, the
+        ///	diagonal “wrapped” after N columns.<br></br>
+        ///	You can have this behavior
+        ///	with this option.<br></br>
+        ///	This affects only tall matrices.
         /// </param>
         public void fill_diagonal(ValueType val, bool wrap = false)
         {
@@ -2153,61 +2374,74 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// Efficient multi-dimensional iterator object to iterate over arrays.
-        /// To get started using this object, see the
-        /// introductory guide to array iteration.
-        /// 
-        /// Notes
-        /// 
-        /// nditer supersedes flatiter.  The iterator implementation behind
-        /// nditer is also exposed by the NumPy C API.
-        /// 
-        /// The Python exposure supplies two iteration interfaces, one which follows
-        /// the Python iterator protocol, and another which mirrors the C-style
-        /// do-while pattern.  The native Python approach is better in most cases, but
-        /// if you need the iterator’s coordinates or index, use the C-style pattern.
+        ///	Efficient multi-dimensional iterator object to iterate over arrays.<br></br>
+        ///	
+        ///	To get started using this object, see the
+        ///	introductory guide to array iteration.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	nditer supersedes flatiter.<br></br>
+        ///	  The iterator implementation behind
+        ///	nditer is also exposed by the NumPy C API.<br></br>
+        ///	
+        ///	The Python exposure supplies two iteration interfaces, one which follows
+        ///	the Python iterator protocol, and another which mirrors the C-style
+        ///	do-while pattern.<br></br>
+        ///	  The native Python approach is better in most cases, but
+        ///	if you need the iterator’s coordinates or index, use the C-style pattern.
         /// </summary>
         /// <param name="flags">
-        /// Flags to control the behavior of the iterator.
+        ///	Flags to control the behavior of the iterator.
         /// </param>
         /// <param name="op_flags">
-        /// This is a list of flags for each operand. At minimum, one of
-        /// “readonly”, “readwrite”, or “writeonly” must be specified.
+        ///	This is a list of flags for each operand.<br></br>
+        ///	At minimum, one of
+        ///	“readonly”, “readwrite”, or “writeonly” must be specified.
         /// </param>
         /// <param name="op_dtypes">
-        /// The required data type(s) of the operands. If copying or buffering
-        /// is enabled, the data will be converted to/from their original types.
+        ///	The required data type(s) of the operands.<br></br>
+        ///	If copying or buffering
+        ///	is enabled, the data will be converted to/from their original types.
         /// </param>
         /// <param name="order">
-        /// Controls the iteration order. ‘C’ means C order, ‘F’ means
-        /// Fortran order, ‘A’ means ‘F’ order if all the arrays are Fortran
-        /// contiguous, ‘C’ order otherwise, and ‘K’ means as close to the
-        /// order the array elements appear in memory as possible. This also
-        /// affects the element memory order of “allocate” operands, as they
-        /// are allocated to be compatible with iteration order.
-        /// Default is ‘K’.
+        ///	Controls the iteration order.<br></br>
+        ///	‘C’ means C order, ‘F’ means
+        ///	Fortran order, ‘A’ means ‘F’ order if all the arrays are Fortran
+        ///	contiguous, ‘C’ order otherwise, and ‘K’ means as close to the
+        ///	order the array elements appear in memory as possible.<br></br>
+        ///	This also
+        ///	affects the element memory order of “allocate” operands, as they
+        ///	are allocated to be compatible with iteration order.<br></br>
+        ///	
+        ///	Default is ‘K’.
         /// </param>
         /// <param name="casting">
-        /// Controls what kind of data casting may occur when making a copy
-        /// or buffering.  Setting this to ‘unsafe’ is not recommended,
-        /// as it can adversely affect accumulations.
+        ///	Controls what kind of data casting may occur when making a copy
+        ///	or buffering.<br></br>
+        ///	Setting this to ‘unsafe’ is not recommended,
+        ///	as it can adversely affect accumulations.
         /// </param>
         /// <param name="op_axes">
-        /// If provided, is a list of ints or None for each operands.
-        /// The list of axes for an operand is a mapping from the dimensions
-        /// of the iterator to the dimensions of the operand. A value of
-        /// -1 can be placed for entries, causing that dimension to be
-        /// treated as “newaxis”.
+        ///	If provided, is a list of ints or None for each operands.<br></br>
+        ///	
+        ///	The list of axes for an operand is a mapping from the dimensions
+        ///	of the iterator to the dimensions of the operand.<br></br>
+        ///	A value of
+        ///	-1 can be placed for entries, causing that dimension to be
+        ///	treated as “newaxis”.
         /// </param>
         /// <param name="itershape">
-        /// The desired shape of the iterator. This allows “allocate” operands
-        /// with a dimension mapped by op_axes not corresponding to a dimension
-        /// of a different operand to get a value not equal to 1 for that
-        /// dimension.
+        ///	The desired shape of the iterator.<br></br>
+        ///	This allows “allocate” operands
+        ///	with a dimension mapped by op_axes not corresponding to a dimension
+        ///	of a different operand to get a value not equal to 1 for that
+        ///	dimension.
         /// </param>
         /// <param name="buffersize">
-        /// When buffering is enabled, controls the size of the temporary
-        /// buffers. Set to 0 for the default value.
+        ///	When buffering is enabled, controls the size of the temporary
+        ///	buffers.<br></br>
+        ///	Set to 0 for the default value.
         /// </param>
         public void nditer(string[] flags = null, list of list of str op_flags = null, dtype or tuple of dtype(s) op_dtypes = null, string order = null, string casting = null, list of list of ints op_axes = null, tuple of ints itershape = null, int? buffersize = null)
         {
@@ -2218,9 +2452,9 @@ namespace Numpy
         */
         
         /// <summary>
-        /// Multidimensional index iterator.
-        /// 
-        /// Return an iterator yielding pairs of array coordinates and values.
+        ///	Multidimensional index iterator.<br></br>
+        ///	
+        ///	Return an iterator yielding pairs of array coordinates and values.
         /// </summary>
         public void ndenumerate()
         {
@@ -2231,18 +2465,20 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// Create nditers for use in nested loops
-        /// 
-        /// Create a tuple of nditer objects which iterate in nested loops over
-        /// different axes of the op argument. The first iterator is used in the
-        /// outermost loop, the last in the innermost loop. Advancing one will change
-        /// the subsequent iterators to point at its new element.
+        ///	Create nditers for use in nested loops
+        ///	
+        ///	Create a tuple of nditer objects which iterate in nested loops over
+        ///	different axes of the op argument.<br></br>
+        ///	 The first iterator is used in the
+        ///	outermost loop, the last in the innermost loop.<br></br>
+        ///	 Advancing one will change
+        ///	the subsequent iterators to point at its new element.
         /// </summary>
         /// <param name="axes">
-        /// Each item is used as an “op_axes” argument to an nditer
+        ///	Each item is used as an “op_axes” argument to an nditer
         /// </param>
         /// <returns>
-        /// An nditer for each item in axes, outermost first
+        ///	An nditer for each item in axes, outermost first
         /// </returns>
         public tuple of nditer nested_iters(params int[] axes)
         {
@@ -2254,77 +2490,92 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// Return a string representation of an array.
-        /// 
-        /// Notes
-        /// 
-        /// If a formatter is specified for a certain type, the precision keyword is
-        /// ignored for that type.
-        /// 
-        /// This is a very flexible function; array_repr and array_str are using
-        /// array2string internally so keywords with the same name should work
-        /// identically in all three functions.
+        ///	Return a string representation of an array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If a formatter is specified for a certain type, the precision keyword is
+        ///	ignored for that type.<br></br>
+        ///	
+        ///	This is a very flexible function; array_repr and array_str are using
+        ///	array2string internally so keywords with the same name should work
+        ///	identically in all three functions.
         /// </summary>
         /// <param name="max_line_width">
-        /// The maximum number of columns the string should span. Newline
-        /// characters splits the string appropriately after array elements.
+        ///	The maximum number of columns the string should span.<br></br>
+        ///	Newline
+        ///	characters splits the string appropriately after array elements.
         /// </param>
         /// <param name="precision">
-        /// Floating point precision. Default is the current printing
-        /// precision (usually 8), which can be altered using set_printoptions.
+        ///	Floating point precision.<br></br>
+        ///	Default is the current printing
+        ///	precision (usually 8), which can be altered using set_printoptions.
         /// </param>
         /// <param name="suppress_small">
-        /// Represent very small numbers as zero. A number is “very small” if it
-        /// is smaller than the current printing precision.
+        ///	Represent very small numbers as zero.<br></br>
+        ///	A number is “very small” if it
+        ///	is smaller than the current printing precision.
         /// </param>
         /// <param name="separator">
-        /// Inserted between elements.
+        ///	Inserted between elements.
         /// </param>
         /// <param name="suffix">
-        /// The length of the prefix and suffix strings are used to respectively
-        /// align and wrap the output. An array is typically printed as:
-        /// 
-        /// The output is left-padded by the length of the prefix string, and
-        /// wrapping is forced at the column max_line_width - len(suffix).
-        /// It should be noted that the content of prefix and suffix strings are
-        /// not included in the output.
+        ///	The length of the prefix and suffix strings are used to respectively
+        ///	align and wrap the output.<br></br>
+        ///	An array is typically printed as:
+        ///	
+        ///	The output is left-padded by the length of the prefix string, and
+        ///	wrapping is forced at the column max_line_width - len(suffix).<br></br>
+        ///	
+        ///	It should be noted that the content of prefix and suffix strings are
+        ///	not included in the output.
         /// </param>
         /// <param name="formatter">
-        /// If not None, the keys should indicate the type(s) that the respective
-        /// formatting function applies to.  Callables should return a string.
-        /// Types that are not specified (by their corresponding keys) are handled
-        /// by the default formatters.  Individual types for which a formatter
-        /// can be set are:
-        /// 
-        /// Other keys that can be used to set a group of types at once are:
+        ///	If not None, the keys should indicate the type(s) that the respective
+        ///	formatting function applies to.<br></br>
+        ///	Callables should return a string.<br></br>
+        ///	
+        ///	Types that are not specified (by their corresponding keys) are handled
+        ///	by the default formatters.<br></br>
+        ///	Individual types for which a formatter
+        ///	can be set are:
+        ///	
+        ///	Other keys that can be used to set a group of types at once are:
         /// </param>
         /// <param name="threshold">
-        /// Total number of array elements which trigger summarization
-        /// rather than full repr.
+        ///	Total number of array elements which trigger summarization
+        ///	rather than full repr.
         /// </param>
         /// <param name="edgeitems">
-        /// Number of array items in summary at beginning and end of
-        /// each dimension.
+        ///	Number of array items in summary at beginning and end of
+        ///	each dimension.
         /// </param>
         /// <param name="sign">
-        /// Controls printing of the sign of floating-point types. If ‘+’, always
-        /// print the sign of positive values. If ‘ ‘, always prints a space
-        /// (whitespace character) in the sign position of positive values.  If
-        /// ‘-‘, omit the sign character of positive values.
+        ///	Controls printing of the sign of floating-point types.<br></br>
+        ///	If ‘+’, always
+        ///	print the sign of positive values.<br></br>
+        ///	If ‘ ‘, always prints a space
+        ///	(whitespace character) in the sign position of positive values.<br></br>
+        ///	If
+        ///	‘-‘, omit the sign character of positive values.
         /// </param>
         /// <param name="floatmode">
-        /// Controls the interpretation of the precision option for
-        /// floating-point types. Can take the following values:
+        ///	Controls the interpretation of the precision option for
+        ///	floating-point types.<br></br>
+        ///	Can take the following values:
         /// </param>
         /// <param name="legacy">
-        /// If set to the string ‘1.13’ enables 1.13 legacy printing mode. This
-        /// approximates numpy 1.13 print output by including a space in the sign
-        /// position of floats and different behavior for 0d arrays. If set to
-        /// False, disables legacy mode. Unrecognized strings will be ignored
-        /// with a warning for forward compatibility.
+        ///	If set to the string ‘1.13’ enables 1.13 legacy printing mode.<br></br>
+        ///	This
+        ///	approximates numpy 1.13 print output by including a space in the sign
+        ///	position of floats and different behavior for 0d arrays.<br></br>
+        ///	If set to
+        ///	False, disables legacy mode.<br></br>
+        ///	Unrecognized strings will be ignored
+        ///	with a warning for forward compatibility.
         /// </param>
         /// <returns>
-        /// String representation of the array.
+        ///	String representation of the array.
         /// </returns>
         public string array2string(int? max_line_width = null, int? precision = null, bool? suppress_small = null, string separator = " ", string prefix = "", string suffix = "", dict of callables formatter = null, int? threshold = null, int? edgeitems = null, string sign = null, string floatmode = null, string or False legacy = null)
         {
@@ -2335,23 +2586,26 @@ namespace Numpy
         */
         
         /// <summary>
-        /// Return the string representation of an array.
+        ///	Return the string representation of an array.
         /// </summary>
         /// <param name="max_line_width">
-        /// The maximum number of columns the string should span. Newline
-        /// characters split the string appropriately after array elements.
+        ///	The maximum number of columns the string should span.<br></br>
+        ///	Newline
+        ///	characters split the string appropriately after array elements.
         /// </param>
         /// <param name="precision">
-        /// Floating point precision. Default is the current printing precision
-        /// (usually 8), which can be altered using set_printoptions.
+        ///	Floating point precision.<br></br>
+        ///	Default is the current printing precision
+        ///	(usually 8), which can be altered using set_printoptions.
         /// </param>
         /// <param name="suppress_small">
-        /// Represent very small numbers as zero, default is False. Very small
-        /// is defined by precision, if the precision is 8 then
-        /// numbers smaller than 5e-9 are represented as zero.
+        ///	Represent very small numbers as zero, default is False.<br></br>
+        ///	Very small
+        ///	is defined by precision, if the precision is 8 then
+        ///	numbers smaller than 5e-9 are represented as zero.
         /// </param>
         /// <returns>
-        /// The string representation of an array.
+        ///	The string representation of an array.
         /// </returns>
         public string array_repr(int? max_line_width = null, int? precision = null, bool? suppress_small = null)
         {
@@ -2361,25 +2615,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a string representation of the data in an array.
-        /// 
-        /// The data in the array is returned as a single string.  This function is
-        /// similar to array_repr, the difference being that array_repr also
-        /// returns information on the kind of array and its data type.
+        ///	Return a string representation of the data in an array.<br></br>
+        ///	
+        ///	The data in the array is returned as a single string.<br></br>
+        ///	  This function is
+        ///	similar to array_repr, the difference being that array_repr also
+        ///	returns information on the kind of array and its data type.
         /// </summary>
         /// <param name="max_line_width">
-        /// Inserts newlines if text is longer than max_line_width.  The
-        /// default is, indirectly, 75.
+        ///	Inserts newlines if text is longer than max_line_width.<br></br>
+        ///	The
+        ///	default is, indirectly, 75.
         /// </param>
         /// <param name="precision">
-        /// Floating point precision.  Default is the current printing precision
-        /// (usually 8), which can be altered using set_printoptions.
+        ///	Floating point precision.<br></br>
+        ///	Default is the current printing precision
+        ///	(usually 8), which can be altered using set_printoptions.
         /// </param>
         /// <param name="suppress_small">
-        /// Represent numbers “very close” to zero as zero; default is False.
-        /// Very close is defined by precision: if the precision is 8, e.g.,
-        /// numbers smaller (in absolute value) than 5e-9 are represented as
-        /// zero.
+        ///	Represent numbers “very close” to zero as zero; default is False.<br></br>
+        ///	
+        ///	Very close is defined by precision: if the precision is 8, e.g.,
+        ///	numbers smaller (in absolute value) than 5e-9 are represented as
+        ///	zero.
         /// </param>
         public void array_str(int? max_line_width = null, int? precision = null, bool? suppress_small = null)
         {
@@ -2389,24 +2647,31 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Dot product of two arrays. Specifically,
+        ///	Dot product of two arrays.<br></br>
+        ///	 Specifically,
         /// </summary>
         /// <param name="b">
-        /// Second argument.
+        ///	Second argument.
         /// </param>
         /// <param name="out">
-        /// Output argument. This must have the exact kind that would be returned
-        /// if it was not used. In particular, it must have the right type, must be
-        /// C-contiguous, and its dtype must be the dtype that would be returned
-        /// for dot(a,b). This is a performance feature. Therefore, if these
-        /// conditions are not met, an exception is raised, instead of attempting
-        /// to be flexible.
+        ///	Output argument.<br></br>
+        ///	This must have the exact kind that would be returned
+        ///	if it was not used.<br></br>
+        ///	In particular, it must have the right type, must be
+        ///	C-contiguous, and its dtype must be the dtype that would be returned
+        ///	for dot(a,b).<br></br>
+        ///	This is a performance feature.<br></br>
+        ///	Therefore, if these
+        ///	conditions are not met, an exception is raised, instead of attempting
+        ///	to be flexible.
         /// </param>
         /// <returns>
-        /// Returns the dot product of a and b.  If a and b are both
-        /// scalars or both 1-D arrays then a scalar is returned; otherwise
-        /// an array is returned.
-        /// If out is given, then it is returned.
+        ///	Returns the dot product of a and b.<br></br>
+        ///	  If a and b are both
+        ///	scalars or both 1-D arrays then a scalar is returned; otherwise
+        ///	an array is returned.<br></br>
+        ///	
+        ///	If out is given, then it is returned.
         /// </returns>
         public NDarray dot(NDarray b, NDarray @out = null)
         {
@@ -2416,22 +2681,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the dot product of two vectors.
-        /// 
-        /// The vdot(a, b) function handles complex numbers differently than
-        /// dot(a, b).  If the first argument is complex the complex conjugate
-        /// of the first argument is used for the calculation of the dot product.
-        /// 
-        /// Note that vdot handles multidimensional arrays differently than dot:
-        /// it does not perform a matrix product, but flattens input arguments
-        /// to 1-D vectors first. Consequently, it should only be used for vectors.
+        ///	Return the dot product of two vectors.<br></br>
+        ///	
+        ///	The vdot(a, b) function handles complex numbers differently than
+        ///	dot(a, b).<br></br>
+        ///	  If the first argument is complex the complex conjugate
+        ///	of the first argument is used for the calculation of the dot product.<br></br>
+        ///	
+        ///	Note that vdot handles multidimensional arrays differently than dot:
+        ///	it does not perform a matrix product, but flattens input arguments
+        ///	to 1-D vectors first.<br></br>
+        ///	 Consequently, it should only be used for vectors.
         /// </summary>
         /// <param name="b">
-        /// Second argument to the dot product.
+        ///	Second argument to the dot product.
         /// </param>
         /// <returns>
-        /// Dot product of a and b.  Can be an int, float, or
-        /// complex depending on the types of a and b.
+        ///	Dot product of a and b.<br></br>
+        ///	  Can be an int, float, or
+        ///	complex depending on the types of a and b.
         /// </returns>
         public NDarray vdot(NDarray b)
         {
@@ -2441,26 +2709,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Inner product of two arrays.
-        /// 
-        /// Ordinary inner product of vectors for 1-D arrays (without complex
-        /// conjugation), in higher dimensions a sum product over the last axes.
-        /// 
-        /// Notes
-        /// 
-        /// For vectors (1-D arrays) it computes the ordinary inner-product:
-        /// 
-        /// More generally, if ndim(a) = r &gt; 0 and ndim(b) = s &gt; 0:
-        /// 
-        /// or explicitly:
-        /// 
-        /// In addition a or b may be scalars, in which case:
+        ///	Inner product of two arrays.<br></br>
+        ///	
+        ///	Ordinary inner product of vectors for 1-D arrays (without complex
+        ///	conjugation), in higher dimensions a sum product over the last axes.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	For vectors (1-D arrays) it computes the ordinary inner-product:
+        ///	
+        ///	More generally, if ndim(a) = r &gt; 0 and ndim(b) = s &gt; 0:
+        ///	
+        ///	or explicitly:
+        ///	
+        ///	In addition a or b may be scalars, in which case:
         /// </summary>
         /// <param name="a">
-        /// If a and b are nonscalar, their last dimensions must match.
+        ///	If a and b are nonscalar, their last dimensions must match.
         /// </param>
         /// <returns>
-        /// out.shape = a.shape[:-1] + b.shape[:-1]
+        ///	out.shape = a.shape[:-1] + b.shape[:-1]
         /// </returns>
         public NDarray inner(NDarray a)
         {
@@ -2470,23 +2738,24 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the outer product of two vectors.
-        /// 
-        /// Given two vectors, a = [a0, a1, ..., aM] and
-        /// b = [b0, b1, ..., bN],
-        /// the outer product [1] is:
-        /// 
-        /// References
+        ///	Compute the outer product of two vectors.<br></br>
+        ///	
+        ///	Given two vectors, a = [a0, a1, ..., aM] and
+        ///	b = [b0, b1, ..., bN],
+        ///	the outer product [1] is:
+        ///	
+        ///	References
         /// </summary>
         /// <param name="b">
-        /// Second input vector.  Input is flattened if
-        /// not already 1-dimensional.
+        ///	Second input vector.<br></br>
+        ///	Input is flattened if
+        ///	not already 1-dimensional.
         /// </param>
         /// <param name="out">
-        /// A location where the result is stored
+        ///	A location where the result is stored
         /// </param>
         /// <returns>
-        /// out[i, j] = a[i] * b[j]
+        ///	out[i, j] = a[i] * b[j]
         /// </returns>
         public NDarray outer(NDarray b, NDarray @out = null)
         {
@@ -2496,28 +2765,31 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Matrix product of two arrays.
-        /// 
-        /// Notes
-        /// 
-        /// The behavior depends on the arguments in the following way.
-        /// 
-        /// matmul differs from dot in two important ways:
-        /// 
-        /// The matmul function implements the semantics of the &#64; operator introduced
-        /// in Python 3.5 following PEP465.
+        ///	Matrix product of two arrays.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The behavior depends on the arguments in the following way.<br></br>
+        ///	
+        ///	matmul differs from dot in two important ways:
+        ///	
+        ///	The matmul function implements the semantics of the &#64; operator introduced
+        ///	in Python 3.5 following PEP465.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays, scalars not allowed.
+        ///	Input arrays, scalars not allowed.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that matches the signature (n,k),(k,m)-&gt;(n,m). If not
-        /// provided or None, a freshly-allocated array is returned.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that matches the signature (n,k),(k,m)-&gt;(n,m).<br></br>
+        ///	If not
+        ///	provided or None, a freshly-allocated array is returned.
         /// </param>
         /// <returns>
-        /// The matrix product of the inputs.
-        /// This is a scalar only when both x1, x2 are 1-d vectors.
+        ///	The matrix product of the inputs.<br></br>
+        ///	
+        ///	This is a scalar only when both x1, x2 are 1-d vectors.
         /// </returns>
         public NDarray matmul(NDarray x1, NDarray @out = null)
         {
@@ -2527,30 +2799,31 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute tensor dot product along specified axes for arrays &gt;= 1-D.
-        /// 
-        /// Given two tensors (arrays of dimension greater than or equal to one),
-        /// a and b, and an array_like object containing two array_like
-        /// objects, (a_axes, b_axes), sum the products of a’s and b’s
-        /// elements (components) over the axes specified by a_axes and
-        /// b_axes. The third argument can be a single non-negative
-        /// integer_like scalar, N; if it is such, then the last N
-        /// dimensions of a and the first N dimensions of b are summed
-        /// over.
-        /// 
-        /// Notes
-        /// 
-        /// When axes is integer_like, the sequence for evaluation will be: first
-        /// the -Nth axis in a and 0th axis in b, and the -1th axis in a and
-        /// Nth axis in b last.
-        /// 
-        /// When there is more than one axis to sum over - and they are not the last
-        /// (first) axes of a (b) - the argument axes should consist of
-        /// two sequences of the same length, with the first axis to sum over given
-        /// first in both sequences, the second axis second, and so forth.
+        ///	Compute tensor dot product along specified axes for arrays &gt;= 1-D.<br></br>
+        ///	
+        ///	Given two tensors (arrays of dimension greater than or equal to one),
+        ///	a and b, and an array_like object containing two array_like
+        ///	objects, (a_axes, b_axes), sum the products of a’s and b’s
+        ///	elements (components) over the axes specified by a_axes and
+        ///	b_axes.<br></br>
+        ///	 The third argument can be a single non-negative
+        ///	integer_like scalar, N; if it is such, then the last N
+        ///	dimensions of a and the first N dimensions of b are summed
+        ///	over.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	When axes is integer_like, the sequence for evaluation will be: first
+        ///	the -Nth axis in a and 0th axis in b, and the -1th axis in a and
+        ///	Nth axis in b last.<br></br>
+        ///	
+        ///	When there is more than one axis to sum over - and they are not the last
+        ///	(first) axes of a (b) - the argument axes should consist of
+        ///	two sequences of the same length, with the first axis to sum over given
+        ///	first in both sequences, the second axis second, and so forth.
         /// </summary>
         /// <param name="a">
-        /// Tensors to “dot”.
+        ///	Tensors to “dot”.
         /// </param>
         public NDarray tensordot(NDarray a, int[] axes = null)
         {
@@ -2560,23 +2833,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Kronecker product of two arrays.
-        /// 
-        /// Computes the Kronecker product, a composite array made of blocks of the
-        /// second array scaled by the first.
-        /// 
-        /// Notes
-        /// 
-        /// The function assumes that the number of dimensions of a and b
-        /// are the same, if necessary prepending the smallest with ones.
-        /// If a.shape = (r0,r1,..,rN) and b.shape = (s0,s1,…,sN),
-        /// the Kronecker product has shape (r0*s0, r1*s1, …, rN*SN).
-        /// The elements are products of elements from a and b, organized
-        /// explicitly by:
-        /// 
-        /// where:
-        /// 
-        /// In the common 2-D case (N=1), the block structure can be visualized:
+        ///	Kronecker product of two arrays.<br></br>
+        ///	
+        ///	Computes the Kronecker product, a composite array made of blocks of the
+        ///	second array scaled by the first.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The function assumes that the number of dimensions of a and b
+        ///	are the same, if necessary prepending the smallest with ones.<br></br>
+        ///	
+        ///	If a.shape = (r0,r1,..,rN) and b.shape = (s0,s1,…,sN),
+        ///	the Kronecker product has shape (r0*s0, r1*s1, …, rN*SN).<br></br>
+        ///	
+        ///	The elements are products of elements from a and b, organized
+        ///	explicitly by:
+        ///	
+        ///	where:
+        ///	
+        ///	In the common 2-D case (N=1), the block structure can be visualized:
         /// </summary>
         public NDarray kron(NDarray a)
         {
@@ -2586,44 +2861,53 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the sum along diagonals of the array.
-        /// 
-        /// If a is 2-D, the sum along its diagonal with the given offset
-        /// is returned, i.e., the sum of elements a[i,i+offset] for all i.
-        /// 
-        /// If a has more than two dimensions, then the axes specified by axis1 and
-        /// axis2 are used to determine the 2-D sub-arrays whose traces are returned.
-        /// The shape of the resulting array is the same as that of a with axis1
-        /// and axis2 removed.
+        ///	Return the sum along diagonals of the array.<br></br>
+        ///	
+        ///	If a is 2-D, the sum along its diagonal with the given offset
+        ///	is returned, i.e., the sum of elements a[i,i+offset] for all i.<br></br>
+        ///	
+        ///	If a has more than two dimensions, then the axes specified by axis1 and
+        ///	axis2 are used to determine the 2-D sub-arrays whose traces are returned.<br></br>
+        ///	
+        ///	The shape of the resulting array is the same as that of a with axis1
+        ///	and axis2 removed.
         /// </summary>
         /// <param name="offset">
-        /// Offset of the diagonal from the main diagonal. Can be both positive
-        /// and negative. Defaults to 0.
+        ///	Offset of the diagonal from the main diagonal.<br></br>
+        ///	Can be both positive
+        ///	and negative.<br></br>
+        ///	Defaults to 0.
         /// </param>
         /// <param name="axis2">
-        /// Axes to be used as the first and second axis of the 2-D sub-arrays
-        /// from which the diagonals should be taken. Defaults are the first two
-        /// axes of a.
+        ///	Axes to be used as the first and second axis of the 2-D sub-arrays
+        ///	from which the diagonals should be taken.<br></br>
+        ///	Defaults are the first two
+        ///	axes of a.
         /// </param>
         /// <param name="axis1">
-        /// Axes to be used as the first and second axis of the 2-D sub-arrays
-        /// from which the diagonals should be taken. Defaults are the first two
-        /// axes of a.
+        ///	Axes to be used as the first and second axis of the 2-D sub-arrays
+        ///	from which the diagonals should be taken.<br></br>
+        ///	Defaults are the first two
+        ///	axes of a.
         /// </param>
         /// <param name="dtype">
-        /// Determines the data-type of the returned array and of the accumulator
-        /// where the elements are summed. If dtype has the value None and a is
-        /// of integer type of precision less than the default integer
-        /// precision, then the default integer precision is used. Otherwise,
-        /// the precision is the same as that of a.
+        ///	Determines the data-type of the returned array and of the accumulator
+        ///	where the elements are summed.<br></br>
+        ///	If dtype has the value None and a is
+        ///	of integer type of precision less than the default integer
+        ///	precision, then the default integer precision is used.<br></br>
+        ///	Otherwise,
+        ///	the precision is the same as that of a.
         /// </param>
         /// <param name="out">
-        /// Array into which the output is placed. Its type is preserved and
-        /// it must be of the right shape to hold the output.
+        ///	Array into which the output is placed.<br></br>
+        ///	Its type is preserved and
+        ///	it must be of the right shape to hold the output.
         /// </param>
         /// <returns>
-        /// If a is 2-D, the sum along the diagonal is returned.  If a has
-        /// larger dimensions, then an array of sums along diagonals is returned.
+        ///	If a is 2-D, the sum along the diagonal is returned.<br></br>
+        ///	  If a has
+        ///	larger dimensions, then an array of sums along diagonals is returned.
         /// </returns>
         public NDarray trace(int? offset = 0, int? axis2 = null, int? axis1 = null, Dtype dtype = null, NDarray @out = null)
         {
@@ -2633,43 +2917,49 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test whether all array elements along a given axis evaluate to True.
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number (NaN), positive infinity and negative infinity
-        /// evaluate to True because these are not equal to zero.
+        ///	Test whether all array elements along a given axis evaluate to True.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number (NaN), positive infinity and negative infinity
+        ///	evaluate to True because these are not equal to zero.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which a logical AND reduction is performed.
-        /// The default (axis = None) is to perform a logical AND over all
-        /// the dimensions of the input array. axis may be negative, in
-        /// which case it counts from the last to the first axis.
-        /// 
-        /// If this is a tuple of ints, a reduction is performed on multiple
-        /// axes, instead of a single axis or all the axes as before.
+        ///	Axis or axes along which a logical AND reduction is performed.<br></br>
+        ///	
+        ///	The default (axis = None) is to perform a logical AND over all
+        ///	the dimensions of the input array.<br></br>
+        ///	axis may be negative, in
+        ///	which case it counts from the last to the first axis.<br></br>
+        ///	
+        ///	If this is a tuple of ints, a reduction is performed on multiple
+        ///	axes, instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.
-        /// It must have the same shape as the expected output and its
-        /// type is preserved (e.g., if dtype(out) is float, the result
-        /// will consist of 0.0’s and 1.0’s).  See doc.ufuncs (Section
-        /// “Output arguments”) for more details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	
+        ///	It must have the same shape as the expected output and its
+        ///	type is preserved (e.g., if dtype(out) is float, the result
+        ///	will consist of 0.0’s and 1.0’s).<br></br>
+        ///	See doc.ufuncs (Section
+        ///	“Output arguments”) for more details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the all method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the all method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <returns>
-        /// A new boolean or array is returned unless out is specified,
-        /// in which case a reference to out is returned.
+        ///	A new boolean or array is returned unless out is specified,
+        ///	in which case a reference to out is returned.
         /// </returns>
         public NDarray<bool> all(int[] axis, NDarray @out = null, bool? keepdims = null)
         {
@@ -2679,16 +2969,16 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test whether all array elements along a given axis evaluate to True.
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number (NaN), positive infinity and negative infinity
-        /// evaluate to True because these are not equal to zero.
+        ///	Test whether all array elements along a given axis evaluate to True.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number (NaN), positive infinity and negative infinity
+        ///	evaluate to True because these are not equal to zero.
         /// </summary>
         /// <returns>
-        /// A new boolean or array is returned unless out is specified,
-        /// in which case a reference to out is returned.
+        ///	A new boolean or array is returned unless out is specified,
+        ///	in which case a reference to out is returned.
         /// </returns>
         public bool all()
         {
@@ -2698,45 +2988,51 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test whether any array element along a given axis evaluates to True.
-        /// 
-        /// Returns single boolean unless axis is not None
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number (NaN), positive infinity and negative infinity evaluate
-        /// to True because these are not equal to zero.
+        ///	Test whether any array element along a given axis evaluates to True.<br></br>
+        ///	
+        ///	Returns single boolean unless axis is not None
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number (NaN), positive infinity and negative infinity evaluate
+        ///	to True because these are not equal to zero.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which a logical OR reduction is performed.
-        /// The default (axis = None) is to perform a logical OR over all
-        /// the dimensions of the input array. axis may be negative, in
-        /// which case it counts from the last to the first axis.
-        /// 
-        /// If this is a tuple of ints, a reduction is performed on multiple
-        /// axes, instead of a single axis or all the axes as before.
+        ///	Axis or axes along which a logical OR reduction is performed.<br></br>
+        ///	
+        ///	The default (axis = None) is to perform a logical OR over all
+        ///	the dimensions of the input array.<br></br>
+        ///	axis may be negative, in
+        ///	which case it counts from the last to the first axis.<br></br>
+        ///	
+        ///	If this is a tuple of ints, a reduction is performed on multiple
+        ///	axes, instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  It must have
-        /// the same shape as the expected output and its type is preserved
-        /// (e.g., if it is of type float, then it will remain so, returning
-        /// 1.0 for True and 0.0 for False, regardless of the type of a).
-        /// See doc.ufuncs (Section “Output arguments”) for details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output and its type is preserved
+        ///	(e.g., if it is of type float, then it will remain so, returning
+        ///	1.0 for True and 0.0 for False, regardless of the type of a).<br></br>
+        ///	
+        ///	See doc.ufuncs (Section “Output arguments”) for details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the any method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the any method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <returns>
-        /// A new boolean or ndarray is returned unless out is specified,
-        /// in which case a reference to out is returned.
+        ///	A new boolean or ndarray is returned unless out is specified,
+        ///	in which case a reference to out is returned.
         /// </returns>
         public NDarray<bool> any(int[] axis, NDarray @out = null, bool? keepdims = null)
         {
@@ -2746,18 +3042,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test whether any array element along a given axis evaluates to True.
-        /// 
-        /// Returns single boolean unless axis is not None
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number (NaN), positive infinity and negative infinity evaluate
-        /// to True because these are not equal to zero.
+        ///	Test whether any array element along a given axis evaluates to True.<br></br>
+        ///	
+        ///	Returns single boolean unless axis is not None
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number (NaN), positive infinity and negative infinity evaluate
+        ///	to True because these are not equal to zero.
         /// </summary>
         /// <returns>
-        /// A new boolean or ndarray is returned unless out is specified,
-        /// in which case a reference to out is returned.
+        ///	A new boolean or ndarray is returned unless out is specified,
+        ///	in which case a reference to out is returned.
         /// </returns>
         public bool any()
         {
@@ -2767,36 +3063,44 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for finiteness (not infinity or not Not a Number).
-        /// 
-        /// The result is returned as a boolean array.
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number, positive infinity and negative infinity are considered
-        /// to be non-finite.
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754). This means that Not a Number is not equivalent to infinity.
-        /// Also that positive infinity is not equivalent to negative infinity. But
-        /// infinity is equivalent to positive infinity.  Errors result if the
-        /// second argument is also supplied when x is a scalar input, or if
-        /// first and second arguments have different shapes.
+        ///	Test element-wise for finiteness (not infinity or not Not a Number).<br></br>
+        ///	
+        ///	The result is returned as a boolean array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number, positive infinity and negative infinity are considered
+        ///	to be non-finite.<br></br>
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	 This means that Not a Number is not equivalent to infinity.<br></br>
+        ///	
+        ///	Also that positive infinity is not equivalent to negative infinity.<br></br>
+        ///	 But
+        ///	infinity is equivalent to positive infinity.<br></br>
+        ///	  Errors result if the
+        ///	second argument is also supplied when x is a scalar input, or if
+        ///	first and second arguments have different shapes.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// True where x is not positive infinity, negative infinity,
-        /// or NaN; false otherwise.
-        /// This is a scalar if x is a scalar.
+        ///	True where x is not positive infinity, negative infinity,
+        ///	or NaN; false otherwise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray isfinite(NDarray @out = null, NDarray @where = null)
         {
@@ -2806,33 +3110,37 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for positive or negative infinity.
-        /// 
-        /// Returns a boolean array of the same shape as x, True where x ==
-        /// +/-inf, otherwise False.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754).
-        /// 
-        /// Errors result if the second argument is supplied when the first
-        /// argument is a scalar, or if the first and second arguments have
-        /// different shapes.
+        ///	Test element-wise for positive or negative infinity.<br></br>
+        ///	
+        ///	Returns a boolean array of the same shape as x, True where x ==
+        ///	+/-inf, otherwise False.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	
+        ///	Errors result if the second argument is supplied when the first
+        ///	argument is a scalar, or if the first and second arguments have
+        ///	different shapes.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// True where x is positive or negative infinity, false otherwise.
-        /// This is a scalar if x is a scalar.
+        ///	True where x is positive or negative infinity, false otherwise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray<bool> isinf(NDarray @out = null, NDarray @where = null)
         {
@@ -2842,26 +3150,31 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for NaN and return result as a boolean array.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754). This means that Not a Number is not equivalent to infinity.
+        ///	Test element-wise for NaN and return result as a boolean array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	 This means that Not a Number is not equivalent to infinity.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// True where x is NaN, false otherwise.
-        /// This is a scalar if x is a scalar.
+        ///	True where x is NaN, false otherwise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray isnan(NDarray @out = null, NDarray @where = null)
         {
@@ -2871,21 +3184,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for NaT (not a time) and return result as a boolean array.
+        ///	Test element-wise for NaT (not a time) and return result as a boolean array.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// True where x is NaT, false otherwise.
-        /// This is a scalar if x is a scalar.
+        ///	True where x is NaT, false otherwise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray isnat(NDarray @out = null, NDarray @where = null)
         {
@@ -2895,32 +3212,35 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for negative infinity, return result as bool array.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754).
-        /// 
-        /// Errors result if the second argument is also supplied when x is a scalar
-        /// input, if first and second arguments have different shapes, or if the
-        /// first argument has complex values.
+        ///	Test element-wise for negative infinity, return result as bool array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	
+        ///	Errors result if the second argument is also supplied when x is a scalar
+        ///	input, if first and second arguments have different shapes, or if the
+        ///	first argument has complex values.
         /// </summary>
         /// <param name="out">
-        /// A boolean array with the same shape and type as x to store the
-        /// result.
+        ///	A boolean array with the same shape and type as x to store the
+        ///	result.
         /// </param>
         /// <returns>
-        /// A boolean array with the same dimensions as the input.
-        /// If second argument is not supplied then a numpy boolean array is
-        /// returned with values True where the corresponding element of the
-        /// input is negative infinity and values False where the element of
-        /// the input is not negative infinity.
-        /// 
-        /// If a second argument is supplied the result is stored there. If the
-        /// type of that array is a numeric type the result is represented as
-        /// zeros and ones, if the type is boolean then as False and True. The
-        /// return value out is then a reference to that array.
+        ///	A boolean array with the same dimensions as the input.<br></br>
+        ///	
+        ///	If second argument is not supplied then a numpy boolean array is
+        ///	returned with values True where the corresponding element of the
+        ///	input is negative infinity and values False where the element of
+        ///	the input is not negative infinity.<br></br>
+        ///	
+        ///	If a second argument is supplied the result is stored there.<br></br>
+        ///	 If the
+        ///	type of that array is a numeric type the result is represented as
+        ///	zeros and ones, if the type is boolean then as False and True.<br></br>
+        ///	 The
+        ///	return value out is then a reference to that array.
         /// </returns>
         public NDarray isneginf(NDarray @out = null)
         {
@@ -2930,31 +3250,34 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for positive infinity, return result as bool array.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754).
-        /// 
-        /// Errors result if the second argument is also supplied when x is a scalar
-        /// input, if first and second arguments have different shapes, or if the
-        /// first argument has complex values
+        ///	Test element-wise for positive infinity, return result as bool array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	
+        ///	Errors result if the second argument is also supplied when x is a scalar
+        ///	input, if first and second arguments have different shapes, or if the
+        ///	first argument has complex values
         /// </summary>
         /// <param name="y">
-        /// A boolean array with the same shape as x to store the result.
+        ///	A boolean array with the same shape as x to store the result.
         /// </param>
         /// <returns>
-        /// A boolean array with the same dimensions as the input.
-        /// If second argument is not supplied then a boolean array is returned
-        /// with values True where the corresponding element of the input is
-        /// positive infinity and values False where the element of the input is
-        /// not positive infinity.
-        /// 
-        /// If a second argument is supplied the result is stored there. If the
-        /// type of that array is a numeric type the result is represented as zeros
-        /// and ones, if the type is boolean then as False and True.
-        /// The return value out is then a reference to that array.
+        ///	A boolean array with the same dimensions as the input.<br></br>
+        ///	
+        ///	If second argument is not supplied then a boolean array is returned
+        ///	with values True where the corresponding element of the input is
+        ///	positive infinity and values False where the element of the input is
+        ///	not positive infinity.<br></br>
+        ///	
+        ///	If a second argument is supplied the result is stored there.<br></br>
+        ///	 If the
+        ///	type of that array is a numeric type the result is represented as zeros
+        ///	and ones, if the type is boolean then as False and True.<br></br>
+        ///	
+        ///	The return value out is then a reference to that array.
         /// </returns>
         public NDarray isposinf(NDarray y = null)
         {
@@ -2964,13 +3287,13 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a bool array, where True if input element is complex.
-        /// 
-        /// What is tested is whether the input has a non-zero imaginary part, not if
-        /// the input type is complex.
+        ///	Returns a bool array, where True if input element is complex.<br></br>
+        ///	
+        ///	What is tested is whether the input has a non-zero imaginary part, not if
+        ///	the input type is complex.
         /// </summary>
         /// <returns>
-        /// Output array.
+        ///	Output array.
         /// </returns>
         public NDarray iscomplex()
         {
@@ -2980,12 +3303,13 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns True if the array is Fortran contiguous but not C contiguous.
-        /// 
-        /// This function is obsolete and, because of changes due to relaxed stride
-        /// checking, its return value for the same array may differ for versions
-        /// of NumPy &gt;= 1.10.0 and previous versions. If you only want to check if an
-        /// array is Fortran contiguous use a.flags.f_contiguous instead.
+        ///	Returns True if the array is Fortran contiguous but not C contiguous.<br></br>
+        ///	
+        ///	This function is obsolete and, because of changes due to relaxed stride
+        ///	checking, its return value for the same array may differ for versions
+        ///	of NumPy &gt;= 1.10.0 and previous versions.<br></br>
+        ///	 If you only want to check if an
+        ///	array is Fortran contiguous use a.flags.f_contiguous instead.
         /// </summary>
         public bool isfortran()
         {
@@ -2995,13 +3319,13 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a bool array, where True if input element is real.
-        /// 
-        /// If element has complex type with zero complex part, the return value
-        /// for that element is True.
+        ///	Returns a bool array, where True if input element is real.<br></br>
+        ///	
+        ///	If element has complex type with zero complex part, the return value
+        ///	for that element is True.
         /// </summary>
         /// <returns>
-        /// Boolean array of same shape as x.
+        ///	Boolean array of same shape as x.
         /// </returns>
         public NDarray isreal()
         {
@@ -3011,25 +3335,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the truth value of x1 AND x2 element-wise.
+        ///	Compute the truth value of x1 AND x2 element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays. x1 and x2 must be of the same shape.
+        ///	Input arrays.<br></br>
+        ///	x1 and x2 must be of the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Boolean result with the same shape as x1 and x2 of the logical
-        /// AND operation on corresponding elements of x1 and x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Boolean result with the same shape as x1 and x2 of the logical
+        ///	AND operation on corresponding elements of x1 and x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray logical_and(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3039,26 +3367,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the truth value of x1 OR x2 element-wise.
+        ///	Compute the truth value of x1 OR x2 element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Logical OR is applied to the elements of x1 and x2.
-        /// They have to be of the same shape.
+        ///	Logical OR is applied to the elements of x1 and x2.
+        ///	They have to be of the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Boolean result with the same shape as x1 and x2 of the logical
-        /// OR operation on elements of x1 and x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Boolean result with the same shape as x1 and x2 of the logical
+        ///	OR operation on elements of x1 and x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray logical_or(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3068,22 +3399,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the truth value of NOT x element-wise.
+        ///	Compute the truth value of NOT x element-wise.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Boolean result with the same shape as x of the NOT operation
-        /// on elements of x.
-        /// This is a scalar if x is a scalar.
+        ///	Boolean result with the same shape as x of the NOT operation
+        ///	on elements of x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray<bool> logical_not(NDarray @out = null, NDarray @where = null)
         {
@@ -3093,27 +3428,31 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the truth value of x1 XOR x2, element-wise.
+        ///	Compute the truth value of x1 XOR x2, element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Logical XOR is applied to the elements of x1 and x2.  They must
-        /// be broadcastable to the same shape.
+        ///	Logical XOR is applied to the elements of x1 and x2.  They must
+        ///	be broadcastable to the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Boolean result of the logical XOR operation applied to the elements
-        /// of x1 and x2; the shape is determined by whether or not
-        /// broadcasting of one or both arrays was required.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Boolean result of the logical XOR operation applied to the elements
+        ///	of x1 and x2; the shape is determined by whether or not
+        ///	broadcasting of one or both arrays was required.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray<bool> logical_xor(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3123,47 +3462,51 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns True if two arrays are element-wise equal within a tolerance.
-        /// 
-        /// The tolerance values are positive, typically very small numbers.  The
-        /// relative difference (rtol * abs(b)) and the absolute difference
-        /// atol are added together to compare against the absolute difference
-        /// between a and b.
-        /// 
-        /// If either array contains one or more NaNs, False is returned.
-        /// Infs are treated as equal if they are in the same place and of the same
-        /// sign in both arrays.
-        /// 
-        /// Notes
-        /// 
-        /// If the following equation is element-wise True, then allclose returns
-        /// True.
-        /// 
-        /// The above equation is not symmetric in a and b, so that
-        /// allclose(a, b) might be different from allclose(b, a) in
-        /// some rare cases.
-        /// 
-        /// The comparison of a and b uses standard broadcasting, which
-        /// means that a and b need not have the same shape in order for
-        /// allclose(a, b) to evaluate to True.  The same is true for
-        /// equal but not array_equal.
+        ///	Returns True if two arrays are element-wise equal within a tolerance.<br></br>
+        ///	
+        ///	The tolerance values are positive, typically very small numbers.<br></br>
+        ///	  The
+        ///	relative difference (rtol * abs(b)) and the absolute difference
+        ///	atol are added together to compare against the absolute difference
+        ///	between a and b.<br></br>
+        ///	
+        ///	If either array contains one or more NaNs, False is returned.<br></br>
+        ///	
+        ///	Infs are treated as equal if they are in the same place and of the same
+        ///	sign in both arrays.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If the following equation is element-wise True, then allclose returns
+        ///	True.<br></br>
+        ///	
+        ///	The above equation is not symmetric in a and b, so that
+        ///	allclose(a, b) might be different from allclose(b, a) in
+        ///	some rare cases.<br></br>
+        ///	
+        ///	The comparison of a and b uses standard broadcasting, which
+        ///	means that a and b need not have the same shape in order for
+        ///	allclose(a, b) to evaluate to True.<br></br>
+        ///	  The same is true for
+        ///	equal but not array_equal.
         /// </summary>
         /// <param name="a">
-        /// Input arrays to compare.
+        ///	Input arrays to compare.
         /// </param>
         /// <param name="rtol">
-        /// The relative tolerance parameter (see Notes).
+        ///	The relative tolerance parameter (see Notes).
         /// </param>
         /// <param name="atol">
-        /// The absolute tolerance parameter (see Notes).
+        ///	The absolute tolerance parameter (see Notes).
         /// </param>
         /// <param name="equal_nan">
-        /// Whether to compare NaN’s as equal.  If True, NaN’s in a will be
-        /// considered equal to NaN’s in b in the output array.
+        ///	Whether to compare NaN’s as equal.<br></br>
+        ///	If True, NaN’s in a will be
+        ///	considered equal to NaN’s in b in the output array.
         /// </param>
         /// <returns>
-        /// Returns True if the two arrays are equal within the given
-        /// tolerance; False otherwise.
+        ///	Returns True if the two arrays are equal within the given
+        ///	tolerance; False otherwise.
         /// </returns>
         public bool allclose(NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
         {
@@ -3173,46 +3516,53 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a boolean array where two arrays are element-wise equal within a
-        /// tolerance.
-        /// 
-        /// The tolerance values are positive, typically very small numbers.  The
-        /// relative difference (rtol * abs(b)) and the absolute difference
-        /// atol are added together to compare against the absolute difference
-        /// between a and b.
-        /// 
-        /// Notes
-        /// 
-        /// For finite values, isclose uses the following equation to test whether
-        /// two floating point values are equivalent.
-        /// 
-        /// Unlike the built-in math.isclose, the above equation is not symmetric
-        /// in a and b – it assumes b is the reference value – so that
-        /// isclose(a, b) might be different from isclose(b, a). Furthermore,
-        /// the default value of atol is not zero, and is used to determine what
-        /// small values should be considered close to zero. The default value is
-        /// appropriate for expected values of order unity: if the expected values
-        /// are significantly smaller than one, it can result in false positives.
-        /// atol should be carefully selected for the use case at hand. A zero value
-        /// for atol will result in False if either a or b is zero.
+        ///	Returns a boolean array where two arrays are element-wise equal within a
+        ///	tolerance.<br></br>
+        ///	
+        ///	The tolerance values are positive, typically very small numbers.<br></br>
+        ///	  The
+        ///	relative difference (rtol * abs(b)) and the absolute difference
+        ///	atol are added together to compare against the absolute difference
+        ///	between a and b.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	For finite values, isclose uses the following equation to test whether
+        ///	two floating point values are equivalent.<br></br>
+        ///	
+        ///	Unlike the built-in math.isclose, the above equation is not symmetric
+        ///	in a and b – it assumes b is the reference value – so that
+        ///	isclose(a, b) might be different from isclose(b, a).<br></br>
+        ///	 Furthermore,
+        ///	the default value of atol is not zero, and is used to determine what
+        ///	small values should be considered close to zero.<br></br>
+        ///	 The default value is
+        ///	appropriate for expected values of order unity: if the expected values
+        ///	are significantly smaller than one, it can result in false positives.<br></br>
+        ///	
+        ///	atol should be carefully selected for the use case at hand.<br></br>
+        ///	 A zero value
+        ///	for atol will result in False if either a or b is zero.
         /// </summary>
         /// <param name="a">
-        /// Input arrays to compare.
+        ///	Input arrays to compare.
         /// </param>
         /// <param name="rtol">
-        /// The relative tolerance parameter (see Notes).
+        ///	The relative tolerance parameter (see Notes).
         /// </param>
         /// <param name="atol">
-        /// The absolute tolerance parameter (see Notes).
+        ///	The absolute tolerance parameter (see Notes).
         /// </param>
         /// <param name="equal_nan">
-        /// Whether to compare NaN’s as equal.  If True, NaN’s in a will be
-        /// considered equal to NaN’s in b in the output array.
+        ///	Whether to compare NaN’s as equal.<br></br>
+        ///	If True, NaN’s in a will be
+        ///	considered equal to NaN’s in b in the output array.
         /// </param>
         /// <returns>
-        /// Returns a boolean array of where a and b are equal within the
-        /// given tolerance. If both a and b are scalars, returns a single
-        /// boolean value.
+        ///	Returns a boolean array of where a and b are equal within the
+        ///	given tolerance.<br></br>
+        ///	 If both a and b are scalars, returns a single
+        ///	boolean value.
         /// </returns>
         public NDarray isclose(NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
         {
@@ -3222,13 +3572,13 @@ namespace Numpy
         }
         
         /// <summary>
-        /// True if two arrays have the same shape and elements, False otherwise.
+        ///	True if two arrays have the same shape and elements, False otherwise.
         /// </summary>
         /// <param name="a1">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <returns>
-        /// Returns True if the arrays are equal.
+        ///	Returns True if the arrays are equal.
         /// </returns>
         public bool array_equal(NDarray a1)
         {
@@ -3238,16 +3588,16 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns True if input arrays are shape consistent and all elements equal.
-        /// 
-        /// Shape consistent means they are either the same shape, or one input array
-        /// can be broadcasted to create the same shape as the other one.
+        ///	Returns True if input arrays are shape consistent and all elements equal.<br></br>
+        ///	
+        ///	Shape consistent means they are either the same shape, or one input array
+        ///	can be broadcasted to create the same shape as the other one.
         /// </summary>
         /// <param name="a1">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <returns>
-        /// True if equivalent, False otherwise.
+        ///	True if equivalent, False otherwise.
         /// </returns>
         public bool array_equiv(NDarray a1)
         {
@@ -3257,27 +3607,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truth value of (x1 &gt; x2) element-wise.
+        ///	Return the truth value of (x1 &gt; x2) element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray greater(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3287,27 +3642,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truth value of (x1 &gt;= x2) element-wise.
+        ///	Return the truth value of (x1 &gt;= x2) element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray<bool> greater_equal(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3317,27 +3677,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truth value of (x1 &lt; x2) element-wise.
+        ///	Return the truth value of (x1 &lt; x2) element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray less(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3347,27 +3712,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truth value of (x1 =&lt; x2) element-wise.
+        ///	Return the truth value of (x1 =&lt; x2) element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray less_equal(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3377,25 +3747,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return (x1 == x2) element-wise.
+        ///	Return (x1 == x2) element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays of the same shape.
+        ///	Input arrays of the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray equal(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3405,25 +3779,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return (x1 != x2) element-wise.
+        ///	Return (x1 != x2) element-wise.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray not_equal(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3433,35 +3811,44 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Trigonometric sine, element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// The sine is one of the fundamental functions of trigonometry (the
-        /// mathematical study of triangles).  Consider a circle of radius 1
-        /// centered on the origin.  A ray comes in from the  axis, makes
-        /// an angle at the origin (measured counter-clockwise from that axis), and
-        /// departs from the origin.  The  coordinate of the outgoing
-        /// ray’s intersection with the unit circle is the sine of that angle.  It
-        /// ranges from -1 for  to +1 for   The
-        /// function has zeroes where the angle is a multiple of .
-        /// Sines of angles between  and  are negative.
-        /// The numerous properties of the sine and related functions are included
-        /// in any standard trigonometry text.
+        ///	Trigonometric sine, element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The sine is one of the fundamental functions of trigonometry (the
+        ///	mathematical study of triangles).<br></br>
+        ///	  Consider a circle of radius 1
+        ///	centered on the origin.<br></br>
+        ///	  A ray comes in from the  axis, makes
+        ///	an angle at the origin (measured counter-clockwise from that axis), and
+        ///	departs from the origin.<br></br>
+        ///	  The  coordinate of the outgoing
+        ///	ray’s intersection with the unit circle is the sine of that angle.<br></br>
+        ///	  It
+        ///	ranges from -1 for  to +1 for   The
+        ///	function has zeroes where the angle is a multiple of .
+        ///	Sines of angles between  and  are negative.<br></br>
+        ///	
+        ///	The numerous properties of the sine and related functions are included
+        ///	in any standard trigonometry text.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The sine of each element of x.
-        /// This is a scalar if x is a scalar.
+        ///	The sine of each element of x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray sin(NDarray @out = null, NDarray @where = null)
         {
@@ -3471,31 +3858,40 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Cosine element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// If out is provided, the function writes the result into it,
-        /// and returns a reference to out.  (See Examples)
-        /// 
-        /// References
-        /// 
-        /// M. Abramowitz and I. A. Stegun, Handbook of Mathematical Functions.
-        /// New York, NY: Dover, 1972.
+        ///	Cosine element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If out is provided, the function writes the result into it,
+        ///	and returns a reference to out.<br></br>
+        ///	  (See Examples)
+        ///	
+        ///	References
+        ///	
+        ///	M.<br></br>
+        ///	 Abramowitz and I.<br></br>
+        ///	 A.<br></br>
+        ///	 Stegun, Handbook of Mathematical Functions.<br></br>
+        ///	
+        ///	New York, NY: Dover, 1972.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The corresponding cosine values.
-        /// This is a scalar if x is a scalar.
+        ///	The corresponding cosine values.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray cos(NDarray @out = null, NDarray @where = null)
         {
@@ -3505,33 +3901,42 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute tangent element-wise.
-        /// 
-        /// Equivalent to np.sin(x)/np.cos(x) element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// If out is provided, the function writes the result into it,
-        /// and returns a reference to out.  (See Examples)
-        /// 
-        /// References
-        /// 
-        /// M. Abramowitz and I. A. Stegun, Handbook of Mathematical Functions.
-        /// New York, NY: Dover, 1972.
+        ///	Compute tangent element-wise.<br></br>
+        ///	
+        ///	Equivalent to np.sin(x)/np.cos(x) element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If out is provided, the function writes the result into it,
+        ///	and returns a reference to out.<br></br>
+        ///	  (See Examples)
+        ///	
+        ///	References
+        ///	
+        ///	M.<br></br>
+        ///	 Abramowitz and I.<br></br>
+        ///	 A.<br></br>
+        ///	 Stegun, Handbook of Mathematical Functions.<br></br>
+        ///	
+        ///	New York, NY: Dover, 1972.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The corresponding tangent values.
-        /// This is a scalar if x is a scalar.
+        ///	The corresponding tangent values.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray tan(NDarray @out = null, NDarray @where = null)
         {
@@ -3541,44 +3946,53 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Inverse sine, element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// arcsin is a multivalued function: for each x there are infinitely
-        /// many numbers z such that .  The convention is to
-        /// return the angle z whose real part lies in [-pi/2, pi/2].
-        /// 
-        /// For real-valued input data types, arcsin always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity,
-        /// it yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, arcsin is a complex analytic function that
-        /// has, by convention, the branch cuts [-inf, -1] and [1, inf]  and is
-        /// continuous from above on the former and from below on the latter.
-        /// 
-        /// The inverse sine is also known as asin or sin^{-1}.
-        /// 
-        /// References
-        /// 
-        /// Abramowitz, M. and Stegun, I. A., Handbook of Mathematical Functions,
-        /// 10th printing, New York: Dover, 1964, pp. 79ff.
-        /// http://www.math.sfu.ca/~cbm/aands/
+        ///	Inverse sine, element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	arcsin is a multivalued function: for each x there are infinitely
+        ///	many numbers z such that .  The convention is to
+        ///	return the angle z whose real part lies in [-pi/2, pi/2].<br></br>
+        ///	
+        ///	For real-valued input data types, arcsin always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity,
+        ///	it yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, arcsin is a complex analytic function that
+        ///	has, by convention, the branch cuts [-inf, -1] and [1, inf]  and is
+        ///	continuous from above on the former and from below on the latter.<br></br>
+        ///	
+        ///	The inverse sine is also known as asin or sin^{-1}.
+        ///	
+        ///	References
+        ///	
+        ///	Abramowitz, M.<br></br>
+        ///	 and Stegun, I.<br></br>
+        ///	 A., Handbook of Mathematical Functions,
+        ///	10th printing, New York: Dover, 1964, pp.<br></br>
+        ///	 79ff.<br></br>
+        ///	
+        ///	http://www.math.sfu.ca/~cbm/aands/
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The inverse sine of each element in x, in radians and in the
-        /// closed interval [-pi/2, pi/2].
-        /// This is a scalar if x is a scalar.
+        ///	The inverse sine of each element in x, in radians and in the
+        ///	closed interval [-pi/2, pi/2].<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray arcsin(NDarray @out = null, NDarray @where = null)
         {
@@ -3588,45 +4002,54 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Trigonometric inverse cosine, element-wise.
-        /// 
-        /// The inverse of cos so that, if y = cos(x), then x = arccos(y).
-        /// 
-        /// Notes
-        /// 
-        /// arccos is a multivalued function: for each x there are infinitely
-        /// many numbers z such that cos(z) = x. The convention is to return
-        /// the angle z whose real part lies in [0, pi].
-        /// 
-        /// For real-valued input data types, arccos always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity,
-        /// it yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, arccos is a complex analytic function that
-        /// has branch cuts [-inf, -1] and [1, inf] and is continuous from
-        /// above on the former and from below on the latter.
-        /// 
-        /// The inverse cos is also known as acos or cos^-1.
-        /// 
-        /// References
-        /// 
-        /// M. Abramowitz and I.A. Stegun, “Handbook of Mathematical Functions”,
-        /// 10th printing, 1964, pp. 79. http://www.math.sfu.ca/~cbm/aands/
+        ///	Trigonometric inverse cosine, element-wise.<br></br>
+        ///	
+        ///	The inverse of cos so that, if y = cos(x), then x = arccos(y).<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	arccos is a multivalued function: for each x there are infinitely
+        ///	many numbers z such that cos(z) = x.<br></br>
+        ///	 The convention is to return
+        ///	the angle z whose real part lies in [0, pi].<br></br>
+        ///	
+        ///	For real-valued input data types, arccos always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity,
+        ///	it yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, arccos is a complex analytic function that
+        ///	has branch cuts [-inf, -1] and [1, inf] and is continuous from
+        ///	above on the former and from below on the latter.<br></br>
+        ///	
+        ///	The inverse cos is also known as acos or cos^-1.
+        ///	
+        ///	References
+        ///	
+        ///	M.<br></br>
+        ///	 Abramowitz and I.A.<br></br>
+        ///	 Stegun, “Handbook of Mathematical Functions”,
+        ///	10th printing, 1964, pp.<br></br>
+        ///	 79. http://www.math.sfu.ca/~cbm/aands/
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The angle of the ray intersecting the unit circle at the given
-        /// x-coordinate in radians [0, pi].
-        /// This is a scalar if x is a scalar.
+        ///	The angle of the ray intersecting the unit circle at the given
+        ///	x-coordinate in radians [0, pi].<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray arccos(NDarray @out = null, NDarray @where = null)
         {
@@ -3636,46 +4059,56 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Trigonometric inverse tangent, element-wise.
-        /// 
-        /// The inverse of tan, so that if y = tan(x) then x = arctan(y).
-        /// 
-        /// Notes
-        /// 
-        /// arctan is a multi-valued function: for each x there are infinitely
-        /// many numbers z such that tan(z) = x.  The convention is to return
-        /// the angle z whose real part lies in [-pi/2, pi/2].
-        /// 
-        /// For real-valued input data types, arctan always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity,
-        /// it yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, arctan is a complex analytic function that
-        /// has [1j, infj] and [-1j, -infj] as branch cuts, and is continuous
-        /// from the left on the former and from the right on the latter.
-        /// 
-        /// The inverse tangent is also known as atan or tan^{-1}.
-        /// 
-        /// References
-        /// 
-        /// Abramowitz, M. and Stegun, I. A., Handbook of Mathematical Functions,
-        /// 10th printing, New York: Dover, 1964, pp. 79.
-        /// http://www.math.sfu.ca/~cbm/aands/
+        ///	Trigonometric inverse tangent, element-wise.<br></br>
+        ///	
+        ///	The inverse of tan, so that if y = tan(x) then x = arctan(y).<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	arctan is a multi-valued function: for each x there are infinitely
+        ///	many numbers z such that tan(z) = x.<br></br>
+        ///	  The convention is to return
+        ///	the angle z whose real part lies in [-pi/2, pi/2].<br></br>
+        ///	
+        ///	For real-valued input data types, arctan always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity,
+        ///	it yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, arctan is a complex analytic function that
+        ///	has [1j, infj] and [-1j, -infj] as branch cuts, and is continuous
+        ///	from the left on the former and from the right on the latter.<br></br>
+        ///	
+        ///	The inverse tangent is also known as atan or tan^{-1}.
+        ///	
+        ///	References
+        ///	
+        ///	Abramowitz, M.<br></br>
+        ///	 and Stegun, I.<br></br>
+        ///	 A., Handbook of Mathematical Functions,
+        ///	10th printing, New York: Dover, 1964, pp.<br></br>
+        ///	 79.
+        ///	http://www.math.sfu.ca/~cbm/aands/
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Out has the same shape as x.  Its real part is in
-        /// [-pi/2, pi/2] (arctan(+/-inf) returns +/-pi/2).
-        /// This is a scalar if x is a scalar.
+        ///	Out has the same shape as x.<br></br>
+        ///	  Its real part is in
+        ///	[-pi/2, pi/2] (arctan(+/-inf) returns +/-pi/2).<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray arctan(NDarray @out = null, NDarray @where = null)
         {
@@ -3685,29 +4118,35 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Given the “legs” of a right triangle, return its hypotenuse.
-        /// 
-        /// Equivalent to sqrt(x1**2 + x2**2), element-wise.  If x1 or
-        /// x2 is scalar_like (i.e., unambiguously cast-able to a scalar type),
-        /// it is broadcast for use with each element of the other argument.
-        /// (See Examples)
+        ///	Given the “legs” of a right triangle, return its hypotenuse.<br></br>
+        ///	
+        ///	Equivalent to sqrt(x1**2 + x2**2), element-wise.<br></br>
+        ///	  If x1 or
+        ///	x2 is scalar_like (i.e., unambiguously cast-able to a scalar type),
+        ///	it is broadcast for use with each element of the other argument.<br></br>
+        ///	
+        ///	(See Examples)
         /// </summary>
         /// <param name="x1">
-        /// Leg of the triangle(s).
+        ///	Leg of the triangle(s).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The hypotenuse of the triangle(s).
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The hypotenuse of the triangle(s).<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray hypot(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -3717,48 +4156,55 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Element-wise arc tangent of x1/x2 choosing the quadrant correctly.
-        /// 
-        /// The quadrant (i.e., branch) is chosen so that arctan2(x1, x2) is
-        /// the signed angle in radians between the ray ending at the origin and
-        /// passing through the point (1,0), and the ray ending at the origin and
-        /// passing through the point (x2, x1).  (Note the role reversal: the
-        /// “y-coordinate” is the first function parameter, the “x-coordinate”
-        /// is the second.)  By IEEE convention, this function is defined for
-        /// x2 = +/-0 and for either or both of x1 and x2 = +/-inf (see
-        /// Notes for specific values).
-        /// 
-        /// This function is not defined for complex-valued arguments; for the
-        /// so-called argument of complex values, use angle.
-        /// 
-        /// Notes
-        /// 
-        /// arctan2 is identical to the atan2 function of the underlying
-        /// C library.  The following special values are defined in the C
-        /// standard: [1]
-        /// 
-        /// Note that +0 and -0 are distinct floating point numbers, as are +inf
-        /// and -inf.
-        /// 
-        /// References
+        ///	Element-wise arc tangent of x1/x2 choosing the quadrant correctly.<br></br>
+        ///	
+        ///	The quadrant (i.e., branch) is chosen so that arctan2(x1, x2) is
+        ///	the signed angle in radians between the ray ending at the origin and
+        ///	passing through the point (1,0), and the ray ending at the origin and
+        ///	passing through the point (x2, x1).<br></br>
+        ///	  (Note the role reversal: the
+        ///	“y-coordinate” is the first function parameter, the “x-coordinate”
+        ///	is the second.)  By IEEE convention, this function is defined for
+        ///	x2 = +/-0 and for either or both of x1 and x2 = +/-inf (see
+        ///	Notes for specific values).<br></br>
+        ///	
+        ///	This function is not defined for complex-valued arguments; for the
+        ///	so-called argument of complex values, use angle.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	arctan2 is identical to the atan2 function of the underlying
+        ///	C library.<br></br>
+        ///	  The following special values are defined in the C
+        ///	standard: [1]
+        ///	
+        ///	Note that +0 and -0 are distinct floating point numbers, as are +inf
+        ///	and -inf.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="x2">
-        /// x-coordinates. x2 must be broadcastable to match the shape of
-        /// x1 or vice versa.
+        ///	x-coordinates.<br></br>
+        ///	x2 must be broadcastable to match the shape of
+        ///	x1 or vice versa.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Array of angles in radians, in the range [-pi, pi].
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Array of angles in radians, in the range [-pi, pi].<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray arctan2(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -3768,22 +4214,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Convert angles from radians to degrees.
+        ///	Convert angles from radians to degrees.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The corresponding degree values; if out was supplied this is a
-        /// reference to it.
-        /// This is a scalar if x is a scalar.
+        ///	The corresponding degree values; if out was supplied this is a
+        ///	reference to it.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray degrees(NDarray @out = null, NDarray @where = null)
         {
@@ -3793,21 +4243,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Convert angles from degrees to radians.
+        ///	Convert angles from degrees to radians.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The corresponding radian values.
-        /// This is a scalar if x is a scalar.
+        ///	The corresponding radian values.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray radians(NDarray @out = null, NDarray @where = null)
         {
@@ -3817,25 +4271,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Unwrap by changing deltas between values to 2*pi complement.
-        /// 
-        /// Unwrap radian phase p by changing absolute jumps greater than
-        /// discont to their 2*pi complement along the given axis.
-        /// 
-        /// Notes
-        /// 
-        /// If the discontinuity in p is smaller than pi, but larger than
-        /// discont, no unwrapping is done because taking the 2*pi complement
-        /// would only make the discontinuity larger.
+        ///	Unwrap by changing deltas between values to 2*pi complement.<br></br>
+        ///	
+        ///	Unwrap radian phase p by changing absolute jumps greater than
+        ///	discont to their 2*pi complement along the given axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If the discontinuity in p is smaller than pi, but larger than
+        ///	discont, no unwrapping is done because taking the 2*pi complement
+        ///	would only make the discontinuity larger.
         /// </summary>
         /// <param name="discont">
-        /// Maximum discontinuity between values, default is pi.
+        ///	Maximum discontinuity between values, default is pi.
         /// </param>
         /// <param name="axis">
-        /// Axis along which unwrap will operate, default is the last axis.
+        ///	Axis along which unwrap will operate, default is the last axis.
         /// </param>
         /// <returns>
-        /// Output array.
+        ///	Output array.
         /// </returns>
         public NDarray unwrap(float? discont = 3.141592653589793f, int? axis = -1)
         {
@@ -3845,25 +4299,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Convert angles from degrees to radians.
-        /// 
-        /// Notes
-        /// 
-        /// deg2rad(x) is x * pi / 180.
+        ///	Convert angles from degrees to radians.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	deg2rad(x) is x * pi / 180.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The corresponding angle in radians.
-        /// This is a scalar if x is a scalar.
+        ///	The corresponding angle in radians.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray deg2rad(NDarray @out = null, NDarray @where = null)
         {
@@ -3873,25 +4331,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Convert angles from radians to degrees.
-        /// 
-        /// Notes
-        /// 
-        /// rad2deg(x) is 180 * x / pi.
+        ///	Convert angles from radians to degrees.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	rad2deg(x) is 180 * x / pi.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The corresponding angle in degrees.
-        /// This is a scalar if x is a scalar.
+        ///	The corresponding angle in degrees.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray rad2deg(NDarray @out = null, NDarray @where = null)
         {
@@ -3901,34 +4363,44 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Hyperbolic sine, element-wise.
-        /// 
-        /// Equivalent to 1/2 * (np.exp(x) - np.exp(-x)) or
-        /// -1j * np.sin(1j*x).
-        /// 
-        /// Notes
-        /// 
-        /// If out is provided, the function writes the result into it,
-        /// and returns a reference to out.  (See Examples)
-        /// 
-        /// References
-        /// 
-        /// M. Abramowitz and I. A. Stegun, Handbook of Mathematical Functions.
-        /// New York, NY: Dover, 1972, pg. 83.
+        ///	Hyperbolic sine, element-wise.<br></br>
+        ///	
+        ///	Equivalent to 1/2 * (np.exp(x) - np.exp(-x)) or
+        ///	-1j * np.sin(1j*x).<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If out is provided, the function writes the result into it,
+        ///	and returns a reference to out.<br></br>
+        ///	  (See Examples)
+        ///	
+        ///	References
+        ///	
+        ///	M.<br></br>
+        ///	 Abramowitz and I.<br></br>
+        ///	 A.<br></br>
+        ///	 Stegun, Handbook of Mathematical Functions.<br></br>
+        ///	
+        ///	New York, NY: Dover, 1972, pg.<br></br>
+        ///	 83.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The corresponding hyperbolic sine values.
-        /// This is a scalar if x is a scalar.
+        ///	The corresponding hyperbolic sine values.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray sinh(NDarray @out = null, NDarray @where = null)
         {
@@ -3938,23 +4410,27 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Hyperbolic cosine, element-wise.
-        /// 
-        /// Equivalent to 1/2 * (np.exp(x) + np.exp(-x)) and np.cos(1j*x).
+        ///	Hyperbolic cosine, element-wise.<br></br>
+        ///	
+        ///	Equivalent to 1/2 * (np.exp(x) + np.exp(-x)) and np.cos(1j*x).
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array of same shape as x.
-        /// This is a scalar if x is a scalar.
+        ///	Output array of same shape as x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray cosh(NDarray @out = null, NDarray @where = null)
         {
@@ -3964,30 +4440,35 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute hyperbolic tangent element-wise.
-        /// 
-        /// Equivalent to np.sinh(x)/np.cosh(x) or -1j * np.tan(1j*x).
-        /// 
-        /// Notes
-        /// 
-        /// If out is provided, the function writes the result into it,
-        /// and returns a reference to out.  (See Examples)
-        /// 
-        /// References
+        ///	Compute hyperbolic tangent element-wise.<br></br>
+        ///	
+        ///	Equivalent to np.sinh(x)/np.cosh(x) or -1j * np.tan(1j*x).<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If out is provided, the function writes the result into it,
+        ///	and returns a reference to out.<br></br>
+        ///	  (See Examples)
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The corresponding hyperbolic tangent values.
-        /// This is a scalar if x is a scalar.
+        ///	The corresponding hyperbolic tangent values.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray tanh(NDarray @out = null, NDarray @where = null)
         {
@@ -3997,39 +4478,45 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Inverse hyperbolic sine element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// arcsinh is a multivalued function: for each x there are infinitely
-        /// many numbers z such that sinh(z) = x. The convention is to return the
-        /// z whose imaginary part lies in [-pi/2, pi/2].
-        /// 
-        /// For real-valued input data types, arcsinh always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity, it
-        /// returns nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, arccos is a complex analytical function that
-        /// has branch cuts [1j, infj] and [-1j, -infj] and is continuous from
-        /// the right on the former and from the left on the latter.
-        /// 
-        /// The inverse hyperbolic sine is also known as asinh or sinh^-1.
-        /// 
-        /// References
+        ///	Inverse hyperbolic sine element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	arcsinh is a multivalued function: for each x there are infinitely
+        ///	many numbers z such that sinh(z) = x.<br></br>
+        ///	 The convention is to return the
+        ///	z whose imaginary part lies in [-pi/2, pi/2].<br></br>
+        ///	
+        ///	For real-valued input data types, arcsinh always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity, it
+        ///	returns nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, arccos is a complex analytical function that
+        ///	has branch cuts [1j, infj] and [-1j, -infj] and is continuous from
+        ///	the right on the former and from the left on the latter.<br></br>
+        ///	
+        ///	The inverse hyperbolic sine is also known as asinh or sinh^-1.
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Array of the same shape as x.
-        /// This is a scalar if x is a scalar.
+        ///	Array of the same shape as x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray arcsinh(NDarray @out = null, NDarray @where = null)
         {
@@ -4039,37 +4526,43 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Inverse hyperbolic cosine, element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// arccosh is a multivalued function: for each x there are infinitely
-        /// many numbers z such that cosh(z) = x. The convention is to return the
-        /// z whose imaginary part lies in [-pi, pi] and the real part in
-        /// [0, inf].
-        /// 
-        /// For real-valued input data types, arccosh always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity, it
-        /// yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, arccosh is a complex analytical function that
-        /// has a branch cut [-inf, 1] and is continuous from above on it.
-        /// 
-        /// References
+        ///	Inverse hyperbolic cosine, element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	arccosh is a multivalued function: for each x there are infinitely
+        ///	many numbers z such that cosh(z) = x.<br></br>
+        ///	 The convention is to return the
+        ///	z whose imaginary part lies in [-pi, pi] and the real part in
+        ///	[0, inf].<br></br>
+        ///	
+        ///	For real-valued input data types, arccosh always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity, it
+        ///	yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, arccosh is a complex analytical function that
+        ///	has a branch cut [-inf, 1] and is continuous from above on it.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Array of the same shape as x.
-        /// This is a scalar if x is a scalar.
+        ///	Array of the same shape as x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray arccosh(NDarray @out = null, NDarray @where = null)
         {
@@ -4079,39 +4572,45 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Inverse hyperbolic tangent element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// arctanh is a multivalued function: for each x there are infinitely
-        /// many numbers z such that tanh(z) = x. The convention is to return
-        /// the z whose imaginary part lies in [-pi/2, pi/2].
-        /// 
-        /// For real-valued input data types, arctanh always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity,
-        /// it yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, arctanh is a complex analytical function
-        /// that has branch cuts [-1, -inf] and [1, inf] and is continuous from
-        /// above on the former and from below on the latter.
-        /// 
-        /// The inverse hyperbolic tangent is also known as atanh or tanh^-1.
-        /// 
-        /// References
+        ///	Inverse hyperbolic tangent element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	arctanh is a multivalued function: for each x there are infinitely
+        ///	many numbers z such that tanh(z) = x.<br></br>
+        ///	 The convention is to return
+        ///	the z whose imaginary part lies in [-pi/2, pi/2].<br></br>
+        ///	
+        ///	For real-valued input data types, arctanh always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity,
+        ///	it yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, arctanh is a complex analytical function
+        ///	that has branch cuts [-1, -inf] and [1, inf] and is continuous from
+        ///	above on the former and from below on the latter.<br></br>
+        ///	
+        ///	The inverse hyperbolic tangent is also known as atanh or tanh^-1.
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Array of the same shape as x.
-        /// This is a scalar if x is a scalar.
+        ///	Array of the same shape as x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray arctanh(NDarray @out = null, NDarray @where = null)
         {
@@ -4121,37 +4620,45 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Evenly round to the given number of decimals.
-        /// 
-        /// Notes
-        /// 
-        /// For values exactly halfway between rounded decimal values, NumPy
-        /// rounds to the nearest even value. Thus 1.5 and 2.5 round to 2.0,
-        /// -0.5 and 0.5 round to 0.0, etc. Results may also be surprising due
-        /// to the inexact representation of decimal fractions in the IEEE
-        /// floating point standard [1] and errors introduced when scaling
-        /// by powers of ten.
-        /// 
-        /// References
+        ///	Evenly round to the given number of decimals.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	For values exactly halfway between rounded decimal values, NumPy
+        ///	rounds to the nearest even value.<br></br>
+        ///	 Thus 1.5 and 2.5 round to 2.0,
+        ///	-0.5 and 0.5 round to 0.0, etc.<br></br>
+        ///	 Results may also be surprising due
+        ///	to the inexact representation of decimal fractions in the IEEE
+        ///	floating point standard [1] and errors introduced when scaling
+        ///	by powers of ten.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="decimals">
-        /// Number of decimal places to round to (default: 0).  If
-        /// decimals is negative, it specifies the number of positions to
-        /// the left of the decimal point.
+        ///	Number of decimal places to round to (default: 0).<br></br>
+        ///	If
+        ///	decimals is negative, it specifies the number of positions to
+        ///	the left of the decimal point.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must have
-        /// the same shape as the expected output, but the type of the output
-        /// values will be cast if necessary. See doc.ufuncs (Section
-        /// “Output arguments”) for details.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output, but the type of the output
+        ///	values will be cast if necessary.<br></br>
+        ///	See doc.ufuncs (Section
+        ///	“Output arguments”) for details.
         /// </param>
         /// <returns>
-        /// An array of the same type as a, containing the rounded values.
-        /// Unless out was specified, a new array is created.  A reference to
-        /// the result is returned.
-        /// 
-        /// The real and imaginary parts of complex numbers are rounded
-        /// separately.  The result of rounding a float is a float.
+        ///	An array of the same type as a, containing the rounded values.<br></br>
+        ///	
+        ///	Unless out was specified, a new array is created.<br></br>
+        ///	  A reference to
+        ///	the result is returned.<br></br>
+        ///	
+        ///	The real and imaginary parts of complex numbers are rounded
+        ///	separately.<br></br>
+        ///	  The result of rounding a float is a float.
         /// </returns>
         public NDarray around(int? decimals = 0, NDarray @out = null)
         {
@@ -4161,21 +4668,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Round elements of the array to the nearest integer.
+        ///	Round elements of the array to the nearest integer.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array is same shape and type as x.
-        /// This is a scalar if x is a scalar.
+        ///	Output array is same shape and type as x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray rint(NDarray @out = null, NDarray @where = null)
         {
@@ -4185,16 +4696,17 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Round to nearest integer towards zero.
-        /// 
-        /// Round an array of floats element-wise to nearest integer towards zero.
-        /// The rounded values are returned as floats.
+        ///	Round to nearest integer towards zero.<br></br>
+        ///	
+        ///	Round an array of floats element-wise to nearest integer towards zero.<br></br>
+        ///	
+        ///	The rounded values are returned as floats.
         /// </summary>
         /// <param name="y">
-        /// Output array
+        ///	Output array
         /// </param>
         /// <returns>
-        /// The array of rounded numbers
+        ///	The array of rounded numbers
         /// </returns>
         public NDarray fix(NDarray y = null)
         {
@@ -4204,30 +4716,35 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the floor of the input, element-wise.
-        /// 
-        /// The floor of the scalar x is the largest integer i, such that
-        /// i &lt;= x.  It is often denoted as .
-        /// 
-        /// Notes
-        /// 
-        /// Some spreadsheet programs calculate the “floor-towards-zero”, in other
-        /// words floor(-2.5) == -2.  NumPy instead uses the definition of
-        /// floor where floor(-2.5) == -3.
+        ///	Return the floor of the input, element-wise.<br></br>
+        ///	
+        ///	The floor of the scalar x is the largest integer i, such that
+        ///	i &lt;= x.<br></br>
+        ///	  It is often denoted as .
+        ///	
+        ///	Notes
+        ///	
+        ///	Some spreadsheet programs calculate the “floor-towards-zero”, in other
+        ///	words floor(-2.5) == -2.  NumPy instead uses the definition of
+        ///	floor where floor(-2.5) == -3.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The floor of each element in x.
-        /// This is a scalar if x is a scalar.
+        ///	The floor of each element in x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray floor(NDarray @out = null, NDarray @where = null)
         {
@@ -4237,24 +4754,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the ceiling of the input, element-wise.
-        /// 
-        /// The ceil of the scalar x is the smallest integer i, such that
-        /// i &gt;= x.  It is often denoted as .
+        ///	Return the ceiling of the input, element-wise.<br></br>
+        ///	
+        ///	The ceil of the scalar x is the smallest integer i, such that
+        ///	i &gt;= x.<br></br>
+        ///	  It is often denoted as .
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The ceiling of each element in x, with float dtype.
-        /// This is a scalar if x is a scalar.
+        ///	The ceiling of each element in x, with float dtype.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray ceil(NDarray @out = null, NDarray @where = null)
         {
@@ -4264,27 +4786,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truncated value of the input, element-wise.
-        /// 
-        /// The truncated value of the scalar x is the nearest integer i which
-        /// is closer to zero than x is. In short, the fractional part of the
-        /// signed number x is discarded.
-        /// 
-        /// Notes
+        ///	Return the truncated value of the input, element-wise.<br></br>
+        ///	
+        ///	The truncated value of the scalar x is the nearest integer i which
+        ///	is closer to zero than x is.<br></br>
+        ///	 In short, the fractional part of the
+        ///	signed number x is discarded.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The truncated value of each element in x.
-        /// This is a scalar if x is a scalar.
+        ///	The truncated value of each element in x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray trunc(NDarray @out = null, NDarray @where = null)
         {
@@ -4294,55 +4821,65 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the product of array elements over a given axis.
-        /// 
-        /// Notes
-        /// 
-        /// Arithmetic is modular when using integer types, and no error is
-        /// raised on overflow.  That means that, on a 32-bit platform:
-        /// 
-        /// The product of an empty array is the neutral element 1:
+        ///	Return the product of array elements over a given axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Arithmetic is modular when using integer types, and no error is
+        ///	raised on overflow.<br></br>
+        ///	  That means that, on a 32-bit platform:
+        ///	
+        ///	The product of an empty array is the neutral element 1:
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which a product is performed.  The default,
-        /// axis=None, will calculate the product of all the elements in the
-        /// input array. If axis is negative it counts from the last to the
-        /// first axis.
-        /// 
-        /// If axis is a tuple of ints, a product is performed on all of the
-        /// axes specified in the tuple instead of a single axis or all the
-        /// axes as before.
+        ///	Axis or axes along which a product is performed.<br></br>
+        ///	The default,
+        ///	axis=None, will calculate the product of all the elements in the
+        ///	input array.<br></br>
+        ///	If axis is negative it counts from the last to the
+        ///	first axis.<br></br>
+        ///	
+        ///	If axis is a tuple of ints, a product is performed on all of the
+        ///	axes specified in the tuple instead of a single axis or all the
+        ///	axes as before.
         /// </param>
         /// <param name="dtype">
-        /// The type of the returned array, as well as of the accumulator in
-        /// which the elements are multiplied.  The dtype of a is used by
-        /// default unless a has an integer dtype of less precision than the
-        /// default platform integer.  In that case, if a is signed then the
-        /// platform integer is used while if a is unsigned then an unsigned
-        /// integer of the same precision as the platform integer is used.
+        ///	The type of the returned array, as well as of the accumulator in
+        ///	which the elements are multiplied.<br></br>
+        ///	The dtype of a is used by
+        ///	default unless a has an integer dtype of less precision than the
+        ///	default platform integer.<br></br>
+        ///	In that case, if a is signed then the
+        ///	platform integer is used while if a is unsigned then an unsigned
+        ///	integer of the same precision as the platform integer is used.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must have
-        /// the same shape as the expected output, but the type of the output
-        /// values will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output, but the type of the output
+        ///	values will be cast if necessary.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left in the
-        /// result as dimensions with size one. With this option, the result
-        /// will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the prod method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left in the
+        ///	result as dimensions with size one.<br></br>
+        ///	With this option, the result
+        ///	will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the prod method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <param name="initial">
-        /// The starting value for this product. See reduce for details.
+        ///	The starting value for this product.<br></br>
+        ///	See reduce for details.
         /// </param>
         /// <returns>
-        /// An array shaped as a but with the specified axis removed.
-        /// Returns a reference to out if specified.
+        ///	An array shaped as a but with the specified axis removed.<br></br>
+        ///	
+        ///	Returns a reference to out if specified.
         /// </returns>
         public NDarray prod(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
@@ -4352,56 +4889,66 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Sum of array elements over a given axis.
-        /// 
-        /// Notes
-        /// 
-        /// Arithmetic is modular when using integer types, and no error is
-        /// raised on overflow.
-        /// 
-        /// The sum of an empty array is the neutral element 0:
+        ///	Sum of array elements over a given axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Arithmetic is modular when using integer types, and no error is
+        ///	raised on overflow.<br></br>
+        ///	
+        ///	The sum of an empty array is the neutral element 0:
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which a sum is performed.  The default,
-        /// axis=None, will sum all of the elements of the input array.  If
-        /// axis is negative it counts from the last to the first axis.
-        /// 
-        /// If axis is a tuple of ints, a sum is performed on all of the axes
-        /// specified in the tuple instead of a single axis or all the axes as
-        /// before.
+        ///	Axis or axes along which a sum is performed.<br></br>
+        ///	The default,
+        ///	axis=None, will sum all of the elements of the input array.<br></br>
+        ///	If
+        ///	axis is negative it counts from the last to the first axis.<br></br>
+        ///	
+        ///	If axis is a tuple of ints, a sum is performed on all of the axes
+        ///	specified in the tuple instead of a single axis or all the axes as
+        ///	before.
         /// </param>
         /// <param name="dtype">
-        /// The type of the returned array and of the accumulator in which the
-        /// elements are summed.  The dtype of a is used by default unless a
-        /// has an integer dtype of less precision than the default platform
-        /// integer.  In that case, if a is signed then the platform integer
-        /// is used while if a is unsigned then an unsigned integer of the
-        /// same precision as the platform integer is used.
+        ///	The type of the returned array and of the accumulator in which the
+        ///	elements are summed.<br></br>
+        ///	The dtype of a is used by default unless a
+        ///	has an integer dtype of less precision than the default platform
+        ///	integer.<br></br>
+        ///	In that case, if a is signed then the platform integer
+        ///	is used while if a is unsigned then an unsigned integer of the
+        ///	same precision as the platform integer is used.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must have
-        /// the same shape as the expected output, but the type of the output
-        /// values will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output, but the type of the output
+        ///	values will be cast if necessary.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the sum method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the sum method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <param name="initial">
-        /// Starting value for the sum. See reduce for details.
+        ///	Starting value for the sum.<br></br>
+        ///	See reduce for details.
         /// </param>
         /// <returns>
-        /// An array with the same shape as a, with the specified
-        /// axis removed.   If a is a 0-d array, or if axis is None, a scalar
-        /// is returned.  If an output array is specified, a reference to
-        /// out is returned.
+        ///	An array with the same shape as a, with the specified
+        ///	axis removed.<br></br>
+        ///	   If a is a 0-d array, or if axis is None, a scalar
+        ///	is returned.<br></br>
+        ///	  If an output array is specified, a reference to
+        ///	out is returned.
         /// </returns>
         public NDarray sum(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
@@ -4411,38 +4958,48 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the product of array elements over a given axis treating Not a
-        /// Numbers (NaNs) as ones.
-        /// 
-        /// One is returned for slices that are all-NaN or empty.
+        ///	Return the product of array elements over a given axis treating Not a
+        ///	Numbers (NaNs) as ones.<br></br>
+        ///	
+        ///	One is returned for slices that are all-NaN or empty.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the product is computed. The default is to compute
-        /// the product of the flattened array.
+        ///	Axis or axes along which the product is computed.<br></br>
+        ///	The default is to compute
+        ///	the product of the flattened array.
         /// </param>
         /// <param name="dtype">
-        /// The type of the returned array and of the accumulator in which the
-        /// elements are summed.  By default, the dtype of a is used.  An
-        /// exception is when a has an integer type with less precision than
-        /// the platform (u)intp. In that case, the default will be either
-        /// (u)int32 or (u)int64 depending on whether the platform is 32 or 64
-        /// bits. For inexact inputs, dtype must be inexact.
+        ///	The type of the returned array and of the accumulator in which the
+        ///	elements are summed.<br></br>
+        ///	By default, the dtype of a is used.<br></br>
+        ///	An
+        ///	exception is when a has an integer type with less precision than
+        ///	the platform (u)intp.<br></br>
+        ///	In that case, the default will be either
+        ///	(u)int32 or (u)int64 depending on whether the platform is 32 or 64
+        ///	bits.<br></br>
+        ///	For inexact inputs, dtype must be inexact.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  The default
-        /// is None. If provided, it must have the same shape as the
-        /// expected output, but the type will be cast if necessary.  See
-        /// doc.ufuncs for details. The casting of NaN to integer can yield
-        /// unexpected results.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	The default
+        ///	is None.<br></br>
+        ///	If provided, it must have the same shape as the
+        ///	expected output, but the type will be cast if necessary.<br></br>
+        ///	See
+        ///	doc.ufuncs for details.<br></br>
+        ///	The casting of NaN to integer can yield
+        ///	unexpected results.
         /// </param>
         /// <param name="keepdims">
-        /// If True, the axes which are reduced are left in the result as
-        /// dimensions with size one. With this option, the result will
-        /// broadcast correctly against the original arr.
+        ///	If True, the axes which are reduced are left in the result as
+        ///	dimensions with size one.<br></br>
+        ///	With this option, the result will
+        ///	broadcast correctly against the original arr.
         /// </param>
         /// <returns>
-        /// A new array holding the result is returned unless out is
-        /// specified, in which case it is returned.
+        ///	A new array holding the result is returned unless out is
+        ///	specified, in which case it is returned.
         /// </returns>
         public NDarray nanprod(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
@@ -4452,51 +5009,64 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the sum of array elements over a given axis treating Not a
-        /// Numbers (NaNs) as zero.
-        /// 
-        /// In NumPy versions &lt;= 1.9.0 Nan is returned for slices that are all-NaN or
-        /// empty. In later versions zero is returned.
-        /// 
-        /// Notes
-        /// 
-        /// If both positive and negative infinity are present, the sum will be Not
-        /// A Number (NaN).
+        ///	Return the sum of array elements over a given axis treating Not a
+        ///	Numbers (NaNs) as zero.<br></br>
+        ///	
+        ///	In NumPy versions &lt;= 1.9.0 Nan is returned for slices that are all-NaN or
+        ///	empty.<br></br>
+        ///	 In later versions zero is returned.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If both positive and negative infinity are present, the sum will be Not
+        ///	A Number (NaN).
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the sum is computed. The default is to compute the
-        /// sum of the flattened array.
+        ///	Axis or axes along which the sum is computed.<br></br>
+        ///	The default is to compute the
+        ///	sum of the flattened array.
         /// </param>
         /// <param name="dtype">
-        /// The type of the returned array and of the accumulator in which the
-        /// elements are summed.  By default, the dtype of a is used.  An
-        /// exception is when a has an integer type with less precision than
-        /// the platform (u)intp. In that case, the default will be either
-        /// (u)int32 or (u)int64 depending on whether the platform is 32 or 64
-        /// bits. For inexact inputs, dtype must be inexact.
+        ///	The type of the returned array and of the accumulator in which the
+        ///	elements are summed.<br></br>
+        ///	By default, the dtype of a is used.<br></br>
+        ///	An
+        ///	exception is when a has an integer type with less precision than
+        ///	the platform (u)intp.<br></br>
+        ///	In that case, the default will be either
+        ///	(u)int32 or (u)int64 depending on whether the platform is 32 or 64
+        ///	bits.<br></br>
+        ///	For inexact inputs, dtype must be inexact.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  The default
-        /// is None. If provided, it must have the same shape as the
-        /// expected output, but the type will be cast if necessary.  See
-        /// doc.ufuncs for details. The casting of NaN to integer can yield
-        /// unexpected results.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	The default
+        ///	is None.<br></br>
+        ///	If provided, it must have the same shape as the
+        ///	expected output, but the type will be cast if necessary.<br></br>
+        ///	See
+        ///	doc.ufuncs for details.<br></br>
+        ///	The casting of NaN to integer can yield
+        ///	unexpected results.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the original a.
-        /// 
-        /// If the value is anything but the default, then
-        /// keepdims will be passed through to the mean or sum methods
-        /// of sub-classes of ndarray.  If the sub-classes methods
-        /// does not implement keepdims any exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the original a.<br></br>
+        ///	
+        ///	If the value is anything but the default, then
+        ///	keepdims will be passed through to the mean or sum methods
+        ///	of sub-classes of ndarray.<br></br>
+        ///	If the sub-classes methods
+        ///	does not implement keepdims any exceptions will be raised.
         /// </param>
         /// <returns>
-        /// A new array holding the result is returned unless out is
-        /// specified, in which it is returned. The result has the same
-        /// size as a, and the same shape as a if axis is not None
-        /// or a is a 1-d array.
+        ///	A new array holding the result is returned unless out is
+        ///	specified, in which it is returned.<br></br>
+        ///	 The result has the same
+        ///	size as a, and the same shape as a if axis is not None
+        ///	or a is a 1-d array.
         /// </returns>
         public NDarray nansum(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
@@ -4506,32 +5076,36 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the cumulative product of elements along a given axis.
-        /// 
-        /// Notes
-        /// 
-        /// Arithmetic is modular when using integer types, and no error is
-        /// raised on overflow.
+        ///	Return the cumulative product of elements along a given axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Arithmetic is modular when using integer types, and no error is
+        ///	raised on overflow.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which the cumulative product is computed.  By default
-        /// the input is flattened.
+        ///	Axis along which the cumulative product is computed.<br></br>
+        ///	By default
+        ///	the input is flattened.
         /// </param>
         /// <param name="dtype">
-        /// Type of the returned array, as well as of the accumulator in which
-        /// the elements are multiplied.  If dtype is not specified, it
-        /// defaults to the dtype of a, unless a has an integer dtype with
-        /// a precision less than that of the default platform integer.  In
-        /// that case, the default platform integer is used instead.
+        ///	Type of the returned array, as well as of the accumulator in which
+        ///	the elements are multiplied.<br></br>
+        ///	If dtype is not specified, it
+        ///	defaults to the dtype of a, unless a has an integer dtype with
+        ///	a precision less than that of the default platform integer.<br></br>
+        ///	In
+        ///	that case, the default platform integer is used instead.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output
-        /// but the type of the resulting values will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output
+        ///	but the type of the resulting values will be cast if necessary.
         /// </param>
         /// <returns>
-        /// A new array holding the result is returned unless out is
-        /// specified, in which case a reference to out is returned.
+        ///	A new array holding the result is returned unless out is
+        ///	specified, in which case a reference to out is returned.
         /// </returns>
         public NDarray cumprod(int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
@@ -4541,35 +5115,41 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the cumulative sum of the elements along a given axis.
-        /// 
-        /// Notes
-        /// 
-        /// Arithmetic is modular when using integer types, and no error is
-        /// raised on overflow.
+        ///	Return the cumulative sum of the elements along a given axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Arithmetic is modular when using integer types, and no error is
+        ///	raised on overflow.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which the cumulative sum is computed. The default
-        /// (None) is to compute the cumsum over the flattened array.
+        ///	Axis along which the cumulative sum is computed.<br></br>
+        ///	The default
+        ///	(None) is to compute the cumsum over the flattened array.
         /// </param>
         /// <param name="dtype">
-        /// Type of the returned array and of the accumulator in which the
-        /// elements are summed.  If dtype is not specified, it defaults
-        /// to the dtype of a, unless a has an integer dtype with a
-        /// precision less than that of the default platform integer.  In
-        /// that case, the default platform integer is used.
+        ///	Type of the returned array and of the accumulator in which the
+        ///	elements are summed.<br></br>
+        ///	If dtype is not specified, it defaults
+        ///	to the dtype of a, unless a has an integer dtype with a
+        ///	precision less than that of the default platform integer.<br></br>
+        ///	In
+        ///	that case, the default platform integer is used.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output
-        /// but the type will be cast if necessary. See doc.ufuncs
-        /// (Section “Output arguments”) for more details.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output
+        ///	but the type will be cast if necessary.<br></br>
+        ///	See doc.ufuncs
+        ///	(Section “Output arguments”) for more details.
         /// </param>
         /// <returns>
-        /// A new array holding the result is returned unless out is
-        /// specified, in which case a reference to out is returned. The
-        /// result has the same size as a, and the same shape as a if
-        /// axis is not None or a is a 1-d array.
+        ///	A new array holding the result is returned unless out is
+        ///	specified, in which case a reference to out is returned.<br></br>
+        ///	 The
+        ///	result has the same size as a, and the same shape as a if
+        ///	axis is not None or a is a 1-d array.
         /// </returns>
         public NDarray cumsum(int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
@@ -4579,31 +5159,36 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the cumulative product of array elements over a given axis treating Not a
-        /// Numbers (NaNs) as one.  The cumulative product does not change when NaNs are
-        /// encountered and leading NaNs are replaced by ones.
-        /// 
-        /// Ones are returned for slices that are all-NaN or empty.
+        ///	Return the cumulative product of array elements over a given axis treating Not a
+        ///	Numbers (NaNs) as one.<br></br>
+        ///	  The cumulative product does not change when NaNs are
+        ///	encountered and leading NaNs are replaced by ones.<br></br>
+        ///	
+        ///	Ones are returned for slices that are all-NaN or empty.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which the cumulative product is computed.  By default
-        /// the input is flattened.
+        ///	Axis along which the cumulative product is computed.<br></br>
+        ///	By default
+        ///	the input is flattened.
         /// </param>
         /// <param name="dtype">
-        /// Type of the returned array, as well as of the accumulator in which
-        /// the elements are multiplied.  If dtype is not specified, it
-        /// defaults to the dtype of a, unless a has an integer dtype with
-        /// a precision less than that of the default platform integer.  In
-        /// that case, the default platform integer is used instead.
+        ///	Type of the returned array, as well as of the accumulator in which
+        ///	the elements are multiplied.<br></br>
+        ///	If dtype is not specified, it
+        ///	defaults to the dtype of a, unless a has an integer dtype with
+        ///	a precision less than that of the default platform integer.<br></br>
+        ///	In
+        ///	that case, the default platform integer is used instead.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output
-        /// but the type of the resulting values will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output
+        ///	but the type of the resulting values will be cast if necessary.
         /// </param>
         /// <returns>
-        /// A new array holding the result is returned unless out is
-        /// specified, in which case it is returned.
+        ///	A new array holding the result is returned unless out is
+        ///	specified, in which case it is returned.
         /// </returns>
         public NDarray nancumprod(int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
@@ -4613,34 +5198,41 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the cumulative sum of array elements over a given axis treating Not a
-        /// Numbers (NaNs) as zero.  The cumulative sum does not change when NaNs are
-        /// encountered and leading NaNs are replaced by zeros.
-        /// 
-        /// Zeros are returned for slices that are all-NaN or empty.
+        ///	Return the cumulative sum of array elements over a given axis treating Not a
+        ///	Numbers (NaNs) as zero.<br></br>
+        ///	  The cumulative sum does not change when NaNs are
+        ///	encountered and leading NaNs are replaced by zeros.<br></br>
+        ///	
+        ///	Zeros are returned for slices that are all-NaN or empty.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which the cumulative sum is computed. The default
-        /// (None) is to compute the cumsum over the flattened array.
+        ///	Axis along which the cumulative sum is computed.<br></br>
+        ///	The default
+        ///	(None) is to compute the cumsum over the flattened array.
         /// </param>
         /// <param name="dtype">
-        /// Type of the returned array and of the accumulator in which the
-        /// elements are summed.  If dtype is not specified, it defaults
-        /// to the dtype of a, unless a has an integer dtype with a
-        /// precision less than that of the default platform integer.  In
-        /// that case, the default platform integer is used.
+        ///	Type of the returned array and of the accumulator in which the
+        ///	elements are summed.<br></br>
+        ///	If dtype is not specified, it defaults
+        ///	to the dtype of a, unless a has an integer dtype with a
+        ///	precision less than that of the default platform integer.<br></br>
+        ///	In
+        ///	that case, the default platform integer is used.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output
-        /// but the type will be cast if necessary. See doc.ufuncs
-        /// (Section “Output arguments”) for more details.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output
+        ///	but the type will be cast if necessary.<br></br>
+        ///	See doc.ufuncs
+        ///	(Section “Output arguments”) for more details.
         /// </param>
         /// <returns>
-        /// A new array holding the result is returned unless out is
-        /// specified, in which it is returned. The result has the same
-        /// size as a, and the same shape as a if axis is not None
-        /// or a is a 1-d array.
+        ///	A new array holding the result is returned unless out is
+        ///	specified, in which it is returned.<br></br>
+        ///	 The result has the same
+        ///	size as a, and the same shape as a if axis is not None
+        ///	or a is a 1-d array.
         /// </returns>
         public NDarray nancumsum(int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
@@ -4650,54 +5242,64 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Calculate the n-th discrete difference along the given axis.
-        /// 
-        /// The first difference is given by out[n] = a[n+1] - a[n] along
-        /// the given axis, higher differences are calculated by using diff
-        /// recursively.
-        /// 
-        /// Notes
-        /// 
-        /// Type is preserved for boolean arrays, so the result will contain
-        /// False when consecutive elements are the same and True when they
-        /// differ.
-        /// 
-        /// For unsigned integer arrays, the results will also be unsigned. This
-        /// should not be surprising, as the result is consistent with
-        /// calculating the difference directly:
-        /// 
-        /// If this is not desirable, then the array should be cast to a larger
-        /// integer type first:
+        ///	Calculate the n-th discrete difference along the given axis.<br></br>
+        ///	
+        ///	The first difference is given by out[n] = a[n+1] - a[n] along
+        ///	the given axis, higher differences are calculated by using diff
+        ///	recursively.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Type is preserved for boolean arrays, so the result will contain
+        ///	False when consecutive elements are the same and True when they
+        ///	differ.<br></br>
+        ///	
+        ///	For unsigned integer arrays, the results will also be unsigned.<br></br>
+        ///	 This
+        ///	should not be surprising, as the result is consistent with
+        ///	calculating the difference directly:
+        ///	
+        ///	If this is not desirable, then the array should be cast to a larger
+        ///	integer type first:
         /// </summary>
         /// <param name="n">
-        /// The number of times values are differenced. If zero, the input
-        /// is returned as-is.
+        ///	The number of times values are differenced.<br></br>
+        ///	If zero, the input
+        ///	is returned as-is.
         /// </param>
         /// <param name="axis">
-        /// The axis along which the difference is taken, default is the
-        /// last axis.
+        ///	The axis along which the difference is taken, default is the
+        ///	last axis.
         /// </param>
         /// <param name="append">
-        /// Values to prepend or append to “a” along axis prior to
-        /// performing the difference.  Scalar values are expanded to
-        /// arrays with length 1 in the direction of axis and the shape
-        /// of the input array in along all other axes.  Otherwise the
-        /// dimension and shape must match “a” except along axis.
+        ///	Values to prepend or append to “a” along axis prior to
+        ///	performing the difference.<br></br>
+        ///	Scalar values are expanded to
+        ///	arrays with length 1 in the direction of axis and the shape
+        ///	of the input array in along all other axes.<br></br>
+        ///	Otherwise the
+        ///	dimension and shape must match “a” except along axis.
         /// </param>
         /// <param name="prepend">
-        /// Values to prepend or append to “a” along axis prior to
-        /// performing the difference.  Scalar values are expanded to
-        /// arrays with length 1 in the direction of axis and the shape
-        /// of the input array in along all other axes.  Otherwise the
-        /// dimension and shape must match “a” except along axis.
+        ///	Values to prepend or append to “a” along axis prior to
+        ///	performing the difference.<br></br>
+        ///	Scalar values are expanded to
+        ///	arrays with length 1 in the direction of axis and the shape
+        ///	of the input array in along all other axes.<br></br>
+        ///	Otherwise the
+        ///	dimension and shape must match “a” except along axis.
         /// </param>
         /// <returns>
-        /// The n-th differences. The shape of the output is the same as a
-        /// except along axis where the dimension is smaller by n. The
-        /// type of the output is the same as the type of the difference
-        /// between any two elements of a. This is the same as the type of
-        /// a in most cases. A notable exception is datetime64, which
-        /// results in a timedelta64 output array.
+        ///	The n-th differences.<br></br>
+        ///	 The shape of the output is the same as a
+        ///	except along axis where the dimension is smaller by n.<br></br>
+        ///	 The
+        ///	type of the output is the same as the type of the difference
+        ///	between any two elements of a.<br></br>
+        ///	 This is the same as the type of
+        ///	a in most cases.<br></br>
+        ///	 A notable exception is datetime64, which
+        ///	results in a timedelta64 output array.
         /// </returns>
         public NDarray diff(int? n = 1, int? axis = -1, NDarray append = null, NDarray prepend = null)
         {
@@ -4707,21 +5309,22 @@ namespace Numpy
         }
         
         /// <summary>
-        /// The differences between consecutive elements of an array.
-        /// 
-        /// Notes
-        /// 
-        /// When applied to masked arrays, this function drops the mask information
-        /// if the to_begin and/or to_end parameters are used.
+        ///	The differences between consecutive elements of an array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	When applied to masked arrays, this function drops the mask information
+        ///	if the to_begin and/or to_end parameters are used.
         /// </summary>
         /// <param name="to_end">
-        /// Number(s) to append at the end of the returned differences.
+        ///	Number(s) to append at the end of the returned differences.
         /// </param>
         /// <param name="to_begin">
-        /// Number(s) to prepend at the beginning of the returned differences.
+        ///	Number(s) to prepend at the beginning of the returned differences.
         /// </param>
         /// <returns>
-        /// The differences. Loosely, this is ary.flat[1:] - ary.flat[:-1].
+        ///	The differences.<br></br>
+        ///	 Loosely, this is ary.flat[1:] - ary.flat[:-1].
         /// </returns>
         public NDarray ediff1d(NDarray to_end = null, NDarray to_begin = null)
         {
@@ -4731,56 +5334,63 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the gradient of an N-dimensional array.
-        /// 
-        /// The gradient is computed using second order accurate central differences
-        /// in the interior points and either first or second order accurate one-sides
-        /// (forward or backwards) differences at the boundaries.
-        /// The returned gradient hence has the same shape as the input array.
-        /// 
-        /// Notes
-        /// 
-        /// Assuming that  (i.e.,  has at least 3 continuous
-        /// derivatives) and let  be a non-homogeneous stepsize, we
-        /// minimize the “consistency error”  between the true gradient
-        /// and its estimate from a linear combination of the neighboring grid-points:
-        /// 
-        /// By substituting  and 
-        /// with their Taylor series expansion, this translates into solving
-        /// the following the linear system:
-        /// 
-        /// The resulting approximation of  is the following:
-        /// 
-        /// It is worth noting that if 
-        /// (i.e., data are evenly spaced)
-        /// we find the standard second order approximation:
-        /// 
-        /// With a similar procedure the forward/backward approximations used for
-        /// boundaries can be derived.
-        /// 
-        /// References
+        ///	Return the gradient of an N-dimensional array.<br></br>
+        ///	
+        ///	The gradient is computed using second order accurate central differences
+        ///	in the interior points and either first or second order accurate one-sides
+        ///	(forward or backwards) differences at the boundaries.<br></br>
+        ///	
+        ///	The returned gradient hence has the same shape as the input array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Assuming that  (i.e.,  has at least 3 continuous
+        ///	derivatives) and let  be a non-homogeneous stepsize, we
+        ///	minimize the “consistency error”  between the true gradient
+        ///	and its estimate from a linear combination of the neighboring grid-points:
+        ///	
+        ///	By substituting  and 
+        ///	with their Taylor series expansion, this translates into solving
+        ///	the following the linear system:
+        ///	
+        ///	The resulting approximation of  is the following:
+        ///	
+        ///	It is worth noting that if 
+        ///	(i.e., data are evenly spaced)
+        ///	we find the standard second order approximation:
+        ///	
+        ///	With a similar procedure the forward/backward approximations used for
+        ///	boundaries can be derived.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="varargs">
-        /// Spacing between f values. Default unitary spacing for all dimensions.
-        /// Spacing can be specified using:
-        /// 
-        /// If axis is given, the number of varargs must equal the number of axes.
-        /// Default: 1.
+        ///	Spacing between f values.<br></br>
+        ///	Default unitary spacing for all dimensions.<br></br>
+        ///	
+        ///	Spacing can be specified using:
+        ///	
+        ///	If axis is given, the number of varargs must equal the number of axes.<br></br>
+        ///	
+        ///	Default: 1.
         /// </param>
         /// <param name="edge_order">
-        /// Gradient is calculated using N-th order accurate differences
-        /// at the boundaries. Default: 1.
+        ///	Gradient is calculated using N-th order accurate differences
+        ///	at the boundaries.<br></br>
+        ///	Default: 1.
         /// </param>
         /// <param name="axis">
-        /// Gradient is calculated only along the given axis or axes
-        /// The default (axis = None) is to calculate the gradient for all the axes
-        /// of the input array. axis may be negative, in which case it counts from
-        /// the last to the first axis.
+        ///	Gradient is calculated only along the given axis or axes
+        ///	The default (axis = None) is to calculate the gradient for all the axes
+        ///	of the input array.<br></br>
+        ///	axis may be negative, in which case it counts from
+        ///	the last to the first axis.
         /// </param>
         /// <returns>
-        /// A set of ndarrays (or a single ndarray if there is only one dimension)
-        /// corresponding to the derivatives of f with respect to each dimension.
-        /// Each derivative has the same shape as f.
+        ///	A set of ndarrays (or a single ndarray if there is only one dimension)
+        ///	corresponding to the derivatives of f with respect to each dimension.<br></br>
+        ///	
+        ///	Each derivative has the same shape as f.
         /// </returns>
         public NDarray gradient(NDarray varargs = null, int? edge_order = null, int[] axis = null)
         {
@@ -4790,40 +5400,48 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the cross product of two (arrays of) vectors.
-        /// 
-        /// The cross product of a and b in  is a vector perpendicular
-        /// to both a and b.  If a and b are arrays of vectors, the vectors
-        /// are defined by the last axis of a and b by default, and these axes
-        /// can have dimensions 2 or 3.  Where the dimension of either a or b is
-        /// 2, the third component of the input vector is assumed to be zero and the
-        /// cross product calculated accordingly.  In cases where both input vectors
-        /// have dimension 2, the z-component of the cross product is returned.
-        /// 
-        /// Notes
-        /// 
-        /// Supports full broadcasting of the inputs.
+        ///	Return the cross product of two (arrays of) vectors.<br></br>
+        ///	
+        ///	The cross product of a and b in  is a vector perpendicular
+        ///	to both a and b.<br></br>
+        ///	  If a and b are arrays of vectors, the vectors
+        ///	are defined by the last axis of a and b by default, and these axes
+        ///	can have dimensions 2 or 3.<br></br>
+        ///	  Where the dimension of either a or b is
+        ///	2, the third component of the input vector is assumed to be zero and the
+        ///	cross product calculated accordingly.<br></br>
+        ///	  In cases where both input vectors
+        ///	have dimension 2, the z-component of the cross product is returned.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Supports full broadcasting of the inputs.
         /// </summary>
         /// <param name="b">
-        /// Components of the second vector(s).
+        ///	Components of the second vector(s).
         /// </param>
         /// <param name="axisa">
-        /// Axis of a that defines the vector(s).  By default, the last axis.
+        ///	Axis of a that defines the vector(s).<br></br>
+        ///	By default, the last axis.
         /// </param>
         /// <param name="axisb">
-        /// Axis of b that defines the vector(s).  By default, the last axis.
+        ///	Axis of b that defines the vector(s).<br></br>
+        ///	By default, the last axis.
         /// </param>
         /// <param name="axisc">
-        /// Axis of c containing the cross product vector(s).  Ignored if
-        /// both input vectors have dimension 2, as the return is scalar.
-        /// By default, the last axis.
+        ///	Axis of c containing the cross product vector(s).<br></br>
+        ///	Ignored if
+        ///	both input vectors have dimension 2, as the return is scalar.<br></br>
+        ///	
+        ///	By default, the last axis.
         /// </param>
         /// <param name="axis">
-        /// If defined, the axis of a, b and c that defines the vector(s)
-        /// and cross product(s).  Overrides axisa, axisb and axisc.
+        ///	If defined, the axis of a, b and c that defines the vector(s)
+        ///	and cross product(s).<br></br>
+        ///	Overrides axisa, axisb and axisc.
         /// </param>
         /// <returns>
-        /// Vector cross product(s).
+        ///	Vector cross product(s).
         /// </returns>
         public NDarray cross(NDarray b, int? axisa = -1, int? axisb = -1, int? axisc = -1, int? axis = null)
         {
@@ -4833,33 +5451,37 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Integrate along the given axis using the composite trapezoidal rule.
-        /// 
-        /// Integrate y (x) along given axis.
-        /// 
-        /// Notes
-        /// 
-        /// Image [2] illustrates trapezoidal rule – y-axis locations of points
-        /// will be taken from y array, by default x-axis distances between
-        /// points will be 1.0, alternatively they can be provided with x array
-        /// or with dx scalar.  Return value will be equal to combined area under
-        /// the red lines.
-        /// 
-        /// References
+        ///	Integrate along the given axis using the composite trapezoidal rule.<br></br>
+        ///	
+        ///	Integrate y (x) along given axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Image [2] illustrates trapezoidal rule – y-axis locations of points
+        ///	will be taken from y array, by default x-axis distances between
+        ///	points will be 1.0, alternatively they can be provided with x array
+        ///	or with dx scalar.<br></br>
+        ///	  Return value will be equal to combined area under
+        ///	the red lines.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="x">
-        /// The sample points corresponding to the y values. If x is None,
-        /// the sample points are assumed to be evenly spaced dx apart. The
-        /// default is None.
+        ///	The sample points corresponding to the y values.<br></br>
+        ///	If x is None,
+        ///	the sample points are assumed to be evenly spaced dx apart.<br></br>
+        ///	The
+        ///	default is None.
         /// </param>
         /// <param name="dx">
-        /// The spacing between sample points when x is None. The default is 1.
+        ///	The spacing between sample points when x is None.<br></br>
+        ///	The default is 1.
         /// </param>
         /// <param name="axis">
-        /// The axis along which to integrate.
+        ///	The axis along which to integrate.
         /// </param>
         /// <returns>
-        /// Definite integral as approximated by trapezoidal rule.
+        ///	Definite integral as approximated by trapezoidal rule.
         /// </returns>
         public float trapz(NDarray x = null, float? dx = 1.0f, int? axis = -1)
         {
@@ -4869,36 +5491,42 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Calculate the exponential of all elements in the input array.
-        /// 
-        /// Notes
-        /// 
-        /// The irrational number e is also known as Euler’s number.  It is
-        /// approximately 2.718281, and is the base of the natural logarithm,
-        /// ln (this means that, if ,
-        /// then . For real input, exp(x) is always positive.
-        /// 
-        /// For complex arguments, x = a + ib, we can write
-        /// .  The first term, , is already
-        /// known (it is the real argument, described above).  The second term,
-        /// , is , a function with
-        /// magnitude 1 and a periodic phase.
-        /// 
-        /// References
+        ///	Calculate the exponential of all elements in the input array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The irrational number e is also known as Euler’s number.<br></br>
+        ///	  It is
+        ///	approximately 2.718281, and is the base of the natural logarithm,
+        ///	ln (this means that, if ,
+        ///	then . For real input, exp(x) is always positive.<br></br>
+        ///	
+        ///	For complex arguments, x = a + ib, we can write
+        ///	.  The first term, , is already
+        ///	known (it is the real argument, described above).<br></br>
+        ///	  The second term,
+        ///	, is , a function with
+        ///	magnitude 1 and a periodic phase.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise exponential of x.
-        /// This is a scalar if x is a scalar.
+        ///	Output array, element-wise exponential of x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray exp(NDarray @out = null, NDarray @where = null)
         {
@@ -4908,26 +5536,30 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Calculate exp(x) - 1 for all elements in the array.
-        /// 
-        /// Notes
-        /// 
-        /// This function provides greater precision than exp(x) - 1
-        /// for small values of x.
+        ///	Calculate exp(x) - 1 for all elements in the array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	This function provides greater precision than exp(x) - 1
+        ///	for small values of x.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Element-wise exponential minus one: out = exp(x) - 1.
-        /// This is a scalar if x is a scalar.
+        ///	Element-wise exponential minus one: out = exp(x) - 1.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray expm1(NDarray @out = null, NDarray @where = null)
         {
@@ -4937,23 +5569,27 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Calculate 2**p for all p in the input array.
-        /// 
-        /// Notes
+        ///	Calculate 2**p for all p in the input array.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Element-wise 2 to the power x.
-        /// This is a scalar if x is a scalar.
+        ///	Element-wise 2 to the power x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray exp2(NDarray @out = null, NDarray @where = null)
         {
@@ -4963,42 +5599,50 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Natural logarithm, element-wise.
-        /// 
-        /// The natural logarithm log is the inverse of the exponential function,
-        /// so that log(exp(x)) = x. The natural logarithm is logarithm in base
-        /// e.
-        /// 
-        /// Notes
-        /// 
-        /// Logarithm is a multivalued function: for each x there is an infinite
-        /// number of z such that exp(z) = x. The convention is to return the
-        /// z whose imaginary part lies in [-pi, pi].
-        /// 
-        /// For real-valued input data types, log always returns real output. For
-        /// each value that cannot be expressed as a real number or infinity, it
-        /// yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, log is a complex analytical function that
-        /// has a branch cut [-inf, 0] and is continuous from above on it. log
-        /// handles the floating-point negative zero as an infinitesimal negative
-        /// number, conforming to the C99 standard.
-        /// 
-        /// References
+        ///	Natural logarithm, element-wise.<br></br>
+        ///	
+        ///	The natural logarithm log is the inverse of the exponential function,
+        ///	so that log(exp(x)) = x.<br></br>
+        ///	 The natural logarithm is logarithm in base
+        ///	e.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Logarithm is a multivalued function: for each x there is an infinite
+        ///	number of z such that exp(z) = x.<br></br>
+        ///	 The convention is to return the
+        ///	z whose imaginary part lies in [-pi, pi].<br></br>
+        ///	
+        ///	For real-valued input data types, log always returns real output.<br></br>
+        ///	 For
+        ///	each value that cannot be expressed as a real number or infinity, it
+        ///	yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, log is a complex analytical function that
+        ///	has a branch cut [-inf, 0] and is continuous from above on it.<br></br>
+        ///	 log
+        ///	handles the floating-point negative zero as an infinitesimal negative
+        ///	number, conforming to the C99 standard.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The natural logarithm of x, element-wise.
-        /// This is a scalar if x is a scalar.
+        ///	The natural logarithm of x, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray log(NDarray @out = null, NDarray @where = null)
         {
@@ -5008,39 +5652,47 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the base 10 logarithm of the input array, element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// Logarithm is a multivalued function: for each x there is an infinite
-        /// number of z such that 10**z = x. The convention is to return the
-        /// z whose imaginary part lies in [-pi, pi].
-        /// 
-        /// For real-valued input data types, log10 always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity,
-        /// it yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, log10 is a complex analytical function that
-        /// has a branch cut [-inf, 0] and is continuous from above on it.
-        /// log10 handles the floating-point negative zero as an infinitesimal
-        /// negative number, conforming to the C99 standard.
-        /// 
-        /// References
+        ///	Return the base 10 logarithm of the input array, element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Logarithm is a multivalued function: for each x there is an infinite
+        ///	number of z such that 10**z = x.<br></br>
+        ///	 The convention is to return the
+        ///	z whose imaginary part lies in [-pi, pi].<br></br>
+        ///	
+        ///	For real-valued input data types, log10 always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity,
+        ///	it yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, log10 is a complex analytical function that
+        ///	has a branch cut [-inf, 0] and is continuous from above on it.<br></br>
+        ///	
+        ///	log10 handles the floating-point negative zero as an infinitesimal
+        ///	negative number, conforming to the C99 standard.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The logarithm to the base 10 of x, element-wise. NaNs are
-        /// returned where x is negative.
-        /// This is a scalar if x is a scalar.
+        ///	The logarithm to the base 10 of x, element-wise.<br></br>
+        ///	 NaNs are
+        ///	returned where x is negative.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray log10(NDarray @out = null, NDarray @where = null)
         {
@@ -5050,36 +5702,43 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Base-2 logarithm of x.
-        /// 
-        /// Notes
-        /// 
-        /// Logarithm is a multivalued function: for each x there is an infinite
-        /// number of z such that 2**z = x. The convention is to return the z
-        /// whose imaginary part lies in [-pi, pi].
-        /// 
-        /// For real-valued input data types, log2 always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity,
-        /// it yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, log2 is a complex analytical function that
-        /// has a branch cut [-inf, 0] and is continuous from above on it. log2
-        /// handles the floating-point negative zero as an infinitesimal negative
-        /// number, conforming to the C99 standard.
+        ///	Base-2 logarithm of x.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Logarithm is a multivalued function: for each x there is an infinite
+        ///	number of z such that 2**z = x.<br></br>
+        ///	 The convention is to return the z
+        ///	whose imaginary part lies in [-pi, pi].<br></br>
+        ///	
+        ///	For real-valued input data types, log2 always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity,
+        ///	it yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, log2 is a complex analytical function that
+        ///	has a branch cut [-inf, 0] and is continuous from above on it.<br></br>
+        ///	 log2
+        ///	handles the floating-point negative zero as an infinitesimal negative
+        ///	number, conforming to the C99 standard.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Base-2 logarithm of x.
-        /// This is a scalar if x is a scalar.
+        ///	Base-2 logarithm of x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray log2(NDarray @out = null, NDarray @where = null)
         {
@@ -5089,43 +5748,50 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the natural logarithm of one plus the input array, element-wise.
-        /// 
-        /// Calculates log(1 + x).
-        /// 
-        /// Notes
-        /// 
-        /// For real-valued input, log1p is accurate also for x so small
-        /// that 1 + x == 1 in floating-point accuracy.
-        /// 
-        /// Logarithm is a multivalued function: for each x there is an infinite
-        /// number of z such that exp(z) = 1 + x. The convention is to return
-        /// the z whose imaginary part lies in [-pi, pi].
-        /// 
-        /// For real-valued input data types, log1p always returns real output.
-        /// For each value that cannot be expressed as a real number or infinity,
-        /// it yields nan and sets the invalid floating point error flag.
-        /// 
-        /// For complex-valued input, log1p is a complex analytical function that
-        /// has a branch cut [-inf, -1] and is continuous from above on it.
-        /// log1p handles the floating-point negative zero as an infinitesimal
-        /// negative number, conforming to the C99 standard.
-        /// 
-        /// References
+        ///	Return the natural logarithm of one plus the input array, element-wise.<br></br>
+        ///	
+        ///	Calculates log(1 + x).<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	For real-valued input, log1p is accurate also for x so small
+        ///	that 1 + x == 1 in floating-point accuracy.<br></br>
+        ///	
+        ///	Logarithm is a multivalued function: for each x there is an infinite
+        ///	number of z such that exp(z) = 1 + x.<br></br>
+        ///	 The convention is to return
+        ///	the z whose imaginary part lies in [-pi, pi].<br></br>
+        ///	
+        ///	For real-valued input data types, log1p always returns real output.<br></br>
+        ///	
+        ///	For each value that cannot be expressed as a real number or infinity,
+        ///	it yields nan and sets the invalid floating point error flag.<br></br>
+        ///	
+        ///	For complex-valued input, log1p is a complex analytical function that
+        ///	has a branch cut [-inf, -1] and is continuous from above on it.<br></br>
+        ///	
+        ///	log1p handles the floating-point negative zero as an infinitesimal
+        ///	negative number, conforming to the C99 standard.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Natural logarithm of 1 + x, element-wise.
-        /// This is a scalar if x is a scalar.
+        ///	Natural logarithm of 1 + x, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray log1p(NDarray @out = null, NDarray @where = null)
         {
@@ -5135,32 +5801,39 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Logarithm of the sum of exponentiations of the inputs.
-        /// 
-        /// Calculates log(exp(x1) + exp(x2)). This function is useful in
-        /// statistics where the calculated probabilities of events may be so small
-        /// as to exceed the range of normal floating point numbers.  In such cases
-        /// the logarithm of the calculated probability is stored. This function
-        /// allows adding probabilities stored in such a fashion.
-        /// 
-        /// Notes
+        ///	Logarithm of the sum of exponentiations of the inputs.<br></br>
+        ///	
+        ///	Calculates log(exp(x1) + exp(x2)).<br></br>
+        ///	 This function is useful in
+        ///	statistics where the calculated probabilities of events may be so small
+        ///	as to exceed the range of normal floating point numbers.<br></br>
+        ///	  In such cases
+        ///	the logarithm of the calculated probability is stored.<br></br>
+        ///	 This function
+        ///	allows adding probabilities stored in such a fashion.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         /// <param name="x1">
-        /// Input values.
+        ///	Input values.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Logarithm of exp(x1) + exp(x2).
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Logarithm of exp(x1) + exp(x2).<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray logaddexp(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -5170,32 +5843,38 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Logarithm of the sum of exponentiations of the inputs in base-2.
-        /// 
-        /// Calculates log2(2**x1 + 2**x2). This function is useful in machine
-        /// learning when the calculated probabilities of events may be so small as
-        /// to exceed the range of normal floating point numbers.  In such cases
-        /// the base-2 logarithm of the calculated probability can be used instead.
-        /// This function allows adding probabilities stored in such a fashion.
-        /// 
-        /// Notes
+        ///	Logarithm of the sum of exponentiations of the inputs in base-2.
+        ///	
+        ///	Calculates log2(2**x1 + 2**x2).<br></br>
+        ///	 This function is useful in machine
+        ///	learning when the calculated probabilities of events may be so small as
+        ///	to exceed the range of normal floating point numbers.<br></br>
+        ///	  In such cases
+        ///	the base-2 logarithm of the calculated probability can be used instead.<br></br>
+        ///	
+        ///	This function allows adding probabilities stored in such a fashion.<br></br>
+        ///	
+        ///	Notes
         /// </summary>
         /// <param name="x1">
-        /// Input values.
+        ///	Input values.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Base-2 logarithm of 2**x1 + 2**x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Base-2 logarithm of 2**x1 + 2**x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray logaddexp2(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -5205,27 +5884,27 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the sinc function.
-        /// 
-        /// The sinc function is .
-        /// 
-        /// Notes
-        /// 
-        /// sinc(0) is the limit value 1.
-        /// 
-        /// The name sinc is short for “sine cardinal” or “sinus cardinalis”.
-        /// 
-        /// The sinc function is used in various signal processing applications,
-        /// including in anti-aliasing, in the construction of a Lanczos resampling
-        /// filter, and in interpolation.
-        /// 
-        /// For bandlimited interpolation of discrete-time signals, the ideal
-        /// interpolation kernel is proportional to the sinc function.
-        /// 
-        /// References
+        ///	Return the sinc function.<br></br>
+        ///	
+        ///	The sinc function is .
+        ///	
+        ///	Notes
+        ///	
+        ///	sinc(0) is the limit value 1.<br></br>
+        ///	
+        ///	The name sinc is short for “sine cardinal” or “sinus cardinalis”.
+        ///	
+        ///	The sinc function is used in various signal processing applications,
+        ///	including in anti-aliasing, in the construction of a Lanczos resampling
+        ///	filter, and in interpolation.<br></br>
+        ///	
+        ///	For bandlimited interpolation of discrete-time signals, the ideal
+        ///	interpolation kernel is proportional to the sinc function.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <returns>
-        /// sinc(x), which has the same shape as the input.
+        ///	sinc(x), which has the same shape as the input.
         /// </returns>
         public NDarray sinc()
         {
@@ -5235,21 +5914,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns element-wise True where signbit is set (less than zero).
+        ///	Returns element-wise True where signbit is set (less than zero).
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, or reference to out if that was supplied.
-        /// This is a scalar if x is a scalar.
+        ///	Output array, or reference to out if that was supplied.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray signbit(NDarray @out = null, NDarray @where = null)
         {
@@ -5259,28 +5942,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Change the sign of x1 to that of x2, element-wise.
-        /// 
-        /// If both arguments are arrays or sequences, they have to be of the same
-        /// length. If x2 is a scalar, its sign will be copied to all elements of
-        /// x1.
+        ///	Change the sign of x1 to that of x2, element-wise.<br></br>
+        ///	
+        ///	If both arguments are arrays or sequences, they have to be of the same
+        ///	length.<br></br>
+        ///	 If x2 is a scalar, its sign will be copied to all elements of
+        ///	x1.
         /// </summary>
         /// <param name="x2">
-        /// The sign of x2 is copied to x1.
+        ///	The sign of x2 is copied to x1.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The values of x1 with the sign of x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The values of x1 with the sign of x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray copysign(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5290,40 +5977,45 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Decompose the elements of x into mantissa and twos exponent.
-        /// 
-        /// Returns (mantissa, exponent), where x = mantissa * 2**exponent`.
-        /// The mantissa is lies in the open interval(-1, 1), while the twos
-        /// exponent is a signed integer.
-        /// 
-        /// Notes
-        /// 
-        /// Complex dtypes are not supported, they will raise a TypeError.
+        ///	Decompose the elements of x into mantissa and twos exponent.<br></br>
+        ///	
+        ///	Returns (mantissa, exponent), where x = mantissa * 2**exponent`.
+        ///	The mantissa is lies in the open interval(-1, 1), while the twos
+        ///	exponent is a signed integer.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Complex dtypes are not supported, they will raise a TypeError.
         /// </summary>
         /// <param name="out1">
-        /// Output array for the mantissa. Must have the same shape as x.
+        ///	Output array for the mantissa.<br></br>
+        ///	Must have the same shape as x.
         /// </param>
         /// <param name="out2">
-        /// Output array for the exponent. Must have the same shape as x.
+        ///	Output array for the exponent.<br></br>
+        ///	Must have the same shape as x.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// mantissa
-        /// Floating values between -1 and 1.
-        /// This is a scalar if x is a scalar.
+        ///	Floating values between -1 and 1.
+        ///	This is a scalar if x is a scalar.
         /// exponent
-        /// Integer exponents of 2.
-        /// This is a scalar if x is a scalar.
+        ///	Integer exponents of 2.
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public (NDarray, NDarray) frexp(NDarray out1 = null, NDarray out2 = null, NDarray @out = null, NDarray @where = null)
         {
@@ -5333,34 +6025,37 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns x1 * 2**x2, element-wise.
-        /// 
-        /// The mantissas x1 and twos exponents x2 are used to construct
-        /// floating point numbers x1 * 2**x2.
-        /// 
-        /// Notes
-        /// 
-        /// Complex dtypes are not supported, they will raise a TypeError.
-        /// 
-        /// ldexp is useful as the inverse of frexp, if used by itself it is
-        /// more clear to simply use the expression x1 * 2**x2.
+        ///	Returns x1 * 2**x2, element-wise.<br></br>
+        ///	
+        ///	The mantissas x1 and twos exponents x2 are used to construct
+        ///	floating point numbers x1 * 2**x2.
+        ///	
+        ///	Notes
+        ///	
+        ///	Complex dtypes are not supported, they will raise a TypeError.<br></br>
+        ///	
+        ///	ldexp is useful as the inverse of frexp, if used by itself it is
+        ///	more clear to simply use the expression x1 * 2**x2.
         /// </summary>
         /// <param name="x2">
-        /// Array of twos exponents.
+        ///	Array of twos exponents.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The result of x1 * 2**x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The result of x1 * 2**x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray ldexp(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5370,24 +6065,27 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the next floating-point value after x1 towards x2, element-wise.
+        ///	Return the next floating-point value after x1 towards x2, element-wise.
         /// </summary>
         /// <param name="x2">
-        /// The direction where to look for the next representable value of x1.
+        ///	The direction where to look for the next representable value of x1.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The next representable values of x1 in the direction of x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The next representable values of x1 in the direction of x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray nextafter(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5397,30 +6095,34 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the distance between x and the nearest adjacent number.
-        /// 
-        /// Notes
-        /// 
-        /// It can be considered as a generalization of EPS:
-        /// spacing(np.float64(1)) == np.finfo(np.float64).eps, and there
-        /// should not be any representable number between x + spacing(x) and
-        /// x for any finite x.
-        /// 
-        /// Spacing of +- inf and NaN is NaN.
+        ///	Return the distance between x and the nearest adjacent number.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	It can be considered as a generalization of EPS:
+        ///	spacing(np.float64(1)) == np.finfo(np.float64).eps, and there
+        ///	should not be any representable number between x + spacing(x) and
+        ///	x for any finite x.<br></br>
+        ///	
+        ///	Spacing of +- inf and NaN is NaN.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The spacing of values of x.
-        /// This is a scalar if x is a scalar.
+        ///	The spacing of values of x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray spacing(NDarray @out = null, NDarray @where = null)
         {
@@ -5430,14 +6132,14 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns the lowest common multiple of |x1| and |x2|
+        ///	Returns the lowest common multiple of |x1| and |x2|
         /// </summary>
         /// <param name="x1">
-        /// Arrays of values
+        ///	Arrays of values
         /// </param>
         /// <returns>
-        /// The lowest common multiple of the absolute value of the inputs
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The lowest common multiple of the absolute value of the inputs
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray lcm(NDarray x1)
         {
@@ -5447,14 +6149,14 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns the greatest common divisor of |x1| and |x2|
+        ///	Returns the greatest common divisor of |x1| and |x2|
         /// </summary>
         /// <param name="x1">
-        /// Arrays of values
+        ///	Arrays of values
         /// </param>
         /// <returns>
-        /// The greatest common divisor of the absolute value of the inputs
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The greatest common divisor of the absolute value of the inputs
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray gcd(NDarray x1)
         {
@@ -5464,30 +6166,35 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Add arguments element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// Equivalent to x1 + x2 in terms of array broadcasting.
+        ///	Add arguments element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Equivalent to x1 + x2 in terms of array broadcasting.
         /// </summary>
         /// <param name="x1">
-        /// The arrays to be added.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	The arrays to be added.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The sum of x1 and x2, element-wise.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The sum of x1 and x2, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray @add(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -5497,29 +6204,34 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the reciprocal of the argument, element-wise.
-        /// 
-        /// Calculates 1/x.
-        /// 
-        /// Notes
-        /// 
-        /// For integer arguments with absolute value larger than 1 the result is
-        /// always zero because of the way Python handles integer division.  For
-        /// integer zero the result is an overflow.
+        ///	Return the reciprocal of the argument, element-wise.<br></br>
+        ///	
+        ///	Calculates 1/x.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	For integer arguments with absolute value larger than 1 the result is
+        ///	always zero because of the way Python handles integer division.<br></br>
+        ///	  For
+        ///	integer zero the result is an overflow.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Return array.
-        /// This is a scalar if x is a scalar.
+        ///	Return array.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray reciprocal(NDarray @out = null, NDarray @where = null)
         {
@@ -5529,16 +6241,17 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Numerical positive, element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// Equivalent to x.copy(), but only defined for types that support
-        /// arithmetic.
+        ///	Numerical positive, element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Equivalent to x.copy(), but only defined for types that support
+        ///	arithmetic.
         /// </summary>
         /// <returns>
-        /// Returned array or scalar: y = +x.
-        /// This is a scalar if x is a scalar.
+        ///	Returned array or scalar: y = +x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray positive()
         {
@@ -5548,21 +6261,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Numerical negative, element-wise.
+        ///	Numerical negative, element-wise.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Returned array or scalar: y = -x.
-        /// This is a scalar if x is a scalar.
+        ///	Returned array or scalar: y = -x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray negative(NDarray @out = null, NDarray @where = null)
         {
@@ -5572,28 +6289,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Multiply arguments element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// Equivalent to x1 * x2 in terms of array broadcasting.
+        ///	Multiply arguments element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Equivalent to x1 * x2 in terms of array broadcasting.
         /// </summary>
         /// <param name="x1">
-        /// Input arrays to be multiplied.
+        ///	Input arrays to be multiplied.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The product of x1 and x2, element-wise.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The product of x1 and x2, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray multiply(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -5603,38 +6324,44 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a true division of the inputs, element-wise.
-        /// 
-        /// Instead of the Python traditional ‘floor division’, this returns a true
-        /// division.  True division adjusts the output type to present the best
-        /// answer, regardless of input types.
-        /// 
-        /// Notes
-        /// 
-        /// The floor division operator // was added in Python 2.2 making
-        /// // and / equivalent operators.  The default floor division
-        /// operation of / can be replaced by true division with from
-        /// __future__ import division.
-        /// 
-        /// In Python 3.0, // is the floor division operator and / the
-        /// true division operator.  The true_divide(x1, x2) function is
-        /// equivalent to true division in Python.
+        ///	Returns a true division of the inputs, element-wise.<br></br>
+        ///	
+        ///	Instead of the Python traditional ‘floor division’, this returns a true
+        ///	division.<br></br>
+        ///	  True division adjusts the output type to present the best
+        ///	answer, regardless of input types.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The floor division operator // was added in Python 2.2 making
+        ///	// and / equivalent operators.<br></br>
+        ///	  The default floor division
+        ///	operation of / can be replaced by true division with from
+        ///	__future__ import division.<br></br>
+        ///	
+        ///	In Python 3.0, // is the floor division operator and / the
+        ///	true division operator.<br></br>
+        ///	  The true_divide(x1, x2) function is
+        ///	equivalent to true division in Python.
         /// </summary>
         /// <param name="x2">
-        /// Divisor array.
+        ///	Divisor array.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray divide(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5644,28 +6371,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// First array elements raised to powers from second array, element-wise.
-        /// 
-        /// Raise each base in x1 to the positionally-corresponding power in
-        /// x2.  x1 and x2 must be broadcastable to the same shape. Note that an
-        /// integer type raised to a negative integer power will raise a ValueError.
+        ///	First array elements raised to powers from second array, element-wise.<br></br>
+        ///	
+        ///	Raise each base in x1 to the positionally-corresponding power in
+        ///	x2.  x1 and x2 must be broadcastable to the same shape.<br></br>
+        ///	 Note that an
+        ///	integer type raised to a negative integer power will raise a ValueError.
         /// </summary>
         /// <param name="x2">
-        /// The exponents.
+        ///	The exponents.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The bases in x1 raised to the exponents in x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The bases in x1 raised to the exponents in x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray power(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5675,28 +6406,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Subtract arguments, element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// Equivalent to x1 - x2 in terms of array broadcasting.
+        ///	Subtract arguments, element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Equivalent to x1 - x2 in terms of array broadcasting.
         /// </summary>
         /// <param name="x1">
-        /// The arrays to be subtracted from each other.
+        ///	The arrays to be subtracted from each other.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The difference of x1 and x2, element-wise.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The difference of x1 and x2, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray subtract(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -5706,38 +6441,44 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a true division of the inputs, element-wise.
-        /// 
-        /// Instead of the Python traditional ‘floor division’, this returns a true
-        /// division.  True division adjusts the output type to present the best
-        /// answer, regardless of input types.
-        /// 
-        /// Notes
-        /// 
-        /// The floor division operator // was added in Python 2.2 making
-        /// // and / equivalent operators.  The default floor division
-        /// operation of / can be replaced by true division with from
-        /// __future__ import division.
-        /// 
-        /// In Python 3.0, // is the floor division operator and / the
-        /// true division operator.  The true_divide(x1, x2) function is
-        /// equivalent to true division in Python.
+        ///	Returns a true division of the inputs, element-wise.<br></br>
+        ///	
+        ///	Instead of the Python traditional ‘floor division’, this returns a true
+        ///	division.<br></br>
+        ///	  True division adjusts the output type to present the best
+        ///	answer, regardless of input types.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The floor division operator // was added in Python 2.2 making
+        ///	// and / equivalent operators.<br></br>
+        ///	  The default floor division
+        ///	operation of / can be replaced by true division with from
+        ///	__future__ import division.<br></br>
+        ///	
+        ///	In Python 3.0, // is the floor division operator and / the
+        ///	true division operator.<br></br>
+        ///	  The true_divide(x1, x2) function is
+        ///	equivalent to true division in Python.
         /// </summary>
         /// <param name="x2">
-        /// Divisor array.
+        ///	Divisor array.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray true_divide(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5747,27 +6488,31 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the largest integer smaller or equal to the division of the inputs.
-        /// It is equivalent to the Python // operator and pairs with the
-        /// Python % (remainder), function so that b = a % b + b * (a // b)
-        /// up to roundoff.
+        ///	Return the largest integer smaller or equal to the division of the inputs.<br></br>
+        ///	
+        ///	It is equivalent to the Python // operator and pairs with the
+        ///	Python % (remainder), function so that b = a % b + b * (a // b)
+        ///	up to roundoff.
         /// </summary>
         /// <param name="x2">
-        /// Denominator.
+        ///	Denominator.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// y = floor(x1/x2)
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	y = floor(x1/x2)
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray floor_divide(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5777,31 +6522,36 @@ namespace Numpy
         }
         
         /// <summary>
-        /// First array elements raised to powers from second array, element-wise.
-        /// 
-        /// Raise each base in x1 to the positionally-corresponding power in x2.
-        /// x1 and x2 must be broadcastable to the same shape. This differs from
-        /// the power function in that integers, float16, and float32  are promoted to
-        /// floats with a minimum precision of float64 so that the result is always
-        /// inexact.  The intent is that the function will return a usable result for
-        /// negative powers and seldom overflow for positive powers.
+        ///	First array elements raised to powers from second array, element-wise.<br></br>
+        ///	
+        ///	Raise each base in x1 to the positionally-corresponding power in x2.
+        ///	x1 and x2 must be broadcastable to the same shape.<br></br>
+        ///	 This differs from
+        ///	the power function in that integers, float16, and float32  are promoted to
+        ///	floats with a minimum precision of float64 so that the result is always
+        ///	inexact.<br></br>
+        ///	  The intent is that the function will return a usable result for
+        ///	negative powers and seldom overflow for positive powers.
         /// </summary>
         /// <param name="x2">
-        /// The exponents.
+        ///	The exponents.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The bases in x1 raised to the exponents in x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The bases in x1 raised to the exponents in x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray float_power(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5811,37 +6561,42 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the element-wise remainder of division.
-        /// 
-        /// This is the NumPy implementation of the C library function fmod, the
-        /// remainder has the same sign as the dividend x1. It is equivalent to
-        /// the Matlab(TM) rem function and should not be confused with the
-        /// Python modulus operator x1 % x2.
-        /// 
-        /// Notes
-        /// 
-        /// The result of the modulo operation for negative dividend and divisors
-        /// is bound by conventions. For fmod, the sign of result is the sign of
-        /// the dividend, while for remainder the sign of the result is the sign
-        /// of the divisor. The fmod function is equivalent to the Matlab(TM)
-        /// rem function.
+        ///	Return the element-wise remainder of division.<br></br>
+        ///	
+        ///	This is the NumPy implementation of the C library function fmod, the
+        ///	remainder has the same sign as the dividend x1. It is equivalent to
+        ///	the Matlab(TM) rem function and should not be confused with the
+        ///	Python modulus operator x1 % x2.
+        ///	
+        ///	Notes
+        ///	
+        ///	The result of the modulo operation for negative dividend and divisors
+        ///	is bound by conventions.<br></br>
+        ///	 For fmod, the sign of result is the sign of
+        ///	the dividend, while for remainder the sign of the result is the sign
+        ///	of the divisor.<br></br>
+        ///	 The fmod function is equivalent to the Matlab(TM)
+        ///	rem function.
         /// </summary>
         /// <param name="x2">
-        /// Divisor.
+        ///	Divisor.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The remainder of the division of x1 by x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The remainder of the division of x1 by x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray fmod(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5851,34 +6606,39 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return element-wise remainder of division.
-        /// 
-        /// Computes the remainder complementary to the floor_divide function.  It is
-        /// equivalent to the Python modulus operator``x1 % x2`` and has the same sign
-        /// as the divisor x2. The MATLAB function equivalent to np.remainder
-        /// is mod.
-        /// 
-        /// Notes
-        /// 
-        /// Returns 0 when x2 is 0 and both x1 and x2 are (arrays of)
-        /// integers.
+        ///	Return element-wise remainder of division.<br></br>
+        ///	
+        ///	Computes the remainder complementary to the floor_divide function.<br></br>
+        ///	  It is
+        ///	equivalent to the Python modulus operator``x1 % x2`` and has the same sign
+        ///	as the divisor x2. The MATLAB function equivalent to np.remainder
+        ///	is mod.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Returns 0 when x2 is 0 and both x1 and x2 are (arrays of)
+        ///	integers.
         /// </summary>
         /// <param name="x2">
-        /// Divisor array.
+        ///	Divisor array.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The element-wise remainder of the quotient floor_divide(x1, x2).
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The element-wise remainder of the quotient floor_divide(x1, x2).<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray mod(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5888,33 +6648,36 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the fractional and integral parts of an array, element-wise.
-        /// 
-        /// The fractional and integral parts are negative if the given number is
-        /// negative.
-        /// 
-        /// Notes
-        /// 
-        /// For integer input the return values are floats.
+        ///	Return the fractional and integral parts of an array, element-wise.<br></br>
+        ///	
+        ///	The fractional and integral parts are negative if the given number is
+        ///	negative.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	For integer input the return values are floats.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// y1
-        /// Fractional part of x.
-        /// This is a scalar if x is a scalar.
+        ///	Fractional part of x.
+        ///	This is a scalar if x is a scalar.
         /// y2
-        /// Integral part of x.
-        /// This is a scalar if x is a scalar.
+        ///	Integral part of x.
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public (NDarray, NDarray) modf(NDarray @out = null, NDarray @where = null)
         {
@@ -5924,34 +6687,39 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return element-wise remainder of division.
-        /// 
-        /// Computes the remainder complementary to the floor_divide function.  It is
-        /// equivalent to the Python modulus operator``x1 % x2`` and has the same sign
-        /// as the divisor x2. The MATLAB function equivalent to np.remainder
-        /// is mod.
-        /// 
-        /// Notes
-        /// 
-        /// Returns 0 when x2 is 0 and both x1 and x2 are (arrays of)
-        /// integers.
+        ///	Return element-wise remainder of division.<br></br>
+        ///	
+        ///	Computes the remainder complementary to the floor_divide function.<br></br>
+        ///	  It is
+        ///	equivalent to the Python modulus operator``x1 % x2`` and has the same sign
+        ///	as the divisor x2. The MATLAB function equivalent to np.remainder
+        ///	is mod.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Returns 0 when x2 is 0 and both x1 and x2 are (arrays of)
+        ///	integers.
         /// </summary>
         /// <param name="x2">
-        /// Divisor array.
+        ///	Divisor array.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The element-wise remainder of the quotient floor_divide(x1, x2).
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The element-wise remainder of the quotient floor_divide(x1, x2).<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray remainder(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5961,33 +6729,37 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return element-wise quotient and remainder simultaneously.
-        /// 
-        /// np.divmod(x, y) is equivalent to (x // y, x % y), but faster
-        /// because it avoids redundant work. It is used to implement the Python
-        /// built-in function divmod on NumPy arrays.
+        ///	Return element-wise quotient and remainder simultaneously.<br></br>
+        ///	
+        ///	np.divmod(x, y) is equivalent to (x // y, x % y), but faster
+        ///	because it avoids redundant work.<br></br>
+        ///	 It is used to implement the Python
+        ///	built-in function divmod on NumPy arrays.
         /// </summary>
         /// <param name="x2">
-        /// Divisor array.
+        ///	Divisor array.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// out1
-        /// Element-wise quotient resulting from floor division.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Element-wise quotient resulting from floor division.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// out2
-        /// Element-wise remainder from floor division.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Element-wise remainder from floor division.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public (NDarray, NDarray) divmod(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -5997,14 +6769,14 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the angle of the complex argument.
+        ///	Return the angle of the complex argument.
         /// </summary>
         /// <param name="deg">
-        /// Return angle in degrees if True, radians if False (default).
+        ///	Return angle in degrees if True, radians if False (default).
         /// </param>
         /// <returns>
-        /// The counterclockwise angle from the positive real axis on
-        /// the complex plane, with dtype as numpy.float64.
+        ///	The counterclockwise angle from the positive real axis on
+        ///	the complex plane, with dtype as numpy.float64.
         /// </returns>
         public NDarray angle(bool? deg = false)
         {
@@ -6014,12 +6786,14 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the real part of the complex argument.
+        ///	Return the real part of the complex argument.
         /// </summary>
         /// <returns>
-        /// The real component of the complex argument. If val is real, the type
-        /// of val is used for the output.  If val has complex elements, the
-        /// returned type is float.
+        ///	The real component of the complex argument.<br></br>
+        ///	 If val is real, the type
+        ///	of val is used for the output.<br></br>
+        ///	  If val has complex elements, the
+        ///	returned type is float.
         /// </returns>
         public NDarray real()
         {
@@ -6029,12 +6803,14 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the imaginary part of the complex argument.
+        ///	Return the imaginary part of the complex argument.
         /// </summary>
         /// <returns>
-        /// The imaginary component of the complex argument. If val is real,
-        /// the type of val is used for the output.  If val has complex
-        /// elements, the returned type is float.
+        ///	The imaginary component of the complex argument.<br></br>
+        ///	 If val is real,
+        ///	the type of val is used for the output.<br></br>
+        ///	  If val has complex
+        ///	elements, the returned type is float.
         /// </returns>
         public NDarray imag()
         {
@@ -6044,24 +6820,28 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the complex conjugate, element-wise.
-        /// 
-        /// The complex conjugate of a complex number is obtained by changing the
-        /// sign of its imaginary part.
+        ///	Return the complex conjugate, element-wise.<br></br>
+        ///	
+        ///	The complex conjugate of a complex number is obtained by changing the
+        ///	sign of its imaginary part.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The complex conjugate of x, with same dtype as y.
-        /// This is a scalar if x is a scalar.
+        ///	The complex conjugate of x, with same dtype as y.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray conj(NDarray @out = null, NDarray @where = null)
         {
@@ -6071,34 +6851,36 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns the discrete, linear convolution of two one-dimensional sequences.
-        /// 
-        /// The convolution operator is often seen in signal processing, where it
-        /// models the effect of a linear time-invariant system on a signal [1].  In
-        /// probability theory, the sum of two independent random variables is
-        /// distributed according to the convolution of their individual
-        /// distributions.
-        /// 
-        /// If v is longer than a, the arrays are swapped before computation.
-        /// 
-        /// Notes
-        /// 
-        /// The discrete convolution operation is defined as
-        /// 
-        /// It can be shown that a convolution  in time/space
-        /// is equivalent to the multiplication  in the Fourier
-        /// domain, after appropriate padding (padding is necessary to prevent
-        /// circular convolution).  Since multiplication is more efficient (faster)
-        /// than convolution, the function scipy.signal.fftconvolve exploits the
-        /// FFT to calculate the convolution of large data-sets.
-        /// 
-        /// References
+        ///	Returns the discrete, linear convolution of two one-dimensional sequences.<br></br>
+        ///	
+        ///	The convolution operator is often seen in signal processing, where it
+        ///	models the effect of a linear time-invariant system on a signal [1].<br></br>
+        ///	  In
+        ///	probability theory, the sum of two independent random variables is
+        ///	distributed according to the convolution of their individual
+        ///	distributions.<br></br>
+        ///	
+        ///	If v is longer than a, the arrays are swapped before computation.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The discrete convolution operation is defined as
+        ///	
+        ///	It can be shown that a convolution  in time/space
+        ///	is equivalent to the multiplication  in the Fourier
+        ///	domain, after appropriate padding (padding is necessary to prevent
+        ///	circular convolution).<br></br>
+        ///	  Since multiplication is more efficient (faster)
+        ///	than convolution, the function scipy.signal.fftconvolve exploits the
+        ///	FFT to calculate the convolution of large data-sets.<br></br>
+        ///	
+        ///	References
         /// </summary>
         /// <param name="v">
-        /// Second one-dimensional input array.
+        ///	Second one-dimensional input array.
         /// </param>
         /// <returns>
-        /// Discrete, linear convolution of a and v.
+        ///	Discrete, linear convolution of a and v.
         /// </returns>
         public NDarray convolve(NDarray v, string mode = "full")
         {
@@ -6108,33 +6890,42 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Clip (limit) the values in an array.
-        /// 
-        /// Given an interval, values outside the interval are clipped to
-        /// the interval edges.  For example, if an interval of [0, 1]
-        /// is specified, values smaller than 0 become 0, and values larger
-        /// than 1 become 1.
+        ///	Clip (limit) the values in an array.<br></br>
+        ///	
+        ///	Given an interval, values outside the interval are clipped to
+        ///	the interval edges.<br></br>
+        ///	  For example, if an interval of [0, 1]
+        ///	is specified, values smaller than 0 become 0, and values larger
+        ///	than 1 become 1.
         /// </summary>
         /// <param name="a_min">
-        /// Minimum value. If None, clipping is not performed on lower
-        /// interval edge. Not more than one of a_min and a_max may be
-        /// None.
+        ///	Minimum value.<br></br>
+        ///	If None, clipping is not performed on lower
+        ///	interval edge.<br></br>
+        ///	Not more than one of a_min and a_max may be
+        ///	None.
         /// </param>
         /// <param name="a_max">
-        /// Maximum value. If None, clipping is not performed on upper
-        /// interval edge. Not more than one of a_min and a_max may be
-        /// None. If a_min or a_max are array_like, then the three
-        /// arrays will be broadcasted to match their shapes.
+        ///	Maximum value.<br></br>
+        ///	If None, clipping is not performed on upper
+        ///	interval edge.<br></br>
+        ///	Not more than one of a_min and a_max may be
+        ///	None.<br></br>
+        ///	If a_min or a_max are array_like, then the three
+        ///	arrays will be broadcasted to match their shapes.
         /// </param>
         /// <param name="out">
-        /// The results will be placed in this array. It may be the input
-        /// array for in-place clipping.  out must be of the right shape
-        /// to hold the output.  Its type is preserved.
+        ///	The results will be placed in this array.<br></br>
+        ///	It may be the input
+        ///	array for in-place clipping.<br></br>
+        ///	out must be of the right shape
+        ///	to hold the output.<br></br>
+        ///	Its type is preserved.
         /// </param>
         /// <returns>
-        /// An array with the elements of a, but where values
-        /// &lt; a_min are replaced with a_min, and those &gt; a_max
-        /// with a_max.
+        ///	An array with the elements of a, but where values
+        ///	&lt; a_min are replaced with a_min, and those &gt; a_max
+        ///	with a_max.
         /// </returns>
         public NDarray clip(NDarray a_min, NDarray a_max, NDarray @out = null)
         {
@@ -6144,33 +6935,41 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the non-negative square-root of an array, element-wise.
-        /// 
-        /// Notes
-        /// 
-        /// sqrt has–consistent with common convention–as its branch cut the
-        /// real “interval” [-inf, 0), and is continuous from above on it.
-        /// A branch cut is a curve in the complex plane across which a given
-        /// complex function fails to be continuous.
+        ///	Return the non-negative square-root of an array, element-wise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	sqrt has–consistent with common convention–as its branch cut the
+        ///	real “interval” [-inf, 0), and is continuous from above on it.<br></br>
+        ///	
+        ///	A branch cut is a curve in the complex plane across which a given
+        ///	complex function fails to be continuous.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// An array of the same shape as x, containing the positive
-        /// square-root of each element in x.  If any element in x is
-        /// complex, a complex array is returned (and the square-roots of
-        /// negative reals are calculated).  If all of the elements in x
-        /// are real, so is y, with negative elements returning nan.
-        /// If out was provided, y is a reference to it.
-        /// This is a scalar if x is a scalar.
+        ///	An array of the same shape as x, containing the positive
+        ///	square-root of each element in x.<br></br>
+        ///	  If any element in x is
+        ///	complex, a complex array is returned (and the square-roots of
+        ///	negative reals are calculated).<br></br>
+        ///	  If all of the elements in x
+        ///	are real, so is y, with negative elements returning nan.<br></br>
+        ///	
+        ///	If out was provided, y is a reference to it.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray sqrt(NDarray @out = null, NDarray @where = null)
         {
@@ -6180,23 +6979,28 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the cube-root of an array, element-wise.
+        ///	Return the cube-root of an array, element-wise.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// An array of the same shape as x, containing the cube
-        /// cube-root of each element in x.
-        /// If out was provided, y is a reference to it.
-        /// This is a scalar if x is a scalar.
+        ///	An array of the same shape as x, containing the cube
+        ///	cube-root of each element in x.<br></br>
+        ///	
+        ///	If out was provided, y is a reference to it.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray cbrt(NDarray @out = null, NDarray @where = null)
         {
@@ -6206,21 +7010,25 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the element-wise square of the input.
+        ///	Return the element-wise square of the input.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Element-wise x*x, of the same shape and dtype as x.
-        /// This is a scalar if x is a scalar.
+        ///	Element-wise x*x, of the same shape and dtype as x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray square(NDarray @out = null, NDarray @where = null)
         {
@@ -6230,25 +7038,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Calculate the absolute value element-wise.
-        /// 
-        /// np.abs is a shorthand for this function.
+        ///	Calculate the absolute value element-wise.<br></br>
+        ///	
+        ///	np.abs is a shorthand for this function.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// An ndarray containing the absolute value of
-        /// each element in x.  For complex input, a + ib, the
-        /// absolute value is .
-        /// This is a scalar if x is a scalar.
+        ///	An ndarray containing the absolute value of
+        ///	each element in x.<br></br>
+        ///	  For complex input, a + ib, the
+        ///	absolute value is .
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray absolute(NDarray @out = null, NDarray @where = null)
         {
@@ -6258,25 +7070,30 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the absolute values element-wise.
-        /// 
-        /// This function returns the absolute values (positive magnitude) of the
-        /// data in x. Complex values are not handled, use absolute to find the
-        /// absolute values of complex data.
+        ///	Compute the absolute values element-wise.<br></br>
+        ///	
+        ///	This function returns the absolute values (positive magnitude) of the
+        ///	data in x.<br></br>
+        ///	 Complex values are not handled, use absolute to find the
+        ///	absolute values of complex data.
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The absolute values of x, the returned values are always floats.
-        /// This is a scalar if x is a scalar.
+        ///	The absolute values of x, the returned values are always floats.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray fabs(NDarray @out = null, NDarray @where = null)
         {
@@ -6286,35 +7103,41 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns an element-wise indication of the sign of a number.
-        /// 
-        /// The sign function returns -1 if x &lt; 0, 0 if x==0, 1 if x &gt; 0.  nan
-        /// is returned for nan inputs.
-        /// 
-        /// For complex inputs, the sign function returns
-        /// sign(x.real) + 0j if x.real != 0 else sign(x.imag) + 0j.
-        /// 
-        /// complex(nan, 0) is returned for complex nan inputs.
-        /// 
-        /// Notes
-        /// 
-        /// There is more than one definition of sign in common use for complex
-        /// numbers.  The definition used here is equivalent to 
-        /// which is different from a common alternative, .
+        ///	Returns an element-wise indication of the sign of a number.<br></br>
+        ///	
+        ///	The sign function returns -1 if x &lt; 0, 0 if x==0, 1 if x &gt; 0.<br></br>
+        ///	  nan
+        ///	is returned for nan inputs.<br></br>
+        ///	
+        ///	For complex inputs, the sign function returns
+        ///	sign(x.real) + 0j if x.real != 0 else sign(x.imag) + 0j.<br></br>
+        ///	
+        ///	complex(nan, 0) is returned for complex nan inputs.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	There is more than one definition of sign in common use for complex
+        ///	numbers.<br></br>
+        ///	  The definition used here is equivalent to 
+        ///	which is different from a common alternative, .
         /// </summary>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The sign of x.
-        /// This is a scalar if x is a scalar.
+        ///	The sign of x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray sign(NDarray @out = null, NDarray @where = null)
         {
@@ -6324,32 +7147,35 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the Heaviside step function.
-        /// 
-        /// The Heaviside step function is defined as:
-        /// 
-        /// where x2 is often taken to be 0.5, but 0 and 1 are also sometimes used.
-        /// 
-        /// Notes
-        /// 
-        /// References
+        ///	Compute the Heaviside step function.<br></br>
+        ///	
+        ///	The Heaviside step function is defined as:
+        ///	
+        ///	where x2 is often taken to be 0.5, but 0 and 1 are also sometimes used.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	References
         /// </summary>
         /// <param name="x2">
-        /// The value of the function when x1 is 0.
+        ///	The value of the function when x1 is 0.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The output array, element-wise Heaviside step function of x1.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The output array, element-wise Heaviside step function of x1.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray heaviside(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
@@ -6359,38 +7185,47 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Element-wise maximum of array elements.
-        /// 
-        /// Compare two arrays and returns a new array containing the element-wise
-        /// maxima. If one of the elements being compared is a NaN, then that
-        /// element is returned. If both elements are NaNs then the first is
-        /// returned. The latter distinction is important for complex NaNs, which
-        /// are defined as at least one of the real or imaginary parts being a NaN.
-        /// The net effect is that NaNs are propagated.
-        /// 
-        /// Notes
-        /// 
-        /// The maximum is equivalent to np.where(x1 &gt;= x2, x1, x2) when
-        /// neither x1 nor x2 are nans, but it is faster and does proper
-        /// broadcasting.
+        ///	Element-wise maximum of array elements.<br></br>
+        ///	
+        ///	Compare two arrays and returns a new array containing the element-wise
+        ///	maxima.<br></br>
+        ///	 If one of the elements being compared is a NaN, then that
+        ///	element is returned.<br></br>
+        ///	 If both elements are NaNs then the first is
+        ///	returned.<br></br>
+        ///	 The latter distinction is important for complex NaNs, which
+        ///	are defined as at least one of the real or imaginary parts being a NaN.<br></br>
+        ///	
+        ///	The net effect is that NaNs are propagated.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The maximum is equivalent to np.where(x1 &gt;= x2, x1, x2) when
+        ///	neither x1 nor x2 are nans, but it is faster and does proper
+        ///	broadcasting.
         /// </summary>
         /// <param name="x1">
-        /// The arrays holding the elements to be compared. They must have
-        /// the same shape, or shapes that can be broadcast to a single shape.
+        ///	The arrays holding the elements to be compared.<br></br>
+        ///	They must have
+        ///	the same shape, or shapes that can be broadcast to a single shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The maximum of x1 and x2, element-wise.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The maximum of x1 and x2, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray maximum(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -6400,38 +7235,47 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Element-wise minimum of array elements.
-        /// 
-        /// Compare two arrays and returns a new array containing the element-wise
-        /// minima. If one of the elements being compared is a NaN, then that
-        /// element is returned. If both elements are NaNs then the first is
-        /// returned. The latter distinction is important for complex NaNs, which
-        /// are defined as at least one of the real or imaginary parts being a NaN.
-        /// The net effect is that NaNs are propagated.
-        /// 
-        /// Notes
-        /// 
-        /// The minimum is equivalent to np.where(x1 &lt;= x2, x1, x2) when
-        /// neither x1 nor x2 are NaNs, but it is faster and does proper
-        /// broadcasting.
+        ///	Element-wise minimum of array elements.<br></br>
+        ///	
+        ///	Compare two arrays and returns a new array containing the element-wise
+        ///	minima.<br></br>
+        ///	 If one of the elements being compared is a NaN, then that
+        ///	element is returned.<br></br>
+        ///	 If both elements are NaNs then the first is
+        ///	returned.<br></br>
+        ///	 The latter distinction is important for complex NaNs, which
+        ///	are defined as at least one of the real or imaginary parts being a NaN.<br></br>
+        ///	
+        ///	The net effect is that NaNs are propagated.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The minimum is equivalent to np.where(x1 &lt;= x2, x1, x2) when
+        ///	neither x1 nor x2 are NaNs, but it is faster and does proper
+        ///	broadcasting.
         /// </summary>
         /// <param name="x1">
-        /// The arrays holding the elements to be compared. They must have
-        /// the same shape, or shapes that can be broadcast to a single shape.
+        ///	The arrays holding the elements to be compared.<br></br>
+        ///	They must have
+        ///	the same shape, or shapes that can be broadcast to a single shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The minimum of x1 and x2, element-wise.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The minimum of x1 and x2, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray minimum(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -6441,37 +7285,46 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Element-wise maximum of array elements.
-        /// 
-        /// Compare two arrays and returns a new array containing the element-wise
-        /// maxima. If one of the elements being compared is a NaN, then the
-        /// non-nan element is returned. If both elements are NaNs then the first
-        /// is returned.  The latter distinction is important for complex NaNs,
-        /// which are defined as at least one of the real or imaginary parts being
-        /// a NaN. The net effect is that NaNs are ignored when possible.
-        /// 
-        /// Notes
-        /// 
-        /// The fmax is equivalent to np.where(x1 &gt;= x2, x1, x2) when neither
-        /// x1 nor x2 are NaNs, but it is faster and does proper broadcasting.
+        ///	Element-wise maximum of array elements.<br></br>
+        ///	
+        ///	Compare two arrays and returns a new array containing the element-wise
+        ///	maxima.<br></br>
+        ///	 If one of the elements being compared is a NaN, then the
+        ///	non-nan element is returned.<br></br>
+        ///	 If both elements are NaNs then the first
+        ///	is returned.<br></br>
+        ///	  The latter distinction is important for complex NaNs,
+        ///	which are defined as at least one of the real or imaginary parts being
+        ///	a NaN.<br></br>
+        ///	 The net effect is that NaNs are ignored when possible.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The fmax is equivalent to np.where(x1 &gt;= x2, x1, x2) when neither
+        ///	x1 nor x2 are NaNs, but it is faster and does proper broadcasting.
         /// </summary>
         /// <param name="x1">
-        /// The arrays holding the elements to be compared. They must have
-        /// the same shape.
+        ///	The arrays holding the elements to be compared.<br></br>
+        ///	They must have
+        ///	the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The maximum of x1 and x2, element-wise.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The maximum of x1 and x2, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray fmax(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -6481,37 +7334,46 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Element-wise minimum of array elements.
-        /// 
-        /// Compare two arrays and returns a new array containing the element-wise
-        /// minima. If one of the elements being compared is a NaN, then the
-        /// non-nan element is returned. If both elements are NaNs then the first
-        /// is returned.  The latter distinction is important for complex NaNs,
-        /// which are defined as at least one of the real or imaginary parts being
-        /// a NaN. The net effect is that NaNs are ignored when possible.
-        /// 
-        /// Notes
-        /// 
-        /// The fmin is equivalent to np.where(x1 &lt;= x2, x1, x2) when neither
-        /// x1 nor x2 are NaNs, but it is faster and does proper broadcasting.
+        ///	Element-wise minimum of array elements.<br></br>
+        ///	
+        ///	Compare two arrays and returns a new array containing the element-wise
+        ///	minima.<br></br>
+        ///	 If one of the elements being compared is a NaN, then the
+        ///	non-nan element is returned.<br></br>
+        ///	 If both elements are NaNs then the first
+        ///	is returned.<br></br>
+        ///	  The latter distinction is important for complex NaNs,
+        ///	which are defined as at least one of the real or imaginary parts being
+        ///	a NaN.<br></br>
+        ///	 The net effect is that NaNs are ignored when possible.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The fmin is equivalent to np.where(x1 &lt;= x2, x1, x2) when neither
+        ///	x1 nor x2 are NaNs, but it is faster and does proper broadcasting.
         /// </summary>
         /// <param name="x1">
-        /// The arrays holding the elements to be compared. They must have
-        /// the same shape.
+        ///	The arrays holding the elements to be compared.<br></br>
+        ///	They must have
+        ///	the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// The minimum of x1 and x2, element-wise.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	The minimum of x1 and x2, element-wise.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray fmin(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -6521,31 +7383,35 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Replace NaN with zero and infinity with large finite numbers.
-        /// 
-        /// If x is inexact, NaN is replaced by zero, and infinity and -infinity
-        /// replaced by the respectively largest and most negative finite floating
-        /// point values representable by x.dtype.
-        /// 
-        /// For complex dtypes, the above is applied to each of the real and
-        /// imaginary components of x separately.
-        /// 
-        /// If x is not inexact, then no replacements are made.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754). This means that Not a Number is not equivalent to infinity.
+        ///	Replace NaN with zero and infinity with large finite numbers.<br></br>
+        ///	
+        ///	If x is inexact, NaN is replaced by zero, and infinity and -infinity
+        ///	replaced by the respectively largest and most negative finite floating
+        ///	point values representable by x.dtype.<br></br>
+        ///	
+        ///	For complex dtypes, the above is applied to each of the real and
+        ///	imaginary components of x separately.<br></br>
+        ///	
+        ///	If x is not inexact, then no replacements are made.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	 This means that Not a Number is not equivalent to infinity.
         /// </summary>
         /// <param name="copy">
-        /// Whether to create a copy of x (True) or to replace values
-        /// in-place (False). The in-place operation only occurs if
-        /// casting to an array does not require a copy.
-        /// Default is True.
+        ///	Whether to create a copy of x (True) or to replace values
+        ///	in-place (False).<br></br>
+        ///	The in-place operation only occurs if
+        ///	casting to an array does not require a copy.<br></br>
+        ///	
+        ///	Default is True.
         /// </param>
         /// <returns>
-        /// x, with the non-finite values replaced. If copy is False, this may
-        /// be x itself.
+        ///	x, with the non-finite values replaced.<br></br>
+        ///	 If copy is False, this may
+        ///	be x itself.
         /// </returns>
         public NDarray nan_to_num(bool? copy = true)
         {
@@ -6555,25 +7421,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// If complex input returns a real array if complex parts are close to zero.
-        /// 
-        /// “Close to zero” is defined as tol * (machine epsilon of the type for
-        /// a).
-        /// 
-        /// Notes
-        /// 
-        /// Machine epsilon varies from machine to machine and between data types
-        /// but Python floats on most platforms have a machine epsilon equal to
-        /// 2.2204460492503131e-16.  You can use ‘np.finfo(float).eps’ to print
-        /// out the machine epsilon for floats.
+        ///	If complex input returns a real array if complex parts are close to zero.<br></br>
+        ///	
+        ///	“Close to zero” is defined as tol * (machine epsilon of the type for
+        ///	a).<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Machine epsilon varies from machine to machine and between data types
+        ///	but Python floats on most platforms have a machine epsilon equal to
+        ///	2.2204460492503131e-16.  You can use ‘np.finfo(float).eps’ to print
+        ///	out the machine epsilon for floats.
         /// </summary>
         /// <param name="tol">
-        /// Tolerance in machine epsilons for the complex part of the elements
-        /// in the array.
+        ///	Tolerance in machine epsilons for the complex part of the elements
+        ///	in the array.
         /// </param>
         /// <returns>
-        /// If a is real, the type of a is used for the output.  If a
-        /// has complex elements, the returned type is float.
+        ///	If a is real, the type of a is used for the output.<br></br>
+        ///	  If a
+        ///	has complex elements, the returned type is float.
         /// </returns>
         public NDarray real_if_close(float tol = 100)
         {
@@ -6584,38 +7451,43 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// One-dimensional linear interpolation.
-        /// 
-        /// Returns the one-dimensional piecewise linear interpolant to a function
-        /// with given discrete data points (xp, fp), evaluated at x.
-        /// 
-        /// Notes
-        /// 
-        /// Does not check that the x-coordinate sequence xp is increasing.
-        /// If xp is not increasing, the results are nonsense.
-        /// A simple check for increasing is:
+        ///	One-dimensional linear interpolation.<br></br>
+        ///	
+        ///	Returns the one-dimensional piecewise linear interpolant to a function
+        ///	with given discrete data points (xp, fp), evaluated at x.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Does not check that the x-coordinate sequence xp is increasing.<br></br>
+        ///	
+        ///	If xp is not increasing, the results are nonsense.<br></br>
+        ///	
+        ///	A simple check for increasing is:
         /// </summary>
         /// <param name="xp">
-        /// The x-coordinates of the data points, must be increasing if argument
-        /// period is not specified. Otherwise, xp is internally sorted after
-        /// normalizing the periodic boundaries with xp = xp % period.
+        ///	The x-coordinates of the data points, must be increasing if argument
+        ///	period is not specified.<br></br>
+        ///	Otherwise, xp is internally sorted after
+        ///	normalizing the periodic boundaries with xp = xp % period.
         /// </param>
         /// <param name="fp">
-        /// The y-coordinates of the data points, same length as xp.
+        ///	The y-coordinates of the data points, same length as xp.
         /// </param>
         /// <param name="left">
-        /// Value to return for x &lt; xp[0], default is fp[0].
+        ///	Value to return for x &lt; xp[0], default is fp[0].
         /// </param>
         /// <param name="right">
-        /// Value to return for x &gt; xp[-1], default is fp[-1].
+        ///	Value to return for x &gt; xp[-1], default is fp[-1].
         /// </param>
         /// <param name="period">
-        /// A period for the x-coordinates. This parameter allows the proper
-        /// interpolation of angular x-coordinates. Parameters left and right
-        /// are ignored if period is specified.
+        ///	A period for the x-coordinates.<br></br>
+        ///	This parameter allows the proper
+        ///	interpolation of angular x-coordinates.<br></br>
+        ///	Parameters left and right
+        ///	are ignored if period is specified.
         /// </param>
         /// <returns>
-        /// The interpolated values, same shape as x.
+        ///	The interpolated values, same shape as x.
         /// </returns>
         public float or complex (corresponding to fp) or ndarray interp(1-D sequence of floats xp, 1-D sequence of float or complex fp, optional float or complex corresponding to fp left = null, optional float or complex corresponding to fp right = null, None or float period = null)
         {
@@ -6626,86 +7498,92 @@ namespace Numpy
         */
         
         /// <summary>
-        /// Pads an array.
-        /// 
-        /// Notes
-        /// 
-        /// For an array with rank greater than 1, some of the padding of later
-        /// axes is calculated from padding of previous axes.  This is easiest to
-        /// think about with a rank 2 array where the corners of the padded array
-        /// are calculated by using padded values from the first axis.
-        /// 
-        /// The padding function, if used, should return a rank 1 array equal in
-        /// length to the vector argument with padded values replaced. It has the
-        /// following signature:
-        /// 
-        /// where
+        ///	Pads an array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	For an array with rank greater than 1, some of the padding of later
+        ///	axes is calculated from padding of previous axes.<br></br>
+        ///	  This is easiest to
+        ///	think about with a rank 2 array where the corners of the padded array
+        ///	are calculated by using padded values from the first axis.<br></br>
+        ///	
+        ///	The padding function, if used, should return a rank 1 array equal in
+        ///	length to the vector argument with padded values replaced.<br></br>
+        ///	 It has the
+        ///	following signature:
+        ///	
+        ///	where
         /// </summary>
         /// <param name="pad_width">
-        /// Number of values padded to the edges of each axis.
-        /// ((before_1, after_1), … (before_N, after_N)) unique pad widths
-        /// for each axis.
-        /// ((before, after),) yields same before and after pad for each axis.
-        /// (pad,) or int is a shortcut for before = after = pad width for all
-        /// axes.
+        ///	Number of values padded to the edges of each axis.<br></br>
+        ///	
+        ///	((before_1, after_1), … (before_N, after_N)) unique pad widths
+        ///	for each axis.<br></br>
+        ///	
+        ///	((before, after),) yields same before and after pad for each axis.<br></br>
+        ///	
+        ///	(pad,) or int is a shortcut for before = after = pad width for all
+        ///	axes.
         /// </param>
         /// <param name="mode">
-        /// One of the following string values or a user supplied function.
+        ///	One of the following string values or a user supplied function.
         /// </param>
         /// <param name="stat_length">
-        /// Used in ‘maximum’, ‘mean’, ‘median’, and ‘minimum’.  Number of
-        /// values at edge of each axis used to calculate the statistic value.
-        /// 
-        /// ((before_1, after_1), … (before_N, after_N)) unique statistic
-        /// lengths for each axis.
-        /// 
-        /// ((before, after),) yields same before and after statistic lengths
-        /// for each axis.
-        /// 
-        /// (stat_length,) or int is a shortcut for before = after = statistic
-        /// length for all axes.
-        /// 
-        /// Default is None, to use the entire axis.
+        ///	Used in ‘maximum’, ‘mean’, ‘median’, and ‘minimum’.  Number of
+        ///	values at edge of each axis used to calculate the statistic value.<br></br>
+        ///	
+        ///	((before_1, after_1), … (before_N, after_N)) unique statistic
+        ///	lengths for each axis.<br></br>
+        ///	
+        ///	((before, after),) yields same before and after statistic lengths
+        ///	for each axis.<br></br>
+        ///	
+        ///	(stat_length,) or int is a shortcut for before = after = statistic
+        ///	length for all axes.<br></br>
+        ///	
+        ///	Default is None, to use the entire axis.
         /// </param>
         /// <param name="constant_values">
-        /// Used in ‘constant’.  The values to set the padded values for each
-        /// axis.
-        /// 
-        /// ((before_1, after_1), … (before_N, after_N)) unique pad constants
-        /// for each axis.
-        /// 
-        /// ((before, after),) yields same before and after constants for each
-        /// axis.
-        /// 
-        /// (constant,) or int is a shortcut for before = after = constant for
-        /// all axes.
-        /// 
-        /// Default is 0.
+        ///	Used in ‘constant’.  The values to set the padded values for each
+        ///	axis.<br></br>
+        ///	
+        ///	((before_1, after_1), … (before_N, after_N)) unique pad constants
+        ///	for each axis.<br></br>
+        ///	
+        ///	((before, after),) yields same before and after constants for each
+        ///	axis.<br></br>
+        ///	
+        ///	(constant,) or int is a shortcut for before = after = constant for
+        ///	all axes.<br></br>
+        ///	
+        ///	Default is 0.
         /// </param>
         /// <param name="end_values">
-        /// Used in ‘linear_ramp’.  The values used for the ending value of the
-        /// linear_ramp and that will form the edge of the padded array.
-        /// 
-        /// ((before_1, after_1), … (before_N, after_N)) unique end values
-        /// for each axis.
-        /// 
-        /// ((before, after),) yields same before and after end values for each
-        /// axis.
-        /// 
-        /// (constant,) or int is a shortcut for before = after = end value for
-        /// all axes.
-        /// 
-        /// Default is 0.
+        ///	Used in ‘linear_ramp’.  The values used for the ending value of the
+        ///	linear_ramp and that will form the edge of the padded array.<br></br>
+        ///	
+        ///	((before_1, after_1), … (before_N, after_N)) unique end values
+        ///	for each axis.<br></br>
+        ///	
+        ///	((before, after),) yields same before and after end values for each
+        ///	axis.<br></br>
+        ///	
+        ///	(constant,) or int is a shortcut for before = after = end value for
+        ///	all axes.<br></br>
+        ///	
+        ///	Default is 0.
         /// </param>
         /// <param name="reflect_type">
-        /// Used in ‘reflect’, and ‘symmetric’.  The ‘even’ style is the
-        /// default with an unaltered reflection around the edge value.  For
-        /// the ‘odd’ style, the extended part of the array is created by
-        /// subtracting the reflected values from two times the edge value.
+        ///	Used in ‘reflect’, and ‘symmetric’.  The ‘even’ style is the
+        ///	default with an unaltered reflection around the edge value.<br></br>
+        ///	For
+        ///	the ‘odd’ style, the extended part of the array is created by
+        ///	subtracting the reflected values from two times the edge value.
         /// </param>
         /// <returns>
-        /// Padded array of rank equal to array with shape increased
-        /// according to pad_width.
+        ///	Padded array of rank equal to array with shape increased
+        ///	according to pad_width.
         /// </returns>
         public NDarray pad(NDarray pad_width, string mode, int[] stat_length = null, int[] constant_values = null, int[] end_values = null, string reflect_type = null)
         {
@@ -6715,38 +7593,43 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test whether each element of a 1-D array is also present in a second array.
-        /// 
-        /// Returns a boolean array the same length as ar1 that is True
-        /// where an element of ar1 is in ar2 and False otherwise.
-        /// 
-        /// We recommend using isin instead of in1d for new code.
-        /// 
-        /// Notes
-        /// 
-        /// in1d can be considered as an element-wise function version of the
-        /// python keyword in, for 1-D sequences. in1d(a, b) is roughly
-        /// equivalent to np.array([item in b for item in a]).
-        /// However, this idea fails if ar2 is a set, or similar (non-sequence)
-        /// container:  As ar2 is converted to an array, in those cases
-        /// asarray(ar2) is an object array rather than the expected array of
-        /// contained values.
+        ///	Test whether each element of a 1-D array is also present in a second array.<br></br>
+        ///	
+        ///	Returns a boolean array the same length as ar1 that is True
+        ///	where an element of ar1 is in ar2 and False otherwise.<br></br>
+        ///	
+        ///	We recommend using isin instead of in1d for new code.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	in1d can be considered as an element-wise function version of the
+        ///	python keyword in, for 1-D sequences.<br></br>
+        ///	 in1d(a, b) is roughly
+        ///	equivalent to np.array([item in b for item in a]).<br></br>
+        ///	
+        ///	However, this idea fails if ar2 is a set, or similar (non-sequence)
+        ///	container:  As ar2 is converted to an array, in those cases
+        ///	asarray(ar2) is an object array rather than the expected array of
+        ///	contained values.
         /// </summary>
         /// <param name="ar2">
-        /// The values against which to test each value of ar1.
+        ///	The values against which to test each value of ar1.
         /// </param>
         /// <param name="assume_unique">
-        /// If True, the input arrays are both assumed to be unique, which
-        /// can speed up the calculation.  Default is False.
+        ///	If True, the input arrays are both assumed to be unique, which
+        ///	can speed up the calculation.<br></br>
+        ///	Default is False.
         /// </param>
         /// <param name="invert">
-        /// If True, the values in the returned array are inverted (that is,
-        /// False where an element of ar1 is in ar2 and True otherwise).
-        /// Default is False. np.in1d(a, b, invert=True) is equivalent
-        /// to (but is faster than) np.invert(in1d(a, b)).
+        ///	If True, the values in the returned array are inverted (that is,
+        ///	False where an element of ar1 is in ar2 and True otherwise).<br></br>
+        ///	
+        ///	Default is False.<br></br>
+        ///	np.in1d(a, b, invert=True) is equivalent
+        ///	to (but is faster than) np.invert(in1d(a, b)).
         /// </param>
         /// <returns>
-        /// The values ar1[in1d] are in ar2.
+        ///	The values ar1[in1d] are in ar2.
         /// </returns>
         public NDarray in1d(NDarray ar2, bool? assume_unique = false, bool? invert = false)
         {
@@ -6756,32 +7639,36 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Find the intersection of two arrays.
-        /// 
-        /// Return the sorted, unique values that are in both of the input arrays.
+        ///	Find the intersection of two arrays.<br></br>
+        ///	
+        ///	Return the sorted, unique values that are in both of the input arrays.
         /// </summary>
         /// <param name="ar1">
-        /// Input arrays. Will be flattened if not already 1D.
+        ///	Input arrays.<br></br>
+        ///	Will be flattened if not already 1D.
         /// </param>
         /// <param name="assume_unique">
-        /// If True, the input arrays are both assumed to be unique, which
-        /// can speed up the calculation.  Default is False.
+        ///	If True, the input arrays are both assumed to be unique, which
+        ///	can speed up the calculation.<br></br>
+        ///	Default is False.
         /// </param>
         /// <param name="return_indices">
-        /// If True, the indices which correspond to the intersection of the two
-        /// arrays are returned. The first instance of a value is used if there are
-        /// multiple. Default is False.
+        ///	If True, the indices which correspond to the intersection of the two
+        ///	arrays are returned.<br></br>
+        ///	The first instance of a value is used if there are
+        ///	multiple.<br></br>
+        ///	Default is False.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// intersect1d
-        /// Sorted 1D array of common and unique elements.
+        ///	Sorted 1D array of common and unique elements.
         /// comm1
-        /// The indices of the first occurrences of the common values in ar1.
-        /// Only provided if return_indices is True.
+        ///	The indices of the first occurrences of the common values in ar1.
+        ///	Only provided if return_indices is True.
         /// comm2
-        /// The indices of the first occurrences of the common values in ar2.
-        /// Only provided if return_indices is True.
+        ///	The indices of the first occurrences of the common values in ar2.
+        ///	Only provided if return_indices is True.
         /// </returns>
         public (NDarray, NDarray, NDarray) intersect1d(NDarray ar1, bool assume_unique = false, bool return_indices = false)
         {
@@ -6791,41 +7678,52 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Calculates element in test_elements, broadcasting over element only.
-        /// Returns a boolean array of the same shape as element that is True
-        /// where an element of element is in test_elements and False otherwise.
-        /// 
-        /// Notes
-        /// 
-        /// isin is an element-wise function version of the python keyword in.
-        /// isin(a, b) is roughly equivalent to
-        /// np.array([item in b for item in a]) if a and b are 1-D sequences.
-        /// 
-        /// element and test_elements are converted to arrays if they are not
-        /// already. If test_elements is a set (or other non-sequence collection)
-        /// it will be converted to an object array with one element, rather than an
-        /// array of the values contained in test_elements. This is a consequence
-        /// of the array constructor’s way of handling non-sequence collections.
-        /// Converting the set to a list usually gives the desired behavior.
+        ///	Calculates element in test_elements, broadcasting over element only.<br></br>
+        ///	
+        ///	Returns a boolean array of the same shape as element that is True
+        ///	where an element of element is in test_elements and False otherwise.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	isin is an element-wise function version of the python keyword in.<br></br>
+        ///	
+        ///	isin(a, b) is roughly equivalent to
+        ///	np.array([item in b for item in a]) if a and b are 1-D sequences.<br></br>
+        ///	
+        ///	element and test_elements are converted to arrays if they are not
+        ///	already.<br></br>
+        ///	 If test_elements is a set (or other non-sequence collection)
+        ///	it will be converted to an object array with one element, rather than an
+        ///	array of the values contained in test_elements.<br></br>
+        ///	 This is a consequence
+        ///	of the array constructor’s way of handling non-sequence collections.<br></br>
+        ///	
+        ///	Converting the set to a list usually gives the desired behavior.
         /// </summary>
         /// <param name="test_elements">
-        /// The values against which to test each value of element.
-        /// This argument is flattened if it is an array or array_like.
-        /// See notes for behavior with non-array-like parameters.
+        ///	The values against which to test each value of element.<br></br>
+        ///	
+        ///	This argument is flattened if it is an array or array_like.<br></br>
+        ///	
+        ///	See notes for behavior with non-array-like parameters.
         /// </param>
         /// <param name="assume_unique">
-        /// If True, the input arrays are both assumed to be unique, which
-        /// can speed up the calculation.  Default is False.
+        ///	If True, the input arrays are both assumed to be unique, which
+        ///	can speed up the calculation.<br></br>
+        ///	Default is False.
         /// </param>
         /// <param name="invert">
-        /// If True, the values in the returned array are inverted, as if
-        /// calculating element not in test_elements. Default is False.
-        /// np.isin(a, b, invert=True) is equivalent to (but faster
-        /// than) np.invert(np.isin(a, b)).
+        ///	If True, the values in the returned array are inverted, as if
+        ///	calculating element not in test_elements.<br></br>
+        ///	Default is False.<br></br>
+        ///	
+        ///	np.isin(a, b, invert=True) is equivalent to (but faster
+        ///	than) np.invert(np.isin(a, b)).
         /// </param>
         /// <returns>
-        /// Has the same shape as element. The values element[isin]
-        /// are in test_elements.
+        ///	Has the same shape as element.<br></br>
+        ///	 The values element[isin]
+        ///	are in test_elements.
         /// </returns>
         public NDarray isin(NDarray test_elements, bool? assume_unique = false, bool? invert = false)
         {
@@ -6835,21 +7733,22 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Find the set difference of two arrays.
-        /// 
-        /// Return the unique values in ar1 that are not in ar2.
+        ///	Find the set difference of two arrays.<br></br>
+        ///	
+        ///	Return the unique values in ar1 that are not in ar2.
         /// </summary>
         /// <param name="ar2">
-        /// Input comparison array.
+        ///	Input comparison array.
         /// </param>
         /// <param name="assume_unique">
-        /// If True, the input arrays are both assumed to be unique, which
-        /// can speed up the calculation.  Default is False.
+        ///	If True, the input arrays are both assumed to be unique, which
+        ///	can speed up the calculation.<br></br>
+        ///	Default is False.
         /// </param>
         /// <returns>
-        /// 1D array of values in ar1 that are not in ar2. The result
-        /// is sorted when assume_unique=False, but otherwise only sorted
-        /// if the input is sorted.
+        ///	1D array of values in ar1 that are not in ar2. The result
+        ///	is sorted when assume_unique=False, but otherwise only sorted
+        ///	if the input is sorted.
         /// </returns>
         public NDarray setdiff1d(NDarray ar2, bool assume_unique = false)
         {
@@ -6859,21 +7758,22 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Find the set exclusive-or of two arrays.
-        /// 
-        /// Return the sorted, unique values that are in only one (not both) of the
-        /// input arrays.
+        ///	Find the set exclusive-or of two arrays.<br></br>
+        ///	
+        ///	Return the sorted, unique values that are in only one (not both) of the
+        ///	input arrays.
         /// </summary>
         /// <param name="ar1">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <param name="assume_unique">
-        /// If True, the input arrays are both assumed to be unique, which
-        /// can speed up the calculation.  Default is False.
+        ///	If True, the input arrays are both assumed to be unique, which
+        ///	can speed up the calculation.<br></br>
+        ///	Default is False.
         /// </param>
         /// <returns>
-        /// Sorted 1D array of unique values that are in only one of the input
-        /// arrays.
+        ///	Sorted 1D array of unique values that are in only one of the input
+        ///	arrays.
         /// </returns>
         public NDarray setxor1d(NDarray ar1, bool assume_unique = false)
         {
@@ -6883,16 +7783,17 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Find the union of two arrays.
-        /// 
-        /// Return the unique, sorted array of values that are in either of the two
-        /// input arrays.
+        ///	Find the union of two arrays.<br></br>
+        ///	
+        ///	Return the unique, sorted array of values that are in either of the two
+        ///	input arrays.
         /// </summary>
         /// <param name="ar1">
-        /// Input arrays. They are flattened if they are not already 1D.
+        ///	Input arrays.<br></br>
+        ///	They are flattened if they are not already 1D.
         /// </param>
         /// <returns>
-        /// Unique, sorted union of the input arrays.
+        ///	Unique, sorted union of the input arrays.
         /// </returns>
         public NDarray union1d(NDarray ar1)
         {
@@ -6902,58 +7803,72 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a sorted copy of an array.
-        /// 
-        /// Notes
-        /// 
-        /// The various sorting algorithms are characterized by their average speed,
-        /// worst case performance, work space size, and whether they are stable. A
-        /// stable sort keeps items with the same key in the same relative
-        /// order. The three available algorithms have the following
-        /// properties:
-        /// 
-        /// All the sort algorithms make temporary copies of the data when
-        /// sorting along any but the last axis.  Consequently, sorting along
-        /// the last axis is faster and uses less space than sorting along
-        /// any other axis.
-        /// 
-        /// The sort order for complex numbers is lexicographic. If both the real
-        /// and imaginary parts are non-nan then the order is determined by the
-        /// real parts except when they are equal, in which case the order is
-        /// determined by the imaginary parts.
-        /// 
-        /// Previous to numpy 1.4.0 sorting real and complex arrays containing nan
-        /// values led to undefined behaviour. In numpy versions &gt;= 1.4.0 nan
-        /// values are sorted to the end. The extended sort order is:
-        /// 
-        /// where R is a non-nan real value. Complex values with the same nan
-        /// placements are sorted according to the non-nan part if it exists.
-        /// Non-nan values are sorted as before.
-        /// 
-        /// quicksort has been changed to an introsort which will switch
-        /// heapsort when it does not make enough progress. This makes its
-        /// worst case O(n*log(n)).
-        /// 
-        /// ‘stable’ automatically choses the best stable sorting algorithm
-        /// for the data type being sorted. It is currently mapped to
-        /// merge sort.
+        ///	Return a sorted copy of an array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The various sorting algorithms are characterized by their average speed,
+        ///	worst case performance, work space size, and whether they are stable.<br></br>
+        ///	 A
+        ///	stable sort keeps items with the same key in the same relative
+        ///	order.<br></br>
+        ///	 The three available algorithms have the following
+        ///	properties:
+        ///	
+        ///	All the sort algorithms make temporary copies of the data when
+        ///	sorting along any but the last axis.<br></br>
+        ///	  Consequently, sorting along
+        ///	the last axis is faster and uses less space than sorting along
+        ///	any other axis.<br></br>
+        ///	
+        ///	The sort order for complex numbers is lexicographic.<br></br>
+        ///	 If both the real
+        ///	and imaginary parts are non-nan then the order is determined by the
+        ///	real parts except when they are equal, in which case the order is
+        ///	determined by the imaginary parts.<br></br>
+        ///	
+        ///	Previous to numpy 1.4.0 sorting real and complex arrays containing nan
+        ///	values led to undefined behaviour.<br></br>
+        ///	 In numpy versions &gt;= 1.4.0 nan
+        ///	values are sorted to the end.<br></br>
+        ///	 The extended sort order is:
+        ///	
+        ///	where R is a non-nan real value.<br></br>
+        ///	 Complex values with the same nan
+        ///	placements are sorted according to the non-nan part if it exists.<br></br>
+        ///	
+        ///	Non-nan values are sorted as before.<br></br>
+        ///	
+        ///	quicksort has been changed to an introsort which will switch
+        ///	heapsort when it does not make enough progress.<br></br>
+        ///	 This makes its
+        ///	worst case O(n*log(n)).<br></br>
+        ///	
+        ///	‘stable’ automatically choses the best stable sorting algorithm
+        ///	for the data type being sorted.<br></br>
+        ///	 It is currently mapped to
+        ///	merge sort.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which to sort. If None, the array is flattened before
-        /// sorting. The default is -1, which sorts along the last axis.
+        ///	Axis along which to sort.<br></br>
+        ///	If None, the array is flattened before
+        ///	sorting.<br></br>
+        ///	The default is -1, which sorts along the last axis.
         /// </param>
         /// <param name="kind">
-        /// Sorting algorithm. Default is ‘quicksort’.
+        ///	Sorting algorithm.<br></br>
+        ///	Default is ‘quicksort’.
         /// </param>
         /// <param name="order">
-        /// When a is an array with fields defined, this argument specifies
-        /// which fields to compare first, second, etc.  A single field can
-        /// be specified as a string, and not all fields need be specified,
-        /// but unspecified fields will still be used, in the order in which
-        /// they come up in the dtype, to break ties.
+        ///	When a is an array with fields defined, this argument specifies
+        ///	which fields to compare first, second, etc.<br></br>
+        ///	A single field can
+        ///	be specified as a string, and not all fields need be specified,
+        ///	but unspecified fields will still be used, in the order in which
+        ///	they come up in the dtype, to break ties.
         /// </param>
         /// <returns>
-        /// Array of the same type and shape as a.
+        ///	Array of the same type and shape as a.
         /// </returns>
         public NDarray sort(int? axis = -1, string kind = "quicksort", string order = null)
         {
@@ -6963,22 +7878,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Perform an indirect stable sort using a sequence of keys.
-        /// 
-        /// Given multiple sorting keys, which can be interpreted as columns in a
-        /// spreadsheet, lexsort returns an array of integer indices that describes
-        /// the sort order by multiple columns. The last key in the sequence is used
-        /// for the primary sort order, the second-to-last key for the secondary sort
-        /// order, and so on. The keys argument must be a sequence of objects that
-        /// can be converted to arrays of the same shape. If a 2D array is provided
-        /// for the keys argument, it’s rows are interpreted as the sorting keys and
-        /// sorting is according to the last row, second last row etc.
+        ///	Perform an indirect stable sort using a sequence of keys.<br></br>
+        ///	
+        ///	Given multiple sorting keys, which can be interpreted as columns in a
+        ///	spreadsheet, lexsort returns an array of integer indices that describes
+        ///	the sort order by multiple columns.<br></br>
+        ///	 The last key in the sequence is used
+        ///	for the primary sort order, the second-to-last key for the secondary sort
+        ///	order, and so on.<br></br>
+        ///	 The keys argument must be a sequence of objects that
+        ///	can be converted to arrays of the same shape.<br></br>
+        ///	 If a 2D array is provided
+        ///	for the keys argument, it’s rows are interpreted as the sorting keys and
+        ///	sorting is according to the last row, second last row etc.
         /// </summary>
         /// <param name="axis">
-        /// Axis to be indirectly sorted.  By default, sort over the last axis.
+        ///	Axis to be indirectly sorted.<br></br>
+        ///	By default, sort over the last axis.
         /// </param>
         /// <returns>
-        /// Array of indices that sort the keys along the specified axis.
+        ///	Array of indices that sort the keys along the specified axis.
         /// </returns>
         public NDarray lexsort(int? axis = -1)
         {
@@ -6988,38 +7907,45 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns the indices that would sort an array.
-        /// 
-        /// Perform an indirect sort along the given axis using the algorithm specified
-        /// by the kind keyword. It returns an array of indices of the same shape as
-        /// a that index data along the given axis in sorted order.
-        /// 
-        /// Notes
-        /// 
-        /// See sort for notes on the different sorting algorithms.
-        /// 
-        /// As of NumPy 1.4.0 argsort works with real/complex arrays containing
-        /// nan values. The enhanced sort order is documented in sort.
+        ///	Returns the indices that would sort an array.<br></br>
+        ///	
+        ///	Perform an indirect sort along the given axis using the algorithm specified
+        ///	by the kind keyword.<br></br>
+        ///	 It returns an array of indices of the same shape as
+        ///	a that index data along the given axis in sorted order.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	See sort for notes on the different sorting algorithms.<br></br>
+        ///	
+        ///	As of NumPy 1.4.0 argsort works with real/complex arrays containing
+        ///	nan values.<br></br>
+        ///	 The enhanced sort order is documented in sort.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which to sort.  The default is -1 (the last axis). If None,
-        /// the flattened array is used.
+        ///	Axis along which to sort.<br></br>
+        ///	The default is -1 (the last axis).<br></br>
+        ///	If None,
+        ///	the flattened array is used.
         /// </param>
         /// <param name="kind">
-        /// Sorting algorithm.
+        ///	Sorting algorithm.
         /// </param>
         /// <param name="order">
-        /// When a is an array with fields defined, this argument specifies
-        /// which fields to compare first, second, etc.  A single field can
-        /// be specified as a string, and not all fields need be specified,
-        /// but unspecified fields will still be used, in the order in which
-        /// they come up in the dtype, to break ties.
+        ///	When a is an array with fields defined, this argument specifies
+        ///	which fields to compare first, second, etc.<br></br>
+        ///	A single field can
+        ///	be specified as a string, and not all fields need be specified,
+        ///	but unspecified fields will still be used, in the order in which
+        ///	they come up in the dtype, to break ties.
         /// </param>
         /// <returns>
-        /// Array of indices that sort a along the specified axis.
-        /// If a is one-dimensional, a[index_array] yields a sorted a.
-        /// More generally, np.take_along_axis(a, index_array, axis=a) always
-        /// yields the sorted a, irrespective of dimensionality.
+        ///	Array of indices that sort a along the specified axis.<br></br>
+        ///	
+        ///	If a is one-dimensional, a[index_array] yields a sorted a.<br></br>
+        ///	
+        ///	More generally, np.take_along_axis(a, index_array, axis=a) always
+        ///	yields the sorted a, irrespective of dimensionality.
         /// </returns>
         public NDarray argsort(int? axis = -1, string kind = "quicksort", string order = null)
         {
@@ -7029,14 +7955,14 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a copy of an array sorted along the first axis.
-        /// 
-        /// Notes
-        /// 
-        /// np.msort(a) is equivalent to  np.sort(a, axis=0).
+        ///	Return a copy of an array sorted along the first axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	np.msort(a) is equivalent to  np.sort(a, axis=0).
         /// </summary>
         /// <returns>
-        /// Array of the same type and shape as a.
+        ///	Array of the same type and shape as a.
         /// </returns>
         public NDarray msort()
         {
@@ -7046,10 +7972,10 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Sort a complex array using the real part first, then the imaginary part.
+        ///	Sort a complex array using the real part first, then the imaginary part.
         /// </summary>
         /// <returns>
-        /// Always returns a sorted complex array.
+        ///	Always returns a sorted complex array.
         /// </returns>
         public NDarray sort_complex()
         {
@@ -7059,57 +7985,71 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return a partitioned copy of an array.
-        /// 
-        /// Creates a copy of the array with its elements rearranged in such a
-        /// way that the value of the element in k-th position is in the
-        /// position it would be in a sorted array. All elements smaller than
-        /// the k-th element are moved before this element and all equal or
-        /// greater are moved behind it. The ordering of the elements in the two
-        /// partitions is undefined.
-        /// 
-        /// Notes
-        /// 
-        /// The various selection algorithms are characterized by their average
-        /// speed, worst case performance, work space size, and whether they are
-        /// stable. A stable sort keeps items with the same key in the same
-        /// relative order. The available algorithms have the following
-        /// properties:
-        /// 
-        /// All the partition algorithms make temporary copies of the data when
-        /// partitioning along any but the last axis.  Consequently,
-        /// partitioning along the last axis is faster and uses less space than
-        /// partitioning along any other axis.
-        /// 
-        /// The sort order for complex numbers is lexicographic. If both the
-        /// real and imaginary parts are non-nan then the order is determined by
-        /// the real parts except when they are equal, in which case the order
-        /// is determined by the imaginary parts.
+        ///	Return a partitioned copy of an array.<br></br>
+        ///	
+        ///	Creates a copy of the array with its elements rearranged in such a
+        ///	way that the value of the element in k-th position is in the
+        ///	position it would be in a sorted array.<br></br>
+        ///	 All elements smaller than
+        ///	the k-th element are moved before this element and all equal or
+        ///	greater are moved behind it.<br></br>
+        ///	 The ordering of the elements in the two
+        ///	partitions is undefined.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The various selection algorithms are characterized by their average
+        ///	speed, worst case performance, work space size, and whether they are
+        ///	stable.<br></br>
+        ///	 A stable sort keeps items with the same key in the same
+        ///	relative order.<br></br>
+        ///	 The available algorithms have the following
+        ///	properties:
+        ///	
+        ///	All the partition algorithms make temporary copies of the data when
+        ///	partitioning along any but the last axis.<br></br>
+        ///	  Consequently,
+        ///	partitioning along the last axis is faster and uses less space than
+        ///	partitioning along any other axis.<br></br>
+        ///	
+        ///	The sort order for complex numbers is lexicographic.<br></br>
+        ///	 If both the
+        ///	real and imaginary parts are non-nan then the order is determined by
+        ///	the real parts except when they are equal, in which case the order
+        ///	is determined by the imaginary parts.
         /// </summary>
         /// <param name="kth">
-        /// Element index to partition by. The k-th value of the element
-        /// will be in its final sorted position and all smaller elements
-        /// will be moved before it and all equal or greater elements behind
-        /// it. The order of all elements in the partitions is undefined. If
-        /// provided with a sequence of k-th it will partition all elements
-        /// indexed by k-th  of them into their sorted position at once.
+        ///	Element index to partition by.<br></br>
+        ///	The k-th value of the element
+        ///	will be in its final sorted position and all smaller elements
+        ///	will be moved before it and all equal or greater elements behind
+        ///	it.<br></br>
+        ///	The order of all elements in the partitions is undefined.<br></br>
+        ///	If
+        ///	provided with a sequence of k-th it will partition all elements
+        ///	indexed by k-th  of them into their sorted position at once.
         /// </param>
         /// <param name="axis">
-        /// Axis along which to sort. If None, the array is flattened before
-        /// sorting. The default is -1, which sorts along the last axis.
+        ///	Axis along which to sort.<br></br>
+        ///	If None, the array is flattened before
+        ///	sorting.<br></br>
+        ///	The default is -1, which sorts along the last axis.
         /// </param>
         /// <param name="kind">
-        /// Selection algorithm. Default is ‘introselect’.
+        ///	Selection algorithm.<br></br>
+        ///	Default is ‘introselect’.
         /// </param>
         /// <param name="order">
-        /// When a is an array with fields defined, this argument
-        /// specifies which fields to compare first, second, etc.  A single
-        /// field can be specified as a string.  Not all fields need be
-        /// specified, but unspecified fields will still be used, in the
-        /// order in which they come up in the dtype, to break ties.
+        ///	When a is an array with fields defined, this argument
+        ///	specifies which fields to compare first, second, etc.<br></br>
+        ///	A single
+        ///	field can be specified as a string.<br></br>
+        ///	Not all fields need be
+        ///	specified, but unspecified fields will still be used, in the
+        ///	order in which they come up in the dtype, to break ties.
         /// </param>
         /// <returns>
-        /// Array of the same type and shape as a.
+        ///	Array of the same type and shape as a.
         /// </returns>
         public NDarray partition(int[] kth, int? axis = -1, string kind = "introselect", string order = null)
         {
@@ -7119,42 +8059,52 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Perform an indirect partition along the given axis using the
-        /// algorithm specified by the kind keyword. It returns an array of
-        /// indices of the same shape as a that index data along the given
-        /// axis in partitioned order.
-        /// 
-        /// Notes
-        /// 
-        /// See partition for notes on the different selection algorithms.
+        ///	Perform an indirect partition along the given axis using the
+        ///	algorithm specified by the kind keyword.<br></br>
+        ///	 It returns an array of
+        ///	indices of the same shape as a that index data along the given
+        ///	axis in partitioned order.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	See partition for notes on the different selection algorithms.
         /// </summary>
         /// <param name="kth">
-        /// Element index to partition by. The k-th element will be in its
-        /// final sorted position and all smaller elements will be moved
-        /// before it and all larger elements behind it. The order all
-        /// elements in the partitions is undefined. If provided with a
-        /// sequence of k-th it will partition all of them into their sorted
-        /// position at once.
+        ///	Element index to partition by.<br></br>
+        ///	The k-th element will be in its
+        ///	final sorted position and all smaller elements will be moved
+        ///	before it and all larger elements behind it.<br></br>
+        ///	The order all
+        ///	elements in the partitions is undefined.<br></br>
+        ///	If provided with a
+        ///	sequence of k-th it will partition all of them into their sorted
+        ///	position at once.
         /// </param>
         /// <param name="axis">
-        /// Axis along which to sort. The default is -1 (the last axis). If
-        /// None, the flattened array is used.
+        ///	Axis along which to sort.<br></br>
+        ///	The default is -1 (the last axis).<br></br>
+        ///	If
+        ///	None, the flattened array is used.
         /// </param>
         /// <param name="kind">
-        /// Selection algorithm. Default is ‘introselect’
+        ///	Selection algorithm.<br></br>
+        ///	Default is ‘introselect’
         /// </param>
         /// <param name="order">
-        /// When a is an array with fields defined, this argument
-        /// specifies which fields to compare first, second, etc. A single
-        /// field can be specified as a string, and not all fields need be
-        /// specified, but unspecified fields will still be used, in the
-        /// order in which they come up in the dtype, to break ties.
+        ///	When a is an array with fields defined, this argument
+        ///	specifies which fields to compare first, second, etc.<br></br>
+        ///	A single
+        ///	field can be specified as a string, and not all fields need be
+        ///	specified, but unspecified fields will still be used, in the
+        ///	order in which they come up in the dtype, to break ties.
         /// </param>
         /// <returns>
-        /// Array of indices that partition a along the specified axis.
-        /// If a is one-dimensional, a[index_array] yields a partitioned a.
-        /// More generally, np.take_along_axis(a, index_array, axis=a) always
-        /// yields the partitioned a, irrespective of dimensionality.
+        ///	Array of indices that partition a along the specified axis.<br></br>
+        ///	
+        ///	If a is one-dimensional, a[index_array] yields a partitioned a.<br></br>
+        ///	
+        ///	More generally, np.take_along_axis(a, index_array, axis=a) always
+        ///	yields the partitioned a, irrespective of dimensionality.
         /// </returns>
         public NDarray argpartition(int[] kth, int? axis = -1, string kind = "introselect", string order = null)
         {
@@ -7164,24 +8114,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns the indices of the maximum values along an axis.
-        /// 
-        /// Notes
-        /// 
-        /// In case of multiple occurrences of the maximum values, the indices
-        /// corresponding to the first occurrence are returned.
+        ///	Returns the indices of the maximum values along an axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	In case of multiple occurrences of the maximum values, the indices
+        ///	corresponding to the first occurrence are returned.
         /// </summary>
         /// <param name="axis">
-        /// By default, the index is into the flattened array, otherwise
-        /// along the specified axis.
+        ///	By default, the index is into the flattened array, otherwise
+        ///	along the specified axis.
         /// </param>
         /// <param name="out">
-        /// If provided, the result will be inserted into this array. It should
-        /// be of the appropriate shape and dtype.
+        ///	If provided, the result will be inserted into this array.<br></br>
+        ///	It should
+        ///	be of the appropriate shape and dtype.
         /// </param>
         /// <returns>
-        /// Array of indices into the array. It has the same shape as a.shape
-        /// with the dimension along axis removed.
+        ///	Array of indices into the array.<br></br>
+        ///	 It has the same shape as a.shape
+        ///	with the dimension along axis removed.
         /// </returns>
         public NDarray argmax(int? axis = null, NDarray @out = null)
         {
@@ -7191,15 +8143,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the indices of the maximum values in the specified axis ignoring
-        /// NaNs. For all-NaN slices ValueError is raised. Warning: the
-        /// results cannot be trusted if a slice contains only NaNs and -Infs.
+        ///	Return the indices of the maximum values in the specified axis ignoring
+        ///	NaNs.<br></br>
+        ///	 For all-NaN slices ValueError is raised.<br></br>
+        ///	 Warning: the
+        ///	results cannot be trusted if a slice contains only NaNs and -Infs.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which to operate.  By default flattened input is used.
+        ///	Axis along which to operate.<br></br>
+        ///	By default flattened input is used.
         /// </param>
         /// <returns>
-        /// An array of indices or a single index value.
+        ///	An array of indices or a single index value.
         /// </returns>
         public NDarray nanargmax(int? axis = null)
         {
@@ -7209,24 +8164,26 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns the indices of the minimum values along an axis.
-        /// 
-        /// Notes
-        /// 
-        /// In case of multiple occurrences of the minimum values, the indices
-        /// corresponding to the first occurrence are returned.
+        ///	Returns the indices of the minimum values along an axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	In case of multiple occurrences of the minimum values, the indices
+        ///	corresponding to the first occurrence are returned.
         /// </summary>
         /// <param name="axis">
-        /// By default, the index is into the flattened array, otherwise
-        /// along the specified axis.
+        ///	By default, the index is into the flattened array, otherwise
+        ///	along the specified axis.
         /// </param>
         /// <param name="out">
-        /// If provided, the result will be inserted into this array. It should
-        /// be of the appropriate shape and dtype.
+        ///	If provided, the result will be inserted into this array.<br></br>
+        ///	It should
+        ///	be of the appropriate shape and dtype.
         /// </param>
         /// <returns>
-        /// Array of indices into the array. It has the same shape as a.shape
-        /// with the dimension along axis removed.
+        ///	Array of indices into the array.<br></br>
+        ///	 It has the same shape as a.shape
+        ///	with the dimension along axis removed.
         /// </returns>
         public NDarray argmin(int? axis = null, NDarray @out = null)
         {
@@ -7236,15 +8193,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the indices of the minimum values in the specified axis ignoring
-        /// NaNs. For all-NaN slices ValueError is raised. Warning: the results
-        /// cannot be trusted if a slice contains only NaNs and Infs.
+        ///	Return the indices of the minimum values in the specified axis ignoring
+        ///	NaNs.<br></br>
+        ///	 For all-NaN slices ValueError is raised.<br></br>
+        ///	 Warning: the results
+        ///	cannot be trusted if a slice contains only NaNs and Infs.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which to operate.  By default flattened input is used.
+        ///	Axis along which to operate.<br></br>
+        ///	By default flattened input is used.
         /// </param>
         /// <returns>
-        /// An array of indices or a single index value.
+        ///	An array of indices or a single index value.
         /// </returns>
         public NDarray nanargmin(int? axis = null)
         {
@@ -7254,17 +8214,19 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Find the indices of array elements that are non-zero, grouped by element.
-        /// 
-        /// Notes
-        /// 
-        /// np.argwhere(a) is the same as np.transpose(np.nonzero(a)).
-        /// 
-        /// The output of argwhere is not suitable for indexing arrays.
-        /// For this purpose use nonzero(a) instead.
+        ///	Find the indices of array elements that are non-zero, grouped by element.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	np.argwhere(a) is the same as np.transpose(np.nonzero(a)).<br></br>
+        ///	
+        ///	The output of argwhere is not suitable for indexing arrays.<br></br>
+        ///	
+        ///	For this purpose use nonzero(a) instead.
         /// </summary>
         /// <returns>
-        /// Indices of elements that are non-zero. Indices are grouped by element.
+        ///	Indices of elements that are non-zero.<br></br>
+        ///	 Indices are grouped by element.
         /// </returns>
         public NDarray argwhere()
         {
@@ -7274,13 +8236,13 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return indices that are non-zero in the flattened version of a.
-        /// 
-        /// This is equivalent to np.nonzero(np.ravel(a))[0].
+        ///	Return indices that are non-zero in the flattened version of a.<br></br>
+        ///	
+        ///	This is equivalent to np.nonzero(np.ravel(a))[0].
         /// </summary>
         /// <returns>
-        /// Output array, containing the indices of the elements of a.ravel()
-        /// that are non-zero.
+        ///	Output array, containing the indices of the elements of a.ravel()
+        ///	that are non-zero.
         /// </returns>
         public NDarray flatnonzero()
         {
@@ -7290,39 +8252,43 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Find indices where elements should be inserted to maintain order.
-        /// 
-        /// Find the indices into a sorted array a such that, if the
-        /// corresponding elements in v were inserted before the indices, the
-        /// order of a would be preserved.
-        /// 
-        /// Assuming that a is sorted:
-        /// 
-        /// Notes
-        /// 
-        /// Binary search is used to find the required insertion points.
-        /// 
-        /// As of NumPy 1.4.0 searchsorted works with real/complex arrays containing
-        /// nan values. The enhanced sort order is documented in sort.
-        /// 
-        /// This function is a faster version of the builtin python bisect.bisect_left
-        /// (side='left') and bisect.bisect_right (side='right') functions,
-        /// which is also vectorized in the v argument.
+        ///	Find indices where elements should be inserted to maintain order.<br></br>
+        ///	
+        ///	Find the indices into a sorted array a such that, if the
+        ///	corresponding elements in v were inserted before the indices, the
+        ///	order of a would be preserved.<br></br>
+        ///	
+        ///	Assuming that a is sorted:
+        ///	
+        ///	Notes
+        ///	
+        ///	Binary search is used to find the required insertion points.<br></br>
+        ///	
+        ///	As of NumPy 1.4.0 searchsorted works with real/complex arrays containing
+        ///	nan values.<br></br>
+        ///	 The enhanced sort order is documented in sort.<br></br>
+        ///	
+        ///	This function is a faster version of the builtin python bisect.bisect_left
+        ///	(side='left') and bisect.bisect_right (side='right') functions,
+        ///	which is also vectorized in the v argument.
         /// </summary>
         /// <param name="v">
-        /// Values to insert into a.
+        ///	Values to insert into a.
         /// </param>
         /// <param name="side">
-        /// If ‘left’, the index of the first suitable location found is given.
-        /// If ‘right’, return the last such index.  If there is no suitable
-        /// index, return either 0 or N (where N is the length of a).
+        ///	If ‘left’, the index of the first suitable location found is given.<br></br>
+        ///	
+        ///	If ‘right’, return the last such index.<br></br>
+        ///	If there is no suitable
+        ///	index, return either 0 or N (where N is the length of a).
         /// </param>
         /// <param name="sorter">
-        /// Optional array of integer indices that sort array a into ascending
-        /// order. They are typically the result of argsort.
+        ///	Optional array of integer indices that sort array a into ascending
+        ///	order.<br></br>
+        ///	They are typically the result of argsort.
         /// </param>
         /// <returns>
-        /// Array of insertion points with the same shape as v.
+        ///	Array of insertion points with the same shape as v.
         /// </returns>
         public NDarray<int> searchsorted(NDarray v, string side = "left", NDarray sorter = null)
         {
@@ -7332,18 +8298,19 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the elements of an array that satisfy some condition.
-        /// 
-        /// This is equivalent to np.compress(ravel(condition), ravel(arr)).  If
-        /// condition is boolean np.extract is equivalent to arr[condition].
-        /// 
-        /// Note that place does the exact opposite of extract.
+        ///	Return the elements of an array that satisfy some condition.<br></br>
+        ///	
+        ///	This is equivalent to np.compress(ravel(condition), ravel(arr)).<br></br>
+        ///	  If
+        ///	condition is boolean np.extract is equivalent to arr[condition].<br></br>
+        ///	
+        ///	Note that place does the exact opposite of extract.
         /// </summary>
         /// <param name="arr">
-        /// Input array of the same size as condition.
+        ///	Input array of the same size as condition.
         /// </param>
         /// <returns>
-        /// Rank 1 array of values from arr where condition is True.
+        ///	Rank 1 array of values from arr where condition is True.
         /// </returns>
         public NDarray extract(NDarray arr)
         {
@@ -7353,27 +8320,30 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Counts the number of non-zero values in the array a.
-        /// 
-        /// The word “non-zero” is in reference to the Python 2.x
-        /// built-in method __nonzero__() (renamed __bool__()
-        /// in Python 3.x) of Python objects that tests an object’s
-        /// “truthfulness”. For example, any number is considered
-        /// truthful if it is nonzero, whereas any string is considered
-        /// truthful if it is not the empty string. Thus, this function
-        /// (recursively) counts how many elements in a (and in
-        /// sub-arrays thereof) have their __nonzero__() or __bool__()
-        /// method evaluated to True.
+        ///	Counts the number of non-zero values in the array a.<br></br>
+        ///	
+        ///	The word “non-zero” is in reference to the Python 2.x
+        ///	built-in method __nonzero__() (renamed __bool__()
+        ///	in Python 3.x) of Python objects that tests an object’s
+        ///	“truthfulness”. For example, any number is considered
+        ///	truthful if it is nonzero, whereas any string is considered
+        ///	truthful if it is not the empty string.<br></br>
+        ///	 Thus, this function
+        ///	(recursively) counts how many elements in a (and in
+        ///	sub-arrays thereof) have their __nonzero__() or __bool__()
+        ///	method evaluated to True.
         /// </summary>
         /// <param name="axis">
-        /// Axis or tuple of axes along which to count non-zeros.
-        /// Default is None, meaning that non-zeros will be counted
-        /// along a flattened version of a.
+        ///	Axis or tuple of axes along which to count non-zeros.<br></br>
+        ///	
+        ///	Default is None, meaning that non-zeros will be counted
+        ///	along a flattened version of a.
         /// </param>
         /// <returns>
-        /// Number of non-zero values in the array along a given axis.
-        /// Otherwise, the total number of non-zero values in the array
-        /// is returned.
+        ///	Number of non-zero values in the array along a given axis.<br></br>
+        ///	
+        ///	Otherwise, the total number of non-zero values in the array
+        ///	is returned.
         /// </returns>
         public NDarray<int> count_nonzero(params int[] axis)
         {
@@ -7383,22 +8353,24 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Counts the number of non-zero values in the array a.
-        /// 
-        /// The word “non-zero” is in reference to the Python 2.x
-        /// built-in method __nonzero__() (renamed __bool__()
-        /// in Python 3.x) of Python objects that tests an object’s
-        /// “truthfulness”. For example, any number is considered
-        /// truthful if it is nonzero, whereas any string is considered
-        /// truthful if it is not the empty string. Thus, this function
-        /// (recursively) counts how many elements in a (and in
-        /// sub-arrays thereof) have their __nonzero__() or __bool__()
-        /// method evaluated to True.
+        ///	Counts the number of non-zero values in the array a.<br></br>
+        ///	
+        ///	The word “non-zero” is in reference to the Python 2.x
+        ///	built-in method __nonzero__() (renamed __bool__()
+        ///	in Python 3.x) of Python objects that tests an object’s
+        ///	“truthfulness”. For example, any number is considered
+        ///	truthful if it is nonzero, whereas any string is considered
+        ///	truthful if it is not the empty string.<br></br>
+        ///	 Thus, this function
+        ///	(recursively) counts how many elements in a (and in
+        ///	sub-arrays thereof) have their __nonzero__() or __bool__()
+        ///	method evaluated to True.
         /// </summary>
         /// <returns>
-        /// Number of non-zero values in the array along a given axis.
-        /// Otherwise, the total number of non-zero values in the array
-        /// is returned.
+        ///	Number of non-zero values in the array along a given axis.<br></br>
+        ///	
+        ///	Otherwise, the total number of non-zero values in the array
+        ///	is returned.
         /// </returns>
         public int count_nonzero()
         {
@@ -7408,49 +8380,59 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the minimum of an array or minimum along an axis.
-        /// 
-        /// Notes
-        /// 
-        /// NaN values are propagated, that is if at least one item is NaN, the
-        /// corresponding min value will be NaN as well. To ignore NaN values
-        /// (MATLAB behavior), please use nanmin.
-        /// 
-        /// Don’t use amin for element-wise comparison of 2 arrays; when
-        /// a.shape[0] is 2, minimum(a[0], a[1]) is faster than
-        /// amin(a, axis=0).
+        ///	Return the minimum of an array or minimum along an axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NaN values are propagated, that is if at least one item is NaN, the
+        ///	corresponding min value will be NaN as well.<br></br>
+        ///	 To ignore NaN values
+        ///	(MATLAB behavior), please use nanmin.<br></br>
+        ///	
+        ///	Don’t use amin for element-wise comparison of 2 arrays; when
+        ///	a.shape[0] is 2, minimum(a[0], a[1]) is faster than
+        ///	amin(a, axis=0).
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which to operate.  By default, flattened input is
-        /// used.
-        /// 
-        /// If this is a tuple of ints, the minimum is selected over multiple axes,
-        /// instead of a single axis or all the axes as before.
+        ///	Axis or axes along which to operate.<br></br>
+        ///	By default, flattened input is
+        ///	used.<br></br>
+        ///	
+        ///	If this is a tuple of ints, the minimum is selected over multiple axes,
+        ///	instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result.  Must
-        /// be of the same shape and buffer length as the expected output.
-        /// See doc.ufuncs (Section “Output arguments”) for more details.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	Must
+        ///	be of the same shape and buffer length as the expected output.<br></br>
+        ///	
+        ///	See doc.ufuncs (Section “Output arguments”) for more details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the amin method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the amin method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <param name="initial">
-        /// The maximum value of an output element. Must be present to allow
-        /// computation on empty slice. See reduce for details.
+        ///	The maximum value of an output element.<br></br>
+        ///	Must be present to allow
+        ///	computation on empty slice.<br></br>
+        ///	See reduce for details.
         /// </param>
         /// <returns>
-        /// Minimum of a. If axis is None, the result is a scalar value.
-        /// If axis is given, the result is an array of dimension
-        /// a.ndim - 1.
+        ///	Minimum of a.<br></br>
+        ///	 If axis is None, the result is a scalar value.<br></br>
+        ///	
+        ///	If axis is given, the result is an array of dimension
+        ///	a.ndim - 1.
         /// </returns>
         public NDarray amin(int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
@@ -7460,49 +8442,59 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the maximum of an array or maximum along an axis.
-        /// 
-        /// Notes
-        /// 
-        /// NaN values are propagated, that is if at least one item is NaN, the
-        /// corresponding max value will be NaN as well. To ignore NaN values
-        /// (MATLAB behavior), please use nanmax.
-        /// 
-        /// Don’t use amax for element-wise comparison of 2 arrays; when
-        /// a.shape[0] is 2, maximum(a[0], a[1]) is faster than
-        /// amax(a, axis=0).
+        ///	Return the maximum of an array or maximum along an axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NaN values are propagated, that is if at least one item is NaN, the
+        ///	corresponding max value will be NaN as well.<br></br>
+        ///	 To ignore NaN values
+        ///	(MATLAB behavior), please use nanmax.<br></br>
+        ///	
+        ///	Don’t use amax for element-wise comparison of 2 arrays; when
+        ///	a.shape[0] is 2, maximum(a[0], a[1]) is faster than
+        ///	amax(a, axis=0).
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which to operate.  By default, flattened input is
-        /// used.
-        /// 
-        /// If this is a tuple of ints, the maximum is selected over multiple axes,
-        /// instead of a single axis or all the axes as before.
+        ///	Axis or axes along which to operate.<br></br>
+        ///	By default, flattened input is
+        ///	used.<br></br>
+        ///	
+        ///	If this is a tuple of ints, the maximum is selected over multiple axes,
+        ///	instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result.  Must
-        /// be of the same shape and buffer length as the expected output.
-        /// See doc.ufuncs (Section “Output arguments”) for more details.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	Must
+        ///	be of the same shape and buffer length as the expected output.<br></br>
+        ///	
+        ///	See doc.ufuncs (Section “Output arguments”) for more details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the amax method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the amax method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <param name="initial">
-        /// The minimum value of an output element. Must be present to allow
-        /// computation on empty slice. See reduce for details.
+        ///	The minimum value of an output element.<br></br>
+        ///	Must be present to allow
+        ///	computation on empty slice.<br></br>
+        ///	See reduce for details.
         /// </param>
         /// <returns>
-        /// Maximum of a. If axis is None, the result is a scalar value.
-        /// If axis is given, the result is an array of dimension
-        /// a.ndim - 1.
+        ///	Maximum of a.<br></br>
+        ///	 If axis is None, the result is a scalar value.<br></br>
+        ///	
+        ///	If axis is given, the result is an array of dimension
+        ///	a.ndim - 1.
         /// </returns>
         public NDarray amax(int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
@@ -7512,43 +8504,54 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return minimum of an array or minimum along an axis, ignoring any NaNs.
-        /// When all-NaN slices are encountered a RuntimeWarning is raised and
-        /// Nan is returned for that slice.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754). This means that Not a Number is not equivalent to infinity.
-        /// Positive infinity is treated as a very large number and negative
-        /// infinity is treated as a very small (i.e. negative) number.
-        /// 
-        /// If the input has a integer type the function is equivalent to np.min.
+        ///	Return minimum of an array or minimum along an axis, ignoring any NaNs.<br></br>
+        ///	
+        ///	When all-NaN slices are encountered a RuntimeWarning is raised and
+        ///	Nan is returned for that slice.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	 This means that Not a Number is not equivalent to infinity.<br></br>
+        ///	
+        ///	Positive infinity is treated as a very large number and negative
+        ///	infinity is treated as a very small (i.e.<br></br>
+        ///	 negative) number.<br></br>
+        ///	
+        ///	If the input has a integer type the function is equivalent to np.min.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the minimum is computed. The default is to compute
-        /// the minimum of the flattened array.
+        ///	Axis or axes along which the minimum is computed.<br></br>
+        ///	The default is to compute
+        ///	the minimum of the flattened array.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  The default
-        /// is None; if provided, it must have the same shape as the
-        /// expected output, but the type will be cast if necessary.  See
-        /// doc.ufuncs for details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	The default
+        ///	is None; if provided, it must have the same shape as the
+        ///	expected output, but the type will be cast if necessary.<br></br>
+        ///	See
+        ///	doc.ufuncs for details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the original a.
-        /// 
-        /// If the value is anything but the default, then
-        /// keepdims will be passed through to the min method
-        /// of sub-classes of ndarray.  If the sub-classes methods
-        /// does not implement keepdims any exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the original a.<br></br>
+        ///	
+        ///	If the value is anything but the default, then
+        ///	keepdims will be passed through to the min method
+        ///	of sub-classes of ndarray.<br></br>
+        ///	If the sub-classes methods
+        ///	does not implement keepdims any exceptions will be raised.
         /// </param>
         /// <returns>
-        /// An array with the same shape as a, with the specified axis
-        /// removed.  If a is a 0-d array, or if axis is None, an ndarray
-        /// scalar is returned.  The same dtype as a is returned.
+        ///	An array with the same shape as a, with the specified axis
+        ///	removed.<br></br>
+        ///	  If a is a 0-d array, or if axis is None, an ndarray
+        ///	scalar is returned.<br></br>
+        ///	  The same dtype as a is returned.
         /// </returns>
         public NDarray nanmin(int[] axis = null, NDarray @out = null, bool? keepdims = null)
         {
@@ -7558,43 +8561,54 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the maximum of an array or maximum along an axis, ignoring any
-        /// NaNs.  When all-NaN slices are encountered a RuntimeWarning is
-        /// raised and NaN is returned for that slice.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754). This means that Not a Number is not equivalent to infinity.
-        /// Positive infinity is treated as a very large number and negative
-        /// infinity is treated as a very small (i.e. negative) number.
-        /// 
-        /// If the input has a integer type the function is equivalent to np.max.
+        ///	Return the maximum of an array or maximum along an axis, ignoring any
+        ///	NaNs.<br></br>
+        ///	  When all-NaN slices are encountered a RuntimeWarning is
+        ///	raised and NaN is returned for that slice.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	 This means that Not a Number is not equivalent to infinity.<br></br>
+        ///	
+        ///	Positive infinity is treated as a very large number and negative
+        ///	infinity is treated as a very small (i.e.<br></br>
+        ///	 negative) number.<br></br>
+        ///	
+        ///	If the input has a integer type the function is equivalent to np.max.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the maximum is computed. The default is to compute
-        /// the maximum of the flattened array.
+        ///	Axis or axes along which the maximum is computed.<br></br>
+        ///	The default is to compute
+        ///	the maximum of the flattened array.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  The default
-        /// is None; if provided, it must have the same shape as the
-        /// expected output, but the type will be cast if necessary.  See
-        /// doc.ufuncs for details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	The default
+        ///	is None; if provided, it must have the same shape as the
+        ///	expected output, but the type will be cast if necessary.<br></br>
+        ///	See
+        ///	doc.ufuncs for details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the original a.
-        /// 
-        /// If the value is anything but the default, then
-        /// keepdims will be passed through to the max method
-        /// of sub-classes of ndarray.  If the sub-classes methods
-        /// does not implement keepdims any exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the original a.<br></br>
+        ///	
+        ///	If the value is anything but the default, then
+        ///	keepdims will be passed through to the max method
+        ///	of sub-classes of ndarray.<br></br>
+        ///	If the sub-classes methods
+        ///	does not implement keepdims any exceptions will be raised.
         /// </param>
         /// <returns>
-        /// An array with the same shape as a, with the specified axis removed.
-        /// If a is a 0-d array, or if axis is None, an ndarray scalar is
-        /// returned.  The same dtype as a is returned.
+        ///	An array with the same shape as a, with the specified axis removed.<br></br>
+        ///	
+        ///	If a is a 0-d array, or if axis is None, an ndarray scalar is
+        ///	returned.<br></br>
+        ///	  The same dtype as a is returned.
         /// </returns>
         public NDarray nanmax(int[] axis = null, NDarray @out = null, bool? keepdims = null)
         {
@@ -7604,37 +8618,42 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Range of values (maximum - minimum) along an axis.
-        /// 
-        /// The name of the function comes from the acronym for ‘peak to peak’.
+        ///	Range of values (maximum - minimum) along an axis.<br></br>
+        ///	
+        ///	The name of the function comes from the acronym for ‘peak to peak’.
         /// </summary>
         /// <param name="axis">
-        /// Axis along which to find the peaks.  By default, flatten the
-        /// array.  axis may be negative, in
-        /// which case it counts from the last to the first axis.
-        /// 
-        /// If this is a tuple of ints, a reduction is performed on multiple
-        /// axes, instead of a single axis or all the axes as before.
+        ///	Axis along which to find the peaks.<br></br>
+        ///	By default, flatten the
+        ///	array.<br></br>
+        ///	axis may be negative, in
+        ///	which case it counts from the last to the first axis.<br></br>
+        ///	
+        ///	If this is a tuple of ints, a reduction is performed on multiple
+        ///	axes, instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type of the output values will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type of the output values will be cast if necessary.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the ptp method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the ptp method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <returns>
-        /// A new array holding the result, unless out was
-        /// specified, in which case a reference to out is returned.
+        ///	A new array holding the result, unless out was
+        ///	specified, in which case a reference to out is returned.
         /// </returns>
         public NDarray ptp(int[] axis = null, NDarray @out = null, bool? keepdims = null)
         {
@@ -7644,59 +8663,69 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the q-th percentile of the data along the specified axis.
-        /// 
-        /// Returns the q-th percentile(s) of the array elements.
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the q-th percentile of
-        /// V is the value q/100 of the way from the minimum to the
-        /// maximum in a sorted copy of V. The values and distances of
-        /// the two nearest neighbors as well as the interpolation parameter
-        /// will determine the percentile if the normalized ranking does not
-        /// match the location of q exactly. This function is the same as
-        /// the median if q=50, the same as the minimum if q=0 and the
-        /// same as the maximum if q=100.
+        ///	Compute the q-th percentile of the data along the specified axis.<br></br>
+        ///	
+        ///	Returns the q-th percentile(s) of the array elements.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the q-th percentile of
+        ///	V is the value q/100 of the way from the minimum to the
+        ///	maximum in a sorted copy of V.<br></br>
+        ///	 The values and distances of
+        ///	the two nearest neighbors as well as the interpolation parameter
+        ///	will determine the percentile if the normalized ranking does not
+        ///	match the location of q exactly.<br></br>
+        ///	 This function is the same as
+        ///	the median if q=50, the same as the minimum if q=0 and the
+        ///	same as the maximum if q=100.
         /// </summary>
         /// <param name="q">
-        /// Percentile or sequence of percentiles to compute, which must be between
-        /// 0 and 100 inclusive.
+        ///	Percentile or sequence of percentiles to compute, which must be between
+        ///	0 and 100 inclusive.
         /// </param>
         /// <param name="axis">
-        /// Axis or axes along which the percentiles are computed. The
-        /// default is to compute the percentile(s) along a flattened
-        /// version of the array.
+        ///	Axis or axes along which the percentiles are computed.<br></br>
+        ///	The
+        ///	default is to compute the percentile(s) along a flattened
+        ///	version of the array.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow the input array a to be modified by intermediate
-        /// calculations, to save memory. In this case, the contents of the input
-        /// a after this function completes is undefined.
+        ///	If True, then allow the input array a to be modified by intermediate
+        ///	calculations, to save memory.<br></br>
+        ///	In this case, the contents of the input
+        ///	a after this function completes is undefined.
         /// </param>
         /// <param name="interpolation">
-        /// This optional parameter specifies the interpolation method to
-        /// use when the desired percentile lies between two data points
-        /// i &lt; j:
+        ///	This optional parameter specifies the interpolation method to
+        ///	use when the desired percentile lies between two data points
+        ///	i &lt; j:
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left in
-        /// the result as dimensions with size one. With this option, the
-        /// result will broadcast correctly against the original array a.
+        ///	If this is set to True, the axes which are reduced are left in
+        ///	the result as dimensions with size one.<br></br>
+        ///	With this option, the
+        ///	result will broadcast correctly against the original array a.
         /// </param>
         /// <returns>
-        /// If q is a single percentile and axis=None, then the result
-        /// is a scalar. If multiple percentiles are given, first axis of
-        /// the result corresponds to the percentiles. The other axes are
-        /// the axes that remain after the reduction of a. If the input
-        /// contains integers or floats smaller than float64, the output
-        /// data-type is float64. Otherwise, the output data-type is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	If q is a single percentile and axis=None, then the result
+        ///	is a scalar.<br></br>
+        ///	 If multiple percentiles are given, first axis of
+        ///	the result corresponds to the percentiles.<br></br>
+        ///	 The other axes are
+        ///	the axes that remain after the reduction of a.<br></br>
+        ///	 If the input
+        ///	contains integers or floats smaller than float64, the output
+        ///	data-type is float64. Otherwise, the output data-type is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public NDarray<double> percentile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
         {
@@ -7706,49 +8735,57 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the q-th percentile of the data along the specified axis.
-        /// 
-        /// Returns the q-th percentile(s) of the array elements.
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the q-th percentile of
-        /// V is the value q/100 of the way from the minimum to the
-        /// maximum in a sorted copy of V. The values and distances of
-        /// the two nearest neighbors as well as the interpolation parameter
-        /// will determine the percentile if the normalized ranking does not
-        /// match the location of q exactly. This function is the same as
-        /// the median if q=50, the same as the minimum if q=0 and the
-        /// same as the maximum if q=100.
+        ///	Compute the q-th percentile of the data along the specified axis.<br></br>
+        ///	
+        ///	Returns the q-th percentile(s) of the array elements.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the q-th percentile of
+        ///	V is the value q/100 of the way from the minimum to the
+        ///	maximum in a sorted copy of V.<br></br>
+        ///	 The values and distances of
+        ///	the two nearest neighbors as well as the interpolation parameter
+        ///	will determine the percentile if the normalized ranking does not
+        ///	match the location of q exactly.<br></br>
+        ///	 This function is the same as
+        ///	the median if q=50, the same as the minimum if q=0 and the
+        ///	same as the maximum if q=100.
         /// </summary>
         /// <param name="q">
-        /// Percentile or sequence of percentiles to compute, which must be between
-        /// 0 and 100 inclusive.
+        ///	Percentile or sequence of percentiles to compute, which must be between
+        ///	0 and 100 inclusive.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow the input array a to be modified by intermediate
-        /// calculations, to save memory. In this case, the contents of the input
-        /// a after this function completes is undefined.
+        ///	If True, then allow the input array a to be modified by intermediate
+        ///	calculations, to save memory.<br></br>
+        ///	In this case, the contents of the input
+        ///	a after this function completes is undefined.
         /// </param>
         /// <param name="interpolation">
-        /// This optional parameter specifies the interpolation method to
-        /// use when the desired percentile lies between two data points
-        /// i &lt; j:
+        ///	This optional parameter specifies the interpolation method to
+        ///	use when the desired percentile lies between two data points
+        ///	i &lt; j:
         /// </param>
         /// <returns>
-        /// If q is a single percentile and axis=None, then the result
-        /// is a scalar. If multiple percentiles are given, first axis of
-        /// the result corresponds to the percentiles. The other axes are
-        /// the axes that remain after the reduction of a. If the input
-        /// contains integers or floats smaller than float64, the output
-        /// data-type is float64. Otherwise, the output data-type is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	If q is a single percentile and axis=None, then the result
+        ///	is a scalar.<br></br>
+        ///	 If multiple percentiles are given, first axis of
+        ///	the result corresponds to the percentiles.<br></br>
+        ///	 The other axes are
+        ///	the axes that remain after the reduction of a.<br></br>
+        ///	 If the input
+        ///	contains integers or floats smaller than float64, the output
+        ///	data-type is float64. Otherwise, the output data-type is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public double percentile(NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
@@ -7758,66 +8795,77 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the qth percentile of the data along the specified axis,
-        /// while ignoring nan values.
-        /// 
-        /// Returns the qth percentile(s) of the array elements.
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the q-th percentile of
-        /// V is the value q/100 of the way from the minimum to the
-        /// maximum in a sorted copy of V. The values and distances of
-        /// the two nearest neighbors as well as the interpolation parameter
-        /// will determine the percentile if the normalized ranking does not
-        /// match the location of q exactly. This function is the same as
-        /// the median if q=50, the same as the minimum if q=0 and the
-        /// same as the maximum if q=100.
+        ///	Compute the qth percentile of the data along the specified axis,
+        ///	while ignoring nan values.<br></br>
+        ///	
+        ///	Returns the qth percentile(s) of the array elements.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the q-th percentile of
+        ///	V is the value q/100 of the way from the minimum to the
+        ///	maximum in a sorted copy of V.<br></br>
+        ///	 The values and distances of
+        ///	the two nearest neighbors as well as the interpolation parameter
+        ///	will determine the percentile if the normalized ranking does not
+        ///	match the location of q exactly.<br></br>
+        ///	 This function is the same as
+        ///	the median if q=50, the same as the minimum if q=0 and the
+        ///	same as the maximum if q=100.
         /// </summary>
         /// <param name="q">
-        /// Percentile or sequence of percentiles to compute, which must be between
-        /// 0 and 100 inclusive.
+        ///	Percentile or sequence of percentiles to compute, which must be between
+        ///	0 and 100 inclusive.
         /// </param>
         /// <param name="axis">
-        /// Axis or axes along which the percentiles are computed. The
-        /// default is to compute the percentile(s) along a flattened
-        /// version of the array.
+        ///	Axis or axes along which the percentiles are computed.<br></br>
+        ///	The
+        ///	default is to compute the percentile(s) along a flattened
+        ///	version of the array.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow the input array a to be modified by intermediate
-        /// calculations, to save memory. In this case, the contents of the input
-        /// a after this function completes is undefined.
+        ///	If True, then allow the input array a to be modified by intermediate
+        ///	calculations, to save memory.<br></br>
+        ///	In this case, the contents of the input
+        ///	a after this function completes is undefined.
         /// </param>
         /// <param name="interpolation">
-        /// This optional parameter specifies the interpolation method to
-        /// use when the desired percentile lies between two data points
-        /// i &lt; j:
+        ///	This optional parameter specifies the interpolation method to
+        ///	use when the desired percentile lies between two data points
+        ///	i &lt; j:
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left in
-        /// the result as dimensions with size one. With this option, the
-        /// result will broadcast correctly against the original array a.
-        /// 
-        /// If this is anything but the default value it will be passed
-        /// through (in the special case of an empty array) to the
-        /// mean function of the underlying array.  If the array is
-        /// a sub-class and mean does not have the kwarg keepdims this
-        /// will raise a RuntimeError.
+        ///	If this is set to True, the axes which are reduced are left in
+        ///	the result as dimensions with size one.<br></br>
+        ///	With this option, the
+        ///	result will broadcast correctly against the original array a.<br></br>
+        ///	
+        ///	If this is anything but the default value it will be passed
+        ///	through (in the special case of an empty array) to the
+        ///	mean function of the underlying array.<br></br>
+        ///	If the array is
+        ///	a sub-class and mean does not have the kwarg keepdims this
+        ///	will raise a RuntimeError.
         /// </param>
         /// <returns>
-        /// If q is a single percentile and axis=None, then the result
-        /// is a scalar. If multiple percentiles are given, first axis of
-        /// the result corresponds to the percentiles. The other axes are
-        /// the axes that remain after the reduction of a. If the input
-        /// contains integers or floats smaller than float64, the output
-        /// data-type is float64. Otherwise, the output data-type is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	If q is a single percentile and axis=None, then the result
+        ///	is a scalar.<br></br>
+        ///	 If multiple percentiles are given, first axis of
+        ///	the result corresponds to the percentiles.<br></br>
+        ///	 The other axes are
+        ///	the axes that remain after the reduction of a.<br></br>
+        ///	 If the input
+        ///	contains integers or floats smaller than float64, the output
+        ///	data-type is float64. Otherwise, the output data-type is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public NDarray<double> nanpercentile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
         {
@@ -7827,50 +8875,58 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the qth percentile of the data along the specified axis,
-        /// while ignoring nan values.
-        /// 
-        /// Returns the qth percentile(s) of the array elements.
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the q-th percentile of
-        /// V is the value q/100 of the way from the minimum to the
-        /// maximum in a sorted copy of V. The values and distances of
-        /// the two nearest neighbors as well as the interpolation parameter
-        /// will determine the percentile if the normalized ranking does not
-        /// match the location of q exactly. This function is the same as
-        /// the median if q=50, the same as the minimum if q=0 and the
-        /// same as the maximum if q=100.
+        ///	Compute the qth percentile of the data along the specified axis,
+        ///	while ignoring nan values.<br></br>
+        ///	
+        ///	Returns the qth percentile(s) of the array elements.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the q-th percentile of
+        ///	V is the value q/100 of the way from the minimum to the
+        ///	maximum in a sorted copy of V.<br></br>
+        ///	 The values and distances of
+        ///	the two nearest neighbors as well as the interpolation parameter
+        ///	will determine the percentile if the normalized ranking does not
+        ///	match the location of q exactly.<br></br>
+        ///	 This function is the same as
+        ///	the median if q=50, the same as the minimum if q=0 and the
+        ///	same as the maximum if q=100.
         /// </summary>
         /// <param name="q">
-        /// Percentile or sequence of percentiles to compute, which must be between
-        /// 0 and 100 inclusive.
+        ///	Percentile or sequence of percentiles to compute, which must be between
+        ///	0 and 100 inclusive.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow the input array a to be modified by intermediate
-        /// calculations, to save memory. In this case, the contents of the input
-        /// a after this function completes is undefined.
+        ///	If True, then allow the input array a to be modified by intermediate
+        ///	calculations, to save memory.<br></br>
+        ///	In this case, the contents of the input
+        ///	a after this function completes is undefined.
         /// </param>
         /// <param name="interpolation">
-        /// This optional parameter specifies the interpolation method to
-        /// use when the desired percentile lies between two data points
-        /// i &lt; j:
+        ///	This optional parameter specifies the interpolation method to
+        ///	use when the desired percentile lies between two data points
+        ///	i &lt; j:
         /// </param>
         /// <returns>
-        /// If q is a single percentile and axis=None, then the result
-        /// is a scalar. If multiple percentiles are given, first axis of
-        /// the result corresponds to the percentiles. The other axes are
-        /// the axes that remain after the reduction of a. If the input
-        /// contains integers or floats smaller than float64, the output
-        /// data-type is float64. Otherwise, the output data-type is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	If q is a single percentile and axis=None, then the result
+        ///	is a scalar.<br></br>
+        ///	 If multiple percentiles are given, first axis of
+        ///	the result corresponds to the percentiles.<br></br>
+        ///	 The other axes are
+        ///	the axes that remain after the reduction of a.<br></br>
+        ///	 If the input
+        ///	contains integers or floats smaller than float64, the output
+        ///	data-type is float64. Otherwise, the output data-type is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public double nanpercentile(NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
@@ -7880,58 +8936,69 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the q-th quantile of the data along the specified axis.
-        /// ..versionadded:: 1.15.0
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the q-th quantile of
-        /// V is the value q of the way from the minimum to the
-        /// maximum in a sorted copy of V. The values and distances of
-        /// the two nearest neighbors as well as the interpolation parameter
-        /// will determine the quantile if the normalized ranking does not
-        /// match the location of q exactly. This function is the same as
-        /// the median if q=0.5, the same as the minimum if q=0.0 and the
-        /// same as the maximum if q=1.0.
+        ///	Compute the q-th quantile of the data along the specified axis.<br></br>
+        ///	
+        ///	..versionadded:: 1.15.0
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the q-th quantile of
+        ///	V is the value q of the way from the minimum to the
+        ///	maximum in a sorted copy of V.<br></br>
+        ///	 The values and distances of
+        ///	the two nearest neighbors as well as the interpolation parameter
+        ///	will determine the quantile if the normalized ranking does not
+        ///	match the location of q exactly.<br></br>
+        ///	 This function is the same as
+        ///	the median if q=0.5, the same as the minimum if q=0.0 and the
+        ///	same as the maximum if q=1.0.
         /// </summary>
         /// <param name="q">
-        /// Quantile or sequence of quantiles to compute, which must be between
-        /// 0 and 1 inclusive.
+        ///	Quantile or sequence of quantiles to compute, which must be between
+        ///	0 and 1 inclusive.
         /// </param>
         /// <param name="axis">
-        /// Axis or axes along which the quantiles are computed. The
-        /// default is to compute the quantile(s) along a flattened
-        /// version of the array.
+        ///	Axis or axes along which the quantiles are computed.<br></br>
+        ///	The
+        ///	default is to compute the quantile(s) along a flattened
+        ///	version of the array.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow the input array a to be modified by intermediate
-        /// calculations, to save memory. In this case, the contents of the input
-        /// a after this function completes is undefined.
+        ///	If True, then allow the input array a to be modified by intermediate
+        ///	calculations, to save memory.<br></br>
+        ///	In this case, the contents of the input
+        ///	a after this function completes is undefined.
         /// </param>
         /// <param name="interpolation">
-        /// This optional parameter specifies the interpolation method to
-        /// use when the desired quantile lies between two data points
-        /// i &lt; j:
+        ///	This optional parameter specifies the interpolation method to
+        ///	use when the desired quantile lies between two data points
+        ///	i &lt; j:
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left in
-        /// the result as dimensions with size one. With this option, the
-        /// result will broadcast correctly against the original array a.
+        ///	If this is set to True, the axes which are reduced are left in
+        ///	the result as dimensions with size one.<br></br>
+        ///	With this option, the
+        ///	result will broadcast correctly against the original array a.
         /// </param>
         /// <returns>
-        /// If q is a single quantile and axis=None, then the result
-        /// is a scalar. If multiple quantiles are given, first axis of
-        /// the result corresponds to the quantiles. The other axes are
-        /// the axes that remain after the reduction of a. If the input
-        /// contains integers or floats smaller than float64, the output
-        /// data-type is float64. Otherwise, the output data-type is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	If q is a single quantile and axis=None, then the result
+        ///	is a scalar.<br></br>
+        ///	 If multiple quantiles are given, first axis of
+        ///	the result corresponds to the quantiles.<br></br>
+        ///	 The other axes are
+        ///	the axes that remain after the reduction of a.<br></br>
+        ///	 If the input
+        ///	contains integers or floats smaller than float64, the output
+        ///	data-type is float64. Otherwise, the output data-type is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public NDarray<double> quantile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
         {
@@ -7941,48 +9008,57 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the q-th quantile of the data along the specified axis.
-        /// ..versionadded:: 1.15.0
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the q-th quantile of
-        /// V is the value q of the way from the minimum to the
-        /// maximum in a sorted copy of V. The values and distances of
-        /// the two nearest neighbors as well as the interpolation parameter
-        /// will determine the quantile if the normalized ranking does not
-        /// match the location of q exactly. This function is the same as
-        /// the median if q=0.5, the same as the minimum if q=0.0 and the
-        /// same as the maximum if q=1.0.
+        ///	Compute the q-th quantile of the data along the specified axis.<br></br>
+        ///	
+        ///	..versionadded:: 1.15.0
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the q-th quantile of
+        ///	V is the value q of the way from the minimum to the
+        ///	maximum in a sorted copy of V.<br></br>
+        ///	 The values and distances of
+        ///	the two nearest neighbors as well as the interpolation parameter
+        ///	will determine the quantile if the normalized ranking does not
+        ///	match the location of q exactly.<br></br>
+        ///	 This function is the same as
+        ///	the median if q=0.5, the same as the minimum if q=0.0 and the
+        ///	same as the maximum if q=1.0.
         /// </summary>
         /// <param name="q">
-        /// Quantile or sequence of quantiles to compute, which must be between
-        /// 0 and 1 inclusive.
+        ///	Quantile or sequence of quantiles to compute, which must be between
+        ///	0 and 1 inclusive.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow the input array a to be modified by intermediate
-        /// calculations, to save memory. In this case, the contents of the input
-        /// a after this function completes is undefined.
+        ///	If True, then allow the input array a to be modified by intermediate
+        ///	calculations, to save memory.<br></br>
+        ///	In this case, the contents of the input
+        ///	a after this function completes is undefined.
         /// </param>
         /// <param name="interpolation">
-        /// This optional parameter specifies the interpolation method to
-        /// use when the desired quantile lies between two data points
-        /// i &lt; j:
+        ///	This optional parameter specifies the interpolation method to
+        ///	use when the desired quantile lies between two data points
+        ///	i &lt; j:
         /// </param>
         /// <returns>
-        /// If q is a single quantile and axis=None, then the result
-        /// is a scalar. If multiple quantiles are given, first axis of
-        /// the result corresponds to the quantiles. The other axes are
-        /// the axes that remain after the reduction of a. If the input
-        /// contains integers or floats smaller than float64, the output
-        /// data-type is float64. Otherwise, the output data-type is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	If q is a single quantile and axis=None, then the result
+        ///	is a scalar.<br></br>
+        ///	 If multiple quantiles are given, first axis of
+        ///	the result corresponds to the quantiles.<br></br>
+        ///	 The other axes are
+        ///	the axes that remain after the reduction of a.<br></br>
+        ///	 If the input
+        ///	contains integers or floats smaller than float64, the output
+        ///	data-type is float64. Otherwise, the output data-type is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public double quantile(NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
@@ -7992,55 +9068,66 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the qth quantile of the data along the specified axis,
-        /// while ignoring nan values.
-        /// Returns the qth quantile(s) of the array elements.
-        /// .. versionadded:: 1.15.0
+        ///	Compute the qth quantile of the data along the specified axis,
+        ///	while ignoring nan values.<br></br>
+        ///	
+        ///	Returns the qth quantile(s) of the array elements.<br></br>
+        ///	
+        ///	.. versionadded:: 1.15.0
         /// </summary>
         /// <param name="q">
-        /// Quantile or sequence of quantiles to compute, which must be between
-        /// 0 and 1 inclusive.
+        ///	Quantile or sequence of quantiles to compute, which must be between
+        ///	0 and 1 inclusive.
         /// </param>
         /// <param name="axis">
-        /// Axis or axes along which the quantiles are computed. The
-        /// default is to compute the quantile(s) along a flattened
-        /// version of the array.
+        ///	Axis or axes along which the quantiles are computed.<br></br>
+        ///	The
+        ///	default is to compute the quantile(s) along a flattened
+        ///	version of the array.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow the input array a to be modified by intermediate
-        /// calculations, to save memory. In this case, the contents of the input
-        /// a after this function completes is undefined.
+        ///	If True, then allow the input array a to be modified by intermediate
+        ///	calculations, to save memory.<br></br>
+        ///	In this case, the contents of the input
+        ///	a after this function completes is undefined.
         /// </param>
         /// <param name="interpolation">
-        /// This optional parameter specifies the interpolation method to
-        /// use when the desired quantile lies between two data points
-        /// i &lt; j:
+        ///	This optional parameter specifies the interpolation method to
+        ///	use when the desired quantile lies between two data points
+        ///	i &lt; j:
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left in
-        /// the result as dimensions with size one. With this option, the
-        /// result will broadcast correctly against the original array a.
-        /// 
-        /// If this is anything but the default value it will be passed
-        /// through (in the special case of an empty array) to the
-        /// mean function of the underlying array.  If the array is
-        /// a sub-class and mean does not have the kwarg keepdims this
-        /// will raise a RuntimeError.
+        ///	If this is set to True, the axes which are reduced are left in
+        ///	the result as dimensions with size one.<br></br>
+        ///	With this option, the
+        ///	result will broadcast correctly against the original array a.<br></br>
+        ///	
+        ///	If this is anything but the default value it will be passed
+        ///	through (in the special case of an empty array) to the
+        ///	mean function of the underlying array.<br></br>
+        ///	If the array is
+        ///	a sub-class and mean does not have the kwarg keepdims this
+        ///	will raise a RuntimeError.
         /// </param>
         /// <returns>
-        /// If q is a single percentile and axis=None, then the result
-        /// is a scalar. If multiple quantiles are given, first axis of
-        /// the result corresponds to the quantiles. The other axes are
-        /// the axes that remain after the reduction of a. If the input
-        /// contains integers or floats smaller than float64, the output
-        /// data-type is float64. Otherwise, the output data-type is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	If q is a single percentile and axis=None, then the result
+        ///	is a scalar.<br></br>
+        ///	 If multiple quantiles are given, first axis of
+        ///	the result corresponds to the quantiles.<br></br>
+        ///	 The other axes are
+        ///	the axes that remain after the reduction of a.<br></br>
+        ///	 If the input
+        ///	contains integers or floats smaller than float64, the output
+        ///	data-type is float64. Otherwise, the output data-type is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public NDarray<double> nanquantile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
         {
@@ -8050,39 +9137,47 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the qth quantile of the data along the specified axis,
-        /// while ignoring nan values.
-        /// Returns the qth quantile(s) of the array elements.
-        /// .. versionadded:: 1.15.0
+        ///	Compute the qth quantile of the data along the specified axis,
+        ///	while ignoring nan values.<br></br>
+        ///	
+        ///	Returns the qth quantile(s) of the array elements.<br></br>
+        ///	
+        ///	.. versionadded:: 1.15.0
         /// </summary>
         /// <param name="q">
-        /// Quantile or sequence of quantiles to compute, which must be between
-        /// 0 and 1 inclusive.
+        ///	Quantile or sequence of quantiles to compute, which must be between
+        ///	0 and 1 inclusive.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow the input array a to be modified by intermediate
-        /// calculations, to save memory. In this case, the contents of the input
-        /// a after this function completes is undefined.
+        ///	If True, then allow the input array a to be modified by intermediate
+        ///	calculations, to save memory.<br></br>
+        ///	In this case, the contents of the input
+        ///	a after this function completes is undefined.
         /// </param>
         /// <param name="interpolation">
-        /// This optional parameter specifies the interpolation method to
-        /// use when the desired quantile lies between two data points
-        /// i &lt; j:
+        ///	This optional parameter specifies the interpolation method to
+        ///	use when the desired quantile lies between two data points
+        ///	i &lt; j:
         /// </param>
         /// <returns>
-        /// If q is a single percentile and axis=None, then the result
-        /// is a scalar. If multiple quantiles are given, first axis of
-        /// the result corresponds to the quantiles. The other axes are
-        /// the axes that remain after the reduction of a. If the input
-        /// contains integers or floats smaller than float64, the output
-        /// data-type is float64. Otherwise, the output data-type is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	If q is a single percentile and axis=None, then the result
+        ///	is a scalar.<br></br>
+        ///	 If multiple quantiles are given, first axis of
+        ///	the result corresponds to the quantiles.<br></br>
+        ///	 The other axes are
+        ///	the axes that remain after the reduction of a.<br></br>
+        ///	 If the input
+        ///	contains integers or floats smaller than float64, the output
+        ///	data-type is float64. Otherwise, the output data-type is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public double nanquantile(NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
@@ -8092,47 +9187,58 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the median along the specified axis.
-        /// 
-        /// Returns the median of the array elements.
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the median of V is the
-        /// middle value of a sorted copy of V, V_sorted - i
-        /// e., V_sorted[(N-1)/2], when N is odd, and the average of the
-        /// two middle values of V_sorted when N is even.
+        ///	Compute the median along the specified axis.<br></br>
+        ///	
+        ///	Returns the median of the array elements.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the median of V is the
+        ///	middle value of a sorted copy of V, V_sorted - i
+        ///	e., V_sorted[(N-1)/2], when N is odd, and the average of the
+        ///	two middle values of V_sorted when N is even.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the medians are computed. The default
-        /// is to compute the median along a flattened version of the array.
-        /// A sequence of axes is supported since version 1.9.0.
+        ///	Axis or axes along which the medians are computed.<br></br>
+        ///	The default
+        ///	is to compute the median along a flattened version of the array.<br></br>
+        ///	
+        ///	A sequence of axes is supported since version 1.9.0.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow use of memory of input array a for
-        /// calculations. The input array will be modified by the call to
-        /// median. This will save memory when you do not need to preserve
-        /// the contents of the input array. Treat the input as undefined,
-        /// but it will probably be fully or partially sorted. Default is
-        /// False. If overwrite_input is True and a is not already an
-        /// ndarray, an error will be raised.
+        ///	If True, then allow use of memory of input array a for
+        ///	calculations.<br></br>
+        ///	The input array will be modified by the call to
+        ///	median.<br></br>
+        ///	This will save memory when you do not need to preserve
+        ///	the contents of the input array.<br></br>
+        ///	Treat the input as undefined,
+        ///	but it will probably be fully or partially sorted.<br></br>
+        ///	Default is
+        ///	False.<br></br>
+        ///	If overwrite_input is True and a is not already an
+        ///	ndarray, an error will be raised.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the original arr.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the original arr.
         /// </param>
         /// <returns>
-        /// A new array holding the result. If the input contains integers
-        /// or floats smaller than float64, then the output data-type is
-        /// np.float64.  Otherwise, the data-type of the output is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	A new array holding the result.<br></br>
+        ///	 If the input contains integers
+        ///	or floats smaller than float64, then the output data-type is
+        ///	np.float64.  Otherwise, the data-type of the output is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public NDarray<double> median(int[] axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = false)
         {
@@ -8142,37 +9248,45 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the median along the specified axis.
-        /// 
-        /// Returns the median of the array elements.
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the median of V is the
-        /// middle value of a sorted copy of V, V_sorted - i
-        /// e., V_sorted[(N-1)/2], when N is odd, and the average of the
-        /// two middle values of V_sorted when N is even.
+        ///	Compute the median along the specified axis.<br></br>
+        ///	
+        ///	Returns the median of the array elements.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the median of V is the
+        ///	middle value of a sorted copy of V, V_sorted - i
+        ///	e., V_sorted[(N-1)/2], when N is odd, and the average of the
+        ///	two middle values of V_sorted when N is even.
         /// </summary>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow use of memory of input array a for
-        /// calculations. The input array will be modified by the call to
-        /// median. This will save memory when you do not need to preserve
-        /// the contents of the input array. Treat the input as undefined,
-        /// but it will probably be fully or partially sorted. Default is
-        /// False. If overwrite_input is True and a is not already an
-        /// ndarray, an error will be raised.
+        ///	If True, then allow use of memory of input array a for
+        ///	calculations.<br></br>
+        ///	The input array will be modified by the call to
+        ///	median.<br></br>
+        ///	This will save memory when you do not need to preserve
+        ///	the contents of the input array.<br></br>
+        ///	Treat the input as undefined,
+        ///	but it will probably be fully or partially sorted.<br></br>
+        ///	Default is
+        ///	False.<br></br>
+        ///	If overwrite_input is True and a is not already an
+        ///	ndarray, an error will be raised.
         /// </param>
         /// <returns>
-        /// A new array holding the result. If the input contains integers
-        /// or floats smaller than float64, then the output data-type is
-        /// np.float64.  Otherwise, the data-type of the output is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	A new array holding the result.<br></br>
+        ///	 If the input contains integers
+        ///	or floats smaller than float64, then the output data-type is
+        ///	np.float64.  Otherwise, the data-type of the output is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public double median(NDarray @out = null, bool? overwrite_input = false)
         {
@@ -8182,42 +9296,55 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the weighted average along the specified axis.
+        ///	Compute the weighted average along the specified axis.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which to average a.  The default,
-        /// axis=None, will average over all of the elements of the input array.
-        /// If axis is negative it counts from the last to the first axis.
-        /// 
-        /// If axis is a tuple of ints, averaging is performed on all of the axes
-        /// specified in the tuple instead of a single axis or all the axes as
-        /// before.
+        ///	Axis or axes along which to average a.<br></br>
+        ///	The default,
+        ///	axis=None, will average over all of the elements of the input array.<br></br>
+        ///	
+        ///	If axis is negative it counts from the last to the first axis.<br></br>
+        ///	
+        ///	If axis is a tuple of ints, averaging is performed on all of the axes
+        ///	specified in the tuple instead of a single axis or all the axes as
+        ///	before.
         /// </param>
         /// <param name="weights">
-        /// An array of weights associated with the values in a. Each value in
-        /// a contributes to the average according to its associated weight.
-        /// The weights array can either be 1-D (in which case its length must be
-        /// the size of a along the given axis) or of the same shape as a.
-        /// If weights=None, then all data in a are assumed to have a
-        /// weight equal to one.
+        ///	An array of weights associated with the values in a.<br></br>
+        ///	Each value in
+        ///	a contributes to the average according to its associated weight.<br></br>
+        ///	
+        ///	The weights array can either be 1-D (in which case its length must be
+        ///	the size of a along the given axis) or of the same shape as a.<br></br>
+        ///	
+        ///	If weights=None, then all data in a are assumed to have a
+        ///	weight equal to one.
         /// </param>
         /// <param name="returned">
-        /// Default is False. If True, the tuple (average, sum_of_weights)
-        /// is returned, otherwise only the average is returned.
-        /// If weights=None, sum_of_weights is equivalent to the number of
-        /// elements over which the average is taken.
+        ///	Default is False.<br></br>
+        ///	If True, the tuple (average, sum_of_weights)
+        ///	is returned, otherwise only the average is returned.<br></br>
+        ///	
+        ///	If weights=None, sum_of_weights is equivalent to the number of
+        ///	elements over which the average is taken.
         /// </param>
         /// <returns>
-        /// Return the average along the specified axis. When returned is True,
-        /// return a tuple with the average as the first element and the sum
-        /// of the weights as the second element. sum_of_weights is of the
-        /// same type as retval. The result dtype follows a genereal pattern.
-        /// If weights is None, the result dtype will be that of a , or float64
-        /// if a is integral. Otherwise, if weights is not None and a is non-
-        /// integral, the result type will be the type of lowest precision capable of
-        /// representing values of both a and weights. If a happens to be
-        /// integral, the previous rules still applies but the result dtype will
-        /// at least be float64.
+        ///	Return the average along the specified axis.<br></br>
+        ///	 When returned is True,
+        ///	return a tuple with the average as the first element and the sum
+        ///	of the weights as the second element.<br></br>
+        ///	 sum_of_weights is of the
+        ///	same type as retval.<br></br>
+        ///	 The result dtype follows a genereal pattern.<br></br>
+        ///	
+        ///	If weights is None, the result dtype will be that of a , or float64
+        ///	if a is integral.<br></br>
+        ///	 Otherwise, if weights is not None and a is non-
+        ///	integral, the result type will be the type of lowest precision capable of
+        ///	representing values of both a and weights.<br></br>
+        ///	 If a happens to be
+        ///	integral, the previous rules still applies but the result dtype will
+        ///	at least be float64.
         /// </returns>
         public NDarray<double> average(int[] axis, NDarray weights = null, bool? returned = false)
         {
@@ -8227,33 +9354,44 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the weighted average along the specified axis.
+        ///	Compute the weighted average along the specified axis.
         /// </summary>
         /// <param name="weights">
-        /// An array of weights associated with the values in a. Each value in
-        /// a contributes to the average according to its associated weight.
-        /// The weights array can either be 1-D (in which case its length must be
-        /// the size of a along the given axis) or of the same shape as a.
-        /// If weights=None, then all data in a are assumed to have a
-        /// weight equal to one.
+        ///	An array of weights associated with the values in a.<br></br>
+        ///	Each value in
+        ///	a contributes to the average according to its associated weight.<br></br>
+        ///	
+        ///	The weights array can either be 1-D (in which case its length must be
+        ///	the size of a along the given axis) or of the same shape as a.<br></br>
+        ///	
+        ///	If weights=None, then all data in a are assumed to have a
+        ///	weight equal to one.
         /// </param>
         /// <param name="returned">
-        /// Default is False. If True, the tuple (average, sum_of_weights)
-        /// is returned, otherwise only the average is returned.
-        /// If weights=None, sum_of_weights is equivalent to the number of
-        /// elements over which the average is taken.
+        ///	Default is False.<br></br>
+        ///	If True, the tuple (average, sum_of_weights)
+        ///	is returned, otherwise only the average is returned.<br></br>
+        ///	
+        ///	If weights=None, sum_of_weights is equivalent to the number of
+        ///	elements over which the average is taken.
         /// </param>
         /// <returns>
-        /// Return the average along the specified axis. When returned is True,
-        /// return a tuple with the average as the first element and the sum
-        /// of the weights as the second element. sum_of_weights is of the
-        /// same type as retval. The result dtype follows a genereal pattern.
-        /// If weights is None, the result dtype will be that of a , or float64
-        /// if a is integral. Otherwise, if weights is not None and a is non-
-        /// integral, the result type will be the type of lowest precision capable of
-        /// representing values of both a and weights. If a happens to be
-        /// integral, the previous rules still applies but the result dtype will
-        /// at least be float64.
+        ///	Return the average along the specified axis.<br></br>
+        ///	 When returned is True,
+        ///	return a tuple with the average as the first element and the sum
+        ///	of the weights as the second element.<br></br>
+        ///	 sum_of_weights is of the
+        ///	same type as retval.<br></br>
+        ///	 The result dtype follows a genereal pattern.<br></br>
+        ///	
+        ///	If weights is None, the result dtype will be that of a , or float64
+        ///	if a is integral.<br></br>
+        ///	 Otherwise, if weights is not None and a is non-
+        ///	integral, the result type will be the type of lowest precision capable of
+        ///	representing values of both a and weights.<br></br>
+        ///	 If a happens to be
+        ///	integral, the previous rules still applies but the result dtype will
+        ///	at least be float64.
         /// </returns>
         public double average(NDarray weights = null, bool? returned = false)
         {
@@ -8263,58 +9401,68 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the arithmetic mean along the specified axis.
-        /// 
-        /// Returns the average of the array elements.  The average is taken over
-        /// the flattened array by default, otherwise over the specified axis.
-        /// float64 intermediate and return values are used for integer inputs.
-        /// 
-        /// Notes
-        /// 
-        /// The arithmetic mean is the sum of the elements along the axis divided
-        /// by the number of elements.
-        /// 
-        /// Note that for floating-point input, the mean is computed using the
-        /// same precision the input has.  Depending on the input data, this can
-        /// cause the results to be inaccurate, especially for float32 (see
-        /// example below).  Specifying a higher-precision accumulator using the
-        /// dtype keyword can alleviate this issue.
-        /// 
-        /// By default, float16 results are computed using float32 intermediates
-        /// for extra precision.
+        ///	Compute the arithmetic mean along the specified axis.<br></br>
+        ///	
+        ///	Returns the average of the array elements.<br></br>
+        ///	  The average is taken over
+        ///	the flattened array by default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	float64 intermediate and return values are used for integer inputs.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The arithmetic mean is the sum of the elements along the axis divided
+        ///	by the number of elements.<br></br>
+        ///	
+        ///	Note that for floating-point input, the mean is computed using the
+        ///	same precision the input has.<br></br>
+        ///	  Depending on the input data, this can
+        ///	cause the results to be inaccurate, especially for float32 (see
+        ///	example below).<br></br>
+        ///	  Specifying a higher-precision accumulator using the
+        ///	dtype keyword can alleviate this issue.<br></br>
+        ///	
+        ///	By default, float16 results are computed using float32 intermediates
+        ///	for extra precision.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the means are computed. The default is to
-        /// compute the mean of the flattened array.
-        /// 
-        /// If this is a tuple of ints, a mean is performed over multiple axes,
-        /// instead of a single axis or all the axes as before.
+        ///	Axis or axes along which the means are computed.<br></br>
+        ///	The default is to
+        ///	compute the mean of the flattened array.<br></br>
+        ///	
+        ///	If this is a tuple of ints, a mean is performed over multiple axes,
+        ///	instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="dtype">
-        /// Type to use in computing the mean.  For integer inputs, the default
-        /// is float64; for floating point inputs, it is the same as the
-        /// input dtype.
+        ///	Type to use in computing the mean.<br></br>
+        ///	For integer inputs, the default
+        ///	is float64; for floating point inputs, it is the same as the
+        ///	input dtype.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  The default
-        /// is None; if provided, it must have the same shape as the
-        /// expected output, but the type will be cast if necessary.
-        /// See doc.ufuncs for details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	The default
+        ///	is None; if provided, it must have the same shape as the
+        ///	expected output, but the type will be cast if necessary.<br></br>
+        ///	
+        ///	See doc.ufuncs for details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the mean method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the mean method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <returns>
-        /// If out=None, returns a new array containing the mean values,
-        /// otherwise a reference to the output array is returned.
+        ///	If out=None, returns a new array containing the mean values,
+        ///	otherwise a reference to the output array is returned.
         /// </returns>
         public NDarray<double> mean(int[] axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
@@ -8324,40 +9472,47 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the arithmetic mean along the specified axis.
-        /// 
-        /// Returns the average of the array elements.  The average is taken over
-        /// the flattened array by default, otherwise over the specified axis.
-        /// float64 intermediate and return values are used for integer inputs.
-        /// 
-        /// Notes
-        /// 
-        /// The arithmetic mean is the sum of the elements along the axis divided
-        /// by the number of elements.
-        /// 
-        /// Note that for floating-point input, the mean is computed using the
-        /// same precision the input has.  Depending on the input data, this can
-        /// cause the results to be inaccurate, especially for float32 (see
-        /// example below).  Specifying a higher-precision accumulator using the
-        /// dtype keyword can alleviate this issue.
-        /// 
-        /// By default, float16 results are computed using float32 intermediates
-        /// for extra precision.
+        ///	Compute the arithmetic mean along the specified axis.<br></br>
+        ///	
+        ///	Returns the average of the array elements.<br></br>
+        ///	  The average is taken over
+        ///	the flattened array by default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	float64 intermediate and return values are used for integer inputs.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The arithmetic mean is the sum of the elements along the axis divided
+        ///	by the number of elements.<br></br>
+        ///	
+        ///	Note that for floating-point input, the mean is computed using the
+        ///	same precision the input has.<br></br>
+        ///	  Depending on the input data, this can
+        ///	cause the results to be inaccurate, especially for float32 (see
+        ///	example below).<br></br>
+        ///	  Specifying a higher-precision accumulator using the
+        ///	dtype keyword can alleviate this issue.<br></br>
+        ///	
+        ///	By default, float16 results are computed using float32 intermediates
+        ///	for extra precision.
         /// </summary>
         /// <param name="dtype">
-        /// Type to use in computing the mean.  For integer inputs, the default
-        /// is float64; for floating point inputs, it is the same as the
-        /// input dtype.
+        ///	Type to use in computing the mean.<br></br>
+        ///	For integer inputs, the default
+        ///	is float64; for floating point inputs, it is the same as the
+        ///	input dtype.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  The default
-        /// is None; if provided, it must have the same shape as the
-        /// expected output, but the type will be cast if necessary.
-        /// See doc.ufuncs for details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	The default
+        ///	is None; if provided, it must have the same shape as the
+        ///	expected output, but the type will be cast if necessary.<br></br>
+        ///	
+        ///	See doc.ufuncs for details.
         /// </param>
         /// <returns>
-        /// If out=None, returns a new array containing the mean values,
-        /// otherwise a reference to the output array is returned.
+        ///	If out=None, returns a new array containing the mean values,
+        ///	otherwise a reference to the output array is returned.
         /// </returns>
         public double mean(Dtype dtype = null, NDarray @out = null)
         {
@@ -8367,72 +9522,86 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the standard deviation along the specified axis.
-        /// 
-        /// Returns the standard deviation, a measure of the spread of a distribution,
-        /// of the array elements. The standard deviation is computed for the
-        /// flattened array by default, otherwise over the specified axis.
-        /// 
-        /// Notes
-        /// 
-        /// The standard deviation is the square root of the average of the squared
-        /// deviations from the mean, i.e., std = sqrt(mean(abs(x - x.mean())**2)).
-        /// 
-        /// The average squared deviation is normally calculated as
-        /// x.sum() / N, where N = len(x).  If, however, ddof is specified,
-        /// the divisor N - ddof is used instead. In standard statistical
-        /// practice, ddof=1 provides an unbiased estimator of the variance
-        /// of the infinite population. ddof=0 provides a maximum likelihood
-        /// estimate of the variance for normally distributed variables. The
-        /// standard deviation computed in this function is the square root of
-        /// the estimated variance, so even with ddof=1, it will not be an
-        /// unbiased estimate of the standard deviation per se.
-        /// 
-        /// Note that, for complex numbers, std takes the absolute
-        /// value before squaring, so that the result is always real and nonnegative.
-        /// 
-        /// For floating-point input, the std is computed using the same
-        /// precision the input has. Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32 (see example below).
-        /// Specifying a higher-accuracy accumulator using the dtype keyword can
-        /// alleviate this issue.
+        ///	Compute the standard deviation along the specified axis.<br></br>
+        ///	
+        ///	Returns the standard deviation, a measure of the spread of a distribution,
+        ///	of the array elements.<br></br>
+        ///	 The standard deviation is computed for the
+        ///	flattened array by default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The standard deviation is the square root of the average of the squared
+        ///	deviations from the mean, i.e., std = sqrt(mean(abs(x - x.mean())**2)).<br></br>
+        ///	
+        ///	The average squared deviation is normally calculated as
+        ///	x.sum() / N, where N = len(x).<br></br>
+        ///	  If, however, ddof is specified,
+        ///	the divisor N - ddof is used instead.<br></br>
+        ///	 In standard statistical
+        ///	practice, ddof=1 provides an unbiased estimator of the variance
+        ///	of the infinite population.<br></br>
+        ///	 ddof=0 provides a maximum likelihood
+        ///	estimate of the variance for normally distributed variables.<br></br>
+        ///	 The
+        ///	standard deviation computed in this function is the square root of
+        ///	the estimated variance, so even with ddof=1, it will not be an
+        ///	unbiased estimate of the standard deviation per se.<br></br>
+        ///	
+        ///	Note that, for complex numbers, std takes the absolute
+        ///	value before squaring, so that the result is always real and nonnegative.<br></br>
+        ///	
+        ///	For floating-point input, the std is computed using the same
+        ///	precision the input has.<br></br>
+        ///	 Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32 (see example below).<br></br>
+        ///	
+        ///	Specifying a higher-accuracy accumulator using the dtype keyword can
+        ///	alleviate this issue.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the standard deviation is computed. The
-        /// default is to compute the standard deviation of the flattened array.
-        /// 
-        /// If this is a tuple of ints, a standard deviation is performed over
-        /// multiple axes, instead of a single axis or all the axes as before.
+        ///	Axis or axes along which the standard deviation is computed.<br></br>
+        ///	The
+        ///	default is to compute the standard deviation of the flattened array.<br></br>
+        ///	
+        ///	If this is a tuple of ints, a standard deviation is performed over
+        ///	multiple axes, instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="dtype">
-        /// Type to use in computing the standard deviation. For arrays of
-        /// integer type the default is float64, for arrays of float types it is
-        /// the same as the array type.
+        ///	Type to use in computing the standard deviation.<br></br>
+        ///	For arrays of
+        ///	integer type the default is float64, for arrays of float types it is
+        ///	the same as the array type.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must have
-        /// the same shape as the expected output but the type (of the calculated
-        /// values) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output but the type (of the calculated
+        ///	values) will be cast if necessary.
         /// </param>
         /// <param name="ddof">
-        /// Means Delta Degrees of Freedom.  The divisor used in calculations
-        /// is N - ddof, where N represents the number of elements.
-        /// By default ddof is zero.
+        ///	Means Delta Degrees of Freedom.<br></br>
+        ///	The divisor used in calculations
+        ///	is N - ddof, where N represents the number of elements.<br></br>
+        ///	
+        ///	By default ddof is zero.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the std method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the std method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <returns>
-        /// If out is None, return a new array containing the standard deviation,
-        /// otherwise return a reference to the output array.
+        ///	If out is None, return a new array containing the standard deviation,
+        ///	otherwise return a reference to the output array.
         /// </returns>
         public NDarray<double> std(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
@@ -8442,54 +9611,65 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the standard deviation along the specified axis.
-        /// 
-        /// Returns the standard deviation, a measure of the spread of a distribution,
-        /// of the array elements. The standard deviation is computed for the
-        /// flattened array by default, otherwise over the specified axis.
-        /// 
-        /// Notes
-        /// 
-        /// The standard deviation is the square root of the average of the squared
-        /// deviations from the mean, i.e., std = sqrt(mean(abs(x - x.mean())**2)).
-        /// 
-        /// The average squared deviation is normally calculated as
-        /// x.sum() / N, where N = len(x).  If, however, ddof is specified,
-        /// the divisor N - ddof is used instead. In standard statistical
-        /// practice, ddof=1 provides an unbiased estimator of the variance
-        /// of the infinite population. ddof=0 provides a maximum likelihood
-        /// estimate of the variance for normally distributed variables. The
-        /// standard deviation computed in this function is the square root of
-        /// the estimated variance, so even with ddof=1, it will not be an
-        /// unbiased estimate of the standard deviation per se.
-        /// 
-        /// Note that, for complex numbers, std takes the absolute
-        /// value before squaring, so that the result is always real and nonnegative.
-        /// 
-        /// For floating-point input, the std is computed using the same
-        /// precision the input has. Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32 (see example below).
-        /// Specifying a higher-accuracy accumulator using the dtype keyword can
-        /// alleviate this issue.
+        ///	Compute the standard deviation along the specified axis.<br></br>
+        ///	
+        ///	Returns the standard deviation, a measure of the spread of a distribution,
+        ///	of the array elements.<br></br>
+        ///	 The standard deviation is computed for the
+        ///	flattened array by default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The standard deviation is the square root of the average of the squared
+        ///	deviations from the mean, i.e., std = sqrt(mean(abs(x - x.mean())**2)).<br></br>
+        ///	
+        ///	The average squared deviation is normally calculated as
+        ///	x.sum() / N, where N = len(x).<br></br>
+        ///	  If, however, ddof is specified,
+        ///	the divisor N - ddof is used instead.<br></br>
+        ///	 In standard statistical
+        ///	practice, ddof=1 provides an unbiased estimator of the variance
+        ///	of the infinite population.<br></br>
+        ///	 ddof=0 provides a maximum likelihood
+        ///	estimate of the variance for normally distributed variables.<br></br>
+        ///	 The
+        ///	standard deviation computed in this function is the square root of
+        ///	the estimated variance, so even with ddof=1, it will not be an
+        ///	unbiased estimate of the standard deviation per se.<br></br>
+        ///	
+        ///	Note that, for complex numbers, std takes the absolute
+        ///	value before squaring, so that the result is always real and nonnegative.<br></br>
+        ///	
+        ///	For floating-point input, the std is computed using the same
+        ///	precision the input has.<br></br>
+        ///	 Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32 (see example below).<br></br>
+        ///	
+        ///	Specifying a higher-accuracy accumulator using the dtype keyword can
+        ///	alleviate this issue.
         /// </summary>
         /// <param name="dtype">
-        /// Type to use in computing the standard deviation. For arrays of
-        /// integer type the default is float64, for arrays of float types it is
-        /// the same as the array type.
+        ///	Type to use in computing the standard deviation.<br></br>
+        ///	For arrays of
+        ///	integer type the default is float64, for arrays of float types it is
+        ///	the same as the array type.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must have
-        /// the same shape as the expected output but the type (of the calculated
-        /// values) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output but the type (of the calculated
+        ///	values) will be cast if necessary.
         /// </param>
         /// <param name="ddof">
-        /// Means Delta Degrees of Freedom.  The divisor used in calculations
-        /// is N - ddof, where N represents the number of elements.
-        /// By default ddof is zero.
+        ///	Means Delta Degrees of Freedom.<br></br>
+        ///	The divisor used in calculations
+        ///	is N - ddof, where N represents the number of elements.<br></br>
+        ///	
+        ///	By default ddof is zero.
         /// </param>
         /// <returns>
-        /// If out is None, return a new array containing the standard deviation,
-        /// otherwise return a reference to the output array.
+        ///	If out is None, return a new array containing the standard deviation,
+        ///	otherwise return a reference to the output array.
         /// </returns>
         public double std(Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
@@ -8499,69 +9679,81 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the variance along the specified axis.
-        /// 
-        /// Returns the variance of the array elements, a measure of the spread of a
-        /// distribution.  The variance is computed for the flattened array by
-        /// default, otherwise over the specified axis.
-        /// 
-        /// Notes
-        /// 
-        /// The variance is the average of the squared deviations from the mean,
-        /// i.e.,  var = mean(abs(x - x.mean())**2).
-        /// 
-        /// The mean is normally calculated as x.sum() / N, where N = len(x).
-        /// If, however, ddof is specified, the divisor N - ddof is used
-        /// instead.  In standard statistical practice, ddof=1 provides an
-        /// unbiased estimator of the variance of a hypothetical infinite population.
-        /// ddof=0 provides a maximum likelihood estimate of the variance for
-        /// normally distributed variables.
-        /// 
-        /// Note that for complex numbers, the absolute value is taken before
-        /// squaring, so that the result is always real and nonnegative.
-        /// 
-        /// For floating-point input, the variance is computed using the same
-        /// precision the input has.  Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32 (see example
-        /// below).  Specifying a higher-accuracy accumulator using the dtype
-        /// keyword can alleviate this issue.
+        ///	Compute the variance along the specified axis.<br></br>
+        ///	
+        ///	Returns the variance of the array elements, a measure of the spread of a
+        ///	distribution.<br></br>
+        ///	  The variance is computed for the flattened array by
+        ///	default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The variance is the average of the squared deviations from the mean,
+        ///	i.e.,  var = mean(abs(x - x.mean())**2).<br></br>
+        ///	
+        ///	The mean is normally calculated as x.sum() / N, where N = len(x).<br></br>
+        ///	
+        ///	If, however, ddof is specified, the divisor N - ddof is used
+        ///	instead.<br></br>
+        ///	  In standard statistical practice, ddof=1 provides an
+        ///	unbiased estimator of the variance of a hypothetical infinite population.<br></br>
+        ///	
+        ///	ddof=0 provides a maximum likelihood estimate of the variance for
+        ///	normally distributed variables.<br></br>
+        ///	
+        ///	Note that for complex numbers, the absolute value is taken before
+        ///	squaring, so that the result is always real and nonnegative.<br></br>
+        ///	
+        ///	For floating-point input, the variance is computed using the same
+        ///	precision the input has.<br></br>
+        ///	  Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32 (see example
+        ///	below).<br></br>
+        ///	  Specifying a higher-accuracy accumulator using the dtype
+        ///	keyword can alleviate this issue.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the variance is computed.  The default is to
-        /// compute the variance of the flattened array.
-        /// 
-        /// If this is a tuple of ints, a variance is performed over multiple axes,
-        /// instead of a single axis or all the axes as before.
+        ///	Axis or axes along which the variance is computed.<br></br>
+        ///	The default is to
+        ///	compute the variance of the flattened array.<br></br>
+        ///	
+        ///	If this is a tuple of ints, a variance is performed over multiple axes,
+        ///	instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="dtype">
-        /// Type to use in computing the variance.  For arrays of integer type
-        /// the default is float32; for arrays of float types it is the same as
-        /// the array type.
+        ///	Type to use in computing the variance.<br></br>
+        ///	For arrays of integer type
+        ///	the default is float32; for arrays of float types it is the same as
+        ///	the array type.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  It must have
-        /// the same shape as the expected output, but the type is cast if
-        /// necessary.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output, but the type is cast if
+        ///	necessary.
         /// </param>
         /// <param name="ddof">
-        /// “Delta Degrees of Freedom”: the divisor used in the calculation is
-        /// N - ddof, where N represents the number of elements. By
-        /// default ddof is zero.
+        ///	“Delta Degrees of Freedom”: the divisor used in the calculation is
+        ///	N - ddof, where N represents the number of elements.<br></br>
+        ///	By
+        ///	default ddof is zero.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the var method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the var method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <returns>
-        /// If out=None, returns a new array containing the variance;
-        /// otherwise, a reference to the output array is returned.
+        ///	If out=None, returns a new array containing the variance;
+        ///	otherwise, a reference to the output array is returned.
         /// </returns>
         public NDarray<double> @var(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
@@ -8571,51 +9763,60 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the variance along the specified axis.
-        /// 
-        /// Returns the variance of the array elements, a measure of the spread of a
-        /// distribution.  The variance is computed for the flattened array by
-        /// default, otherwise over the specified axis.
-        /// 
-        /// Notes
-        /// 
-        /// The variance is the average of the squared deviations from the mean,
-        /// i.e.,  var = mean(abs(x - x.mean())**2).
-        /// 
-        /// The mean is normally calculated as x.sum() / N, where N = len(x).
-        /// If, however, ddof is specified, the divisor N - ddof is used
-        /// instead.  In standard statistical practice, ddof=1 provides an
-        /// unbiased estimator of the variance of a hypothetical infinite population.
-        /// ddof=0 provides a maximum likelihood estimate of the variance for
-        /// normally distributed variables.
-        /// 
-        /// Note that for complex numbers, the absolute value is taken before
-        /// squaring, so that the result is always real and nonnegative.
-        /// 
-        /// For floating-point input, the variance is computed using the same
-        /// precision the input has.  Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32 (see example
-        /// below).  Specifying a higher-accuracy accumulator using the dtype
-        /// keyword can alleviate this issue.
+        ///	Compute the variance along the specified axis.<br></br>
+        ///	
+        ///	Returns the variance of the array elements, a measure of the spread of a
+        ///	distribution.<br></br>
+        ///	  The variance is computed for the flattened array by
+        ///	default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The variance is the average of the squared deviations from the mean,
+        ///	i.e.,  var = mean(abs(x - x.mean())**2).<br></br>
+        ///	
+        ///	The mean is normally calculated as x.sum() / N, where N = len(x).<br></br>
+        ///	
+        ///	If, however, ddof is specified, the divisor N - ddof is used
+        ///	instead.<br></br>
+        ///	  In standard statistical practice, ddof=1 provides an
+        ///	unbiased estimator of the variance of a hypothetical infinite population.<br></br>
+        ///	
+        ///	ddof=0 provides a maximum likelihood estimate of the variance for
+        ///	normally distributed variables.<br></br>
+        ///	
+        ///	Note that for complex numbers, the absolute value is taken before
+        ///	squaring, so that the result is always real and nonnegative.<br></br>
+        ///	
+        ///	For floating-point input, the variance is computed using the same
+        ///	precision the input has.<br></br>
+        ///	  Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32 (see example
+        ///	below).<br></br>
+        ///	  Specifying a higher-accuracy accumulator using the dtype
+        ///	keyword can alleviate this issue.
         /// </summary>
         /// <param name="dtype">
-        /// Type to use in computing the variance.  For arrays of integer type
-        /// the default is float32; for arrays of float types it is the same as
-        /// the array type.
+        ///	Type to use in computing the variance.<br></br>
+        ///	For arrays of integer type
+        ///	the default is float32; for arrays of float types it is the same as
+        ///	the array type.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  It must have
-        /// the same shape as the expected output, but the type is cast if
-        /// necessary.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output, but the type is cast if
+        ///	necessary.
         /// </param>
         /// <param name="ddof">
-        /// “Delta Degrees of Freedom”: the divisor used in the calculation is
-        /// N - ddof, where N represents the number of elements. By
-        /// default ddof is zero.
+        ///	“Delta Degrees of Freedom”: the divisor used in the calculation is
+        ///	N - ddof, where N represents the number of elements.<br></br>
+        ///	By
+        ///	default ddof is zero.
         /// </param>
         /// <returns>
-        /// If out=None, returns a new array containing the variance;
-        /// otherwise, a reference to the output array is returned.
+        ///	If out=None, returns a new array containing the variance;
+        ///	otherwise, a reference to the output array is returned.
         /// </returns>
         public double @var(Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
@@ -8625,53 +9826,65 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the median along the specified axis, while ignoring NaNs.
-        /// 
-        /// Returns the median of the array elements.
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the median of V is the
-        /// middle value of a sorted copy of V, V_sorted - i.e.,
-        /// V_sorted[(N-1)/2], when N is odd and the average of the two
-        /// middle values of V_sorted when N is even.
+        ///	Compute the median along the specified axis, while ignoring NaNs.<br></br>
+        ///	
+        ///	Returns the median of the array elements.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the median of V is the
+        ///	middle value of a sorted copy of V, V_sorted - i.e.,
+        ///	V_sorted[(N-1)/2], when N is odd and the average of the two
+        ///	middle values of V_sorted when N is even.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the medians are computed. The default
-        /// is to compute the median along a flattened version of the array.
-        /// A sequence of axes is supported since version 1.9.0.
+        ///	Axis or axes along which the medians are computed.<br></br>
+        ///	The default
+        ///	is to compute the median along a flattened version of the array.<br></br>
+        ///	
+        ///	A sequence of axes is supported since version 1.9.0.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow use of memory of input array a for
-        /// calculations. The input array will be modified by the call to
-        /// median. This will save memory when you do not need to preserve
-        /// the contents of the input array. Treat the input as undefined,
-        /// but it will probably be fully or partially sorted. Default is
-        /// False. If overwrite_input is True and a is not already an
-        /// ndarray, an error will be raised.
+        ///	If True, then allow use of memory of input array a for
+        ///	calculations.<br></br>
+        ///	The input array will be modified by the call to
+        ///	median.<br></br>
+        ///	This will save memory when you do not need to preserve
+        ///	the contents of the input array.<br></br>
+        ///	Treat the input as undefined,
+        ///	but it will probably be fully or partially sorted.<br></br>
+        ///	Default is
+        ///	False.<br></br>
+        ///	If overwrite_input is True and a is not already an
+        ///	ndarray, an error will be raised.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the original a.
-        /// 
-        /// If this is anything but the default value it will be passed
-        /// through (in the special case of an empty array) to the
-        /// mean function of the underlying array.  If the array is
-        /// a sub-class and mean does not have the kwarg keepdims this
-        /// will raise a RuntimeError.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the original a.<br></br>
+        ///	
+        ///	If this is anything but the default value it will be passed
+        ///	through (in the special case of an empty array) to the
+        ///	mean function of the underlying array.<br></br>
+        ///	If the array is
+        ///	a sub-class and mean does not have the kwarg keepdims this
+        ///	will raise a RuntimeError.
         /// </param>
         /// <returns>
-        /// A new array holding the result. If the input contains integers
-        /// or floats smaller than float64, then the output data-type is
-        /// np.float64.  Otherwise, the data-type of the output is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	A new array holding the result.<br></br>
+        ///	 If the input contains integers
+        ///	or floats smaller than float64, then the output data-type is
+        ///	np.float64.  Otherwise, the data-type of the output is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public NDarray<double> nanmedian(int[] axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = null)
         {
@@ -8681,37 +9894,45 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the median along the specified axis, while ignoring NaNs.
-        /// 
-        /// Returns the median of the array elements.
-        /// 
-        /// Notes
-        /// 
-        /// Given a vector V of length N, the median of V is the
-        /// middle value of a sorted copy of V, V_sorted - i.e.,
-        /// V_sorted[(N-1)/2], when N is odd and the average of the two
-        /// middle values of V_sorted when N is even.
+        ///	Compute the median along the specified axis, while ignoring NaNs.<br></br>
+        ///	
+        ///	Returns the median of the array elements.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Given a vector V of length N, the median of V is the
+        ///	middle value of a sorted copy of V, V_sorted - i.e.,
+        ///	V_sorted[(N-1)/2], when N is odd and the average of the two
+        ///	middle values of V_sorted when N is even.
         /// </summary>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must
-        /// have the same shape and buffer length as the expected output,
-        /// but the type (of the output) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must
+        ///	have the same shape and buffer length as the expected output,
+        ///	but the type (of the output) will be cast if necessary.
         /// </param>
         /// <param name="overwrite_input">
-        /// If True, then allow use of memory of input array a for
-        /// calculations. The input array will be modified by the call to
-        /// median. This will save memory when you do not need to preserve
-        /// the contents of the input array. Treat the input as undefined,
-        /// but it will probably be fully or partially sorted. Default is
-        /// False. If overwrite_input is True and a is not already an
-        /// ndarray, an error will be raised.
+        ///	If True, then allow use of memory of input array a for
+        ///	calculations.<br></br>
+        ///	The input array will be modified by the call to
+        ///	median.<br></br>
+        ///	This will save memory when you do not need to preserve
+        ///	the contents of the input array.<br></br>
+        ///	Treat the input as undefined,
+        ///	but it will probably be fully or partially sorted.<br></br>
+        ///	Default is
+        ///	False.<br></br>
+        ///	If overwrite_input is True and a is not already an
+        ///	ndarray, an error will be raised.
         /// </param>
         /// <returns>
-        /// A new array holding the result. If the input contains integers
-        /// or floats smaller than float64, then the output data-type is
-        /// np.float64.  Otherwise, the data-type of the output is the
-        /// same as that of the input. If out is specified, that array is
-        /// returned instead.
+        ///	A new array holding the result.<br></br>
+        ///	 If the input contains integers
+        ///	or floats smaller than float64, then the output data-type is
+        ///	np.float64.  Otherwise, the data-type of the output is the
+        ///	same as that of the input.<br></br>
+        ///	 If out is specified, that array is
+        ///	returned instead.
         /// </returns>
         public double nanmedian(NDarray @out = null, bool? overwrite_input = false)
         {
@@ -8721,54 +9942,64 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the arithmetic mean along the specified axis, ignoring NaNs.
-        /// 
-        /// Returns the average of the array elements.  The average is taken over
-        /// the flattened array by default, otherwise over the specified axis.
-        /// float64 intermediate and return values are used for integer inputs.
-        /// 
-        /// For all-NaN slices, NaN is returned and a RuntimeWarning is raised.
-        /// 
-        /// Notes
-        /// 
-        /// The arithmetic mean is the sum of the non-NaN elements along the axis
-        /// divided by the number of non-NaN elements.
-        /// 
-        /// Note that for floating-point input, the mean is computed using the same
-        /// precision the input has.  Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32.  Specifying a
-        /// higher-precision accumulator using the dtype keyword can alleviate
-        /// this issue.
+        ///	Compute the arithmetic mean along the specified axis, ignoring NaNs.<br></br>
+        ///	
+        ///	Returns the average of the array elements.<br></br>
+        ///	  The average is taken over
+        ///	the flattened array by default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	float64 intermediate and return values are used for integer inputs.<br></br>
+        ///	
+        ///	For all-NaN slices, NaN is returned and a RuntimeWarning is raised.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The arithmetic mean is the sum of the non-NaN elements along the axis
+        ///	divided by the number of non-NaN elements.<br></br>
+        ///	
+        ///	Note that for floating-point input, the mean is computed using the same
+        ///	precision the input has.<br></br>
+        ///	  Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32.  Specifying a
+        ///	higher-precision accumulator using the dtype keyword can alleviate
+        ///	this issue.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the means are computed. The default is to compute
-        /// the mean of the flattened array.
+        ///	Axis or axes along which the means are computed.<br></br>
+        ///	The default is to compute
+        ///	the mean of the flattened array.
         /// </param>
         /// <param name="dtype">
-        /// Type to use in computing the mean.  For integer inputs, the default
-        /// is float64; for inexact inputs, it is the same as the input
-        /// dtype.
+        ///	Type to use in computing the mean.<br></br>
+        ///	For integer inputs, the default
+        ///	is float64; for inexact inputs, it is the same as the input
+        ///	dtype.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  The default
-        /// is None; if provided, it must have the same shape as the
-        /// expected output, but the type will be cast if necessary.  See
-        /// doc.ufuncs for details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	The default
+        ///	is None; if provided, it must have the same shape as the
+        ///	expected output, but the type will be cast if necessary.<br></br>
+        ///	See
+        ///	doc.ufuncs for details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the original a.
-        /// 
-        /// If the value is anything but the default, then
-        /// keepdims will be passed through to the mean or sum methods
-        /// of sub-classes of ndarray.  If the sub-classes methods
-        /// does not implement keepdims any exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the original a.<br></br>
+        ///	
+        ///	If the value is anything but the default, then
+        ///	keepdims will be passed through to the mean or sum methods
+        ///	of sub-classes of ndarray.<br></br>
+        ///	If the sub-classes methods
+        ///	does not implement keepdims any exceptions will be raised.
         /// </param>
         /// <returns>
-        /// If out=None, returns a new array containing the mean values,
-        /// otherwise a reference to the output array is returned. Nan is
-        /// returned for slices that contain only NaNs.
+        ///	If out=None, returns a new array containing the mean values,
+        ///	otherwise a reference to the output array is returned.<br></br>
+        ///	 Nan is
+        ///	returned for slices that contain only NaNs.
         /// </returns>
         public NDarray<double> nanmean(int[] axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
@@ -8778,40 +10009,47 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the arithmetic mean along the specified axis, ignoring NaNs.
-        /// 
-        /// Returns the average of the array elements.  The average is taken over
-        /// the flattened array by default, otherwise over the specified axis.
-        /// float64 intermediate and return values are used for integer inputs.
-        /// 
-        /// For all-NaN slices, NaN is returned and a RuntimeWarning is raised.
-        /// 
-        /// Notes
-        /// 
-        /// The arithmetic mean is the sum of the non-NaN elements along the axis
-        /// divided by the number of non-NaN elements.
-        /// 
-        /// Note that for floating-point input, the mean is computed using the same
-        /// precision the input has.  Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32.  Specifying a
-        /// higher-precision accumulator using the dtype keyword can alleviate
-        /// this issue.
+        ///	Compute the arithmetic mean along the specified axis, ignoring NaNs.<br></br>
+        ///	
+        ///	Returns the average of the array elements.<br></br>
+        ///	  The average is taken over
+        ///	the flattened array by default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	float64 intermediate and return values are used for integer inputs.<br></br>
+        ///	
+        ///	For all-NaN slices, NaN is returned and a RuntimeWarning is raised.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The arithmetic mean is the sum of the non-NaN elements along the axis
+        ///	divided by the number of non-NaN elements.<br></br>
+        ///	
+        ///	Note that for floating-point input, the mean is computed using the same
+        ///	precision the input has.<br></br>
+        ///	  Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32.  Specifying a
+        ///	higher-precision accumulator using the dtype keyword can alleviate
+        ///	this issue.
         /// </summary>
         /// <param name="dtype">
-        /// Type to use in computing the mean.  For integer inputs, the default
-        /// is float64; for inexact inputs, it is the same as the input
-        /// dtype.
+        ///	Type to use in computing the mean.<br></br>
+        ///	For integer inputs, the default
+        ///	is float64; for inexact inputs, it is the same as the input
+        ///	dtype.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  The default
-        /// is None; if provided, it must have the same shape as the
-        /// expected output, but the type will be cast if necessary.  See
-        /// doc.ufuncs for details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	The default
+        ///	is None; if provided, it must have the same shape as the
+        ///	expected output, but the type will be cast if necessary.<br></br>
+        ///	See
+        ///	doc.ufuncs for details.
         /// </param>
         /// <returns>
-        /// If out=None, returns a new array containing the mean values,
-        /// otherwise a reference to the output array is returned. Nan is
-        /// returned for slices that contain only NaNs.
+        ///	If out=None, returns a new array containing the mean values,
+        ///	otherwise a reference to the output array is returned.<br></br>
+        ///	 Nan is
+        ///	returned for slices that contain only NaNs.
         /// </returns>
         public double nanmean(Dtype dtype = null, NDarray @out = null)
         {
@@ -8821,75 +10059,90 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the standard deviation along the specified axis, while
-        /// ignoring NaNs.
-        /// 
-        /// Returns the standard deviation, a measure of the spread of a
-        /// distribution, of the non-NaN array elements. The standard deviation is
-        /// computed for the flattened array by default, otherwise over the
-        /// specified axis.
-        /// 
-        /// For all-NaN slices or slices with zero degrees of freedom, NaN is
-        /// returned and a RuntimeWarning is raised.
-        /// 
-        /// Notes
-        /// 
-        /// The standard deviation is the square root of the average of the squared
-        /// deviations from the mean: std = sqrt(mean(abs(x - x.mean())**2)).
-        /// 
-        /// The average squared deviation is normally calculated as
-        /// x.sum() / N, where N = len(x).  If, however, ddof is
-        /// specified, the divisor N - ddof is used instead. In standard
-        /// statistical practice, ddof=1 provides an unbiased estimator of the
-        /// variance of the infinite population. ddof=0 provides a maximum
-        /// likelihood estimate of the variance for normally distributed variables.
-        /// The standard deviation computed in this function is the square root of
-        /// the estimated variance, so even with ddof=1, it will not be an
-        /// unbiased estimate of the standard deviation per se.
-        /// 
-        /// Note that, for complex numbers, std takes the absolute value before
-        /// squaring, so that the result is always real and nonnegative.
-        /// 
-        /// For floating-point input, the std is computed using the same
-        /// precision the input has. Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32 (see example
-        /// below).  Specifying a higher-accuracy accumulator using the dtype
-        /// keyword can alleviate this issue.
+        ///	Compute the standard deviation along the specified axis, while
+        ///	ignoring NaNs.<br></br>
+        ///	
+        ///	Returns the standard deviation, a measure of the spread of a
+        ///	distribution, of the non-NaN array elements.<br></br>
+        ///	 The standard deviation is
+        ///	computed for the flattened array by default, otherwise over the
+        ///	specified axis.<br></br>
+        ///	
+        ///	For all-NaN slices or slices with zero degrees of freedom, NaN is
+        ///	returned and a RuntimeWarning is raised.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The standard deviation is the square root of the average of the squared
+        ///	deviations from the mean: std = sqrt(mean(abs(x - x.mean())**2)).<br></br>
+        ///	
+        ///	The average squared deviation is normally calculated as
+        ///	x.sum() / N, where N = len(x).<br></br>
+        ///	  If, however, ddof is
+        ///	specified, the divisor N - ddof is used instead.<br></br>
+        ///	 In standard
+        ///	statistical practice, ddof=1 provides an unbiased estimator of the
+        ///	variance of the infinite population.<br></br>
+        ///	 ddof=0 provides a maximum
+        ///	likelihood estimate of the variance for normally distributed variables.<br></br>
+        ///	
+        ///	The standard deviation computed in this function is the square root of
+        ///	the estimated variance, so even with ddof=1, it will not be an
+        ///	unbiased estimate of the standard deviation per se.<br></br>
+        ///	
+        ///	Note that, for complex numbers, std takes the absolute value before
+        ///	squaring, so that the result is always real and nonnegative.<br></br>
+        ///	
+        ///	For floating-point input, the std is computed using the same
+        ///	precision the input has.<br></br>
+        ///	 Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32 (see example
+        ///	below).<br></br>
+        ///	  Specifying a higher-accuracy accumulator using the dtype
+        ///	keyword can alleviate this issue.
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the standard deviation is computed. The default is
-        /// to compute the standard deviation of the flattened array.
+        ///	Axis or axes along which the standard deviation is computed.<br></br>
+        ///	The default is
+        ///	to compute the standard deviation of the flattened array.
         /// </param>
         /// <param name="dtype">
-        /// Type to use in computing the standard deviation. For arrays of
-        /// integer type the default is float64, for arrays of float types it
-        /// is the same as the array type.
+        ///	Type to use in computing the standard deviation.<br></br>
+        ///	For arrays of
+        ///	integer type the default is float64, for arrays of float types it
+        ///	is the same as the array type.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must have
-        /// the same shape as the expected output but the type (of the
-        /// calculated values) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output but the type (of the
+        ///	calculated values) will be cast if necessary.
         /// </param>
         /// <param name="ddof">
-        /// Means Delta Degrees of Freedom.  The divisor used in calculations
-        /// is N - ddof, where N represents the number of non-NaN
-        /// elements.  By default ddof is zero.
+        ///	Means Delta Degrees of Freedom.<br></br>
+        ///	The divisor used in calculations
+        ///	is N - ddof, where N represents the number of non-NaN
+        ///	elements.<br></br>
+        ///	By default ddof is zero.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the original a.
-        /// 
-        /// If this value is anything but the default it is passed through
-        /// as-is to the relevant functions of the sub-classes.  If these
-        /// functions do not have a keepdims kwarg, a RuntimeError will
-        /// be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the original a.<br></br>
+        ///	
+        ///	If this value is anything but the default it is passed through
+        ///	as-is to the relevant functions of the sub-classes.<br></br>
+        ///	If these
+        ///	functions do not have a keepdims kwarg, a RuntimeError will
+        ///	be raised.
         /// </param>
         /// <returns>
-        /// If out is None, return a new array containing the standard
-        /// deviation, otherwise return a reference to the output array. If
-        /// ddof is &gt;= the number of non-NaN elements in a slice or the slice
-        /// contains only NaNs, then the result for that slice is NaN.
+        ///	If out is None, return a new array containing the standard
+        ///	deviation, otherwise return a reference to the output array.<br></br>
+        ///	 If
+        ///	ddof is &gt;= the number of non-NaN elements in a slice or the slice
+        ///	contains only NaNs, then the result for that slice is NaN.
         /// </returns>
         public NDarray<double> nanstd(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
@@ -8899,61 +10152,73 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the standard deviation along the specified axis, while
-        /// ignoring NaNs.
-        /// 
-        /// Returns the standard deviation, a measure of the spread of a
-        /// distribution, of the non-NaN array elements. The standard deviation is
-        /// computed for the flattened array by default, otherwise over the
-        /// specified axis.
-        /// 
-        /// For all-NaN slices or slices with zero degrees of freedom, NaN is
-        /// returned and a RuntimeWarning is raised.
-        /// 
-        /// Notes
-        /// 
-        /// The standard deviation is the square root of the average of the squared
-        /// deviations from the mean: std = sqrt(mean(abs(x - x.mean())**2)).
-        /// 
-        /// The average squared deviation is normally calculated as
-        /// x.sum() / N, where N = len(x).  If, however, ddof is
-        /// specified, the divisor N - ddof is used instead. In standard
-        /// statistical practice, ddof=1 provides an unbiased estimator of the
-        /// variance of the infinite population. ddof=0 provides a maximum
-        /// likelihood estimate of the variance for normally distributed variables.
-        /// The standard deviation computed in this function is the square root of
-        /// the estimated variance, so even with ddof=1, it will not be an
-        /// unbiased estimate of the standard deviation per se.
-        /// 
-        /// Note that, for complex numbers, std takes the absolute value before
-        /// squaring, so that the result is always real and nonnegative.
-        /// 
-        /// For floating-point input, the std is computed using the same
-        /// precision the input has. Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32 (see example
-        /// below).  Specifying a higher-accuracy accumulator using the dtype
-        /// keyword can alleviate this issue.
+        ///	Compute the standard deviation along the specified axis, while
+        ///	ignoring NaNs.<br></br>
+        ///	
+        ///	Returns the standard deviation, a measure of the spread of a
+        ///	distribution, of the non-NaN array elements.<br></br>
+        ///	 The standard deviation is
+        ///	computed for the flattened array by default, otherwise over the
+        ///	specified axis.<br></br>
+        ///	
+        ///	For all-NaN slices or slices with zero degrees of freedom, NaN is
+        ///	returned and a RuntimeWarning is raised.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The standard deviation is the square root of the average of the squared
+        ///	deviations from the mean: std = sqrt(mean(abs(x - x.mean())**2)).<br></br>
+        ///	
+        ///	The average squared deviation is normally calculated as
+        ///	x.sum() / N, where N = len(x).<br></br>
+        ///	  If, however, ddof is
+        ///	specified, the divisor N - ddof is used instead.<br></br>
+        ///	 In standard
+        ///	statistical practice, ddof=1 provides an unbiased estimator of the
+        ///	variance of the infinite population.<br></br>
+        ///	 ddof=0 provides a maximum
+        ///	likelihood estimate of the variance for normally distributed variables.<br></br>
+        ///	
+        ///	The standard deviation computed in this function is the square root of
+        ///	the estimated variance, so even with ddof=1, it will not be an
+        ///	unbiased estimate of the standard deviation per se.<br></br>
+        ///	
+        ///	Note that, for complex numbers, std takes the absolute value before
+        ///	squaring, so that the result is always real and nonnegative.<br></br>
+        ///	
+        ///	For floating-point input, the std is computed using the same
+        ///	precision the input has.<br></br>
+        ///	 Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32 (see example
+        ///	below).<br></br>
+        ///	  Specifying a higher-accuracy accumulator using the dtype
+        ///	keyword can alleviate this issue.
         /// </summary>
         /// <param name="dtype">
-        /// Type to use in computing the standard deviation. For arrays of
-        /// integer type the default is float64, for arrays of float types it
-        /// is the same as the array type.
+        ///	Type to use in computing the standard deviation.<br></br>
+        ///	For arrays of
+        ///	integer type the default is float64, for arrays of float types it
+        ///	is the same as the array type.
         /// </param>
         /// <param name="out">
-        /// Alternative output array in which to place the result. It must have
-        /// the same shape as the expected output but the type (of the
-        /// calculated values) will be cast if necessary.
+        ///	Alternative output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output but the type (of the
+        ///	calculated values) will be cast if necessary.
         /// </param>
         /// <param name="ddof">
-        /// Means Delta Degrees of Freedom.  The divisor used in calculations
-        /// is N - ddof, where N represents the number of non-NaN
-        /// elements.  By default ddof is zero.
+        ///	Means Delta Degrees of Freedom.<br></br>
+        ///	The divisor used in calculations
+        ///	is N - ddof, where N represents the number of non-NaN
+        ///	elements.<br></br>
+        ///	By default ddof is zero.
         /// </param>
         /// <returns>
-        /// If out is None, return a new array containing the standard
-        /// deviation, otherwise return a reference to the output array. If
-        /// ddof is &gt;= the number of non-NaN elements in a slice or the slice
-        /// contains only NaNs, then the result for that slice is NaN.
+        ///	If out is None, return a new array containing the standard
+        ///	deviation, otherwise return a reference to the output array.<br></br>
+        ///	 If
+        ///	ddof is &gt;= the number of non-NaN elements in a slice or the slice
+        ///	contains only NaNs, then the result for that slice is NaN.
         /// </returns>
         public double nanstd(Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
@@ -8963,68 +10228,80 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the variance along the specified axis, while ignoring NaNs.
-        /// 
-        /// Returns the variance of the array elements, a measure of the spread of
-        /// a distribution.  The variance is computed for the flattened array by
-        /// default, otherwise over the specified axis.
-        /// 
-        /// For all-NaN slices or slices with zero degrees of freedom, NaN is
-        /// returned and a RuntimeWarning is raised.
-        /// 
-        /// Notes
-        /// 
-        /// The variance is the average of the squared deviations from the mean,
-        /// i.e.,  var = mean(abs(x - x.mean())**2).
-        /// 
-        /// The mean is normally calculated as x.sum() / N, where N = len(x).
-        /// If, however, ddof is specified, the divisor N - ddof is used
-        /// instead.  In standard statistical practice, ddof=1 provides an
-        /// unbiased estimator of the variance of a hypothetical infinite
-        /// population.  ddof=0 provides a maximum likelihood estimate of the
-        /// variance for normally distributed variables.
-        /// 
-        /// Note that for complex numbers, the absolute value is taken before
-        /// squaring, so that the result is always real and nonnegative.
-        /// 
-        /// For floating-point input, the variance is computed using the same
-        /// precision the input has.  Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32 (see example
-        /// below).  Specifying a higher-accuracy accumulator using the dtype
-        /// keyword can alleviate this issue.
-        /// 
-        /// For this function to work on sub-classes of ndarray, they must define
-        /// sum with the kwarg keepdims
+        ///	Compute the variance along the specified axis, while ignoring NaNs.<br></br>
+        ///	
+        ///	Returns the variance of the array elements, a measure of the spread of
+        ///	a distribution.<br></br>
+        ///	  The variance is computed for the flattened array by
+        ///	default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	For all-NaN slices or slices with zero degrees of freedom, NaN is
+        ///	returned and a RuntimeWarning is raised.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The variance is the average of the squared deviations from the mean,
+        ///	i.e.,  var = mean(abs(x - x.mean())**2).<br></br>
+        ///	
+        ///	The mean is normally calculated as x.sum() / N, where N = len(x).<br></br>
+        ///	
+        ///	If, however, ddof is specified, the divisor N - ddof is used
+        ///	instead.<br></br>
+        ///	  In standard statistical practice, ddof=1 provides an
+        ///	unbiased estimator of the variance of a hypothetical infinite
+        ///	population.<br></br>
+        ///	  ddof=0 provides a maximum likelihood estimate of the
+        ///	variance for normally distributed variables.<br></br>
+        ///	
+        ///	Note that for complex numbers, the absolute value is taken before
+        ///	squaring, so that the result is always real and nonnegative.<br></br>
+        ///	
+        ///	For floating-point input, the variance is computed using the same
+        ///	precision the input has.<br></br>
+        ///	  Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32 (see example
+        ///	below).<br></br>
+        ///	  Specifying a higher-accuracy accumulator using the dtype
+        ///	keyword can alleviate this issue.<br></br>
+        ///	
+        ///	For this function to work on sub-classes of ndarray, they must define
+        ///	sum with the kwarg keepdims
         /// </summary>
         /// <param name="axis">
-        /// Axis or axes along which the variance is computed.  The default is to compute
-        /// the variance of the flattened array.
+        ///	Axis or axes along which the variance is computed.<br></br>
+        ///	The default is to compute
+        ///	the variance of the flattened array.
         /// </param>
         /// <param name="dtype">
-        /// Type to use in computing the variance.  For arrays of integer type
-        /// the default is float32; for arrays of float types it is the same as
-        /// the array type.
+        ///	Type to use in computing the variance.<br></br>
+        ///	For arrays of integer type
+        ///	the default is float32; for arrays of float types it is the same as
+        ///	the array type.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  It must have
-        /// the same shape as the expected output, but the type is cast if
-        /// necessary.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output, but the type is cast if
+        ///	necessary.
         /// </param>
         /// <param name="ddof">
-        /// “Delta Degrees of Freedom”: the divisor used in the calculation is
-        /// N - ddof, where N represents the number of non-NaN
-        /// elements. By default ddof is zero.
+        ///	“Delta Degrees of Freedom”: the divisor used in the calculation is
+        ///	N - ddof, where N represents the number of non-NaN
+        ///	elements.<br></br>
+        ///	By default ddof is zero.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the original a.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the original a.
         /// </param>
         /// <returns>
-        /// If out is None, return a new array containing the variance,
-        /// otherwise return a reference to the output array. If ddof is &gt;= the
-        /// number of non-NaN elements in a slice or the slice contains only
-        /// NaNs, then the result for that slice is NaN.
+        ///	If out is None, return a new array containing the variance,
+        ///	otherwise return a reference to the output array.<br></br>
+        ///	 If ddof is &gt;= the
+        ///	number of non-NaN elements in a slice or the slice contains only
+        ///	NaNs, then the result for that slice is NaN.
         /// </returns>
         public NDarray<double> nanvar(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
@@ -9034,59 +10311,69 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the variance along the specified axis, while ignoring NaNs.
-        /// 
-        /// Returns the variance of the array elements, a measure of the spread of
-        /// a distribution.  The variance is computed for the flattened array by
-        /// default, otherwise over the specified axis.
-        /// 
-        /// For all-NaN slices or slices with zero degrees of freedom, NaN is
-        /// returned and a RuntimeWarning is raised.
-        /// 
-        /// Notes
-        /// 
-        /// The variance is the average of the squared deviations from the mean,
-        /// i.e.,  var = mean(abs(x - x.mean())**2).
-        /// 
-        /// The mean is normally calculated as x.sum() / N, where N = len(x).
-        /// If, however, ddof is specified, the divisor N - ddof is used
-        /// instead.  In standard statistical practice, ddof=1 provides an
-        /// unbiased estimator of the variance of a hypothetical infinite
-        /// population.  ddof=0 provides a maximum likelihood estimate of the
-        /// variance for normally distributed variables.
-        /// 
-        /// Note that for complex numbers, the absolute value is taken before
-        /// squaring, so that the result is always real and nonnegative.
-        /// 
-        /// For floating-point input, the variance is computed using the same
-        /// precision the input has.  Depending on the input data, this can cause
-        /// the results to be inaccurate, especially for float32 (see example
-        /// below).  Specifying a higher-accuracy accumulator using the dtype
-        /// keyword can alleviate this issue.
-        /// 
-        /// For this function to work on sub-classes of ndarray, they must define
-        /// sum with the kwarg keepdims
+        ///	Compute the variance along the specified axis, while ignoring NaNs.<br></br>
+        ///	
+        ///	Returns the variance of the array elements, a measure of the spread of
+        ///	a distribution.<br></br>
+        ///	  The variance is computed for the flattened array by
+        ///	default, otherwise over the specified axis.<br></br>
+        ///	
+        ///	For all-NaN slices or slices with zero degrees of freedom, NaN is
+        ///	returned and a RuntimeWarning is raised.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The variance is the average of the squared deviations from the mean,
+        ///	i.e.,  var = mean(abs(x - x.mean())**2).<br></br>
+        ///	
+        ///	The mean is normally calculated as x.sum() / N, where N = len(x).<br></br>
+        ///	
+        ///	If, however, ddof is specified, the divisor N - ddof is used
+        ///	instead.<br></br>
+        ///	  In standard statistical practice, ddof=1 provides an
+        ///	unbiased estimator of the variance of a hypothetical infinite
+        ///	population.<br></br>
+        ///	  ddof=0 provides a maximum likelihood estimate of the
+        ///	variance for normally distributed variables.<br></br>
+        ///	
+        ///	Note that for complex numbers, the absolute value is taken before
+        ///	squaring, so that the result is always real and nonnegative.<br></br>
+        ///	
+        ///	For floating-point input, the variance is computed using the same
+        ///	precision the input has.<br></br>
+        ///	  Depending on the input data, this can cause
+        ///	the results to be inaccurate, especially for float32 (see example
+        ///	below).<br></br>
+        ///	  Specifying a higher-accuracy accumulator using the dtype
+        ///	keyword can alleviate this issue.<br></br>
+        ///	
+        ///	For this function to work on sub-classes of ndarray, they must define
+        ///	sum with the kwarg keepdims
         /// </summary>
         /// <param name="dtype">
-        /// Type to use in computing the variance.  For arrays of integer type
-        /// the default is float32; for arrays of float types it is the same as
-        /// the array type.
+        ///	Type to use in computing the variance.<br></br>
+        ///	For arrays of integer type
+        ///	the default is float32; for arrays of float types it is the same as
+        ///	the array type.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  It must have
-        /// the same shape as the expected output, but the type is cast if
-        /// necessary.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output, but the type is cast if
+        ///	necessary.
         /// </param>
         /// <param name="ddof">
-        /// “Delta Degrees of Freedom”: the divisor used in the calculation is
-        /// N - ddof, where N represents the number of non-NaN
-        /// elements. By default ddof is zero.
+        ///	“Delta Degrees of Freedom”: the divisor used in the calculation is
+        ///	N - ddof, where N represents the number of non-NaN
+        ///	elements.<br></br>
+        ///	By default ddof is zero.
         /// </param>
         /// <returns>
-        /// If out is None, return a new array containing the variance,
-        /// otherwise return a reference to the output array. If ddof is &gt;= the
-        /// number of non-NaN elements in a slice or the slice contains only
-        /// NaNs, then the result for that slice is NaN.
+        ///	If out is None, return a new array containing the variance,
+        ///	otherwise return a reference to the output array.<br></br>
+        ///	 If ddof is &gt;= the
+        ///	number of non-NaN elements in a slice or the slice contains only
+        ///	NaNs, then the result for that slice is NaN.
         /// </returns>
         public double nanvar(Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
@@ -9096,39 +10383,45 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return Pearson product-moment correlation coefficients.
-        /// 
-        /// Please refer to the documentation for cov for more detail.  The
-        /// relationship between the correlation coefficient matrix, R, and the
-        /// covariance matrix, C, is
-        /// 
-        /// The values of R are between -1 and 1, inclusive.
-        /// 
-        /// Notes
-        /// 
-        /// Due to floating point rounding the resulting array may not be Hermitian,
-        /// the diagonal elements may not be 1, and the elements may not satisfy the
-        /// inequality abs(a) &lt;= 1. The real and imaginary parts are clipped to the
-        /// interval [-1,  1] in an attempt to improve on that situation but is not
-        /// much help in the complex case.
-        /// 
-        /// This function accepts but discards arguments bias and ddof.  This is
-        /// for backwards compatibility with previous versions of this function.  These
-        /// arguments had no effect on the return values of the function and can be
-        /// safely ignored in this and previous versions of numpy.
+        ///	Return Pearson product-moment correlation coefficients.<br></br>
+        ///	
+        ///	Please refer to the documentation for cov for more detail.<br></br>
+        ///	  The
+        ///	relationship between the correlation coefficient matrix, R, and the
+        ///	covariance matrix, C, is
+        ///	
+        ///	The values of R are between -1 and 1, inclusive.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Due to floating point rounding the resulting array may not be Hermitian,
+        ///	the diagonal elements may not be 1, and the elements may not satisfy the
+        ///	inequality abs(a) &lt;= 1.<br></br>
+        ///	 The real and imaginary parts are clipped to the
+        ///	interval [-1,  1] in an attempt to improve on that situation but is not
+        ///	much help in the complex case.<br></br>
+        ///	
+        ///	This function accepts but discards arguments bias and ddof.<br></br>
+        ///	  This is
+        ///	for backwards compatibility with previous versions of this function.<br></br>
+        ///	  These
+        ///	arguments had no effect on the return values of the function and can be
+        ///	safely ignored in this and previous versions of numpy.
         /// </summary>
         /// <param name="y">
-        /// An additional set of variables and observations. y has the same
-        /// shape as x.
+        ///	An additional set of variables and observations.<br></br>
+        ///	y has the same
+        ///	shape as x.
         /// </param>
         /// <param name="rowvar">
-        /// If rowvar is True (default), then each row represents a
-        /// variable, with observations in the columns. Otherwise, the relationship
-        /// is transposed: each column represents a variable, while the rows
-        /// contain observations.
+        ///	If rowvar is True (default), then each row represents a
+        ///	variable, with observations in the columns.<br></br>
+        ///	Otherwise, the relationship
+        ///	is transposed: each column represents a variable, while the rows
+        ///	contain observations.
         /// </param>
         /// <returns>
-        /// The correlation coefficient matrix of the variables.
+        ///	The correlation coefficient matrix of the variables.
         /// </returns>
         public NDarray corrcoef(NDarray y = null, bool? rowvar = true)
         {
@@ -9138,30 +10431,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Cross-correlation of two 1-dimensional sequences.
-        /// 
-        /// This function computes the correlation as generally defined in signal
-        /// processing texts:
-        /// 
-        /// with a and v sequences being zero-padded where necessary and conj being
-        /// the conjugate.
-        /// 
-        /// Notes
-        /// 
-        /// The definition of correlation above is not unique and sometimes correlation
-        /// may be defined differently. Another common definition is:
-        /// 
-        /// which is related to c_{av}[k] by c'_{av}[k] = c_{av}[-k].
+        ///	Cross-correlation of two 1-dimensional sequences.<br></br>
+        ///	
+        ///	This function computes the correlation as generally defined in signal
+        ///	processing texts:
+        ///	
+        ///	with a and v sequences being zero-padded where necessary and conj being
+        ///	the conjugate.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The definition of correlation above is not unique and sometimes correlation
+        ///	may be defined differently.<br></br>
+        ///	 Another common definition is:
+        ///	
+        ///	which is related to c_{av}[k] by c'_{av}[k] = c_{av}[-k].
         /// </summary>
         /// <param name="a">
-        /// Input sequences.
+        ///	Input sequences.
         /// </param>
         /// <param name="mode">
-        /// Refer to the convolve docstring.  Note that the default
-        /// is ‘valid’, unlike convolve, which uses ‘full’.
+        ///	Refer to the convolve docstring.<br></br>
+        ///	Note that the default
+        ///	is ‘valid’, unlike convolve, which uses ‘full’.
         /// </param>
         /// <returns>
-        /// Discrete cross-correlation of a and v.
+        ///	Discrete cross-correlation of a and v.
         /// </returns>
         public NDarray correlate(NDarray a, string mode = "valid")
         {
@@ -9171,61 +10466,71 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Estimate a covariance matrix, given data and weights.
-        /// 
-        /// Covariance indicates the level to which two variables vary together.
-        /// If we examine N-dimensional samples, ,
-        /// then the covariance matrix element  is the covariance of
-        ///  and . The element  is the variance
-        /// of .
-        /// 
-        /// See the notes for an outline of the algorithm.
-        /// 
-        /// Notes
-        /// 
-        /// Assume that the observations are in the columns of the observation
-        /// array m and let f = fweights and a = aweights for brevity. The
-        /// steps to compute the weighted covariance are as follows:
-        /// 
-        /// Note that when a == 1, the normalization factor
-        /// v1 / (v1**2 - ddof * v2) goes over to 1 / (np.sum(f) - ddof)
-        /// as it should.
+        ///	Estimate a covariance matrix, given data and weights.<br></br>
+        ///	
+        ///	Covariance indicates the level to which two variables vary together.<br></br>
+        ///	
+        ///	If we examine N-dimensional samples, ,
+        ///	then the covariance matrix element  is the covariance of
+        ///	 and . The element  is the variance
+        ///	of .
+        ///	
+        ///	See the notes for an outline of the algorithm.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Assume that the observations are in the columns of the observation
+        ///	array m and let f = fweights and a = aweights for brevity.<br></br>
+        ///	 The
+        ///	steps to compute the weighted covariance are as follows:
+        ///	
+        ///	Note that when a == 1, the normalization factor
+        ///	v1 / (v1**2 - ddof * v2) goes over to 1 / (np.sum(f) - ddof)
+        ///	as it should.
         /// </summary>
         /// <param name="y">
-        /// An additional set of variables and observations. y has the same form
-        /// as that of m.
+        ///	An additional set of variables and observations.<br></br>
+        ///	y has the same form
+        ///	as that of m.
         /// </param>
         /// <param name="rowvar">
-        /// If rowvar is True (default), then each row represents a
-        /// variable, with observations in the columns. Otherwise, the relationship
-        /// is transposed: each column represents a variable, while the rows
-        /// contain observations.
+        ///	If rowvar is True (default), then each row represents a
+        ///	variable, with observations in the columns.<br></br>
+        ///	Otherwise, the relationship
+        ///	is transposed: each column represents a variable, while the rows
+        ///	contain observations.
         /// </param>
         /// <param name="bias">
-        /// Default normalization (False) is by (N - 1), where N is the
-        /// number of observations given (unbiased estimate). If bias is True,
-        /// then normalization is by N. These values can be overridden by using
-        /// the keyword ddof in numpy versions &gt;= 1.5.
+        ///	Default normalization (False) is by (N - 1), where N is the
+        ///	number of observations given (unbiased estimate).<br></br>
+        ///	If bias is True,
+        ///	then normalization is by N.<br></br>
+        ///	These values can be overridden by using
+        ///	the keyword ddof in numpy versions &gt;= 1.5.
         /// </param>
         /// <param name="ddof">
-        /// If not None the default value implied by bias is overridden.
-        /// Note that ddof=1 will return the unbiased estimate, even if both
-        /// fweights and aweights are specified, and ddof=0 will return
-        /// the simple average. See the notes for the details. The default value
-        /// is None.
+        ///	If not None the default value implied by bias is overridden.<br></br>
+        ///	
+        ///	Note that ddof=1 will return the unbiased estimate, even if both
+        ///	fweights and aweights are specified, and ddof=0 will return
+        ///	the simple average.<br></br>
+        ///	See the notes for the details.<br></br>
+        ///	The default value
+        ///	is None.
         /// </param>
         /// <param name="fweights">
-        /// 1-D array of integer frequency weights; the number of times each
-        /// observation vector should be repeated.
+        ///	1-D array of integer frequency weights; the number of times each
+        ///	observation vector should be repeated.
         /// </param>
         /// <param name="aweights">
-        /// 1-D array of observation vector weights. These relative weights are
-        /// typically large for observations considered “important” and smaller for
-        /// observations considered less “important”. If ddof=0 the array of
-        /// weights can be used to assign probabilities to observation vectors.
+        ///	1-D array of observation vector weights.<br></br>
+        ///	These relative weights are
+        ///	typically large for observations considered “important” and smaller for
+        ///	observations considered less “important”. If ddof=0 the array of
+        ///	weights can be used to assign probabilities to observation vectors.
         /// </param>
         /// <returns>
-        /// The covariance matrix of the variables.
+        ///	The covariance matrix of the variables.
         /// </returns>
         public NDarray cov(NDarray y = null, bool? rowvar = true, bool? bias = false, int? ddof = null, NDarray fweights = null, NDarray aweights = null)
         {
@@ -9235,63 +10540,76 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the histogram of a set of data.
-        /// 
-        /// Notes
-        /// 
-        /// All but the last (righthand-most) bin is half-open.  In other words,
-        /// if bins is:
-        /// 
-        /// then the first bin is [1, 2) (including 1, but excluding 2) and
-        /// the second [2, 3).  The last bin, however, is [3, 4], which
-        /// includes 4.
+        ///	Compute the histogram of a set of data.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	All but the last (righthand-most) bin is half-open.<br></br>
+        ///	  In other words,
+        ///	if bins is:
+        ///	
+        ///	then the first bin is [1, 2) (including 1, but excluding 2) and
+        ///	the second [2, 3).<br></br>
+        ///	  The last bin, however, is [3, 4], which
+        ///	includes 4.
         /// </summary>
         /// <param name="bins">
-        /// If bins is an int, it defines the number of equal-width
-        /// bins in the given range (10, by default). If bins is a
-        /// sequence, it defines a monotonically increasing array of bin edges,
-        /// including the rightmost edge, allowing for non-uniform bin widths.
-        /// 
-        /// If bins is a string, it defines the method used to calculate the
-        /// optimal bin width, as defined by histogram_bin_edges.
+        ///	If bins is an int, it defines the number of equal-width
+        ///	bins in the given range (10, by default).<br></br>
+        ///	If bins is a
+        ///	sequence, it defines a monotonically increasing array of bin edges,
+        ///	including the rightmost edge, allowing for non-uniform bin widths.<br></br>
+        ///	
+        ///	If bins is a string, it defines the method used to calculate the
+        ///	optimal bin width, as defined by histogram_bin_edges.
         /// </param>
         /// <param name="range">
-        /// The lower and upper range of the bins.  If not provided, range
-        /// is simply (a.min(), a.max()).  Values outside the range are
-        /// ignored. The first element of the range must be less than or
-        /// equal to the second. range affects the automatic bin
-        /// computation as well. While bin width is computed to be optimal
-        /// based on the actual data within range, the bin count will fill
-        /// the entire range including portions containing no data.
+        ///	The lower and upper range of the bins.<br></br>
+        ///	If not provided, range
+        ///	is simply (a.min(), a.max()).<br></br>
+        ///	Values outside the range are
+        ///	ignored.<br></br>
+        ///	The first element of the range must be less than or
+        ///	equal to the second.<br></br>
+        ///	range affects the automatic bin
+        ///	computation as well.<br></br>
+        ///	While bin width is computed to be optimal
+        ///	based on the actual data within range, the bin count will fill
+        ///	the entire range including portions containing no data.
         /// </param>
         /// <param name="normed">
-        /// This is equivalent to the density argument, but produces incorrect
-        /// results for unequal bin widths. It should not be used.
+        ///	This is equivalent to the density argument, but produces incorrect
+        ///	results for unequal bin widths.<br></br>
+        ///	It should not be used.
         /// </param>
         /// <param name="weights">
-        /// An array of weights, of the same shape as a.  Each value in
-        /// a only contributes its associated weight towards the bin count
-        /// (instead of 1). If density is True, the weights are
-        /// normalized, so that the integral of the density over the range
-        /// remains 1.
+        ///	An array of weights, of the same shape as a.<br></br>
+        ///	Each value in
+        ///	a only contributes its associated weight towards the bin count
+        ///	(instead of 1).<br></br>
+        ///	If density is True, the weights are
+        ///	normalized, so that the integral of the density over the range
+        ///	remains 1.
         /// </param>
         /// <param name="density">
-        /// If False, the result will contain the number of samples in
-        /// each bin. If True, the result is the value of the
-        /// probability density function at the bin, normalized such that
-        /// the integral over the range is 1. Note that the sum of the
-        /// histogram values will not be equal to 1 unless bins of unity
-        /// width are chosen; it is not a probability mass function.
-        /// 
-        /// Overrides the normed keyword if given.
+        ///	If False, the result will contain the number of samples in
+        ///	each bin.<br></br>
+        ///	If True, the result is the value of the
+        ///	probability density function at the bin, normalized such that
+        ///	the integral over the range is 1.<br></br>
+        ///	Note that the sum of the
+        ///	histogram values will not be equal to 1 unless bins of unity
+        ///	width are chosen; it is not a probability mass function.<br></br>
+        ///	
+        ///	Overrides the normed keyword if given.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// hist
-        /// The values of the histogram. See density and weights for a
-        /// description of the possible semantics.
+        ///	The values of the histogram. See density and weights for a
+        ///	description of the possible semantics.
         /// bin_edges
-        /// Return the bin edges (length(hist)+1).
+        ///	Return the bin edges (length(hist)+1).
         /// </returns>
         public (NDarray, NDarray) histogram(int? bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
@@ -9301,63 +10619,76 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the histogram of a set of data.
-        /// 
-        /// Notes
-        /// 
-        /// All but the last (righthand-most) bin is half-open.  In other words,
-        /// if bins is:
-        /// 
-        /// then the first bin is [1, 2) (including 1, but excluding 2) and
-        /// the second [2, 3).  The last bin, however, is [3, 4], which
-        /// includes 4.
+        ///	Compute the histogram of a set of data.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	All but the last (righthand-most) bin is half-open.<br></br>
+        ///	  In other words,
+        ///	if bins is:
+        ///	
+        ///	then the first bin is [1, 2) (including 1, but excluding 2) and
+        ///	the second [2, 3).<br></br>
+        ///	  The last bin, however, is [3, 4], which
+        ///	includes 4.
         /// </summary>
         /// <param name="bins">
-        /// If bins is an int, it defines the number of equal-width
-        /// bins in the given range (10, by default). If bins is a
-        /// sequence, it defines a monotonically increasing array of bin edges,
-        /// including the rightmost edge, allowing for non-uniform bin widths.
-        /// 
-        /// If bins is a string, it defines the method used to calculate the
-        /// optimal bin width, as defined by histogram_bin_edges.
+        ///	If bins is an int, it defines the number of equal-width
+        ///	bins in the given range (10, by default).<br></br>
+        ///	If bins is a
+        ///	sequence, it defines a monotonically increasing array of bin edges,
+        ///	including the rightmost edge, allowing for non-uniform bin widths.<br></br>
+        ///	
+        ///	If bins is a string, it defines the method used to calculate the
+        ///	optimal bin width, as defined by histogram_bin_edges.
         /// </param>
         /// <param name="range">
-        /// The lower and upper range of the bins.  If not provided, range
-        /// is simply (a.min(), a.max()).  Values outside the range are
-        /// ignored. The first element of the range must be less than or
-        /// equal to the second. range affects the automatic bin
-        /// computation as well. While bin width is computed to be optimal
-        /// based on the actual data within range, the bin count will fill
-        /// the entire range including portions containing no data.
+        ///	The lower and upper range of the bins.<br></br>
+        ///	If not provided, range
+        ///	is simply (a.min(), a.max()).<br></br>
+        ///	Values outside the range are
+        ///	ignored.<br></br>
+        ///	The first element of the range must be less than or
+        ///	equal to the second.<br></br>
+        ///	range affects the automatic bin
+        ///	computation as well.<br></br>
+        ///	While bin width is computed to be optimal
+        ///	based on the actual data within range, the bin count will fill
+        ///	the entire range including portions containing no data.
         /// </param>
         /// <param name="normed">
-        /// This is equivalent to the density argument, but produces incorrect
-        /// results for unequal bin widths. It should not be used.
+        ///	This is equivalent to the density argument, but produces incorrect
+        ///	results for unequal bin widths.<br></br>
+        ///	It should not be used.
         /// </param>
         /// <param name="weights">
-        /// An array of weights, of the same shape as a.  Each value in
-        /// a only contributes its associated weight towards the bin count
-        /// (instead of 1). If density is True, the weights are
-        /// normalized, so that the integral of the density over the range
-        /// remains 1.
+        ///	An array of weights, of the same shape as a.<br></br>
+        ///	Each value in
+        ///	a only contributes its associated weight towards the bin count
+        ///	(instead of 1).<br></br>
+        ///	If density is True, the weights are
+        ///	normalized, so that the integral of the density over the range
+        ///	remains 1.
         /// </param>
         /// <param name="density">
-        /// If False, the result will contain the number of samples in
-        /// each bin. If True, the result is the value of the
-        /// probability density function at the bin, normalized such that
-        /// the integral over the range is 1. Note that the sum of the
-        /// histogram values will not be equal to 1 unless bins of unity
-        /// width are chosen; it is not a probability mass function.
-        /// 
-        /// Overrides the normed keyword if given.
+        ///	If False, the result will contain the number of samples in
+        ///	each bin.<br></br>
+        ///	If True, the result is the value of the
+        ///	probability density function at the bin, normalized such that
+        ///	the integral over the range is 1.<br></br>
+        ///	Note that the sum of the
+        ///	histogram values will not be equal to 1 unless bins of unity
+        ///	width are chosen; it is not a probability mass function.<br></br>
+        ///	
+        ///	Overrides the normed keyword if given.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// hist
-        /// The values of the histogram. See density and weights for a
-        /// description of the possible semantics.
+        ///	The values of the histogram. See density and weights for a
+        ///	description of the possible semantics.
         /// bin_edges
-        /// Return the bin edges (length(hist)+1).
+        ///	Return the bin edges (length(hist)+1).
         /// </returns>
         public (NDarray, NDarray) histogram(NDarray bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
@@ -9367,63 +10698,76 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the histogram of a set of data.
-        /// 
-        /// Notes
-        /// 
-        /// All but the last (righthand-most) bin is half-open.  In other words,
-        /// if bins is:
-        /// 
-        /// then the first bin is [1, 2) (including 1, but excluding 2) and
-        /// the second [2, 3).  The last bin, however, is [3, 4], which
-        /// includes 4.
+        ///	Compute the histogram of a set of data.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	All but the last (righthand-most) bin is half-open.<br></br>
+        ///	  In other words,
+        ///	if bins is:
+        ///	
+        ///	then the first bin is [1, 2) (including 1, but excluding 2) and
+        ///	the second [2, 3).<br></br>
+        ///	  The last bin, however, is [3, 4], which
+        ///	includes 4.
         /// </summary>
         /// <param name="bins">
-        /// If bins is an int, it defines the number of equal-width
-        /// bins in the given range (10, by default). If bins is a
-        /// sequence, it defines a monotonically increasing array of bin edges,
-        /// including the rightmost edge, allowing for non-uniform bin widths.
-        /// 
-        /// If bins is a string, it defines the method used to calculate the
-        /// optimal bin width, as defined by histogram_bin_edges.
+        ///	If bins is an int, it defines the number of equal-width
+        ///	bins in the given range (10, by default).<br></br>
+        ///	If bins is a
+        ///	sequence, it defines a monotonically increasing array of bin edges,
+        ///	including the rightmost edge, allowing for non-uniform bin widths.<br></br>
+        ///	
+        ///	If bins is a string, it defines the method used to calculate the
+        ///	optimal bin width, as defined by histogram_bin_edges.
         /// </param>
         /// <param name="range">
-        /// The lower and upper range of the bins.  If not provided, range
-        /// is simply (a.min(), a.max()).  Values outside the range are
-        /// ignored. The first element of the range must be less than or
-        /// equal to the second. range affects the automatic bin
-        /// computation as well. While bin width is computed to be optimal
-        /// based on the actual data within range, the bin count will fill
-        /// the entire range including portions containing no data.
+        ///	The lower and upper range of the bins.<br></br>
+        ///	If not provided, range
+        ///	is simply (a.min(), a.max()).<br></br>
+        ///	Values outside the range are
+        ///	ignored.<br></br>
+        ///	The first element of the range must be less than or
+        ///	equal to the second.<br></br>
+        ///	range affects the automatic bin
+        ///	computation as well.<br></br>
+        ///	While bin width is computed to be optimal
+        ///	based on the actual data within range, the bin count will fill
+        ///	the entire range including portions containing no data.
         /// </param>
         /// <param name="normed">
-        /// This is equivalent to the density argument, but produces incorrect
-        /// results for unequal bin widths. It should not be used.
+        ///	This is equivalent to the density argument, but produces incorrect
+        ///	results for unequal bin widths.<br></br>
+        ///	It should not be used.
         /// </param>
         /// <param name="weights">
-        /// An array of weights, of the same shape as a.  Each value in
-        /// a only contributes its associated weight towards the bin count
-        /// (instead of 1). If density is True, the weights are
-        /// normalized, so that the integral of the density over the range
-        /// remains 1.
+        ///	An array of weights, of the same shape as a.<br></br>
+        ///	Each value in
+        ///	a only contributes its associated weight towards the bin count
+        ///	(instead of 1).<br></br>
+        ///	If density is True, the weights are
+        ///	normalized, so that the integral of the density over the range
+        ///	remains 1.
         /// </param>
         /// <param name="density">
-        /// If False, the result will contain the number of samples in
-        /// each bin. If True, the result is the value of the
-        /// probability density function at the bin, normalized such that
-        /// the integral over the range is 1. Note that the sum of the
-        /// histogram values will not be equal to 1 unless bins of unity
-        /// width are chosen; it is not a probability mass function.
-        /// 
-        /// Overrides the normed keyword if given.
+        ///	If False, the result will contain the number of samples in
+        ///	each bin.<br></br>
+        ///	If True, the result is the value of the
+        ///	probability density function at the bin, normalized such that
+        ///	the integral over the range is 1.<br></br>
+        ///	Note that the sum of the
+        ///	histogram values will not be equal to 1 unless bins of unity
+        ///	width are chosen; it is not a probability mass function.<br></br>
+        ///	
+        ///	Overrides the normed keyword if given.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// hist
-        /// The values of the histogram. See density and weights for a
-        /// description of the possible semantics.
+        ///	The values of the histogram. See density and weights for a
+        ///	description of the possible semantics.
         /// bin_edges
-        /// Return the bin edges (length(hist)+1).
+        ///	Return the bin edges (length(hist)+1).
         /// </returns>
         public (NDarray, NDarray) histogram(List<string> bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
@@ -9433,59 +10777,66 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the bi-dimensional histogram of two data samples.
-        /// 
-        /// Notes
-        /// 
-        /// When normed is True, then the returned histogram is the sample
-        /// density, defined such that the sum over bins of the product
-        /// bin_value * bin_area is 1.
-        /// 
-        /// Please note that the histogram does not follow the Cartesian convention
-        /// where x values are on the abscissa and y values on the ordinate
-        /// axis.  Rather, x is histogrammed along the first dimension of the
-        /// array (vertical), and y along the second dimension of the array
-        /// (horizontal).  This ensures compatibility with histogramdd.
+        ///	Compute the bi-dimensional histogram of two data samples.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	When normed is True, then the returned histogram is the sample
+        ///	density, defined such that the sum over bins of the product
+        ///	bin_value * bin_area is 1.<br></br>
+        ///	
+        ///	Please note that the histogram does not follow the Cartesian convention
+        ///	where x values are on the abscissa and y values on the ordinate
+        ///	axis.<br></br>
+        ///	  Rather, x is histogrammed along the first dimension of the
+        ///	array (vertical), and y along the second dimension of the array
+        ///	(horizontal).<br></br>
+        ///	  This ensures compatibility with histogramdd.
         /// </summary>
         /// <param name="y">
-        /// An array containing the y coordinates of the points to be
-        /// histogrammed.
+        ///	An array containing the y coordinates of the points to be
+        ///	histogrammed.
         /// </param>
         /// <param name="bins">
-        /// The bin specification:
+        ///	The bin specification:
         /// </param>
         /// <param name="range">
-        /// The leftmost and rightmost edges of the bins along each dimension
-        /// (if not specified explicitly in the bins parameters):
-        /// [[xmin, xmax], [ymin, ymax]]. All values outside of this range
-        /// will be considered outliers and not tallied in the histogram.
+        ///	The leftmost and rightmost edges of the bins along each dimension
+        ///	(if not specified explicitly in the bins parameters):
+        ///	[[xmin, xmax], [ymin, ymax]].<br></br>
+        ///	All values outside of this range
+        ///	will be considered outliers and not tallied in the histogram.
         /// </param>
         /// <param name="density">
-        /// If False, the default, returns the number of samples in each bin.
-        /// If True, returns the probability density function at the bin,
-        /// bin_count / sample_count / bin_area.
+        ///	If False, the default, returns the number of samples in each bin.<br></br>
+        ///	
+        ///	If True, returns the probability density function at the bin,
+        ///	bin_count / sample_count / bin_area.
         /// </param>
         /// <param name="normed">
-        /// An alias for the density argument that behaves identically. To avoid
-        /// confusion with the broken normed argument to histogram, density
-        /// should be preferred.
+        ///	An alias for the density argument that behaves identically.<br></br>
+        ///	To avoid
+        ///	confusion with the broken normed argument to histogram, density
+        ///	should be preferred.
         /// </param>
         /// <param name="weights">
-        /// An array of values w_i weighing each sample (x_i, y_i).
-        /// Weights are normalized to 1 if normed is True. If normed is
-        /// False, the values of the returned histogram are equal to the sum of
-        /// the weights belonging to the samples falling into each bin.
+        ///	An array of values w_i weighing each sample (x_i, y_i).<br></br>
+        ///	
+        ///	Weights are normalized to 1 if normed is True.<br></br>
+        ///	If normed is
+        ///	False, the values of the returned histogram are equal to the sum of
+        ///	the weights belonging to the samples falling into each bin.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// H
-        /// The bi-dimensional histogram of samples x and y. Values in x
-        /// are histogrammed along the first dimension and values in y are
-        /// histogrammed along the second dimension.
+        ///	The bi-dimensional histogram of samples x and y. Values in x
+        ///	are histogrammed along the first dimension and values in y are
+        ///	histogrammed along the second dimension.
         /// xedges
-        /// The bin edges along the first dimension.
+        ///	The bin edges along the first dimension.
         /// yedges
-        /// The bin edges along the second dimension.
+        ///	The bin edges along the second dimension.
         /// </returns>
         public (NDarray, NDarray, NDarray) histogram2d(NDarray y, int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
@@ -9495,59 +10846,66 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the bi-dimensional histogram of two data samples.
-        /// 
-        /// Notes
-        /// 
-        /// When normed is True, then the returned histogram is the sample
-        /// density, defined such that the sum over bins of the product
-        /// bin_value * bin_area is 1.
-        /// 
-        /// Please note that the histogram does not follow the Cartesian convention
-        /// where x values are on the abscissa and y values on the ordinate
-        /// axis.  Rather, x is histogrammed along the first dimension of the
-        /// array (vertical), and y along the second dimension of the array
-        /// (horizontal).  This ensures compatibility with histogramdd.
+        ///	Compute the bi-dimensional histogram of two data samples.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	When normed is True, then the returned histogram is the sample
+        ///	density, defined such that the sum over bins of the product
+        ///	bin_value * bin_area is 1.<br></br>
+        ///	
+        ///	Please note that the histogram does not follow the Cartesian convention
+        ///	where x values are on the abscissa and y values on the ordinate
+        ///	axis.<br></br>
+        ///	  Rather, x is histogrammed along the first dimension of the
+        ///	array (vertical), and y along the second dimension of the array
+        ///	(horizontal).<br></br>
+        ///	  This ensures compatibility with histogramdd.
         /// </summary>
         /// <param name="y">
-        /// An array containing the y coordinates of the points to be
-        /// histogrammed.
+        ///	An array containing the y coordinates of the points to be
+        ///	histogrammed.
         /// </param>
         /// <param name="bins">
-        /// The bin specification:
+        ///	The bin specification:
         /// </param>
         /// <param name="range">
-        /// The leftmost and rightmost edges of the bins along each dimension
-        /// (if not specified explicitly in the bins parameters):
-        /// [[xmin, xmax], [ymin, ymax]]. All values outside of this range
-        /// will be considered outliers and not tallied in the histogram.
+        ///	The leftmost and rightmost edges of the bins along each dimension
+        ///	(if not specified explicitly in the bins parameters):
+        ///	[[xmin, xmax], [ymin, ymax]].<br></br>
+        ///	All values outside of this range
+        ///	will be considered outliers and not tallied in the histogram.
         /// </param>
         /// <param name="density">
-        /// If False, the default, returns the number of samples in each bin.
-        /// If True, returns the probability density function at the bin,
-        /// bin_count / sample_count / bin_area.
+        ///	If False, the default, returns the number of samples in each bin.<br></br>
+        ///	
+        ///	If True, returns the probability density function at the bin,
+        ///	bin_count / sample_count / bin_area.
         /// </param>
         /// <param name="normed">
-        /// An alias for the density argument that behaves identically. To avoid
-        /// confusion with the broken normed argument to histogram, density
-        /// should be preferred.
+        ///	An alias for the density argument that behaves identically.<br></br>
+        ///	To avoid
+        ///	confusion with the broken normed argument to histogram, density
+        ///	should be preferred.
         /// </param>
         /// <param name="weights">
-        /// An array of values w_i weighing each sample (x_i, y_i).
-        /// Weights are normalized to 1 if normed is True. If normed is
-        /// False, the values of the returned histogram are equal to the sum of
-        /// the weights belonging to the samples falling into each bin.
+        ///	An array of values w_i weighing each sample (x_i, y_i).<br></br>
+        ///	
+        ///	Weights are normalized to 1 if normed is True.<br></br>
+        ///	If normed is
+        ///	False, the values of the returned histogram are equal to the sum of
+        ///	the weights belonging to the samples falling into each bin.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// H
-        /// The bi-dimensional histogram of samples x and y. Values in x
-        /// are histogrammed along the first dimension and values in y are
-        /// histogrammed along the second dimension.
+        ///	The bi-dimensional histogram of samples x and y. Values in x
+        ///	are histogrammed along the first dimension and values in y are
+        ///	histogrammed along the second dimension.
         /// xedges
-        /// The bin edges along the first dimension.
+        ///	The bin edges along the first dimension.
         /// yedges
-        /// The bin edges along the second dimension.
+        ///	The bin edges along the second dimension.
         /// </returns>
         public (NDarray, NDarray, NDarray) histogram2d(NDarray y, NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
@@ -9557,59 +10915,66 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the bi-dimensional histogram of two data samples.
-        /// 
-        /// Notes
-        /// 
-        /// When normed is True, then the returned histogram is the sample
-        /// density, defined such that the sum over bins of the product
-        /// bin_value * bin_area is 1.
-        /// 
-        /// Please note that the histogram does not follow the Cartesian convention
-        /// where x values are on the abscissa and y values on the ordinate
-        /// axis.  Rather, x is histogrammed along the first dimension of the
-        /// array (vertical), and y along the second dimension of the array
-        /// (horizontal).  This ensures compatibility with histogramdd.
+        ///	Compute the bi-dimensional histogram of two data samples.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	When normed is True, then the returned histogram is the sample
+        ///	density, defined such that the sum over bins of the product
+        ///	bin_value * bin_area is 1.<br></br>
+        ///	
+        ///	Please note that the histogram does not follow the Cartesian convention
+        ///	where x values are on the abscissa and y values on the ordinate
+        ///	axis.<br></br>
+        ///	  Rather, x is histogrammed along the first dimension of the
+        ///	array (vertical), and y along the second dimension of the array
+        ///	(horizontal).<br></br>
+        ///	  This ensures compatibility with histogramdd.
         /// </summary>
         /// <param name="y">
-        /// An array containing the y coordinates of the points to be
-        /// histogrammed.
+        ///	An array containing the y coordinates of the points to be
+        ///	histogrammed.
         /// </param>
         /// <param name="bins">
-        /// The bin specification:
+        ///	The bin specification:
         /// </param>
         /// <param name="range">
-        /// The leftmost and rightmost edges of the bins along each dimension
-        /// (if not specified explicitly in the bins parameters):
-        /// [[xmin, xmax], [ymin, ymax]]. All values outside of this range
-        /// will be considered outliers and not tallied in the histogram.
+        ///	The leftmost and rightmost edges of the bins along each dimension
+        ///	(if not specified explicitly in the bins parameters):
+        ///	[[xmin, xmax], [ymin, ymax]].<br></br>
+        ///	All values outside of this range
+        ///	will be considered outliers and not tallied in the histogram.
         /// </param>
         /// <param name="density">
-        /// If False, the default, returns the number of samples in each bin.
-        /// If True, returns the probability density function at the bin,
-        /// bin_count / sample_count / bin_area.
+        ///	If False, the default, returns the number of samples in each bin.<br></br>
+        ///	
+        ///	If True, returns the probability density function at the bin,
+        ///	bin_count / sample_count / bin_area.
         /// </param>
         /// <param name="normed">
-        /// An alias for the density argument that behaves identically. To avoid
-        /// confusion with the broken normed argument to histogram, density
-        /// should be preferred.
+        ///	An alias for the density argument that behaves identically.<br></br>
+        ///	To avoid
+        ///	confusion with the broken normed argument to histogram, density
+        ///	should be preferred.
         /// </param>
         /// <param name="weights">
-        /// An array of values w_i weighing each sample (x_i, y_i).
-        /// Weights are normalized to 1 if normed is True. If normed is
-        /// False, the values of the returned histogram are equal to the sum of
-        /// the weights belonging to the samples falling into each bin.
+        ///	An array of values w_i weighing each sample (x_i, y_i).<br></br>
+        ///	
+        ///	Weights are normalized to 1 if normed is True.<br></br>
+        ///	If normed is
+        ///	False, the values of the returned histogram are equal to the sum of
+        ///	the weights belonging to the samples falling into each bin.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// H
-        /// The bi-dimensional histogram of samples x and y. Values in x
-        /// are histogrammed along the first dimension and values in y are
-        /// histogrammed along the second dimension.
+        ///	The bi-dimensional histogram of samples x and y. Values in x
+        ///	are histogrammed along the first dimension and values in y are
+        ///	histogrammed along the second dimension.
         /// xedges
-        /// The bin edges along the first dimension.
+        ///	The bin edges along the first dimension.
         /// yedges
-        /// The bin edges along the second dimension.
+        ///	The bin edges along the second dimension.
         /// </returns>
         public (NDarray, NDarray, NDarray) histogram2d(NDarray y, List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
@@ -9619,42 +10984,48 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the multidimensional histogram of some data.
+        ///	Compute the multidimensional histogram of some data.
         /// </summary>
         /// <param name="bins">
-        /// The bin specification:
+        ///	The bin specification:
         /// </param>
         /// <param name="range">
-        /// A sequence of length D, each an optional (lower, upper) tuple giving
-        /// the outer bin edges to be used if the edges are not given explicitly in
-        /// bins.
-        /// An entry of None in the sequence results in the minimum and maximum
-        /// values being used for the corresponding dimension.
-        /// The default, None, is equivalent to passing a tuple of D None values.
+        ///	A sequence of length D, each an optional (lower, upper) tuple giving
+        ///	the outer bin edges to be used if the edges are not given explicitly in
+        ///	bins.<br></br>
+        ///	
+        ///	An entry of None in the sequence results in the minimum and maximum
+        ///	values being used for the corresponding dimension.<br></br>
+        ///	
+        ///	The default, None, is equivalent to passing a tuple of D None values.
         /// </param>
         /// <param name="density">
-        /// If False, the default, returns the number of samples in each bin.
-        /// If True, returns the probability density function at the bin,
-        /// bin_count / sample_count / bin_volume.
+        ///	If False, the default, returns the number of samples in each bin.<br></br>
+        ///	
+        ///	If True, returns the probability density function at the bin,
+        ///	bin_count / sample_count / bin_volume.
         /// </param>
         /// <param name="normed">
-        /// An alias for the density argument that behaves identically. To avoid
-        /// confusion with the broken normed argument to histogram, density
-        /// should be preferred.
+        ///	An alias for the density argument that behaves identically.<br></br>
+        ///	To avoid
+        ///	confusion with the broken normed argument to histogram, density
+        ///	should be preferred.
         /// </param>
         /// <param name="weights">
-        /// An array of values w_i weighing each sample (x_i, y_i, z_i, …).
-        /// Weights are normalized to 1 if normed is True. If normed is False,
-        /// the values of the returned histogram are equal to the sum of the
-        /// weights belonging to the samples falling into each bin.
+        ///	An array of values w_i weighing each sample (x_i, y_i, z_i, …).<br></br>
+        ///	
+        ///	Weights are normalized to 1 if normed is True.<br></br>
+        ///	If normed is False,
+        ///	the values of the returned histogram are equal to the sum of the
+        ///	weights belonging to the samples falling into each bin.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// H
-        /// The multidimensional histogram of sample x. See normed and weights
-        /// for the different possible semantics.
+        ///	The multidimensional histogram of sample x. See normed and weights
+        ///	for the different possible semantics.
         /// edges
-        /// A list of D arrays describing the bin edges for each dimension.
+        ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
         public (NDarray, NDarray) histogramdd(int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
@@ -9664,42 +11035,48 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the multidimensional histogram of some data.
+        ///	Compute the multidimensional histogram of some data.
         /// </summary>
         /// <param name="bins">
-        /// The bin specification:
+        ///	The bin specification:
         /// </param>
         /// <param name="range">
-        /// A sequence of length D, each an optional (lower, upper) tuple giving
-        /// the outer bin edges to be used if the edges are not given explicitly in
-        /// bins.
-        /// An entry of None in the sequence results in the minimum and maximum
-        /// values being used for the corresponding dimension.
-        /// The default, None, is equivalent to passing a tuple of D None values.
+        ///	A sequence of length D, each an optional (lower, upper) tuple giving
+        ///	the outer bin edges to be used if the edges are not given explicitly in
+        ///	bins.<br></br>
+        ///	
+        ///	An entry of None in the sequence results in the minimum and maximum
+        ///	values being used for the corresponding dimension.<br></br>
+        ///	
+        ///	The default, None, is equivalent to passing a tuple of D None values.
         /// </param>
         /// <param name="density">
-        /// If False, the default, returns the number of samples in each bin.
-        /// If True, returns the probability density function at the bin,
-        /// bin_count / sample_count / bin_volume.
+        ///	If False, the default, returns the number of samples in each bin.<br></br>
+        ///	
+        ///	If True, returns the probability density function at the bin,
+        ///	bin_count / sample_count / bin_volume.
         /// </param>
         /// <param name="normed">
-        /// An alias for the density argument that behaves identically. To avoid
-        /// confusion with the broken normed argument to histogram, density
-        /// should be preferred.
+        ///	An alias for the density argument that behaves identically.<br></br>
+        ///	To avoid
+        ///	confusion with the broken normed argument to histogram, density
+        ///	should be preferred.
         /// </param>
         /// <param name="weights">
-        /// An array of values w_i weighing each sample (x_i, y_i, z_i, …).
-        /// Weights are normalized to 1 if normed is True. If normed is False,
-        /// the values of the returned histogram are equal to the sum of the
-        /// weights belonging to the samples falling into each bin.
+        ///	An array of values w_i weighing each sample (x_i, y_i, z_i, …).<br></br>
+        ///	
+        ///	Weights are normalized to 1 if normed is True.<br></br>
+        ///	If normed is False,
+        ///	the values of the returned histogram are equal to the sum of the
+        ///	weights belonging to the samples falling into each bin.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// H
-        /// The multidimensional histogram of sample x. See normed and weights
-        /// for the different possible semantics.
+        ///	The multidimensional histogram of sample x. See normed and weights
+        ///	for the different possible semantics.
         /// edges
-        /// A list of D arrays describing the bin edges for each dimension.
+        ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
         public (NDarray, NDarray) histogramdd(NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
@@ -9709,42 +11086,48 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the multidimensional histogram of some data.
+        ///	Compute the multidimensional histogram of some data.
         /// </summary>
         /// <param name="bins">
-        /// The bin specification:
+        ///	The bin specification:
         /// </param>
         /// <param name="range">
-        /// A sequence of length D, each an optional (lower, upper) tuple giving
-        /// the outer bin edges to be used if the edges are not given explicitly in
-        /// bins.
-        /// An entry of None in the sequence results in the minimum and maximum
-        /// values being used for the corresponding dimension.
-        /// The default, None, is equivalent to passing a tuple of D None values.
+        ///	A sequence of length D, each an optional (lower, upper) tuple giving
+        ///	the outer bin edges to be used if the edges are not given explicitly in
+        ///	bins.<br></br>
+        ///	
+        ///	An entry of None in the sequence results in the minimum and maximum
+        ///	values being used for the corresponding dimension.<br></br>
+        ///	
+        ///	The default, None, is equivalent to passing a tuple of D None values.
         /// </param>
         /// <param name="density">
-        /// If False, the default, returns the number of samples in each bin.
-        /// If True, returns the probability density function at the bin,
-        /// bin_count / sample_count / bin_volume.
+        ///	If False, the default, returns the number of samples in each bin.<br></br>
+        ///	
+        ///	If True, returns the probability density function at the bin,
+        ///	bin_count / sample_count / bin_volume.
         /// </param>
         /// <param name="normed">
-        /// An alias for the density argument that behaves identically. To avoid
-        /// confusion with the broken normed argument to histogram, density
-        /// should be preferred.
+        ///	An alias for the density argument that behaves identically.<br></br>
+        ///	To avoid
+        ///	confusion with the broken normed argument to histogram, density
+        ///	should be preferred.
         /// </param>
         /// <param name="weights">
-        /// An array of values w_i weighing each sample (x_i, y_i, z_i, …).
-        /// Weights are normalized to 1 if normed is True. If normed is False,
-        /// the values of the returned histogram are equal to the sum of the
-        /// weights belonging to the samples falling into each bin.
+        ///	An array of values w_i weighing each sample (x_i, y_i, z_i, …).<br></br>
+        ///	
+        ///	Weights are normalized to 1 if normed is True.<br></br>
+        ///	If normed is False,
+        ///	the values of the returned histogram are equal to the sum of the
+        ///	weights belonging to the samples falling into each bin.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// H
-        /// The multidimensional histogram of sample x. See normed and weights
-        /// for the different possible semantics.
+        ///	The multidimensional histogram of sample x. See normed and weights
+        ///	for the different possible semantics.
         /// edges
-        /// A list of D arrays describing the bin edges for each dimension.
+        ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
         public (NDarray, NDarray) histogramdd(List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
@@ -9754,26 +11137,31 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Count number of occurrences of each value in array of non-negative ints.
-        /// 
-        /// The number of bins (of size 1) is one larger than the largest value in
-        /// x. If minlength is specified, there will be at least this number
-        /// of bins in the output array (though it will be longer if necessary,
-        /// depending on the contents of x).
-        /// Each bin gives the number of occurrences of its index value in x.
-        /// If weights is specified the input array is weighted by it, i.e. if a
-        /// value n is found at position i, out[n] += weight[i] instead
-        /// of out[n] += 1.
+        ///	Count number of occurrences of each value in array of non-negative ints.<br></br>
+        ///	
+        ///	The number of bins (of size 1) is one larger than the largest value in
+        ///	x.<br></br>
+        ///	 If minlength is specified, there will be at least this number
+        ///	of bins in the output array (though it will be longer if necessary,
+        ///	depending on the contents of x).<br></br>
+        ///	
+        ///	Each bin gives the number of occurrences of its index value in x.<br></br>
+        ///	
+        ///	If weights is specified the input array is weighted by it, i.e.<br></br>
+        ///	 if a
+        ///	value n is found at position i, out[n] += weight[i] instead
+        ///	of out[n] += 1.
         /// </summary>
         /// <param name="weights">
-        /// Weights, array of the same shape as x.
+        ///	Weights, array of the same shape as x.
         /// </param>
         /// <param name="minlength">
-        /// A minimum number of bins for the output array.
+        ///	A minimum number of bins for the output array.
         /// </param>
         /// <returns>
-        /// The result of binning the input array.
-        /// The length of out is equal to np.amax(x)+1.
+        ///	The result of binning the input array.<br></br>
+        ///	
+        ///	The length of out is equal to np.amax(x)+1.
         /// </returns>
         public NDarray bincount(NDarray weights = null, int? minlength = 0)
         {
@@ -9783,54 +11171,70 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Function to calculate only the edges of the bins used by the histogram function.
-        /// 
-        /// Notes
-        /// 
-        /// The methods to estimate the optimal number of bins are well founded
-        /// in literature, and are inspired by the choices R provides for
-        /// histogram visualisation. Note that having the number of bins
-        /// proportional to  is asymptotically optimal, which is
-        /// why it appears in most estimators. These are simply plug-in methods
-        /// that give good starting points for number of bins. In the equations
-        /// below,  is the binwidth and  is the number of
-        /// bins. All estimators that compute bin counts are recast to bin width
-        /// using the ptp of the data. The final bin count is obtained from
-        /// np.round(np.ceil(range / h)).
+        ///	Function to calculate only the edges of the bins used by the histogram function.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The methods to estimate the optimal number of bins are well founded
+        ///	in literature, and are inspired by the choices R provides for
+        ///	histogram visualisation.<br></br>
+        ///	 Note that having the number of bins
+        ///	proportional to  is asymptotically optimal, which is
+        ///	why it appears in most estimators.<br></br>
+        ///	 These are simply plug-in methods
+        ///	that give good starting points for number of bins.<br></br>
+        ///	 In the equations
+        ///	below,  is the binwidth and  is the number of
+        ///	bins.<br></br>
+        ///	 All estimators that compute bin counts are recast to bin width
+        ///	using the ptp of the data.<br></br>
+        ///	 The final bin count is obtained from
+        ///	np.round(np.ceil(range / h)).
         /// </summary>
         /// <param name="bins">
-        /// If bins is an int, it defines the number of equal-width
-        /// bins in the given range (10, by default). If bins is a
-        /// sequence, it defines the bin edges, including the rightmost
-        /// edge, allowing for non-uniform bin widths.
-        /// 
-        /// If bins is a string from the list below, histogram_bin_edges will use
-        /// the method chosen to calculate the optimal bin width and
-        /// consequently the number of bins (see Notes for more detail on
-        /// the estimators) from the data that falls within the requested
-        /// range. While the bin width will be optimal for the actual data
-        /// in the range, the number of bins will be computed to fill the
-        /// entire range, including the empty portions. For visualisation,
-        /// using the ‘auto’ option is suggested. Weighted data is not
-        /// supported for automated bin size selection.
+        ///	If bins is an int, it defines the number of equal-width
+        ///	bins in the given range (10, by default).<br></br>
+        ///	If bins is a
+        ///	sequence, it defines the bin edges, including the rightmost
+        ///	edge, allowing for non-uniform bin widths.<br></br>
+        ///	
+        ///	If bins is a string from the list below, histogram_bin_edges will use
+        ///	the method chosen to calculate the optimal bin width and
+        ///	consequently the number of bins (see Notes for more detail on
+        ///	the estimators) from the data that falls within the requested
+        ///	range.<br></br>
+        ///	While the bin width will be optimal for the actual data
+        ///	in the range, the number of bins will be computed to fill the
+        ///	entire range, including the empty portions.<br></br>
+        ///	For visualisation,
+        ///	using the ‘auto’ option is suggested.<br></br>
+        ///	Weighted data is not
+        ///	supported for automated bin size selection.
         /// </param>
         /// <param name="range">
-        /// The lower and upper range of the bins.  If not provided, range
-        /// is simply (a.min(), a.max()).  Values outside the range are
-        /// ignored. The first element of the range must be less than or
-        /// equal to the second. range affects the automatic bin
-        /// computation as well. While bin width is computed to be optimal
-        /// based on the actual data within range, the bin count will fill
-        /// the entire range including portions containing no data.
+        ///	The lower and upper range of the bins.<br></br>
+        ///	If not provided, range
+        ///	is simply (a.min(), a.max()).<br></br>
+        ///	Values outside the range are
+        ///	ignored.<br></br>
+        ///	The first element of the range must be less than or
+        ///	equal to the second.<br></br>
+        ///	range affects the automatic bin
+        ///	computation as well.<br></br>
+        ///	While bin width is computed to be optimal
+        ///	based on the actual data within range, the bin count will fill
+        ///	the entire range including portions containing no data.
         /// </param>
         /// <param name="weights">
-        /// An array of weights, of the same shape as a.  Each value in
-        /// a only contributes its associated weight towards the bin count
-        /// (instead of 1). This is currently not used by any of the bin estimators,
-        /// but may be in the future.
+        ///	An array of weights, of the same shape as a.<br></br>
+        ///	Each value in
+        ///	a only contributes its associated weight towards the bin count
+        ///	(instead of 1).<br></br>
+        ///	This is currently not used by any of the bin estimators,
+        ///	but may be in the future.
         /// </param>
         /// <returns>
-        /// The edges to pass into histogram
+        ///	The edges to pass into histogram
         /// </returns>
         public NDarray<float> histogram_bin_edges(int? bins = null, (float, float)? range = null, NDarray weights = null)
         {
@@ -9840,54 +11244,70 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Function to calculate only the edges of the bins used by the histogram function.
-        /// 
-        /// Notes
-        /// 
-        /// The methods to estimate the optimal number of bins are well founded
-        /// in literature, and are inspired by the choices R provides for
-        /// histogram visualisation. Note that having the number of bins
-        /// proportional to  is asymptotically optimal, which is
-        /// why it appears in most estimators. These are simply plug-in methods
-        /// that give good starting points for number of bins. In the equations
-        /// below,  is the binwidth and  is the number of
-        /// bins. All estimators that compute bin counts are recast to bin width
-        /// using the ptp of the data. The final bin count is obtained from
-        /// np.round(np.ceil(range / h)).
+        ///	Function to calculate only the edges of the bins used by the histogram function.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The methods to estimate the optimal number of bins are well founded
+        ///	in literature, and are inspired by the choices R provides for
+        ///	histogram visualisation.<br></br>
+        ///	 Note that having the number of bins
+        ///	proportional to  is asymptotically optimal, which is
+        ///	why it appears in most estimators.<br></br>
+        ///	 These are simply plug-in methods
+        ///	that give good starting points for number of bins.<br></br>
+        ///	 In the equations
+        ///	below,  is the binwidth and  is the number of
+        ///	bins.<br></br>
+        ///	 All estimators that compute bin counts are recast to bin width
+        ///	using the ptp of the data.<br></br>
+        ///	 The final bin count is obtained from
+        ///	np.round(np.ceil(range / h)).
         /// </summary>
         /// <param name="bins">
-        /// If bins is an int, it defines the number of equal-width
-        /// bins in the given range (10, by default). If bins is a
-        /// sequence, it defines the bin edges, including the rightmost
-        /// edge, allowing for non-uniform bin widths.
-        /// 
-        /// If bins is a string from the list below, histogram_bin_edges will use
-        /// the method chosen to calculate the optimal bin width and
-        /// consequently the number of bins (see Notes for more detail on
-        /// the estimators) from the data that falls within the requested
-        /// range. While the bin width will be optimal for the actual data
-        /// in the range, the number of bins will be computed to fill the
-        /// entire range, including the empty portions. For visualisation,
-        /// using the ‘auto’ option is suggested. Weighted data is not
-        /// supported for automated bin size selection.
+        ///	If bins is an int, it defines the number of equal-width
+        ///	bins in the given range (10, by default).<br></br>
+        ///	If bins is a
+        ///	sequence, it defines the bin edges, including the rightmost
+        ///	edge, allowing for non-uniform bin widths.<br></br>
+        ///	
+        ///	If bins is a string from the list below, histogram_bin_edges will use
+        ///	the method chosen to calculate the optimal bin width and
+        ///	consequently the number of bins (see Notes for more detail on
+        ///	the estimators) from the data that falls within the requested
+        ///	range.<br></br>
+        ///	While the bin width will be optimal for the actual data
+        ///	in the range, the number of bins will be computed to fill the
+        ///	entire range, including the empty portions.<br></br>
+        ///	For visualisation,
+        ///	using the ‘auto’ option is suggested.<br></br>
+        ///	Weighted data is not
+        ///	supported for automated bin size selection.
         /// </param>
         /// <param name="range">
-        /// The lower and upper range of the bins.  If not provided, range
-        /// is simply (a.min(), a.max()).  Values outside the range are
-        /// ignored. The first element of the range must be less than or
-        /// equal to the second. range affects the automatic bin
-        /// computation as well. While bin width is computed to be optimal
-        /// based on the actual data within range, the bin count will fill
-        /// the entire range including portions containing no data.
+        ///	The lower and upper range of the bins.<br></br>
+        ///	If not provided, range
+        ///	is simply (a.min(), a.max()).<br></br>
+        ///	Values outside the range are
+        ///	ignored.<br></br>
+        ///	The first element of the range must be less than or
+        ///	equal to the second.<br></br>
+        ///	range affects the automatic bin
+        ///	computation as well.<br></br>
+        ///	While bin width is computed to be optimal
+        ///	based on the actual data within range, the bin count will fill
+        ///	the entire range including portions containing no data.
         /// </param>
         /// <param name="weights">
-        /// An array of weights, of the same shape as a.  Each value in
-        /// a only contributes its associated weight towards the bin count
-        /// (instead of 1). This is currently not used by any of the bin estimators,
-        /// but may be in the future.
+        ///	An array of weights, of the same shape as a.<br></br>
+        ///	Each value in
+        ///	a only contributes its associated weight towards the bin count
+        ///	(instead of 1).<br></br>
+        ///	This is currently not used by any of the bin estimators,
+        ///	but may be in the future.
         /// </param>
         /// <returns>
-        /// The edges to pass into histogram
+        ///	The edges to pass into histogram
         /// </returns>
         public NDarray<float> histogram_bin_edges(NDarray bins = null, (float, float)? range = null, NDarray weights = null)
         {
@@ -9897,54 +11317,70 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Function to calculate only the edges of the bins used by the histogram function.
-        /// 
-        /// Notes
-        /// 
-        /// The methods to estimate the optimal number of bins are well founded
-        /// in literature, and are inspired by the choices R provides for
-        /// histogram visualisation. Note that having the number of bins
-        /// proportional to  is asymptotically optimal, which is
-        /// why it appears in most estimators. These are simply plug-in methods
-        /// that give good starting points for number of bins. In the equations
-        /// below,  is the binwidth and  is the number of
-        /// bins. All estimators that compute bin counts are recast to bin width
-        /// using the ptp of the data. The final bin count is obtained from
-        /// np.round(np.ceil(range / h)).
+        ///	Function to calculate only the edges of the bins used by the histogram function.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	The methods to estimate the optimal number of bins are well founded
+        ///	in literature, and are inspired by the choices R provides for
+        ///	histogram visualisation.<br></br>
+        ///	 Note that having the number of bins
+        ///	proportional to  is asymptotically optimal, which is
+        ///	why it appears in most estimators.<br></br>
+        ///	 These are simply plug-in methods
+        ///	that give good starting points for number of bins.<br></br>
+        ///	 In the equations
+        ///	below,  is the binwidth and  is the number of
+        ///	bins.<br></br>
+        ///	 All estimators that compute bin counts are recast to bin width
+        ///	using the ptp of the data.<br></br>
+        ///	 The final bin count is obtained from
+        ///	np.round(np.ceil(range / h)).
         /// </summary>
         /// <param name="bins">
-        /// If bins is an int, it defines the number of equal-width
-        /// bins in the given range (10, by default). If bins is a
-        /// sequence, it defines the bin edges, including the rightmost
-        /// edge, allowing for non-uniform bin widths.
-        /// 
-        /// If bins is a string from the list below, histogram_bin_edges will use
-        /// the method chosen to calculate the optimal bin width and
-        /// consequently the number of bins (see Notes for more detail on
-        /// the estimators) from the data that falls within the requested
-        /// range. While the bin width will be optimal for the actual data
-        /// in the range, the number of bins will be computed to fill the
-        /// entire range, including the empty portions. For visualisation,
-        /// using the ‘auto’ option is suggested. Weighted data is not
-        /// supported for automated bin size selection.
+        ///	If bins is an int, it defines the number of equal-width
+        ///	bins in the given range (10, by default).<br></br>
+        ///	If bins is a
+        ///	sequence, it defines the bin edges, including the rightmost
+        ///	edge, allowing for non-uniform bin widths.<br></br>
+        ///	
+        ///	If bins is a string from the list below, histogram_bin_edges will use
+        ///	the method chosen to calculate the optimal bin width and
+        ///	consequently the number of bins (see Notes for more detail on
+        ///	the estimators) from the data that falls within the requested
+        ///	range.<br></br>
+        ///	While the bin width will be optimal for the actual data
+        ///	in the range, the number of bins will be computed to fill the
+        ///	entire range, including the empty portions.<br></br>
+        ///	For visualisation,
+        ///	using the ‘auto’ option is suggested.<br></br>
+        ///	Weighted data is not
+        ///	supported for automated bin size selection.
         /// </param>
         /// <param name="range">
-        /// The lower and upper range of the bins.  If not provided, range
-        /// is simply (a.min(), a.max()).  Values outside the range are
-        /// ignored. The first element of the range must be less than or
-        /// equal to the second. range affects the automatic bin
-        /// computation as well. While bin width is computed to be optimal
-        /// based on the actual data within range, the bin count will fill
-        /// the entire range including portions containing no data.
+        ///	The lower and upper range of the bins.<br></br>
+        ///	If not provided, range
+        ///	is simply (a.min(), a.max()).<br></br>
+        ///	Values outside the range are
+        ///	ignored.<br></br>
+        ///	The first element of the range must be less than or
+        ///	equal to the second.<br></br>
+        ///	range affects the automatic bin
+        ///	computation as well.<br></br>
+        ///	While bin width is computed to be optimal
+        ///	based on the actual data within range, the bin count will fill
+        ///	the entire range including portions containing no data.
         /// </param>
         /// <param name="weights">
-        /// An array of weights, of the same shape as a.  Each value in
-        /// a only contributes its associated weight towards the bin count
-        /// (instead of 1). This is currently not used by any of the bin estimators,
-        /// but may be in the future.
+        ///	An array of weights, of the same shape as a.<br></br>
+        ///	Each value in
+        ///	a only contributes its associated weight towards the bin count
+        ///	(instead of 1).<br></br>
+        ///	This is currently not used by any of the bin estimators,
+        ///	but may be in the future.
         /// </param>
         /// <returns>
-        /// The edges to pass into histogram
+        ///	The edges to pass into histogram
         /// </returns>
         public NDarray<float> histogram_bin_edges(List<string> bins = null, (float, float)? range = null, NDarray weights = null)
         {
@@ -9954,40 +11390,47 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the indices of the bins to which each value in input array belongs.
-        /// 
-        /// If values in x are beyond the bounds of bins, 0 or len(bins) is
-        /// returned as appropriate.
-        /// 
-        /// Notes
-        /// 
-        /// If values in x are such that they fall outside the bin range,
-        /// attempting to index bins with the indices that digitize returns
-        /// will result in an IndexError.
-        /// 
-        /// np.digitize is  implemented in terms of np.searchsorted. This means
-        /// that a binary search is used to bin the values, which scales much better
-        /// for larger number of bins than the previous linear search. It also removes
-        /// the requirement for the input array to be 1-dimensional.
-        /// 
-        /// For monotonically _increasing_ bins, the following are equivalent:
-        /// 
-        /// Note that as the order of the arguments are reversed, the side must be too.
-        /// The searchsorted call is marginally faster, as it does not do any
-        /// monotonicity checks. Perhaps more importantly, it supports all dtypes.
+        ///	Return the indices of the bins to which each value in input array belongs.<br></br>
+        ///	
+        ///	If values in x are beyond the bounds of bins, 0 or len(bins) is
+        ///	returned as appropriate.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If values in x are such that they fall outside the bin range,
+        ///	attempting to index bins with the indices that digitize returns
+        ///	will result in an IndexError.<br></br>
+        ///	
+        ///	np.digitize is  implemented in terms of np.searchsorted.<br></br>
+        ///	 This means
+        ///	that a binary search is used to bin the values, which scales much better
+        ///	for larger number of bins than the previous linear search.<br></br>
+        ///	 It also removes
+        ///	the requirement for the input array to be 1-dimensional.<br></br>
+        ///	
+        ///	For monotonically _increasing_ bins, the following are equivalent:
+        ///	
+        ///	Note that as the order of the arguments are reversed, the side must be too.<br></br>
+        ///	
+        ///	The searchsorted call is marginally faster, as it does not do any
+        ///	monotonicity checks.<br></br>
+        ///	 Perhaps more importantly, it supports all dtypes.
         /// </summary>
         /// <param name="bins">
-        /// Array of bins. It has to be 1-dimensional and monotonic.
+        ///	Array of bins.<br></br>
+        ///	It has to be 1-dimensional and monotonic.
         /// </param>
         /// <param name="right">
-        /// Indicating whether the intervals include the right or the left bin
-        /// edge. Default behavior is (right==False) indicating that the interval
-        /// does not include the right edge. The left bin end is open in this
-        /// case, i.e., bins[i-1] &lt;= x &lt; bins[i] is the default behavior for
-        /// monotonically increasing bins.
+        ///	Indicating whether the intervals include the right or the left bin
+        ///	edge.<br></br>
+        ///	Default behavior is (right==False) indicating that the interval
+        ///	does not include the right edge.<br></br>
+        ///	The left bin end is open in this
+        ///	case, i.e., bins[i-1] &lt;= x &lt; bins[i] is the default behavior for
+        ///	monotonically increasing bins.
         /// </param>
         /// <returns>
-        /// Output array of indices, of same shape as x.
+        ///	Output array of indices, of same shape as x.
         /// </returns>
         public NDarray digitize(NDarray bins, bool? right = false)
         {

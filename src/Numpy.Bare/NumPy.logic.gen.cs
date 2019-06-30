@@ -17,46 +17,52 @@ namespace Numpy
     {
         
         /// <summary>
-        /// Test whether all array elements along a given axis evaluate to True.
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number (NaN), positive infinity and negative infinity
-        /// evaluate to True because these are not equal to zero.
+        ///	Test whether all array elements along a given axis evaluate to True.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number (NaN), positive infinity and negative infinity
+        ///	evaluate to True because these are not equal to zero.
         /// </summary>
         /// <param name="a">
-        /// Input array or object that can be converted to an array.
+        ///	Input array or object that can be converted to an array.
         /// </param>
         /// <param name="axis">
-        /// Axis or axes along which a logical AND reduction is performed.
-        /// The default (axis = None) is to perform a logical AND over all
-        /// the dimensions of the input array. axis may be negative, in
-        /// which case it counts from the last to the first axis.
-        /// 
-        /// If this is a tuple of ints, a reduction is performed on multiple
-        /// axes, instead of a single axis or all the axes as before.
+        ///	Axis or axes along which a logical AND reduction is performed.<br></br>
+        ///	
+        ///	The default (axis = None) is to perform a logical AND over all
+        ///	the dimensions of the input array.<br></br>
+        ///	axis may be negative, in
+        ///	which case it counts from the last to the first axis.<br></br>
+        ///	
+        ///	If this is a tuple of ints, a reduction is performed on multiple
+        ///	axes, instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.
-        /// It must have the same shape as the expected output and its
-        /// type is preserved (e.g., if dtype(out) is float, the result
-        /// will consist of 0.0’s and 1.0’s).  See doc.ufuncs (Section
-        /// “Output arguments”) for more details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	
+        ///	It must have the same shape as the expected output and its
+        ///	type is preserved (e.g., if dtype(out) is float, the result
+        ///	will consist of 0.0’s and 1.0’s).<br></br>
+        ///	See doc.ufuncs (Section
+        ///	“Output arguments”) for more details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the all method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the all method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <returns>
-        /// A new boolean or array is returned unless out is specified,
-        /// in which case a reference to out is returned.
+        ///	A new boolean or array is returned unless out is specified,
+        ///	in which case a reference to out is returned.
         /// </returns>
         public NDarray<bool> all(NDarray a, int[] axis, NDarray @out = null, bool? keepdims = null)
         {
@@ -75,19 +81,19 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test whether all array elements along a given axis evaluate to True.
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number (NaN), positive infinity and negative infinity
-        /// evaluate to True because these are not equal to zero.
+        ///	Test whether all array elements along a given axis evaluate to True.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number (NaN), positive infinity and negative infinity
+        ///	evaluate to True because these are not equal to zero.
         /// </summary>
         /// <param name="a">
-        /// Input array or object that can be converted to an array.
+        ///	Input array or object that can be converted to an array.
         /// </param>
         /// <returns>
-        /// A new boolean or array is returned unless out is specified,
-        /// in which case a reference to out is returned.
+        ///	A new boolean or array is returned unless out is specified,
+        ///	in which case a reference to out is returned.
         /// </returns>
         public bool all(NDarray a)
         {
@@ -103,48 +109,54 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test whether any array element along a given axis evaluates to True.
-        /// 
-        /// Returns single boolean unless axis is not None
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number (NaN), positive infinity and negative infinity evaluate
-        /// to True because these are not equal to zero.
+        ///	Test whether any array element along a given axis evaluates to True.<br></br>
+        ///	
+        ///	Returns single boolean unless axis is not None
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number (NaN), positive infinity and negative infinity evaluate
+        ///	to True because these are not equal to zero.
         /// </summary>
         /// <param name="a">
-        /// Input array or object that can be converted to an array.
+        ///	Input array or object that can be converted to an array.
         /// </param>
         /// <param name="axis">
-        /// Axis or axes along which a logical OR reduction is performed.
-        /// The default (axis = None) is to perform a logical OR over all
-        /// the dimensions of the input array. axis may be negative, in
-        /// which case it counts from the last to the first axis.
-        /// 
-        /// If this is a tuple of ints, a reduction is performed on multiple
-        /// axes, instead of a single axis or all the axes as before.
+        ///	Axis or axes along which a logical OR reduction is performed.<br></br>
+        ///	
+        ///	The default (axis = None) is to perform a logical OR over all
+        ///	the dimensions of the input array.<br></br>
+        ///	axis may be negative, in
+        ///	which case it counts from the last to the first axis.<br></br>
+        ///	
+        ///	If this is a tuple of ints, a reduction is performed on multiple
+        ///	axes, instead of a single axis or all the axes as before.
         /// </param>
         /// <param name="out">
-        /// Alternate output array in which to place the result.  It must have
-        /// the same shape as the expected output and its type is preserved
-        /// (e.g., if it is of type float, then it will remain so, returning
-        /// 1.0 for True and 0.0 for False, regardless of the type of a).
-        /// See doc.ufuncs (Section “Output arguments”) for details.
+        ///	Alternate output array in which to place the result.<br></br>
+        ///	It must have
+        ///	the same shape as the expected output and its type is preserved
+        ///	(e.g., if it is of type float, then it will remain so, returning
+        ///	1.0 for True and 0.0 for False, regardless of the type of a).<br></br>
+        ///	
+        ///	See doc.ufuncs (Section “Output arguments”) for details.
         /// </param>
         /// <param name="keepdims">
-        /// If this is set to True, the axes which are reduced are left
-        /// in the result as dimensions with size one. With this option,
-        /// the result will broadcast correctly against the input array.
-        /// 
-        /// If the default value is passed, then keepdims will not be
-        /// passed through to the any method of sub-classes of
-        /// ndarray, however any non-default value will be.  If the
-        /// sub-class’ method does not implement keepdims any
-        /// exceptions will be raised.
+        ///	If this is set to True, the axes which are reduced are left
+        ///	in the result as dimensions with size one.<br></br>
+        ///	With this option,
+        ///	the result will broadcast correctly against the input array.<br></br>
+        ///	
+        ///	If the default value is passed, then keepdims will not be
+        ///	passed through to the any method of sub-classes of
+        ///	ndarray, however any non-default value will be.<br></br>
+        ///	If the
+        ///	sub-class’ method does not implement keepdims any
+        ///	exceptions will be raised.
         /// </param>
         /// <returns>
-        /// A new boolean or ndarray is returned unless out is specified,
-        /// in which case a reference to out is returned.
+        ///	A new boolean or ndarray is returned unless out is specified,
+        ///	in which case a reference to out is returned.
         /// </returns>
         public NDarray<bool> any(NDarray a, int[] axis, NDarray @out = null, bool? keepdims = null)
         {
@@ -163,21 +175,21 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test whether any array element along a given axis evaluates to True.
-        /// 
-        /// Returns single boolean unless axis is not None
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number (NaN), positive infinity and negative infinity evaluate
-        /// to True because these are not equal to zero.
+        ///	Test whether any array element along a given axis evaluates to True.<br></br>
+        ///	
+        ///	Returns single boolean unless axis is not None
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number (NaN), positive infinity and negative infinity evaluate
+        ///	to True because these are not equal to zero.
         /// </summary>
         /// <param name="a">
-        /// Input array or object that can be converted to an array.
+        ///	Input array or object that can be converted to an array.
         /// </param>
         /// <returns>
-        /// A new boolean or ndarray is returned unless out is specified,
-        /// in which case a reference to out is returned.
+        ///	A new boolean or ndarray is returned unless out is specified,
+        ///	in which case a reference to out is returned.
         /// </returns>
         public bool any(NDarray a)
         {
@@ -193,39 +205,47 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for finiteness (not infinity or not Not a Number).
-        /// 
-        /// The result is returned as a boolean array.
-        /// 
-        /// Notes
-        /// 
-        /// Not a Number, positive infinity and negative infinity are considered
-        /// to be non-finite.
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754). This means that Not a Number is not equivalent to infinity.
-        /// Also that positive infinity is not equivalent to negative infinity. But
-        /// infinity is equivalent to positive infinity.  Errors result if the
-        /// second argument is also supplied when x is a scalar input, or if
-        /// first and second arguments have different shapes.
+        ///	Test element-wise for finiteness (not infinity or not Not a Number).<br></br>
+        ///	
+        ///	The result is returned as a boolean array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Not a Number, positive infinity and negative infinity are considered
+        ///	to be non-finite.<br></br>
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	 This means that Not a Number is not equivalent to infinity.<br></br>
+        ///	
+        ///	Also that positive infinity is not equivalent to negative infinity.<br></br>
+        ///	 But
+        ///	infinity is equivalent to positive infinity.<br></br>
+        ///	  Errors result if the
+        ///	second argument is also supplied when x is a scalar input, or if
+        ///	first and second arguments have different shapes.
         /// </summary>
         /// <param name="x">
-        /// Input values.
+        ///	Input values.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// True where x is not positive infinity, negative infinity,
-        /// or NaN; false otherwise.
-        /// This is a scalar if x is a scalar.
+        ///	True where x is not positive infinity, negative infinity,
+        ///	or NaN; false otherwise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray isfinite(NDarray x, NDarray @out = null, NDarray @where = null)
         {
@@ -243,36 +263,40 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for positive or negative infinity.
-        /// 
-        /// Returns a boolean array of the same shape as x, True where x ==
-        /// +/-inf, otherwise False.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754).
-        /// 
-        /// Errors result if the second argument is supplied when the first
-        /// argument is a scalar, or if the first and second arguments have
-        /// different shapes.
+        ///	Test element-wise for positive or negative infinity.<br></br>
+        ///	
+        ///	Returns a boolean array of the same shape as x, True where x ==
+        ///	+/-inf, otherwise False.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	
+        ///	Errors result if the second argument is supplied when the first
+        ///	argument is a scalar, or if the first and second arguments have
+        ///	different shapes.
         /// </summary>
         /// <param name="x">
-        /// Input values
+        ///	Input values
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// True where x is positive or negative infinity, false otherwise.
-        /// This is a scalar if x is a scalar.
+        ///	True where x is positive or negative infinity, false otherwise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray<bool> isinf(NDarray x, NDarray @out = null, NDarray @where = null)
         {
@@ -290,29 +314,34 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for NaN and return result as a boolean array.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754). This means that Not a Number is not equivalent to infinity.
+        ///	Test element-wise for NaN and return result as a boolean array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	 This means that Not a Number is not equivalent to infinity.
         /// </summary>
         /// <param name="x">
-        /// Input array.
+        ///	Input array.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// True where x is NaN, false otherwise.
-        /// This is a scalar if x is a scalar.
+        ///	True where x is NaN, false otherwise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray isnan(NDarray x, NDarray @out = null, NDarray @where = null)
         {
@@ -330,24 +359,28 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for NaT (not a time) and return result as a boolean array.
+        ///	Test element-wise for NaT (not a time) and return result as a boolean array.
         /// </summary>
         /// <param name="x">
-        /// Input array with datetime or timedelta data type.
+        ///	Input array with datetime or timedelta data type.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// True where x is NaT, false otherwise.
-        /// This is a scalar if x is a scalar.
+        ///	True where x is NaT, false otherwise.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray isnat(NDarray x, NDarray @out = null, NDarray @where = null)
         {
@@ -365,35 +398,38 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for negative infinity, return result as bool array.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754).
-        /// 
-        /// Errors result if the second argument is also supplied when x is a scalar
-        /// input, if first and second arguments have different shapes, or if the
-        /// first argument has complex values.
+        ///	Test element-wise for negative infinity, return result as bool array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	
+        ///	Errors result if the second argument is also supplied when x is a scalar
+        ///	input, if first and second arguments have different shapes, or if the
+        ///	first argument has complex values.
         /// </summary>
         /// <param name="x">
-        /// The input array.
+        ///	The input array.
         /// </param>
         /// <param name="out">
-        /// A boolean array with the same shape and type as x to store the
-        /// result.
+        ///	A boolean array with the same shape and type as x to store the
+        ///	result.
         /// </param>
         /// <returns>
-        /// A boolean array with the same dimensions as the input.
-        /// If second argument is not supplied then a numpy boolean array is
-        /// returned with values True where the corresponding element of the
-        /// input is negative infinity and values False where the element of
-        /// the input is not negative infinity.
-        /// 
-        /// If a second argument is supplied the result is stored there. If the
-        /// type of that array is a numeric type the result is represented as
-        /// zeros and ones, if the type is boolean then as False and True. The
-        /// return value out is then a reference to that array.
+        ///	A boolean array with the same dimensions as the input.<br></br>
+        ///	
+        ///	If second argument is not supplied then a numpy boolean array is
+        ///	returned with values True where the corresponding element of the
+        ///	input is negative infinity and values False where the element of
+        ///	the input is not negative infinity.<br></br>
+        ///	
+        ///	If a second argument is supplied the result is stored there.<br></br>
+        ///	 If the
+        ///	type of that array is a numeric type the result is represented as
+        ///	zeros and ones, if the type is boolean then as False and True.<br></br>
+        ///	 The
+        ///	return value out is then a reference to that array.
         /// </returns>
         public NDarray isneginf(NDarray x, NDarray @out = null)
         {
@@ -410,34 +446,37 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Test element-wise for positive infinity, return result as bool array.
-        /// 
-        /// Notes
-        /// 
-        /// NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
-        /// (IEEE 754).
-        /// 
-        /// Errors result if the second argument is also supplied when x is a scalar
-        /// input, if first and second arguments have different shapes, or if the
-        /// first argument has complex values
+        ///	Test element-wise for positive infinity, return result as bool array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	NumPy uses the IEEE Standard for Binary Floating-Point for Arithmetic
+        ///	(IEEE 754).<br></br>
+        ///	
+        ///	Errors result if the second argument is also supplied when x is a scalar
+        ///	input, if first and second arguments have different shapes, or if the
+        ///	first argument has complex values
         /// </summary>
         /// <param name="x">
-        /// The input array.
+        ///	The input array.
         /// </param>
         /// <param name="y">
-        /// A boolean array with the same shape as x to store the result.
+        ///	A boolean array with the same shape as x to store the result.
         /// </param>
         /// <returns>
-        /// A boolean array with the same dimensions as the input.
-        /// If second argument is not supplied then a boolean array is returned
-        /// with values True where the corresponding element of the input is
-        /// positive infinity and values False where the element of the input is
-        /// not positive infinity.
-        /// 
-        /// If a second argument is supplied the result is stored there. If the
-        /// type of that array is a numeric type the result is represented as zeros
-        /// and ones, if the type is boolean then as False and True.
-        /// The return value out is then a reference to that array.
+        ///	A boolean array with the same dimensions as the input.<br></br>
+        ///	
+        ///	If second argument is not supplied then a boolean array is returned
+        ///	with values True where the corresponding element of the input is
+        ///	positive infinity and values False where the element of the input is
+        ///	not positive infinity.<br></br>
+        ///	
+        ///	If a second argument is supplied the result is stored there.<br></br>
+        ///	 If the
+        ///	type of that array is a numeric type the result is represented as zeros
+        ///	and ones, if the type is boolean then as False and True.<br></br>
+        ///	
+        ///	The return value out is then a reference to that array.
         /// </returns>
         public NDarray isposinf(NDarray x, NDarray y = null)
         {
@@ -454,16 +493,16 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a bool array, where True if input element is complex.
-        /// 
-        /// What is tested is whether the input has a non-zero imaginary part, not if
-        /// the input type is complex.
+        ///	Returns a bool array, where True if input element is complex.<br></br>
+        ///	
+        ///	What is tested is whether the input has a non-zero imaginary part, not if
+        ///	the input type is complex.
         /// </summary>
         /// <param name="x">
-        /// Input array.
+        ///	Input array.
         /// </param>
         /// <returns>
-        /// Output array.
+        ///	Output array.
         /// </returns>
         public NDarray iscomplex(NDarray x)
         {
@@ -479,17 +518,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Check for a complex type or an array of complex numbers.
-        /// 
-        /// The type of the input is checked, not the value. Even if the input
-        /// has an imaginary part equal to zero, iscomplexobj evaluates to True.
+        ///	Check for a complex type or an array of complex numbers.<br></br>
+        ///	
+        ///	The type of the input is checked, not the value.<br></br>
+        ///	 Even if the input
+        ///	has an imaginary part equal to zero, iscomplexobj evaluates to True.
         /// </summary>
         /// <param name="x">
-        /// The input can be of any type and shape.
+        ///	The input can be of any type and shape.
         /// </param>
         /// <returns>
-        /// The return value, True if x is of a complex type or has at least
-        /// one complex element.
+        ///	The return value, True if x is of a complex type or has at least
+        ///	one complex element.
         /// </returns>
         public bool iscomplexobj(object x)
         {
@@ -505,15 +545,16 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns True if the array is Fortran contiguous but not C contiguous.
-        /// 
-        /// This function is obsolete and, because of changes due to relaxed stride
-        /// checking, its return value for the same array may differ for versions
-        /// of NumPy &gt;= 1.10.0 and previous versions. If you only want to check if an
-        /// array is Fortran contiguous use a.flags.f_contiguous instead.
+        ///	Returns True if the array is Fortran contiguous but not C contiguous.<br></br>
+        ///	
+        ///	This function is obsolete and, because of changes due to relaxed stride
+        ///	checking, its return value for the same array may differ for versions
+        ///	of NumPy &gt;= 1.10.0 and previous versions.<br></br>
+        ///	 If you only want to check if an
+        ///	array is Fortran contiguous use a.flags.f_contiguous instead.
         /// </summary>
         /// <param name="a">
-        /// Input array.
+        ///	Input array.
         /// </param>
         public bool isfortran(NDarray a)
         {
@@ -529,16 +570,16 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a bool array, where True if input element is real.
-        /// 
-        /// If element has complex type with zero complex part, the return value
-        /// for that element is True.
+        ///	Returns a bool array, where True if input element is real.<br></br>
+        ///	
+        ///	If element has complex type with zero complex part, the return value
+        ///	for that element is True.
         /// </summary>
         /// <param name="x">
-        /// Input array.
+        ///	Input array.
         /// </param>
         /// <returns>
-        /// Boolean array of same shape as x.
+        ///	Boolean array of same shape as x.
         /// </returns>
         public NDarray isreal(NDarray x)
         {
@@ -554,17 +595,18 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return True if x is a not complex type or an array of complex numbers.
-        /// 
-        /// The type of the input is checked, not the value. So even if the input
-        /// has an imaginary part equal to zero, isrealobj evaluates to False
-        /// if the data type is complex.
+        ///	Return True if x is a not complex type or an array of complex numbers.<br></br>
+        ///	
+        ///	The type of the input is checked, not the value.<br></br>
+        ///	 So even if the input
+        ///	has an imaginary part equal to zero, isrealobj evaluates to False
+        ///	if the data type is complex.
         /// </summary>
         /// <param name="x">
-        /// The input can be of any type and shape.
+        ///	The input can be of any type and shape.
         /// </param>
         /// <returns>
-        /// The return value, False if x is of a complex type.
+        ///	The return value, False if x is of a complex type.
         /// </returns>
         public bool isrealobj(object x)
         {
@@ -580,20 +622,22 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns True if the type of num is a scalar type.
-        /// 
-        /// Notes
-        /// 
-        /// In almost all cases np.ndim(x) == 0 should be used instead of this
-        /// function, as that will also return true for 0d arrays. This is how
-        /// numpy overloads functions in the style of the dx arguments to gradient
-        /// and the bins argument to histogram. Some key differences:
+        ///	Returns True if the type of num is a scalar type.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	In almost all cases np.ndim(x) == 0 should be used instead of this
+        ///	function, as that will also return true for 0d arrays.<br></br>
+        ///	 This is how
+        ///	numpy overloads functions in the style of the dx arguments to gradient
+        ///	and the bins argument to histogram.<br></br>
+        ///	 Some key differences:
         /// </summary>
         /// <param name="num">
-        /// Input argument, can be of any type and shape.
+        ///	Input argument, can be of any type and shape.
         /// </param>
         /// <returns>
-        /// True if num is a scalar type, False if it is not.
+        ///	True if num is a scalar type, False if it is not.
         /// </returns>
         public bool isscalar(object num)
         {
@@ -609,28 +653,33 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the truth value of x1 AND x2 element-wise.
+        ///	Compute the truth value of x1 AND x2 element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Input arrays. x1 and x2 must be of the same shape.
+        ///	Input arrays.<br></br>
+        ///	x1 and x2 must be of the same shape.
         /// </param>
         /// <param name="x1">
-        /// Input arrays. x1 and x2 must be of the same shape.
+        ///	Input arrays.<br></br>
+        ///	x1 and x2 must be of the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Boolean result with the same shape as x1 and x2 of the logical
-        /// AND operation on corresponding elements of x1 and x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Boolean result with the same shape as x1 and x2 of the logical
+        ///	AND operation on corresponding elements of x1 and x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray logical_and(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -649,30 +698,33 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the truth value of x1 OR x2 element-wise.
+        ///	Compute the truth value of x1 OR x2 element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Logical OR is applied to the elements of x1 and x2.
-        /// They have to be of the same shape.
+        ///	Logical OR is applied to the elements of x1 and x2.
+        ///	They have to be of the same shape.
         /// </param>
         /// <param name="x1">
-        /// Logical OR is applied to the elements of x1 and x2.
-        /// They have to be of the same shape.
+        ///	Logical OR is applied to the elements of x1 and x2.
+        ///	They have to be of the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Boolean result with the same shape as x1 and x2 of the logical
-        /// OR operation on elements of x1 and x2.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Boolean result with the same shape as x1 and x2 of the logical
+        ///	OR operation on elements of x1 and x2.
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray logical_or(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -691,25 +743,29 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the truth value of NOT x element-wise.
+        ///	Compute the truth value of NOT x element-wise.
         /// </summary>
         /// <param name="x">
-        /// Logical NOT is applied to the elements of x.
+        ///	Logical NOT is applied to the elements of x.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Boolean result with the same shape as x of the NOT operation
-        /// on elements of x.
-        /// This is a scalar if x is a scalar.
+        ///	Boolean result with the same shape as x of the NOT operation
+        ///	on elements of x.<br></br>
+        ///	
+        ///	This is a scalar if x is a scalar.
         /// </returns>
         public NDarray<bool> logical_not(NDarray x, NDarray @out = null, NDarray @where = null)
         {
@@ -727,31 +783,35 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Compute the truth value of x1 XOR x2, element-wise.
+        ///	Compute the truth value of x1 XOR x2, element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Logical XOR is applied to the elements of x1 and x2.  They must
-        /// be broadcastable to the same shape.
+        ///	Logical XOR is applied to the elements of x1 and x2.  They must
+        ///	be broadcastable to the same shape.
         /// </param>
         /// <param name="x1">
-        /// Logical XOR is applied to the elements of x1 and x2.  They must
-        /// be broadcastable to the same shape.
+        ///	Logical XOR is applied to the elements of x1 and x2.  They must
+        ///	be broadcastable to the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Boolean result of the logical XOR operation applied to the elements
-        /// of x1 and x2; the shape is determined by whether or not
-        /// broadcasting of one or both arrays was required.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Boolean result of the logical XOR operation applied to the elements
+        ///	of x1 and x2; the shape is determined by whether or not
+        ///	broadcasting of one or both arrays was required.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray<bool> logical_xor(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -770,50 +830,54 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns True if two arrays are element-wise equal within a tolerance.
-        /// 
-        /// The tolerance values are positive, typically very small numbers.  The
-        /// relative difference (rtol * abs(b)) and the absolute difference
-        /// atol are added together to compare against the absolute difference
-        /// between a and b.
-        /// 
-        /// If either array contains one or more NaNs, False is returned.
-        /// Infs are treated as equal if they are in the same place and of the same
-        /// sign in both arrays.
-        /// 
-        /// Notes
-        /// 
-        /// If the following equation is element-wise True, then allclose returns
-        /// True.
-        /// 
-        /// The above equation is not symmetric in a and b, so that
-        /// allclose(a, b) might be different from allclose(b, a) in
-        /// some rare cases.
-        /// 
-        /// The comparison of a and b uses standard broadcasting, which
-        /// means that a and b need not have the same shape in order for
-        /// allclose(a, b) to evaluate to True.  The same is true for
-        /// equal but not array_equal.
+        ///	Returns True if two arrays are element-wise equal within a tolerance.<br></br>
+        ///	
+        ///	The tolerance values are positive, typically very small numbers.<br></br>
+        ///	  The
+        ///	relative difference (rtol * abs(b)) and the absolute difference
+        ///	atol are added together to compare against the absolute difference
+        ///	between a and b.<br></br>
+        ///	
+        ///	If either array contains one or more NaNs, False is returned.<br></br>
+        ///	
+        ///	Infs are treated as equal if they are in the same place and of the same
+        ///	sign in both arrays.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If the following equation is element-wise True, then allclose returns
+        ///	True.<br></br>
+        ///	
+        ///	The above equation is not symmetric in a and b, so that
+        ///	allclose(a, b) might be different from allclose(b, a) in
+        ///	some rare cases.<br></br>
+        ///	
+        ///	The comparison of a and b uses standard broadcasting, which
+        ///	means that a and b need not have the same shape in order for
+        ///	allclose(a, b) to evaluate to True.<br></br>
+        ///	  The same is true for
+        ///	equal but not array_equal.
         /// </summary>
         /// <param name="b">
-        /// Input arrays to compare.
+        ///	Input arrays to compare.
         /// </param>
         /// <param name="a">
-        /// Input arrays to compare.
+        ///	Input arrays to compare.
         /// </param>
         /// <param name="rtol">
-        /// The relative tolerance parameter (see Notes).
+        ///	The relative tolerance parameter (see Notes).
         /// </param>
         /// <param name="atol">
-        /// The absolute tolerance parameter (see Notes).
+        ///	The absolute tolerance parameter (see Notes).
         /// </param>
         /// <param name="equal_nan">
-        /// Whether to compare NaN’s as equal.  If True, NaN’s in a will be
-        /// considered equal to NaN’s in b in the output array.
+        ///	Whether to compare NaN’s as equal.<br></br>
+        ///	If True, NaN’s in a will be
+        ///	considered equal to NaN’s in b in the output array.
         /// </param>
         /// <returns>
-        /// Returns True if the two arrays are equal within the given
-        /// tolerance; False otherwise.
+        ///	Returns True if the two arrays are equal within the given
+        ///	tolerance; False otherwise.
         /// </returns>
         public bool allclose(NDarray b, NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
         {
@@ -833,49 +897,56 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns a boolean array where two arrays are element-wise equal within a
-        /// tolerance.
-        /// 
-        /// The tolerance values are positive, typically very small numbers.  The
-        /// relative difference (rtol * abs(b)) and the absolute difference
-        /// atol are added together to compare against the absolute difference
-        /// between a and b.
-        /// 
-        /// Notes
-        /// 
-        /// For finite values, isclose uses the following equation to test whether
-        /// two floating point values are equivalent.
-        /// 
-        /// Unlike the built-in math.isclose, the above equation is not symmetric
-        /// in a and b – it assumes b is the reference value – so that
-        /// isclose(a, b) might be different from isclose(b, a). Furthermore,
-        /// the default value of atol is not zero, and is used to determine what
-        /// small values should be considered close to zero. The default value is
-        /// appropriate for expected values of order unity: if the expected values
-        /// are significantly smaller than one, it can result in false positives.
-        /// atol should be carefully selected for the use case at hand. A zero value
-        /// for atol will result in False if either a or b is zero.
+        ///	Returns a boolean array where two arrays are element-wise equal within a
+        ///	tolerance.<br></br>
+        ///	
+        ///	The tolerance values are positive, typically very small numbers.<br></br>
+        ///	  The
+        ///	relative difference (rtol * abs(b)) and the absolute difference
+        ///	atol are added together to compare against the absolute difference
+        ///	between a and b.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	For finite values, isclose uses the following equation to test whether
+        ///	two floating point values are equivalent.<br></br>
+        ///	
+        ///	Unlike the built-in math.isclose, the above equation is not symmetric
+        ///	in a and b – it assumes b is the reference value – so that
+        ///	isclose(a, b) might be different from isclose(b, a).<br></br>
+        ///	 Furthermore,
+        ///	the default value of atol is not zero, and is used to determine what
+        ///	small values should be considered close to zero.<br></br>
+        ///	 The default value is
+        ///	appropriate for expected values of order unity: if the expected values
+        ///	are significantly smaller than one, it can result in false positives.<br></br>
+        ///	
+        ///	atol should be carefully selected for the use case at hand.<br></br>
+        ///	 A zero value
+        ///	for atol will result in False if either a or b is zero.
         /// </summary>
         /// <param name="b">
-        /// Input arrays to compare.
+        ///	Input arrays to compare.
         /// </param>
         /// <param name="a">
-        /// Input arrays to compare.
+        ///	Input arrays to compare.
         /// </param>
         /// <param name="rtol">
-        /// The relative tolerance parameter (see Notes).
+        ///	The relative tolerance parameter (see Notes).
         /// </param>
         /// <param name="atol">
-        /// The absolute tolerance parameter (see Notes).
+        ///	The absolute tolerance parameter (see Notes).
         /// </param>
         /// <param name="equal_nan">
-        /// Whether to compare NaN’s as equal.  If True, NaN’s in a will be
-        /// considered equal to NaN’s in b in the output array.
+        ///	Whether to compare NaN’s as equal.<br></br>
+        ///	If True, NaN’s in a will be
+        ///	considered equal to NaN’s in b in the output array.
         /// </param>
         /// <returns>
-        /// Returns a boolean array of where a and b are equal within the
-        /// given tolerance. If both a and b are scalars, returns a single
-        /// boolean value.
+        ///	Returns a boolean array of where a and b are equal within the
+        ///	given tolerance.<br></br>
+        ///	 If both a and b are scalars, returns a single
+        ///	boolean value.
         /// </returns>
         public NDarray isclose(NDarray b, NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
         {
@@ -895,16 +966,16 @@ namespace Numpy
         }
         
         /// <summary>
-        /// True if two arrays have the same shape and elements, False otherwise.
+        ///	True if two arrays have the same shape and elements, False otherwise.
         /// </summary>
         /// <param name="a2">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <param name="a1">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <returns>
-        /// Returns True if the arrays are equal.
+        ///	Returns True if the arrays are equal.
         /// </returns>
         public bool array_equal(NDarray a2, NDarray a1)
         {
@@ -921,19 +992,19 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Returns True if input arrays are shape consistent and all elements equal.
-        /// 
-        /// Shape consistent means they are either the same shape, or one input array
-        /// can be broadcasted to create the same shape as the other one.
+        ///	Returns True if input arrays are shape consistent and all elements equal.<br></br>
+        ///	
+        ///	Shape consistent means they are either the same shape, or one input array
+        ///	can be broadcasted to create the same shape as the other one.
         /// </summary>
         /// <param name="a2">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <param name="a1">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <returns>
-        /// True if equivalent, False otherwise.
+        ///	True if equivalent, False otherwise.
         /// </returns>
         public bool array_equiv(NDarray a2, NDarray a1)
         {
@@ -950,32 +1021,38 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truth value of (x1 &gt; x2) element-wise.
+        ///	Return the truth value of (x1 &gt; x2) element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="x1">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray greater(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -994,32 +1071,38 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truth value of (x1 &gt;= x2) element-wise.
+        ///	Return the truth value of (x1 &gt;= x2) element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="x1">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray<bool> greater_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -1038,32 +1121,38 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truth value of (x1 &lt; x2) element-wise.
+        ///	Return the truth value of (x1 &lt; x2) element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="x1">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray less(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -1082,32 +1171,38 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return the truth value of (x1 =&lt; x2) element-wise.
+        ///	Return the truth value of (x1 =&lt; x2) element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="x1">
-        /// Input arrays.  If x1.shape != x2.shape, they must be
-        /// broadcastable to a common shape (which may be the shape of one or
-        /// the other).
+        ///	Input arrays.<br></br>
+        ///	If x1.shape != x2.shape, they must be
+        ///	broadcastable to a common shape (which may be the shape of one or
+        ///	the other).
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray less_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -1126,28 +1221,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return (x1 == x2) element-wise.
+        ///	Return (x1 == x2) element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Input arrays of the same shape.
+        ///	Input arrays of the same shape.
         /// </param>
         /// <param name="x1">
-        /// Input arrays of the same shape.
+        ///	Input arrays of the same shape.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
@@ -1166,28 +1265,32 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Return (x1 != x2) element-wise.
+        ///	Return (x1 != x2) element-wise.
         /// </summary>
         /// <param name="x2">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <param name="x1">
-        /// Input arrays.
+        ///	Input arrays.
         /// </param>
         /// <param name="out">
-        /// A location into which the result is stored. If provided, it must have
-        /// a shape that the inputs broadcast to. If not provided or None,
-        /// a freshly-allocated array is returned. A tuple (possible only as a
-        /// keyword argument) must have length equal to the number of outputs.
+        ///	A location into which the result is stored.<br></br>
+        ///	If provided, it must have
+        ///	a shape that the inputs broadcast to.<br></br>
+        ///	If not provided or None,
+        ///	a freshly-allocated array is returned.<br></br>
+        ///	A tuple (possible only as a
+        ///	keyword argument) must have length equal to the number of outputs.
         /// </param>
         /// <param name="where">
-        /// Values of True indicate to calculate the ufunc at that position, values
-        /// of False indicate to leave the value in the output alone.
+        ///	Values of True indicate to calculate the ufunc at that position, values
+        ///	of False indicate to leave the value in the output alone.
         /// </param>
         /// <returns>
-        /// Output array, element-wise comparison of x1 and x2.
-        /// Typically of type bool, unless dtype=object is passed.
-        /// This is a scalar if both x1 and x2 are scalars.
+        ///	Output array, element-wise comparison of x1 and x2.
+        ///	Typically of type bool, unless dtype=object is passed.<br></br>
+        ///	
+        ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public NDarray not_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {

@@ -17,25 +17,28 @@ namespace Numpy
     {
         
         /// <summary>
-        /// Convert an array of datetimes into an array of strings.
+        ///	Convert an array of datetimes into an array of strings.
         /// </summary>
         /// <param name="arr">
-        /// The array of UTC timestamps to format.
+        ///	The array of UTC timestamps to format.
         /// </param>
         /// <param name="unit">
-        /// One of None, ‘auto’, or a datetime unit.
+        ///	One of None, ‘auto’, or a datetime unit.
         /// </param>
         /// <param name="timezone">
-        /// Timezone information to use when displaying the datetime. If ‘UTC’, end
-        /// with a Z to indicate UTC time. If ‘local’, convert to the local timezone
-        /// first, and suffix with a +-#### timezone offset. If a tzinfo object,
-        /// then do as with ‘local’, but use the specified timezone.
+        ///	Timezone information to use when displaying the datetime.<br></br>
+        ///	If ‘UTC’, end
+        ///	with a Z to indicate UTC time.<br></br>
+        ///	If ‘local’, convert to the local timezone
+        ///	first, and suffix with a +-#### timezone offset.<br></br>
+        ///	If a tzinfo object,
+        ///	then do as with ‘local’, but use the specified timezone.
         /// </param>
         /// <param name="casting">
-        /// Casting to allow when changing between datetime units.
+        ///	Casting to allow when changing between datetime units.
         /// </param>
         /// <returns>
-        /// An array of strings the same shape as arr.
+        ///	An array of strings the same shape as arr.
         /// </returns>
         public NDarray datetime_as_string(string[] arr, string unit, string timezone = "naive", string casting = "same_kind")
         {
@@ -54,21 +57,21 @@ namespace Numpy
         }
         
         /// <summary>
-        /// Get information about the step size of a date or time type.
-        /// 
-        /// The returned tuple can be passed as the second argument of numpy.datetime64 and
-        /// numpy.timedelta64.
+        ///	Get information about the step size of a date or time type.<br></br>
+        ///	
+        ///	The returned tuple can be passed as the second argument of numpy.datetime64 and
+        ///	numpy.timedelta64.
         /// </summary>
         /// <param name="dtype">
-        /// The dtype object, which must be a datetime64 or timedelta64 type.
+        ///	The dtype object, which must be a datetime64 or timedelta64 type.
         /// </param>
         /// <returns>
         /// A tuple of:
         /// unit
-        /// The datetime unit on which this dtype
-        /// is based.
+        ///	The datetime unit on which this dtype
+        ///	is based.
         /// count
-        /// The number of base units in a step.
+        ///	The number of base units in a step.
         /// </returns>
         public (string, int) datetime_data(Dtype dtype)
         {
@@ -86,34 +89,39 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// A business day calendar object that efficiently stores information
-        /// defining valid days for the busday family of functions.
-        /// 
-        /// The default valid days are Monday through Friday (“business days”).
-        /// A busdaycalendar object can be specified with any set of weekly
-        /// valid days, plus an optional “holiday” dates that always will be invalid.
-        /// 
-        /// Once a busdaycalendar object is created, the weekmask and holidays
-        /// cannot be modified.
+        ///	A business day calendar object that efficiently stores information
+        ///	defining valid days for the busday family of functions.<br></br>
+        ///	
+        ///	The default valid days are Monday through Friday (“business days”).<br></br>
+        ///	
+        ///	A busdaycalendar object can be specified with any set of weekly
+        ///	valid days, plus an optional “holiday” dates that always will be invalid.<br></br>
+        ///	
+        ///	Once a busdaycalendar object is created, the weekmask and holidays
+        ///	cannot be modified.
         /// </summary>
         /// <param name="weekmask">
-        /// A seven-element array indicating which of Monday through Sunday are
-        /// valid days. May be specified as a length-seven list or array, like
-        /// [1,1,1,1,1,0,0]; a length-seven string, like ‘1111100’; or a string
-        /// like “Mon Tue Wed Thu Fri”, made up of 3-character abbreviations for
-        /// weekdays, optionally separated by white space. Valid abbreviations
-        /// are: Mon Tue Wed Thu Fri Sat Sun
+        ///	A seven-element array indicating which of Monday through Sunday are
+        ///	valid days.<br></br>
+        ///	May be specified as a length-seven list or array, like
+        ///	[1,1,1,1,1,0,0]; a length-seven string, like ‘1111100’; or a string
+        ///	like “Mon Tue Wed Thu Fri”, made up of 3-character abbreviations for
+        ///	weekdays, optionally separated by white space.<br></br>
+        ///	Valid abbreviations
+        ///	are: Mon Tue Wed Thu Fri Sat Sun
         /// </param>
         /// <param name="holidays">
-        /// An array of dates to consider as invalid dates, no matter which
-        /// weekday they fall upon.  Holiday dates may be specified in any
-        /// order, and NaT (not-a-time) dates are ignored.  This list is
-        /// saved in a normalized form that is suited for fast calculations
-        /// of valid days.
+        ///	An array of dates to consider as invalid dates, no matter which
+        ///	weekday they fall upon.<br></br>
+        ///	Holiday dates may be specified in any
+        ///	order, and NaT (not-a-time) dates are ignored.<br></br>
+        ///	This list is
+        ///	saved in a normalized form that is suited for fast calculations
+        ///	of valid days.
         /// </param>
         /// <returns>
-        /// A business day calendar object containing the specified
-        /// weekmask and holidays values.
+        ///	A business day calendar object containing the specified
+        ///	weekmask and holidays values.
         /// </returns>
         public busdaycalendar busdaycalendar(string weekmask = null, string[] holidays = null)
         {
@@ -132,36 +140,41 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// Calculates which of the given dates are valid days, and which are not.
+        ///	Calculates which of the given dates are valid days, and which are not.
         /// </summary>
         /// <param name="dates">
-        /// The array of dates to process.
+        ///	The array of dates to process.
         /// </param>
         /// <param name="weekmask">
-        /// A seven-element array indicating which of Monday through Sunday are
-        /// valid days. May be specified as a length-seven list or array, like
-        /// [1,1,1,1,1,0,0]; a length-seven string, like ‘1111100’; or a string
-        /// like “Mon Tue Wed Thu Fri”, made up of 3-character abbreviations for
-        /// weekdays, optionally separated by white space. Valid abbreviations
-        /// are: Mon Tue Wed Thu Fri Sat Sun
+        ///	A seven-element array indicating which of Monday through Sunday are
+        ///	valid days.<br></br>
+        ///	May be specified as a length-seven list or array, like
+        ///	[1,1,1,1,1,0,0]; a length-seven string, like ‘1111100’; or a string
+        ///	like “Mon Tue Wed Thu Fri”, made up of 3-character abbreviations for
+        ///	weekdays, optionally separated by white space.<br></br>
+        ///	Valid abbreviations
+        ///	are: Mon Tue Wed Thu Fri Sat Sun
         /// </param>
         /// <param name="holidays">
-        /// An array of dates to consider as invalid dates.  They may be
-        /// specified in any order, and NaT (not-a-time) dates are ignored.
-        /// This list is saved in a normalized form that is suited for
-        /// fast calculations of valid days.
+        ///	An array of dates to consider as invalid dates.<br></br>
+        ///	They may be
+        ///	specified in any order, and NaT (not-a-time) dates are ignored.<br></br>
+        ///	
+        ///	This list is saved in a normalized form that is suited for
+        ///	fast calculations of valid days.
         /// </param>
         /// <param name="busdaycal">
-        /// A busdaycalendar object which specifies the valid days. If this
-        /// parameter is provided, neither weekmask nor holidays may be
-        /// provided.
+        ///	A busdaycalendar object which specifies the valid days.<br></br>
+        ///	If this
+        ///	parameter is provided, neither weekmask nor holidays may be
+        ///	provided.
         /// </param>
         /// <param name="out">
-        /// If provided, this array is filled with the result.
+        ///	If provided, this array is filled with the result.
         /// </param>
         /// <returns>
-        /// An array with the same shape as dates, containing True for
-        /// each valid day, and False for each invalid day.
+        ///	An array with the same shape as dates, containing True for
+        ///	each valid day, and False for each invalid day.
         /// </returns>
         public NDarray<bool> is_busday(string[] dates, string weekmask = "1111100", string[] holidays = null, busdaycalendar busdaycal = null, NDarray<bool> @out = null)
         {
@@ -183,45 +196,51 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// First adjusts the date to fall on a valid day according to
-        /// the roll rule, then applies offsets to the given dates
-        /// counted in valid days.
+        ///	First adjusts the date to fall on a valid day according to
+        ///	the roll rule, then applies offsets to the given dates
+        ///	counted in valid days.
         /// </summary>
         /// <param name="dates">
-        /// The array of dates to process.
+        ///	The array of dates to process.
         /// </param>
         /// <param name="offsets">
-        /// The array of offsets, which is broadcast with dates.
+        ///	The array of offsets, which is broadcast with dates.
         /// </param>
         /// <param name="roll">
-        /// How to treat dates that do not fall on a valid day. The default
-        /// is ‘raise’.
+        ///	How to treat dates that do not fall on a valid day.<br></br>
+        ///	The default
+        ///	is ‘raise’.
         /// </param>
         /// <param name="weekmask">
-        /// A seven-element array indicating which of Monday through Sunday are
-        /// valid days. May be specified as a length-seven list or array, like
-        /// [1,1,1,1,1,0,0]; a length-seven string, like ‘1111100’; or a string
-        /// like “Mon Tue Wed Thu Fri”, made up of 3-character abbreviations for
-        /// weekdays, optionally separated by white space. Valid abbreviations
-        /// are: Mon Tue Wed Thu Fri Sat Sun
+        ///	A seven-element array indicating which of Monday through Sunday are
+        ///	valid days.<br></br>
+        ///	May be specified as a length-seven list or array, like
+        ///	[1,1,1,1,1,0,0]; a length-seven string, like ‘1111100’; or a string
+        ///	like “Mon Tue Wed Thu Fri”, made up of 3-character abbreviations for
+        ///	weekdays, optionally separated by white space.<br></br>
+        ///	Valid abbreviations
+        ///	are: Mon Tue Wed Thu Fri Sat Sun
         /// </param>
         /// <param name="holidays">
-        /// An array of dates to consider as invalid dates.  They may be
-        /// specified in any order, and NaT (not-a-time) dates are ignored.
-        /// This list is saved in a normalized form that is suited for
-        /// fast calculations of valid days.
+        ///	An array of dates to consider as invalid dates.<br></br>
+        ///	They may be
+        ///	specified in any order, and NaT (not-a-time) dates are ignored.<br></br>
+        ///	
+        ///	This list is saved in a normalized form that is suited for
+        ///	fast calculations of valid days.
         /// </param>
         /// <param name="busdaycal">
-        /// A busdaycalendar object which specifies the valid days. If this
-        /// parameter is provided, neither weekmask nor holidays may be
-        /// provided.
+        ///	A busdaycalendar object which specifies the valid days.<br></br>
+        ///	If this
+        ///	parameter is provided, neither weekmask nor holidays may be
+        ///	provided.
         /// </param>
         /// <param name="out">
-        /// If provided, this array is filled with the result.
+        ///	If provided, this array is filled with the result.
         /// </param>
         /// <returns>
-        /// An array with a shape from broadcasting dates and offsets
-        /// together, containing the dates with offsets applied.
+        ///	An array with a shape from broadcasting dates and offsets
+        ///	together, containing the dates with offsets applied.
         /// </returns>
         public array of datetime64[D] busday_offset(string[] dates, array_like of int offsets, string roll = "raise", string weekmask = "1111100", string[] holidays = null, busdaycalendar busdaycal = null, array of datetime64[D] @out = null)
         {
@@ -245,45 +264,50 @@ namespace Numpy
         
         /*
         /// <summary>
-        /// Counts the number of valid days between begindates and
-        /// enddates, not including the day of enddates.
-        /// 
-        /// If enddates specifies a date value that is earlier than the
-        /// corresponding begindates date value, the count will be negative.
+        ///	Counts the number of valid days between begindates and
+        ///	enddates, not including the day of enddates.<br></br>
+        ///	
+        ///	If enddates specifies a date value that is earlier than the
+        ///	corresponding begindates date value, the count will be negative.
         /// </summary>
         /// <param name="begindates">
-        /// The array of the first dates for counting.
+        ///	The array of the first dates for counting.
         /// </param>
         /// <param name="enddates">
-        /// The array of the end dates for counting, which are excluded
-        /// from the count themselves.
+        ///	The array of the end dates for counting, which are excluded
+        ///	from the count themselves.
         /// </param>
         /// <param name="weekmask">
-        /// A seven-element array indicating which of Monday through Sunday are
-        /// valid days. May be specified as a length-seven list or array, like
-        /// [1,1,1,1,1,0,0]; a length-seven string, like ‘1111100’; or a string
-        /// like “Mon Tue Wed Thu Fri”, made up of 3-character abbreviations for
-        /// weekdays, optionally separated by white space. Valid abbreviations
-        /// are: Mon Tue Wed Thu Fri Sat Sun
+        ///	A seven-element array indicating which of Monday through Sunday are
+        ///	valid days.<br></br>
+        ///	May be specified as a length-seven list or array, like
+        ///	[1,1,1,1,1,0,0]; a length-seven string, like ‘1111100’; or a string
+        ///	like “Mon Tue Wed Thu Fri”, made up of 3-character abbreviations for
+        ///	weekdays, optionally separated by white space.<br></br>
+        ///	Valid abbreviations
+        ///	are: Mon Tue Wed Thu Fri Sat Sun
         /// </param>
         /// <param name="holidays">
-        /// An array of dates to consider as invalid dates.  They may be
-        /// specified in any order, and NaT (not-a-time) dates are ignored.
-        /// This list is saved in a normalized form that is suited for
-        /// fast calculations of valid days.
+        ///	An array of dates to consider as invalid dates.<br></br>
+        ///	They may be
+        ///	specified in any order, and NaT (not-a-time) dates are ignored.<br></br>
+        ///	
+        ///	This list is saved in a normalized form that is suited for
+        ///	fast calculations of valid days.
         /// </param>
         /// <param name="busdaycal">
-        /// A busdaycalendar object which specifies the valid days. If this
-        /// parameter is provided, neither weekmask nor holidays may be
-        /// provided.
+        ///	A busdaycalendar object which specifies the valid days.<br></br>
+        ///	If this
+        ///	parameter is provided, neither weekmask nor holidays may be
+        ///	provided.
         /// </param>
         /// <param name="out">
-        /// If provided, this array is filled with the result.
+        ///	If provided, this array is filled with the result.
         /// </param>
         /// <returns>
-        /// An array with a shape from broadcasting begindates and enddates
-        /// together, containing the number of valid days between
-        /// the begin and end dates.
+        ///	An array with a shape from broadcasting begindates and enddates
+        ///	together, containing the number of valid days between
+        ///	the begin and end dates.
         /// </returns>
         public array of int busday_count(string[] begindates, string[] enddates, string weekmask = "1111100", string[] holidays = [], busdaycalendar busdaycal = null, array of int @out = null)
         {
