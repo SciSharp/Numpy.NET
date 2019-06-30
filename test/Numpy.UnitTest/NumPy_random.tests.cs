@@ -28,14 +28,14 @@ namespace Numpy.UnitTest
             //        [ 0.49313049,  0.94909878]]) #random
             // 
 
-#if TODO
-            var given=  np.random.rand(3,2);
-            var expected=
-                "array([[ 0.14022471,  0.96360618],  #random\n" +
-                "       [ 0.37601032,  0.25528411],  #random\n" +
-                "       [ 0.49313049,  0.94909878]]) #random";
+            np.random.seed(0);
+            var given=  np.random.rand(1,2);
+            var expected = "array([[0.5488135 , 0.71518937]])";
+
             Assert.AreEqual(expected, given.repr);
-#endif
+            np.random.seed(0);
+            float x = np.random.rand();
+            Assert.AreEqual(0.5488135039273248f, x);
         }
 
 
@@ -46,12 +46,9 @@ namespace Numpy.UnitTest
             // 2.1923875335537315 #random
             // 
 
-#if TODO
-            var given=  np.random.randn();
-            var expected=
-                "2.1923875335537315 #random";
-            Assert.AreEqual(expected, given.repr);
-#endif
+            np.random.seed(0);
+            var given =  np.random.randn();
+            Assert.AreEqual(1.76405239f, given);
             // Two-by-four array of samples from N(3, 6.25):
 
             // >>> 2.5 * np.random.randn(2, 4) + 3
@@ -59,13 +56,11 @@ namespace Numpy.UnitTest
             //        [ 0.39924804,  4.68456316,  4.99394529,  4.84057254]]) #random
             // 
 
-#if TODO
-             given=  2.5 * np.random.randn(2, 4) + 3;
-             expected=
-                "array([[-4.49401501,  4.00950034, -1.81814867,  7.29718677],  #random\n" +
-                "       [ 0.39924804,  4.68456316,  4.99394529,  4.84057254]]) #random";
-            Assert.AreEqual(expected, given.repr);
-#endif
+            np.random.seed(0);
+            var a =  2.5 * np.random.randn(1, 2) + 3;
+             var expected= "array([[7.41013086, 4.00039302]])";
+            Assert.AreEqual(expected, a.repr);
+
         }
 
 

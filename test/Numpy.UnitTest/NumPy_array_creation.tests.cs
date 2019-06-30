@@ -1010,57 +1010,20 @@ namespace Numpy.UnitTest
             // >>> np.linspace(2.0, 3.0, num=5, retstep=True)
             // (array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ]), 0.25)
             // 
-            
-            #if TODO
-            var given=  np.linspace(2.0, 3.0, num=5);
+
+            var given=  np.linspace(2.0, 3.0, num:5);
             var expected=
-                "array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ])";
+                "array([2.  , 2.25, 2.5 , 2.75, 3.  ])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.linspace(2.0, 3.0, num=5, endpoint=False);
+             given=  np.linspace(2.0, 3.0, num:5, endpoint:false);
              expected=
-                "array([ 2. ,  2.2,  2.4,  2.6,  2.8])";
+                "array([2. , 2.2, 2.4, 2.6, 2.8])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.linspace(2.0, 3.0, num=5, retstep=True);
+             given =  np.linspace(2,3, out var step, num:5, endpoint:true);
              expected=
-                "(array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ]), 0.25)";
+                "array([2.  , 2.25, 2.5 , 2.75, 3.  ])";
             Assert.AreEqual(expected, given.repr);
-            #endif
-            // Graphical illustration:
-            
-            // >>> import matplotlib.pyplot as plt
-            // >>> N = 8
-            // >>> y = np.zeros(N)
-            // >>> x1 = np.linspace(0, 10, N, endpoint=True)
-            // >>> x2 = np.linspace(0, 10, N, endpoint=False)
-            // >>> plt.plot(x1, y, 'o')
-            // [<matplotlib.lines.Line2D object at 0x...>]
-            // >>> plt.plot(x2, y + 0.5, 'o')
-            // [<matplotlib.lines.Line2D object at 0x...>]
-            // >>> plt.ylim([-0.5, 1])
-            // (-0.5, 1)
-            // >>> plt.show()
-            // 
-            
-            #if TODO
-             given=  import matplotlib.pyplot as plt;
-             given=  N = 8;
-             given=  y = np.zeros(N);
-             given=  x1 = np.linspace(0, 10, N, endpoint=True);
-             given=  x2 = np.linspace(0, 10, N, endpoint=False);
-             given=  plt.plot(x1, y, 'o');
-             expected=
-                "[<matplotlib.lines.Line2D object at 0x...>]";
-            Assert.AreEqual(expected, given.repr);
-             given=  plt.plot(x2, y + 0.5, 'o');
-             expected=
-                "[<matplotlib.lines.Line2D object at 0x...>]";
-            Assert.AreEqual(expected, given.repr);
-             given=  plt.ylim([-0.5, 1]);
-             expected=
-                "(-0.5, 1)";
-            Assert.AreEqual(expected, given.repr);
-             given=  plt.show();
-            #endif
+            Assert.AreEqual(step, 0.25);
         }
         
         
