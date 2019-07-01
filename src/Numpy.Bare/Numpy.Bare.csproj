@@ -3,17 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Numpy</RootNamespace>
-    <AssemblyName>Numpy.Bare</AssemblyName>
+    <AssemblyName>Numpy.Bare.Mono</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Meinrad Recheis</Authors>
     <Product>Numpy.NET</Product>
-    <PackageId>Numpy.Bare</PackageId>
+    <PackageId>Numpy.Bare.Mono</PackageId>
     <Description>C# bindings for NumPy - a fundamental library for scientific computing, machine learning and AI. Does require Python 3.6 with NumPy 1.16 installed!
 </Description>
     <Copyright>2019 - Meinrad Recheis</Copyright>
     <PackageProjectUrl>https://github.com/SciSharp/Numpy.NET</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
-    <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
+    <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python, Mono</PackageTags>
     <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
     <Version>3.6.1.4</Version>
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="Python.Runtime.NETStandard" Version="3.6.0" />
+    <PackageReference Include="Python.Runtime.Mono" Version="3.6.0" />
   </ItemGroup>
 
 </Project>
