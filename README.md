@@ -87,13 +87,12 @@ The SciSharp team is also developing a pure C# port of NumPy called [NumSharp](h
 | Aspect        | Numpy.NET                             | NumSharp      |
 | ------------- | ------------------------------------- | ------------- |
 | Dependencies  | CPython / NumPy                       | C++ dlls for certain operations |
-| Setup         | Reference Nuget-Package               | Reference Nuget-Package |
-| Completeness  | Large parts are wrapped               | A small subset of most important functions is ported |
+| Completeness  | Most all NDarray functions available  | A small subset of most important functions is ported |
 | Development   | Fast, due to automated API generation | Slow, due to lack of manpower |
 | Correctness   | Same results as in Python guaranteed  | There are subtle differences |
-| Actuality     | Can easily keep up with `numpy` dev   | Will trail behind, due to lack of manpower |
-| GPU support   | None                                  | Using a GPU backend for calculatons possible, per design |
-| Performance   | TODO: measure                         | TODO: measure |
+| Actuality     | Can easily keep up with `numpy` dev   | Will probably trail behind, due to lack of manpower |
+| GPU support   | None                                  | Using a GPU backend for calculations possible, per design |
+| Performance   | Same as NumPy minus overhead          | TODO: measure |
 
 There are a couple of other NumPy ports out there featuring subsets of the original library. The only one that matches Numpy.NET in terms of completeness is the IronPython package `numpy` which is out of date. The SciSharp team is committed to keeping Numpy.NET up to date with the original library and to feature as much of the original functionality as possible.
 
