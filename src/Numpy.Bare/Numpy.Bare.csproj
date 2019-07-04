@@ -8,27 +8,26 @@
     <Authors>Meinrad Recheis</Authors>
     <Product>Numpy.NET</Product>
     <PackageId>Numpy.Bare</PackageId>
-    <Description>C# bindings for NumPy - a fundamental library for scientific computing, machine learning and AI. Does require Python 3.7 with NumPy 1.16 installed!
-</Description>
+    <Description>C# bindings for NumPy on Win64 - a fundamental library for scientific computing, machine learning and AI. Does require Python 3.7 with NumPy 1.16 installed!</Description>
     <Copyright>2019 - Meinrad Recheis</Copyright>
     <PackageProjectUrl>https://github.com/SciSharp/Numpy.NET</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
     <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
     <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>3.7.1.4</Version>
+    <Version>3.7.1.5</Version>
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
     <AssemblyVersion>3.7.1.4</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Resources\**" />
-    <EmbeddedResource Remove="Resources\**" />
-    <None Remove="Resources\**" />
+    <Compile Remove="Resources\**"></Compile>
+    <EmbeddedResource Remove="Resources\**"></EmbeddedResource>
+    <None Remove="Resources\**"></None>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="Python.Runtime.NETStandard" Version="3.7.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0"></PackageReference>
+    <PackageReference Include="Python.Runtime.NETStandard" Version="3.7.1"></PackageReference>
   </ItemGroup>
 
 </Project>
