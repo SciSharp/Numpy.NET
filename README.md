@@ -30,10 +30,10 @@ Numpy and Intellisense: a developer-friendly combination:
 If you want to use Numpy.NET you have two options:
 
 ### Numpy.dll
-Just reference [Numpy.dll](https://www.nuget.org/packages/Numpy/) via Nuget and you are good to go. Thanks to [Python.Included](https://github.com/henon/Python.Included) it doesn't require a local Python installation or will not clash with existing installations. 
+Just reference [Numpy.dll](https://www.nuget.org/packages/Numpy/) via Nuget, set your **build configuration to x64** and you are good to go. Thanks to [Python.Included](https://github.com/henon/Python.Included) it doesn't require a local Python installation or will not clash with existing installations. 
 
 ### Numpy.Bare.dll 
-In certain use cases you might not want the packaged Python and NumPy packages. In that case you reference [Numpy.Bare.dll](https://www.nuget.org/packages/Numpy.Bare/) via Nuget. Depending on the Numpy.Bare nuget version will need Python 3.5, 3.6 or 3.7 and Numpy 1.16 installed for it to work. The first two digits of the Numpy.Bare version indicate which Python version is needed for it to run (i.e. Numpy.Bare v3.6.1.1 needs Python 3.6 installed).
+In certain use cases you might not want the packaged Python and NumPy packages. In that case you reference [Numpy.Bare.dll](https://www.nuget.org/packages/Numpy.Bare/) via Nuget. Depending on the Numpy.Bare nuget version will need Python 3.5, 3.6 or 3.7 and Numpy 1.16 installed for it to work. The first two digits of the Numpy.Bare version indicate which Python version is needed for it to run (i.e. Numpy.Bare v3.6.1.1 needs Python 3.6 installed). If you are getting BadImageFormatException switch between x86 and x64 build settings.
 
 ## How does it work?
 
