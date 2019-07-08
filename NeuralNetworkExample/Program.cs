@@ -47,11 +47,11 @@ namespace NeuralNetworkExample
                 var grad_w1 = x.T.dot(grad_h);
 
                 // Update weights
-                w1 -= learning_rate * grad_w1;
-                w2 -= learning_rate * grad_w2;
+                w1.isub( learning_rate * grad_w1); // inplace substraction is faster than -= 
+                w2.isub( learning_rate * grad_w2);
             }
             stopwatch.Stop();
-            Console.WriteLine($"\tfinal loss: {loss}, elapsed time: {stopwatch.Elapsed.TotalSeconds:F3} seconds\n");
+            Console.WriteLine($"\tstep: 500, final loss: {loss}, elapsed time: {stopwatch.Elapsed.TotalSeconds:F3} seconds\n");
             Console.WriteLine("Hit any key to exit.");
             Console.ReadKey();
         }
