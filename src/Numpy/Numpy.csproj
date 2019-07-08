@@ -8,28 +8,27 @@
     <Authors>Meinrad Recheis</Authors>
     <Product>Numpy.NET</Product>
     <PackageId>Numpy</PackageId>
-    <Description>C# bindings for NumPy - a fundamental library for scientific computing, machine learning and AI. Does not require a local Python installation!
-</Description>
+    <Description>C# bindings for NumPy - a fundamental library for scientific computing, machine learning and AI. Does not require a local Python installation!</Description>
     <Copyright>2019 - Meinrad Recheis</Copyright>
     <PackageProjectUrl>https://github.com/SciSharp/Numpy.NET</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
-    <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
+    <PackageTags>Data science, Machine Learning, ML, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
     <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>3.7.1.4</Version>
+    <Version>3.7.1.6</Version>
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\numpy-1.16.3-cp37-cp37m-win_amd64.whl" />
+    <None Remove="Resources\numpy-1.16.3-cp37-cp37m-win_amd64.whl"></None>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\numpy-1.16.3-cp37-cp37m-win_amd64.whl" />
+    <EmbeddedResource Include="Resources\numpy-1.16.3-cp37-cp37m-win_amd64.whl"></EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="Python.Included" Version="3.7.3" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0"></PackageReference>
+    <PackageReference Include="Python.Included" Version="3.7.3"></PackageReference>
   </ItemGroup>
 
 </Project>

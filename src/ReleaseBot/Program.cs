@@ -13,16 +13,24 @@ namespace ReleaseBot
 {
     class Program
     {
-        private const string V = "1.5"; // <--- numpy.net version!
+        private const string V = "1.6"; // <--- numpy.net version!
         private const string PythonNetVersion = "1";
 
-        private const string ProjectPath = "../../../Numpy.Bare";
-        private const string ProjectName = "Numpy.Bare.csproj";
+        private const string ProjectPath = "../../../Numpy";
+        private const string ProjectName = "Numpy.csproj";
+
+        private const string ProjectPath2 = "../../../Numpy.Bare";
+        private const string ProjectName2 = "Numpy.Bare.csproj";
+
         private const string Description = "C# bindings for NumPy on {0} - a fundamental library for scientific computing, machine learning and AI. Does require Python {1} with NumPy 1.16 installed!";
         private const string Tags = "Data science, Machine Learning, ML, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, BLAS, Vector, Matrix, Python";
 
         static void Main(string[] args)
         {
+            // ==> Numpy
+            ProcessNumpy();
+
+            // ==> Numpy Bare
             var specs = new ReleaseSpec[]
             {
                 // linux                
@@ -48,8 +56,8 @@ namespace ReleaseBot
                 spec.PythonNetVersion = $"{spec.CPythonVersion}.{PythonNetVersion}";
                 spec.Description = string.Format(Description, spec.Platform, spec.CPythonVersion);
                 spec.PackageTags = Tags;
-                spec.RelativeProjectPath = ProjectPath;
-                spec.ProjectName = ProjectName;
+                spec.RelativeProjectPath = ProjectPath2;
+                spec.ProjectName = ProjectName2;
                 switch (spec.Platform)
                 {
                     case "Linux":
@@ -69,11 +77,11 @@ namespace ReleaseBot
             }
 
             var key = File.ReadAllText("../../nuget.key").Trim();
-            foreach (var nuget in Directory.GetFiles(Path.Combine(ProjectPath, "bin", "Release"), "*.nupkg"))
+            foreach (var nuget in Directory.GetFiles(Path.Combine(ProjectPath2, "bin", "Release"), "*.nupkg"))
             {
                 Console.WriteLine("Push " + nuget);
-                var arg = $"push -Source https://api.nuget.org/v3/index.json -ApiKey {key} {nuget}";                
-                var p = new Process() { StartInfo = new ProcessStartInfo("nuget.exe", arg) { RedirectStandardOutput = true, RedirectStandardError = true, UseShellExecute = false} };
+                var arg = $"push -Source https://api.nuget.org/v3/index.json -ApiKey {key} {nuget}";
+                var p = new Process() { StartInfo = new ProcessStartInfo("nuget.exe", arg) { RedirectStandardOutput = true, RedirectStandardError = true, UseShellExecute = false } };
                 p.OutputDataReceived += (x, data) => Console.WriteLine(data.Data);
                 p.ErrorDataReceived += (x, data) => Console.WriteLine("Error: " + data.Data);
                 p.Start();
@@ -81,6 +89,34 @@ namespace ReleaseBot
                 Console.WriteLine("... pushed");
             }
             Thread.Sleep(3000);
+        }
+
+        private static void ProcessNumpy()
+        {
+            var spec = new ReleaseSpec()
+            {
+                Version = $"3.7.{V}",
+                ProjectName = ProjectName,
+                RelativeProjectPath = ProjectPath,
+                PackageId = "Numpy",
+                Description = @"C# bindings for NumPy - a fundamental library for scientific computing, machine learning and AI. Does not require a local Python installation!",
+                PackageTags = "Data science, Machine Learning, ML, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python",
+                UsePythonIncluded = true,
+            };
+            spec.Process();
+            // nuget
+            var key = File.ReadAllText("../../nuget.key").Trim();
+            foreach (var nuget in Directory.GetFiles(Path.Combine(ProjectPath, "bin", "Release"), "*.nupkg"))
+            {
+                Console.WriteLine("Push " + nuget);
+                var arg = $"push -Source https://api.nuget.org/v3/index.json -ApiKey {key} {nuget}";
+                var p = new Process() { StartInfo = new ProcessStartInfo("nuget.exe", arg) { RedirectStandardOutput = true, RedirectStandardError = true, UseShellExecute = false } };
+                p.OutputDataReceived += (x, data) => Console.WriteLine(data.Data);
+                p.ErrorDataReceived += (x, data) => Console.WriteLine("Error: " + data.Data);
+                p.Start();
+                p.WaitForExit();
+                Console.WriteLine("... pushed");
+            }
         }
     }
 
@@ -131,33 +167,31 @@ namespace ReleaseBot
 
         public string FullProjectPath => Path.Combine(RelativeProjectPath, ProjectName);
 
+        /// <summary>
+        /// Uses Python.Included
+        /// </summary>
+        public bool UsePythonIncluded { get; set; }
+
         public void Process()
         {
             if (!File.Exists(FullProjectPath))
-                throw new InvalidOperationException("Project not found at: "+FullProjectPath);
+                throw new InvalidOperationException("Project not found at: " + FullProjectPath);
             // modify csproj
-            var doc=new HtmlDocument(){ OptionOutputOriginalCase = true, OptionWriteEmptyNodes = true};
+            var doc = new HtmlDocument() { OptionOutputOriginalCase = true, OptionWriteEmptyNodes = true };
             doc.Load(FullProjectPath);
             var group0 = doc.DocumentNode.Descendants("propertygroup").FirstOrDefault();
             SetInnerText(group0.Element("version"), Version);
             Console.WriteLine("Version: " + group0.Element("version").InnerText);
             SetInnerText(group0.Element("description"), Description);
             Console.WriteLine("Description: " + group0.Element("description").InnerText);
-            SetInnerText(group0.Element("packageid"), PackageId);
-            //foreach (var group in doc.DocumentNode.Descendants("propertygroup"))
-            //{
-            //    var configuration = group.Attributes["condition"]?.Value;
-            //    if (configuration==null)
-            //        continue;
-            //    var is_release = configuration.Contains("Release");
-            //    var constants = group.Element("defineconstants");
-            //    SetInnerText(constants, (is_release ? "" : "DEBUG;") + Constants);
-            //    Console.WriteLine("Constants: " + constants.InnerText);
-            //}
-            var group1 = doc.DocumentNode.Descendants("itemgroup").FirstOrDefault(g=>g.Element("packagereference")!=null);
-            var reference=group1.Descendants("packagereference").ToArray()[1];
-            reference.Attributes["Include"].Value = PythonNet;
-            reference.Attributes["Version"].Value = PythonNetVersion;
+            if (!UsePythonIncluded)
+            {
+                SetInnerText(group0.Element("packageid"), PackageId);
+                var group1 = doc.DocumentNode.Descendants("itemgroup").FirstOrDefault(g => g.Element("packagereference") != null);
+                var reference = group1.Descendants("packagereference").ToArray()[1];
+                reference.Attributes["Include"].Value = PythonNet;
+                reference.Attributes["Version"].Value = PythonNetVersion;
+            }
             doc.Save(FullProjectPath);
             // now build in release mode
             RestoreNugetDependencies();
@@ -170,7 +204,7 @@ namespace ReleaseBot
             var p = new Process()
             {
                 StartInfo = new ProcessStartInfo("dotnet", "restore")
-                    { WorkingDirectory = Path.GetFullPath(RelativeProjectPath) }
+                { WorkingDirectory = Path.GetFullPath(RelativeProjectPath) }
             };
             p.Start();
             p.WaitForExit();
@@ -182,7 +216,7 @@ namespace ReleaseBot
             var p = new Process()
             {
                 StartInfo = new ProcessStartInfo("dotnet", "build -c Release")
-                    {WorkingDirectory = Path.GetFullPath(RelativeProjectPath)}
+                { WorkingDirectory = Path.GetFullPath(RelativeProjectPath) }
             };
             p.Start();
             p.WaitForExit();
