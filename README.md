@@ -5,22 +5,9 @@ Numpy.NET is the most complete .NET binding for [NumPy](https://www.numpy.org/),
 
 ## Example
 
-Python:
-```python
-import numpy as np
-a1=np.arange(60000).reshape(300, 200)
-a2=np.arange(80000).reshape(200, 400)
-result=np.matmul(a1, a2)
-```
+Check out this example which uses `numpy` operations to fit a two-layer neural network to random data by manually implementing the forward and backward passes through the network.
 
-C#:
-```csharp
-using Numpy;
-// ... 
-var a1 = np.arange(60000).reshape(300, 200);
-var a2 = np.arange(80000).reshape(200, 400);
-var result = np.matmul(a1, a2);
-```
+![Numpy Neural Network in C# and in Python](doc/img/cs_vs_py2.png)
 
 Numpy and Intellisense: a developer-friendly combination:
 
