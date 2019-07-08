@@ -51,7 +51,18 @@ namespace Numpy
             ///	matrix object if a is a matrix object.
             /// </returns>
             public static NDarray cholesky(NDarray a)
-                => NumPy.Instance.linalg_cholesky(a);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("cholesky", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -73,7 +84,18 @@ namespace Numpy
             ///	Determinant of a.
             /// </returns>
             public static NDarray det(NDarray a)
-                => NumPy.Instance.linalg_det(a);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("det", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -137,7 +159,19 @@ namespace Numpy
             ///	eigenvalue w[i].
             /// </returns>
             public static (NDarray, NDarray) eig(NDarray a)
-                => NumPy.Instance.linalg_eig(a);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("eig", pyargs, kwargs);
+                var t = py as PyTuple;
+                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            }
         }
         
         public static partial class linalg {
@@ -190,7 +224,20 @@ namespace Numpy
             ///	a matrix object.
             /// </returns>
             public static (NDarray, NDarray) eigh(NDarray a, string UPLO = "L")
-                => NumPy.Instance.linalg_eigh(a, UPLO:UPLO);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (UPLO!="L") kwargs["UPLO"]=ToPython(UPLO);
+                dynamic py = __self__.InvokeMethod("eigh", pyargs, kwargs);
+                var t = py as PyTuple;
+                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            }
         }
         
         public static partial class linalg {
@@ -218,7 +265,18 @@ namespace Numpy
             ///	real for real matrices.
             /// </returns>
             public static NDarray eigvals(NDarray a)
-                => NumPy.Instance.linalg_eigvals(a);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("eigvals", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -253,7 +311,19 @@ namespace Numpy
             ///	its multiplicity.
             /// </returns>
             public static NDarray eigvalsh(NDarray a, string UPLO = "L")
-                => NumPy.Instance.linalg_eigvalsh(a, UPLO:UPLO);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (UPLO!="L") kwargs["UPLO"]=ToPython(UPLO);
+                dynamic py = __self__.InvokeMethod("eigvalsh", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -275,7 +345,18 @@ namespace Numpy
             ///	(Multiplicative) inverse of the matrix a.
             /// </returns>
             public static NDarray inv(NDarray a)
-                => NumPy.Instance.linalg_inv(a);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("inv", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -328,7 +409,21 @@ namespace Numpy
             ///	Singular values of a.
             /// </returns>
             public static (NDarray, NDarray, int, NDarray) lstsq(NDarray a, NDarray b, float? rcond = null)
-                => NumPy.Instance.linalg_lstsq(a, b, rcond:rcond);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                    b,
+                });
+                var kwargs=new PyDict();
+                if (rcond!=null) kwargs["rcond"]=ToPython(rcond);
+                dynamic py = __self__.InvokeMethod("lstsq", pyargs, kwargs);
+                var t = py as PyTuple;
+                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<int>(t[2]), ToCsharp<NDarray>(t[3]));
+            }
         }
         
         public static partial class linalg {
@@ -375,7 +470,19 @@ namespace Numpy
             ///	is B.
             /// </returns>
             public static NDarray pinv(NDarray a, float rcond = 1e-15f)
-                => NumPy.Instance.linalg_pinv(a, rcond:rcond);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (rcond!=1e-15f) kwargs["rcond"]=ToPython(rcond);
+                dynamic py = __self__.InvokeMethod("pinv", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -410,7 +517,19 @@ namespace Numpy
             ///	  Returned shape is identical to b.
             /// </returns>
             public static NDarray solve(NDarray a, NDarray b)
-                => NumPy.Instance.linalg_solve(a, b);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                    b,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("solve", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -486,7 +605,21 @@ namespace Numpy
             ///	compute_uv is True.
             /// </returns>
             public static (NDarray, NDarray, NDarray) svd(NDarray a, bool? full_matrices = true, bool? compute_uv = true)
-                => NumPy.Instance.linalg_svd(a, full_matrices:full_matrices, compute_uv:compute_uv);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (full_matrices!=true) kwargs["full_matrices"]=ToPython(full_matrices);
+                if (compute_uv!=true) kwargs["compute_uv"]=ToPython(compute_uv);
+                dynamic py = __self__.InvokeMethod("svd", pyargs, kwargs);
+                var t = py as PyTuple;
+                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+            }
         }
         
         public static partial class fft {
@@ -536,7 +669,21 @@ namespace Numpy
             ///	indicated by axis, or the last one if axis is not specified.
             /// </returns>
             public static NDarray fft_(NDarray a, int? n = null, int? axis = -1, string norm = null)
-                => NumPy.Instance.fft_fft(a, n:n, axis:axis, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (n!=null) kwargs["n"]=ToPython(n);
+                if (axis!=-1) kwargs["axis"]=ToPython(axis);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("fft", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -596,7 +743,21 @@ namespace Numpy
             ///	indicated by axes, or the last two axes if axes is not given.
             /// </returns>
             public static NDarray fft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft_fft2(a, s:s, axes:axes, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (s!=null) kwargs["s"]=ToPython(s);
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("fft2", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -651,7 +812,21 @@ namespace Numpy
             ///	as explained in the parameters section above.
             /// </returns>
             public static NDarray fftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft_fftn(a, s:s, axes:axes, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (s!=null) kwargs["s"]=ToPython(s);
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("fftn", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -711,7 +886,21 @@ namespace Numpy
             ///	indicated by axis, or the last one if axis is not specified.
             /// </returns>
             public static NDarray ifft(NDarray a, int? n = null, int? axis = -1, string norm = null)
-                => NumPy.Instance.fft_ifft(a, n:n, axis:axis, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (n!=null) kwargs["n"]=ToPython(n);
+                if (axis!=-1) kwargs["axis"]=ToPython(axis);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("ifft", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -782,7 +971,21 @@ namespace Numpy
             ///	indicated by axes, or the last two axes if axes is not given.
             /// </returns>
             public static NDarray ifft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft_ifft2(a, s:s, axes:axes, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (s!=null) kwargs["s"]=ToPython(s);
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("ifft2", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -851,7 +1054,21 @@ namespace Numpy
             ///	as explained in the parameters section above.
             /// </returns>
             public static NDarray ifftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft_ifftn(a, s:s, axes:axes, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (s!=null) kwargs["s"]=ToPython(s);
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("ifftn", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         /// <summary>
@@ -880,7 +1097,17 @@ namespace Numpy
         ///	The modified Bessel function evaluated at each of the elements of x.
         /// </returns>
         public static NDarray i0(NDarray x)
-            => NumPy.Instance.i0(x);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("i0", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         
     }

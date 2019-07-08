@@ -108,7 +108,23 @@ namespace Numpy
         ///	according to pad_width.
         /// </returns>
         public static NDarray pad(NDarray array, NDarray pad_width, string mode, int[] stat_length = null, int[] constant_values = null, int[] end_values = null, string reflect_type = null)
-            => NumPy.Instance.pad(array, pad_width, mode, stat_length:stat_length, constant_values:constant_values, end_values:end_values, reflect_type:reflect_type);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                array,
+                pad_width,
+                mode,
+            });
+            var kwargs=new PyDict();
+            if (stat_length!=null) kwargs["stat_length"]=ToPython(stat_length);
+            if (constant_values!=null) kwargs["constant_values"]=ToPython(constant_values);
+            if (end_values!=null) kwargs["end_values"]=ToPython(end_values);
+            if (reflect_type!=null) kwargs["reflect_type"]=ToPython(reflect_type);
+            dynamic py = __self__.InvokeMethod("pad", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         
     }

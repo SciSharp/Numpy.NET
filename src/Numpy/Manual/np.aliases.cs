@@ -10,6 +10,41 @@ namespace Numpy
     {
 
         /// <summary>
+        /// Gives a new shape to an array without changing its data.
+        /// 
+        /// Notes
+        /// 
+        /// It is not always possible to change the shape of an array without
+        /// copying the data. If you want an error to be raised when the data is copied,
+        /// you should assign the new shape to the shape attribute of the array:
+        /// 
+        /// The order keyword gives the index ordering both for fetching the values
+        /// from a, and then placing the values into the output array.
+        /// For example, let’s say you have an array:
+        /// 
+        /// You can think of reshaping as first raveling the array (using the given
+        /// index order), then inserting the elements from the raveled array into the
+        /// new array using the same kind of index ordering as was used for the
+        /// raveling.
+        /// </summary>
+        /// <param name="a">The array to reshape</param>
+        /// <param name="newshape">
+        /// The new shape should be compatible with the original shape. If
+        /// an integer, then the result will be a 1-D array of that length.
+        /// One shape dimension can be -1. In this case, the value is
+        /// inferred from the length of the array and remaining dimensions.
+        /// </param>
+        /// <returns>
+        /// This will be a new view object if possible; otherwise, it will
+        /// be a copy.  Note there is no guarantee of the memory layout (C- or
+        /// Fortran- contiguous) of the returned array.
+        /// </returns>
+        public static NDarray reshape(NDarray a, params int[] newshape)
+        {
+            return np.reshape(a, new Shape(newshape));
+        }
+
+        /// <summary>
         /// Calculate the absolute value element-wise.
         /// 
         /// np.abs is a shorthand for this function.
@@ -34,7 +69,7 @@ namespace Numpy
         /// This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray abs(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.absolute(x, @out, @where);
+            => np.absolute(x, @out, @where);
 
         /// <summary>
         /// Return the minimum of an array or minimum along an axis.
@@ -85,7 +120,7 @@ namespace Numpy
         /// a.ndim - 1.
         /// </returns>
         public static NDarray min(NDarray a, int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-            => NumPy.Instance.amin(a, axis: axis, @out: @out, keepdims: keepdims, initial: initial);
+            => np.amin(a, axis: axis, @out: @out, keepdims: keepdims, initial: initial);
 
         /// <summary>
         /// Return the maximum of an array or maximum along an axis.
@@ -136,7 +171,66 @@ namespace Numpy
         /// a.ndim - 1.
         /// </returns>
         public static NDarray max(NDarray a, int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-            => NumPy.Instance.amax(a, axis: axis, @out: @out, keepdims: keepdims, initial: initial);
+            => np.amax(a, axis: axis, @out: @out, keepdims: keepdims, initial: initial);
 
+
+        /// <summary>
+        /// Return a new array of given shape and type, filled with zeros.
+        /// </summary>
+        /// <param name="shape">
+        /// Shape of the new array, e.g., (2, 3) or 2.
+        /// </param>
+        /// <param name="dtype">
+        /// The desired data-type for the array, e.g., numpy.int8.  Default is
+        /// numpy.float64.
+        /// </param>
+        /// <param name="order">
+        /// Whether to store multi-dimensional data in row-major
+        /// (C-style) or column-major (Fortran-style) order in
+        /// memory.
+        /// </param>
+        /// <returns>
+        /// Array of zeros with the given shape, dtype, and order.
+        /// </returns>
+        public static NDarray zeros(params int[] shape)
+            => np.zeros(new Shape(shape));
+
+
+        /// <summary>
+        /// Return a new array of given shape and type, filled with ones.
+        /// </summary>
+        /// <param name="shape">
+        /// Shape of the new array, e.g., (2, 3) or 2.
+        /// </param>
+        /// <param name="dtype">
+        /// The desired data-type for the array, e.g., numpy.int8.  Default is
+        /// numpy.float64.
+        /// </param>
+        /// <param name="order">
+        /// Whether to store multi-dimensional data in row-major
+        /// (C-style) or column-major (Fortran-style) order in
+        /// memory.
+        /// </param>
+        /// <returns>
+        /// Array of ones with the given shape, dtype, and order.
+        /// </returns>
+        public static NDarray ones(params int[] shape)
+        {
+            return np.ones(new Shape(shape));
+        }
+
+        /// <summary>
+        /// Create an array.
+        /// 
+        /// <param name="shape">
+        /// The shape of the empty ndarray
+        /// </param>
+        /// <returns>
+        /// An array object satisfying the specified requirements.
+        /// </returns>
+        public static NDarray empty(params int[] shape)
+        {
+            return np.empty(new Shape(shape));
+        }
     }
 }

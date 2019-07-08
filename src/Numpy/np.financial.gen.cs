@@ -54,7 +54,21 @@ namespace Numpy
         ///	If multiple inputs are array_like, they all must have the same shape.
         /// </returns>
         public static NDarray fv(NDarray rate, NDarray nper, NDarray pmt, NDarray pv, string @when = "end")
-            => NumPy.Instance.fv(rate, nper, pmt, pv, @when:@when);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rate,
+                nper,
+                pmt,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("fv", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the present value.<br></br>
@@ -88,7 +102,21 @@ namespace Numpy
         ///	Present value of a series of payments or investments.
         /// </returns>
         public static NDarray pv(NDarray rate, NDarray nper, NDarray pmt, NDarray fv = null, string @when = "end")
-            => NumPy.Instance.pv(rate, nper, pmt, fv:fv, @when:@when);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rate,
+                nper,
+                pmt,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("pv", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns the NPV (Net Present Value) of a cash flow series.<br></br>
@@ -118,7 +146,18 @@ namespace Numpy
         ///	rate.
         /// </returns>
         public static float npv(ValueType rate, NDarray values)
-            => NumPy.Instance.npv(rate, values);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rate,
+                values,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("npv", pyargs, kwargs);
+            return ToCsharp<float>(py);
+        }
         
         /// <summary>
         ///	Compute the payment against loan principal plus interest.<br></br>
@@ -166,7 +205,21 @@ namespace Numpy
         ///	the same shape.
         /// </returns>
         public static NDarray pmt(NDarray rate, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
-            => NumPy.Instance.pmt(rate, nper, pv, fv:fv, @when:@when);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rate,
+                nper,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("pmt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the payment against loan principal.
@@ -192,7 +245,21 @@ namespace Numpy
         ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         public static void ppmt(NDarray rate, NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
-            => NumPy.Instance.ppmt(rate, per, nper, pv, fv:fv, @when:@when);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rate,
+                per,
+                nper,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("ppmt", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Compute the interest portion of a payment.<br></br>
@@ -235,7 +302,22 @@ namespace Numpy
         ///	the same shape.
         /// </returns>
         public static NDarray ipmt(NDarray rate, NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
-            => NumPy.Instance.ipmt(rate, per, nper, pv, fv:fv, @when:@when);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rate,
+                per,
+                nper,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("ipmt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the Internal Rate of Return (IRR).<br></br>
@@ -275,7 +357,17 @@ namespace Numpy
         ///	Internal Rate of Return for periodic input values.
         /// </returns>
         public static float irr(NDarray values)
-            => NumPy.Instance.irr(values);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                values,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("irr", pyargs, kwargs);
+            return ToCsharp<float>(py);
+        }
         
         /// <summary>
         ///	Modified internal rate of return.
@@ -296,7 +388,19 @@ namespace Numpy
         ///	Modified internal rate of return
         /// </returns>
         public static float mirr(NDarray values, ValueType finance_rate, ValueType reinvest_rate)
-            => NumPy.Instance.mirr(values, finance_rate, reinvest_rate);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                values,
+                finance_rate,
+                reinvest_rate,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("mirr", pyargs, kwargs);
+            return ToCsharp<float>(py);
+        }
         
         /// <summary>
         ///	Compute the number of periodic payments.<br></br>
@@ -325,7 +429,20 @@ namespace Numpy
         ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
         public static void nper(NDarray rate, NDarray pmt, NDarray pv, NDarray fv = null, string @when = "end")
-            => NumPy.Instance.nper(rate, pmt, pv, fv:fv, @when:@when);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rate,
+                pmt,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("nper", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Compute the rate of interest per period.<br></br>
@@ -379,7 +496,23 @@ namespace Numpy
         ///	Maximum iterations in finding the solution
         /// </param>
         public static void rate(NDarray nper, NDarray pmt, NDarray pv, NDarray fv, string @when = "end", double? guess = null, double? tol = null, int? maxiter = 100)
-            => NumPy.Instance.rate(nper, pmt, pv, fv, @when:@when, guess:guess, tol:tol, maxiter:maxiter);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                nper,
+                pmt,
+                pv,
+                fv,
+            });
+            var kwargs=new PyDict();
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            if (guess!=null) kwargs["guess"]=ToPython(guess);
+            if (tol!=null) kwargs["tol"]=ToPython(tol);
+            if (maxiter!=100) kwargs["maxiter"]=ToPython(maxiter);
+            dynamic py = __self__.InvokeMethod("rate", pyargs, kwargs);
+        }
         
         
     }

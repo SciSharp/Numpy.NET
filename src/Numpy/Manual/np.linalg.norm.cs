@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Numpy.Models;
+using Python.Runtime;
 
 namespace Numpy
 {
@@ -54,16 +55,50 @@ namespace Numpy
             /// Norm of the matrix or vector(s).
             /// </returns>
             public static NDarray norm(NDarray x, int? ord, int[] axis, bool? keepdims = null)
-                => NumPy.Instance.norm(x, ord, axis, keepdims);
+            {
+                var pyargs = ToTuple(new object[] { x, });
+                var kwargs = new PyDict();
+                if (ord != null) kwargs["ord"] = ToPython(ord);
+                if (axis != null) kwargs["axis"] = ToPython(axis);
+                if (keepdims != null) kwargs["keepdims"] = ToPython(keepdims);
+                var linalg = self.GetAttr("linalg");
+                dynamic py = linalg.InvokeMethod("norm", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
 
             public static float norm(NDarray x, int? ord=null)
-                => NumPy.Instance.norm(x, ord);
+            {
+                var pyargs = ToTuple(new object[] { x, });
+                var kwargs = new PyDict();
+                if (ord != null) kwargs["ord"] = ToPython(ord);
+                var linalg = self.GetAttr("linalg");
+                dynamic py = linalg.InvokeMethod("norm", pyargs, kwargs);
+
+                return ToCsharp<float>(py);
+            }
 
             public static float norm(NDarray x, string ord)
-                => NumPy.Instance.norm(x, ord);
+           {
+                var pyargs = ToTuple(new object[] { x, });
+                var kwargs = new PyDict();
+                if (ord != null) kwargs["ord"] = ToPython(ord);
+                var linalg = self.GetAttr("linalg");
+                dynamic py = linalg.InvokeMethod("norm", pyargs, kwargs);
+                return ToCsharp<float>(py);
+            }
 
             public static float norm(NDarray x, Constants ord)
-                => NumPy.Instance.norm(x, ord);
+            {
+                if (ord != Constants.inf && ord != Constants.neg_inf)
+                    throw new ArgumentException("ord must be either inf or neg_inf");
+
+                var pyargs = ToTuple(new object[] { x, });
+                var kwargs = new PyDict();
+                if (ord != null) kwargs["ord"] = ord == Constants.inf ? dynamic_self.inf : -(dynamic_self.inf);
+                var linalg = self.GetAttr("linalg");
+                dynamic py = linalg.InvokeMethod("norm", pyargs, kwargs);
+                return ToCsharp<float>(py);
+            }
         }
     }
 }

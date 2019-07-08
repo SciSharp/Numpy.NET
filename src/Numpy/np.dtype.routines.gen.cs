@@ -46,7 +46,19 @@ namespace Numpy
         ///	True if cast can occur according to the casting rule.
         /// </returns>
         public static bool can_cast(Dtype from_, Dtype to, string casting = "safe")
-            => NumPy.Instance.can_cast(from_, to, casting:casting);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                from_,
+                to,
+            });
+            var kwargs=new PyDict();
+            if (casting!="safe") kwargs["casting"]=ToPython(casting);
+            dynamic py = __self__.InvokeMethod("can_cast", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Returns the data type with the smallest size and smallest scalar
@@ -75,7 +87,18 @@ namespace Numpy
         ///	The promoted data type.
         /// </returns>
         public static Dtype promote_types(Dtype type1, Dtype type2)
-            => NumPy.Instance.promote_types(type1, type2);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                type1,
+                type2,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("promote_types", pyargs, kwargs);
+            return ToCsharp<Dtype>(py);
+        }
         
         /// <summary>
         ///	For scalar a, returns the data type with the smallest size
@@ -95,7 +118,17 @@ namespace Numpy
         ///	The minimal data type.
         /// </returns>
         public static Dtype min_scalar_type(NDarray a)
-            => NumPy.Instance.min_scalar_type(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("min_scalar_type", pyargs, kwargs);
+            return ToCsharp<Dtype>(py);
+        }
         
         /*
         /// <summary>
@@ -145,7 +178,17 @@ namespace Numpy
         ///	The result type.
         /// </returns>
         public static Dtype result_type(list of arrays and dtypes arrays_and_dtypes)
-            => NumPy.Instance.result_type(arrays_and_dtypes);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arrays_and_dtypes,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("result_type", pyargs, kwargs);
+            return ToCsharp<Dtype>(py);
+        }
         */
         
         /// <summary>
@@ -171,7 +214,18 @@ namespace Numpy
         ///	Data type code.
         /// </returns>
         public static Dtype common_type(NDarray array2, NDarray array1)
-            => NumPy.Instance.common_type(array2, array1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                array2,
+                array1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("common_type", pyargs, kwargs);
+            return ToCsharp<Dtype>(py);
+        }
         
         /// <summary>
         ///	Return the scalar dtype or NumPy equivalent of Python type of an object.
@@ -188,7 +242,18 @@ namespace Numpy
         ///	The data type of rep.
         /// </returns>
         public static Dtype obj2sctype(object rep, object @default = null)
-            => NumPy.Instance.obj2sctype(rep, @default:@default);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rep,
+            });
+            var kwargs=new PyDict();
+            if (@default!=null) kwargs["default"]=ToPython(@default);
+            dynamic py = __self__.InvokeMethod("obj2sctype", pyargs, kwargs);
+            return ToCsharp<Dtype>(py);
+        }
         
         /// <summary>
         ///	Create a data type object.<br></br>
@@ -212,7 +277,17 @@ namespace Numpy
         ///	may just be a reference to a built-in data-type object.
         /// </param>
         public static void dtype(bool? align = null, bool? copy = null)
-            => NumPy.Instance.dtype(align:align, copy:copy);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (align!=null) kwargs["align"]=ToPython(align);
+            if (copy!=null) kwargs["copy"]=ToPython(copy);
+            dynamic py = __self__.InvokeMethod("dtype", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Class to convert formats, names, titles description to a dtype.<br></br>
@@ -253,7 +328,20 @@ namespace Numpy
         ///	For all available string specifiers, see dtype.newbyteorder.
         /// </param>
         public static void format_parser(string[] formats, string[] names, string[] titles, bool? aligned = null, string byteorder = null)
-            => NumPy.Instance.format_parser(formats, names, titles, aligned:aligned, byteorder:byteorder);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                formats,
+                names,
+                titles,
+            });
+            var kwargs=new PyDict();
+            if (aligned!=null) kwargs["aligned"]=ToPython(aligned);
+            if (byteorder!=null) kwargs["byteorder"]=ToPython(byteorder);
+            dynamic py = __self__.InvokeMethod("format_parser", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Machine limits for floating point types.<br></br>
@@ -271,7 +359,16 @@ namespace Numpy
         ///	Kind of floating point data-type about which to get information.
         /// </param>
         public static void finfo(Dtype dtype)
-            => NumPy.Instance.finfo(dtype);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                dtype,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("finfo", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Machine limits for integer types.
@@ -280,7 +377,16 @@ namespace Numpy
         ///	The kind of integer data type to get information about.
         /// </param>
         public static void iinfo(Dtype int_type)
-            => NumPy.Instance.iinfo(int_type);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                int_type,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("iinfo", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Diagnosing machine parameters.<br></br>
@@ -313,7 +419,20 @@ namespace Numpy
         ///	Title that is printed in the string representation of MachAr.
         /// </param>
         public static void MachAr(Delegate float_conv = null, Delegate int_conv = null, Delegate float_to_float = null, Delegate float_to_str = null, string title = null)
-            => NumPy.Instance.MachAr(float_conv:float_conv, int_conv:int_conv, float_to_float:float_to_float, float_to_str:float_to_str, title:title);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (float_conv!=null) kwargs["float_conv"]=ToPython(float_conv);
+            if (int_conv!=null) kwargs["int_conv"]=ToPython(int_conv);
+            if (float_to_float!=null) kwargs["float_to_float"]=ToPython(float_to_float);
+            if (float_to_str!=null) kwargs["float_to_str"]=ToPython(float_to_str);
+            if (title!=null) kwargs["title"]=ToPython(title);
+            dynamic py = __self__.InvokeMethod("MachAr", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Determines whether the given object represents a scalar data-type.
@@ -327,7 +446,17 @@ namespace Numpy
         ///	Boolean result of check whether rep is a scalar dtype.
         /// </returns>
         public static bool issctype(object rep)
-            => NumPy.Instance.issctype(rep);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                rep,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("issctype", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Returns True if first argument is a typecode lower/equal in type hierarchy.
@@ -339,7 +468,18 @@ namespace Numpy
         ///	dtype or string representing a typecode.
         /// </param>
         public static bool issubdtype(Dtype arg2, Dtype arg1)
-            => NumPy.Instance.issubdtype(arg2, arg1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arg2,
+                arg1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("issubdtype", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Determine if the first argument is a subclass of the second argument.
@@ -354,7 +494,18 @@ namespace Numpy
         ///	The result.
         /// </returns>
         public static bool issubsctype(Dtype arg2, Dtype arg1)
-            => NumPy.Instance.issubsctype(arg2, arg1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arg2,
+                arg1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("issubsctype", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /*
         /// <summary>
@@ -377,7 +528,18 @@ namespace Numpy
         ///	Whether arg1 is a subclass of arg2 or not.
         /// </returns>
         public static bool issubclass_(class arg1, class or tuple of classes. arg2)
-            => NumPy.Instance.issubclass_(arg1, arg2);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arg1,
+                arg2,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("issubclass_", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         */
         
         /*
@@ -398,7 +560,18 @@ namespace Numpy
         ///	None is returned.
         /// </returns>
         public static Dtype find_common_type(sequence array_types, sequence scalar_types)
-            => NumPy.Instance.find_common_type(array_types, scalar_types);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                array_types,
+                scalar_types,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("find_common_type", pyargs, kwargs);
+            return ToCsharp<Dtype>(py);
+        }
         */
         
         /// <summary>
@@ -411,7 +584,17 @@ namespace Numpy
         ///	Description of the input data type code.
         /// </returns>
         public static string typename(string @char)
-            => NumPy.Instance.typename(@char);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                @char,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("typename", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         
         /// <summary>
         ///	Return the string representation of a scalar dtype.
@@ -426,7 +609,17 @@ namespace Numpy
         ///	The string character corresponding to the scalar type.
         /// </returns>
         public static string sctype2char(object sctype)
-            => NumPy.Instance.sctype2char(sctype);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                sctype,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("sctype2char", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         
         /// <summary>
         ///	Return the character for the minimum-size type to which given types can
@@ -455,7 +648,19 @@ namespace Numpy
         ///	The character representing the minimum-size type that was found.
         /// </returns>
         public static string mintypecode(string[] typechars, string[] typeset = null, string @default = "d")
-            => NumPy.Instance.mintypecode(typechars, typeset:typeset, @default:@default);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                typechars,
+            });
+            var kwargs=new PyDict();
+            if (typeset!=null) kwargs["typeset"]=ToPython(typeset);
+            if (@default!="d") kwargs["default"]=ToPython(@default);
+            dynamic py = __self__.InvokeMethod("mintypecode", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         
         
     }

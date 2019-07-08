@@ -73,7 +73,21 @@ namespace Numpy
         ///	of NpzFile class must be closed to avoid leaking file descriptors.
         /// </returns>
         public static NDarray load(string file, MemMapMode mmap_mode = null, bool? allow_pickle = true, bool? fix_imports = true, string encoding = "ASCII")
-            => NumPy.Instance.load(file, mmap_mode:mmap_mode, allow_pickle:allow_pickle, fix_imports:fix_imports, encoding:encoding);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                file,
+            });
+            var kwargs=new PyDict();
+            if (mmap_mode!=null) kwargs["mmap_mode"]=ToPython(mmap_mode);
+            if (allow_pickle!=true) kwargs["allow_pickle"]=ToPython(allow_pickle);
+            if (fix_imports!=true) kwargs["fix_imports"]=ToPython(fix_imports);
+            if (encoding!="ASCII") kwargs["encoding"]=ToPython(encoding);
+            dynamic py = __self__.InvokeMethod("load", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Save an array to a binary file in NumPy .npy format.<br></br>
@@ -112,7 +126,19 @@ namespace Numpy
         ///	Python 2, so that the pickle data stream is readable with Python 2.
         /// </param>
         public static void save(string file, NDarray arr, bool? allow_pickle = true, bool? fix_imports = true)
-            => NumPy.Instance.save(file, arr, allow_pickle:allow_pickle, fix_imports:fix_imports);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                file,
+                arr,
+            });
+            var kwargs=new PyDict();
+            if (allow_pickle!=true) kwargs["allow_pickle"]=ToPython(allow_pickle);
+            if (fix_imports!=true) kwargs["fix_imports"]=ToPython(fix_imports);
+            dynamic py = __self__.InvokeMethod("save", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Save several arrays into a single file in uncompressed .npz format.<br></br>
@@ -159,7 +185,18 @@ namespace Numpy
         ///	keyword names.
         /// </param>
         public static void savez(string file, NDarray[] args = null, Dictionary<string, NDarray> kwds = null)
-            => NumPy.Instance.savez(file, args:args, kwds:kwds);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                file,
+            });
+            var kwargs=new PyDict();
+            if (args!=null) kwargs["args"]=ToPython(args);
+            if (kwds!=null) kwargs["kwds"]=ToPython(kwds);
+            dynamic py = __self__.InvokeMethod("savez", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Save several arrays into a single file in compressed .npz format.<br></br>
@@ -206,7 +243,18 @@ namespace Numpy
         ///	keyword names.
         /// </param>
         public static void savez_compressed(string file, NDarray[] args = null, Dictionary<string, NDarray> kwds = null)
-            => NumPy.Instance.savez_compressed(file, args:args, kwds:kwds);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                file,
+            });
+            var kwargs=new PyDict();
+            if (args!=null) kwargs["args"]=ToPython(args);
+            if (kwds!=null) kwargs["kwds"]=ToPython(kwds);
+            dynamic py = __self__.InvokeMethod("savez_compressed", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Save an array to a text file.<br></br>
@@ -266,7 +314,24 @@ namespace Numpy
         ///	is ‘latin1’.
         /// </param>
         public static void savetxt(string fname, NDarray X, string[] fmt = null, string delimiter = " ", string newline = "\n", string header = "", string footer = "", string comments = null, string encoding = null)
-            => NumPy.Instance.savetxt(fname, X, fmt:fmt, delimiter:delimiter, newline:newline, header:header, footer:footer, comments:comments, encoding:encoding);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                fname,
+                X,
+            });
+            var kwargs=new PyDict();
+            if (fmt!=null) kwargs["fmt"]=ToPython(fmt);
+            if (delimiter!=" ") kwargs["delimiter"]=ToPython(delimiter);
+            if (newline!="\n") kwargs["newline"]=ToPython(newline);
+            if (header!="") kwargs["header"]=ToPython(header);
+            if (footer!="") kwargs["footer"]=ToPython(footer);
+            if (comments!=null) kwargs["comments"]=ToPython(comments);
+            if (encoding!=null) kwargs["encoding"]=ToPython(encoding);
+            dynamic py = __self__.InvokeMethod("savetxt", pyargs, kwargs);
+        }
         
         /*
         /// <summary>
@@ -421,7 +486,41 @@ namespace Numpy
         ///	masked array.
         /// </returns>
         public static NDarray genfromtxt(string fname, Dtype dtype = null, string comments = null, string delimiter = null, int? skiprows = null, int? skip_header = 0, int? skip_footer = 0, variable converters = null, variable missing = null, variable missing_values = null, variable filling_values = null, sequence usecols = null, {None names = null, sequence excludelist = null, string deletechars = null, string defaultfmt = "f%i", bool? autostrip = false, char replace_space = "_", {True case_sensitive = true, bool? unpack = null, bool? usemask = false, bool? loose = true, bool? invalid_raise = true, int? max_rows = null, string encoding = "bytes")
-            => NumPy.Instance.genfromtxt(fname, dtype:dtype, comments:comments, delimiter:delimiter, skiprows:skiprows, skip_header:skip_header, skip_footer:skip_footer, converters:converters, missing:missing, missing_values:missing_values, filling_values:filling_values, usecols:usecols, names:names, excludelist:excludelist, deletechars:deletechars, defaultfmt:defaultfmt, autostrip:autostrip, replace_space:replace_space, case_sensitive:case_sensitive, unpack:unpack, usemask:usemask, loose:loose, invalid_raise:invalid_raise, max_rows:max_rows, encoding:encoding);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                fname,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (comments!=null) kwargs["comments"]=ToPython(comments);
+            if (delimiter!=null) kwargs["delimiter"]=ToPython(delimiter);
+            if (skiprows!=null) kwargs["skiprows"]=ToPython(skiprows);
+            if (skip_header!=0) kwargs["skip_header"]=ToPython(skip_header);
+            if (skip_footer!=0) kwargs["skip_footer"]=ToPython(skip_footer);
+            if (converters!=null) kwargs["converters"]=ToPython(converters);
+            if (missing!=null) kwargs["missing"]=ToPython(missing);
+            if (missing_values!=null) kwargs["missing_values"]=ToPython(missing_values);
+            if (filling_values!=null) kwargs["filling_values"]=ToPython(filling_values);
+            if (usecols!=null) kwargs["usecols"]=ToPython(usecols);
+            if (names!=null) kwargs["names"]=ToPython(names);
+            if (excludelist!=null) kwargs["excludelist"]=ToPython(excludelist);
+            if (deletechars!=null) kwargs["deletechars"]=ToPython(deletechars);
+            if (defaultfmt!="f%i") kwargs["defaultfmt"]=ToPython(defaultfmt);
+            if (autostrip!=false) kwargs["autostrip"]=ToPython(autostrip);
+            if (replace_space!="_") kwargs["replace_space"]=ToPython(replace_space);
+            if (case_sensitive!=true) kwargs["case_sensitive"]=ToPython(case_sensitive);
+            if (unpack!=null) kwargs["unpack"]=ToPython(unpack);
+            if (usemask!=false) kwargs["usemask"]=ToPython(usemask);
+            if (loose!=true) kwargs["loose"]=ToPython(loose);
+            if (invalid_raise!=true) kwargs["invalid_raise"]=ToPython(invalid_raise);
+            if (max_rows!=null) kwargs["max_rows"]=ToPython(max_rows);
+            if (encoding!="bytes") kwargs["encoding"]=ToPython(encoding);
+            dynamic py = __self__.InvokeMethod("genfromtxt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         */
         
         /// <summary>
@@ -460,7 +559,20 @@ namespace Numpy
         ///	 output is always a structured array.
         /// </returns>
         public static NDarray fromregex(string file, string regexp, Dtype dtype, string encoding = null)
-            => NumPy.Instance.fromregex(file, regexp, dtype, encoding:encoding);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                file,
+                regexp,
+                dtype,
+            });
+            var kwargs=new PyDict();
+            if (encoding!=null) kwargs["encoding"]=ToPython(encoding);
+            dynamic py = __self__.InvokeMethod("fromregex", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Write array to a file as text or binary (default).<br></br>
@@ -503,7 +615,18 @@ namespace Numpy
         ///	it to the closest Python type, and then using “format” % item.
         /// </param>
         public static void tofile(string fid, string sep, string format)
-            => NumPy.Instance.tofile(fid, sep, format);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                fid,
+                sep,
+                format,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("tofile", pyargs, kwargs);
+        }
         
         /*
         /// <summary>
@@ -521,7 +644,12 @@ namespace Numpy
         ///	The possibly nested list of array elements.
         /// </returns>
         public static List<T> tolist<T>()
-            => NumPy.Instance.tolist();
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("tolist");
+            return ToCsharp<List<T>>(py);
+        }
         */
         
         /*
@@ -617,7 +745,29 @@ namespace Numpy
         ///	String representation of the array.
         /// </returns>
         public static string array2string(NDarray a, int? max_line_width = null, int? precision = null, bool? suppress_small = null, string separator = " ", string prefix = "", string suffix = "", dict of callables formatter = null, int? threshold = null, int? edgeitems = null, string sign = null, string floatmode = null, string or False legacy = null)
-            => NumPy.Instance.array2string(a, max_line_width:max_line_width, precision:precision, suppress_small:suppress_small, separator:separator, prefix:prefix, suffix:suffix, formatter:formatter, threshold:threshold, edgeitems:edgeitems, sign:sign, floatmode:floatmode, legacy:legacy);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (max_line_width!=null) kwargs["max_line_width"]=ToPython(max_line_width);
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (suppress_small!=null) kwargs["suppress_small"]=ToPython(suppress_small);
+            if (separator!=" ") kwargs["separator"]=ToPython(separator);
+            if (prefix!="") kwargs["prefix"]=ToPython(prefix);
+            if (suffix!="") kwargs["suffix"]=ToPython(suffix);
+            if (formatter!=null) kwargs["formatter"]=ToPython(formatter);
+            if (threshold!=null) kwargs["threshold"]=ToPython(threshold);
+            if (edgeitems!=null) kwargs["edgeitems"]=ToPython(edgeitems);
+            if (sign!=null) kwargs["sign"]=ToPython(sign);
+            if (floatmode!=null) kwargs["floatmode"]=ToPython(floatmode);
+            if (legacy!=null) kwargs["legacy"]=ToPython(legacy);
+            dynamic py = __self__.InvokeMethod("array2string", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         */
         
         /// <summary>
@@ -646,7 +796,20 @@ namespace Numpy
         ///	The string representation of an array.
         /// </returns>
         public static string array_repr(NDarray arr, int? max_line_width = null, int? precision = null, bool? suppress_small = null)
-            => NumPy.Instance.array_repr(arr, max_line_width:max_line_width, precision:precision, suppress_small:suppress_small);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arr,
+            });
+            var kwargs=new PyDict();
+            if (max_line_width!=null) kwargs["max_line_width"]=ToPython(max_line_width);
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (suppress_small!=null) kwargs["suppress_small"]=ToPython(suppress_small);
+            dynamic py = __self__.InvokeMethod("array_repr", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         
         /// <summary>
         ///	Return a string representation of the data in an array.<br></br>
@@ -677,7 +840,19 @@ namespace Numpy
         ///	zero.
         /// </param>
         public static void array_str(NDarray a, int? max_line_width = null, int? precision = null, bool? suppress_small = null)
-            => NumPy.Instance.array_str(a, max_line_width:max_line_width, precision:precision, suppress_small:suppress_small);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (max_line_width!=null) kwargs["max_line_width"]=ToPython(max_line_width);
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (suppress_small!=null) kwargs["suppress_small"]=ToPython(suppress_small);
+            dynamic py = __self__.InvokeMethod("array_str", pyargs, kwargs);
+        }
         
         /*
         /// <summary>
@@ -733,7 +908,24 @@ namespace Numpy
         ///	The string representation of the floating point value
         /// </returns>
         public static string format_float_positional(python float or numpy floating scalar x, non-negative integer or None precision = null, bool? unique = true, bool? fractional = true, one of ‘k’ trim = "k", bool? sign = false, non-negative integer pad_left = null, non-negative integer pad_right = null)
-            => NumPy.Instance.format_float_positional(x, precision:precision, unique:unique, fractional:fractional, trim:trim, sign:sign, pad_left:pad_left, pad_right:pad_right);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (unique!=true) kwargs["unique"]=ToPython(unique);
+            if (fractional!=true) kwargs["fractional"]=ToPython(fractional);
+            if (trim!="k") kwargs["trim"]=ToPython(trim);
+            if (sign!=false) kwargs["sign"]=ToPython(sign);
+            if (pad_left!=null) kwargs["pad_left"]=ToPython(pad_left);
+            if (pad_right!=null) kwargs["pad_right"]=ToPython(pad_right);
+            dynamic py = __self__.InvokeMethod("format_float_positional", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         */
         
         /*
@@ -784,7 +976,23 @@ namespace Numpy
         ///	The string representation of the floating point value
         /// </returns>
         public static string format_float_scientific(python float or numpy floating scalar x, non-negative integer or None precision = null, bool? unique = true, one of ‘k’ trim = "k", bool? sign = false, non-negative integer pad_left = null, non-negative integer exp_digits = null)
-            => NumPy.Instance.format_float_scientific(x, precision:precision, unique:unique, trim:trim, sign:sign, pad_left:pad_left, exp_digits:exp_digits);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (unique!=true) kwargs["unique"]=ToPython(unique);
+            if (trim!="k") kwargs["trim"]=ToPython(trim);
+            if (sign!=false) kwargs["sign"]=ToPython(sign);
+            if (pad_left!=null) kwargs["pad_left"]=ToPython(pad_left);
+            if (exp_digits!=null) kwargs["exp_digits"]=ToPython(exp_digits);
+            dynamic py = __self__.InvokeMethod("format_float_scientific", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         */
         
         /// <summary>
@@ -867,7 +1075,21 @@ namespace Numpy
         ///	The default order is ‘C’.
         /// </param>
         public static void memmap(string filename, Dtype dtype = null, string mode = null, int? offset = null, Shape shape = null, string order = null)
-            => NumPy.Instance.memmap(filename, dtype:dtype, mode:mode, offset:offset, shape:shape, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                filename,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (mode!=null) kwargs["mode"]=ToPython(mode);
+            if (offset!=null) kwargs["offset"]=ToPython(offset);
+            if (shape!=null) kwargs["shape"]=ToPython(shape);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("memmap", pyargs, kwargs);
+        }
         
         /*
         /// <summary>
@@ -950,7 +1172,26 @@ namespace Numpy
         ///	with a warning for forward compatibility.
         /// </param>
         public static void set_printoptions(int? precision = null, int? threshold = null, int? edgeitems = null, int? linewidth = null, bool? suppress = null, string nanstr = null, string infstr = null, string sign = null, dict of callables formatter = null, string floatmode = null, string or False legacy = null)
-            => NumPy.Instance.set_printoptions(precision:precision, threshold:threshold, edgeitems:edgeitems, linewidth:linewidth, suppress:suppress, nanstr:nanstr, infstr:infstr, sign:sign, formatter:formatter, floatmode:floatmode, legacy:legacy);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (threshold!=null) kwargs["threshold"]=ToPython(threshold);
+            if (edgeitems!=null) kwargs["edgeitems"]=ToPython(edgeitems);
+            if (linewidth!=null) kwargs["linewidth"]=ToPython(linewidth);
+            if (suppress!=null) kwargs["suppress"]=ToPython(suppress);
+            if (nanstr!=null) kwargs["nanstr"]=ToPython(nanstr);
+            if (infstr!=null) kwargs["infstr"]=ToPython(infstr);
+            if (sign!=null) kwargs["sign"]=ToPython(sign);
+            if (formatter!=null) kwargs["formatter"]=ToPython(formatter);
+            if (floatmode!=null) kwargs["floatmode"]=ToPython(floatmode);
+            if (legacy!=null) kwargs["legacy"]=ToPython(legacy);
+            dynamic py = __self__.InvokeMethod("set_printoptions", pyargs, kwargs);
+        }
         */
         
         /// <summary>
@@ -967,7 +1208,17 @@ namespace Numpy
         ///	For a full description of these options, see set_printoptions.
         /// </returns>
         public static Hashtable get_printoptions(Hashtable print_opts)
-            => NumPy.Instance.get_printoptions(print_opts);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                print_opts,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("get_printoptions", pyargs, kwargs);
+            return ToCsharp<Hashtable>(py);
+        }
         
         /*
         /// <summary>
@@ -987,7 +1238,17 @@ namespace Numpy
         ///	representation (__str__) is set.
         /// </param>
         public static void set_string_function(function or None f, bool? repr = true)
-            => NumPy.Instance.set_string_function(f, repr:repr);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                f,
+            });
+            var kwargs=new PyDict();
+            if (repr!=true) kwargs["repr"]=ToPython(repr);
+            dynamic py = __self__.InvokeMethod("set_string_function", pyargs, kwargs);
+        }
         */
         
         /// <summary>
@@ -1010,7 +1271,19 @@ namespace Numpy
         ///	String representation of number in base system.
         /// </returns>
         public static string base_repr(int number, int? @base = 2, int? padding = 0)
-            => NumPy.Instance.base_repr(number, @base:@base, padding:padding);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                number,
+            });
+            var kwargs=new PyDict();
+            if (@base!=2) kwargs["base"]=ToPython(@base);
+            if (padding!=0) kwargs["padding"]=ToPython(padding);
+            dynamic py = __self__.InvokeMethod("base_repr", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         
         /// <summary>
         ///	A generic data source file (file, http, ftp, …).<br></br>
@@ -1037,7 +1310,16 @@ namespace Numpy
         ///	The default path is the current directory.
         /// </param>
         public static void DataSource(string destpath = null)
-            => NumPy.Instance.DataSource(destpath:destpath);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (destpath!=null) kwargs["destpath"]=ToPython(destpath);
+            dynamic py = __self__.InvokeMethod("DataSource", pyargs, kwargs);
+        }
         
         
     }

@@ -233,7 +233,7 @@ namespace Numpy.Models
 
         public PyObject ToPython()
         {
-            var inst=NumPy.Instance; // <--- this is important, to make sure PythonEngine is initialized!
+            var inst=np.self; // <--- this is important, to make sure PythonEngine is initialized!
             var f = new Func<int?, string>(FormatNullableIntForPython);
             return PythonEngine.Eval($"slice({f(Start)},{f(Stop)},{f(Step)})");
         }

@@ -35,62 +35,14 @@ namespace Numpy
             /// <returns>
             ///	Random values.
             /// </returns>
-            public static NDarray rand(params int[] shape)
-                => NumPy.Instance.random_rand(shape);
-        }
-        
-        public static partial class random {
-            /// <summary>
-            ///	Random values in a given shape.<br></br>
-            ///	
-            ///	Create an array of the given shape and populate it with
-            ///	random samples from a uniform distribution
-            ///	over [0, 1).<br></br>
-            ///	
-            ///	Notes
-            ///	
-            ///	This is a convenience function.<br></br>
-            ///	 If you want an interface that
-            ///	takes a shape-tuple as the first argument, refer to
-            ///	np.random.random_sample .
-            /// </summary>
-            /// <returns>
-            ///	Random values.
-            /// </returns>
             public static float rand()
-                => NumPy.Instance.random_rand();
-        }
-        
-        public static partial class random {
-            /// <summary>
-            ///	Return a sample (or samples) from the “standard normal” distribution.<br></br>
-            ///	
-            ///	If positive, int_like or int-convertible arguments are provided,
-            ///	randn generates an array of shape (d0, d1, ..., dn), filled
-            ///	with random floats sampled from a univariate “normal” (Gaussian)
-            ///	distribution of mean 0 and variance 1 (if any of the  are
-            ///	floats, they are first converted to integers by truncation).<br></br>
-            ///	 A single
-            ///	float randomly sampled from the distribution is returned if no
-            ///	argument is provided.<br></br>
-            ///	
-            ///	This is a convenience function.<br></br>
-            ///	  If you want an interface that takes a
-            ///	tuple as the first argument, use numpy.random.standard_normal instead.<br></br>
-            ///	
-            ///	Notes
-            ///	
-            ///	For random samples from , use:
-            ///	
-            ///	sigma * np.random.randn(...) + mu
-            /// </summary>
-            /// <returns>
-            ///	A (d0, d1, ..., dn)-shaped array of floating-point samples from
-            ///	the standard normal distribution, or a single such float if
-            ///	no parameters were supplied.
-            /// </returns>
-            public static NDarray randn(params int[] shape)
-                => NumPy.Instance.random_randn(shape);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                dynamic py = __self__.InvokeMethod("rand");
+                return ToCsharp<float>(py);
+            }
         }
         
         public static partial class random {
@@ -122,7 +74,13 @@ namespace Numpy
             ///	no parameters were supplied.
             /// </returns>
             public static float randn()
-                => NumPy.Instance.random_randn();
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                dynamic py = __self__.InvokeMethod("randn");
+                return ToCsharp<float>(py);
+            }
         }
         
         public static partial class random {
@@ -163,7 +121,21 @@ namespace Numpy
             ///	distribution, or a single such random int if size not provided.
             /// </returns>
             public static NDarray<int> randint(int low, int? high = null, int[] size = null, Dtype dtype = null)
-                => NumPy.Instance.random_randint(low, high:high, size:size, dtype:dtype);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    low,
+                });
+                var kwargs=new PyDict();
+                if (high!=null) kwargs["high"]=ToPython(high);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+                dynamic py = __self__.InvokeMethod("randint", pyargs, kwargs);
+                return ToCsharp<NDarray<int>>(py);
+            }
         }
         
         public static partial class random {
@@ -207,7 +179,20 @@ namespace Numpy
             ///	distribution, or a single such random int if size not provided.
             /// </returns>
             public static NDarray<int> random_integers(int low, int? high = null, int[] size = null)
-                => NumPy.Instance.random_random_integers(low, high:high, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    low,
+                });
+                var kwargs=new PyDict();
+                if (high!=null) kwargs["high"]=ToPython(high);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("random_integers", pyargs, kwargs);
+                return ToCsharp<NDarray<int>>(py);
+            }
         }
         
         public static partial class random {
@@ -231,7 +216,18 @@ namespace Numpy
             ///	case a single float is returned).
             /// </returns>
             public static NDarray<float> random_sample(params int[] size)
-                => NumPy.Instance.random_random_sample(size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("random_sample", pyargs, kwargs);
+                return ToCsharp<NDarray<float>>(py);
+            }
         }
         
         public static partial class random {
@@ -255,7 +251,18 @@ namespace Numpy
             ///	case a single float is returned).
             /// </returns>
             public static NDarray<float> random_(params int[] size)
-                => NumPy.Instance.random_random(size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("random", pyargs, kwargs);
+                return ToCsharp<NDarray<float>>(py);
+            }
         }
         
         public static partial class random {
@@ -279,7 +286,18 @@ namespace Numpy
             ///	case a single float is returned).
             /// </returns>
             public static NDarray<float> ranf(params int[] size)
-                => NumPy.Instance.random_ranf(size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("ranf", pyargs, kwargs);
+                return ToCsharp<NDarray<float>>(py);
+            }
         }
         
         public static partial class random {
@@ -303,7 +321,18 @@ namespace Numpy
             ///	case a single float is returned).
             /// </returns>
             public static NDarray<float> sample(params int[] size)
-                => NumPy.Instance.random_sample(size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("sample", pyargs, kwargs);
+                return ToCsharp<NDarray<float>>(py);
+            }
         }
         
         public static partial class random {
@@ -335,7 +364,21 @@ namespace Numpy
             ///	The generated random samples
             /// </returns>
             public static NDarray choice(NDarray a, int[] size = null, bool? replace = true, NDarray p = null)
-                => NumPy.Instance.random_choice(a, size:size, replace:replace, p:p);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                if (replace!=true) kwargs["replace"]=ToPython(replace);
+                if (p!=null) kwargs["p"]=ToPython(p);
+                dynamic py = __self__.InvokeMethod("choice", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -367,7 +410,21 @@ namespace Numpy
             ///	The generated random samples
             /// </returns>
             public static NDarray choice(int a, int[] size = null, bool? replace = true, NDarray p = null)
-                => NumPy.Instance.random_choice(a, size:size, replace:replace, p:p);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                if (replace!=true) kwargs["replace"]=ToPython(replace);
+                if (p!=null) kwargs["p"]=ToPython(p);
+                dynamic py = __self__.InvokeMethod("choice", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -381,7 +438,18 @@ namespace Numpy
             ///	String of length length.
             /// </returns>
             public static string bytes(int length)
-                => NumPy.Instance.random_bytes(length);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    length,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("bytes", pyargs, kwargs);
+                return ToCsharp<string>(py);
+            }
         }
         
         public static partial class random {
@@ -397,7 +465,17 @@ namespace Numpy
             ///	The array or list to be shuffled.
             /// </param>
             public static void shuffle(NDarray x)
-                => NumPy.Instance.random_shuffle(x);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    x,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("shuffle", pyargs, kwargs);
+            }
         }
         
         public static partial class random {
@@ -417,7 +495,18 @@ namespace Numpy
             ///	Permuted sequence or array range.
             /// </returns>
             public static NDarray permutation(NDarray x)
-                => NumPy.Instance.random_permutation(x);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    x,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("permutation", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -437,7 +526,18 @@ namespace Numpy
             ///	Permuted sequence or array range.
             /// </returns>
             public static NDarray permutation(int x)
-                => NumPy.Instance.random_permutation(x);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    x,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("permutation", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -472,7 +572,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized beta distribution.
             /// </returns>
             public static NDarray beta(NDarray<float> a, NDarray<float> b, int[] size = null)
-                => NumPy.Instance.random_beta(a, b, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                    b,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("beta", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -526,7 +639,20 @@ namespace Numpy
             ///	each sample is equal to the number of successes over the n trials.
             /// </returns>
             public static NDarray binomial(NDarray<int> n, NDarray<float> p, int[] size = null)
-                => NumPy.Instance.random_binomial(n, p, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    n,
+                    p,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("binomial", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -580,7 +706,20 @@ namespace Numpy
             ///	each sample is equal to the number of successes over the n trials.
             /// </returns>
             public static NDarray binomial(int n, NDarray<float> p, int[] size = null)
-                => NumPy.Instance.random_binomial(n, p, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    n,
+                    p,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("binomial", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -622,7 +761,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized chi-square distribution.
             /// </returns>
             public static NDarray chisquare(NDarray<float> df, int[] size = null)
-                => NumPy.Instance.random_chisquare(df, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    df,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("chisquare", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -661,7 +812,19 @@ namespace Numpy
             ///	The drawn samples, of shape (size, alpha.ndim).
             /// </returns>
             public static NDarray dirichlet(NDarray alpha, int[] size = null)
-                => NumPy.Instance.random_dirichlet(alpha, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    alpha,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("dirichlet", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -700,7 +863,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized exponential distribution.
             /// </returns>
             public static NDarray exponential(NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.random_exponential(scale:scale, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (scale!=null) kwargs["scale"]=ToPython(scale);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("exponential", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -750,7 +925,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized Fisher distribution.
             /// </returns>
             public static NDarray f(NDarray<float> dfnum, NDarray<float> dfden, int[] size = null)
-                => NumPy.Instance.random_f(dfnum, dfden, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    dfnum,
+                    dfden,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("f", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -797,7 +985,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized gamma distribution.
             /// </returns>
             public static NDarray gamma(Shape shape, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.random_gamma(shape, scale:scale, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    shape,
+                });
+                var kwargs=new PyDict();
+                if (scale!=null) kwargs["scale"]=ToPython(scale);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("gamma", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -832,7 +1033,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized geometric distribution.
             /// </returns>
             public static NDarray geometric(NDarray<float> p, int[] size = null)
-                => NumPy.Instance.random_geometric(p, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    p,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("geometric", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -900,7 +1113,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized Gumbel distribution.
             /// </returns>
             public static NDarray gumbel(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.random_gumbel(loc:loc, scale:scale, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (loc!=null) kwargs["loc"]=ToPython(loc);
+                if (scale!=null) kwargs["scale"]=ToPython(scale);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("gumbel", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -963,7 +1189,21 @@ namespace Numpy
             ///	Drawn samples from the parameterized hypergeometric distribution.
             /// </returns>
             public static NDarray hypergeometric(NDarray<int> ngood, NDarray<int> nbad, NDarray<int> nsample, int[] size = null)
-                => NumPy.Instance.random_hypergeometric(ngood, nbad, nsample, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    ngood,
+                    nbad,
+                    nsample,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("hypergeometric", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1012,7 +1252,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized Laplace distribution.
             /// </returns>
             public static NDarray laplace(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.random_laplace(loc:loc, scale:scale, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (loc!=null) kwargs["loc"]=ToPython(loc);
+                if (scale!=null) kwargs["scale"]=ToPython(scale);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("laplace", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1059,7 +1312,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized logistic distribution.
             /// </returns>
             public static NDarray logistic(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.random_logistic(loc:loc, scale:scale, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (loc!=null) kwargs["loc"]=ToPython(loc);
+                if (scale!=null) kwargs["scale"]=ToPython(scale);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("logistic", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1113,7 +1379,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized log-normal distribution.
             /// </returns>
             public static NDarray lognormal(NDarray<float> mean = null, NDarray<float> sigma = null, int[] size = null)
-                => NumPy.Instance.random_lognormal(mean:mean, sigma:sigma, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (mean!=null) kwargs["mean"]=ToPython(mean);
+                if (sigma!=null) kwargs["sigma"]=ToPython(sigma);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("lognormal", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1154,7 +1433,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized logarithmic series distribution.
             /// </returns>
             public static NDarray logseries(NDarray<float> p, int[] size = null)
-                => NumPy.Instance.random_logseries(p, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    p,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("logseries", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1199,7 +1490,20 @@ namespace Numpy
             ///	value drawn from the distribution.
             /// </returns>
             public static NDarray multinomial(int n, NDarray<float> pvals, int[] size = null)
-                => NumPy.Instance.random_multinomial(n, pvals, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    n,
+                    pvals,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("multinomial", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1279,7 +1583,22 @@ namespace Numpy
             ///	value drawn from the distribution.
             /// </returns>
             public static NDarray multivariate_normal(NDarray mean, NDarray cov, int[] size = null, string check_valid = null, float? tol = null)
-                => NumPy.Instance.random_multivariate_normal(mean, cov, size:size, check_valid:check_valid, tol:tol);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    mean,
+                    cov,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                if (check_valid!=null) kwargs["check_valid"]=ToPython(check_valid);
+                if (tol!=null) kwargs["tol"]=ToPython(tol);
+                dynamic py = __self__.InvokeMethod("multivariate_normal", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1329,7 +1648,20 @@ namespace Numpy
             ///	occurred before a total of n successes was reached.
             /// </returns>
             public static NDarray negative_binomial(NDarray<int> n, NDarray<float> p, int[] size = null)
-                => NumPy.Instance.random_negative_binomial(n, p, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    n,
+                    p,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("negative_binomial", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1372,7 +1704,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized noncentral chi-square distribution.
             /// </returns>
             public static NDarray noncentral_chisquare(NDarray<float> df, NDarray<float> nonc, int[] size = null)
-                => NumPy.Instance.random_noncentral_chisquare(df, nonc, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    df,
+                    nonc,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("noncentral_chisquare", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1421,7 +1766,21 @@ namespace Numpy
             ///	Drawn samples from the parameterized noncentral Fisher distribution.
             /// </returns>
             public static NDarray noncentral_f(NDarray<float> dfnum, NDarray<float> dfden, NDarray<float> nonc, int[] size = null)
-                => NumPy.Instance.random_noncentral_f(dfnum, dfden, nonc, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    dfnum,
+                    dfden,
+                    nonc,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("noncentral_f", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1476,7 +1835,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized normal distribution.
             /// </returns>
             public static NDarray normal(NDarray<float> loc = null, NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.random_normal(loc:loc, scale:scale, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (loc!=null) kwargs["loc"]=ToPython(loc);
+                if (scale!=null) kwargs["scale"]=ToPython(scale);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("normal", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1545,7 +1917,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized Pareto distribution.
             /// </returns>
             public static NDarray pareto(NDarray<float> a, int[] size = null)
-                => NumPy.Instance.random_pareto(a, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("pareto", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1588,7 +1972,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized Poisson distribution.
             /// </returns>
             public static NDarray poisson(NDarray<float> lam = null, int[] size = null)
-                => NumPy.Instance.random_poisson(lam:lam, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (lam!=null) kwargs["lam"]=ToPython(lam);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("poisson", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1629,7 +2025,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized power distribution.
             /// </returns>
             public static NDarray power(NDarray<float> a, int[] size = null)
-                => NumPy.Instance.random_power(a, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("power", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1669,7 +2077,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized Rayleigh distribution.
             /// </returns>
             public static NDarray rayleigh(NDarray<float> scale = null, int[] size = null)
-                => NumPy.Instance.random_rayleigh(scale:scale, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (scale!=null) kwargs["scale"]=ToPython(scale);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("rayleigh", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1708,7 +2128,18 @@ namespace Numpy
             ///	The drawn samples.
             /// </returns>
             public static NDarray standard_cauchy(params int[] size)
-                => NumPy.Instance.random_standard_cauchy(size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("standard_cauchy", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1729,7 +2160,18 @@ namespace Numpy
             ///	Drawn samples.
             /// </returns>
             public static NDarray standard_exponential(params int[] size)
-                => NumPy.Instance.random_standard_exponential(size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("standard_exponential", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1768,7 +2210,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized standard gamma distribution.
             /// </returns>
             public static NDarray standard_gamma(Shape shape, int[] size = null)
-                => NumPy.Instance.random_standard_gamma(shape, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    shape,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("standard_gamma", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1786,7 +2240,18 @@ namespace Numpy
             ///	Drawn samples.
             /// </returns>
             public static NDarray standard_normal(params int[] size)
-                => NumPy.Instance.random_standard_normal(size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("standard_normal", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1833,7 +2298,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized standard Student’s t distribution.
             /// </returns>
             public static NDarray standard_t(NDarray<float> df, int[] size = null)
-                => NumPy.Instance.random_standard_t(df, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    df,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("standard_t", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1884,7 +2361,21 @@ namespace Numpy
             ///	Drawn samples from the parameterized triangular distribution.
             /// </returns>
             public static NDarray triangular(NDarray<float> left, NDarray<float> mode, NDarray<float> right, int[] size = null)
-                => NumPy.Instance.random_triangular(left, mode, right, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    left,
+                    mode,
+                    right,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("triangular", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1936,7 +2427,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized uniform distribution.
             /// </returns>
             public static NDarray uniform(NDarray<float> low = null, NDarray<float> high = null, int[] size = null)
-                => NumPy.Instance.random_uniform(low:low, high:high, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (low!=null) kwargs["low"]=ToPython(low);
+                if (high!=null) kwargs["high"]=ToPython(high);
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("uniform", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -1988,7 +2492,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized von Mises distribution.
             /// </returns>
             public static NDarray vonmises(NDarray<float> mu, NDarray<float> kappa, int[] size = null)
-                => NumPy.Instance.random_vonmises(mu, kappa, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    mu,
+                    kappa,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("vonmises", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -2038,7 +2555,20 @@ namespace Numpy
             ///	Drawn samples from the parameterized Wald distribution.
             /// </returns>
             public static NDarray wald(NDarray<float> mean, NDarray<float> scale, int[] size = null)
-                => NumPy.Instance.random_wald(mean, scale, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    mean,
+                    scale,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("wald", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -2091,7 +2621,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized Weibull distribution.
             /// </returns>
             public static NDarray weibull(NDarray<float> a, int[] size = null)
-                => NumPy.Instance.random_weibull(a, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("weibull", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -2135,7 +2677,19 @@ namespace Numpy
             ///	Drawn samples from the parameterized Zipf distribution.
             /// </returns>
             public static NDarray zipf(NDarray<float> a, int[] size = null)
-                => NumPy.Instance.random_zipf(a, size:size);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (size!=null) kwargs["size"]=ToPython(size);
+                dynamic py = __self__.InvokeMethod("zipf", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class random {
@@ -2187,7 +2741,17 @@ namespace Numpy
             ///	the clock otherwise.
             /// </param>
             public static void RandomState(int? seed = null)
-                => NumPy.Instance.random_RandomState(seed:seed);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (seed!=null) kwargs["seed"]=ToPython(seed);
+                dynamic py = __self__.InvokeMethod("RandomState", pyargs, kwargs);
+            }
         }
         
         public static partial class random {
@@ -2239,7 +2803,17 @@ namespace Numpy
             ///	the clock otherwise.
             /// </param>
             public static void RandomState(NDarray seed = null)
-                => NumPy.Instance.random_RandomState(seed:seed);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (seed!=null) kwargs["seed"]=ToPython(seed);
+                dynamic py = __self__.InvokeMethod("RandomState", pyargs, kwargs);
+            }
         }
         
         public static partial class random {
@@ -2257,7 +2831,17 @@ namespace Numpy
             ///	Must be convertible to 32 bit unsigned integers.
             /// </param>
             public static void seed(int? seed = null)
-                => NumPy.Instance.random_seed(seed:seed);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (seed!=null) kwargs["seed"]=ToPython(seed);
+                dynamic py = __self__.InvokeMethod("seed", pyargs, kwargs);
+            }
         }
         
         public static partial class random {
@@ -2275,7 +2859,17 @@ namespace Numpy
             ///	Must be convertible to 32 bit unsigned integers.
             /// </param>
             public static void seed(NDarray seed = null)
-                => NumPy.Instance.random_seed(seed:seed);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (seed!=null) kwargs["seed"]=ToPython(seed);
+                dynamic py = __self__.InvokeMethod("seed", pyargs, kwargs);
+            }
         }
         
         /*
@@ -2299,7 +2893,18 @@ namespace Numpy
             ///	The returned tuple has the following items:
             /// </returns>
             public static tuple(str get_state(tuple(str @out = null)
-                => NumPy.Instance.random_get_state(@out:@out);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                });
+                var kwargs=new PyDict();
+                if (@out!=null) kwargs["out"]=ToPython(@out);
+                dynamic py = __self__.InvokeMethod("get_state", pyargs, kwargs);
+                return ToCsharp<tuple(str>(py);
+            }
         }
         */
         
@@ -2331,7 +2936,18 @@ namespace Numpy
             ///	Returns ‘None’ on success.
             /// </returns>
             public static None set_state(tuple(str state)
-                => NumPy.Instance.random_set_state(state);
+            {
+                //auto-generated code, do not change
+                var random = self.GetAttr("random");
+                var __self__=random;
+                var pyargs=ToTuple(new object[]
+                {
+                    state,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("set_state", pyargs, kwargs);
+                return ToCsharp<None>(py);
+            }
         }
         */
         

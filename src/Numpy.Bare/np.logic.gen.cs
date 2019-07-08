@@ -65,7 +65,20 @@ namespace Numpy
         ///	in which case a reference to out is returned.
         /// </returns>
         public static NDarray<bool> all(NDarray a, int[] axis, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.all(a, axis:axis, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("all", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
+        }
         
         /// <summary>
         ///	Test whether all array elements along a given axis evaluate to True.<br></br>
@@ -83,7 +96,17 @@ namespace Numpy
         ///	in which case a reference to out is returned.
         /// </returns>
         public static bool all(NDarray a)
-            => NumPy.Instance.all(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("all", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Test whether any array element along a given axis evaluates to True.<br></br>
@@ -136,7 +159,20 @@ namespace Numpy
         ///	in which case a reference to out is returned.
         /// </returns>
         public static NDarray<bool> any(NDarray a, int[] axis, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.any(a, axis:axis, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("any", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
+        }
         
         /// <summary>
         ///	Test whether any array element along a given axis evaluates to True.<br></br>
@@ -156,7 +192,17 @@ namespace Numpy
         ///	in which case a reference to out is returned.
         /// </returns>
         public static bool any(NDarray a)
-            => NumPy.Instance.any(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("any", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Test element-wise for finiteness (not infinity or not Not a Number).<br></br>
@@ -202,7 +248,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray isfinite(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.isfinite(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("isfinite", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Test element-wise for positive or negative infinity.<br></br>
@@ -241,7 +299,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray<bool> isinf(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.isinf(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("isinf", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
+        }
         
         /// <summary>
         ///	Test element-wise for NaN and return result as a boolean array.<br></br>
@@ -274,7 +344,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray isnan(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.isnan(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("isnan", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Test element-wise for NaT (not a time) and return result as a boolean array.
@@ -301,7 +383,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray isnat(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.isnat(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("isnat", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Test element-wise for negative infinity, return result as bool array.<br></br>
@@ -338,7 +432,18 @@ namespace Numpy
         ///	return value out is then a reference to that array.
         /// </returns>
         public static NDarray isneginf(NDarray x, NDarray @out = null)
-            => NumPy.Instance.isneginf(x, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("isneginf", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Test element-wise for positive infinity, return result as bool array.<br></br>
@@ -374,7 +479,18 @@ namespace Numpy
         ///	The return value out is then a reference to that array.
         /// </returns>
         public static NDarray isposinf(NDarray x, NDarray y = null)
-            => NumPy.Instance.isposinf(x, y:y);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (y!=null) kwargs["y"]=ToPython(y);
+            dynamic py = __self__.InvokeMethod("isposinf", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns a bool array, where True if input element is complex.<br></br>
@@ -389,7 +505,17 @@ namespace Numpy
         ///	Output array.
         /// </returns>
         public static NDarray iscomplex(NDarray x)
-            => NumPy.Instance.iscomplex(x);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("iscomplex", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Check for a complex type or an array of complex numbers.<br></br>
@@ -406,7 +532,17 @@ namespace Numpy
         ///	one complex element.
         /// </returns>
         public static bool iscomplexobj(object x)
-            => NumPy.Instance.iscomplexobj(x);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("iscomplexobj", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Returns True if the array is Fortran contiguous but not C contiguous.<br></br>
@@ -421,7 +557,17 @@ namespace Numpy
         ///	Input array.
         /// </param>
         public static bool isfortran(NDarray a)
-            => NumPy.Instance.isfortran(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("isfortran", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Returns a bool array, where True if input element is real.<br></br>
@@ -436,7 +582,17 @@ namespace Numpy
         ///	Boolean array of same shape as x.
         /// </returns>
         public static NDarray isreal(NDarray x)
-            => NumPy.Instance.isreal(x);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("isreal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return True if x is a not complex type or an array of complex numbers.<br></br>
@@ -453,7 +609,17 @@ namespace Numpy
         ///	The return value, False if x is of a complex type.
         /// </returns>
         public static bool isrealobj(object x)
-            => NumPy.Instance.isrealobj(x);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("isrealobj", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Returns True if the type of num is a scalar type.<br></br>
@@ -474,7 +640,17 @@ namespace Numpy
         ///	True if num is a scalar type, False if it is not.
         /// </returns>
         public static bool isscalar(object num)
-            => NumPy.Instance.isscalar(num);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                num,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("isscalar", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Compute the truth value of x1 AND x2 element-wise.
@@ -506,7 +682,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray logical_and(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.logical_and(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logical_and", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the truth value of x1 OR x2 element-wise.
@@ -538,7 +727,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray logical_or(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.logical_or(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logical_or", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the truth value of NOT x element-wise.
@@ -566,7 +768,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray<bool> logical_not(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.logical_not(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logical_not", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
+        }
         
         /// <summary>
         ///	Compute the truth value of x1 XOR x2, element-wise.
@@ -600,7 +814,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray<bool> logical_xor(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.logical_xor(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logical_xor", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
+        }
         
         /// <summary>
         ///	Returns True if two arrays are element-wise equal within a tolerance.<br></br>
@@ -653,7 +880,21 @@ namespace Numpy
         ///	tolerance; False otherwise.
         /// </returns>
         public static bool allclose(NDarray b, NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
-            => NumPy.Instance.allclose(b, a, rtol:rtol, atol:atol, equal_nan:equal_nan);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+                a,
+            });
+            var kwargs=new PyDict();
+            if (rtol!=1e-05f) kwargs["rtol"]=ToPython(rtol);
+            if (atol!=1e-08f) kwargs["atol"]=ToPython(atol);
+            if (equal_nan!=false) kwargs["equal_nan"]=ToPython(equal_nan);
+            dynamic py = __self__.InvokeMethod("allclose", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Returns a boolean array where two arrays are element-wise equal within a
@@ -708,7 +949,21 @@ namespace Numpy
         ///	boolean value.
         /// </returns>
         public static NDarray isclose(NDarray b, NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
-            => NumPy.Instance.isclose(b, a, rtol:rtol, atol:atol, equal_nan:equal_nan);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+                a,
+            });
+            var kwargs=new PyDict();
+            if (rtol!=1e-05f) kwargs["rtol"]=ToPython(rtol);
+            if (atol!=1e-08f) kwargs["atol"]=ToPython(atol);
+            if (equal_nan!=false) kwargs["equal_nan"]=ToPython(equal_nan);
+            dynamic py = __self__.InvokeMethod("isclose", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	True if two arrays have the same shape and elements, False otherwise.
@@ -723,7 +978,18 @@ namespace Numpy
         ///	Returns True if the arrays are equal.
         /// </returns>
         public static bool array_equal(NDarray a2, NDarray a1)
-            => NumPy.Instance.array_equal(a2, a1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a2,
+                a1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("array_equal", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Returns True if input arrays are shape consistent and all elements equal.<br></br>
@@ -741,7 +1007,18 @@ namespace Numpy
         ///	True if equivalent, False otherwise.
         /// </returns>
         public static bool array_equiv(NDarray a2, NDarray a1)
-            => NumPy.Instance.array_equiv(a2, a1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a2,
+                a1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("array_equiv", pyargs, kwargs);
+            return ToCsharp<bool>(py);
+        }
         
         /// <summary>
         ///	Return the truth value of (x1 &gt; x2) element-wise.
@@ -778,7 +1055,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray greater(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.greater(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("greater", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the truth value of (x1 &gt;= x2) element-wise.
@@ -815,7 +1105,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray<bool> greater_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.greater_equal(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("greater_equal", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
+        }
         
         /// <summary>
         ///	Return the truth value of (x1 &lt; x2) element-wise.
@@ -852,7 +1155,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray less(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.less(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("less", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the truth value of (x1 =&lt; x2) element-wise.
@@ -889,7 +1205,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray less_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.less_equal(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("less_equal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return (x1 == x2) element-wise.
@@ -920,7 +1249,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.equal(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("equal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return (x1 != x2) element-wise.
@@ -951,7 +1293,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray not_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.not_equal(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("not_equal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         
     }

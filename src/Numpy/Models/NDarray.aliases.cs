@@ -76,7 +76,7 @@ namespace Numpy
         /// a.ndim - 1.
         /// </returns>
         public NDarray min(int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-            => this.amin( axis: axis, @out: @out, keepdims: keepdims, initial: initial);
+            => np.amin(this, axis: axis, @out: @out, keepdims: keepdims, initial: initial);
 
         /// <summary>
         /// Return the maximum of an array or maximum along an axis.
@@ -124,8 +124,6 @@ namespace Numpy
         /// a.ndim - 1.
         /// </returns>
         public NDarray max(int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-        {
-            return this.amax( axis: axis, @out: @out, keepdims: keepdims, initial: initial);
-        }
+            => np.amax(this, axis: axis, @out: @out, keepdims: keepdims, initial: initial);
     }
 }

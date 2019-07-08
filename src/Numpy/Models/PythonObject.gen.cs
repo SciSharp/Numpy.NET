@@ -110,7 +110,7 @@ namespace Numpy
         }
         
         //auto-generated: SpecialConversions
-        protected NDarray ConvertArrayToNDarray(Array a)
+        private static NDarray ConvertArrayToNDarray(Array a)
         {
             switch(a)
             {

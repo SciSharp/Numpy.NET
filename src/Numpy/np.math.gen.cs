@@ -61,7 +61,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray sin(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.sin(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("sin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Cosine element-wise.<br></br>
@@ -103,7 +115,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray cos(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.cos(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("cos", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute tangent element-wise.<br></br>
@@ -147,7 +171,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray tan(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.tan(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("tan", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Inverse sine, element-wise.<br></br>
@@ -202,7 +238,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray arcsin(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.arcsin(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arcsin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Trigonometric inverse cosine, element-wise.<br></br>
@@ -260,7 +308,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray arccos(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.arccos(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arccos", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Trigonometric inverse tangent, element-wise.<br></br>
@@ -315,7 +375,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray arctan(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.arctan(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arctan", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Given the “legs” of a right triangle, return its hypotenuse.<br></br>
@@ -352,7 +424,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray hypot(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.hypot(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("hypot", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Element-wise arc tangent of x1/x2 choosing the quadrant correctly.<br></br>
@@ -409,7 +494,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray arctan2(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.arctan2(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arctan2", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Convert angles from radians to degrees.
@@ -437,7 +535,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray degrees(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.degrees(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("degrees", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Convert angles from degrees to radians.
@@ -464,7 +574,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray radians(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.radians(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("radians", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Unwrap by changing deltas between values to 2*pi complement.<br></br>
@@ -491,7 +613,19 @@ namespace Numpy
         ///	Output array.
         /// </returns>
         public static NDarray unwrap(NDarray p, float? discont = 3.141592653589793f, int? axis = -1)
-            => NumPy.Instance.unwrap(p, discont:discont, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                p,
+            });
+            var kwargs=new PyDict();
+            if (discont!=3.141592653589793f) kwargs["discont"]=ToPython(discont);
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("unwrap", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Convert angles from degrees to radians.<br></br>
@@ -522,7 +656,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray deg2rad(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.deg2rad(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("deg2rad", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Convert angles from radians to degrees.<br></br>
@@ -553,7 +699,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray rad2deg(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.rad2deg(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("rad2deg", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Hyperbolic sine, element-wise.<br></br>
@@ -599,7 +757,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray sinh(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.sinh(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("sinh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Hyperbolic cosine, element-wise.<br></br>
@@ -628,7 +798,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray cosh(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.cosh(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("cosh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute hyperbolic tangent element-wise.<br></br>
@@ -665,7 +847,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray tanh(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.tanh(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("tanh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Inverse hyperbolic sine element-wise.<br></br>
@@ -712,7 +906,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray arcsinh(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.arcsinh(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arcsinh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Inverse hyperbolic cosine, element-wise.<br></br>
@@ -757,7 +963,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray arccosh(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.arccosh(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arccosh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Inverse hyperbolic tangent element-wise.<br></br>
@@ -804,7 +1022,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray arctanh(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.arctanh(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arctanh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Evenly round to the given number of decimals.<br></br>
@@ -851,7 +1081,19 @@ namespace Numpy
         ///	  The result of rounding a float is a float.
         /// </returns>
         public static NDarray around(NDarray a, int? decimals = 0, NDarray @out = null)
-            => NumPy.Instance.around(a, decimals:decimals, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (decimals!=0) kwargs["decimals"]=ToPython(decimals);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("around", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Round elements of the array to the nearest integer.
@@ -878,7 +1120,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray rint(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.rint(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("rint", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Round to nearest integer towards zero.<br></br>
@@ -897,7 +1151,18 @@ namespace Numpy
         ///	The array of rounded numbers
         /// </returns>
         public static NDarray fix(NDarray x, NDarray y = null)
-            => NumPy.Instance.fix(x, y:y);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (y!=null) kwargs["y"]=ToPython(y);
+            dynamic py = __self__.InvokeMethod("fix", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the floor of the input, element-wise.<br></br>
@@ -934,7 +1199,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray floor(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.floor(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("floor", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the ceiling of the input, element-wise.<br></br>
@@ -965,7 +1242,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray ceil(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.ceil(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("ceil", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the truncated value of the input, element-wise.<br></br>
@@ -999,7 +1288,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray trunc(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.trunc(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("trunc", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the product of array elements over a given axis.<br></br>
@@ -1066,7 +1367,22 @@ namespace Numpy
         ///	Returns a reference to out if specified.
         /// </returns>
         public static NDarray prod(NDarray a, int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-            => NumPy.Instance.prod(a, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims, initial:initial);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            if (initial!=null) kwargs["initial"]=ToPython(initial);
+            dynamic py = __self__.InvokeMethod("prod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Sum of array elements over a given axis.<br></br>
@@ -1134,7 +1450,22 @@ namespace Numpy
         ///	out is returned.
         /// </returns>
         public static NDarray sum(NDarray a, int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-            => NumPy.Instance.sum(a, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims, initial:initial);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            if (initial!=null) kwargs["initial"]=ToPython(initial);
+            dynamic py = __self__.InvokeMethod("sum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the product of array elements over a given axis treating Not a
@@ -1186,7 +1517,21 @@ namespace Numpy
         ///	specified, in which case it is returned.
         /// </returns>
         public static NDarray nanprod(NDarray a, int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.nanprod(a, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanprod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the sum of array elements over a given axis treating Not a
@@ -1254,7 +1599,21 @@ namespace Numpy
         ///	or a is a 1-d array.
         /// </returns>
         public static NDarray nansum(NDarray a, int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.nansum(a, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nansum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the cumulative product of elements along a given axis.<br></br>
@@ -1292,7 +1651,20 @@ namespace Numpy
         ///	specified, in which case a reference to out is returned.
         /// </returns>
         public static NDarray cumprod(NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
-            => NumPy.Instance.cumprod(a, axis:axis, dtype:dtype, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("cumprod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the cumulative sum of the elements along a given axis.<br></br>
@@ -1335,7 +1707,20 @@ namespace Numpy
         ///	axis is not None or a is a 1-d array.
         /// </returns>
         public static NDarray cumsum(NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
-            => NumPy.Instance.cumsum(a, axis:axis, dtype:dtype, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("cumsum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the cumulative product of array elements over a given axis treating Not a
@@ -1373,7 +1758,20 @@ namespace Numpy
         ///	specified, in which case it is returned.
         /// </returns>
         public static NDarray nancumprod(NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
-            => NumPy.Instance.nancumprod(a, axis:axis, dtype:dtype, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("nancumprod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the cumulative sum of array elements over a given axis treating Not a
@@ -1416,7 +1814,20 @@ namespace Numpy
         ///	or a is a 1-d array.
         /// </returns>
         public static NDarray nancumsum(NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
-            => NumPy.Instance.nancumsum(a, axis:axis, dtype:dtype, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("nancumsum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Calculate the n-th discrete difference along the given axis.<br></br>
@@ -1482,7 +1893,21 @@ namespace Numpy
         ///	results in a timedelta64 output array.
         /// </returns>
         public static NDarray diff(NDarray a, int? n = 1, int? axis = -1, NDarray append = null, NDarray prepend = null)
-            => NumPy.Instance.diff(a, n:n, axis:axis, append:append, prepend:prepend);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (n!=1) kwargs["n"]=ToPython(n);
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (append!=null) kwargs["append"]=ToPython(append);
+            if (prepend!=null) kwargs["prepend"]=ToPython(prepend);
+            dynamic py = __self__.InvokeMethod("diff", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	The differences between consecutive elements of an array.<br></br>
@@ -1506,7 +1931,19 @@ namespace Numpy
         ///	 Loosely, this is ary.flat[1:] - ary.flat[:-1].
         /// </returns>
         public static NDarray ediff1d(NDarray ary, NDarray to_end = null, NDarray to_begin = null)
-            => NumPy.Instance.ediff1d(ary, to_end:to_end, to_begin:to_begin);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ary,
+            });
+            var kwargs=new PyDict();
+            if (to_end!=null) kwargs["to_end"]=ToPython(to_end);
+            if (to_begin!=null) kwargs["to_begin"]=ToPython(to_begin);
+            dynamic py = __self__.InvokeMethod("ediff1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the gradient of an N-dimensional array.<br></br>
@@ -1571,7 +2008,20 @@ namespace Numpy
         ///	Each derivative has the same shape as f.
         /// </returns>
         public static NDarray gradient(NDarray f, NDarray varargs = null, int? edge_order = null, int[] axis = null)
-            => NumPy.Instance.gradient(f, varargs:varargs, edge_order:edge_order, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                f,
+            });
+            var kwargs=new PyDict();
+            if (varargs!=null) kwargs["varargs"]=ToPython(varargs);
+            if (edge_order!=null) kwargs["edge_order"]=ToPython(edge_order);
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("gradient", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the cross product of two (arrays of) vectors.<br></br>
@@ -1621,7 +2071,22 @@ namespace Numpy
         ///	Vector cross product(s).
         /// </returns>
         public static NDarray cross(NDarray a, NDarray b, int? axisa = -1, int? axisb = -1, int? axisc = -1, int? axis = null)
-            => NumPy.Instance.cross(a, b, axisa:axisa, axisb:axisb, axisc:axisc, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                b,
+            });
+            var kwargs=new PyDict();
+            if (axisa!=-1) kwargs["axisa"]=ToPython(axisa);
+            if (axisb!=-1) kwargs["axisb"]=ToPython(axisb);
+            if (axisc!=-1) kwargs["axisc"]=ToPython(axisc);
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("cross", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Integrate along the given axis using the composite trapezoidal rule.<br></br>
@@ -1660,7 +2125,20 @@ namespace Numpy
         ///	Definite integral as approximated by trapezoidal rule.
         /// </returns>
         public static float trapz(NDarray y, NDarray x = null, float? dx = 1.0f, int? axis = -1)
-            => NumPy.Instance.trapz(y, x:x, dx:dx, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                y,
+            });
+            var kwargs=new PyDict();
+            if (x!=null) kwargs["x"]=ToPython(x);
+            if (dx!=1.0f) kwargs["dx"]=ToPython(dx);
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("trapz", pyargs, kwargs);
+            return ToCsharp<float>(py);
+        }
         
         /// <summary>
         ///	Calculate the exponential of all elements in the input array.<br></br>
@@ -1704,7 +2182,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray exp(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.exp(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("exp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Calculate exp(x) - 1 for all elements in the array.<br></br>
@@ -1736,7 +2226,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray expm1(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.expm1(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("expm1", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Calculate 2**p for all p in the input array.<br></br>
@@ -1765,7 +2267,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray exp2(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.exp2(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("exp2", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Natural logarithm, element-wise.<br></br>
@@ -1817,7 +2331,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray log(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.log(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("log", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the base 10 logarithm of the input array, element-wise.<br></br>
@@ -1866,7 +2392,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray log10(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.log10(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("log10", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Base-2 logarithm of x.<br></br>
@@ -1911,7 +2449,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray log2(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.log2(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("log2", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the natural logarithm of one plus the input array, element-wise.<br></br>
@@ -1963,7 +2513,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray log1p(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.log1p(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("log1p", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Logarithm of the sum of exponentiations of the inputs.<br></br>
@@ -2004,7 +2566,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray logaddexp(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.logaddexp(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logaddexp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Logarithm of the sum of exponentiations of the inputs in base-2.
@@ -2044,7 +2619,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray logaddexp2(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.logaddexp2(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logaddexp2", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the sinc function.<br></br>
@@ -2074,7 +2662,17 @@ namespace Numpy
         ///	sinc(x), which has the same shape as the input.
         /// </returns>
         public static NDarray sinc(NDarray x)
-            => NumPy.Instance.sinc(x);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("sinc", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns element-wise True where signbit is set (less than zero).
@@ -2101,7 +2699,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray signbit(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.signbit(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("signbit", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Change the sign of x1 to that of x2, element-wise.<br></br>
@@ -2135,7 +2745,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray copysign(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.copysign(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("copysign", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Decompose the elements of x into mantissa and twos exponent.<br></br>
@@ -2182,7 +2805,22 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static (NDarray, NDarray) frexp(NDarray x, NDarray out1 = null, NDarray out2 = null, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.frexp(x, out1:out1, out2:out2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (out1!=null) kwargs["out1"]=ToPython(out1);
+            if (out2!=null) kwargs["out2"]=ToPython(out2);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("frexp", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Returns x1 * 2**x2, element-wise.<br></br>
@@ -2221,7 +2859,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray ldexp(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.ldexp(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("ldexp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the next floating-point value after x1 towards x2, element-wise.
@@ -2250,7 +2901,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray nextafter(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.nextafter(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("nextafter", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the distance between x and the nearest adjacent number.<br></br>
@@ -2286,7 +2950,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray spacing(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.spacing(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("spacing", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns the lowest common multiple of |x1| and |x2|
@@ -2302,7 +2978,18 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray lcm(NDarray x2, NDarray x1)
-            => NumPy.Instance.lcm(x2, x1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("lcm", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns the greatest common divisor of |x1| and |x2|
@@ -2318,7 +3005,18 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray gcd(NDarray x2, NDarray x1)
-            => NumPy.Instance.gcd(x2, x1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("gcd", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Add arguments element-wise.<br></br>
@@ -2358,7 +3056,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray @add(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.@add(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("add", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the reciprocal of the argument, element-wise.<br></br>
@@ -2394,7 +3105,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray reciprocal(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.reciprocal(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("reciprocal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Numerical positive, element-wise.<br></br>
@@ -2413,7 +3136,17 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray positive(NDarray x)
-            => NumPy.Instance.positive(x);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("positive", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Numerical negative, element-wise.
@@ -2440,7 +3173,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray negative(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.negative(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("negative", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Multiply arguments element-wise.<br></br>
@@ -2474,7 +3219,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray multiply(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.multiply(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("multiply", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns a true division of the inputs, element-wise.<br></br>
@@ -2520,7 +3278,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray divide(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.divide(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("divide", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	First array elements raised to powers from second array, element-wise.<br></br>
@@ -2554,7 +3325,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray power(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.power(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("power", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Subtract arguments, element-wise.<br></br>
@@ -2588,7 +3372,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray subtract(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.subtract(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("subtract", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns a true division of the inputs, element-wise.<br></br>
@@ -2634,7 +3431,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray true_divide(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.true_divide(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("true_divide", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the largest integer smaller or equal to the division of the inputs.<br></br>
@@ -2667,7 +3477,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray floor_divide(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.floor_divide(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("floor_divide", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	First array elements raised to powers from second array, element-wise.<br></br>
@@ -2705,7 +3528,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray float_power(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.float_power(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("float_power", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the element-wise remainder of division.<br></br>
@@ -2749,7 +3585,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray fmod(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.fmod(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("fmod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return element-wise remainder of division.<br></br>
@@ -2790,7 +3639,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray mod(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.mod(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("mod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the fractional and integral parts of an array, element-wise.<br></br>
@@ -2828,7 +3690,20 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static (NDarray, NDarray) modf(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.modf(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("modf", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Return element-wise remainder of division.<br></br>
@@ -2869,7 +3744,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray remainder(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.remainder(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("remainder", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return element-wise quotient and remainder simultaneously.<br></br>
@@ -2908,7 +3796,21 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static (NDarray, NDarray) divmod(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.divmod(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("divmod", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Return the angle of the complex argument.
@@ -2924,7 +3826,18 @@ namespace Numpy
         ///	the complex plane, with dtype as numpy.float64.
         /// </returns>
         public static NDarray angle(NDarray z, bool? deg = false)
-            => NumPy.Instance.angle(z, deg:deg);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                z,
+            });
+            var kwargs=new PyDict();
+            if (deg!=false) kwargs["deg"]=ToPython(deg);
+            dynamic py = __self__.InvokeMethod("angle", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the real part of the complex argument.
@@ -2940,7 +3853,17 @@ namespace Numpy
         ///	returned type is float.
         /// </returns>
         public static NDarray real(NDarray val)
-            => NumPy.Instance.real(val);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                val,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("real", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the imaginary part of the complex argument.
@@ -2956,7 +3879,17 @@ namespace Numpy
         ///	elements, the returned type is float.
         /// </returns>
         public static NDarray imag(NDarray val)
-            => NumPy.Instance.imag(val);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                val,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("imag", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the complex conjugate, element-wise.<br></br>
@@ -2986,7 +3919,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray conj(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.conj(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("conj", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns the discrete, linear convolution of two one-dimensional sequences.<br></br>
@@ -3024,7 +3969,19 @@ namespace Numpy
         ///	Discrete, linear convolution of a and v.
         /// </returns>
         public static NDarray convolve(NDarray a, NDarray v, string mode = "full")
-            => NumPy.Instance.convolve(a, v, mode:mode);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                v,
+            });
+            var kwargs=new PyDict();
+            if (mode!="full") kwargs["mode"]=ToPython(mode);
+            dynamic py = __self__.InvokeMethod("convolve", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Clip (limit) the values in an array.<br></br>
@@ -3068,7 +4025,20 @@ namespace Numpy
         ///	with a_max.
         /// </returns>
         public static NDarray clip(NDarray a, NDarray a_min, NDarray a_max, NDarray @out = null)
-            => NumPy.Instance.clip(a, a_min, a_max, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                a_min,
+                a_max,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("clip", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the non-negative square-root of an array, element-wise.<br></br>
@@ -3111,7 +4081,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray sqrt(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.sqrt(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("sqrt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the cube-root of an array, element-wise.
@@ -3141,7 +4123,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray cbrt(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.cbrt(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("cbrt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the element-wise square of the input.
@@ -3168,7 +4162,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray square(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.square(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("square", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Calculate the absolute value element-wise.<br></br>
@@ -3199,7 +4205,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray absolute(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.absolute(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("absolute", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the absolute values element-wise.<br></br>
@@ -3233,7 +4251,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray fabs(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.fabs(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("fabs", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns an element-wise indication of the sign of a number.<br></br>
@@ -3276,7 +4306,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray sign(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.sign(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("sign", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the Heaviside step function.<br></br>
@@ -3313,7 +4355,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray heaviside(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.heaviside(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("heaviside", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Element-wise maximum of array elements.<br></br>
@@ -3364,7 +4419,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray maximum(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.maximum(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("maximum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Element-wise minimum of array elements.<br></br>
@@ -3415,7 +4483,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray minimum(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.minimum(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("minimum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Element-wise maximum of array elements.<br></br>
@@ -3465,7 +4546,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray fmax(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.fmax(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("fmax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Element-wise minimum of array elements.<br></br>
@@ -3515,7 +4609,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray fmin(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.fmin(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("fmin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Replace NaN with zero and infinity with large finite numbers.<br></br>
@@ -3552,7 +4659,18 @@ namespace Numpy
         ///	be x itself.
         /// </returns>
         public static NDarray nan_to_num(NDarray x, bool? copy = true)
-            => NumPy.Instance.nan_to_num(x, copy:copy);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (copy!=true) kwargs["copy"]=ToPython(copy);
+            dynamic py = __self__.InvokeMethod("nan_to_num", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	If complex input returns a real array if complex parts are close to zero.<br></br>
@@ -3580,7 +4698,18 @@ namespace Numpy
         ///	has complex elements, the returned type is float.
         /// </returns>
         public static NDarray real_if_close(NDarray a, float tol = 100)
-            => NumPy.Instance.real_if_close(a, tol:tol);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (tol!=100) kwargs["tol"]=ToPython(tol);
+            dynamic py = __self__.InvokeMethod("real_if_close", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /*
         /// <summary>
@@ -3626,7 +4755,22 @@ namespace Numpy
         ///	The interpolated values, same shape as x.
         /// </returns>
         public static float or complex (corresponding to fp) or ndarray interp(NDarray x, 1-D sequence of floats xp, 1-D sequence of float or complex fp, optional float or complex corresponding to fp left = null, optional float or complex corresponding to fp right = null, None or float period = null)
-            => NumPy.Instance.interp(x, xp, fp, left:left, right:right, period:period);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+                xp,
+                fp,
+            });
+            var kwargs=new PyDict();
+            if (left!=null) kwargs["left"]=ToPython(left);
+            if (right!=null) kwargs["right"]=ToPython(right);
+            if (period!=null) kwargs["period"]=ToPython(period);
+            dynamic py = __self__.InvokeMethod("interp", pyargs, kwargs);
+            return ToCsharp<float or complex (corresponding to fp) or ndarray>(py);
+        }
         */
         
         

@@ -50,7 +50,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray bitwise_and(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.bitwise_and(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("bitwise_and", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the bit-wise OR of two arrays element-wise.<br></br>
@@ -85,7 +98,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray bitwise_or(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.bitwise_or(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("bitwise_or", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the bit-wise XOR of two arrays element-wise.<br></br>
@@ -120,7 +146,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray bitwise_xor(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.bitwise_xor(x2, x1, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("bitwise_xor", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute bit-wise inversion, or bit-wise NOT, element-wise.<br></br>
@@ -168,7 +207,19 @@ namespace Numpy
         ///	This is a scalar if x is a scalar.
         /// </returns>
         public static NDarray invert(NDarray x, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.invert(x, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("invert", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Shift the bits of an integer to the left.<br></br>
@@ -202,7 +253,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray<int> left_shift(NDarray<int> x1, NDarray<int> x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.left_shift(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("left_shift", pyargs, kwargs);
+            return ToCsharp<NDarray<int>>(py);
+        }
         
         /// <summary>
         ///	Shift the bits of an integer to the right.<br></br>
@@ -236,7 +300,20 @@ namespace Numpy
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
         public static NDarray right_shift(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
-            => NumPy.Instance.right_shift(x1, x2, @out:@out, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("right_shift", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Packs the elements of a binary-valued array into bits in a uint8 array.<br></br>
@@ -260,7 +337,18 @@ namespace Numpy
         ///	is None, in which case the output is 1-D).
         /// </returns>
         public static NDarray packbits(NDarray myarray, int? axis = null)
-            => NumPy.Instance.packbits(myarray, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                myarray,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("packbits", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Unpacks elements of a uint8 array into a binary-valued output array.<br></br>
@@ -283,7 +371,18 @@ namespace Numpy
         ///	The elements are binary-valued (0 or 1).
         /// </returns>
         public static NDarray unpackbits(NDarray myarray, int? axis = null)
-            => NumPy.Instance.unpackbits(myarray, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                myarray,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("unpackbits", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the binary representation of the input number as a string.<br></br>
@@ -328,7 +427,18 @@ namespace Numpy
         ///	Binary representation of num or two’s complement of num.
         /// </returns>
         public static string binary_repr(int num, int? width = null)
-            => NumPy.Instance.binary_repr(num, width:width);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                num,
+            });
+            var kwargs=new PyDict();
+            if (width!=null) kwargs["width"]=ToPython(width);
+            dynamic py = __self__.InvokeMethod("binary_repr", pyargs, kwargs);
+            return ToCsharp<string>(py);
+        }
         
         
     }

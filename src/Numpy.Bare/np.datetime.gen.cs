@@ -41,7 +41,20 @@ namespace Numpy
         ///	An array of strings the same shape as arr.
         /// </returns>
         public static NDarray datetime_as_string(string[] arr, string unit, string timezone = "naive", string casting = "same_kind")
-            => NumPy.Instance.datetime_as_string(arr, unit, timezone:timezone, casting:casting);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arr,
+                unit,
+            });
+            var kwargs=new PyDict();
+            if (timezone!="naive") kwargs["timezone"]=ToPython(timezone);
+            if (casting!="same_kind") kwargs["casting"]=ToPython(casting);
+            dynamic py = __self__.InvokeMethod("datetime_as_string", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Get information about the step size of a date or time type.<br></br>
@@ -61,7 +74,18 @@ namespace Numpy
         ///	The number of base units in a step.
         /// </returns>
         public static (string, int) datetime_data(Dtype dtype)
-            => NumPy.Instance.datetime_data(dtype);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                dtype,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("datetime_data", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<string>(t[0]), ToCsharp<int>(t[1]));
+        }
         
         /*
         /// <summary>
@@ -100,7 +124,18 @@ namespace Numpy
         ///	weekmask and holidays values.
         /// </returns>
         public static busdaycalendar busdaycalendar(string weekmask = null, string[] holidays = null)
-            => NumPy.Instance.busdaycalendar(weekmask:weekmask, holidays:holidays);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (weekmask!=null) kwargs["weekmask"]=ToPython(weekmask);
+            if (holidays!=null) kwargs["holidays"]=ToPython(holidays);
+            dynamic py = __self__.InvokeMethod("busdaycalendar", pyargs, kwargs);
+            return ToCsharp<busdaycalendar>(py);
+        }
         */
         
         /*
@@ -142,7 +177,21 @@ namespace Numpy
         ///	each valid day, and False for each invalid day.
         /// </returns>
         public static NDarray<bool> is_busday(string[] dates, string weekmask = "1111100", string[] holidays = null, busdaycalendar busdaycal = null, NDarray<bool> @out = null)
-            => NumPy.Instance.is_busday(dates, weekmask:weekmask, holidays:holidays, busdaycal:busdaycal, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                dates,
+            });
+            var kwargs=new PyDict();
+            if (weekmask!="1111100") kwargs["weekmask"]=ToPython(weekmask);
+            if (holidays!=null) kwargs["holidays"]=ToPython(holidays);
+            if (busdaycal!=null) kwargs["busdaycal"]=ToPython(busdaycal);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("is_busday", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
+        }
         */
         
         /*
@@ -194,7 +243,23 @@ namespace Numpy
         ///	together, containing the dates with offsets applied.
         /// </returns>
         public static array of datetime64[D] busday_offset(string[] dates, array_like of int offsets, string roll = "raise", string weekmask = "1111100", string[] holidays = null, busdaycalendar busdaycal = null, array of datetime64[D] @out = null)
-            => NumPy.Instance.busday_offset(dates, offsets, roll:roll, weekmask:weekmask, holidays:holidays, busdaycal:busdaycal, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                dates,
+                offsets,
+            });
+            var kwargs=new PyDict();
+            if (roll!="raise") kwargs["roll"]=ToPython(roll);
+            if (weekmask!="1111100") kwargs["weekmask"]=ToPython(weekmask);
+            if (holidays!=null) kwargs["holidays"]=ToPython(holidays);
+            if (busdaycal!=null) kwargs["busdaycal"]=ToPython(busdaycal);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("busday_offset", pyargs, kwargs);
+            return ToCsharp<array of datetime64[D]>(py);
+        }
         */
         
         /*
@@ -245,7 +310,22 @@ namespace Numpy
         ///	the begin and end dates.
         /// </returns>
         public static array of int busday_count(string[] begindates, string[] enddates, string weekmask = "1111100", string[] holidays = [], busdaycalendar busdaycal = null, array of int @out = null)
-            => NumPy.Instance.busday_count(begindates, enddates, weekmask:weekmask, holidays:holidays, busdaycal:busdaycal, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                begindates,
+                enddates,
+            });
+            var kwargs=new PyDict();
+            if (weekmask!="1111100") kwargs["weekmask"]=ToPython(weekmask);
+            if (holidays!=[]) kwargs["holidays"]=ToPython(holidays);
+            if (busdaycal!=null) kwargs["busdaycal"]=ToPython(busdaycal);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("busday_count", pyargs, kwargs);
+            return ToCsharp<array of int>(py);
+        }
         */
         
         

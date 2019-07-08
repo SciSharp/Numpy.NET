@@ -47,7 +47,19 @@ namespace Numpy
         ///	If out is given, then it is returned.
         /// </returns>
         public static NDarray dot(NDarray a, NDarray b, NDarray @out = null)
-            => NumPy.Instance.dot(a, b, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                b,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("dot", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         public static partial class linalg {
             /// <summary>
@@ -90,7 +102,18 @@ namespace Numpy
             ///	Returns the dot product of the supplied arrays.
             /// </returns>
             public static NDarray multi_dot(params NDarray[] arrays)
-                => NumPy.Instance.linalg_multi_dot(arrays);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    arrays,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("multi_dot", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         /// <summary>
@@ -119,7 +142,18 @@ namespace Numpy
         ///	complex depending on the types of a and b.
         /// </returns>
         public static NDarray vdot(NDarray a, NDarray b)
-            => NumPy.Instance.vdot(a, b);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                b,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("vdot", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Inner product of two arrays.<br></br>
@@ -147,7 +181,18 @@ namespace Numpy
         ///	out.shape = a.shape[:-1] + b.shape[:-1]
         /// </returns>
         public static NDarray inner(NDarray b, NDarray a)
-            => NumPy.Instance.inner(b, a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("inner", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the outer product of two vectors.<br></br>
@@ -175,7 +220,19 @@ namespace Numpy
         ///	out[i, j] = a[i] * b[j]
         /// </returns>
         public static NDarray outer(NDarray a, NDarray b, NDarray @out = null)
-            => NumPy.Instance.outer(a, b, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                b,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("outer", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Matrix product of two arrays.<br></br>
@@ -208,7 +265,19 @@ namespace Numpy
         ///	This is a scalar only when both x1, x2 are 1-d vectors.
         /// </returns>
         public static NDarray matmul(NDarray x2, NDarray x1, NDarray @out = null)
-            => NumPy.Instance.matmul(x2, x1, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("matmul", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute tensor dot product along specified axes for arrays &gt;= 1-D.<br></br>
@@ -241,7 +310,19 @@ namespace Numpy
         ///	Tensors to “dot”.
         /// </param>
         public static NDarray tensordot(NDarray b, NDarray a, int[] axes = null)
-            => NumPy.Instance.tensordot(b, a, axes:axes);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
+            dynamic py = __self__.InvokeMethod("tensordot", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Evaluates the Einstein summation convention on the operands.<br></br>
@@ -414,7 +495,23 @@ namespace Numpy
         ///	The calculation based on the Einstein summation convention.
         /// </returns>
         public static NDarray einsum(string subscripts, NDarray[] operands, NDarray @out = null, Dtype dtype = null, string order = null, string casting = "safe", object optimize = null)
-            => NumPy.Instance.einsum(subscripts, operands, @out:@out, dtype:dtype, order:order, casting:casting, optimize:optimize);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                subscripts,
+                operands,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            if (casting!="safe") kwargs["casting"]=ToPython(casting);
+            if (optimize!=null) kwargs["optimize"]=ToPython(optimize);
+            dynamic py = __self__.InvokeMethod("einsum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /*
         /// <summary>
@@ -453,7 +550,20 @@ namespace Numpy
         ///	A printable representation of the einsum path.
         /// </returns>
         public static (list of tuples, string) einsum_path(string subscripts, NDarray[] operands, {bool optimize = "greedy")
-            => NumPy.Instance.einsum_path(subscripts, operands, optimize:optimize);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                subscripts,
+                operands,
+            });
+            var kwargs=new PyDict();
+            if (optimize!="greedy") kwargs["optimize"]=ToPython(optimize);
+            dynamic py = __self__.InvokeMethod("einsum_path", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<list of tuples>(t[0]), ToCsharp<string>(t[1]));
+        }
         */
         
         public static partial class linalg {
@@ -482,7 +592,19 @@ namespace Numpy
             ///	negative the elements are floating-point.
             /// </returns>
             public static NDarray matrix_power(NDarray a, int n)
-                => NumPy.Instance.linalg_matrix_power(a, n);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                    n,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("matrix_power", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         /// <summary>
@@ -507,7 +629,18 @@ namespace Numpy
         ///	In the common 2-D case (N=1), the block structure can be visualized:
         /// </summary>
         public static NDarray kron(NDarray b, NDarray a)
-            => NumPy.Instance.kron(b, a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("kron", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         public static partial class linalg {
             /// <summary>
@@ -580,7 +713,20 @@ namespace Numpy
             ///	reflectors. In the deprecated  ‘economic’ mode only h is returned.
             /// </returns>
             public static (NDarray, NDarray, NDarray) qr(NDarray a, string mode = "reduced")
-                => NumPy.Instance.linalg_qr(a, mode:mode);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (mode!="reduced") kwargs["mode"]=ToPython(mode);
+                dynamic py = __self__.InvokeMethod("qr", pyargs, kwargs);
+                var t = py as PyTuple;
+                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+            }
         }
         
         /*
@@ -614,7 +760,19 @@ namespace Numpy
             ///	 May be infinite.
             /// </returns>
             public static {float cond(NDarray x, {None p = null)
-                => NumPy.Instance.linalg_cond(x, p:p);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    x,
+                });
+                var kwargs=new PyDict();
+                if (p!=null) kwargs["p"]=ToPython(p);
+                dynamic py = __self__.InvokeMethod("cond", pyargs, kwargs);
+                return ToCsharp<{float>(py);
+            }
         }
         */
         
@@ -697,7 +855,20 @@ namespace Numpy
             ///	Defaults to False.
             /// </param>
             public static int matrix_rank(NDarray M, NDarray tol = null, bool? hermitian = false)
-                => NumPy.Instance.linalg_matrix_rank(M, tol:tol, hermitian:hermitian);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    M,
+                });
+                var kwargs=new PyDict();
+                if (tol!=null) kwargs["tol"]=ToPython(tol);
+                if (hermitian!=false) kwargs["hermitian"]=ToPython(hermitian);
+                dynamic py = __self__.InvokeMethod("matrix_rank", pyargs, kwargs);
+                return ToCsharp<int>(py);
+            }
         }
         
         public static partial class linalg {
@@ -731,7 +902,19 @@ namespace Numpy
             ///	The natural log of the absolute value of the determinant.
             /// </returns>
             public static (NDarray, NDarray) slogdet(NDarray a)
-                => NumPy.Instance.linalg_slogdet(a);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                dynamic py = __self__.InvokeMethod("slogdet", pyargs, kwargs);
+                var t = py as PyTuple;
+                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            }
         }
         
         /// <summary>
@@ -787,7 +970,22 @@ namespace Numpy
         ///	larger dimensions, then an array of sums along diagonals is returned.
         /// </returns>
         public static NDarray trace(NDarray a, int? offset = 0, int? axis2 = null, int? axis1 = null, Dtype dtype = null, NDarray @out = null)
-            => NumPy.Instance.trace(a, offset:offset, axis2:axis2, axis1:axis1, dtype:dtype, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (offset!=0) kwargs["offset"]=ToPython(offset);
+            if (axis2!=null) kwargs["axis2"]=ToPython(axis2);
+            if (axis1!=null) kwargs["axis1"]=ToPython(axis1);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("trace", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         public static partial class linalg {
             /// <summary>
@@ -814,7 +1012,20 @@ namespace Numpy
             ///	If None (default), no reordering is done.
             /// </param>
             public static NDarray tensorsolve(NDarray a, NDarray b, int[] axes = null)
-                => NumPy.Instance.linalg_tensorsolve(a, b, axes:axes);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                    b,
+                });
+                var kwargs=new PyDict();
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                dynamic py = __self__.InvokeMethod("tensorsolve", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -841,7 +1052,19 @@ namespace Numpy
             ///	a’s tensordot inverse, shape a.shape[ind:] + a.shape[:ind].
             /// </returns>
             public static NDarray tensorinv(NDarray a, int? ind = 2)
-                => NumPy.Instance.linalg_tensorinv(a, ind:ind);
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (ind!=2) kwargs["ind"]=ToPython(ind);
+                dynamic py = __self__.InvokeMethod("tensorinv", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class linalg {
@@ -854,7 +1077,12 @@ namespace Numpy
             ///	function.
             /// </summary>
             public static void LinAlgError()
-                => NumPy.Instance.linalg_LinAlgError();
+            {
+                //auto-generated code, do not change
+                var linalg = self.GetAttr("linalg");
+                var __self__=linalg;
+                dynamic py = __self__.InvokeMethod("LinAlgError");
+            }
         }
         
         

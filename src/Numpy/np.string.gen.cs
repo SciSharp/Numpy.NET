@@ -35,7 +35,20 @@ namespace Numpy
                 ///	of the same shape as x1 and x2.
                 /// </returns>
                 public static NDarray @add(string[] x1, string[] x2)
-                    => NumPy.Instance.core_defchararray_add(x1, x2);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        x1,
+                        x2,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("add", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -52,7 +65,20 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input types
                 /// </returns>
                 public static NDarray multiply(string[] a, int[] i)
-                    => NumPy.Instance.core_defchararray_multiply(a, i);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        i,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("multiply", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -70,7 +96,20 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input types
                 /// </returns>
                 public static NDarray mod(string[] a, NDarray values)
-                    => NumPy.Instance.core_defchararray_mod(a, values);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        values,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("mod", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -92,7 +131,19 @@ namespace Numpy
                 ///	types
                 /// </returns>
                 public static NDarray capitalize(params string[] a)
-                    => NumPy.Instance.core_defchararray_capitalize(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("capitalize", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -115,7 +166,21 @@ namespace Numpy
                 ///	types
                 /// </returns>
                 public static NDarray center(string[] a, int width, string fillchar = " ")
-                    => NumPy.Instance.core_defchararray_center(a, width, fillchar:fillchar);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        width,
+                    });
+                    var kwargs=new PyDict();
+                    if (fillchar!=" ") kwargs["fillchar"]=ToPython(fillchar);
+                    dynamic py = __self__.InvokeMethod("center", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -140,7 +205,21 @@ namespace Numpy
                 ///	Specifies how to handle encoding errors
                 /// </param>
                 public static NDarray decode(string[] a, string encoding = null, string errors = null)
-                    => NumPy.Instance.core_defchararray_decode(a, encoding:encoding, errors:errors);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (encoding!=null) kwargs["encoding"]=ToPython(encoding);
+                    if (errors!=null) kwargs["errors"]=ToPython(errors);
+                    dynamic py = __self__.InvokeMethod("decode", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -165,7 +244,21 @@ namespace Numpy
                 ///	Specifies how to handle encoding errors
                 /// </param>
                 public static NDarray encode(string[] a, string encoding = null, string errors = null)
-                    => NumPy.Instance.core_defchararray_encode(a, encoding:encoding, errors:errors);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (encoding!=null) kwargs["encoding"]=ToPython(encoding);
+                    if (errors!=null) kwargs["errors"]=ToPython(errors);
+                    dynamic py = __self__.InvokeMethod("encode", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -181,7 +274,20 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input types
                 /// </returns>
                 public static NDarray @join(string[] sep, string[] seq)
-                    => NumPy.Instance.core_defchararray_join(sep, seq);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        sep,
+                        seq,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("join", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -203,7 +309,21 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray ljust(string[] a, int width, string fillchar = " ")
-                    => NumPy.Instance.core_defchararray_ljust(a, width, fillchar:fillchar);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        width,
+                    });
+                    var kwargs=new PyDict();
+                    if (fillchar!=" ") kwargs["fillchar"]=ToPython(fillchar);
+                    dynamic py = __self__.InvokeMethod("ljust", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -223,7 +343,19 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray lower(NDarray a)
-                    => NumPy.Instance.core_defchararray_lower(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("lower", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -251,7 +383,20 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray lstrip(NDarray a, string chars = null)
-                    => NumPy.Instance.core_defchararray_lstrip(a, chars:chars);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (chars!=null) kwargs["chars"]=ToPython(chars);
+                    dynamic py = __self__.InvokeMethod("lstrip", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -282,7 +427,20 @@ namespace Numpy
                 ///	elements per input element.
                 /// </returns>
                 public static NDarray partition(NDarray a, string sep)
-                    => NumPy.Instance.core_defchararray_partition(a, sep);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        sep,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("partition", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -302,7 +460,22 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray replace(string[] a, string @new, string old, int? count = null)
-                    => NumPy.Instance.core_defchararray_replace(a, @new, old, count:count);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        @new,
+                        old,
+                    });
+                    var kwargs=new PyDict();
+                    if (count!=null) kwargs["count"]=ToPython(count);
+                    dynamic py = __self__.InvokeMethod("replace", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -324,7 +497,21 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray rjust(string[] a, int width, string fillchar = " ")
-                    => NumPy.Instance.core_defchararray_rjust(a, width, fillchar:fillchar);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        width,
+                    });
+                    var kwargs=new PyDict();
+                    if (fillchar!=" ") kwargs["fillchar"]=ToPython(fillchar);
+                    dynamic py = __self__.InvokeMethod("rjust", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -355,7 +542,20 @@ namespace Numpy
                 ///	3 elements per input element.
                 /// </returns>
                 public static NDarray rpartition(string[] a, string sep)
-                    => NumPy.Instance.core_defchararray_rpartition(a, sep);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        sep,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("rpartition", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -382,7 +582,21 @@ namespace Numpy
                 ///	Array of list objects
                 /// </returns>
                 public static NDarray rsplit(string[] a, string sep = null, int? maxsplit = null)
-                    => NumPy.Instance.core_defchararray_rsplit(a, sep:sep, maxsplit:maxsplit);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (sep!=null) kwargs["sep"]=ToPython(sep);
+                    if (maxsplit!=null) kwargs["maxsplit"]=ToPython(maxsplit);
+                    dynamic py = __self__.InvokeMethod("rsplit", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -407,7 +621,20 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray rstrip(string[] a, string chars = null)
-                    => NumPy.Instance.core_defchararray_rstrip(a, chars:chars);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (chars!=null) kwargs["chars"]=ToPython(chars);
+                    dynamic py = __self__.InvokeMethod("rstrip", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -430,7 +657,21 @@ namespace Numpy
                 ///	Array of list objects
                 /// </returns>
                 public static NDarray split(string[] a, string sep = null, int? maxsplit = null)
-                    => NumPy.Instance.core_defchararray_split(a, sep:sep, maxsplit:maxsplit);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (sep!=null) kwargs["sep"]=ToPython(sep);
+                    if (maxsplit!=null) kwargs["maxsplit"]=ToPython(maxsplit);
+                    dynamic py = __self__.InvokeMethod("split", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -450,7 +691,20 @@ namespace Numpy
                 ///	Array of list objects
                 /// </returns>
                 public static NDarray splitlines(string[] a, bool? keepends = null)
-                    => NumPy.Instance.core_defchararray_splitlines(a, keepends:keepends);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (keepends!=null) kwargs["keepends"]=ToPython(keepends);
+                    dynamic py = __self__.InvokeMethod("splitlines", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -475,7 +729,20 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray strip(string[] a, string chars = null)
-                    => NumPy.Instance.core_defchararray_strip(a, chars:chars);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (chars!=null) kwargs["chars"]=ToPython(chars);
+                    dynamic py = __self__.InvokeMethod("strip", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -496,7 +763,19 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray swapcase(NDarray a)
-                    => NumPy.Instance.core_defchararray_swapcase(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("swapcase", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -519,7 +798,19 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray title(NDarray a)
-                    => NumPy.Instance.core_defchararray_title(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("title", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -537,7 +828,21 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray translate(string[] a, string table, string deletechars)
-                    => NumPy.Instance.core_defchararray_translate(a, table, deletechars);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        table,
+                        deletechars,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("translate", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -557,7 +862,19 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray upper(NDarray a)
-                    => NumPy.Instance.core_defchararray_upper(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("upper", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -578,7 +895,20 @@ namespace Numpy
                 ///	Output array of str or unicode, depending on input type
                 /// </returns>
                 public static NDarray zfill(NDarray a, int width)
-                    => NumPy.Instance.core_defchararray_zfill(a, width);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        width,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("zfill", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -602,7 +932,20 @@ namespace Numpy
                 ///	Output array of bools, or a single bool if x1 and x2 are scalars.
                 /// </returns>
                 public static NDarray equal(string[] x2, string[] x1)
-                    => NumPy.Instance.core_defchararray_equal(x2, x1);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        x2,
+                        x1,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("equal", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -626,7 +969,20 @@ namespace Numpy
                 ///	Output array of bools, or a single bool if x1 and x2 are scalars.
                 /// </returns>
                 public static NDarray not_equal(string[] x2, string[] x1)
-                    => NumPy.Instance.core_defchararray_not_equal(x2, x1);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        x2,
+                        x1,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("not_equal", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -651,7 +1007,20 @@ namespace Numpy
                 ///	Output array of bools, or a single bool if x1 and x2 are scalars.
                 /// </returns>
                 public static NDarray greater_equal(string[] x2, string[] x1)
-                    => NumPy.Instance.core_defchararray_greater_equal(x2, x1);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        x2,
+                        x1,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("greater_equal", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -675,7 +1044,20 @@ namespace Numpy
                 ///	Output array of bools, or a single bool if x1 and x2 are scalars.
                 /// </returns>
                 public static NDarray less_equal(string[] x2, string[] x1)
-                    => NumPy.Instance.core_defchararray_less_equal(x2, x1);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        x2,
+                        x1,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("less_equal", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -699,7 +1081,20 @@ namespace Numpy
                 ///	Output array of bools, or a single bool if x1 and x2 are scalars.
                 /// </returns>
                 public static NDarray greater(string[] x2, string[] x1)
-                    => NumPy.Instance.core_defchararray_greater(x2, x1);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        x2,
+                        x1,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("greater", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -723,7 +1118,20 @@ namespace Numpy
                 ///	Output array of bools, or a single bool if x1 and x2 are scalars.
                 /// </returns>
                 public static NDarray less(string[] x2, string[] x1)
-                    => NumPy.Instance.core_defchararray_less(x2, x1);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        x2,
+                        x1,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("less", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -750,7 +1158,22 @@ namespace Numpy
                 ///	Output array of ints.
                 /// </returns>
                 public static NDarray count(string[] a, string sub, int? end = null, int? start = null)
-                    => NumPy.Instance.core_defchararray_count(a, sub, end:end, start:start);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        sub,
+                    });
+                    var kwargs=new PyDict();
+                    if (end!=null) kwargs["end"]=ToPython(end);
+                    if (start!=null) kwargs["start"]=ToPython(start);
+                    dynamic py = __self__.InvokeMethod("count", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -779,7 +1202,22 @@ namespace Numpy
                 ///	  Returns -1 if sub is not found.
                 /// </returns>
                 public static NDarray find(string[] a, string sub, int? end = null, int? start = null)
-                    => NumPy.Instance.core_defchararray_find(a, sub, end:end, start:start);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        sub,
+                    });
+                    var kwargs=new PyDict();
+                    if (end!=null) kwargs["end"]=ToPython(end);
+                    if (start!=null) kwargs["start"]=ToPython(start);
+                    dynamic py = __self__.InvokeMethod("find", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -795,7 +1233,22 @@ namespace Numpy
                 ///	  Returns -1 if sub is not found.
                 /// </returns>
                 public static NDarray index(string[] a, string sub, int? end = null, int? start = null)
-                    => NumPy.Instance.core_defchararray_index(a, sub, end:end, start:start);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        sub,
+                    });
+                    var kwargs=new PyDict();
+                    if (end!=null) kwargs["end"]=ToPython(end);
+                    if (start!=null) kwargs["start"]=ToPython(start);
+                    dynamic py = __self__.InvokeMethod("index", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -813,7 +1266,19 @@ namespace Numpy
                 ///	Output array of bools
                 /// </returns>
                 public static NDarray isalpha(params string[] a)
-                    => NumPy.Instance.core_defchararray_isalpha(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("isalpha", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -837,7 +1302,19 @@ namespace Numpy
                 ///	Array of booleans identical in shape to a.
                 /// </returns>
                 public static NDarray isdecimal(NDarray a)
-                    => NumPy.Instance.core_defchararray_isdecimal(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("isdecimal", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -855,7 +1332,19 @@ namespace Numpy
                 ///	Output array of bools
                 /// </returns>
                 public static NDarray isdigit(params string[] a)
-                    => NumPy.Instance.core_defchararray_isdigit(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("isdigit", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -874,7 +1363,19 @@ namespace Numpy
                 ///	Output array of bools
                 /// </returns>
                 public static NDarray islower(params string[] a)
-                    => NumPy.Instance.core_defchararray_islower(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("islower", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -898,7 +1399,19 @@ namespace Numpy
                 ///	Array of booleans of same shape as a.
                 /// </returns>
                 public static NDarray isnumeric(NDarray a)
-                    => NumPy.Instance.core_defchararray_isnumeric(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("isnumeric", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -917,7 +1430,19 @@ namespace Numpy
                 ///	Output array of bools
                 /// </returns>
                 public static NDarray isspace(params string[] a)
-                    => NumPy.Instance.core_defchararray_isspace(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("isspace", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -935,7 +1460,19 @@ namespace Numpy
                 ///	Output array of bools
                 /// </returns>
                 public static NDarray istitle(params string[] a)
-                    => NumPy.Instance.core_defchararray_istitle(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("istitle", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -954,7 +1491,19 @@ namespace Numpy
                 ///	Output array of bools
                 /// </returns>
                 public static NDarray isupper(params string[] a)
-                    => NumPy.Instance.core_defchararray_isupper(a);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    dynamic py = __self__.InvokeMethod("isupper", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -980,7 +1529,22 @@ namespace Numpy
                 ///	  Return -1 on failure.
                 /// </returns>
                 public static NDarray rfind(string[] a, string sub, int? end = null, int? start = null)
-                    => NumPy.Instance.core_defchararray_rfind(a, sub, end:end, start:start);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        sub,
+                    });
+                    var kwargs=new PyDict();
+                    if (end!=null) kwargs["end"]=ToPython(end);
+                    if (start!=null) kwargs["start"]=ToPython(start);
+                    dynamic py = __self__.InvokeMethod("rfind", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -996,7 +1560,22 @@ namespace Numpy
                 ///	Output array of ints.
                 /// </returns>
                 public static NDarray rindex(string[] a, string sub, int? end = null, int? start = null)
-                    => NumPy.Instance.core_defchararray_rindex(a, sub, end:end, start:start);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        sub,
+                    });
+                    var kwargs=new PyDict();
+                    if (end!=null) kwargs["end"]=ToPython(end);
+                    if (start!=null) kwargs["start"]=ToPython(start);
+                    dynamic py = __self__.InvokeMethod("rindex", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -1022,7 +1601,22 @@ namespace Numpy
                 ///	Array of booleans
                 /// </returns>
                 public static NDarray startswith(string[] a, string prefix, int? end = null, int? start = null)
-                    => NumPy.Instance.core_defchararray_startswith(a, prefix, end:end, start:start);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                        prefix,
+                    });
+                    var kwargs=new PyDict();
+                    if (end!=null) kwargs["end"]=ToPython(end);
+                    if (start!=null) kwargs["start"]=ToPython(start);
+                    dynamic py = __self__.InvokeMethod("startswith", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
             }
         }
         
@@ -1077,7 +1671,24 @@ namespace Numpy
                 ///	(Fortran) order.
                 /// </param>
                 public static void chararray(Shape shape, int? itemsize = null, bool? unicode = null, int? buffer = null, int? offset = null, int[] strides = null, string order = null)
-                    => NumPy.Instance.core_defchararray_chararray(shape, itemsize:itemsize, unicode:unicode, buffer:buffer, offset:offset, strides:strides, order:order);
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        shape,
+                    });
+                    var kwargs=new PyDict();
+                    if (itemsize!=null) kwargs["itemsize"]=ToPython(itemsize);
+                    if (unicode!=null) kwargs["unicode"]=ToPython(unicode);
+                    if (buffer!=null) kwargs["buffer"]=ToPython(buffer);
+                    if (offset!=null) kwargs["offset"]=ToPython(offset);
+                    if (strides!=null) kwargs["strides"]=ToPython(strides);
+                    if (order!=null) kwargs["order"]=ToPython(order);
+                    dynamic py = __self__.InvokeMethod("chararray", pyargs, kwargs);
+                }
             }
         }
         

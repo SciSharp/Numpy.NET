@@ -89,7 +89,20 @@ namespace Numpy
         ///	Array of the same type and shape as a.
         /// </returns>
         public static NDarray sort(NDarray a, int? axis = -1, string kind = "quicksort", string order = null)
-            => NumPy.Instance.sort(a, axis:axis, kind:kind, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!="quicksort") kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("sort", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Perform an indirect stable sort using a sequence of keys.<br></br>
@@ -119,7 +132,18 @@ namespace Numpy
         ///	Array of indices that sort the keys along the specified axis.
         /// </returns>
         public static NDarray lexsort(NDarray keys, int? axis = -1)
-            => NumPy.Instance.lexsort(keys, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                keys,
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("lexsort", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns the indices that would sort an array.<br></br>
@@ -166,7 +190,20 @@ namespace Numpy
         ///	yields the sorted a, irrespective of dimensionality.
         /// </returns>
         public static NDarray argsort(NDarray a, int? axis = -1, string kind = "quicksort", string order = null)
-            => NumPy.Instance.argsort(a, axis:axis, kind:kind, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!="quicksort") kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("argsort", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Sort an array, in-place.<br></br>
@@ -193,7 +230,18 @@ namespace Numpy
         ///	they come up in the dtype, to break ties.
         /// </param>
         public static void sort(int? axis = -1, string kind = null, string order = null)
-            => NumPy.Instance.sort(axis:axis, kind:kind, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!=null) kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("sort", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Return a copy of an array sorted along the first axis.<br></br>
@@ -209,7 +257,17 @@ namespace Numpy
         ///	Array of the same type and shape as a.
         /// </returns>
         public static NDarray msort(NDarray a)
-            => NumPy.Instance.msort(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("msort", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Sort a complex array using the real part first, then the imaginary part.
@@ -221,7 +279,17 @@ namespace Numpy
         ///	Always returns a sorted complex array.
         /// </returns>
         public static NDarray sort_complex(NDarray a)
-            => NumPy.Instance.sort_complex(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("sort_complex", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return a partitioned copy of an array.<br></br>
@@ -294,7 +362,21 @@ namespace Numpy
         ///	Array of the same type and shape as a.
         /// </returns>
         public static NDarray partition(NDarray a, int[] kth, int? axis = -1, string kind = "introselect", string order = null)
-            => NumPy.Instance.partition(a, kth, axis:axis, kind:kind, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                kth,
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!="introselect") kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("partition", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Perform an indirect partition along the given axis using the
@@ -348,7 +430,21 @@ namespace Numpy
         ///	yields the partitioned a, irrespective of dimensionality.
         /// </returns>
         public static NDarray argpartition(NDarray a, int[] kth, int? axis = -1, string kind = "introselect", string order = null)
-            => NumPy.Instance.argpartition(a, kth, axis:axis, kind:kind, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                kth,
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!="introselect") kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("argpartition", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns the indices of the maximum values along an axis.<br></br>
@@ -376,7 +472,19 @@ namespace Numpy
         ///	with the dimension along axis removed.
         /// </returns>
         public static NDarray argmax(NDarray a, int? axis = null, NDarray @out = null)
-            => NumPy.Instance.argmax(a, axis:axis, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("argmax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the indices of the maximum values in the specified axis ignoring
@@ -396,7 +504,18 @@ namespace Numpy
         ///	An array of indices or a single index value.
         /// </returns>
         public static NDarray nanargmax(NDarray a, int? axis = null)
-            => NumPy.Instance.nanargmax(a, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("nanargmax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Returns the indices of the minimum values along an axis.<br></br>
@@ -424,7 +543,19 @@ namespace Numpy
         ///	with the dimension along axis removed.
         /// </returns>
         public static NDarray argmin(NDarray a, int? axis = null, NDarray @out = null)
-            => NumPy.Instance.argmin(a, axis:axis, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("argmin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the indices of the minimum values in the specified axis ignoring
@@ -444,7 +575,18 @@ namespace Numpy
         ///	An array of indices or a single index value.
         /// </returns>
         public static NDarray nanargmin(NDarray a, int? axis = null)
-            => NumPy.Instance.nanargmin(a, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("nanargmin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Find the indices of array elements that are non-zero, grouped by element.<br></br>
@@ -465,7 +607,17 @@ namespace Numpy
         ///	 Indices are grouped by element.
         /// </returns>
         public static NDarray argwhere(NDarray a)
-            => NumPy.Instance.argwhere(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("argwhere", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return indices that are non-zero in the flattened version of a.<br></br>
@@ -480,7 +632,17 @@ namespace Numpy
         ///	that are non-zero.
         /// </returns>
         public static NDarray flatnonzero(NDarray a)
-            => NumPy.Instance.flatnonzero(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("flatnonzero", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Find indices where elements should be inserted to maintain order.<br></br>
@@ -528,7 +690,20 @@ namespace Numpy
         ///	Array of insertion points with the same shape as v.
         /// </returns>
         public static NDarray<int> searchsorted(NDarray a, NDarray v, string side = "left", NDarray sorter = null)
-            => NumPy.Instance.searchsorted(a, v, side:side, sorter:sorter);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                v,
+            });
+            var kwargs=new PyDict();
+            if (side!="left") kwargs["side"]=ToPython(side);
+            if (sorter!=null) kwargs["sorter"]=ToPython(sorter);
+            dynamic py = __self__.InvokeMethod("searchsorted", pyargs, kwargs);
+            return ToCsharp<NDarray<int>>(py);
+        }
         
         /// <summary>
         ///	Return the elements of an array that satisfy some condition.<br></br>
@@ -550,7 +725,18 @@ namespace Numpy
         ///	Rank 1 array of values from arr where condition is True.
         /// </returns>
         public static NDarray extract(NDarray condition, NDarray arr)
-            => NumPy.Instance.extract(condition, arr);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                condition,
+                arr,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("extract", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Counts the number of non-zero values in the array a.<br></br>
@@ -582,7 +768,18 @@ namespace Numpy
         ///	is returned.
         /// </returns>
         public static NDarray<int> count_nonzero(NDarray a, int[] axis)
-            => NumPy.Instance.count_nonzero(a, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("count_nonzero", pyargs, kwargs);
+            return ToCsharp<NDarray<int>>(py);
+        }
         
         /// <summary>
         ///	Counts the number of non-zero values in the array a.<br></br>
@@ -608,7 +805,17 @@ namespace Numpy
         ///	is returned.
         /// </returns>
         public static int count_nonzero(NDarray a)
-            => NumPy.Instance.count_nonzero(a);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("count_nonzero", pyargs, kwargs);
+            return ToCsharp<int>(py);
+        }
         
         
     }

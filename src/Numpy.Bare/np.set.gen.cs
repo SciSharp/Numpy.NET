@@ -59,7 +59,20 @@ namespace Numpy
         ///	The values ar1[in1d] are in ar2.
         /// </returns>
         public static NDarray in1d(NDarray ar1, NDarray ar2, bool? assume_unique = false, bool? invert = false)
-            => NumPy.Instance.in1d(ar1, ar2, assume_unique:assume_unique, invert:invert);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar1,
+                ar2,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            if (invert!=false) kwargs["invert"]=ToPython(invert);
+            dynamic py = __self__.InvokeMethod("in1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Find the intersection of two arrays.<br></br>
@@ -98,7 +111,21 @@ namespace Numpy
         ///	Only provided if return_indices is True.
         /// </returns>
         public static (NDarray, NDarray, NDarray) intersect1d(NDarray ar2, NDarray ar1, bool assume_unique = false, bool return_indices = false)
-            => NumPy.Instance.intersect1d(ar2, ar1, assume_unique:assume_unique, return_indices:return_indices);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar2,
+                ar1,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            if (return_indices!=false) kwargs["return_indices"]=ToPython(return_indices);
+            dynamic py = __self__.InvokeMethod("intersect1d", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+        }
         
         /// <summary>
         ///	Calculates element in test_elements, broadcasting over element only.<br></br>
@@ -152,7 +179,20 @@ namespace Numpy
         ///	are in test_elements.
         /// </returns>
         public static NDarray isin(NDarray element, NDarray test_elements, bool? assume_unique = false, bool? invert = false)
-            => NumPy.Instance.isin(element, test_elements, assume_unique:assume_unique, invert:invert);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                element,
+                test_elements,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            if (invert!=false) kwargs["invert"]=ToPython(invert);
+            dynamic py = __self__.InvokeMethod("isin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Find the set difference of two arrays.<br></br>
@@ -176,7 +216,19 @@ namespace Numpy
         ///	if the input is sorted.
         /// </returns>
         public static NDarray setdiff1d(NDarray ar1, NDarray ar2, bool assume_unique = false)
-            => NumPy.Instance.setdiff1d(ar1, ar2, assume_unique:assume_unique);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar1,
+                ar2,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            dynamic py = __self__.InvokeMethod("setdiff1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Find the set exclusive-or of two arrays.<br></br>
@@ -200,7 +252,19 @@ namespace Numpy
         ///	arrays.
         /// </returns>
         public static NDarray setxor1d(NDarray ar2, NDarray ar1, bool assume_unique = false)
-            => NumPy.Instance.setxor1d(ar2, ar1, assume_unique:assume_unique);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar2,
+                ar1,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            dynamic py = __self__.InvokeMethod("setxor1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Find the union of two arrays.<br></br>
@@ -220,7 +284,18 @@ namespace Numpy
         ///	Unique, sorted union of the input arrays.
         /// </returns>
         public static NDarray union1d(NDarray ar2, NDarray ar1)
-            => NumPy.Instance.union1d(ar2, ar1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar2,
+                ar1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("union1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         
     }

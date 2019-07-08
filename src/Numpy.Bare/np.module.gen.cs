@@ -10,55 +10,47 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
 using Numpy.Models;
-using Python.Included;
 
 namespace Numpy
 {
-    public partial class NumPy : IDisposable
+    public partial class np
     {
         
-        private PyObject _pyobj = null;
-        public static NumPy Instance => _instance.Value;
+        public static PyObject self => _lazy_self.Value;
         
-        private static Lazy<NumPy> _instance = new Lazy<NumPy>(() => 
+        private static Lazy<PyObject> _lazy_self = new Lazy<PyObject>(() => 
         {
-            var instance=new NumPy();
             try
             {
-                instance._pyobj = InstallAndImport();
+                return InstallAndImport();
             }
             catch (Exception)
             {
-                // retry to fix the installation by forcing a repair.
-                instance._pyobj = InstallAndImport(force: true);
+                // retry to fix the installation by forcing a repair, if Python.Included is used.
+                return InstallAndImport(force: true);
             }
-            return instance;
         }
         );
         
         private static PyObject InstallAndImport(bool force = false)
         {
-            var installer = new Installer();
-            installer.SetupPython(force).Wait();
-            installer.InstallWheel(typeof(NumPy).Assembly, "numpy-1.16.3-cp37-cp37m-win_amd64.whl").Wait();
             PythonEngine.Initialize();
             var mod = Py.Import("numpy");
             return mod;
         }
         
-        public dynamic self => _pyobj;
-        private bool IsInitialized => _pyobj != null;
+        public static dynamic dynamic_self => self;
+        private static bool IsInitialized => self != null;
         
-        private NumPy() { }
         
-        public void Dispose()
+        public static void Dispose()
         {
             self?.Dispose();
         }
         
         
         //auto-generated
-        public PyTuple ToTuple(Array input)
+        private static PyTuple ToTuple(Array input)
         {
             var array = new PyObject[input.Length];
             for (int i = 0; i < input.Length; i++)
@@ -69,7 +61,7 @@ namespace Numpy
         }
         
         //auto-generated
-        public PyObject ToPython(object obj)
+        private static PyObject ToPython(object obj)
         {
             if (obj == null) return Runtime.GetPyNone();
             switch (obj)
@@ -93,7 +85,7 @@ namespace Numpy
         }
         
         //auto-generated
-        public T ToCsharp<T>(dynamic pyobj)
+        private static T ToCsharp<T>(dynamic pyobj)
         {
             switch (typeof(T).Name)
             {
@@ -135,7 +127,7 @@ namespace Numpy
         }
         
         //auto-generated
-        public T SharpToSharp<T>(object obj)
+        private static T SharpToSharp<T>(object obj)
         {
             if (obj == null) return default(T);
             switch (obj)
@@ -149,7 +141,7 @@ namespace Numpy
         }
         
         //auto-generated: SpecialConversions
-        protected NDarray ConvertArrayToNDarray(Array a)
+        private static NDarray ConvertArrayToNDarray(Array a)
         {
             switch(a)
             {

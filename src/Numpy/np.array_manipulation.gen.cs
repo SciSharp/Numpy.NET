@@ -38,7 +38,19 @@ namespace Numpy
         ///	wherever it contains the value True.
         /// </param>
         public static void copyto(NDarray dst, NDarray src, string casting = "same_kind", NDarray @where = null)
-            => NumPy.Instance.copyto(dst, src, casting:casting, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                dst,
+                src,
+            });
+            var kwargs=new PyDict();
+            if (casting!="same_kind") kwargs["casting"]=ToPython(casting);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("copyto", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Copies values from one array to another, broadcasting as necessary.<br></br>
@@ -61,7 +73,19 @@ namespace Numpy
         ///	wherever it contains the value True.
         /// </param>
         public static void copyto(NDarray dst, NDarray src, string casting = "same_kind", bool[] @where = null)
-            => NumPy.Instance.copyto(dst, src, casting:casting, @where:@where);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                dst,
+                src,
+            });
+            var kwargs=new PyDict();
+            if (casting!="same_kind") kwargs["casting"]=ToPython(casting);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("copyto", pyargs, kwargs);
+        }
         
         /// <summary>
         ///	Gives a new shape to an array without changing its data.<br></br>
@@ -119,7 +143,19 @@ namespace Numpy
         ///	Fortran- contiguous) of the returned array.
         /// </returns>
         public static NDarray reshape(NDarray a, Shape newshape, string order = null)
-            => NumPy.Instance.reshape(a, newshape, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                newshape,
+            });
+            var kwargs=new PyDict();
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("reshape", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return a contiguous flattened array.<br></br>
@@ -181,7 +217,18 @@ namespace Numpy
         ///	is a matrix, then y is a 1-D ndarray.
         /// </returns>
         public static NDarray ravel(NDarray a, string order = null)
-            => NumPy.Instance.ravel(a, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("ravel", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return a copy of the array collapsed into one dimension.
@@ -203,7 +250,17 @@ namespace Numpy
         ///	A copy of the input array, flattened to one dimension.
         /// </returns>
         public static NDarray flatten(string order = null)
-            => NumPy.Instance.flatten(order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("flatten", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Move axes of an array to new positions.<br></br>
@@ -227,7 +284,19 @@ namespace Numpy
         ///	 This array is a view of the input array.
         /// </returns>
         public static NDarray moveaxis(NDarray a, int[] source, int[] destination)
-            => NumPy.Instance.moveaxis(a, source, destination);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                source,
+                destination,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("moveaxis", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Roll the specified axis backwards, until it lies in a given position.<br></br>
@@ -257,7 +326,19 @@ namespace Numpy
         ///	axes is changed, otherwise the input array is returned.
         /// </returns>
         public static NDarray rollaxis(NDarray a, int axis, int? start = 0)
-            => NumPy.Instance.rollaxis(a, axis, start:start);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                axis,
+            });
+            var kwargs=new PyDict();
+            if (start!=0) kwargs["start"]=ToPython(start);
+            dynamic py = __self__.InvokeMethod("rollaxis", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Interchange two axes of an array.
@@ -279,7 +360,19 @@ namespace Numpy
         ///	axes is changed, otherwise the input array is returned.
         /// </returns>
         public static NDarray swapaxes(NDarray a, int axis1, int axis2)
-            => NumPy.Instance.swapaxes(a, axis1, axis2);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                axis1,
+                axis2,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("swapaxes", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Permute the dimensions of an array.<br></br>
@@ -304,7 +397,18 @@ namespace Numpy
         ///	possible.
         /// </returns>
         public static NDarray transpose(NDarray a, int[] axes = null)
-            => NumPy.Instance.transpose(a, axes:axes);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
+            dynamic py = __self__.InvokeMethod("transpose", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Convert inputs to arrays with at least one dimension.<br></br>
@@ -321,7 +425,17 @@ namespace Numpy
         ///	Copies are made only if necessary.
         /// </returns>
         public static NDarray atleast_1d(params NDarray[] arys)
-            => NumPy.Instance.atleast_1d(arys);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arys,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("atleast_1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	View inputs as arrays with at least two dimensions.
@@ -340,7 +454,17 @@ namespace Numpy
         ///	dimensions are returned.
         /// </returns>
         public static NDarray atleast_2d(params NDarray[] arys)
-            => NumPy.Instance.atleast_2d(arys);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arys,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("atleast_2d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	View inputs as arrays with at least three dimensions.
@@ -362,7 +486,17 @@ namespace Numpy
         ///	view of shape (M, N, 1).
         /// </returns>
         public static NDarray atleast_3d(params NDarray[] arys)
-            => NumPy.Instance.atleast_3d(arys);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arys,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("atleast_3d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Produce an object that mimics broadcasting.
@@ -381,7 +515,18 @@ namespace Numpy
         ///	may be used as an iterator.
         /// </returns>
         public static NDarray broadcast(NDarray in2, NDarray in1)
-            => NumPy.Instance.broadcast(in2, in1);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                in2,
+                in1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("broadcast", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Broadcast an array to a new shape.<br></br>
@@ -406,7 +551,19 @@ namespace Numpy
         ///	broadcasted array may refer to a single memory location.
         /// </returns>
         public static NDarray broadcast_to(NDarray array, Shape shape, bool? subok = false)
-            => NumPy.Instance.broadcast_to(array, shape, subok:subok);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                array,
+                shape,
+            });
+            var kwargs=new PyDict();
+            if (subok!=false) kwargs["subok"]=ToPython(subok);
+            dynamic py = __self__.InvokeMethod("broadcast_to", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Broadcast any number of arrays against each other.
@@ -428,7 +585,18 @@ namespace Numpy
         ///	need to write to the arrays, make copies first.
         /// </returns>
         public static NDarray[] broadcast_arrays(NDarray[] args, bool? subok = null)
-            => NumPy.Instance.broadcast_arrays(args, subok:subok);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                args,
+            });
+            var kwargs=new PyDict();
+            if (subok!=null) kwargs["subok"]=ToPython(subok);
+            dynamic py = __self__.InvokeMethod("broadcast_arrays", pyargs, kwargs);
+            return ToCsharp<NDarray[]>(py);
+        }
         
         /// <summary>
         ///	Expand the shape of an array.<br></br>
@@ -448,7 +616,18 @@ namespace Numpy
         ///	the input array.
         /// </returns>
         public static NDarray expand_dims(NDarray a, int axis)
-            => NumPy.Instance.expand_dims(a, axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                axis,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("expand_dims", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Remove single-dimensional entries from the shape of an array.
@@ -469,7 +648,18 @@ namespace Numpy
         ///	or a view into a.
         /// </returns>
         public static NDarray squeeze(NDarray a, int[] axis = null)
-            => NumPy.Instance.squeeze(a, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("squeeze", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return an array converted to a float type.
@@ -486,7 +676,18 @@ namespace Numpy
         ///	The input a as a float ndarray.
         /// </returns>
         public static NDarray asfarray(NDarray a, Dtype dtype = null)
-            => NumPy.Instance.asfarray(a, dtype:dtype);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            dynamic py = __self__.InvokeMethod("asfarray", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return an array (ndim &gt;= 1) laid out in Fortran order in memory.
@@ -501,7 +702,18 @@ namespace Numpy
         ///	The input a in Fortran, or column-major, order.
         /// </returns>
         public static NDarray asfortranarray(NDarray a, Dtype dtype = null)
-            => NumPy.Instance.asfortranarray(a, dtype:dtype);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            dynamic py = __self__.InvokeMethod("asfortranarray", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Convert the input to an array, checking for NaNs or Infs.
@@ -530,7 +742,19 @@ namespace Numpy
         ///	class ndarray is returned.
         /// </returns>
         public static NDarray asarray_chkfinite(NDarray a, Dtype dtype = null, string order = null)
-            => NumPy.Instance.asarray_chkfinite(a, dtype:dtype, order:order);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("asarray_chkfinite", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return an ndarray of the provided type that satisfies requirements.<br></br>
@@ -557,7 +781,19 @@ namespace Numpy
         ///	The requirements list can be any of the following
         /// </param>
         public static NDarray require(NDarray a, Dtype dtype, string[] requirements = null)
-            => NumPy.Instance.require(a, dtype, requirements:requirements);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                dtype,
+            });
+            var kwargs=new PyDict();
+            if (requirements!=null) kwargs["requirements"]=ToPython(requirements);
+            dynamic py = __self__.InvokeMethod("require", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Join a sequence of arrays along an existing axis.<br></br>
@@ -591,7 +827,19 @@ namespace Numpy
         ///	The concatenated array.
         /// </returns>
         public static NDarray concatenate(NDarray[] arys, int? axis = 0, NDarray @out = null)
-            => NumPy.Instance.concatenate(arys, axis:axis, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arys,
+            });
+            var kwargs=new PyDict();
+            if (axis!=0) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("concatenate", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Join a sequence of arrays along a new axis.<br></br>
@@ -617,7 +865,19 @@ namespace Numpy
         ///	The stacked array has one more dimension than the input arrays.
         /// </returns>
         public static NDarray stack(NDarray[] arrays, int? axis = 0, NDarray @out = null)
-            => NumPy.Instance.stack(arrays, axis:axis, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arrays,
+            });
+            var kwargs=new PyDict();
+            if (axis!=0) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("stack", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Stack 1-D arrays as columns into a 2-D array.<br></br>
@@ -637,7 +897,17 @@ namespace Numpy
         ///	The array formed by stacking the given arrays.
         /// </returns>
         public static NDarray column_stack(params NDarray[] tup)
-            => NumPy.Instance.column_stack(tup);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                tup,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("column_stack", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Stack arrays in sequence depth wise (along third axis).<br></br>
@@ -664,7 +934,17 @@ namespace Numpy
         ///	The array formed by stacking the given arrays, will be at least 3-D.
         /// </returns>
         public static NDarray dstack(params NDarray[] tup)
-            => NumPy.Instance.dstack(tup);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                tup,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("dstack", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Stack arrays in sequence horizontally (column wise).<br></br>
@@ -689,7 +969,17 @@ namespace Numpy
         ///	The array formed by stacking the given arrays.
         /// </returns>
         public static NDarray hstack(params NDarray[] tup)
-            => NumPy.Instance.hstack(tup);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                tup,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("hstack", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Stack arrays in sequence vertically (row wise).<br></br>
@@ -715,7 +1005,17 @@ namespace Numpy
         ///	The array formed by stacking the given arrays, will be at least 2-D.
         /// </returns>
         public static NDarray vstack(params NDarray[] tup)
-            => NumPy.Instance.vstack(tup);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                tup,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("vstack", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /*
         /// <summary>
@@ -771,7 +1071,17 @@ namespace Numpy
         ///	* the depth to which the input list is nested
         /// </returns>
         public static NDarray block(nested list of array_like or scalars (but not tuples) arrays)
-            => NumPy.Instance.block(arrays);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arrays,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("block", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         */
         
         /// <summary>
@@ -801,7 +1111,19 @@ namespace Numpy
         ///	A list of sub-arrays.
         /// </returns>
         public static NDarray[] split(NDarray ary, int[] indices_or_sections, int? axis = 0)
-            => NumPy.Instance.split(ary, indices_or_sections, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ary,
+                indices_or_sections,
+            });
+            var kwargs=new PyDict();
+            if (axis!=0) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("split", pyargs, kwargs);
+            return ToCsharp<NDarray[]>(py);
+        }
         
         /// <summary>
         ///	Construct an array by repeating A the number of times given by reps.<br></br>
@@ -835,7 +1157,18 @@ namespace Numpy
         ///	The tiled output array.
         /// </returns>
         public static NDarray tile(NDarray A, NDarray reps)
-            => NumPy.Instance.tile(A, reps);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                A,
+                reps,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("tile", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Repeat elements of an array.
@@ -858,7 +1191,19 @@ namespace Numpy
         ///	the given axis.
         /// </returns>
         public static NDarray repeat(NDarray a, int[] repeats, int? axis = null)
-            => NumPy.Instance.repeat(a, repeats, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                repeats,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("repeat", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return a new array with sub-arrays along an axis deleted.<br></br>
@@ -893,7 +1238,19 @@ namespace Numpy
         ///	a flattened array.
         /// </returns>
         public static NDarray delete(NDarray arr, Slice obj, int? axis = null)
-            => NumPy.Instance.delete(arr, obj, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arr,
+                obj,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("delete", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Insert values along the given axis before the given indices.<br></br>
@@ -936,7 +1293,20 @@ namespace Numpy
         ///	axis is None, out is a flattened array.
         /// </returns>
         public static NDarray insert(NDarray arr, int obj = 0, NDarray values = null, int? axis = null)
-            => NumPy.Instance.insert(arr, obj:obj, values:values, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arr,
+            });
+            var kwargs=new PyDict();
+            if (obj!=0) kwargs["obj"]=ToPython(obj);
+            if (values!=null) kwargs["values"]=ToPython(values);
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("insert", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Append values to the end of an array.
@@ -965,45 +1335,19 @@ namespace Numpy
         ///	  If axis is None, out is a flattened array.
         /// </returns>
         public static NDarray append(NDarray arr, NDarray values, int? axis = null)
-            => NumPy.Instance.append(arr, values, axis:axis);
-        
-        /// <summary>
-        ///	Return a new array with the specified shape.<br></br>
-        ///	
-        ///	If the new array is larger than the original array, then the new
-        ///	array is filled with repeated copies of a.<br></br>
-        ///	  Note that this behavior
-        ///	is different from a.resize(new_shape) which fills with zeros instead
-        ///	of repeated copies of a.<br></br>
-        ///	
-        ///	Notes
-        ///	
-        ///	Warning: This functionality does not consider axes separately,
-        ///	i.e.<br></br>
-        ///	 it does not apply interpolation/extrapolation.<br></br>
-        ///	
-        ///	It fills the return array with the required number of elements, taken
-        ///	from a as they are laid out in memory, disregarding strides and axes.<br></br>
-        ///	
-        ///	(This is in case the new shape is smaller.<br></br>
-        ///	 For larger, see above.)
-        ///	This functionality is therefore not suitable to resize images,
-        ///	or data where each axis represents a separate and distinct entity.
-        /// </summary>
-        /// <param name="a">
-        ///	Array to be resized.
-        /// </param>
-        /// <param name="new_shape">
-        ///	Shape of resized array.
-        /// </param>
-        /// <returns>
-        ///	The new array is formed from the data in the old array, repeated
-        ///	if necessary to fill out the required number of elements.<br></br>
-        ///	  The
-        ///	data are repeated in the order that they are stored in memory.
-        /// </returns>
-        public static NDarray resize(NDarray a, Shape new_shape)
-            => NumPy.Instance.resize(a, new_shape);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arr,
+                values,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("append", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Trim the leading and/or trailing zeros from a 1-D array or sequence.
@@ -1022,7 +1366,18 @@ namespace Numpy
         ///	 The input data type is preserved.
         /// </returns>
         public static NDarray trim_zeros(NDarray filt, string trim = "fb")
-            => NumPy.Instance.trim_zeros(filt, trim:trim);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                filt,
+            });
+            var kwargs=new PyDict();
+            if (trim!="fb") kwargs["trim"]=ToPython(trim);
+            dynamic py = __self__.InvokeMethod("trim_zeros", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Find the unique elements of an array.<br></br>
@@ -1066,7 +1421,18 @@ namespace Numpy
         ///	The sorted unique values.
         /// </returns>
         public static NDarray unique(NDarray ar, int? axis = null)
-            => NumPy.Instance.unique(ar, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("unique", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Find the unique elements of an array.<br></br>
@@ -1122,7 +1488,21 @@ namespace Numpy
         ///	The sorted unique values.
         /// </returns>
         public static NDarray[] unique(NDarray ar, bool return_index, bool return_inverse, bool return_counts, int? axis = null)
-            => NumPy.Instance.unique(ar, return_index:return_index, return_inverse:return_inverse, return_counts:return_counts, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar,
+            });
+            var kwargs=new PyDict();
+            if (return_index!=null) kwargs["return_index"]=ToPython(return_index);
+            if (return_inverse!=null) kwargs["return_inverse"]=ToPython(return_inverse);
+            if (return_counts!=null) kwargs["return_counts"]=ToPython(return_counts);
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("unique", pyargs, kwargs);
+            return ToCsharp<NDarray[]>(py);
+        }
         
         /// <summary>
         ///	Reverse the order of elements in an array along the given axis.<br></br>
@@ -1162,7 +1542,18 @@ namespace Numpy
         ///	returned, this operation is done in constant time.
         /// </returns>
         public static NDarray flip(NDarray m, int[] axis = null)
-            => NumPy.Instance.flip(m, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                m,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("flip", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Flip array in the left/right direction.<br></br>
@@ -1185,7 +1576,17 @@ namespace Numpy
         ///	is returned, this operation is .
         /// </returns>
         public static NDarray fliplr(NDarray m)
-            => NumPy.Instance.fliplr(m);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                m,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("fliplr", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Flip array in the up/down direction.<br></br>
@@ -1209,7 +1610,17 @@ namespace Numpy
         ///	returned, this operation is .
         /// </returns>
         public static NDarray flipud(NDarray m)
-            => NumPy.Instance.flipud(m);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                m,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("flipud", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Roll array elements along a given axis.<br></br>
@@ -1243,7 +1654,19 @@ namespace Numpy
         ///	Output array, with the same shape as a.
         /// </returns>
         public static NDarray roll(NDarray a, int[] shift, int[] axis = null)
-            => NumPy.Instance.roll(a, shift, axis:axis);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                shift,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("roll", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Rotate an array by 90 degrees in the plane specified by axes.<br></br>
@@ -1270,7 +1693,19 @@ namespace Numpy
         ///	A rotated view of m.
         /// </returns>
         public static NDarray rot90(NDarray m, int k = 1, int[] axes = null)
-            => NumPy.Instance.rot90(m, k:k, axes:axes);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                m,
+            });
+            var kwargs=new PyDict();
+            if (k!=1) kwargs["k"]=ToPython(k);
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
+            dynamic py = __self__.InvokeMethod("rot90", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         
     }

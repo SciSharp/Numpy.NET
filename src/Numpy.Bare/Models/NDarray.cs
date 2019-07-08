@@ -353,7 +353,7 @@ namespace Numpy
         {
             //auto-generated code, do not change
             var @this = this;
-            return NumPy.Instance.reshape(@this, new Shape(newshape));
+            return np.reshape(@this, new Shape(newshape));
         }
 
         /// <summary>
@@ -463,7 +463,7 @@ namespace Numpy
         /// </returns>
         public T asscalar<T>()
         {
-            return NumPy.Instance.asscalar<T>(this);
+            return np.asscalar<T>(this);
         }
     }
 

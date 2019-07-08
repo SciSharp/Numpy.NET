@@ -12,7 +12,7 @@ namespace Numpy
     /// <summary>
     /// Manual type conversions
     /// </summary>
-    public partial class NumPy
+    public static partial class np
     {
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Numpy
         /// if necessary to fill out the required number of elements.  The
         /// data are repeated in the order that they are stored in memory.
         /// </returns>
-        public NDarray resize(NDarray a, Shape new_shape)
+        public static NDarray resize(NDarray a, Shape new_shape)
         {
             var pyargs = ToTuple(new object[]
             {

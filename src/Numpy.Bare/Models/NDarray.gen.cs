@@ -264,7 +264,7 @@ namespace Numpy
         ///	similar, but have different default values for their order=
         ///	arguments.)
         /// </param>
-        public void copy(string order = null)
+        public NDarray copy(string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -274,6 +274,7 @@ namespace Numpy
             var kwargs=new PyDict();
             if (order!=null) kwargs["order"]=ToPython(order);
             dynamic py = __self__.InvokeMethod("copy", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -537,8 +538,15 @@ namespace Numpy
         public NDarray reshape(Shape newshape, string order = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.reshape(@this, newshape, order:order);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                newshape,
+            });
+            var kwargs=new PyDict();
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("reshape", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -598,8 +606,14 @@ namespace Numpy
         public NDarray ravel(string order = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.ravel(@this, order:order);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("ravel", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -623,8 +637,15 @@ namespace Numpy
         public NDarray moveaxis(int[] source, int[] destination)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.moveaxis(@this, source, destination);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                source,
+                destination,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("moveaxis", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -654,8 +675,15 @@ namespace Numpy
         public NDarray rollaxis(int axis, int? start = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.rollaxis(@this, axis, start:start);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                axis,
+            });
+            var kwargs=new PyDict();
+            if (start!=0) kwargs["start"]=ToPython(start);
+            dynamic py = __self__.InvokeMethod("rollaxis", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -677,8 +705,15 @@ namespace Numpy
         public NDarray swapaxes(int axis1, int axis2)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.swapaxes(@this, axis1, axis2);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                axis1,
+                axis2,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("swapaxes", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -697,8 +732,14 @@ namespace Numpy
         public NDarray broadcast(NDarray in1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.broadcast(@this, in1);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                in1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("broadcast", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -723,8 +764,15 @@ namespace Numpy
         public NDarray broadcast_to(Shape shape, bool? subok = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.broadcast_to(@this, shape, subok:subok);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                shape,
+            });
+            var kwargs=new PyDict();
+            if (subok!=false) kwargs["subok"]=ToPython(subok);
+            dynamic py = __self__.InvokeMethod("broadcast_to", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -744,8 +792,14 @@ namespace Numpy
         public NDarray expand_dims(int axis)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.expand_dims(@this, axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                axis,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("expand_dims", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -766,8 +820,14 @@ namespace Numpy
         public NDarray squeeze(params int[] axis)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.squeeze(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("squeeze", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -784,8 +844,14 @@ namespace Numpy
         public NDarray asfarray(Dtype dtype = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.asfarray(@this, dtype:dtype);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            dynamic py = __self__.InvokeMethod("asfarray", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -800,8 +866,14 @@ namespace Numpy
         public NDarray asfortranarray(Dtype dtype = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.asfortranarray(@this, dtype:dtype);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            dynamic py = __self__.InvokeMethod("asfortranarray", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -826,8 +898,15 @@ namespace Numpy
         public NDarray asarray_chkfinite(Dtype dtype = null, string order = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.asarray_chkfinite(@this, dtype:dtype, order:order);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("asarray_chkfinite", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -854,8 +933,15 @@ namespace Numpy
         public NDarray require(Dtype dtype, string[] requirements = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.require(@this, dtype, requirements:requirements);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                dtype,
+            });
+            var kwargs=new PyDict();
+            if (requirements!=null) kwargs["requirements"]=ToPython(requirements);
+            dynamic py = __self__.InvokeMethod("require", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -884,8 +970,15 @@ namespace Numpy
         public NDarray[] split(int[] indices_or_sections, int? axis = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.split(@this, indices_or_sections, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                indices_or_sections,
+            });
+            var kwargs=new PyDict();
+            if (axis!=0) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("split", pyargs, kwargs);
+            return ToCsharp<NDarray[]>(py);
         }
         
         /// <summary>
@@ -919,8 +1012,14 @@ namespace Numpy
         public NDarray tile(NDarray reps)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.tile(@this, reps);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                reps,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("tile", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -943,8 +1042,15 @@ namespace Numpy
         public NDarray repeat(int[] repeats, int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.repeat(@this, repeats, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                repeats,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("repeat", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -979,8 +1085,15 @@ namespace Numpy
         public NDarray delete(Slice obj, int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.delete(@this, obj, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                obj,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("delete", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1023,8 +1136,16 @@ namespace Numpy
         public NDarray insert(int obj = 0, NDarray values = null, int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.insert(@this, obj:obj, values:values, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (obj!=0) kwargs["obj"]=ToPython(obj);
+            if (values!=null) kwargs["values"]=ToPython(values);
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("insert", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1053,8 +1174,15 @@ namespace Numpy
         public NDarray append(NDarray values, int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.append(@this, values, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                values,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("append", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1073,8 +1201,14 @@ namespace Numpy
         public NDarray trim_zeros(string trim = "fb")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.trim_zeros(@this, trim:trim);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (trim!="fb") kwargs["trim"]=ToPython(trim);
+            dynamic py = __self__.InvokeMethod("trim_zeros", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1116,8 +1250,14 @@ namespace Numpy
         public NDarray unique(int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.unique(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("unique", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1171,8 +1311,17 @@ namespace Numpy
         public NDarray[] unique(bool return_index, bool return_inverse, bool return_counts, int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.unique(@this, return_index:return_index, return_inverse:return_inverse, return_counts:return_counts, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (return_index!=null) kwargs["return_index"]=ToPython(return_index);
+            if (return_inverse!=null) kwargs["return_inverse"]=ToPython(return_inverse);
+            if (return_counts!=null) kwargs["return_counts"]=ToPython(return_counts);
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("unique", pyargs, kwargs);
+            return ToCsharp<NDarray[]>(py);
         }
         
         /// <summary>
@@ -1212,8 +1361,14 @@ namespace Numpy
         public NDarray flip(params int[] axis)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.flip(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("flip", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1236,8 +1391,9 @@ namespace Numpy
         public NDarray fliplr()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.fliplr(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("fliplr");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1261,8 +1417,9 @@ namespace Numpy
         public NDarray flipud()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.flipud(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("flipud");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1296,8 +1453,15 @@ namespace Numpy
         public NDarray roll(int[] shift, int[] axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.roll(@this, shift, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                shift,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("roll", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1324,8 +1488,15 @@ namespace Numpy
         public NDarray rot90(int k = 1, int[] axes = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.rot90(@this, k:k, axes:axes);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (k!=1) kwargs["k"]=ToPython(k);
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
+            dynamic py = __self__.InvokeMethod("rot90", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1360,8 +1531,16 @@ namespace Numpy
         public NDarray bitwise_and(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.bitwise_and(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("bitwise_and", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1396,8 +1575,16 @@ namespace Numpy
         public NDarray bitwise_or(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.bitwise_or(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("bitwise_or", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1432,8 +1619,16 @@ namespace Numpy
         public NDarray bitwise_xor(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.bitwise_xor(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("bitwise_xor", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1481,8 +1676,15 @@ namespace Numpy
         public NDarray invert(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.invert(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("invert", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1516,8 +1718,16 @@ namespace Numpy
         public NDarray right_shift(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.right_shift(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("right_shift", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1540,8 +1750,14 @@ namespace Numpy
         public NDarray packbits(int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.packbits(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("packbits", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1564,8 +1780,14 @@ namespace Numpy
         public NDarray unpackbits(int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.unpackbits(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("unpackbits", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1585,8 +1807,9 @@ namespace Numpy
         public Dtype min_scalar_type()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.min_scalar_type(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("min_scalar_type");
+            return ToCsharp<Dtype>(py);
         }
         
         /// <summary>
@@ -1611,8 +1834,14 @@ namespace Numpy
         public Dtype common_type(NDarray array1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.common_type(@this, array1);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                array1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("common_type", pyargs, kwargs);
+            return ToCsharp<Dtype>(py);
         }
         
         /// <summary>
@@ -1640,8 +1869,9 @@ namespace Numpy
         public NDarray i0()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.i0(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("i0");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1680,8 +1910,17 @@ namespace Numpy
         public NDarray fv(NDarray nper, NDarray pmt, NDarray pv, string @when = "end")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.fv(@this, nper, pmt, pv, @when:@when);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                nper,
+                pmt,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("fv", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1715,8 +1954,17 @@ namespace Numpy
         public NDarray pv(NDarray nper, NDarray pmt, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.pv(@this, nper, pmt, fv:fv, @when:@when);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                nper,
+                pmt,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("pv", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1764,8 +2012,17 @@ namespace Numpy
         public NDarray pmt(NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.pmt(@this, nper, pv, fv:fv, @when:@when);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                nper,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("pmt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1791,8 +2048,17 @@ namespace Numpy
         public void ppmt(NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.ppmt(@this, per, nper, pv, fv:fv, @when:@when);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                per,
+                nper,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("ppmt", pyargs, kwargs);
         }
         
         /// <summary>
@@ -1835,8 +2101,18 @@ namespace Numpy
         public NDarray ipmt(NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.ipmt(@this, per, nper, pv, fv:fv, @when:@when);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                per,
+                nper,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("ipmt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -1871,8 +2147,9 @@ namespace Numpy
         public float irr()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.irr(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("irr");
+            return ToCsharp<float>(py);
         }
         
         /// <summary>
@@ -1890,8 +2167,15 @@ namespace Numpy
         public float mirr(ValueType finance_rate, ValueType reinvest_rate)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.mirr(@this, finance_rate, reinvest_rate);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                finance_rate,
+                reinvest_rate,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("mirr", pyargs, kwargs);
+            return ToCsharp<float>(py);
         }
         
         /// <summary>
@@ -1920,8 +2204,16 @@ namespace Numpy
         public void nper(NDarray pmt, NDarray pv, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.nper(@this, pmt, pv, fv:fv, @when:@when);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                pmt,
+                pv,
+            });
+            var kwargs=new PyDict();
+            if (fv!=null) kwargs["fv"]=ToPython(fv);
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            dynamic py = __self__.InvokeMethod("nper", pyargs, kwargs);
         }
         
         /// <summary>
@@ -1975,8 +2267,19 @@ namespace Numpy
         public void rate(NDarray pmt, NDarray pv, NDarray fv, string @when = "end", double? guess = null, double? tol = null, int? maxiter = 100)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.rate(@this, pmt, pv, fv, @when:@when, guess:guess, tol:tol, maxiter:maxiter);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                pmt,
+                pv,
+                fv,
+            });
+            var kwargs=new PyDict();
+            if (@when!="end") kwargs["when"]=ToPython(@when);
+            if (guess!=null) kwargs["guess"]=ToPython(guess);
+            if (tol!=null) kwargs["tol"]=ToPython(tol);
+            if (maxiter!=100) kwargs["maxiter"]=ToPython(maxiter);
+            dynamic py = __self__.InvokeMethod("rate", pyargs, kwargs);
         }
         
         /// <summary>
@@ -2001,8 +2304,9 @@ namespace Numpy
         public NDarray[] nonzero()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nonzero(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("nonzero");
+            return ToCsharp<NDarray[]>(py);
         }
         
         /// <summary>
@@ -2029,8 +2333,15 @@ namespace Numpy
         public NDarray @where(NDarray y, NDarray x)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.@where(@this, y, x);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                y,
+                x,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("where", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2051,8 +2362,15 @@ namespace Numpy
         public NDarray[] unravel_index(Shape shape, string order = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.unravel_index(@this, shape, order:order);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                shape,
+            });
+            var kwargs=new PyDict();
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("unravel_index", pyargs, kwargs);
+            return ToCsharp<NDarray[]>(py);
         }
         
         /// <summary>
@@ -2065,8 +2383,8 @@ namespace Numpy
         public void diag_indices_from()
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.diag_indices_from(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("diag_indices_from");
         }
         
         /// <summary>
@@ -2082,8 +2400,13 @@ namespace Numpy
         public void tril_indices_from(int? k = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.tril_indices_from(@this, k:k);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (k!=0) kwargs["k"]=ToPython(k);
+            dynamic py = __self__.InvokeMethod("tril_indices_from", pyargs, kwargs);
         }
         
         /// <summary>
@@ -2102,8 +2425,14 @@ namespace Numpy
         public NDarray[] triu_indices_from(int? k = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.triu_indices_from(@this, k:k);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (k!=0) kwargs["k"]=ToPython(k);
+            dynamic py = __self__.InvokeMethod("triu_indices_from", pyargs, kwargs);
+            return ToCsharp<NDarray[]>(py);
         }
         
         /// <summary>
@@ -2139,8 +2468,14 @@ namespace Numpy
         public void take_along_axis(NDarray indices, int axis)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.take_along_axis(@this, indices, axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                indices,
+                axis,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("take_along_axis", pyargs, kwargs);
         }
         
         /// <summary>
@@ -2211,8 +2546,16 @@ namespace Numpy
         public NDarray diagonal(int? offset = 0, int? axis1 = 0, int? axis2 = 1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.diagonal(@this, offset:offset, axis1:axis1, axis2:axis2);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (offset!=0) kwargs["offset"]=ToPython(offset);
+            if (axis1!=0) kwargs["axis1"]=ToPython(axis1);
+            if (axis2!=1) kwargs["axis2"]=ToPython(axis2);
+            dynamic py = __self__.InvokeMethod("diagonal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2240,8 +2583,14 @@ namespace Numpy
         public void place(NDarray mask, NDarray vals)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.place(@this, mask, vals);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                mask,
+                vals,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("place", pyargs, kwargs);
         }
         
         /// <summary>
@@ -2270,8 +2619,15 @@ namespace Numpy
         public void put(NDarray ind, NDarray v, string mode = "raise")
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.put(@this, ind, v, mode:mode);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ind,
+                v,
+            });
+            var kwargs=new PyDict();
+            if (mode!="raise") kwargs["mode"]=ToPython(mode);
+            dynamic py = __self__.InvokeMethod("put", pyargs, kwargs);
         }
         
         /// <summary>
@@ -2311,8 +2667,15 @@ namespace Numpy
         public void put_along_axis(NDarray indices, NDarray[] values, int axis)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.put_along_axis(@this, indices, values, axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                indices,
+                values,
+                axis,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("put_along_axis", pyargs, kwargs);
         }
         
         /// <summary>
@@ -2336,8 +2699,14 @@ namespace Numpy
         public void putmask(NDarray mask, NDarray values)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.putmask(@this, mask, values);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                mask,
+                values,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("putmask", pyargs, kwargs);
         }
         
         /// <summary>
@@ -2368,8 +2737,14 @@ namespace Numpy
         public void fill_diagonal(ValueType val, bool wrap = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.fill_diagonal(@this, val, wrap:wrap);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                val,
+            });
+            var kwargs=new PyDict();
+            if (wrap!=false) kwargs["wrap"]=ToPython(wrap);
+            dynamic py = __self__.InvokeMethod("fill_diagonal", pyargs, kwargs);
         }
         
         /*
@@ -2446,8 +2821,20 @@ namespace Numpy
         public void nditer(string[] flags = null, list of list of str op_flags = null, dtype or tuple of dtype(s) op_dtypes = null, string order = null, string casting = null, list of list of ints op_axes = null, tuple of ints itershape = null, int? buffersize = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.nditer(@this, flags:flags, op_flags:op_flags, op_dtypes:op_dtypes, order:order, casting:casting, op_axes:op_axes, itershape:itershape, buffersize:buffersize);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (flags!=null) kwargs["flags"]=ToPython(flags);
+            if (op_flags!=null) kwargs["op_flags"]=ToPython(op_flags);
+            if (op_dtypes!=null) kwargs["op_dtypes"]=ToPython(op_dtypes);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            if (casting!=null) kwargs["casting"]=ToPython(casting);
+            if (op_axes!=null) kwargs["op_axes"]=ToPython(op_axes);
+            if (itershape!=null) kwargs["itershape"]=ToPython(itershape);
+            if (buffersize!=null) kwargs["buffersize"]=ToPython(buffersize);
+            dynamic py = __self__.InvokeMethod("nditer", pyargs, kwargs);
         }
         */
         
@@ -2459,8 +2846,8 @@ namespace Numpy
         public void ndenumerate()
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.ndenumerate(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("ndenumerate");
         }
         
         /*
@@ -2483,8 +2870,14 @@ namespace Numpy
         public tuple of nditer nested_iters(params int[] axes)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nested_iters(@this, axes:axes);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
+            dynamic py = __self__.InvokeMethod("nested_iters", pyargs, kwargs);
+            return ToCsharp<tuple of nditer>(py);
         }
         */
         
@@ -2580,8 +2973,25 @@ namespace Numpy
         public string array2string(int? max_line_width = null, int? precision = null, bool? suppress_small = null, string separator = " ", string prefix = "", string suffix = "", dict of callables formatter = null, int? threshold = null, int? edgeitems = null, string sign = null, string floatmode = null, string or False legacy = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.array2string(@this, max_line_width:max_line_width, precision:precision, suppress_small:suppress_small, separator:separator, prefix:prefix, suffix:suffix, formatter:formatter, threshold:threshold, edgeitems:edgeitems, sign:sign, floatmode:floatmode, legacy:legacy);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (max_line_width!=null) kwargs["max_line_width"]=ToPython(max_line_width);
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (suppress_small!=null) kwargs["suppress_small"]=ToPython(suppress_small);
+            if (separator!=" ") kwargs["separator"]=ToPython(separator);
+            if (prefix!="") kwargs["prefix"]=ToPython(prefix);
+            if (suffix!="") kwargs["suffix"]=ToPython(suffix);
+            if (formatter!=null) kwargs["formatter"]=ToPython(formatter);
+            if (threshold!=null) kwargs["threshold"]=ToPython(threshold);
+            if (edgeitems!=null) kwargs["edgeitems"]=ToPython(edgeitems);
+            if (sign!=null) kwargs["sign"]=ToPython(sign);
+            if (floatmode!=null) kwargs["floatmode"]=ToPython(floatmode);
+            if (legacy!=null) kwargs["legacy"]=ToPython(legacy);
+            dynamic py = __self__.InvokeMethod("array2string", pyargs, kwargs);
+            return ToCsharp<string>(py);
         }
         */
         
@@ -2610,8 +3020,16 @@ namespace Numpy
         public string array_repr(int? max_line_width = null, int? precision = null, bool? suppress_small = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.array_repr(@this, max_line_width:max_line_width, precision:precision, suppress_small:suppress_small);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (max_line_width!=null) kwargs["max_line_width"]=ToPython(max_line_width);
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (suppress_small!=null) kwargs["suppress_small"]=ToPython(suppress_small);
+            dynamic py = __self__.InvokeMethod("array_repr", pyargs, kwargs);
+            return ToCsharp<string>(py);
         }
         
         /// <summary>
@@ -2642,8 +3060,15 @@ namespace Numpy
         public void array_str(int? max_line_width = null, int? precision = null, bool? suppress_small = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            NumPy.Instance.array_str(@this, max_line_width:max_line_width, precision:precision, suppress_small:suppress_small);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (max_line_width!=null) kwargs["max_line_width"]=ToPython(max_line_width);
+            if (precision!=null) kwargs["precision"]=ToPython(precision);
+            if (suppress_small!=null) kwargs["suppress_small"]=ToPython(suppress_small);
+            dynamic py = __self__.InvokeMethod("array_str", pyargs, kwargs);
         }
         
         /// <summary>
@@ -2676,8 +3101,15 @@ namespace Numpy
         public NDarray dot(NDarray b, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.dot(@this, b, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("dot", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2704,8 +3136,14 @@ namespace Numpy
         public NDarray vdot(NDarray b)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.vdot(@this, b);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("vdot", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2733,8 +3171,14 @@ namespace Numpy
         public NDarray inner(NDarray a)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.inner(@this, a);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("inner", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2760,8 +3204,15 @@ namespace Numpy
         public NDarray outer(NDarray b, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.outer(@this, b, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("outer", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2794,8 +3245,15 @@ namespace Numpy
         public NDarray matmul(NDarray x1, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.matmul(@this, x1, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("matmul", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2828,8 +3286,15 @@ namespace Numpy
         public NDarray tensordot(NDarray a, int[] axes = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.tensordot(@this, a, axes:axes);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
+            dynamic py = __self__.InvokeMethod("tensordot", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2856,8 +3321,14 @@ namespace Numpy
         public NDarray kron(NDarray a)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.kron(@this, a);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("kron", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2912,8 +3383,18 @@ namespace Numpy
         public NDarray trace(int? offset = 0, int? axis2 = null, int? axis1 = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.trace(@this, offset:offset, axis2:axis2, axis1:axis1, dtype:dtype, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (offset!=0) kwargs["offset"]=ToPython(offset);
+            if (axis2!=null) kwargs["axis2"]=ToPython(axis2);
+            if (axis1!=null) kwargs["axis1"]=ToPython(axis1);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("trace", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -2964,8 +3445,16 @@ namespace Numpy
         public NDarray<bool> all(int[] axis, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.all(@this, axis:axis, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("all", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
         }
         
         /// <summary>
@@ -2983,8 +3472,9 @@ namespace Numpy
         public bool all()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.all(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("all");
+            return ToCsharp<bool>(py);
         }
         
         /// <summary>
@@ -3037,8 +3527,16 @@ namespace Numpy
         public NDarray<bool> any(int[] axis, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.any(@this, axis:axis, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("any", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
         }
         
         /// <summary>
@@ -3058,8 +3556,9 @@ namespace Numpy
         public bool any()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.any(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("any");
+            return ToCsharp<bool>(py);
         }
         
         /// <summary>
@@ -3105,8 +3604,15 @@ namespace Numpy
         public NDarray isfinite(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isfinite(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("isfinite", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3145,8 +3651,15 @@ namespace Numpy
         public NDarray<bool> isinf(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isinf(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("isinf", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
         }
         
         /// <summary>
@@ -3179,8 +3692,15 @@ namespace Numpy
         public NDarray isnan(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isnan(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("isnan", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3207,8 +3727,15 @@ namespace Numpy
         public NDarray isnat(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isnat(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("isnat", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3245,8 +3772,14 @@ namespace Numpy
         public NDarray isneginf(NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isneginf(@this, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("isneginf", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3282,8 +3815,14 @@ namespace Numpy
         public NDarray isposinf(NDarray y = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isposinf(@this, y:y);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (y!=null) kwargs["y"]=ToPython(y);
+            dynamic py = __self__.InvokeMethod("isposinf", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3298,8 +3837,9 @@ namespace Numpy
         public NDarray iscomplex()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.iscomplex(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("iscomplex");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3314,8 +3854,9 @@ namespace Numpy
         public bool isfortran()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isfortran(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("isfortran");
+            return ToCsharp<bool>(py);
         }
         
         /// <summary>
@@ -3330,8 +3871,9 @@ namespace Numpy
         public NDarray isreal()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isreal(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("isreal");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3362,8 +3904,16 @@ namespace Numpy
         public NDarray logical_and(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.logical_and(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logical_and", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3394,8 +3944,16 @@ namespace Numpy
         public NDarray logical_or(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.logical_or(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logical_or", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3423,8 +3981,15 @@ namespace Numpy
         public NDarray<bool> logical_not(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.logical_not(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logical_not", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
         }
         
         /// <summary>
@@ -3457,8 +4022,16 @@ namespace Numpy
         public NDarray<bool> logical_xor(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.logical_xor(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logical_xor", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
         }
         
         /// <summary>
@@ -3511,8 +4084,17 @@ namespace Numpy
         public bool allclose(NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.allclose(@this, a, rtol:rtol, atol:atol, equal_nan:equal_nan);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (rtol!=1e-05f) kwargs["rtol"]=ToPython(rtol);
+            if (atol!=1e-08f) kwargs["atol"]=ToPython(atol);
+            if (equal_nan!=false) kwargs["equal_nan"]=ToPython(equal_nan);
+            dynamic py = __self__.InvokeMethod("allclose", pyargs, kwargs);
+            return ToCsharp<bool>(py);
         }
         
         /// <summary>
@@ -3567,8 +4149,17 @@ namespace Numpy
         public NDarray isclose(NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isclose(@this, a, rtol:rtol, atol:atol, equal_nan:equal_nan);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (rtol!=1e-05f) kwargs["rtol"]=ToPython(rtol);
+            if (atol!=1e-08f) kwargs["atol"]=ToPython(atol);
+            if (equal_nan!=false) kwargs["equal_nan"]=ToPython(equal_nan);
+            dynamic py = __self__.InvokeMethod("isclose", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3583,8 +4174,14 @@ namespace Numpy
         public bool array_equal(NDarray a1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.array_equal(@this, a1);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("array_equal", pyargs, kwargs);
+            return ToCsharp<bool>(py);
         }
         
         /// <summary>
@@ -3602,8 +4199,14 @@ namespace Numpy
         public bool array_equiv(NDarray a1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.array_equiv(@this, a1);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("array_equiv", pyargs, kwargs);
+            return ToCsharp<bool>(py);
         }
         
         /// <summary>
@@ -3637,8 +4240,16 @@ namespace Numpy
         public NDarray greater(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.greater(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("greater", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3672,8 +4283,16 @@ namespace Numpy
         public NDarray<bool> greater_equal(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.greater_equal(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("greater_equal", pyargs, kwargs);
+            return ToCsharp<NDarray<bool>>(py);
         }
         
         /// <summary>
@@ -3707,8 +4326,16 @@ namespace Numpy
         public NDarray less(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.less(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("less", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3742,8 +4369,16 @@ namespace Numpy
         public NDarray less_equal(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.less_equal(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("less_equal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3774,8 +4409,16 @@ namespace Numpy
         public NDarray equal(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.equal(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("equal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3806,8 +4449,16 @@ namespace Numpy
         public NDarray not_equal(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.not_equal(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("not_equal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3853,8 +4504,15 @@ namespace Numpy
         public NDarray sin(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.sin(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("sin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3896,8 +4554,15 @@ namespace Numpy
         public NDarray cos(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.cos(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("cos", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3941,8 +4606,15 @@ namespace Numpy
         public NDarray tan(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.tan(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("tan", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -3997,8 +4669,15 @@ namespace Numpy
         public NDarray arcsin(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.arcsin(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arcsin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4054,8 +4733,15 @@ namespace Numpy
         public NDarray arccos(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.arccos(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arccos", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4113,8 +4799,15 @@ namespace Numpy
         public NDarray arctan(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.arctan(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arctan", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4151,8 +4844,16 @@ namespace Numpy
         public NDarray hypot(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.hypot(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("hypot", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4209,8 +4910,16 @@ namespace Numpy
         public NDarray arctan2(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.arctan2(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arctan2", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4238,8 +4947,15 @@ namespace Numpy
         public NDarray degrees(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.degrees(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("degrees", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4266,8 +4982,15 @@ namespace Numpy
         public NDarray radians(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.radians(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("radians", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4294,8 +5017,15 @@ namespace Numpy
         public NDarray unwrap(float? discont = 3.141592653589793f, int? axis = -1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.unwrap(@this, discont:discont, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (discont!=3.141592653589793f) kwargs["discont"]=ToPython(discont);
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("unwrap", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4326,8 +5056,15 @@ namespace Numpy
         public NDarray deg2rad(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.deg2rad(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("deg2rad", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4358,8 +5095,15 @@ namespace Numpy
         public NDarray rad2deg(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.rad2deg(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("rad2deg", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4405,8 +5149,15 @@ namespace Numpy
         public NDarray sinh(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.sinh(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("sinh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4435,8 +5186,15 @@ namespace Numpy
         public NDarray cosh(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.cosh(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("cosh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4473,8 +5231,15 @@ namespace Numpy
         public NDarray tanh(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.tanh(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("tanh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4521,8 +5286,15 @@ namespace Numpy
         public NDarray arcsinh(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.arcsinh(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arcsinh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4567,8 +5339,15 @@ namespace Numpy
         public NDarray arccosh(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.arccosh(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arccosh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4615,8 +5394,15 @@ namespace Numpy
         public NDarray arctanh(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.arctanh(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("arctanh", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4663,8 +5449,15 @@ namespace Numpy
         public NDarray around(int? decimals = 0, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.around(@this, decimals:decimals, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (decimals!=0) kwargs["decimals"]=ToPython(decimals);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("around", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4691,8 +5484,15 @@ namespace Numpy
         public NDarray rint(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.rint(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("rint", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4711,8 +5511,14 @@ namespace Numpy
         public NDarray fix(NDarray y = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.fix(@this, y:y);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (y!=null) kwargs["y"]=ToPython(y);
+            dynamic py = __self__.InvokeMethod("fix", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4749,8 +5555,15 @@ namespace Numpy
         public NDarray floor(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.floor(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("floor", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4781,8 +5594,15 @@ namespace Numpy
         public NDarray ceil(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.ceil(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("ceil", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4816,8 +5636,15 @@ namespace Numpy
         public NDarray trunc(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.trunc(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("trunc", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4884,8 +5711,18 @@ namespace Numpy
         public NDarray prod(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.prod(@this, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims, initial:initial);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            if (initial!=null) kwargs["initial"]=ToPython(initial);
+            dynamic py = __self__.InvokeMethod("prod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -4953,8 +5790,18 @@ namespace Numpy
         public NDarray sum(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.sum(@this, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims, initial:initial);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            if (initial!=null) kwargs["initial"]=ToPython(initial);
+            dynamic py = __self__.InvokeMethod("sum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5004,8 +5851,17 @@ namespace Numpy
         public NDarray nanprod(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanprod(@this, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanprod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5071,8 +5927,17 @@ namespace Numpy
         public NDarray nansum(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nansum(@this, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nansum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5110,8 +5975,16 @@ namespace Numpy
         public NDarray cumprod(int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.cumprod(@this, axis:axis, dtype:dtype, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("cumprod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5154,8 +6027,16 @@ namespace Numpy
         public NDarray cumsum(int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.cumsum(@this, axis:axis, dtype:dtype, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("cumsum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5193,8 +6074,16 @@ namespace Numpy
         public NDarray nancumprod(int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nancumprod(@this, axis:axis, dtype:dtype, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("nancumprod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5237,8 +6126,16 @@ namespace Numpy
         public NDarray nancumsum(int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nancumsum(@this, axis:axis, dtype:dtype, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("nancumsum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5304,8 +6201,17 @@ namespace Numpy
         public NDarray diff(int? n = 1, int? axis = -1, NDarray append = null, NDarray prepend = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.diff(@this, n:n, axis:axis, append:append, prepend:prepend);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (n!=1) kwargs["n"]=ToPython(n);
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (append!=null) kwargs["append"]=ToPython(append);
+            if (prepend!=null) kwargs["prepend"]=ToPython(prepend);
+            dynamic py = __self__.InvokeMethod("diff", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5329,8 +6235,15 @@ namespace Numpy
         public NDarray ediff1d(NDarray to_end = null, NDarray to_begin = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.ediff1d(@this, to_end:to_end, to_begin:to_begin);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (to_end!=null) kwargs["to_end"]=ToPython(to_end);
+            if (to_begin!=null) kwargs["to_begin"]=ToPython(to_begin);
+            dynamic py = __self__.InvokeMethod("ediff1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5395,8 +6308,16 @@ namespace Numpy
         public NDarray gradient(NDarray varargs = null, int? edge_order = null, int[] axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.gradient(@this, varargs:varargs, edge_order:edge_order, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (varargs!=null) kwargs["varargs"]=ToPython(varargs);
+            if (edge_order!=null) kwargs["edge_order"]=ToPython(edge_order);
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("gradient", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5446,8 +6367,18 @@ namespace Numpy
         public NDarray cross(NDarray b, int? axisa = -1, int? axisb = -1, int? axisc = -1, int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.cross(@this, b, axisa:axisa, axisb:axisb, axisc:axisc, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                b,
+            });
+            var kwargs=new PyDict();
+            if (axisa!=-1) kwargs["axisa"]=ToPython(axisa);
+            if (axisb!=-1) kwargs["axisb"]=ToPython(axisb);
+            if (axisc!=-1) kwargs["axisc"]=ToPython(axisc);
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("cross", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5486,8 +6417,16 @@ namespace Numpy
         public float trapz(NDarray x = null, float? dx = 1.0f, int? axis = -1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.trapz(@this, x:x, dx:dx, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (x!=null) kwargs["x"]=ToPython(x);
+            if (dx!=1.0f) kwargs["dx"]=ToPython(dx);
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("trapz", pyargs, kwargs);
+            return ToCsharp<float>(py);
         }
         
         /// <summary>
@@ -5531,8 +6470,15 @@ namespace Numpy
         public NDarray exp(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.exp(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("exp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5564,8 +6510,15 @@ namespace Numpy
         public NDarray expm1(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.expm1(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("expm1", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5594,8 +6547,15 @@ namespace Numpy
         public NDarray exp2(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.exp2(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("exp2", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5647,8 +6607,15 @@ namespace Numpy
         public NDarray log(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.log(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("log", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5697,8 +6664,15 @@ namespace Numpy
         public NDarray log10(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.log10(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("log10", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5743,8 +6717,15 @@ namespace Numpy
         public NDarray log2(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.log2(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("log2", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5796,8 +6777,15 @@ namespace Numpy
         public NDarray log1p(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.log1p(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("log1p", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5838,8 +6826,16 @@ namespace Numpy
         public NDarray logaddexp(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.logaddexp(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logaddexp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5879,8 +6875,16 @@ namespace Numpy
         public NDarray logaddexp2(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.logaddexp2(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("logaddexp2", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5909,8 +6913,9 @@ namespace Numpy
         public NDarray sinc()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.sinc(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("sinc");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5937,8 +6942,15 @@ namespace Numpy
         public NDarray signbit(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.signbit(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("signbit", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -5972,8 +6984,16 @@ namespace Numpy
         public NDarray copysign(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.copysign(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("copysign", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6020,8 +7040,18 @@ namespace Numpy
         public (NDarray, NDarray) frexp(NDarray out1 = null, NDarray out2 = null, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.frexp(@this, out1:out1, out2:out2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (out1!=null) kwargs["out1"]=ToPython(out1);
+            if (out2!=null) kwargs["out2"]=ToPython(out2);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("frexp", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -6060,8 +7090,16 @@ namespace Numpy
         public NDarray ldexp(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.ldexp(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("ldexp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6090,8 +7128,16 @@ namespace Numpy
         public NDarray nextafter(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nextafter(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("nextafter", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6127,8 +7173,15 @@ namespace Numpy
         public NDarray spacing(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.spacing(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("spacing", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6144,8 +7197,14 @@ namespace Numpy
         public NDarray lcm(NDarray x1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.lcm(@this, x1);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("lcm", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6161,8 +7220,14 @@ namespace Numpy
         public NDarray gcd(NDarray x1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.gcd(@this, x1);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("gcd", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6199,8 +7264,16 @@ namespace Numpy
         public NDarray @add(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.@add(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("add", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6236,8 +7309,15 @@ namespace Numpy
         public NDarray reciprocal(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.reciprocal(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("reciprocal", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6256,8 +7336,9 @@ namespace Numpy
         public NDarray positive()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.positive(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("positive");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6284,8 +7365,15 @@ namespace Numpy
         public NDarray negative(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.negative(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("negative", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6319,8 +7407,16 @@ namespace Numpy
         public NDarray multiply(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.multiply(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("multiply", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6366,8 +7462,16 @@ namespace Numpy
         public NDarray divide(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.divide(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("divide", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6401,8 +7505,16 @@ namespace Numpy
         public NDarray power(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.power(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("power", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6436,8 +7548,16 @@ namespace Numpy
         public NDarray subtract(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.subtract(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("subtract", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6483,8 +7603,16 @@ namespace Numpy
         public NDarray true_divide(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.true_divide(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("true_divide", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6517,8 +7645,16 @@ namespace Numpy
         public NDarray floor_divide(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.floor_divide(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("floor_divide", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6556,8 +7692,16 @@ namespace Numpy
         public NDarray float_power(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.float_power(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("float_power", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6601,8 +7745,16 @@ namespace Numpy
         public NDarray fmod(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.fmod(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("fmod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6643,8 +7795,16 @@ namespace Numpy
         public NDarray mod(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.mod(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("mod", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6682,8 +7842,16 @@ namespace Numpy
         public (NDarray, NDarray) modf(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.modf(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("modf", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -6724,8 +7892,16 @@ namespace Numpy
         public NDarray remainder(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.remainder(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("remainder", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6764,8 +7940,17 @@ namespace Numpy
         public (NDarray, NDarray) divmod(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.divmod(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("divmod", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -6781,8 +7966,14 @@ namespace Numpy
         public NDarray angle(bool? deg = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.angle(@this, deg:deg);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (deg!=false) kwargs["deg"]=ToPython(deg);
+            dynamic py = __self__.InvokeMethod("angle", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6798,8 +7989,9 @@ namespace Numpy
         public NDarray real()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.real(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("real");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6815,8 +8007,9 @@ namespace Numpy
         public NDarray imag()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.imag(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("imag");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6846,8 +8039,15 @@ namespace Numpy
         public NDarray conj(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.conj(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("conj", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6885,8 +8085,15 @@ namespace Numpy
         public NDarray convolve(NDarray v, string mode = "full")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.convolve(@this, v, mode:mode);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                v,
+            });
+            var kwargs=new PyDict();
+            if (mode!="full") kwargs["mode"]=ToPython(mode);
+            dynamic py = __self__.InvokeMethod("convolve", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6930,8 +8137,16 @@ namespace Numpy
         public NDarray clip(NDarray a_min, NDarray a_max, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.clip(@this, a_min, a_max, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a_min,
+                a_max,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("clip", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -6974,8 +8189,15 @@ namespace Numpy
         public NDarray sqrt(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.sqrt(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("sqrt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7005,8 +8227,15 @@ namespace Numpy
         public NDarray cbrt(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.cbrt(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("cbrt", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7033,8 +8262,15 @@ namespace Numpy
         public NDarray square(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.square(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("square", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7065,8 +8301,15 @@ namespace Numpy
         public NDarray absolute(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.absolute(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("absolute", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7098,8 +8341,15 @@ namespace Numpy
         public NDarray fabs(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.fabs(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("fabs", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7142,8 +8392,15 @@ namespace Numpy
         public NDarray sign(NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.sign(@this, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("sign", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7180,8 +8437,16 @@ namespace Numpy
         public NDarray heaviside(NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.heaviside(@this, x2, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x2,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("heaviside", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7230,8 +8495,16 @@ namespace Numpy
         public NDarray maximum(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.maximum(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("maximum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7280,8 +8553,16 @@ namespace Numpy
         public NDarray minimum(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.minimum(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("minimum", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7329,8 +8610,16 @@ namespace Numpy
         public NDarray fmax(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.fmax(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("fmax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7378,8 +8667,16 @@ namespace Numpy
         public NDarray fmin(NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.fmin(@this, x1, @out:@out, @where:@where);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x1,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (@where!=null) kwargs["where"]=ToPython(@where);
+            dynamic py = __self__.InvokeMethod("fmin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7416,8 +8713,14 @@ namespace Numpy
         public NDarray nan_to_num(bool? copy = true)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nan_to_num(@this, copy:copy);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (copy!=true) kwargs["copy"]=ToPython(copy);
+            dynamic py = __self__.InvokeMethod("nan_to_num", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7445,8 +8748,14 @@ namespace Numpy
         public NDarray real_if_close(float tol = 100)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.real_if_close(@this, tol:tol);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (tol!=100) kwargs["tol"]=ToPython(tol);
+            dynamic py = __self__.InvokeMethod("real_if_close", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /*
@@ -7492,8 +8801,18 @@ namespace Numpy
         public float or complex (corresponding to fp) or ndarray interp(1-D sequence of floats xp, 1-D sequence of float or complex fp, optional float or complex corresponding to fp left = null, optional float or complex corresponding to fp right = null, None or float period = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.interp(@this, xp, fp, left:left, right:right, period:period);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                xp,
+                fp,
+            });
+            var kwargs=new PyDict();
+            if (left!=null) kwargs["left"]=ToPython(left);
+            if (right!=null) kwargs["right"]=ToPython(right);
+            if (period!=null) kwargs["period"]=ToPython(period);
+            dynamic py = __self__.InvokeMethod("interp", pyargs, kwargs);
+            return ToCsharp<float or complex (corresponding to fp) or ndarray>(py);
         }
         */
         
@@ -7588,8 +8907,19 @@ namespace Numpy
         public NDarray pad(NDarray pad_width, string mode, int[] stat_length = null, int[] constant_values = null, int[] end_values = null, string reflect_type = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.pad(@this, pad_width, mode, stat_length:stat_length, constant_values:constant_values, end_values:end_values, reflect_type:reflect_type);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                pad_width,
+                mode,
+            });
+            var kwargs=new PyDict();
+            if (stat_length!=null) kwargs["stat_length"]=ToPython(stat_length);
+            if (constant_values!=null) kwargs["constant_values"]=ToPython(constant_values);
+            if (end_values!=null) kwargs["end_values"]=ToPython(end_values);
+            if (reflect_type!=null) kwargs["reflect_type"]=ToPython(reflect_type);
+            dynamic py = __self__.InvokeMethod("pad", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7634,8 +8964,16 @@ namespace Numpy
         public NDarray in1d(NDarray ar2, bool? assume_unique = false, bool? invert = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.in1d(@this, ar2, assume_unique:assume_unique, invert:invert);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar2,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            if (invert!=false) kwargs["invert"]=ToPython(invert);
+            dynamic py = __self__.InvokeMethod("in1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7673,8 +9011,17 @@ namespace Numpy
         public (NDarray, NDarray, NDarray) intersect1d(NDarray ar1, bool assume_unique = false, bool return_indices = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.intersect1d(@this, ar1, assume_unique:assume_unique, return_indices:return_indices);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar1,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            if (return_indices!=false) kwargs["return_indices"]=ToPython(return_indices);
+            dynamic py = __self__.InvokeMethod("intersect1d", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
         }
         
         /// <summary>
@@ -7728,8 +9075,16 @@ namespace Numpy
         public NDarray isin(NDarray test_elements, bool? assume_unique = false, bool? invert = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.isin(@this, test_elements, assume_unique:assume_unique, invert:invert);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                test_elements,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            if (invert!=false) kwargs["invert"]=ToPython(invert);
+            dynamic py = __self__.InvokeMethod("isin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7753,8 +9108,15 @@ namespace Numpy
         public NDarray setdiff1d(NDarray ar2, bool assume_unique = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.setdiff1d(@this, ar2, assume_unique:assume_unique);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar2,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            dynamic py = __self__.InvokeMethod("setdiff1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7778,8 +9140,15 @@ namespace Numpy
         public NDarray setxor1d(NDarray ar1, bool assume_unique = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.setxor1d(@this, ar1, assume_unique:assume_unique);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar1,
+            });
+            var kwargs=new PyDict();
+            if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
+            dynamic py = __self__.InvokeMethod("setxor1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7798,8 +9167,14 @@ namespace Numpy
         public NDarray union1d(NDarray ar1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.union1d(@this, ar1);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                ar1,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("union1d", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7873,8 +9248,16 @@ namespace Numpy
         public NDarray sort(int? axis = -1, string kind = "quicksort", string order = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.sort(@this, axis:axis, kind:kind, order:order);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!="quicksort") kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("sort", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7902,8 +9285,14 @@ namespace Numpy
         public NDarray lexsort(int? axis = -1)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.lexsort(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("lexsort", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7950,8 +9339,16 @@ namespace Numpy
         public NDarray argsort(int? axis = -1, string kind = "quicksort", string order = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.argsort(@this, axis:axis, kind:kind, order:order);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!="quicksort") kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("argsort", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7967,8 +9364,9 @@ namespace Numpy
         public NDarray msort()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.msort(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("msort");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -7980,8 +9378,9 @@ namespace Numpy
         public NDarray sort_complex()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.sort_complex(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("sort_complex");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8054,8 +9453,17 @@ namespace Numpy
         public NDarray partition(int[] kth, int? axis = -1, string kind = "introselect", string order = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.partition(@this, kth, axis:axis, kind:kind, order:order);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                kth,
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!="introselect") kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("partition", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8109,8 +9517,17 @@ namespace Numpy
         public NDarray argpartition(int[] kth, int? axis = -1, string kind = "introselect", string order = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.argpartition(@this, kth, axis:axis, kind:kind, order:order);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                kth,
+            });
+            var kwargs=new PyDict();
+            if (axis!=-1) kwargs["axis"]=ToPython(axis);
+            if (kind!="introselect") kwargs["kind"]=ToPython(kind);
+            if (order!=null) kwargs["order"]=ToPython(order);
+            dynamic py = __self__.InvokeMethod("argpartition", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8138,8 +9555,15 @@ namespace Numpy
         public NDarray argmax(int? axis = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.argmax(@this, axis:axis, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("argmax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8159,8 +9583,14 @@ namespace Numpy
         public NDarray nanargmax(int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanargmax(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("nanargmax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8188,8 +9618,15 @@ namespace Numpy
         public NDarray argmin(int? axis = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.argmin(@this, axis:axis, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("argmin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8209,8 +9646,14 @@ namespace Numpy
         public NDarray nanargmin(int? axis = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanargmin(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("nanargmin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8231,8 +9674,9 @@ namespace Numpy
         public NDarray argwhere()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.argwhere(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("argwhere");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8247,8 +9691,9 @@ namespace Numpy
         public NDarray flatnonzero()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.flatnonzero(@this);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("flatnonzero");
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8293,8 +9738,16 @@ namespace Numpy
         public NDarray<int> searchsorted(NDarray v, string side = "left", NDarray sorter = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.searchsorted(@this, v, side:side, sorter:sorter);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                v,
+            });
+            var kwargs=new PyDict();
+            if (side!="left") kwargs["side"]=ToPython(side);
+            if (sorter!=null) kwargs["sorter"]=ToPython(sorter);
+            dynamic py = __self__.InvokeMethod("searchsorted", pyargs, kwargs);
+            return ToCsharp<NDarray<int>>(py);
         }
         
         /// <summary>
@@ -8315,8 +9768,14 @@ namespace Numpy
         public NDarray extract(NDarray arr)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.extract(@this, arr);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                arr,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("extract", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8348,8 +9807,14 @@ namespace Numpy
         public NDarray<int> count_nonzero(params int[] axis)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.count_nonzero(@this, axis:axis);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("count_nonzero", pyargs, kwargs);
+            return ToCsharp<NDarray<int>>(py);
         }
         
         /// <summary>
@@ -8375,132 +9840,9 @@ namespace Numpy
         public int count_nonzero()
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.count_nonzero(@this);
-        }
-        
-        /// <summary>
-        ///	Return the minimum of an array or minimum along an axis.<br></br>
-        ///	
-        ///	Notes
-        ///	
-        ///	NaN values are propagated, that is if at least one item is NaN, the
-        ///	corresponding min value will be NaN as well.<br></br>
-        ///	 To ignore NaN values
-        ///	(MATLAB behavior), please use nanmin.<br></br>
-        ///	
-        ///	Don’t use amin for element-wise comparison of 2 arrays; when
-        ///	a.shape[0] is 2, minimum(a[0], a[1]) is faster than
-        ///	amin(a, axis=0).
-        /// </summary>
-        /// <param name="axis">
-        ///	Axis or axes along which to operate.<br></br>
-        ///	By default, flattened input is
-        ///	used.<br></br>
-        ///	
-        ///	If this is a tuple of ints, the minimum is selected over multiple axes,
-        ///	instead of a single axis or all the axes as before.
-        /// </param>
-        /// <param name="out">
-        ///	Alternative output array in which to place the result.<br></br>
-        ///	Must
-        ///	be of the same shape and buffer length as the expected output.<br></br>
-        ///	
-        ///	See doc.ufuncs (Section “Output arguments”) for more details.
-        /// </param>
-        /// <param name="keepdims">
-        ///	If this is set to True, the axes which are reduced are left
-        ///	in the result as dimensions with size one.<br></br>
-        ///	With this option,
-        ///	the result will broadcast correctly against the input array.<br></br>
-        ///	
-        ///	If the default value is passed, then keepdims will not be
-        ///	passed through to the amin method of sub-classes of
-        ///	ndarray, however any non-default value will be.<br></br>
-        ///	If the
-        ///	sub-class’ method does not implement keepdims any
-        ///	exceptions will be raised.
-        /// </param>
-        /// <param name="initial">
-        ///	The maximum value of an output element.<br></br>
-        ///	Must be present to allow
-        ///	computation on empty slice.<br></br>
-        ///	See reduce for details.
-        /// </param>
-        /// <returns>
-        ///	Minimum of a.<br></br>
-        ///	 If axis is None, the result is a scalar value.<br></br>
-        ///	
-        ///	If axis is given, the result is an array of dimension
-        ///	a.ndim - 1.
-        /// </returns>
-        public NDarray amin(int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-        {
-            //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.amin(@this, axis:axis, @out:@out, keepdims:keepdims, initial:initial);
-        }
-        
-        /// <summary>
-        ///	Return the maximum of an array or maximum along an axis.<br></br>
-        ///	
-        ///	Notes
-        ///	
-        ///	NaN values are propagated, that is if at least one item is NaN, the
-        ///	corresponding max value will be NaN as well.<br></br>
-        ///	 To ignore NaN values
-        ///	(MATLAB behavior), please use nanmax.<br></br>
-        ///	
-        ///	Don’t use amax for element-wise comparison of 2 arrays; when
-        ///	a.shape[0] is 2, maximum(a[0], a[1]) is faster than
-        ///	amax(a, axis=0).
-        /// </summary>
-        /// <param name="axis">
-        ///	Axis or axes along which to operate.<br></br>
-        ///	By default, flattened input is
-        ///	used.<br></br>
-        ///	
-        ///	If this is a tuple of ints, the maximum is selected over multiple axes,
-        ///	instead of a single axis or all the axes as before.
-        /// </param>
-        /// <param name="out">
-        ///	Alternative output array in which to place the result.<br></br>
-        ///	Must
-        ///	be of the same shape and buffer length as the expected output.<br></br>
-        ///	
-        ///	See doc.ufuncs (Section “Output arguments”) for more details.
-        /// </param>
-        /// <param name="keepdims">
-        ///	If this is set to True, the axes which are reduced are left
-        ///	in the result as dimensions with size one.<br></br>
-        ///	With this option,
-        ///	the result will broadcast correctly against the input array.<br></br>
-        ///	
-        ///	If the default value is passed, then keepdims will not be
-        ///	passed through to the amax method of sub-classes of
-        ///	ndarray, however any non-default value will be.<br></br>
-        ///	If the
-        ///	sub-class’ method does not implement keepdims any
-        ///	exceptions will be raised.
-        /// </param>
-        /// <param name="initial">
-        ///	The minimum value of an output element.<br></br>
-        ///	Must be present to allow
-        ///	computation on empty slice.<br></br>
-        ///	See reduce for details.
-        /// </param>
-        /// <returns>
-        ///	Maximum of a.<br></br>
-        ///	 If axis is None, the result is a scalar value.<br></br>
-        ///	
-        ///	If axis is given, the result is an array of dimension
-        ///	a.ndim - 1.
-        /// </returns>
-        public NDarray amax(int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-        {
-            //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.amax(@this, axis:axis, @out:@out, keepdims:keepdims, initial:initial);
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("count_nonzero");
+            return ToCsharp<int>(py);
         }
         
         /// <summary>
@@ -8556,8 +9898,16 @@ namespace Numpy
         public NDarray nanmin(int[] axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanmin(@this, axis:axis, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanmin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8613,8 +9963,16 @@ namespace Numpy
         public NDarray nanmax(int[] axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanmax(@this, axis:axis, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanmax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8658,8 +10016,16 @@ namespace Numpy
         public NDarray ptp(int[] axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.ptp(@this, axis:axis, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("ptp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -8730,8 +10096,19 @@ namespace Numpy
         public NDarray<double> percentile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.percentile(@this, q, axis:axis, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                q,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            if (keepdims!=false) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("percentile", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -8790,8 +10167,17 @@ namespace Numpy
         public double percentile(NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.percentile(@this, q, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                q,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            dynamic py = __self__.InvokeMethod("percentile", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -8870,8 +10256,19 @@ namespace Numpy
         public NDarray<double> nanpercentile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanpercentile(@this, q, axis:axis, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                q,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanpercentile", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -8931,8 +10328,17 @@ namespace Numpy
         public double nanpercentile(NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanpercentile(@this, q, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                q,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            dynamic py = __self__.InvokeMethod("nanpercentile", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -9003,8 +10409,19 @@ namespace Numpy
         public NDarray<double> quantile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.quantile(@this, q, axis:axis, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                q,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            if (keepdims!=false) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("quantile", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -9063,8 +10480,17 @@ namespace Numpy
         public double quantile(NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.quantile(@this, q, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                q,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            dynamic py = __self__.InvokeMethod("quantile", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -9132,8 +10558,19 @@ namespace Numpy
         public NDarray<double> nanquantile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanquantile(@this, q, axis:axis, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                q,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanquantile", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -9182,8 +10619,17 @@ namespace Numpy
         public double nanquantile(NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanquantile(@this, q, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                q,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            dynamic py = __self__.InvokeMethod("nanquantile", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -9243,8 +10689,17 @@ namespace Numpy
         public NDarray<double> median(int[] axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.median(@this, axis:axis, @out:@out, overwrite_input:overwrite_input, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (keepdims!=false) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("median", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -9291,8 +10746,15 @@ namespace Numpy
         public double median(NDarray @out = null, bool? overwrite_input = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.median(@this, @out:@out, overwrite_input:overwrite_input);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            dynamic py = __self__.InvokeMethod("median", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -9349,8 +10811,16 @@ namespace Numpy
         public NDarray<double> average(int[] axis, NDarray weights = null, bool? returned = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.average(@this, axis:axis, weights:weights, returned:returned);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (returned!=false) kwargs["returned"]=ToPython(returned);
+            dynamic py = __self__.InvokeMethod("average", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -9396,8 +10866,15 @@ namespace Numpy
         public double average(NDarray weights = null, bool? returned = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.average(@this, weights:weights, returned:returned);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (returned!=false) kwargs["returned"]=ToPython(returned);
+            dynamic py = __self__.InvokeMethod("average", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -9467,8 +10944,17 @@ namespace Numpy
         public NDarray<double> mean(int[] axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.mean(@this, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("mean", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -9517,8 +11003,15 @@ namespace Numpy
         public double mean(Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.mean(@this, dtype:dtype, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("mean", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -9606,8 +11099,18 @@ namespace Numpy
         public NDarray<double> std(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.std(@this, axis:axis, dtype:dtype, @out:@out, ddof:ddof, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("std", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -9674,8 +11177,16 @@ namespace Numpy
         public double std(Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.std(@this, dtype:dtype, @out:@out, ddof:ddof);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            dynamic py = __self__.InvokeMethod("std", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -9758,8 +11269,18 @@ namespace Numpy
         public NDarray<double> @var(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.@var(@this, axis:axis, dtype:dtype, @out:@out, ddof:ddof, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("var", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -9821,8 +11342,16 @@ namespace Numpy
         public double @var(Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.@var(@this, dtype:dtype, @out:@out, ddof:ddof);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            dynamic py = __self__.InvokeMethod("var", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -9889,8 +11418,17 @@ namespace Numpy
         public NDarray<double> nanmedian(int[] axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanmedian(@this, axis:axis, @out:@out, overwrite_input:overwrite_input, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanmedian", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -9937,8 +11475,15 @@ namespace Numpy
         public double nanmedian(NDarray @out = null, bool? overwrite_input = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanmedian(@this, @out:@out, overwrite_input:overwrite_input);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            dynamic py = __self__.InvokeMethod("nanmedian", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -10004,8 +11549,17 @@ namespace Numpy
         public NDarray<double> nanmean(int[] axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanmean(@this, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanmean", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -10054,8 +11608,15 @@ namespace Numpy
         public double nanmean(Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanmean(@this, dtype:dtype, @out:@out);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("nanmean", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -10147,8 +11708,18 @@ namespace Numpy
         public NDarray<double> nanstd(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanstd(@this, axis:axis, dtype:dtype, @out:@out, ddof:ddof, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanstd", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -10223,8 +11794,16 @@ namespace Numpy
         public double nanstd(Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanstd(@this, dtype:dtype, @out:@out, ddof:ddof);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            dynamic py = __self__.InvokeMethod("nanstd", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -10306,8 +11885,18 @@ namespace Numpy
         public NDarray<double> nanvar(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanvar(@this, axis:axis, dtype:dtype, @out:@out, ddof:ddof, keepdims:keepdims);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanvar", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
         }
         
         /// <summary>
@@ -10378,8 +11967,16 @@ namespace Numpy
         public double nanvar(Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.nanvar(@this, dtype:dtype, @out:@out, ddof:ddof);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            dynamic py = __self__.InvokeMethod("nanvar", pyargs, kwargs);
+            return ToCsharp<double>(py);
         }
         
         /// <summary>
@@ -10426,8 +12023,15 @@ namespace Numpy
         public NDarray corrcoef(NDarray y = null, bool? rowvar = true)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.corrcoef(@this, y:y, rowvar:rowvar);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (y!=null) kwargs["y"]=ToPython(y);
+            if (rowvar!=true) kwargs["rowvar"]=ToPython(rowvar);
+            dynamic py = __self__.InvokeMethod("corrcoef", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -10461,8 +12065,15 @@ namespace Numpy
         public NDarray correlate(NDarray a, string mode = "valid")
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.correlate(@this, a, mode:mode);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (mode!="valid") kwargs["mode"]=ToPython(mode);
+            dynamic py = __self__.InvokeMethod("correlate", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -10535,8 +12146,19 @@ namespace Numpy
         public NDarray cov(NDarray y = null, bool? rowvar = true, bool? bias = false, int? ddof = null, NDarray fweights = null, NDarray aweights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.cov(@this, y:y, rowvar:rowvar, bias:bias, ddof:ddof, fweights:fweights, aweights:aweights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (y!=null) kwargs["y"]=ToPython(y);
+            if (rowvar!=true) kwargs["rowvar"]=ToPython(rowvar);
+            if (bias!=false) kwargs["bias"]=ToPython(bias);
+            if (ddof!=null) kwargs["ddof"]=ToPython(ddof);
+            if (fweights!=null) kwargs["fweights"]=ToPython(fweights);
+            if (aweights!=null) kwargs["aweights"]=ToPython(aweights);
+            dynamic py = __self__.InvokeMethod("cov", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -10614,8 +12236,19 @@ namespace Numpy
         public (NDarray, NDarray) histogram(int? bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram(@this, bins:bins, range:range, normed:normed, weights:weights, density:density);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -10693,8 +12326,19 @@ namespace Numpy
         public (NDarray, NDarray) histogram(NDarray bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram(@this, bins:bins, range:range, normed:normed, weights:weights, density:density);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -10772,8 +12416,19 @@ namespace Numpy
         public (NDarray, NDarray) histogram(List<string> bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram(@this, bins:bins, range:range, normed:normed, weights:weights, density:density);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -10841,8 +12496,20 @@ namespace Numpy
         public (NDarray, NDarray, NDarray) histogram2d(NDarray y, int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram2d(@this, y, bins:bins, range:range, density:density, normed:normed, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                y,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
         }
         
         /// <summary>
@@ -10910,8 +12577,20 @@ namespace Numpy
         public (NDarray, NDarray, NDarray) histogram2d(NDarray y, NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram2d(@this, y, bins:bins, range:range, density:density, normed:normed, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                y,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
         }
         
         /// <summary>
@@ -10979,8 +12658,20 @@ namespace Numpy
         public (NDarray, NDarray, NDarray) histogram2d(NDarray y, List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram2d(@this, y, bins:bins, range:range, density:density, normed:normed, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                y,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
         }
         
         /// <summary>
@@ -11030,8 +12721,19 @@ namespace Numpy
         public (NDarray, NDarray) histogramdd(int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogramdd(@this, bins:bins, range:range, density:density, normed:normed, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -11081,8 +12783,19 @@ namespace Numpy
         public (NDarray, NDarray) histogramdd(NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogramdd(@this, bins:bins, range:range, density:density, normed:normed, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -11132,8 +12845,19 @@ namespace Numpy
         public (NDarray, NDarray) histogramdd(List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogramdd(@this, bins:bins, range:range, density:density, normed:normed, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
         }
         
         /// <summary>
@@ -11166,8 +12890,15 @@ namespace Numpy
         public NDarray bincount(NDarray weights = null, int? minlength = 0)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.bincount(@this, weights:weights, minlength:minlength);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (minlength!=0) kwargs["minlength"]=ToPython(minlength);
+            dynamic py = __self__.InvokeMethod("bincount", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>
@@ -11239,8 +12970,16 @@ namespace Numpy
         public NDarray<float> histogram_bin_edges(int? bins = null, (float, float)? range = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram_bin_edges(@this, bins:bins, range:range, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram_bin_edges", pyargs, kwargs);
+            return ToCsharp<NDarray<float>>(py);
         }
         
         /// <summary>
@@ -11312,8 +13051,16 @@ namespace Numpy
         public NDarray<float> histogram_bin_edges(NDarray bins = null, (float, float)? range = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram_bin_edges(@this, bins:bins, range:range, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram_bin_edges", pyargs, kwargs);
+            return ToCsharp<NDarray<float>>(py);
         }
         
         /// <summary>
@@ -11385,8 +13132,16 @@ namespace Numpy
         public NDarray<float> histogram_bin_edges(List<string> bins = null, (float, float)? range = null, NDarray weights = null)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.histogram_bin_edges(@this, bins:bins, range:range, weights:weights);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram_bin_edges", pyargs, kwargs);
+            return ToCsharp<NDarray<float>>(py);
         }
         
         /// <summary>
@@ -11435,8 +13190,15 @@ namespace Numpy
         public NDarray digitize(NDarray bins, bool? right = false)
         {
             //auto-generated code, do not change
-            var @this=this;
-            return NumPy.Instance.digitize(@this, bins, right:right);
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                bins,
+            });
+            var kwargs=new PyDict();
+            if (right!=false) kwargs["right"]=ToPython(right);
+            dynamic py = __self__.InvokeMethod("digitize", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
     }

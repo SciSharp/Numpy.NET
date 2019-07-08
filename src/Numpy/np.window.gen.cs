@@ -58,7 +58,17 @@ namespace Numpy
         ///	the first and last samples equal to zero.
         /// </returns>
         public static NDarray bartlett(int M)
-            => NumPy.Instance.bartlett(M);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                M,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("bartlett", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the Blackman window.<br></br>
@@ -108,7 +118,17 @@ namespace Numpy
         ///	appears only if the number of samples is odd).
         /// </returns>
         public static NDarray blackman(int M)
-            => NumPy.Instance.blackman(M);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                M,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("blackman", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the Hamming window.<br></br>
@@ -148,7 +168,17 @@ namespace Numpy
         ///	one appears only if the number of samples is odd).
         /// </returns>
         public static NDarray hamming(int M)
-            => NumPy.Instance.hamming(M);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                M,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("hamming", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the Hanning window.<br></br>
@@ -186,7 +216,17 @@ namespace Numpy
         ///	one appears only if M is odd).
         /// </returns>
         public static NDarray hanning(int M)
-            => NumPy.Instance.hanning(M);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                M,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("hanning", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the Kaiser window.<br></br>
@@ -240,7 +280,18 @@ namespace Numpy
         ///	one appears only if the number of samples is odd).
         /// </returns>
         public static NDarray kaiser(int M, float beta)
-            => NumPy.Instance.kaiser(M, beta);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                M,
+                beta,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("kaiser", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         
     }

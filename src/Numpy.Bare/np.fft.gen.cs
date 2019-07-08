@@ -76,7 +76,21 @@ namespace Numpy
             ///	If n is odd, the length is (n+1)/2.
             /// </returns>
             public static NDarray rfft(NDarray a, int? n = null, int? axis = -1, string norm = null)
-                => NumPy.Instance.fft_rfft(a, n:n, axis:axis, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (n!=null) kwargs["n"]=ToPython(n);
+                if (axis!=-1) kwargs["axis"]=ToPython(axis);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("rfft", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -145,7 +159,21 @@ namespace Numpy
             ///	 To get an odd number of output points, n must be specified.
             /// </returns>
             public static NDarray irfft(NDarray a, int? n = null, int? axis = -1, string norm = null)
-                => NumPy.Instance.fft_irfft(a, n:n, axis:axis, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (n!=null) kwargs["n"]=ToPython(n);
+                if (axis!=-1) kwargs["axis"]=ToPython(axis);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("irfft", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -175,7 +203,21 @@ namespace Numpy
             ///	The result of the real 2-D FFT.
             /// </returns>
             public static NDarray rfft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft_rfft2(a, s:s, axes:axes, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (s!=null) kwargs["s"]=ToPython(s);
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("rfft2", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -207,7 +249,21 @@ namespace Numpy
             ///	The result of the inverse real 2-D FFT.
             /// </returns>
             public static NDarray irfft2(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft_irfft2(a, s:s, axes:axes, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (s!=null) kwargs["s"]=ToPython(s);
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("irfft2", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -269,7 +325,21 @@ namespace Numpy
             ///	s, or unchanged from the input.
             /// </returns>
             public static NDarray rfftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft_rfftn(a, s:s, axes:axes, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (s!=null) kwargs["s"]=ToPython(s);
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("rfftn", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -340,7 +410,21 @@ namespace Numpy
             ///	number of output points in the final axis, s must be specified.
             /// </returns>
             public static NDarray irfftn(NDarray a, int[] s = null, int[] axes = null, string norm = null)
-                => NumPy.Instance.fft_irfftn(a, s:s, axes:axes, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (s!=null) kwargs["s"]=ToPython(s);
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("irfftn", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -390,7 +474,21 @@ namespace Numpy
             ///	specified, for instance as 2*m - 1 in the typical case,
             /// </returns>
             public static NDarray hfft(NDarray a, int? n = null, int? axis = -1, string norm = null)
-                => NumPy.Instance.fft_hfft(a, n:n, axis:axis, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (n!=null) kwargs["n"]=ToPython(n);
+                if (axis!=-1) kwargs["axis"]=ToPython(axis);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("hfft", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -434,7 +532,21 @@ namespace Numpy
             ///	The length of the transformed axis is n//2 + 1.
             /// </returns>
             public static NDarray ihfft(NDarray a, int? n = null, int? axis = -1, string norm = null)
-                => NumPy.Instance.fft_ihfft(a, n:n, axis:axis, norm:norm);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    a,
+                });
+                var kwargs=new PyDict();
+                if (n!=null) kwargs["n"]=ToPython(n);
+                if (axis!=-1) kwargs["axis"]=ToPython(axis);
+                if (norm!=null) kwargs["norm"]=ToPython(norm);
+                dynamic py = __self__.InvokeMethod("ihfft", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -459,7 +571,19 @@ namespace Numpy
             ///	Array of length n containing the sample frequencies.
             /// </returns>
             public static NDarray fftfreq(int n, float? d = 1.0f)
-                => NumPy.Instance.fft_fftfreq(n, d:d);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    n,
+                });
+                var kwargs=new PyDict();
+                if (d!=1.0f) kwargs["d"]=ToPython(d);
+                dynamic py = __self__.InvokeMethod("fftfreq", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -488,7 +612,19 @@ namespace Numpy
             ///	Array of length n//2 + 1 containing the sample frequencies.
             /// </returns>
             public static NDarray rfftfreq(int n, float? d = 1.0f)
-                => NumPy.Instance.fft_rfftfreq(n, d:d);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    n,
+                });
+                var kwargs=new PyDict();
+                if (d!=1.0f) kwargs["d"]=ToPython(d);
+                dynamic py = __self__.InvokeMethod("rfftfreq", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -510,7 +646,19 @@ namespace Numpy
             ///	The shifted array.
             /// </returns>
             public static NDarray fftshift(NDarray x, int[] axes = null)
-                => NumPy.Instance.fft_fftshift(x, axes:axes);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    x,
+                });
+                var kwargs=new PyDict();
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                dynamic py = __self__.InvokeMethod("fftshift", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         public static partial class fft {
@@ -530,7 +678,19 @@ namespace Numpy
             ///	The shifted array.
             /// </returns>
             public static NDarray ifftshift(NDarray x, int[] axes = null)
-                => NumPy.Instance.fft_ifftshift(x, axes:axes);
+            {
+                //auto-generated code, do not change
+                var fft = self.GetAttr("fft");
+                var __self__=fft;
+                var pyargs=ToTuple(new object[]
+                {
+                    x,
+                });
+                var kwargs=new PyDict();
+                if (axes!=null) kwargs["axes"]=ToPython(axes);
+                dynamic py = __self__.InvokeMethod("ifftshift", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
         }
         
         

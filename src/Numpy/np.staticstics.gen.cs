@@ -76,7 +76,21 @@ namespace Numpy
         ///	a.ndim - 1.
         /// </returns>
         public static NDarray amin(NDarray a, int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-            => NumPy.Instance.amin(a, axis:axis, @out:@out, keepdims:keepdims, initial:initial);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            if (initial!=null) kwargs["initial"]=ToPython(initial);
+            dynamic py = __self__.InvokeMethod("amin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the maximum of an array or maximum along an axis.<br></br>
@@ -137,7 +151,21 @@ namespace Numpy
         ///	a.ndim - 1.
         /// </returns>
         public static NDarray amax(NDarray a, int[] axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
-            => NumPy.Instance.amax(a, axis:axis, @out:@out, keepdims:keepdims, initial:initial);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            if (initial!=null) kwargs["initial"]=ToPython(initial);
+            dynamic py = __self__.InvokeMethod("amax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return minimum of an array or minimum along an axis, ignoring any NaNs.<br></br>
@@ -195,7 +223,20 @@ namespace Numpy
         ///	  The same dtype as a is returned.
         /// </returns>
         public static NDarray nanmin(NDarray a, int[] axis = null, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.nanmin(a, axis:axis, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanmin", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Return the maximum of an array or maximum along an axis, ignoring any
@@ -253,7 +294,20 @@ namespace Numpy
         ///	  The same dtype as a is returned.
         /// </returns>
         public static NDarray nanmax(NDarray a, int[] axis = null, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.nanmax(a, axis:axis, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanmax", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Range of values (maximum - minimum) along an axis.<br></br>
@@ -297,7 +351,20 @@ namespace Numpy
         ///	specified, in which case a reference to out is returned.
         /// </returns>
         public static NDarray ptp(NDarray a, int[] axis = null, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.ptp(a, axis:axis, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("ptp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the q-th percentile of the data along the specified axis.<br></br>
@@ -368,7 +435,23 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static NDarray<double> percentile(NDarray a, NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
-            => NumPy.Instance.percentile(a, q, axis:axis, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                q,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            if (keepdims!=false) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("percentile", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the q-th percentile of the data along the specified axis.<br></br>
@@ -427,7 +510,21 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static double percentile(NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
-            => NumPy.Instance.percentile(a, q, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                q,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            dynamic py = __self__.InvokeMethod("percentile", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the qth percentile of the data along the specified axis,
@@ -507,7 +604,23 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static NDarray<double> nanpercentile(NDarray a, NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
-            => NumPy.Instance.nanpercentile(a, q, axis:axis, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                q,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanpercentile", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the qth percentile of the data along the specified axis,
@@ -568,7 +681,21 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static double nanpercentile(NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
-            => NumPy.Instance.nanpercentile(a, q, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                q,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            dynamic py = __self__.InvokeMethod("nanpercentile", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the q-th quantile of the data along the specified axis.<br></br>
@@ -639,7 +766,23 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static NDarray<double> quantile(NDarray a, NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
-            => NumPy.Instance.quantile(a, q, axis:axis, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                q,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            if (keepdims!=false) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("quantile", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the q-th quantile of the data along the specified axis.<br></br>
@@ -698,7 +841,21 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static double quantile(NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
-            => NumPy.Instance.quantile(a, q, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                q,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            dynamic py = __self__.InvokeMethod("quantile", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the qth quantile of the data along the specified axis,
@@ -767,7 +924,23 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static NDarray<double> nanquantile(NDarray a, NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
-            => NumPy.Instance.nanquantile(a, q, axis:axis, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                q,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanquantile", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the qth quantile of the data along the specified axis,
@@ -817,7 +990,21 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static double nanquantile(NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
-            => NumPy.Instance.nanquantile(a, q, @out:@out, overwrite_input:overwrite_input, interpolation:interpolation);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+                q,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (interpolation!="linear") kwargs["interpolation"]=ToPython(interpolation);
+            dynamic py = __self__.InvokeMethod("nanquantile", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the median along the specified axis.<br></br>
@@ -877,7 +1064,21 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static NDarray<double> median(NDarray a, int[] axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = false)
-            => NumPy.Instance.median(a, axis:axis, @out:@out, overwrite_input:overwrite_input, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (keepdims!=false) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("median", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the median along the specified axis.<br></br>
@@ -924,7 +1125,19 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static double median(NDarray a, NDarray @out = null, bool? overwrite_input = false)
-            => NumPy.Instance.median(a, @out:@out, overwrite_input:overwrite_input);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            dynamic py = __self__.InvokeMethod("median", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the weighted average along the specified axis.
@@ -983,7 +1196,20 @@ namespace Numpy
         ///	at least be float64.
         /// </returns>
         public static NDarray<double> average(NDarray a, int[] axis, NDarray weights = null, bool? returned = false)
-            => NumPy.Instance.average(a, axis:axis, weights:weights, returned:returned);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (returned!=false) kwargs["returned"]=ToPython(returned);
+            dynamic py = __self__.InvokeMethod("average", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the weighted average along the specified axis.
@@ -1031,7 +1257,19 @@ namespace Numpy
         ///	at least be float64.
         /// </returns>
         public static double average(NDarray a, NDarray weights = null, bool? returned = false)
-            => NumPy.Instance.average(a, weights:weights, returned:returned);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (returned!=false) kwargs["returned"]=ToPython(returned);
+            dynamic py = __self__.InvokeMethod("average", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the arithmetic mean along the specified axis.<br></br>
@@ -1103,7 +1341,21 @@ namespace Numpy
         ///	otherwise a reference to the output array is returned.
         /// </returns>
         public static NDarray<double> mean(NDarray a, int[] axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.mean(a, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("mean", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the arithmetic mean along the specified axis.<br></br>
@@ -1154,7 +1406,19 @@ namespace Numpy
         ///	otherwise a reference to the output array is returned.
         /// </returns>
         public static double mean(NDarray a, Dtype dtype = null, NDarray @out = null)
-            => NumPy.Instance.mean(a, dtype:dtype, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("mean", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the standard deviation along the specified axis.<br></br>
@@ -1242,7 +1506,22 @@ namespace Numpy
         ///	otherwise return a reference to the output array.
         /// </returns>
         public static NDarray<double> std(NDarray a, int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
-            => NumPy.Instance.std(a, axis:axis, dtype:dtype, @out:@out, ddof:ddof, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("std", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the standard deviation along the specified axis.<br></br>
@@ -1309,7 +1588,20 @@ namespace Numpy
         ///	otherwise return a reference to the output array.
         /// </returns>
         public static double std(NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
-            => NumPy.Instance.std(a, dtype:dtype, @out:@out, ddof:ddof);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            dynamic py = __self__.InvokeMethod("std", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the variance along the specified axis.<br></br>
@@ -1394,7 +1686,22 @@ namespace Numpy
         ///	otherwise, a reference to the output array is returned.
         /// </returns>
         public static NDarray<double> @var(NDarray a, int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
-            => NumPy.Instance.@var(a, axis:axis, dtype:dtype, @out:@out, ddof:ddof, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("var", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the variance along the specified axis.<br></br>
@@ -1458,7 +1765,20 @@ namespace Numpy
         ///	otherwise, a reference to the output array is returned.
         /// </returns>
         public static double @var(NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
-            => NumPy.Instance.@var(a, dtype:dtype, @out:@out, ddof:ddof);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            dynamic py = __self__.InvokeMethod("var", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the median along the specified axis, while ignoring NaNs.<br></br>
@@ -1525,7 +1845,21 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static NDarray<double> nanmedian(NDarray a, int[] axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = null)
-            => NumPy.Instance.nanmedian(a, axis:axis, @out:@out, overwrite_input:overwrite_input, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanmedian", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the median along the specified axis, while ignoring NaNs.<br></br>
@@ -1572,7 +1906,19 @@ namespace Numpy
         ///	returned instead.
         /// </returns>
         public static double nanmedian(NDarray a, NDarray @out = null, bool? overwrite_input = false)
-            => NumPy.Instance.nanmedian(a, @out:@out, overwrite_input:overwrite_input);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (overwrite_input!=false) kwargs["overwrite_input"]=ToPython(overwrite_input);
+            dynamic py = __self__.InvokeMethod("nanmedian", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the arithmetic mean along the specified axis, ignoring NaNs.<br></br>
@@ -1640,7 +1986,21 @@ namespace Numpy
         ///	returned for slices that contain only NaNs.
         /// </returns>
         public static NDarray<double> nanmean(NDarray a, int[] axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
-            => NumPy.Instance.nanmean(a, axis:axis, dtype:dtype, @out:@out, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanmean", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the arithmetic mean along the specified axis, ignoring NaNs.<br></br>
@@ -1691,7 +2051,19 @@ namespace Numpy
         ///	returned for slices that contain only NaNs.
         /// </returns>
         public static double nanmean(NDarray a, Dtype dtype = null, NDarray @out = null)
-            => NumPy.Instance.nanmean(a, dtype:dtype, @out:@out);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            dynamic py = __self__.InvokeMethod("nanmean", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the standard deviation along the specified axis, while
@@ -1783,7 +2155,22 @@ namespace Numpy
         ///	contains only NaNs, then the result for that slice is NaN.
         /// </returns>
         public static NDarray<double> nanstd(NDarray a, int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
-            => NumPy.Instance.nanstd(a, axis:axis, dtype:dtype, @out:@out, ddof:ddof, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanstd", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the standard deviation along the specified axis, while
@@ -1858,7 +2245,20 @@ namespace Numpy
         ///	contains only NaNs, then the result for that slice is NaN.
         /// </returns>
         public static double nanstd(NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
-            => NumPy.Instance.nanstd(a, dtype:dtype, @out:@out, ddof:ddof);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            dynamic py = __self__.InvokeMethod("nanstd", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Compute the variance along the specified axis, while ignoring NaNs.<br></br>
@@ -1942,7 +2342,22 @@ namespace Numpy
         ///	NaNs, then the result for that slice is NaN.
         /// </returns>
         public static NDarray<double> nanvar(NDarray a, int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
-            => NumPy.Instance.nanvar(a, axis:axis, dtype:dtype, @out:@out, ddof:ddof, keepdims:keepdims);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axis!=null) kwargs["axis"]=ToPython(axis);
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            if (keepdims!=null) kwargs["keepdims"]=ToPython(keepdims);
+            dynamic py = __self__.InvokeMethod("nanvar", pyargs, kwargs);
+            return ToCsharp<NDarray<double>>(py);
+        }
         
         /// <summary>
         ///	Compute the variance along the specified axis, while ignoring NaNs.<br></br>
@@ -2015,7 +2430,20 @@ namespace Numpy
         ///	NaNs, then the result for that slice is NaN.
         /// </returns>
         public static double nanvar(NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
-            => NumPy.Instance.nanvar(a, dtype:dtype, @out:@out, ddof:ddof);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
+            if (@out!=null) kwargs["out"]=ToPython(@out);
+            if (ddof!=0) kwargs["ddof"]=ToPython(ddof);
+            dynamic py = __self__.InvokeMethod("nanvar", pyargs, kwargs);
+            return ToCsharp<double>(py);
+        }
         
         /// <summary>
         ///	Return Pearson product-moment correlation coefficients.<br></br>
@@ -2066,7 +2494,19 @@ namespace Numpy
         ///	The correlation coefficient matrix of the variables.
         /// </returns>
         public static NDarray corrcoef(NDarray x, NDarray y = null, bool? rowvar = true)
-            => NumPy.Instance.corrcoef(x, y:y, rowvar:rowvar);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (y!=null) kwargs["y"]=ToPython(y);
+            if (rowvar!=true) kwargs["rowvar"]=ToPython(rowvar);
+            dynamic py = __self__.InvokeMethod("corrcoef", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Cross-correlation of two 1-dimensional sequences.<br></br>
@@ -2100,7 +2540,19 @@ namespace Numpy
         ///	Discrete cross-correlation of a and v.
         /// </returns>
         public static NDarray correlate(NDarray v, NDarray a, string mode = "valid")
-            => NumPy.Instance.correlate(v, a, mode:mode);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                v,
+                a,
+            });
+            var kwargs=new PyDict();
+            if (mode!="valid") kwargs["mode"]=ToPython(mode);
+            dynamic py = __self__.InvokeMethod("correlate", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Estimate a covariance matrix, given data and weights.<br></br>
@@ -2177,7 +2629,23 @@ namespace Numpy
         ///	The covariance matrix of the variables.
         /// </returns>
         public static NDarray cov(NDarray m, NDarray y = null, bool? rowvar = true, bool? bias = false, int? ddof = null, NDarray fweights = null, NDarray aweights = null)
-            => NumPy.Instance.cov(m, y:y, rowvar:rowvar, bias:bias, ddof:ddof, fweights:fweights, aweights:aweights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                m,
+            });
+            var kwargs=new PyDict();
+            if (y!=null) kwargs["y"]=ToPython(y);
+            if (rowvar!=true) kwargs["rowvar"]=ToPython(rowvar);
+            if (bias!=false) kwargs["bias"]=ToPython(bias);
+            if (ddof!=null) kwargs["ddof"]=ToPython(ddof);
+            if (fweights!=null) kwargs["fweights"]=ToPython(fweights);
+            if (aweights!=null) kwargs["aweights"]=ToPython(aweights);
+            dynamic py = __self__.InvokeMethod("cov", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Compute the histogram of a set of data.<br></br>
@@ -2256,7 +2724,23 @@ namespace Numpy
         ///	Return the bin edges (length(hist)+1).
         /// </returns>
         public static (NDarray, NDarray) histogram(NDarray a, int? bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
-            => NumPy.Instance.histogram(a, bins:bins, range:range, normed:normed, weights:weights, density:density);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Compute the histogram of a set of data.<br></br>
@@ -2335,7 +2819,23 @@ namespace Numpy
         ///	Return the bin edges (length(hist)+1).
         /// </returns>
         public static (NDarray, NDarray) histogram(NDarray a, NDarray bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
-            => NumPy.Instance.histogram(a, bins:bins, range:range, normed:normed, weights:weights, density:density);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Compute the histogram of a set of data.<br></br>
@@ -2414,7 +2914,23 @@ namespace Numpy
         ///	Return the bin edges (length(hist)+1).
         /// </returns>
         public static (NDarray, NDarray) histogram(NDarray a, List<string> bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
-            => NumPy.Instance.histogram(a, bins:bins, range:range, normed:normed, weights:weights, density:density);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Compute the bi-dimensional histogram of two data samples.<br></br>
@@ -2483,7 +2999,24 @@ namespace Numpy
         ///	The bin edges along the second dimension.
         /// </returns>
         public static (NDarray, NDarray, NDarray) histogram2d(NDarray x, NDarray y, int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
-            => NumPy.Instance.histogram2d(x, y, bins:bins, range:range, density:density, normed:normed, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+                y,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+        }
         
         /// <summary>
         ///	Compute the bi-dimensional histogram of two data samples.<br></br>
@@ -2552,7 +3085,24 @@ namespace Numpy
         ///	The bin edges along the second dimension.
         /// </returns>
         public static (NDarray, NDarray, NDarray) histogram2d(NDarray x, NDarray y, NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
-            => NumPy.Instance.histogram2d(x, y, bins:bins, range:range, density:density, normed:normed, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+                y,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+        }
         
         /// <summary>
         ///	Compute the bi-dimensional histogram of two data samples.<br></br>
@@ -2621,7 +3171,24 @@ namespace Numpy
         ///	The bin edges along the second dimension.
         /// </returns>
         public static (NDarray, NDarray, NDarray) histogram2d(NDarray x, NDarray y, List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
-            => NumPy.Instance.histogram2d(x, y, bins:bins, range:range, density:density, normed:normed, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+                y,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+        }
         
         /// <summary>
         ///	Compute the multidimensional histogram of some data.
@@ -2675,7 +3242,23 @@ namespace Numpy
         ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
         public static (NDarray, NDarray) histogramdd(NDarray sample, int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
-            => NumPy.Instance.histogramdd(sample, bins:bins, range:range, density:density, normed:normed, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                sample,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Compute the multidimensional histogram of some data.
@@ -2729,7 +3312,23 @@ namespace Numpy
         ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
         public static (NDarray, NDarray) histogramdd(NDarray sample, NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
-            => NumPy.Instance.histogramdd(sample, bins:bins, range:range, density:density, normed:normed, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                sample,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Compute the multidimensional histogram of some data.
@@ -2783,7 +3382,23 @@ namespace Numpy
         ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
         public static (NDarray, NDarray) histogramdd(NDarray sample, List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
-            => NumPy.Instance.histogramdd(sample, bins:bins, range:range, density:density, normed:normed, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                sample,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (density!=null) kwargs["density"]=ToPython(density);
+            if (normed!=null) kwargs["normed"]=ToPython(normed);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
+            var t = py as PyTuple;
+            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+        }
         
         /// <summary>
         ///	Count number of occurrences of each value in array of non-negative ints.<br></br>
@@ -2816,7 +3431,19 @@ namespace Numpy
         ///	The length of out is equal to np.amax(x)+1.
         /// </returns>
         public static NDarray bincount(NDarray x, NDarray weights = null, int? minlength = 0)
-            => NumPy.Instance.bincount(x, weights:weights, minlength:minlength);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+            });
+            var kwargs=new PyDict();
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            if (minlength!=0) kwargs["minlength"]=ToPython(minlength);
+            dynamic py = __self__.InvokeMethod("bincount", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         /// <summary>
         ///	Function to calculate only the edges of the bins used by the histogram function.<br></br>
@@ -2889,7 +3516,20 @@ namespace Numpy
         ///	The edges to pass into histogram
         /// </returns>
         public static NDarray<float> histogram_bin_edges(NDarray a, int? bins = null, (float, float)? range = null, NDarray weights = null)
-            => NumPy.Instance.histogram_bin_edges(a, bins:bins, range:range, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram_bin_edges", pyargs, kwargs);
+            return ToCsharp<NDarray<float>>(py);
+        }
         
         /// <summary>
         ///	Function to calculate only the edges of the bins used by the histogram function.<br></br>
@@ -2962,7 +3602,20 @@ namespace Numpy
         ///	The edges to pass into histogram
         /// </returns>
         public static NDarray<float> histogram_bin_edges(NDarray a, NDarray bins = null, (float, float)? range = null, NDarray weights = null)
-            => NumPy.Instance.histogram_bin_edges(a, bins:bins, range:range, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram_bin_edges", pyargs, kwargs);
+            return ToCsharp<NDarray<float>>(py);
+        }
         
         /// <summary>
         ///	Function to calculate only the edges of the bins used by the histogram function.<br></br>
@@ -3035,7 +3688,20 @@ namespace Numpy
         ///	The edges to pass into histogram
         /// </returns>
         public static NDarray<float> histogram_bin_edges(NDarray a, List<string> bins = null, (float, float)? range = null, NDarray weights = null)
-            => NumPy.Instance.histogram_bin_edges(a, bins:bins, range:range, weights:weights);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (bins!=null) kwargs["bins"]=ToPython(bins);
+            if (range!=null) kwargs["range"]=ToPython(range);
+            if (weights!=null) kwargs["weights"]=ToPython(weights);
+            dynamic py = __self__.InvokeMethod("histogram_bin_edges", pyargs, kwargs);
+            return ToCsharp<NDarray<float>>(py);
+        }
         
         /// <summary>
         ///	Return the indices of the bins to which each value in input array belongs.<br></br>
@@ -3086,7 +3752,19 @@ namespace Numpy
         ///	Output array of indices, of same shape as x.
         /// </returns>
         public static NDarray digitize(NDarray x, NDarray bins, bool? right = false)
-            => NumPy.Instance.digitize(x, bins, right:right);
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                x,
+                bins,
+            });
+            var kwargs=new PyDict();
+            if (right!=false) kwargs["right"]=ToPython(right);
+            dynamic py = __self__.InvokeMethod("digitize", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
         
         
     }
