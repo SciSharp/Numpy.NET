@@ -56,7 +56,5 @@ namespace Numpy
         public static explicit operator float(NDarray a) => np.asscalar<float>(a);
         public static explicit operator double(NDarray a) => np.asscalar<double>(a);
 
-
-
     }
 }

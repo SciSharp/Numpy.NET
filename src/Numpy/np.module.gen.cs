@@ -37,6 +37,7 @@ namespace Numpy
         {
             var installer = new Installer();
             installer.SetupPython(force).Wait();
+            installer.InstallWheel(typeof(np).Assembly, "numpy-1.16.3-cp37-cp37m-win_amd64.whl").Wait();
             PythonEngine.Initialize();
             var mod = Py.Import("numpy");
             return mod;

@@ -485,7 +485,7 @@ namespace Numpy
         ///	 If usemask is True, this is a
         ///	masked array.
         /// </returns>
-        public static NDarray genfromtxt(string fname, Dtype dtype = null, string comments = null, string delimiter = null, int? skiprows = null, int? skip_header = 0, int? skip_footer = 0, variable converters = null, variable missing = null, variable missing_values = null, variable filling_values = null, sequence usecols = null, {None names = null, sequence excludelist = null, string deletechars = null, string defaultfmt = "f%i", bool? autostrip = false, char replace_space = "_", {True case_sensitive = true, bool? unpack = null, bool? usemask = false, bool? loose = true, bool? invalid_raise = true, int? max_rows = null, string encoding = "bytes")
+        public static NDarray genfromtxt(string fname, Dtype dtype = null, string comments = null, string delimiter = null, int? skiprows = null, int? skip_header = 0, int? skip_footer = 0, variable converters = null, variable missing = null, variable missing_values = null, variable filling_values = null, sequence usecols = null, {None names = null, sequence excludelist = null, string deletechars = null, string defaultfmt = "f%i", bool? autostrip = false, string replace_space = "_", {True case_sensitive = true, bool? unpack = null, bool? usemask = false, bool? loose = true, bool? invalid_raise = true, int? max_rows = null, string encoding = "bytes")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -907,7 +907,7 @@ namespace Numpy
         /// <returns>
         ///	The string representation of the floating point value
         /// </returns>
-        public static string format_float_positional(python float or numpy floating scalar x, non-negative integer or None precision = null, bool? unique = true, bool? fractional = true, one of ‘k’ trim = "k", bool? sign = false, non-negative integer pad_left = null, non-negative integer pad_right = null)
+        public static string format_float_positional(python float or numpy floating scalar x, non-negative integer or None precision = null, bool? unique = true, bool? fractional = true, string trim = "k", bool? sign = false, non-negative integer pad_left = null, non-negative integer pad_right = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -975,7 +975,7 @@ namespace Numpy
         /// <returns>
         ///	The string representation of the floating point value
         /// </returns>
-        public static string format_float_scientific(python float or numpy floating scalar x, non-negative integer or None precision = null, bool? unique = true, one of ‘k’ trim = "k", bool? sign = false, non-negative integer pad_left = null, non-negative integer exp_digits = null)
+        public static string format_float_scientific(python float or numpy floating scalar x, non-negative integer or None precision = null, bool? unique = true, string trim = "k", bool? sign = false, non-negative integer pad_left = null, non-negative integer exp_digits = null)
         {
             //auto-generated code, do not change
             var __self__=self;
