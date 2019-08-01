@@ -14,7 +14,7 @@ using Python.Included;
 
 namespace Numpy
 {
-    public partial class np
+    public static partial class np
     {
         
         public static PyObject self => _lazy_self.Value;
