@@ -549,7 +549,7 @@ namespace Numpy
         /// string_repr
         ///	A printable representation of the einsum path.
         /// </returns>
-        public static (list of tuples, string) einsum_path(string subscripts, NDarray[] operands, {bool optimize = "greedy")
+        public static (list of tuples, string) einsum_path(string subscripts, NDarray[] operands, string optimize = "greedy")
         {
             //auto-generated code, do not change
             var __self__=self;

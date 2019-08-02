@@ -21,9 +21,9 @@ namespace Numpy
         /// <returns>
         /// An array object satisfying the specified requirements.
         /// </returns>
-        public static NDarray<T> array<T>(params T[] data)
+        public static NDarray<T> array<T>(params T[] data) where T : struct
         {
-            return array(data, dtype:null);
+            return array(data, dtype: null);
         }
 
         public static NDarray array(NDarray @object, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
@@ -116,7 +116,6 @@ namespace Numpy
             return new NDarray<T>(ndarray);
         }
 
-
         public static NDarray array(string[] obj, int? itemsize = null, bool? copy = null, bool? unicode = null, string order = null)
         {
             var args = ToTuple(obj);
@@ -126,6 +125,26 @@ namespace Numpy
             if (unicode != null) kwargs["unicode"] = ToPython(unicode);
             if (order != null) kwargs["order"] = ToPython(order);
             dynamic py = self.InvokeMethod("array", args, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
+
+        public static NDarray array(List<NDarray> arrays, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
+            => array((IEnumerable<NDarray>)arrays, dtype, copy, order, subok, ndmin);
+
+        public static NDarray array(NDarray[] arrays, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
+            => array((IEnumerable<NDarray>)arrays, dtype, copy, order, subok, ndmin);
+
+        public static NDarray array(IEnumerable<NDarray> arrays, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
+        {
+            var args = new PyTuple(new PyObject[] { new PyList(arrays.Select(nd => nd.PyObject as PyObject).ToArray()) });
+            var kwargs = new PyDict();
+            if (dtype != null) kwargs["dtype"] = ToPython(dtype);
+            if (copy != null) kwargs["copy"] = ToPython(copy);
+            if (order != null) kwargs["order"] = ToPython(order);
+            if (subok != true) kwargs["subok"] = ToPython(subok);
+            if (ndmin != null) kwargs["ndmin"] = ToPython(ndmin);
+            dynamic py = self.InvokeMethod("array", args, kwargs);
+            //dynamic py = dynamic_self.array(arrays, dtype, copy, order, subok, ndmin);
             return ToCsharp<NDarray>(py);
         }
 
