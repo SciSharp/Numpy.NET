@@ -354,7 +354,6 @@ namespace Numpy.UnitTest
 #endif
         }
 
-
         [TestMethod]
         public void arrayTest()
         {
@@ -460,6 +459,27 @@ namespace Numpy.UnitTest
 #endif
         }
 
+        [TestMethod]
+        public void array1Test()
+        {
+            //>>> a=[]
+            //>>> a.append(np.arange(5))
+            //>>> a.append(np.arange(5))
+            //>>> a.append(np.arange(5))
+            //>>> a.append(np.arange(5))
+            //>>> a
+            //    [array([0, 1, 2, 3, 4]), array([0, 1, 2, 3, 4]), array([0, 1, 2, 3, 4]), array([0, 1, 2, 3, 4])]
+            //>>> b=np.array(a)
+            //>>> b
+            //array([[0, 1, 2, 3, 4],
+            //[0, 1, 2, 3, 4]])
+            //>>>
+            var a = new List<NDarray>();
+            a.Add(np.arange(5));
+            a.Add(np.arange(5));
+            var b = np.array(a);
+            Assert.AreEqual("array([[0, 1, 2, 3, 4],\n       [0, 1, 2, 3, 4]])", b.repr);
+        }
 
         [TestMethod]
         public void asarrayTest()
