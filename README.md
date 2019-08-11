@@ -212,11 +212,13 @@ The function fft(...) in numpy.fft and random(...) in numpy.random had to be ren
 
 ## Versions and Compatibility
 
-Currently, Numpy.NET is targeting .NET Standard (on Windows) and packages the following binaries:
+Currently, Numpy.dll is targeting .NET Standard (on Windows) and packages the following binaries:
 * Python 3.7: (python-3.7.3-embed-amd64.zip)
 * NumPy 1.16 (numpy-1.16.3-cp37-cp37m-win_amd64.whl)
 
-To make Numpy.NET support Linux a separate version of [Python.Included](https://github.com/henon/Python.Included) packaging linux binaries of Python needs to be made and a version of Numpy.NET that packages a linux-compatible NumPy wheel. If you are interested, you may work on this issue. 
+Numpy.Bare.dll is available for the Python versions 2.7, 3.5, 3.6 and 3.7 on Windows, Linux and MacOS on Nuget.
+
+To make Numpy.dll support Linux a separate version of [Python.Included](https://github.com/henon/Python.Included) packaging linux binaries of Python needs to be made and a version of Numpy.dll that packages a linux-compatible NumPy wheel. If you are interested, you may work on this issue. 
 
 ## License
 
