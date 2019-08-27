@@ -22,9 +22,19 @@ namespace Numpy
 
     public static class DtypeExtensions
     {
+        public static Dtype GetDtype<T>(this T obj)
+        {
+            return ToDtype(typeof(T));
+        }
+
+        public static Dtype GetDtype<T>(this T[] obj)
+        {
+            return ToDtype(typeof(T));
+        }
+
         public static Dtype GetDtype(this object obj)
         {
-            switch (obj)
+            switch (obj as dynamic)
             {
                 case bool o: return np.bool8;
                 case sbyte o: return np.int8;
@@ -66,19 +76,14 @@ namespace Numpy
                 case double[,,] o: return np.float64;
                 case string[,,] o: return np.unicode_;
                 case char[,,] o: return np.unicode_;
-                default: throw new ArgumentException("Can not convert type of given object to dtype: " + obj.GetType());
+                default: throw new ArgumentException($"Can not cast {obj.GetType()} to any dtype: ");
             }
         }
 
-        //public static dtype ToDtype(this Type t)
-        //{
-        //    if (t == typeof(byte)) return dtype.UInt8;
-        //    if (t == typeof(short)) return dtype.Int16;
-        //    if (t == typeof(int)) return dtype.Int32;
-        //    if (t == typeof(long)) return dtype.Int64;
-        //    if (t == typeof(float)) return dtype.Float32;
-        //    if (t == typeof(double)) return dtype.Float64;
-        //    throw new ArgumentException("Can not convert given type to dtype: " + t);
-        //}
+        public static Dtype ToDtype(this Type t)
+        {
+            object instance = Activator.CreateInstance(t);
+            return GetDtype(instance);
+        }
     }
 }
