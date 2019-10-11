@@ -117,12 +117,7 @@ namespace Numpy.UnitTest
         [TestMethod]
         public void eigTest()
         {
-            // >>> from numpy import linalg as LA
-            // 
-            
-            #if TODO
-            var given=  from numpy import linalg as LA;
-            #endif
+           
             // (Almost) trivial example with real e-values and e-vectors.
             
             // >>> w, v = LA.eig(np.diag((1, 2, 3)))
@@ -133,27 +128,24 @@ namespace Numpy.UnitTest
             //        [ 0.,  0.,  1.]])
             // 
             
-            #if TODO
-             given=  w, v = LA.eig(np.diag((1, 2, 3)));
-             given=  w; v;
-            var expected=
-                "array([ 1.,  2.,  3.])\n" +
-                "array([[ 1.,  0.,  0.],\n" +
-                "       [ 0.,  1.,  0.],\n" +
-                "       [ 0.,  0.,  1.]])";
-            Assert.AreEqual(expected, given.repr);
-            #endif
+             var ( w, v) = LA.eig(np.diag(new double[]{1, 2, 3}));
+            Assert.AreEqual("array([1., 2., 3.])", w.repr);
+            var expected =
+                "array([[1., 0., 0.],\n" +
+                "       [0., 1., 0.],\n" +
+                "       [0., 0., 1.]])";
+            Assert.AreEqual(expected, v.repr);
             // Real matrix possessing complex e-values and e-vectors; note that the
             // e-values are complex conjugates of each other.
-            
+
             // >>> w, v = LA.eig(np.array([[1, -1], [1, 1]]))
             // >>> w; v
             // array([ 1. + 1.j,  1. - 1.j])
             // array([[ 0.70710678+0.j        ,  0.70710678+0.j        ],
             //        [ 0.00000000-0.70710678j,  0.00000000+0.70710678j]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  w, v = LA.eig(np.array({{1, -1}, {1, 1}}));
              given=  w; v;
              expected=
@@ -161,10 +153,10 @@ namespace Numpy.UnitTest
                 "array([[ 0.70710678+0.j        ,  0.70710678+0.j        ],\n" +
                 "       [ 0.00000000-0.70710678j,  0.00000000+0.70710678j]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Complex-valued matrix with real e-values (but complex-valued e-vectors);
             // note that a.conj().T = a, i.e., a is Hermitian.
-            
+
             // >>> a = np.array([[1, 1j], [-1j, 1]])
             // >>> w, v = LA.eig(a)
             // >>> w; v
@@ -172,8 +164,8 @@ namespace Numpy.UnitTest
             // array([[ 0.00000000+0.70710678j,  0.70710678+0.j        ],
             //        [ 0.70710678+0.j        ,  0.00000000+0.70710678j]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({{1, 1j}, {-1j, 1}});
              given=  w, v = LA.eig(a);
              given=  w; v;
@@ -182,9 +174,9 @@ namespace Numpy.UnitTest
                 "array([[ 0.00000000+0.70710678j,  0.70710678+0.j        ],\n" +
                 "       [ 0.70710678+0.j        ,  0.00000000+0.70710678j]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Be careful about round-off error!
-            
+
             // >>> a = np.array([[1 + 1e-9, 0], [0, 1 - 1e-9]])
             // >>> # Theor. e-values are 1 +/- 1e-9
             // >>> w, v = LA.eig(a)
@@ -193,8 +185,8 @@ namespace Numpy.UnitTest
             // array([[ 1.,  0.],
             //        [ 0.,  1.]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({{1 + 1e-9, 0}, {0, 1 - 1e-9}});
              given=  # Theor. e-values are 1 +/- 1e-9;
              given=  w, v = LA.eig(a);
@@ -204,10 +196,10 @@ namespace Numpy.UnitTest
                 "array([[ 1.,  0.],\n" +
                 "       [ 0.,  1.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void eighTest()
         {
