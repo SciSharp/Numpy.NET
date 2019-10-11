@@ -968,25 +968,29 @@ namespace Numpy.UnitTest
             // array([1, 2, 3, 4, 5, 6])
             // 
 
-#if TODO
-            var given=  a = np.array({{1, 2}, {3, 4}});
-             given=  b = np.array({{5, 6}});
-             given=  np.concatenate((a, b), axis=0);
-            var expected=
+
+            var a = np.array(new[,] {{1, 2}, {3, 4}});
+            var b = np.array(new[,] {{5, 6}});
+            var given = np.concatenate(new[] {a, b}, axis: 0);
+            var expected =
                 "array([[1, 2],\n" +
                 "       [3, 4],\n" +
                 "       [5, 6]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.concatenate((a, b.T), axis=1);
-             expected=
+            given = np.concatenate((a, b.T), axis: 1);
+            expected =
                 "array([[1, 2, 5],\n" +
                 "       [3, 4, 6]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.concatenate((a, b), axis=None);
-             expected=
+            given = np.concatenate((a, b), axis: null);
+            expected =
                 "array([1, 2, 3, 4, 5, 6])";
             Assert.AreEqual(expected, given.repr);
-#endif
+        }
+
+        [Ignore("np.ma not wrapped yet")]
+        public void ConcatenateMaskedArrayTest()
+        {
             // This function will not preserve masking of MaskedArray inputs.
 
             // >>> a = np.ma.arange(3)
@@ -1737,38 +1741,23 @@ namespace Numpy.UnitTest
             // array([1, 2, 3, 4, 5, 6, 7, 8, 9])
             // 
 
-#if TODO
-            var given=  np.append({1, 2, 3}, {{4, 5, 6}, {7, 8, 9}});
+            var given=  np.append(new int[]{1, 2, 3}, new int[,]{{4, 5, 6}, {7, 8, 9}});
             var expected=
                 "array([1, 2, 3, 4, 5, 6, 7, 8, 9])";
             Assert.AreEqual(expected, given.repr);
-#endif
             // When axis is specified, values must have the correct shape.
 
             // >>> np.append([[1, 2, 3], [4, 5, 6]], [[7, 8, 9]], axis=0)
             // array([[1, 2, 3],
             //        [4, 5, 6],
             //        [7, 8, 9]])
-            // >>> np.append([[1, 2, 3], [4, 5, 6]], [7, 8, 9], axis=0)
-            // Traceback (most recent call last):
-            // ...
-            // ValueError: arrays must have same number of dimensions
-            // 
 
-#if TODO
-             given=  np.append({{1, 2, 3}, {4, 5, 6}}, {{7, 8, 9}}, axis=0);
+             given=  np.append(new int[,] { {1, 2, 3}, {4, 5, 6}}, new int[,] { {7, 8, 9}}, axis: 0);
              expected=
                 "array([[1, 2, 3],\n" +
                 "       [4, 5, 6],\n" +
                 "       [7, 8, 9]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.append({{1, 2, 3}, {4, 5, 6}}, {7, 8, 9}, axis=0);
-             expected=
-                "Traceback (most recent call last):\n" +
-                "...\n" +
-                "ValueError: arrays must have same number of dimensions";
-            Assert.AreEqual(expected, given.repr);
-#endif
         }
 
 
