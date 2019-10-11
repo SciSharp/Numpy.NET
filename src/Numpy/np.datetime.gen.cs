@@ -84,8 +84,7 @@ namespace Numpy
             });
             var kwargs=new PyDict();
             dynamic py = __self__.InvokeMethod("datetime_data", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<string>(t[0]), ToCsharp<int>(t[1]));
+            return (ToCsharp<string>(py[0]), ToCsharp<int>(py[1]));
         }
         
         /*

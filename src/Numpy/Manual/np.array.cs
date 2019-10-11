@@ -45,7 +45,7 @@ namespace Numpy
         public static NDarray<T> array<T>(T[] @object, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
         {
             var type = @object.GetDtype();
-            var ndarray = np.empty(new Shape(@object.Length), dtype: dtype ?? type, order: order); // todo: check out the other parameters
+            var ndarray = np.empty(new Shape(@object.Length), dtype: type, order: order); 
             if (@object.Length == 0)
                 return new NDarray<T>(ndarray);
             long ptr = ndarray.PyObject.ctypes.data;
@@ -63,6 +63,8 @@ namespace Numpy
                     Marshal.Copy(bytes, 0, new IntPtr(ptr), a.Length);
                     break;
             }
+            if (dtype !=null || subok != null || ndmin != null)
+                return new NDarray<T>(np.array(ndarray, dtype:dtype, copy: false, subok: subok, ndmin: ndmin));
             return new NDarray<T>(ndarray);
         }
 
@@ -70,7 +72,7 @@ namespace Numpy
         {
             var d1_array = @object.Cast<T>().ToArray();
             var type = d1_array.GetDtype();
-            var ndarray = np.empty(new Shape(@object.GetLength(0), @object.GetLength(1)), dtype: dtype ?? type, order: order); // todo: check out the other parameters
+            var ndarray = np.empty(new Shape(@object.GetLength(0), @object.GetLength(1)), dtype: type, order: order);
             if (@object.Length == 0)
                 return new NDarray<T>(ndarray);
             long ptr = ndarray.PyObject.ctypes.data;
@@ -88,6 +90,8 @@ namespace Numpy
                     Marshal.Copy(bytes, 0, new IntPtr(ptr), a.Length);
                     break;
             }
+            if (dtype != null || subok != null || ndmin != null)
+                return new NDarray<T>(np.array(ndarray, dtype: dtype, copy: false, subok: subok, ndmin: ndmin));
             return new NDarray<T>(ndarray);
         }
 
@@ -95,7 +99,7 @@ namespace Numpy
         {
             var d1_array = data.Cast<T>().ToArray();
             var type = d1_array.GetDtype();
-            var ndarray = np.empty(new Shape(data.GetLength(0), data.GetLength(1), data.GetLength(2)), dtype: dtype ?? type, order: order); // todo: check out the other parameters
+            var ndarray = np.empty(new Shape(data.GetLength(0), data.GetLength(1), data.GetLength(2)), dtype: type, order: order);
             if (data.Length == 0)
                 return new NDarray<T>(ndarray);
             long ptr = ndarray.PyObject.ctypes.data;
@@ -113,6 +117,8 @@ namespace Numpy
                     Marshal.Copy(bytes, 0, new IntPtr(ptr), a.Length);
                     break;
             }
+            if (dtype != null || subok != null || ndmin != null)
+                return new NDarray<T>(np.array(ndarray, dtype: dtype, copy: false, subok: subok, ndmin: ndmin));
             return new NDarray<T>(ndarray);
         }
 

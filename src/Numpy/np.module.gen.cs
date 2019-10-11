@@ -150,6 +150,9 @@ namespace Numpy
             switch(a)
             {
                 case bool[] arr: return np.array(arr);
+                case int[] arr: return np.array(arr);
+                case float[] arr: return np.array(arr);
+                case double[] arr: return np.array(arr);
                 case int[,] arr: return np.array(arr.Cast<int>().ToArray()).reshape(arr.GetLength(0), arr.GetLength(1));
                 case float[,] arr: return np.array(arr.Cast<float>().ToArray()).reshape(arr.GetLength(0), arr.GetLength(1));
                 case double[,] arr: return np.array(arr.Cast<double>().ToArray()).reshape(arr.GetLength(0), arr.GetLength(1));

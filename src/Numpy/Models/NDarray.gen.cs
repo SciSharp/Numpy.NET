@@ -7051,8 +7051,7 @@ namespace Numpy
             if (@out!=null) kwargs["out"]=ToPython(@out);
             if (@where!=null) kwargs["where"]=ToPython(@where);
             dynamic py = __self__.InvokeMethod("frexp", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -7851,8 +7850,7 @@ namespace Numpy
             if (@out!=null) kwargs["out"]=ToPython(@out);
             if (@where!=null) kwargs["where"]=ToPython(@where);
             dynamic py = __self__.InvokeMethod("modf", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -7950,8 +7948,7 @@ namespace Numpy
             if (@out!=null) kwargs["out"]=ToPython(@out);
             if (@where!=null) kwargs["where"]=ToPython(@where);
             dynamic py = __self__.InvokeMethod("divmod", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -9021,8 +9018,7 @@ namespace Numpy
             if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
             if (return_indices!=false) kwargs["return_indices"]=ToPython(return_indices);
             dynamic py = __self__.InvokeMethod("intersect1d", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]), ToCsharp<NDarray>(py[2]));
         }
         
         /// <summary>
@@ -12248,8 +12244,7 @@ namespace Numpy
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             if (density!=null) kwargs["density"]=ToPython(density);
             dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -12338,8 +12333,7 @@ namespace Numpy
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             if (density!=null) kwargs["density"]=ToPython(density);
             dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -12428,8 +12422,7 @@ namespace Numpy
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             if (density!=null) kwargs["density"]=ToPython(density);
             dynamic py = __self__.InvokeMethod("histogram", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -12509,8 +12502,7 @@ namespace Numpy
             if (normed!=null) kwargs["normed"]=ToPython(normed);
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]), ToCsharp<NDarray>(py[2]));
         }
         
         /// <summary>
@@ -12590,8 +12582,7 @@ namespace Numpy
             if (normed!=null) kwargs["normed"]=ToPython(normed);
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]), ToCsharp<NDarray>(py[2]));
         }
         
         /// <summary>
@@ -12671,8 +12662,7 @@ namespace Numpy
             if (normed!=null) kwargs["normed"]=ToPython(normed);
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             dynamic py = __self__.InvokeMethod("histogram2d", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]), ToCsharp<NDarray>(py[2]));
         }
         
         /// <summary>
@@ -12733,8 +12723,7 @@ namespace Numpy
             if (normed!=null) kwargs["normed"]=ToPython(normed);
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -12795,8 +12784,7 @@ namespace Numpy
             if (normed!=null) kwargs["normed"]=ToPython(normed);
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -12857,8 +12845,7 @@ namespace Numpy
             if (normed!=null) kwargs["normed"]=ToPython(normed);
             if (weights!=null) kwargs["weights"]=ToPython(weights);
             dynamic py = __self__.InvokeMethod("histogramdd", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>

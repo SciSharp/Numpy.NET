@@ -124,8 +124,7 @@ namespace Numpy
             if (assume_unique!=false) kwargs["assume_unique"]=ToPython(assume_unique);
             if (return_indices!=false) kwargs["return_indices"]=ToPython(return_indices);
             dynamic py = __self__.InvokeMethod("intersect1d", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]), ToCsharp<NDarray>(py[2]));
         }
         
         /// <summary>

@@ -2629,8 +2629,7 @@ namespace Numpy
             if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
             if (axis!=0) kwargs["axis"]=ToPython(axis);
             dynamic py = __self__.InvokeMethod("linspace", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<float>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<float>(py[1]));
         }
         
         /// <summary>
