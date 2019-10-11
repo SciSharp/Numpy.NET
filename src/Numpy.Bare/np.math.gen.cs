@@ -2817,8 +2817,7 @@ namespace Numpy
             if (@out!=null) kwargs["out"]=ToPython(@out);
             if (@where!=null) kwargs["where"]=ToPython(@where);
             dynamic py = __self__.InvokeMethod("frexp", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -3700,8 +3699,7 @@ namespace Numpy
             if (@out!=null) kwargs["out"]=ToPython(@out);
             if (@where!=null) kwargs["where"]=ToPython(@where);
             dynamic py = __self__.InvokeMethod("modf", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>
@@ -3807,8 +3805,7 @@ namespace Numpy
             if (@out!=null) kwargs["out"]=ToPython(@out);
             if (@where!=null) kwargs["where"]=ToPython(@where);
             dynamic py = __self__.InvokeMethod("divmod", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+            return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
         }
         
         /// <summary>

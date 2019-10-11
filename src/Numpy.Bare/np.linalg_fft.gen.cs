@@ -169,8 +169,7 @@ namespace Numpy
                 });
                 var kwargs=new PyDict();
                 dynamic py = __self__.InvokeMethod("eig", pyargs, kwargs);
-                var t = py as PyTuple;
-                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+                return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
             }
         }
         
@@ -235,8 +234,7 @@ namespace Numpy
                 var kwargs=new PyDict();
                 if (UPLO!="L") kwargs["UPLO"]=ToPython(UPLO);
                 dynamic py = __self__.InvokeMethod("eigh", pyargs, kwargs);
-                var t = py as PyTuple;
-                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+                return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
             }
         }
         
@@ -421,8 +419,7 @@ namespace Numpy
                 var kwargs=new PyDict();
                 if (rcond!=null) kwargs["rcond"]=ToPython(rcond);
                 dynamic py = __self__.InvokeMethod("lstsq", pyargs, kwargs);
-                var t = py as PyTuple;
-                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<int>(t[2]), ToCsharp<NDarray>(t[3]));
+                return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]), ToCsharp<int>(py[2]), ToCsharp<NDarray>(py[3]));
             }
         }
         
@@ -617,8 +614,7 @@ namespace Numpy
                 if (full_matrices!=true) kwargs["full_matrices"]=ToPython(full_matrices);
                 if (compute_uv!=true) kwargs["compute_uv"]=ToPython(compute_uv);
                 dynamic py = __self__.InvokeMethod("svd", pyargs, kwargs);
-                var t = py as PyTuple;
-                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+                return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]), ToCsharp<NDarray>(py[2]));
             }
         }
         

@@ -561,8 +561,7 @@ namespace Numpy
             var kwargs=new PyDict();
             if (optimize!="greedy") kwargs["optimize"]=ToPython(optimize);
             dynamic py = __self__.InvokeMethod("einsum_path", pyargs, kwargs);
-            var t = py as PyTuple;
-            return (ToCsharp<list of tuples>(t[0]), ToCsharp<string>(t[1]));
+            return (ToCsharp<list of tuples>(py[0]), ToCsharp<string>(py[1]));
         }
         */
         
@@ -724,8 +723,7 @@ namespace Numpy
                 var kwargs=new PyDict();
                 if (mode!="reduced") kwargs["mode"]=ToPython(mode);
                 dynamic py = __self__.InvokeMethod("qr", pyargs, kwargs);
-                var t = py as PyTuple;
-                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]), ToCsharp<NDarray>(t[2]));
+                return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]), ToCsharp<NDarray>(py[2]));
             }
         }
         
@@ -912,8 +910,7 @@ namespace Numpy
                 });
                 var kwargs=new PyDict();
                 dynamic py = __self__.InvokeMethod("slogdet", pyargs, kwargs);
-                var t = py as PyTuple;
-                return (ToCsharp<NDarray>(t[0]), ToCsharp<NDarray>(t[1]));
+                return (ToCsharp<NDarray>(py[0]), ToCsharp<NDarray>(py[1]));
             }
         }
         
