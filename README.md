@@ -229,4 +229,6 @@ Numpy.NET packages and distributes `Python`, `pythonnet` as well as `numpy`. All
 * NumPy: [BSD License](https://www.numpy.org/license.html#license)
 * Numpy.NET: [MIT License](./LICENSE)
 
-
+## Common Mistakes
+* If you check `Prefer 32-bit` in your build config or build with `x86` instead of `Any CPU` Numpy.NET will crash with `BadFormatException`
+* If you have insufficient folder permissions in AppData Numpy.NET might crash. You can specify a different installpath by setting `Installer.INSTALL_PATH = "<install path>";`
