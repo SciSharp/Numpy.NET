@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <RootNamespace>Numpy</RootNamespace>
     <AssemblyName>Numpy.Bare</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -17,6 +17,12 @@
     <Version>3.7.1.9</Version>
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
     <AssemblyVersion>3.7.1.4</AssemblyVersion>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +33,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0"></PackageReference>
-    <PackageReference Include="Python.Runtime.NETStandard" Version="3.7.1"></PackageReference>
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\pythonnet\src\runtime\Python.Runtime.csproj" />
   </ItemGroup>
 
 </Project>
