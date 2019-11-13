@@ -2,20 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <RootNamespace>Numpy</RootNamespace>
     <AssemblyName>Numpy</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Meinrad Recheis</Authors>
+    <Authors>Eduardo Pignatelli</Authors>
     <Product>Numpy.NET</Product>
-    <PackageId>Numpy</PackageId>
+    <PackageId>BH.External.Numpy</PackageId>
     <Description>C# bindings for NumPy - a fundamental library for scientific computing, machine learning and AI. Does not require a local Python installation!</Description>
-    <Copyright>2019 - Meinrad Recheis</Copyright>
-    <PackageProjectUrl>https://github.com/SciSharp/Numpy.NET</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
+    <Copyright>bhom.xyz</Copyright>
+    <PackageProjectUrl>https://github.com/epignatelli/Numpy.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/epignatelli/Numpy.NET</RepositoryUrl>
     <PackageTags>Data science, Machine Learning, ML, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
-    <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>3.7.1.9</Version>
-    <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <Version>3.7.1.9-alpha</Version>
+    <PackageIconUrl></PackageIconUrl>
+    <Company>bhom.xyz</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Build</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BH.UI.Python.Included" Version="3.7.3.2" />
+    <PackageReference Include="BH.UI.Python.Included" Version="3.7.3.2-alpha" />
     <PackageReference Include="BH.UI.Python.Runtime" Version="3.7.2-alpha" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0"></PackageReference>
   </ItemGroup>

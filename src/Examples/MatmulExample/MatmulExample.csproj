@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Numpy" Version="3.7.1.4" />
+    <PackageReference Include="BH.UI.Python.Included" Version="3.7.3.2-alpha" />
   </ItemGroup>
 
 </Project>

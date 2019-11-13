@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BH.UI.Python.Included" Version="3.7.3.2-alpha" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\src\Numpy\Numpy.csproj" />
   </ItemGroup>
 
