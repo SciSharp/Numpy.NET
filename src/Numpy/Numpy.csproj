@@ -15,9 +15,10 @@
     <RepositoryUrl>https://github.com/epignatelli/Numpy.NET</RepositoryUrl>
     <PackageTags>Data science, Machine Learning, ML, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Version>3.7.1.14-alpha</Version>
+    <Version>3.7.1.15-alpha</Version>
     <PackageIconUrl></PackageIconUrl>
     <Company>bhom.xyz</Company>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
