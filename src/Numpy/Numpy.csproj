@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/epignatelli/Numpy.NET</RepositoryUrl>
     <PackageTags>Data science, Machine Learning, ML, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Version>3.7.1.9-alpha</Version>
+    <Version>3.7.1.14-alpha</Version>
     <PackageIconUrl></PackageIconUrl>
     <Company>bhom.xyz</Company>
   </PropertyGroup>
@@ -33,9 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BH.UI.Python.Included" Version="3.7.3.2-alpha" />
+    <PackageReference Include="BH.UI.Python.Included" Version="3.7.3.6-alpha" />
     <PackageReference Include="BH.UI.Python.Runtime" Version="3.7.2-alpha" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0"></PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
   </ItemGroup>
 
 </Project>
