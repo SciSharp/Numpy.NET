@@ -35,9 +35,8 @@ namespace Numpy
         
         private static PyObject InstallAndImport(bool force = false)
         {
-            //var installer = new Installer();
             Installer.SetupPython(force).Wait();
-            Installer.InstallWheel(typeof(np).Assembly, "numpy-1.16.3-cp37-cp37m-win_amd64.whl").Wait();
+            Installer.PipInstallModule("numpy");
             PythonEngine.Initialize();
             var mod = Py.Import("numpy");
             return mod;
