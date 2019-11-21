@@ -53,13 +53,8 @@
       <HintPath>..\..\BHoM\Build\BHoM.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Numpy, Version=3.7.1.14, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\repos\epignatelli\Numpy.NET\Build\Numpy.dll</HintPath>
-    </Reference>
     <Reference Include="Python.Included, Version=3.7.3.2, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\repos\epignatelli\Python.Included\Build\Python.Included.dll</HintPath>
+      <HintPath>..\packages\BH.UI.Python.Included.3.7.3.7-alpha\lib\netstandard2.0\Python.Included.dll</HintPath>
     </Reference>
     <Reference Include="Python.Runtime, Version=3.7.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BH.UI.Python.Runtime.3.7.2-alpha\lib\netstandard2.0\Python.Runtime.dll</HintPath>
@@ -81,24 +76,16 @@
     <Compile Include="External\Constructors.cs" />
     <Compile Include="External\Methods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Query\Slice.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Properties\numpy-1.16.3-cp37-cp37m-win_amd64.whl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\src\Numpy\Numpy.csproj">
+      <Project>{d527c885-ad64-4499-9e92-f9a543c0d14b}</Project>
+      <Name>Numpy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
