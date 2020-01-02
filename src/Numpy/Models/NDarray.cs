@@ -22,6 +22,20 @@ namespace Numpy
         }
 
         /// <summary>
+        /// Creates an array from an unmanaged (or fixed) memory pointer without copying.
+        /// </summary>
+        /// <param name="dataPtr">Pointer to a block of unmanaged memory or to a block of pinned managed memory</param>
+        /// <param name="dataLength">The length of the block of memory</param>
+        /// <param name="dtype">The data type of the resulting NDarray</param>
+        public NDarray(IntPtr dataPtr, long dataLength, Dtype dtype) : base()
+        {
+            // from https://pastebin.com/4hANmBNy
+            // thanks to Eli Belash
+            var g =(Numpy.ctypes.dynamic_self.c_uint8*dataLength).from_address(dataPtr.ToInt64());
+            self=np.dynamic_self.frombuffer(g, dtype.PyObject);
+        }
+
+        /// <summary>
         /// Returns a copy of the array data
         /// </summary>
         public T[] GetData<T>()

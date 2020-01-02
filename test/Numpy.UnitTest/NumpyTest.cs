@@ -24,6 +24,30 @@ namespace Numpy.UnitTest
         }
 
         [TestMethod]
+        public unsafe void create_from_pointer_without_copying()
+        {
+            IntPtr pointer=IntPtr.Zero;
+            try
+            {
+                var dtype = np.int32;
+                const int length = 1024;
+                pointer = Marshal.AllocHGlobal(length);
+                var ptr = (int*)pointer;
+                // fill the buffer with index numbers
+                for (int i = 0; i < length/sizeof(int); i++)
+                    ptr[i] = i;
+                var a = new NDarray(pointer, length, dtype);
+                Console.WriteLine(a.ToString());
+                Assert.AreEqual(np.arange(length), a);
+            }
+            finally
+            {
+                if (pointer!=IntPtr.Zero)
+                    Marshal.FreeHGlobal(pointer);
+            }
+        }
+
+        [TestMethod]
         public void efficient_array_copy()
         {
             var a = np.empty(new Shape(2, 3), np.int32);

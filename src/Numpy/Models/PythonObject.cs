@@ -7,7 +7,7 @@ namespace Numpy
 {
     public partial class PythonObject : IDisposable
     {
-        protected readonly PyObject self;
+        protected PyObject self; // can not be made readonly because of NDarray(IntPtr ... )
         public dynamic PyObject => self;
 
         public IntPtr Handle => self.Handle;
@@ -21,6 +21,8 @@ namespace Numpy
         {
             this.self = t.PyObject;
         }
+
+        protected PythonObject() { } // required for some constructors
 
         public override bool Equals(object obj)
         {
