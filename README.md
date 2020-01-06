@@ -46,7 +46,7 @@ var result = np.cos(m);
 var data = result.GetData<double>(); // double[] { 0.54030231, -0.41614684, -0.9899925 , -0.65364362 }
 ```
 ## Multi-threading
-Python/NumPy doesn't have real multi-threading support. There is no advantage to calling `numpy` functions from different threads because `pythonnet` requires you to use the Global Interpreter Lock (GIL) when doing so. If you must call Python from a thread other than the main thread you first must release the main thread's mutex by calling `PythonEngine.BeginAllowThreads()` or you'll have a deadlock: 
+Python/NumPy doesn't have real multi-threading support. There is no advantage in "simultaneously" executing `numpy` functions on multiple threads because `pythonnet` requires you to use the Global Interpreter Lock (GIL) to lock access to the Python engine exclusively for only one thread at a time. If you have to call Python from a thread other than the main thread you first must release the main thread's mutex by calling `PythonEngine.BeginAllowThreads()` or you'll have a deadlock: 
 
 ```csharp
 var a = np.arange(1000);
@@ -64,23 +64,13 @@ Task.Run(()=> {
 }).Wait();
 ```
 
-Above example only serves as a reference how to call `numpy` from a different thread than the main thread. Having multiple background threads that call into Python doesn't give you multi-core processing though because of the requirement to lock the GIL. Not doing so will result in access violation exceptions. 
+Above example only serves as a reference on how to call `numpy` from a different thread than the main thread. As said before, having multiple background threads that call into Python doesn't give you multi-core processing because of the requirement to lock the GIL. Not doing so will result in access violation exceptions or deadlocks. 
 
 ## Numpy.NET vs NumSharp
 
-The SciSharp team is also developing a pure C# port of NumPy called [NumSharp](https://github.com/SciSharp/NumSharp) which is quite popular albeit incomplete. To help you decide which one to use we compare the advantages and disadvantages of both libraries here:
+The SciSharp team is also developing a pure C# port of NumPy called [NumSharp](https://github.com/SciSharp/NumSharp) which is quite popular albeit being not quite complete.
 
-| Aspect        | Numpy.NET                             | NumSharp      |
-| ------------- | ------------------------------------- | ------------- |
-| Dependencies  | CPython / NumPy                       | C++ dlls for certain operations |
-| Completeness  | Most all NDarray functions available  | A small subset of most important functions is ported |
-| Development   | Fast, due to automated API generation | Slow, due to lack of manpower |
-| Correctness   | Same results as in Python guaranteed  | There are subtle differences |
-| Actuality     | Can easily keep up with `numpy` dev   | Will probably trail behind, due to lack of manpower |
-| GPU support   | None                                  | Using a GPU backend for calculations possible, per design |
-| Performance   | Same as NumPy minus overhead          | TODO: measure |
-
-There are a couple of other NumPy ports out there featuring subsets of the original library. The only one that matches Numpy.NET in terms of completeness is the IronPython package `numpy` which is out of date. The SciSharp team is committed to keeping Numpy.NET up to date with the original library and to feature as much of the original functionality as possible.
+There are a couple of other NumPy ports out there featuring subsets of the original library. The only one that matches Numpy.NET in terms of completeness is the IronPython package `numpy` which is out of date though. The SciSharp team is committed to keeping Numpy.NET up to date with the original library and to feature as much of the original functionality as possible.
 
 ## Code generation
 
