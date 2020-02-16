@@ -232,3 +232,5 @@ Numpy.NET packages and distributes `Python`, `pythonnet` as well as `numpy`. All
 ## Common Mistakes
 * If you check `Prefer 32-bit` in your build config or build with `x86` instead of `Any CPU` Numpy.NET will crash with `BadFormatException`
 * If you have insufficient folder permissions in AppData Numpy.NET might crash. You can specify a different installpath by setting `Installer.INSTALL_PATH = "<install path>";`
+* If you get deadlocks (program hangs indefinitely) you should read the secton about multi-threading above!
+* If you get AccessViolationExceptions you should read the secton about multi-threading above!
