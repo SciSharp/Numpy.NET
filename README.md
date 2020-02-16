@@ -27,6 +27,36 @@ Numpy.NET uses [Python for .NET](http://pythonnet.github.io/) to call into the P
 
 Long story short: as a .NET Developer **you don't need to worry about Python** at all. You just reference Numpy.NET, use it and **it will just work**, no matter if you have local Python installations or not.
 
+## Multi-threading (Must read!)
+
+**Beware: Not following these steps can result in deadlocks or access violation exceptions!**
+
+Python/NumPy doesn't have real multi-threading support. There is no advantage in "simultaneously" executing `numpy` functions on multiple threads because `pythonnet` requires you to use the Global Interpreter Lock (GIL) to lock access to the Python engine exclusively for only one thread at a time. If you have to call Python from a thread other than the main thread you first must release the main thread's mutex by calling `PythonEngine.BeginAllowThreads()` or you'll have a deadlock: 
+
+```csharp
+var a = np.arange(1000);
+var b = np.arange(1000);
+
+// https://github.com/pythonnet/pythonnet/issues/109
+PythonEngine.BeginAllowThreads();
+
+Task.Run(()=> {
+  // when running on different threads you must lock!
+  using (Py.GIL())
+  {
+    np.matmul(a, b);
+  }
+}).Wait();
+```
+Above example only serves as a reference on how to call `numpy` from a different thread than the main thread. As said before, having multiple background threads that call into Python doesn't give you multi-core processing because of the requirement to lock the GIL. Not doing so will result in **access violation exceptions** and/or **deadlocks**. 
+
+Note that you must call a method of `np` before calling `PythonEngine.BeginAllowThreads()` in order for the PythonEngine to be initialized. So, for instance, if you want to initialize an inherently multi-threaded .Net Core Web API at startup, do something like this:
+
+```csharp
+np.arange(1);
+PythonEngine.BeginAllowThreads();
+```
+
 ## Performance considerations
 
 You might ask how calling into Python affects performance. As always, it depends on your usage. Don't forget that `numpy`'s number crunching algorithms are written in `C` so the thin `pythonnet` and `Python` layers on top won't have a significant impact if you are working with larger amounts of data. 
@@ -45,26 +75,6 @@ var result = np.cos(m);
 // get the floating point data of the result NDarray back to C#
 var data = result.GetData<double>(); // double[] { 0.54030231, -0.41614684, -0.9899925 , -0.65364362 }
 ```
-## Multi-threading
-Python/NumPy doesn't have real multi-threading support. There is no advantage in "simultaneously" executing `numpy` functions on multiple threads because `pythonnet` requires you to use the Global Interpreter Lock (GIL) to lock access to the Python engine exclusively for only one thread at a time. If you have to call Python from a thread other than the main thread you first must release the main thread's mutex by calling `PythonEngine.BeginAllowThreads()` or you'll have a deadlock: 
-
-```csharp
-var a = np.arange(1000);
-var b = np.arange(1000);
-
-// https://github.com/pythonnet/pythonnet/issues/109
-PythonEngine.BeginAllowThreads();
-
-Task.Run(()=> {
-  // when running on different threads you must lock!
-  using (Py.GIL())
-  {
-    np.matmul(a, b);
-  }
-}).Wait();
-```
-
-Above example only serves as a reference on how to call `numpy` from a different thread than the main thread. As said before, having multiple background threads that call into Python doesn't give you multi-core processing because of the requirement to lock the GIL. Not doing so will result in access violation exceptions or deadlocks. 
 
 ## Numpy.NET vs NumSharp
 
