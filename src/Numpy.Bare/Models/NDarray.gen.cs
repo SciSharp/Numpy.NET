@@ -2465,7 +2465,7 @@ namespace Numpy
         ///	treated as if it had first been flattened to 1d, for consistency with
         ///	sort and argsort.
         /// </param>
-        public void take_along_axis(NDarray indices, int axis)
+        public NDarray take_along_axis(NDarray indices, int axis)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2476,6 +2476,7 @@ namespace Numpy
             });
             var kwargs=new PyDict();
             dynamic py = __self__.InvokeMethod("take_along_axis", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>

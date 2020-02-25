@@ -907,15 +907,12 @@ namespace Numpy.UnitTest
         public void take_along_axisTest()
         {
             // For this sample array
-            
+
             // >>> a = np.array([[10, 30, 20], [60, 40, 50]])
-            // 
-            
-            #if TODO
-            var given=  a = np.array({{10, 30, 20}, {60, 40, 50}});
-            #endif
+            var a=  np.array(new[,]{{10, 30, 20}, {60, 40, 50}});
+
             // We can sort either by using sort directly, or argsort and this function
-            
+
             // >>> np.sort(a, axis=1)
             // array([[10, 20, 30],
             //        [40, 50, 60]])
@@ -927,23 +924,23 @@ namespace Numpy.UnitTest
             //        [40, 50, 60]])
             // 
             
-            #if TODO
-             given=  np.sort(a, axis=1);
+            var given=  np.sort(a, axis: 1);
             var expected=
                 "array([[10, 20, 30],\n" +
                 "       [40, 50, 60]])";
             Assert.AreEqual(expected, given.repr);
-             given=  ai = np.argsort(a, axis=1); ai;
+            var ai = np.argsort(a, axis: 1);
+            given = ai;
              expected=
                 "array([[0, 2, 1],\n" +
                 "       [1, 2, 0]], dtype=int64)";
             Assert.AreEqual(expected, given.repr);
-             given=  np.take_along_axis(a, ai, axis=1);
+             given=  np.take_along_axis(a, ai, axis: 1);
              expected=
                 "array([[10, 20, 30],\n" +
                 "       [40, 50, 60]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+
             // The same works for max and min, if you expand the dimensions:
             
             // >>> np.expand_dims(np.max(a, axis=1), axis=1)
@@ -957,25 +954,24 @@ namespace Numpy.UnitTest
             // array([[30],
             //        [60]])
             // 
-            
-            #if TODO
-             given=  np.expand_dims(np.max(a, axis=1), axis=1);
+
+             given=  np.expand_dims(np.max(a, axis:new int[]{1}), axis:1);
              expected=
                 "array([[30],\n" +
                 "       [60]])";
             Assert.AreEqual(expected, given.repr);
-             given=  ai = np.expand_dims(np.argmax(a, axis=1), axis=1);
+             given=  ai = np.expand_dims(np.argmax(a, axis:1), axis:1);
              given=  ai;
              expected=
                 "array([[1],\n" +
-                "       [0], dtype=int64)";
+                "       [0]], dtype=int64)";
             Assert.AreEqual(expected, given.repr);
-             given=  np.take_along_axis(a, ai, axis=1);
+             given=  np.take_along_axis(a, ai, axis:1);
              expected=
                 "array([[30],\n" +
                 "       [60]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+
             // If we want to get the max and min at the same time, we can stack the
             // indices first
             
@@ -989,22 +985,19 @@ namespace Numpy.UnitTest
             // array([[10, 30],
             //        [40, 60]])
             // 
-            
-            #if TODO
-             given=  ai_min = np.expand_dims(np.argmin(a, axis=1), axis=1);
-             given=  ai_max = np.expand_dims(np.argmax(a, axis=1), axis=1);
-             given=  ai = np.concatenate({ai_min, ai_max}, axis=axis);
+
+             var ai_min = np.expand_dims(np.argmin(a, axis:1), axis:1);
+             var  ai_max = np.expand_dims(np.argmax(a, axis:1), axis:1);
+             given=  ai = np.concatenate(new[]{ai_min, ai_max}, axis: 1);
              expected=
-                ">> ai\n" +
                 "array([[0, 1],\n" +
                 "       [1, 0]], dtype=int64)";
             Assert.AreEqual(expected, given.repr);
-             given=  np.take_along_axis(a, ai, axis=1);
+             given=  np.take_along_axis(a, ai, axis:1);
              expected=
                 "array([[10, 30],\n" +
                 "       [40, 60]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
         }
         
         
