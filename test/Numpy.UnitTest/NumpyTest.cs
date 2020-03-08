@@ -396,9 +396,10 @@ namespace Numpy.UnitTest
             Assert.AreEqual(new[] { 10, 20, 30 }, (a * 10).GetData<int>());
             Assert.AreEqual(new[] { 2, 4, 6 }, (a * b).GetData<int>());
             a = np.array(2, 4, 16);
-            Console.WriteLine((a / 2).repr);
             Assert.AreEqual(new[] { 1, 2, 8 }, (a / 2).GetData<double>());
             Assert.AreEqual(new[] { 1, 2, 8 }, (a / b).GetData<double>());
+            Assert.AreEqual(new[] { 4, 2, .5 }, (8 / a).GetData<double>());
+            Assert.AreEqual(new[] { 4, 2, -10 }, (6 - a).GetData<int>());
         }
 
         [TestMethod]

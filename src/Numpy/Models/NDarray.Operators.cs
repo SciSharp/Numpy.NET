@@ -170,6 +170,13 @@ namespace Numpy
             return new NDarray(a.self.InvokeMethod("__sub__", obj.ToPython()));
         }
 
+        // Return value-self.
+        public static NDarray operator -(ValueType obj, NDarray a)
+        {
+            var firstElemAsArray = np.asarray(obj);
+            return new NDarray(firstElemAsArray.self.InvokeMethod("__sub__", a.self));
+        }
+
         // Return self*value.
         public static NDarray operator *(NDarray a, ValueType obj)
         {
