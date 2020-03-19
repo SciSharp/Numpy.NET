@@ -410,6 +410,15 @@ namespace Numpy.UnitTest
             Assert.AreEqual(new[] { 1, 2, 3 }, a.GetData<int>());
         }
 
+        [TestMethod]
+        public void ndarray_value_div_ndarray()
+        {
+            // division operator
+            var a = np.array(1.0, 2.0, 3.0);
+            Assert.AreEqual(new[] { 0.5, 1.0, 1.5 }, (a / 2.0).GetData<double>());
+            Assert.AreEqual(new[] { 6.0, 3.0, 2.0 }, (6.0 / a).GetData<double>());
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs

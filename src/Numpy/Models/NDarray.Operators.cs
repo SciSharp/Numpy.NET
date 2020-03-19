@@ -7,6 +7,10 @@ namespace Numpy
 {
     public partial class NDarray
     {
+        // this is needed for arithmetic operations where we need to call the module "operator", i.e. value/ndarray
+        public static PyObject operator_module;
+
+
         //------------------------------
         // Comparison operators:
         //------------------------------
@@ -169,6 +173,14 @@ namespace Numpy
         public static NDarray operator /(NDarray a, ValueType obj)
         {
             return new NDarray(a.self.InvokeMethod("__truediv__", obj.ToPython()));
+        }
+
+        // Return value/self.
+        public static NDarray operator /(ValueType obj, NDarray a)
+        {
+            if (operator_module==null)
+                operator_module=PythonEngine.ImportModule("operator");
+            return new NDarray(operator_module.InvokeMethod("__truediv__", obj.ToPython(), a.self));
         }
 
         // Return element-wise self+array.
