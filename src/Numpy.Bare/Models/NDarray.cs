@@ -31,10 +31,8 @@ namespace Numpy
         {
             // adapted from https://pastebin.com/4hANmBNy
             // thanks to Eli Belash
-            //var g = (Numpy.ctypes.dynamic_self.c_uint8 * dataLength).from_address(dataPtr.ToInt64());
-            //self = np.dynamic_self.frombuffer(g, dtype.PyObject);
-
-            // the above does not work :( so we'll try to execute the python script (https://pastebin.com/4hANmBNy) which should work 100% according to Eli
+            var g = (Numpy.ctypes.dynamic_self.c_uint8 * dataLength).from_address(dataPtr.ToInt64());
+            self = np.dynamic_self.frombuffer(g, dtype.PyObject, -1);
         }
 
         /// <summary>
@@ -481,6 +479,16 @@ namespace Numpy
         {
             return np.asscalar<T>(this);
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            var array = obj as NDarray;
+            if (array != null)
+                return np.array_equal(this, array);
+            return base.Equals(obj);
+        }
     }
 
     public class NDarray<T> : NDarray
@@ -588,5 +596,7 @@ namespace Numpy
                 self.SetItem(tuple, ToPython(value));
             }
         }
+
+
     }
 }

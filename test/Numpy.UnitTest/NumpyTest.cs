@@ -23,7 +23,6 @@ namespace Numpy.UnitTest
                 Console.WriteLine(x);
         }
 
-        [Ignore("This does not work :(")]
         [TestMethod]
         public unsafe void create_from_pointer_without_copying()
         {
@@ -39,7 +38,11 @@ namespace Numpy.UnitTest
                     ptr[i] = i;
                 var a = new NDarray(pointer, length, dtype);
                 Console.WriteLine(a.ToString());
-                Assert.AreEqual(np.arange(length), a);
+                var b = np.arange(length / sizeof(int));
+                Console.WriteLine(b);
+                var truth1 = b.Equals(a);
+                var truth2 = a.Equals(b);
+                Assert.AreEqual(b, a);
             }
             finally
             {
