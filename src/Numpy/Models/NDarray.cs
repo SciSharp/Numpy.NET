@@ -11,6 +11,9 @@ namespace Numpy
 {
     public partial class NDarray : PythonObject
     {
+        // this is needed for constructors in  NDarray<T>
+        protected NDarray() : base() { }
+
         // these are manual overrides of functions or properties that can not be automatically generated
 
         public NDarray(PyObject pyobj) : base(pyobj)
@@ -489,6 +492,13 @@ namespace Numpy
 
         public NDarray(PyObject pyobject) : base(pyobject)
         {
+        }
+
+
+        public NDarray(T[] array) : base()
+        {
+            var nd = np.array(array);
+            self = nd.self;
         }
 
         /// <summary>

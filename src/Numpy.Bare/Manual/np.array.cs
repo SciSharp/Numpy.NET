@@ -21,7 +21,7 @@ namespace Numpy
         /// <returns>
         /// An array object satisfying the specified requirements.
         /// </returns>
-        public static NDarray<T> array<T>(params T[] data) where T : struct
+        public static NDarray<T> array<T>(params T[] data)
         {
             return array(data, dtype: null);
         }
