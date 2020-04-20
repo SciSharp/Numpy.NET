@@ -78,6 +78,20 @@ namespace Numpy
             return new NDarray<bool>(a.self.InvokeMethod("__ge__", obj.self));
         }
 
+        // NOTE: overloading == and != with Python's functionality would cause compile errors throughout all of the code
+        //// Return self==value.
+        //public static NDarray<bool> operator ==(NDarray a, ValueType obj)
+        //{
+        //    return new NDarray<bool>(a.self.InvokeMethod("__eq__", obj.ToPython()));
+        //}
+
+        // NOTE: overloading == and != with Python's functionality would cause compile errors throughout all of the code
+        //// Return self==value.
+        //public static NDarray<bool> operator !=(NDarray a, ValueType obj)
+        //{
+        //    return new NDarray<bool>(a.self.InvokeMethod("__ne__", obj.ToPython()));
+        //}
+
         /// <summary>
         /// Returns an array of bool where the elements of the array are == array element-wise
         /// </summary>

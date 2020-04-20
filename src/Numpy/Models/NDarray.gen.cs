@@ -2346,6 +2346,25 @@ namespace Numpy
         }
         
         /// <summary>
+        ///	Return elements chosen from x or y depending on condition.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If all the arrays are 1-D, where is equivalent to:
+        /// </summary>
+        /// <returns>
+        ///	An array with elements from x where condition is True, and elements
+        ///	from y elsewhere.
+        /// </returns>
+        public NDarray @where()
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("where");
+            return ToCsharp<NDarray>(py);
+        }
+        
+        /// <summary>
         ///	Converts a flat index or array of flat indices into a tuple
         ///	of coordinate arrays.
         /// </summary>

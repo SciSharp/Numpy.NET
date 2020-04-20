@@ -182,6 +182,33 @@ namespace Numpy
         }
         
         /// <summary>
+        ///	Return elements chosen from x or y depending on condition.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	If all the arrays are 1-D, where is equivalent to:
+        /// </summary>
+        /// <param name="condition">
+        ///	Where True, yield x, otherwise yield y.
+        /// </param>
+        /// <returns>
+        ///	An array with elements from x where condition is True, and elements
+        ///	from y elsewhere.
+        /// </returns>
+        public static NDarray @where(NDarray condition)
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                condition,
+            });
+            var kwargs=new PyDict();
+            dynamic py = __self__.InvokeMethod("where", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
+        
+        /// <summary>
         ///	Return an array representing the indices of a grid.<br></br>
         ///	
         ///	Compute an array where the subarrays contain index values 0,1,…

@@ -9,7 +9,6 @@ using System.Text;
 using Python.Runtime;
 using Numpy.Models;
 
-
 namespace Numpy
 {
     public static partial class ctypes

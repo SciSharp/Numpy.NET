@@ -12,7 +12,7 @@ namespace Numpy
     public partial class NDarray : PythonObject
     {
         // this is needed for constructors in  NDarray<T>
-        protected NDarray() :base() { }
+        protected NDarray() : base() { }
 
         // these are manual overrides of functions or properties that can not be automatically generated
 
@@ -488,7 +488,7 @@ namespace Numpy
             if (obj == null)
                 return false;
             var array = obj as NDarray;
-            if (array != null)
+            if (!object.ReferenceEquals(array, null))
                 return np.array_equal(this, array);
             return base.Equals(obj);
         }
@@ -605,7 +605,5 @@ namespace Numpy
                 self.SetItem(tuple, ToPython(value));
             }
         }
-
-
     }
 }

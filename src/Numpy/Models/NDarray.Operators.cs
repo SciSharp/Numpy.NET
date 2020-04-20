@@ -10,7 +10,6 @@ namespace Numpy
         // this is needed for arithmetic operations where we need to call the module "operator", i.e. value/ndarray
         public static PyObject operator_module;
 
-
         //------------------------------
         // Comparison operators:
         //------------------------------
@@ -38,6 +37,20 @@ namespace Numpy
         {
             return new NDarray<bool>(a.self.InvokeMethod("__ge__", obj.ToPython()));
         }
+
+        // NOTE: overloading == and != with Python's functionality would cause compile errors throughout all of the code
+        //// Return self==value.
+        //public static NDarray<bool> operator ==(NDarray a, ValueType obj)
+        //{
+        //    return new NDarray<bool>(a.self.InvokeMethod("__eq__", obj.ToPython()));
+        //}
+
+        // NOTE: overloading == and != with Python's functionality would cause compile errors throughout all of the code
+        //// Return self==value.
+        //public static NDarray<bool> operator !=(NDarray a, ValueType obj)
+        //{
+        //    return new NDarray<bool>(a.self.InvokeMethod("__ne__", obj.ToPython()));
+        //}
 
         /// <summary>
         /// Returns an array of bool where the elements of the array are == value
@@ -178,8 +191,8 @@ namespace Numpy
         // Return value/self.
         public static NDarray operator /(ValueType obj, NDarray a)
         {
-            if (operator_module==null)
-                operator_module=PythonEngine.ImportModule("operator");
+            if (operator_module == null)
+                operator_module = PythonEngine.ImportModule("operator");
             return new NDarray(operator_module.InvokeMethod("__truediv__", obj.ToPython(), a.self));
         }
 
