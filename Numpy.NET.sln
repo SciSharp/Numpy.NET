@@ -19,7 +19,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReleaseBot", "src\ReleaseBo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeuralNetworkExample", "NeuralNetworkExample\NeuralNetworkExample.csproj", "{66A030C3-69B8-4A84-9F4B-308D66CF4FD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiExample", "WebApiExample\WebApiExample.csproj", "{7C23FCEB-BFC1-4720-87E1-004FA59A0FBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiExample", "WebApiExample\WebApiExample.csproj", "{7C23FCEB-BFC1-4720-87E1-004FA59A0FBC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeMinion.ApiGenerator", "src\CodeMinion.ApiGenerator\CodeMinion.ApiGenerator.csproj", "{FDE7E8A2-011A-47D5-B35B-F52ABFE5D5A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeMinion.Core", "src\CodeMinion.Core\CodeMinion.Core.csproj", "{72369115-A8B9-4BD6-BF55-CAB06A575EE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeMinion.Parser", "src\CodeMinion.DocsParser\CodeMinion.Parser.csproj", "{C7768F3C-7218-409A-8626-009D5C448C0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +65,18 @@ Global
 		{7C23FCEB-BFC1-4720-87E1-004FA59A0FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C23FCEB-BFC1-4720-87E1-004FA59A0FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C23FCEB-BFC1-4720-87E1-004FA59A0FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDE7E8A2-011A-47D5-B35B-F52ABFE5D5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE7E8A2-011A-47D5-B35B-F52ABFE5D5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE7E8A2-011A-47D5-B35B-F52ABFE5D5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE7E8A2-011A-47D5-B35B-F52ABFE5D5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72369115-A8B9-4BD6-BF55-CAB06A575EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72369115-A8B9-4BD6-BF55-CAB06A575EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72369115-A8B9-4BD6-BF55-CAB06A575EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72369115-A8B9-4BD6-BF55-CAB06A575EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7768F3C-7218-409A-8626-009D5C448C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7768F3C-7218-409A-8626-009D5C448C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7768F3C-7218-409A-8626-009D5C448C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7768F3C-7218-409A-8626-009D5C448C0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
