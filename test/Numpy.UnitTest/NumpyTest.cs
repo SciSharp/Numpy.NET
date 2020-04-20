@@ -26,7 +26,7 @@ namespace Numpy.UnitTest
         [TestMethod]
         public unsafe void create_from_pointer_without_copying()
         {
-            IntPtr pointer=IntPtr.Zero;
+            IntPtr pointer = IntPtr.Zero;
             try
             {
                 var dtype = np.int32;
@@ -34,7 +34,7 @@ namespace Numpy.UnitTest
                 pointer = Marshal.AllocHGlobal(length);
                 var ptr = (int*)pointer;
                 // fill the buffer with index numbers
-                for (int i = 0; i < length/sizeof(int); i++)
+                for (int i = 0; i < length / sizeof(int); i++)
                     ptr[i] = i;
                 var a = new NDarray(pointer, length, dtype);
                 Console.WriteLine(a.ToString());
@@ -46,7 +46,7 @@ namespace Numpy.UnitTest
             }
             finally
             {
-                if (pointer!=IntPtr.Zero)
+                if (pointer != IntPtr.Zero)
                     Marshal.FreeHGlobal(pointer);
             }
         }
@@ -421,6 +421,20 @@ namespace Numpy.UnitTest
             var a = np.array(1.0, 2.0, 3.0);
             Assert.AreEqual(new[] { 0.5, 1.0, 1.5 }, (a / 2.0).GetData<double>());
             Assert.AreEqual(new[] { 6.0, 3.0, 2.0 }, (6.0 / a).GetData<double>());
+        }
+
+        [TestMethod]
+        public void np_where()
+        {
+            //>>> import numpy as np
+            //>>> a = [1, 2, 3, 4, 0, 0, 1, 2]
+            //>>> a = np.array(a)
+            //>>> b = np.where(a == 0)
+            //>>> b
+            //(array([4, 5], dtype = int64),)
+            var a = np.array(new[] { 1, 2, 3, 4, 0, 0, 1, 2 });
+            var b = np.where(a.equals(0));
+            Assert.AreEqual("(array([4, 5], dtype=int64),)", b.repr);
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
