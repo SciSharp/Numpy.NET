@@ -437,6 +437,37 @@ namespace Numpy.UnitTest
             Assert.AreEqual("(array([4, 5], dtype=int64),)", b.repr);
         }
 
+        [TestMethod]
+        public void GetData_noncontiguous()
+        {
+            int[,] X = new int[3, 3];
+            X[0, 0] = -1;
+
+            NDarray npX = np.array(X, dtype: np.int32); // control
+            NDarray npY = np.array(X, dtype: np.int32); // test
+
+            Console.WriteLine("Control:");
+            Console.WriteLine(npX);
+
+            Console.WriteLine("Test:");
+            Console.WriteLine(npY);
+
+            // flip on the row axis
+            npY = np.flip(npY, new int[] { 0 });
+            Console.WriteLine("Test flipped on axis 0:");
+            Console.WriteLine(npY);
+
+            // get their data
+            int[] cX = npX.GetData<int>();
+            int[] cY = npY.GetData<int>();
+
+            Console.WriteLine("Control extracted back to C#:\n"+ string.Join(" ", cX));
+            Assert.AreEqual("-1 0 0 0 0 0 0 0 0", string.Join(" ", cX));
+            Console.WriteLine("Test extracted back to C#:\n"+ string.Join(" ", cY));
+            Assert.AreEqual("0 0 0 0 0 0 -1 0 0", string.Join(" ", cY));
+        }
+
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs

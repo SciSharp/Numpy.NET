@@ -43,7 +43,8 @@ namespace Numpy
         /// </summary>
         public T[] GetData<T>()
         {
-            // note: this implementation works only for device CPU
+            if (!PyObject.flags.c_contiguous)
+                return np.ascontiguousarray(this).GetData<T>();
             long ptr = PyObject.ctypes.data;
             int size = PyObject.size;
             object array = null;
