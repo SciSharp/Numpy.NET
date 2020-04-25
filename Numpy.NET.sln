@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeuralNetworkExample", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiExample", "src\Examples\WebApiExample\WebApiExample.csproj", "{445655A8-E4FC-4257-9CA2-63D67D84F2A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreTest", "src\Examples\NetCoreTest\NetCoreTest.csproj", "{84BCB8CA-6B29-48D8-BEEE-751C7547419E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{445655A8-E4FC-4257-9CA2-63D67D84F2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{445655A8-E4FC-4257-9CA2-63D67D84F2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{445655A8-E4FC-4257-9CA2-63D67D84F2A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BCB8CA-6B29-48D8-BEEE-751C7547419E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BCB8CA-6B29-48D8-BEEE-751C7547419E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BCB8CA-6B29-48D8-BEEE-751C7547419E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BCB8CA-6B29-48D8-BEEE-751C7547419E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{A92C1287-BF2B-4FDC-8BBA-A17F410CD41F} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 		{53CD5C07-7902-4761-B00B-0171AB6C7620} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 		{445655A8-E4FC-4257-9CA2-63D67D84F2A2} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
+		{84BCB8CA-6B29-48D8-BEEE-751C7547419E} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EB08541-5168-443C-B524-A5CB7E7C613D}
