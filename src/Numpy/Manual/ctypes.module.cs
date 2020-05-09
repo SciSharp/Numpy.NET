@@ -8,7 +8,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Python.Runtime;
 using Numpy.Models;
+#if PYTHON_INCLUDED
 using Python.Included;
+#endif
 
 namespace Numpy
 {

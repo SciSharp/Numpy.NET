@@ -33,7 +33,7 @@ namespace CodeMinion.Core
         public string PythonModuleName { get; set; } = "numpy";
         public List<Action<CodeWriter>> InitializationGenerators { get; set; } = new List<Action<CodeWriter>>();
 
-        public bool UsePythonIncluded { get; set; } = true;
+        //public bool UsePythonIncluded { get; set; } = true;
         public HashSet<string> Usings { get; set; } = new HashSet<string>()
         {
             @"using System;",
@@ -539,8 +539,9 @@ namespace CodeMinion.Core
             {
                 s.AppendLine(@using);
             }
-            if (UsePythonIncluded)
-                s.Out(@"using Python.Included;");
+            s.Out(@"#if PYTHON_INCLUDED");
+            s.Out(@"using Python.Included;");
+            s.Out(@"#endif");
             s.AppendLine();
         }
 
@@ -919,10 +920,9 @@ namespace CodeMinion.Core
                     s.Break();
                     s.Out("private static PyObject InstallAndImport(bool force = false)", () =>
                     {
-                        if (UsePythonIncluded)
-                        {
-                            s.Out("Installer.SetupPython(force).Wait();");
-                        }
+                        s.Out(@"#if PYTHON_INCLUDED");
+                        s.Out("Installer.SetupPython(force).Wait();");
+                        s.Out(@"#endif");
                         foreach (var generator in InitializationGenerators)
                             generator(s);
                         s.Out("PythonEngine.Initialize();");

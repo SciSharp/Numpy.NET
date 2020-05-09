@@ -55,7 +55,7 @@ namespace CodeMinion.ApiGenerator.NumPy
 
             _generator = new CodeGenerator
             {
-                CopyrightNotice = "Copyright (c) 2019 by the SciSharp Team",
+                CopyrightNotice = "Copyright (c) 2020 by Meinrad Recheis (Member of SciSharp)",
                 NameSpace = "Numpy",
                 StaticModuleName = "np",
                 PythonModuleName="numpy",
@@ -262,18 +262,6 @@ namespace CodeMinion.ApiGenerator.NumPy
             _generator.Generate();
             ApiStatistics();
             Console.WriteLine($"Number of generated functions: {parsed_api_functions.Count} / {all_api_functions.Count}");
-
-            // ----------------------------------------------------
-            // generate Numpy.Bare
-            // it is based on Python.Runtime only and doesn't pack anything. Python 3.7 installation including numpy pip module are required for this to run
-            // ----------------------------------------------------
-            _generator.InitializationGenerators = new List<Action<CodeWriter>>(); // <--- do not install wheel in numpy bare
-            ndarray_api.OutputPath = Path.Combine(src_dir, "Numpy.Bare/Models");
-            _generator.ModelsPath = Path.Combine(src_dir, "Numpy.Bare/Models");
-            _generator.StaticApiFilesPath = Path.Combine(src_dir, "Numpy.Bare");
-            _generator.DynamicApiFilesPath = Path.Combine(src_dir, "Numpy.Bare");
-            _generator.UsePythonIncluded = false;
-            _generator.Generate();
 
             Thread.Sleep(2000);
 

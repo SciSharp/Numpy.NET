@@ -18,6 +18,14 @@
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;PYTHON_INCLUDED</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;PYTHON_INCLUDED</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\numpy-1.16.3-cp37-cp37m-win_amd64.whl"></None>
   </ItemGroup>
@@ -29,6 +37,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0"></PackageReference>
     <PackageReference Include="Python.Included" Version="3.7.3.4"></PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Manual\" />
   </ItemGroup>
 
 </Project>

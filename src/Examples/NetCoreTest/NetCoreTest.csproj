@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Numpy" Version="3.7.1.14" />
+    <ProjectReference Include="..\..\Numpy\Numpy.csproj" />
   </ItemGroup>
 
 </Project>
