@@ -130,6 +130,33 @@ Getting more unit tests to run is very easy though, and a good portion have alre
 
 Since we have taken great care to make Numpy.NET as similar to NumPy itself, you can, for the most part, rely on the official [NumPy manual](https://docs.scipy.org/doc/numpy/). 
 
+### Create a Numpy array from a C# array and vice versa
+
+To work with data from C# in Numpy it has to be copied into the Python engine by using `np.array(...)`. You get an NDarray that you can use for further processing of the data. Here we calculate the square root:
+
+```csharp
+// create an NDarray from a C# array
+var a = np.array(new[] { 2, 4, 9, 25 });
+Console.WriteLine("a: "+ a.repr);
+// a: array([ 2,  4,  9, 25])
+// apply the square root to each element
+var roots = np.sqrt(a);
+Console.WriteLine(roots.repr);
+// array([1.41421356, 2.        , 3.        , 5.        ])
+```
+
+After processing the data you can copy it back into a C# array use `a.GetData<int>()`, but be aware of the datatype of the NDarray in order to get correct values back:
+
+```csharp
+// Copy the NDarray roots into a C# array from NDarray (incorrect datatype)
+Console.WriteLine(string.Join(", ", roots.GetData<int>()));
+// 1719614413, 1073127582, 0, 1073741824 
+Console.WriteLine("roots.dtype: " + roots.dtype);
+// roots.dtype: float64
+Console.WriteLine(string.Join(", ", roots.GetData<double>()));
+// 1.4142135623731, 2, 3, 5
+```
+
 ### Creating multi-dimensional NDarrays from C# arrays
 
 Creating an `NDarray` from data is easy. Just pass the C# array into `np.array(...)`. You can pass 1D, 2D and 3D C# arrays into it. 
