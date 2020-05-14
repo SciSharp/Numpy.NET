@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E1BD94E-6AE4-46D9-B0BA-6AC0515AF0D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Numpy.Bare.Dotnet</RootNamespace>
+    <AssemblyName>Numpy.Bare.Dotnet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Python.Runtime, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\pythonnet_netframework_win_py37.2.4.1\lib\net40\Python.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Numpy\Manual\ctypes.module.cs">
+      <Link>Manual\ctypes.module.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.aliases.cs">
+      <Link>Manual\np.aliases.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.array.cs">
+      <Link>Manual\np.array.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.concatenate.cs">
+      <Link>Manual\np.concatenate.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.constants.cs">
+      <Link>Manual\np.constants.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.linalg.norm.cs">
+      <Link>Manual\np.linalg.norm.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.linspace.cs">
+      <Link>Manual\np.linspace.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.random.cs">
+      <Link>Manual\np.random.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.resize.cs">
+      <Link>Manual\np.resize.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\Constants.cs">
+      <Link>Models\Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\Dtype.cs">
+      <Link>Models\Dtype.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\Flags.cs">
+      <Link>Models\Flags.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\Matrix.cs">
+      <Link>Models\Matrix.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\MemMapMode.cs">
+      <Link>Models\MemMapMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\NDarray.aliases.cs">
+      <Link>Models\NDarray.aliases.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\NDarray.CastOperators.cs">
+      <Link>Models\NDarray.CastOperators.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\NDarray.cs">
+      <Link>Models\NDarray.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\NDarray.gen.cs">
+      <Link>Models\NDarray.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\NDarray.Operators.cs">
+      <Link>Models\NDarray.Operators.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\PythonObject.cs">
+      <Link>Models\PythonObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\PythonObject.gen.cs">
+      <Link>Models\PythonObject.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\Shape.cs">
+      <Link>Models\Shape.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Models\Slice.cs">
+      <Link>Models\Slice.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.array_creation.gen.cs">
+      <Link>np.array_creation.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.array_manipulation.gen.cs">
+      <Link>np.array_manipulation.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.bitwise.gen.cs">
+      <Link>np.bitwise.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.datetime.gen.cs">
+      <Link>np.datetime.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.dtype.gen.cs">
+      <Link>np.dtype.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.dtype.routines.gen.cs">
+      <Link>np.dtype.routines.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.fft.gen.cs">
+      <Link>np.fft.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.financial.gen.cs">
+      <Link>np.financial.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.indexing.gen.cs">
+      <Link>np.indexing.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.io.gen.cs">
+      <Link>np.io.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.linalg.gen.cs">
+      <Link>np.linalg.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.linalg_fft.gen.cs">
+      <Link>np.linalg_fft.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.logic.gen.cs">
+      <Link>np.logic.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.math.gen.cs">
+      <Link>np.math.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.module.gen.cs">
+      <Link>np.module.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.padding.gen.cs">
+      <Link>np.padding.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.random.gen.cs">
+      <Link>np.random.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.set.gen.cs">
+      <Link>np.set.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.sorting.gen.cs">
+      <Link>np.sorting.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.staticstics.gen.cs">
+      <Link>np.staticstics.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.string.gen.cs">
+      <Link>np.string.gen.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\np.window.gen.cs">
+      <Link>np.window.gen.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Numpy.Bare.Dotnet.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

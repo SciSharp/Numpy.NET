@@ -43,7 +43,12 @@ namespace CodeMinion.Core
             @"using System.Linq;",
             @"using System.Runtime.InteropServices;",
             @"using System.Text;",
-            @"using Python.Runtime;",
+            @"#if NET_STANDARD
+using Python.Runtime;
+#else
+using Pythonnet;
+#endif
+",
         };
         public string StaticApiFilesPath { get; set; }
         public string DynamicApiFilesPath { get; set; }

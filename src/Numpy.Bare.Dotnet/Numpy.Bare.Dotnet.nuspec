@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Numpy.Bare.Dotnet</id>
+    <version>3.7.1.14</version>
+    <title>Numpy.Bare.Dotnet</title>
+    <authors>Meinrad Recheis (SciSharp)</authors>
+    <owners>Meinrad Recheis</owners>
+    <licenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/SciSharp/Numpy.NET</projectUrl>
+    <iconUrl>https://api.nuget.org/v3-flatcontainer/numpy.bare/3.7.1.14/icon</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# bindings for NumPy on Win64 - a fundamental library for scientific computing, machine learning and AI. Does require Python 3.7 with NumPy 1.16 installed!</description>
+    <releaseNotes>This one is compiled against .NET Framework 4.0</releaseNotes>
+    <copyright>Copyright 2019-2020 Meinrad Recheis (SciSharp)</copyright>
+    <tags>Data science Machine Learning AI Scientific Computing NumPy Linear Algebra FFT SVD Matrix Python</tags>
+  </metadata>
+</package>

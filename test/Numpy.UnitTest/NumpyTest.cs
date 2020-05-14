@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Numpy;
@@ -467,6 +468,24 @@ namespace Numpy.UnitTest
             Assert.AreEqual("0 0 0 0 0 0 -1 0 0", string.Join(" ", cY));
         }
 
+        [TestMethod]
+        public void CopyDataInAndOutExample()
+        {
+            var a = np.array(new[] { 2, 4, 9, 25 });
+            Console.WriteLine("a: "+ a.repr);
+            // a: array([ 2,  4,  9, 25])
+            var roots =np.sqrt(a);
+            Console.WriteLine(roots.repr);
+            // array([1.41421356, 2.        , 3.        , 5.        ])
+            Assert.AreEqual("array([1.41421356, 2.        , 3.        , 5.        ])", roots.repr);
+            Console.WriteLine(string.Join(", ", roots.GetData<int>()));
+            // 1719614413, 1073127582, 0, 1073741824
+            Console.WriteLine("roots.dtype: " + roots.dtype);
+            // roots.dtype: float64
+            Console.WriteLine(string.Join(", ", roots.GetData<double>()));
+            // 1.4142135623731, 2, 3, 5
+            Assert.AreEqual(new double[]{ 1.41, 2,3,5 }, roots.GetData<double>().Select(x=>Math.Round(x, 2)).ToArray());
+        }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
