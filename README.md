@@ -232,7 +232,7 @@ var roots = np.sqrt(a); // => { 0.0, 1.0, 1.414, ..., 9.899, 9.950 }
 ```
 
 #### Complex numbers
-Python has native support of complex numbers, something the C# language is lacking as well. Converting complex results to and from NumPy is not implemented at all (yet). Please step forward if you want to work on this.
+Converting complex results to and from NumPy is not implemented at all (yet). If you want to work on this, let us know.
 
 #### Functions clashing with their class name
 The function fft(...) in numpy.fft and random(...) in numpy.random had to be renamed because C#  doesn't allow a member to have the same name as its enclosing class. That's why in Numpy.NET these functions have been renamed with a trailing underscore like this: `np.fft.fft_(...)`
