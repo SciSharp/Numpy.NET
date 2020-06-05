@@ -969,9 +969,9 @@ namespace Numpy.UnitTest
             // 
 
 
-            var a = np.array(new[,] {{1, 2}, {3, 4}});
-            var b = np.array(new[,] {{5, 6}});
-            var given = np.concatenate(new[] {a, b}, axis: 0);
+            var a = np.array(new[,] { { 1, 2 }, { 3, 4 } });
+            var b = np.array(new[,] { { 5, 6 } });
+            var given = np.concatenate(new[] { a, b }, axis: 0);
             var expected =
                 "array([[1, 2],\n" +
                 "       [3, 4],\n" +
@@ -1121,16 +1121,14 @@ namespace Numpy.UnitTest
             //        [3, 4]])
             // 
 
-#if TODO
-            var given=  a = np.array((1,2,3));
-             given=  b = np.array((2,3,4));
-             given=  np.column_stack((a,b));
-            var expected=
+            var a = np.array(1, 2, 3);
+            var b = np.array(2, 3, 4);
+            var given = np.column_stack(a, b);
+            var expected =
                 "array([[1, 2],\n" +
                 "       [2, 3],\n" +
                 "       [3, 4]])";
             Assert.AreEqual(expected, given.repr);
-#endif
         }
 
 
@@ -1741,8 +1739,8 @@ namespace Numpy.UnitTest
             // array([1, 2, 3, 4, 5, 6, 7, 8, 9])
             // 
 
-            var given=  np.append(new int[]{1, 2, 3}, new int[,]{{4, 5, 6}, {7, 8, 9}});
-            var expected=
+            var given = np.append(new int[] { 1, 2, 3 }, new int[,] { { 4, 5, 6 }, { 7, 8, 9 } });
+            var expected =
                 "array([1, 2, 3, 4, 5, 6, 7, 8, 9])";
             Assert.AreEqual(expected, given.repr);
             // When axis is specified, values must have the correct shape.
@@ -1752,11 +1750,11 @@ namespace Numpy.UnitTest
             //        [4, 5, 6],
             //        [7, 8, 9]])
 
-             given=  np.append(new int[,] { {1, 2, 3}, {4, 5, 6}}, new int[,] { {7, 8, 9}}, axis: 0);
-             expected=
-                "array([[1, 2, 3],\n" +
-                "       [4, 5, 6],\n" +
-                "       [7, 8, 9]])";
+            given = np.append(new int[,] { { 1, 2, 3 }, { 4, 5, 6 } }, new int[,] { { 7, 8, 9 } }, axis: 0);
+            expected =
+               "array([[1, 2, 3],\n" +
+               "       [4, 5, 6],\n" +
+               "       [7, 8, 9]])";
             Assert.AreEqual(expected, given.repr);
         }
 

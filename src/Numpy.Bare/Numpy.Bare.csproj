@@ -33,6 +33,7 @@
     <Compile Include="..\Numpy\Manual\ctypes.module.cs" Link="Manual\ctypes.module.cs" />
     <Compile Include="..\Numpy\Manual\np.aliases.cs" Link="Manual\np.aliases.cs" />
     <Compile Include="..\Numpy\Manual\np.array.cs" Link="Manual\np.array.cs" />
+    <Compile Include="..\Numpy\Manual\np.column_stack.cs" Link="Manual\np.column_stack.cs" />
     <Compile Include="..\Numpy\Manual\np.concatenate.cs" Link="Manual\np.concatenate.cs" />
     <Compile Include="..\Numpy\Manual\np.constants.cs" Link="Manual\np.constants.cs" />
     <Compile Include="..\Numpy\Manual\np.linalg.norm.cs" Link="Manual\np.linalg.norm.cs" />

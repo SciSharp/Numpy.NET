@@ -817,6 +817,9 @@ namespace CodeMinion.ApiGenerator.NumPy
                     decl.Returns.Clear();
                     decl.Returns.Add(new Argument() { Type = "NDarray", Name = "array", IsReturnValue = true });
                     break;
+                case "column_stack":
+                    decl.ManualOverride = true;
+                    break;
             }
         }
 

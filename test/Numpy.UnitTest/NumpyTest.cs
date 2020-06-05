@@ -160,7 +160,8 @@ namespace Numpy.UnitTest
             var t = x.T;
             Console.WriteLine(t.repr);
             Assert.AreEqual("[[1. 3.]\n [2. 4.]]", t.ToString());
-            Assert.AreEqual(new[] { 1f, 2f, 3f, 4f }, t.GetData<float>());
+            // getting data of transposed array returns transposed array!
+            Assert.AreEqual(new[] { 1f, 3f, 2f, 4f }, t.GetData<float>());
         }
 
         [TestMethod]
@@ -485,6 +486,46 @@ namespace Numpy.UnitTest
             Console.WriteLine(string.Join(", ", roots.GetData<double>()));
             // 1.4142135623731, 2, 3, 5
             Assert.AreEqual(new double[]{ 1.41, 2,3,5 }, roots.GetData<double>().Select(x=>Math.Round(x, 2)).ToArray());
+        }
+
+        [TestMethod]
+        public void QuestionByPiyushspss()
+        {
+            // np.column_stack(np.where(mat > 0))
+
+            //>>> a = np.array([1, 0, 0, 1, 2, 3, 0, 1]).reshape(2, 4)
+            //         >>> a
+            //array([[1, 0, 0, 1],
+            //       [2, 3, 0, 1]])
+            //>>> np.column_stack(a)
+            //array([[1, 2],
+            //       [0, 3],
+            //       [0, 0],
+            //       [1, 1]])
+            //>>> np.where(a > 0)
+            //(array([0, 0, 1, 1, 1], dtype = int64), array([0, 3, 0, 1, 3], dtype = int64))
+            //>>> np.column_stack(np.where(a > 0))
+            //array([[0, 0],
+            //       [0, 3],
+            //       [1, 0],
+            //       [1, 1],
+            //       [1, 3]], dtype = int64)
+            //>>>
+            var a = np.array(new[] {1, 0, 0, 1, 2, 3, 0, 1}).reshape(2, 4);
+            var expected =
+                "array([[1, 2],\n" +
+                "       [0, 3],\n" +
+                "       [0, 0],\n" +
+                "       [1, 1]])";
+            Assert.AreEqual(expected, np.column_stack(a).repr);
+            Assert.AreEqual("(array([0, 0, 1, 1, 1], dtype=int64), array([0, 3, 0, 1, 3], dtype=int64))", np.where(a>0).repr);
+            expected =
+                "array([[0, 0],\n" +
+                "       [0, 3],\n" +
+                "       [1, 0],\n" +
+                "       [1, 1],\n" +
+                "       [1, 3]], dtype=int64)";
+            Assert.AreEqual(expected, np.column_stack(np.where(a > 0)).repr);
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools

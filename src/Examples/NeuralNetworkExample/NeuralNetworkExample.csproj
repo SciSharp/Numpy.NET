@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Numpy\Numpy.csproj" />
+    <ProjectReference Include="..\..\Numpy.Bare\Numpy.Bare.csproj" />
   </ItemGroup>
 
 </Project>

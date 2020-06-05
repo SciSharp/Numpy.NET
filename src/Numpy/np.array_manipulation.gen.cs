@@ -882,36 +882,6 @@ namespace Numpy
         }
         
         /// <summary>
-        ///	Stack 1-D arrays as columns into a 2-D array.<br></br>
-        ///	
-        ///	Take a sequence of 1-D arrays and stack them as columns
-        ///	to make a single 2-D array.<br></br>
-        ///	 2-D arrays are stacked as-is,
-        ///	just like with hstack.<br></br>
-        ///	  1-D arrays are turned into 2-D columns
-        ///	first.
-        /// </summary>
-        /// <param name="tup">
-        ///	Arrays to stack.<br></br>
-        ///	All of them must have the same first dimension.
-        /// </param>
-        /// <returns>
-        ///	The array formed by stacking the given arrays.
-        /// </returns>
-        public static NDarray column_stack(params NDarray[] tup)
-        {
-            //auto-generated code, do not change
-            var __self__=self;
-            var pyargs=ToTuple(new object[]
-            {
-                tup,
-            });
-            var kwargs=new PyDict();
-            dynamic py = __self__.InvokeMethod("column_stack", pyargs, kwargs);
-            return ToCsharp<NDarray>(py);
-        }
-        
-        /// <summary>
         ///	Stack arrays in sequence depth wise (along third axis).<br></br>
         ///	
         ///	This is equivalent to concatenation along the third axis after 2-D arrays

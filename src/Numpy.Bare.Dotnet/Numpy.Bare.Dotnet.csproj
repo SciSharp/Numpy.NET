@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Python.Runtime, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\pythonnet_netframework_win_py37.2.4.1\lib\net40\Python.Runtime.dll</HintPath>
+      <HintPath>..\..\packages\pythonnet_py37_win.2.4.1\lib\net40\Python.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,6 +56,9 @@
     </Compile>
     <Compile Include="..\Numpy\Manual\np.array.cs">
       <Link>Manual\np.array.cs</Link>
+    </Compile>
+    <Compile Include="..\Numpy\Manual\np.column_stack.cs">
+      <Link>Manual\np.column_stack.cs</Link>
     </Compile>
     <Compile Include="..\Numpy\Manual\np.concatenate.cs">
       <Link>Manual\np.concatenate.cs</Link>

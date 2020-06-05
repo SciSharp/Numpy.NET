@@ -39,8 +39,4 @@
     <PackageReference Include="Python.Included" Version="3.7.3.4"></PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Manual\" />
-  </ItemGroup>
-
 </Project>
