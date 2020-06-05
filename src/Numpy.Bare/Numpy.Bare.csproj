@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
     <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
     <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>3.7.1.14</Version>
+    <Version>3.7.1.15</Version>
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
     <AssemblyVersion>3.7.1.4</AssemblyVersion>
   </PropertyGroup>
@@ -30,52 +30,52 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\Numpy\Manual\ctypes.module.cs" Link="Manual\ctypes.module.cs" />
-    <Compile Include="..\Numpy\Manual\np.aliases.cs" Link="Manual\np.aliases.cs" />
-    <Compile Include="..\Numpy\Manual\np.array.cs" Link="Manual\np.array.cs" />
-    <Compile Include="..\Numpy\Manual\np.column_stack.cs" Link="Manual\np.column_stack.cs" />
-    <Compile Include="..\Numpy\Manual\np.concatenate.cs" Link="Manual\np.concatenate.cs" />
-    <Compile Include="..\Numpy\Manual\np.constants.cs" Link="Manual\np.constants.cs" />
-    <Compile Include="..\Numpy\Manual\np.linalg.norm.cs" Link="Manual\np.linalg.norm.cs" />
-    <Compile Include="..\Numpy\Manual\np.linspace.cs" Link="Manual\np.linspace.cs" />
-    <Compile Include="..\Numpy\Manual\np.random.cs" Link="Manual\np.random.cs" />
-    <Compile Include="..\Numpy\Manual\np.resize.cs" Link="Manual\np.resize.cs" />
-    <Compile Include="..\Numpy\Models\Constants.cs" Link="Models\Constants.cs" />
-    <Compile Include="..\Numpy\Models\Dtype.cs" Link="Models\Dtype.cs" />
-    <Compile Include="..\Numpy\Models\Flags.cs" Link="Models\Flags.cs" />
-    <Compile Include="..\Numpy\Models\Matrix.cs" Link="Models\Matrix.cs" />
-    <Compile Include="..\Numpy\Models\MemMapMode.cs" Link="Models\MemMapMode.cs" />
-    <Compile Include="..\Numpy\Models\NDarray.aliases.cs" Link="Models\NDarray.aliases.cs" />
-    <Compile Include="..\Numpy\Models\NDarray.CastOperators.cs" Link="Models\NDarray.CastOperators.cs" />
-    <Compile Include="..\Numpy\Models\NDarray.cs" Link="Models\NDarray.cs" />
-    <Compile Include="..\Numpy\Models\NDarray.gen.cs" Link="Models\NDarray.gen.cs" />
-    <Compile Include="..\Numpy\Models\NDarray.Operators.cs" Link="Models\NDarray.Operators.cs" />
-    <Compile Include="..\Numpy\Models\PythonObject.cs" Link="Models\PythonObject.cs" />
-    <Compile Include="..\Numpy\Models\PythonObject.gen.cs" Link="Models\PythonObject.gen.cs" />
-    <Compile Include="..\Numpy\Models\Shape.cs" Link="Models\Shape.cs" />
-    <Compile Include="..\Numpy\Models\Slice.cs" Link="Models\Slice.cs" />
-    <Compile Include="..\Numpy\np.array_creation.gen.cs" Link="np.array_creation.gen.cs" />
-    <Compile Include="..\Numpy\np.array_manipulation.gen.cs" Link="np.array_manipulation.gen.cs" />
-    <Compile Include="..\Numpy\np.bitwise.gen.cs" Link="np.bitwise.gen.cs" />
-    <Compile Include="..\Numpy\np.datetime.gen.cs" Link="np.datetime.gen.cs" />
-    <Compile Include="..\Numpy\np.dtype.gen.cs" Link="np.dtype.gen.cs" />
-    <Compile Include="..\Numpy\np.dtype.routines.gen.cs" Link="np.dtype.routines.gen.cs" />
-    <Compile Include="..\Numpy\np.fft.gen.cs" Link="np.fft.gen.cs" />
-    <Compile Include="..\Numpy\np.financial.gen.cs" Link="np.financial.gen.cs" />
-    <Compile Include="..\Numpy\np.indexing.gen.cs" Link="np.indexing.gen.cs" />
-    <Compile Include="..\Numpy\np.io.gen.cs" Link="np.io.gen.cs" />
-    <Compile Include="..\Numpy\np.linalg.gen.cs" Link="np.linalg.gen.cs" />
-    <Compile Include="..\Numpy\np.linalg_fft.gen.cs" Link="np.linalg_fft.gen.cs" />
-    <Compile Include="..\Numpy\np.logic.gen.cs" Link="np.logic.gen.cs" />
-    <Compile Include="..\Numpy\np.math.gen.cs" Link="np.math.gen.cs" />
-    <Compile Include="..\Numpy\np.module.gen.cs" Link="np.module.gen.cs" />
-    <Compile Include="..\Numpy\np.padding.gen.cs" Link="np.padding.gen.cs" />
-    <Compile Include="..\Numpy\np.random.gen.cs" Link="np.random.gen.cs" />
-    <Compile Include="..\Numpy\np.set.gen.cs" Link="np.set.gen.cs" />
-    <Compile Include="..\Numpy\np.sorting.gen.cs" Link="np.sorting.gen.cs" />
-    <Compile Include="..\Numpy\np.staticstics.gen.cs" Link="np.staticstics.gen.cs" />
-    <Compile Include="..\Numpy\np.string.gen.cs" Link="np.string.gen.cs" />
-    <Compile Include="..\Numpy\np.window.gen.cs" Link="np.window.gen.cs" />
+    <Compile Include="..\Numpy\Manual\ctypes.module.cs" Link="Manual\ctypes.module.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.aliases.cs" Link="Manual\np.aliases.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.array.cs" Link="Manual\np.array.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.column_stack.cs" Link="Manual\np.column_stack.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.concatenate.cs" Link="Manual\np.concatenate.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.constants.cs" Link="Manual\np.constants.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.linalg.norm.cs" Link="Manual\np.linalg.norm.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.linspace.cs" Link="Manual\np.linspace.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.random.cs" Link="Manual\np.random.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.resize.cs" Link="Manual\np.resize.cs"></Compile>
+    <Compile Include="..\Numpy\Models\Constants.cs" Link="Models\Constants.cs"></Compile>
+    <Compile Include="..\Numpy\Models\Dtype.cs" Link="Models\Dtype.cs"></Compile>
+    <Compile Include="..\Numpy\Models\Flags.cs" Link="Models\Flags.cs"></Compile>
+    <Compile Include="..\Numpy\Models\Matrix.cs" Link="Models\Matrix.cs"></Compile>
+    <Compile Include="..\Numpy\Models\MemMapMode.cs" Link="Models\MemMapMode.cs"></Compile>
+    <Compile Include="..\Numpy\Models\NDarray.aliases.cs" Link="Models\NDarray.aliases.cs"></Compile>
+    <Compile Include="..\Numpy\Models\NDarray.CastOperators.cs" Link="Models\NDarray.CastOperators.cs"></Compile>
+    <Compile Include="..\Numpy\Models\NDarray.cs" Link="Models\NDarray.cs"></Compile>
+    <Compile Include="..\Numpy\Models\NDarray.gen.cs" Link="Models\NDarray.gen.cs"></Compile>
+    <Compile Include="..\Numpy\Models\NDarray.Operators.cs" Link="Models\NDarray.Operators.cs"></Compile>
+    <Compile Include="..\Numpy\Models\PythonObject.cs" Link="Models\PythonObject.cs"></Compile>
+    <Compile Include="..\Numpy\Models\PythonObject.gen.cs" Link="Models\PythonObject.gen.cs"></Compile>
+    <Compile Include="..\Numpy\Models\Shape.cs" Link="Models\Shape.cs"></Compile>
+    <Compile Include="..\Numpy\Models\Slice.cs" Link="Models\Slice.cs"></Compile>
+    <Compile Include="..\Numpy\np.array_creation.gen.cs" Link="np.array_creation.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.array_manipulation.gen.cs" Link="np.array_manipulation.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.bitwise.gen.cs" Link="np.bitwise.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.datetime.gen.cs" Link="np.datetime.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.dtype.gen.cs" Link="np.dtype.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.dtype.routines.gen.cs" Link="np.dtype.routines.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.fft.gen.cs" Link="np.fft.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.financial.gen.cs" Link="np.financial.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.indexing.gen.cs" Link="np.indexing.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.io.gen.cs" Link="np.io.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.linalg.gen.cs" Link="np.linalg.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.linalg_fft.gen.cs" Link="np.linalg_fft.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.logic.gen.cs" Link="np.logic.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.math.gen.cs" Link="np.math.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.module.gen.cs" Link="np.module.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.padding.gen.cs" Link="np.padding.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.random.gen.cs" Link="np.random.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.set.gen.cs" Link="np.set.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.sorting.gen.cs" Link="np.sorting.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.staticstics.gen.cs" Link="np.staticstics.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.string.gen.cs" Link="np.string.gen.cs"></Compile>
+    <Compile Include="..\Numpy\np.window.gen.cs" Link="np.window.gen.cs"></Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -84,8 +84,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Manual\" />
-    <Folder Include="Models\" />
+    <Folder Include="Manual\"></Folder>
+    <Folder Include="Models\"></Folder>
   </ItemGroup>
 
 </Project>
