@@ -21,7 +21,7 @@ namespace Numpy
         /// <returns>
         /// An array object satisfying the specified requirements.
         /// </returns>
-        public static NDarray<T> array<T>(params T[] data)
+        public static NDarray<T> array<T>(params T[] data) where T : struct
         {
             return array(data, dtype:null);
         }
@@ -133,6 +133,12 @@ namespace Numpy
             dynamic py = self.InvokeMethod("array", args, kwargs);
             return ToCsharp<NDarray>(py);
         }
+
+        public static NDarray array<T>(NDarray<T>[] arrays, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
+            => array(arrays.OfType<NDarray>(), dtype, copy, order, subok, ndmin);
+
+        public static NDarray array<T>(IEnumerable<NDarray<T>> arrays, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
+            => array(arrays.OfType<NDarray>(), dtype, copy, order, subok, ndmin);
 
         public static NDarray array(List<NDarray> arrays, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
             => array((IEnumerable<NDarray>) arrays, dtype, copy, order, subok, ndmin);

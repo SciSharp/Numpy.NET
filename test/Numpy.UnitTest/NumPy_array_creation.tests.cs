@@ -478,6 +478,20 @@ namespace Numpy.UnitTest
         }
 
         [TestMethod]
+        public void array2Test()
+        {
+            //>>> a=np.array([1, 2, 3])
+            //>>> b=np.array([a, a, a])
+            //>>> b
+            //array([[1, 2, 3],
+            //       [1, 2, 3],
+            //       [1, 2, 3]])
+            var a = np.array(new[] {1, 2, 3});
+            var b = np.array(new[]{a, a, a});
+            Assert.AreEqual("array([[1, 2, 3],\n       [1, 2, 3],\n       [1, 2, 3]])", b.repr);
+        }
+
+        [TestMethod]
         public void asarrayTest()
         {
             // Convert a list into an array:
