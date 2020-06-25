@@ -248,7 +248,7 @@ namespace Numpy.UnitTest
             Assert.AreEqual("88", x[-2].str);
             var y = x.reshape(new Shape(2, 5));
             Assert.AreEqual("88", y[1, 3].str);
-            y[1,3] = (NDarray)888;
+            y[1, 3] = (NDarray)888;
             Assert.AreEqual("888", y[1, 3].str);
             Assert.AreEqual("array([ 0,  1, 22,  3,  4])", y[0].repr);
             Assert.AreEqual("22", y[0][2].str);
@@ -292,7 +292,7 @@ namespace Numpy.UnitTest
             var x = np.arange(10, 1, -1);
             Assert.AreEqual("array([10,  9,  8,  7,  6,  5,  4,  3,  2])", x.repr);
             Assert.AreEqual("array([7, 7, 9, 2])", x[np.array(new[] { 3, 3, 1, 8 })].repr);
-            x[np.array(new[] {3, 3, 1, 8})] = np.arange(4);
+            x[np.array(new[] { 3, 3, 1, 8 })] = np.arange(4);
             Assert.AreEqual("array([10,  2,  8,  1,  6,  5,  4,  3,  3])", x.repr);
         }
 
@@ -343,9 +343,9 @@ namespace Numpy.UnitTest
                 "        [20, 21, 22, 23, 24],\n" +
                 "        [25, 26, 27, 28, 29]]])",
                  x.repr);
-            var b = np.array(new[,] {{true, true, false}, {false, true, true}});
+            var b = np.array(new[,] { { true, true, false }, { false, true, true } });
             Assert.AreEqual(
-                "array([[ 0,  1,  2,  3,  4],\n"+
+                "array([[ 0,  1,  2,  3,  4],\n" +
                 "       [ 5,  6,  7,  8,  9],\n" +
                 "       [20, 21, 22, 23, 24],\n" +
                 "       [25, 26, 27, 28, 29]])",
@@ -357,20 +357,20 @@ namespace Numpy.UnitTest
         {
             var a = np.array(1, 2, 3);
             // comparison with a scalar
-            Assert.AreEqual(new[] {true, false, false}, (a < 2).GetData());
-            Assert.AreEqual(new[] {true, true, false}, (a <= 2).GetData());
-            Assert.AreEqual(new[] {false, false, true}, (a > 2).GetData());
-            Assert.AreEqual(new[] {false, true, true}, (a >= 2).GetData());
-            Assert.AreEqual(new[] {false, true, false}, (a.equals(2)).GetData());
-            Assert.AreEqual(new[] {true, false, true}, (a.not_equals(2)).GetData());
+            Assert.AreEqual(new[] { true, false, false }, (a < 2).GetData());
+            Assert.AreEqual(new[] { true, true, false }, (a <= 2).GetData());
+            Assert.AreEqual(new[] { false, false, true }, (a > 2).GetData());
+            Assert.AreEqual(new[] { false, true, true }, (a >= 2).GetData());
+            Assert.AreEqual(new[] { false, true, false }, (a.equals(2)).GetData());
+            Assert.AreEqual(new[] { true, false, true }, (a.not_equals(2)).GetData());
             // comparison with an array
             var b = (np.ones(new Shape(3), np.int32) * 2);
-            Assert.AreEqual(new[] {true, false, false}, (a < b).GetData());
-            Assert.AreEqual(new[] {true, true, false}, (a <= b).GetData());
-            Assert.AreEqual(new[] {false, false, true}, (a > b).GetData());
-            Assert.AreEqual(new[] {false, true, true}, (a >= b).GetData());
-            Assert.AreEqual(new[] {false, true, false}, (a.equals(b)).GetData());
-            Assert.AreEqual(new[] {true, false, true}, (a.not_equals(b)).GetData());
+            Assert.AreEqual(new[] { true, false, false }, (a < b).GetData());
+            Assert.AreEqual(new[] { true, true, false }, (a <= b).GetData());
+            Assert.AreEqual(new[] { false, false, true }, (a > b).GetData());
+            Assert.AreEqual(new[] { false, true, true }, (a >= b).GetData());
+            Assert.AreEqual(new[] { false, true, false }, (a.equals(b)).GetData());
+            Assert.AreEqual(new[] { true, false, true }, (a.not_equals(b)).GetData());
         }
 
         [TestMethod]
@@ -378,8 +378,8 @@ namespace Numpy.UnitTest
         {
             // unary operations
             var a = np.array(1, 2, 3);
-            Assert.AreEqual(new[] {-1, -2, -3}, (-a).GetData<int>());
-            Assert.AreEqual(new[] {1, 2, 3}, (+a).GetData<int>());
+            Assert.AreEqual(new[] { -1, -2, -3 }, (-a).GetData<int>());
+            Assert.AreEqual(new[] { 1, 2, 3 }, (+a).GetData<int>());
             // todo: test operator ~
         }
 
@@ -389,7 +389,7 @@ namespace Numpy.UnitTest
             // arithmetic operators
             var a = np.array(1, 2, 3);
             var b = (np.ones(new Shape(3), np.int32) * 2);
-            Assert.AreEqual(new[] { 11, 12, 13 }, (a+10).GetData<int>());
+            Assert.AreEqual(new[] { 11, 12, 13 }, (a + 10).GetData<int>());
             Assert.AreEqual(new[] { 3, 4, 5 }, (a + b).GetData<int>());
             Assert.AreEqual(new[] { -9, -8, -7 }, (a - 10).GetData<int>());
             Assert.AreEqual(new[] { -1, 0, 1 }, (a - b).GetData<int>());
@@ -463,9 +463,9 @@ namespace Numpy.UnitTest
             int[] cX = npX.GetData<int>();
             int[] cY = npY.GetData<int>();
 
-            Console.WriteLine("Control extracted back to C#:\n"+ string.Join(" ", cX));
+            Console.WriteLine("Control extracted back to C#:\n" + string.Join(" ", cX));
             Assert.AreEqual("-1 0 0 0 0 0 0 0 0", string.Join(" ", cX));
-            Console.WriteLine("Test extracted back to C#:\n"+ string.Join(" ", cY));
+            Console.WriteLine("Test extracted back to C#:\n" + string.Join(" ", cY));
             Assert.AreEqual("0 0 0 0 0 0 -1 0 0", string.Join(" ", cY));
         }
 
@@ -473,9 +473,9 @@ namespace Numpy.UnitTest
         public void CopyDataInAndOutExample()
         {
             var a = np.array(new[] { 2, 4, 9, 25 });
-            Console.WriteLine("a: "+ a.repr);
+            Console.WriteLine("a: " + a.repr);
             // a: array([ 2,  4,  9, 25])
-            var roots =np.sqrt(a);
+            var roots = np.sqrt(a);
             Console.WriteLine(roots.repr);
             // array([1.41421356, 2.        , 3.        , 5.        ])
             Assert.AreEqual("array([1.41421356, 2.        , 3.        , 5.        ])", roots.repr);
@@ -485,7 +485,7 @@ namespace Numpy.UnitTest
             // roots.dtype: float64
             Console.WriteLine(string.Join(", ", roots.GetData<double>()));
             // 1.4142135623731, 2, 3, 5
-            Assert.AreEqual(new double[]{ 1.41, 2,3,5 }, roots.GetData<double>().Select(x=>Math.Round(x, 2)).ToArray());
+            Assert.AreEqual(new double[] { 1.41, 2, 3, 5 }, roots.GetData<double>().Select(x => Math.Round(x, 2)).ToArray());
         }
 
         [TestMethod]
@@ -511,14 +511,14 @@ namespace Numpy.UnitTest
             //       [1, 1],
             //       [1, 3]], dtype = int64)
             //>>>
-            var a = np.array(new[] {1, 0, 0, 1, 2, 3, 0, 1}).reshape(2, 4);
+            var a = np.array(new[] { 1, 0, 0, 1, 2, 3, 0, 1 }).reshape(2, 4);
             var expected =
                 "array([[1, 2],\n" +
                 "       [0, 3],\n" +
                 "       [0, 0],\n" +
                 "       [1, 1]])";
             Assert.AreEqual(expected, np.column_stack(a).repr);
-            Assert.AreEqual("(array([0, 0, 1, 1, 1], dtype=int64), array([0, 3, 0, 1, 3], dtype=int64))", np.where(a>0).repr);
+            Assert.AreEqual("(array([0, 0, 1, 1, 1], dtype=int64), array([0, 3, 0, 1, 3], dtype=int64))", np.where(a > 0).repr);
             expected =
                 "array([[0, 0],\n" +
                 "       [0, 3],\n" +
@@ -526,6 +526,21 @@ namespace Numpy.UnitTest
                 "       [1, 1],\n" +
                 "       [1, 3]], dtype=int64)";
             Assert.AreEqual(expected, np.column_stack(np.where(a > 0)).repr);
+        }
+
+        [TestMethod]
+        public void QuestionByGurelsoycaner()
+        {
+            //>>> import numpy as np
+            //>>> P1 = np.array([1, 2, 3, 4])
+            //>>> P2 = np.array([4, 3, 2, 1])
+            //>>> ex = (P2 - P1) / (np.linalg.norm(P2 - P1))
+            //>>> ex
+            //array([0.67082039, 0.2236068, -0.2236068, -0.67082039])
+            var P1 = np.array(new[] { 1, 2, 3, 4 });
+            var P2 = np.array(new[] { 4, 3, 2, 1 });
+            var ex = (P2 - P1) / (np.linalg.norm(P2 - P1));
+            Assert.AreEqual("array([ 0.67082039,  0.2236068 , -0.2236068 , -0.67082039])", ex.repr);
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
