@@ -1579,9 +1579,8 @@ namespace Numpy.UnitTest
             //        [ 9, 10, 11, 12]])
             // 
 
-#if TODO
-            var given=  arr = np.array({{1,2,3,4}, {5,6,7,8}, {9,10,11,12}});
-             given=  arr;
+            NDarray given=  np.array(new[,]{{1,2,3,4}, {5,6,7,8}, {9,10,11,12}});
+            var arr = given;
             var expected=
                 "array([[ 1,  2,  3,  4],\n" +
                 "       [ 5,  6,  7,  8],\n" +
@@ -1592,7 +1591,7 @@ namespace Numpy.UnitTest
                 "array([[ 1,  2,  3,  4],\n" +
                 "       [ 9, 10, 11, 12]])";
             Assert.AreEqual(expected, given.repr);
-#endif
+
             // >>> np.delete(arr, np.s_[::2], 1)
             // array([[ 2,  4],
             //        [ 6,  8],
@@ -1601,18 +1600,17 @@ namespace Numpy.UnitTest
             // array([ 1,  3,  5,  7,  8,  9, 10, 11, 12])
             // 
 
-#if TODO
-             given=  np.delete(arr, np.s_{::2}, 1);
+
+             given=  np.delete(arr, new Slice("::2"), 1);
              expected=
                 "array([[ 2,  4],\n" +
                 "       [ 6,  8],\n" +
                 "       [10, 12]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.delete(arr, {1,3,5}, None);
+             given=  np.delete(arr, new [] {1,3,5}, null);
              expected=
                 "array([ 1,  3,  5,  7,  8,  9, 10, 11, 12])";
             Assert.AreEqual(expected, given.repr);
-#endif
         }
 
 
