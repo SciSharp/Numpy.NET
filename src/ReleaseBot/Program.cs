@@ -13,7 +13,7 @@ namespace ReleaseBot
 {
     class Program
     {
-        private const string V = "1.17"; // <--- numpy.net version!
+        private const string V = "1.18"; // <--- numpy.net version!
         private const string PythonNetVersion = "1";
 
         private const string ProjectPath = "../../../Numpy";
@@ -100,6 +100,12 @@ namespace ReleaseBot
 
         private static void ProcessNumpy()
         {
+            // first delete old packages as to not upload them again
+            foreach (var nuget in Directory.GetFiles(Path.Combine(ProjectPath, "bin", "Release"), "*.nupkg"))
+            {
+                File.Delete(nuget);
+            }
+
             var spec = new ReleaseSpec()
             {
                 Version = $"3.7.{V}",
