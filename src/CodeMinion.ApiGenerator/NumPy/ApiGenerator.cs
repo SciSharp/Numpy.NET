@@ -814,6 +814,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                     decl.ManualOverride = true;
                     break;
                 case "take_along_axis":
+                    decl.Arguments[2].IsNullable = true;
                     decl.Returns.Clear();
                     decl.Returns.Add(new Argument() { Type = "NDarray", Name = "array", IsReturnValue = true });
                     break;

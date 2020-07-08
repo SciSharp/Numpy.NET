@@ -2487,7 +2487,7 @@ namespace Numpy
         ///	treated as if it had first been flattened to 1d, for consistency with
         ///	sort and argsort.
         /// </param>
-        public NDarray take_along_axis(NDarray indices, int axis)
+        public NDarray take_along_axis(NDarray indices, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
