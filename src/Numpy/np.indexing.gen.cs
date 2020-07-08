@@ -198,7 +198,7 @@ namespace Numpy
         ///	An array with elements from x where condition is True, and elements
         ///	from y elsewhere.
         /// </returns>
-        public static NDarray @where(NDarray condition)
+        public static NDarray[] @where(NDarray condition)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -208,7 +208,7 @@ namespace Numpy
             });
             var kwargs=new PyDict();
             dynamic py = __self__.InvokeMethod("where", pyargs, kwargs);
-            return ToCsharp<NDarray>(py);
+            return ToCsharp<NDarray[]>(py);
         }
         
         /// <summary>

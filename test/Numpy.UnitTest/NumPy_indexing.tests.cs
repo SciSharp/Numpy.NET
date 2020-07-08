@@ -257,9 +257,8 @@ namespace Numpy.UnitTest
             // array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
             // 
             
-            #if TODO
-            var given=  a = np.arange(10);
-             given=  a;
+            var a=  np.arange(10);
+            var given=  a;
             var expected=
                 "array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])";
             Assert.AreEqual(expected, given.repr);
@@ -267,7 +266,7 @@ namespace Numpy.UnitTest
              expected=
                 "array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+
             // This can be used on multidimensional arrays too:
             
             // >>> np.where([[True, False], [True, True]],
@@ -277,15 +276,12 @@ namespace Numpy.UnitTest
             //        [3, 4]])
             // 
             
-            #if TODO
-             given=  np.where({{True, False}, {True, True}},;
+             given=  np.where(np.array(new[,]{{true, false}, {true, true}}), np.array(new[,] { { 1, 2 }, { 3, 4 } }), np.array(new[,] { { 9, 8 }, { 7, 6 } }));
              expected=
-                "...          [[1, 2], [3, 4]],\n" +
-                "...          [[9, 8], [7, 6]])\n" +
                 "array([[1, 8],\n" +
                 "       [3, 4]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+
             // The shapes of x, y, and the condition are broadcast together:
             
             // >>> x, y = np.ogrid[:3, :4]
@@ -295,6 +291,7 @@ namespace Numpy.UnitTest
             //        [10, 11, 12,  2]])
             // 
             
+            // TODO: implement np.ogrid !
             #if TODO
              given=  x, y = np.ogrid{:3, :4};
              given=  np.where(x < y, x, 10 + y)  # both x and 10+y are broadcast;
@@ -304,6 +301,7 @@ namespace Numpy.UnitTest
                 "       [10, 11, 12,  2]])";
             Assert.AreEqual(expected, given.repr);
             #endif
+
             // >>> a = np.array([[0, 1, 2],
             // ...               [0, 2, 4],
             // ...               [0, 3, 6]])
@@ -313,19 +311,14 @@ namespace Numpy.UnitTest
             //        [ 0,  3, -1]])
             // 
             
-            #if TODO
-             given=  a = np.array({{0, 1, 2},;
-             expected=
-                "...               [0, 2, 4],\n" +
-                "...               [0, 3, 6]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.where(a < 4, a, -1)  # -1 is broadcast;
-             expected=
+
+            a = np.array(new [,]{{0, 1, 2}, { 0, 2, 4}, { 0, 3, 6}});
+            given = np.where(a < 4, a, np.array(-1));  // -1 is broadcast;
+            expected=
                 "array([[ 0,  1,  2],\n" +
                 "       [ 0,  2, -1],\n" +
                 "       [ 0,  3, -1]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
         }
         
         

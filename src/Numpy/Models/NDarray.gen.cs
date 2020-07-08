@@ -2358,12 +2358,12 @@ namespace Numpy
         ///	An array with elements from x where condition is True, and elements
         ///	from y elsewhere.
         /// </returns>
-        public NDarray @where()
+        public NDarray[] @where()
         {
             //auto-generated code, do not change
             var __self__=self;
             dynamic py = __self__.InvokeMethod("where");
-            return ToCsharp<NDarray>(py);
+            return ToCsharp<NDarray[]>(py);
         }
         
         /// <summary>

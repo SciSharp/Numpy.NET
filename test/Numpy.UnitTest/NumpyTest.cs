@@ -432,11 +432,11 @@ namespace Numpy.UnitTest
             //>>> a = [1, 2, 3, 4, 0, 0, 1, 2]
             //>>> a = np.array(a)
             //>>> b = np.where(a == 0)
-            //>>> b
-            //(array([4, 5], dtype = int64),)
+            //>>> b[0]
+            //array([4, 5], dtype = int64)
             var a = np.array(new[] { 1, 2, 3, 4, 0, 0, 1, 2 });
             var b = np.where(a.equals(0));
-            Assert.AreEqual("(array([4, 5], dtype=int64),)", b.repr);
+            Assert.AreEqual("array([4, 5], dtype=int64)", b[0].repr);
         }
 
         [TestMethod]
@@ -518,7 +518,8 @@ namespace Numpy.UnitTest
                 "       [0, 0],\n" +
                 "       [1, 1]])";
             Assert.AreEqual(expected, np.column_stack(a).repr);
-            Assert.AreEqual("(array([0, 0, 1, 1, 1], dtype=int64), array([0, 3, 0, 1, 3], dtype=int64))", np.where(a > 0).repr);
+            // note: this was a bug, now you don't get a python tuple back, but an array of NDarrays instead so the following line just doesn't compile any more
+            //Assert.AreEqual("(array([0, 0, 1, 1, 1], dtype=int64), array([0, 3, 0, 1, 3], dtype=int64))", np.where(a > 0).repr);
             expected =
                 "array([[0, 0],\n" +
                 "       [0, 3],\n" +
@@ -541,6 +542,26 @@ namespace Numpy.UnitTest
             var P2 = np.array(new[] { 4, 3, 2, 1 });
             var ex = (P2 - P1) / (np.linalg.norm(P2 - P1));
             Assert.AreEqual("array([ 0.67082039,  0.2236068 , -0.2236068 , -0.67082039])", ex.repr);
+        }
+
+        [TestMethod]
+        public void QuestionBySimonBuehler()
+        {
+            //import numpy as np
+            //bboxes = np.empty([999, 4])
+            //keep_idx = np.array([2, 6, 7, 8, 9, 13])
+            //bboxes = bboxes[keep_idx]
+            //>>> bboxes.shape
+            //(6, 4)
+            var bboxes = np.empty(new Shape(999, 4));
+            var keep_idx = np.array(new[] {2, 6, 7, 8, 9, 13});
+            bboxes = bboxes[keep_idx];
+            Assert.AreEqual("(6, 4)", bboxes.shape.ToString());
+
+            //>>> np.where(keep_idx > 4)[0]
+            //array([1, 2, 3, 4, 5], dtype = int64)
+            var x = np.where(keep_idx > 4)[0];
+            Assert.AreEqual("array([1, 2, 3, 4, 5], dtype=int64)", x.repr);
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools

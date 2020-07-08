@@ -1061,6 +1061,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                     {
                         f.Arguments.RemoveAt(2);
                         f.Arguments.RemoveAt(1);
+                        f.ReturnType = "NDarray[]";
                     });
                 }
                     yield break;
