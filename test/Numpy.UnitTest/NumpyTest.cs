@@ -424,6 +424,9 @@ namespace Numpy.UnitTest
             var a = np.array(1.0, 2.0, 3.0);
             Assert.AreEqual(new[] { 0.5, 1.0, 1.5 }, (a / 2.0).GetData<double>());
             Assert.AreEqual(new[] { 6.0, 3.0, 2.0 }, (6.0 / a).GetData<double>());
+            // minus operator
+            Assert.AreEqual(new[] { -1.0, 0.0, 1.0 }, (a - 2.0).GetData<double>());
+            Assert.AreEqual(new[] { 1.0, 0.0, -1.0 }, (2.0 - a).GetData<double>());
         }
 
         [TestMethod]
