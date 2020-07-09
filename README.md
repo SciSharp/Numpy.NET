@@ -261,3 +261,6 @@ Numpy.NET packages and distributes `Python`, `pythonnet` as well as `numpy`. All
 * If you have insufficient folder permissions in AppData Numpy.NET might crash. You can specify a different installpath by setting `Installer.INSTALL_PATH = "<install path>";`
 * If you get deadlocks (program hangs indefinitely) you should read the secton about multi-threading above!
 * If you get AccessViolationExceptions you should read the secton about multi-threading above!
+
+## Project Sponsors
+* [JetBrains](https://www.jetbrains.com/?from=Numpy.NET)
