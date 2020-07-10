@@ -54,6 +54,20 @@ namespace Numpy
             /// <returns>
             /// Norm of the matrix or vector(s).
             /// </returns>
+            public static NDarray norm(NDarray x, int? ord = null, int? axis = null, bool? keepdims = null)
+            {
+                var pyargs = ToTuple(new object[] { x, });
+                var kwargs = new PyDict();
+                if (ord != null) kwargs["ord"] = ToPython(ord);
+                if (axis != null) kwargs["axis"] = ToPython(axis);
+                if (keepdims != null) kwargs["keepdims"] = ToPython(keepdims);
+                var linalg = self.GetAttr("linalg");
+                dynamic py = linalg.InvokeMethod("norm", pyargs, kwargs);
+                return ToCsharp<NDarray>(py);
+            }
+
+            public static NDarray norm(NDarray x, int[] axis, bool? keepdims = null) => norm(x, null, axis, keepdims);
+
             public static NDarray norm(NDarray x, int? ord, int[] axis, bool? keepdims = null)
             {
                 var pyargs = ToTuple(new object[] { x, });
@@ -66,16 +80,17 @@ namespace Numpy
                 return ToCsharp<NDarray>(py);
             }
 
-            public static float norm(NDarray x, int? ord=null)
-            {
-                var pyargs = ToTuple(new object[] { x, });
-                var kwargs = new PyDict();
-                if (ord != null) kwargs["ord"] = ToPython(ord);
-                var linalg = self.GetAttr("linalg");
-                dynamic py = linalg.InvokeMethod("norm", pyargs, kwargs);
 
-                return ToCsharp<float>(py);
-            }
+            //public static float norm(NDarray x, int? ord=null, int? axis = null, bool? keepdims = null)
+            //{
+            //    var pyargs = ToTuple(new object[] { x, });
+            //    var kwargs = new PyDict();
+            //    if (ord != null) kwargs["ord"] = ToPython(ord);
+            //    var linalg = self.GetAttr("linalg");
+            //    dynamic py = linalg.InvokeMethod("norm", pyargs, kwargs);
+
+            //    return ToCsharp<float>(py);
+            //}
 
             public static float norm(NDarray x, string ord)
            {

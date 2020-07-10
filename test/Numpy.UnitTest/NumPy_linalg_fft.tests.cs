@@ -617,8 +617,8 @@ namespace Numpy.UnitTest
             // 2.0
             // 
 
-            Assert.GreaterOrEqual(7.74596669f, LA.norm(a));
-            Assert.GreaterOrEqual(7.74596669f, LA.norm(b));
+            Assert.GreaterOrEqual(7.74596669f, (float)LA.norm(a));
+            Assert.GreaterOrEqual(7.74596669f, (float)LA.norm(b));
             Assert.GreaterOrEqual(7.74596669f, LA.norm(b, "fro"));
             Assert.AreEqual(4, LA.norm(a, Constants.inf));
             Assert.AreEqual(9, LA.norm(b, Constants.inf));
@@ -639,43 +639,28 @@ namespace Numpy.UnitTest
             // 7.3484692283495345
             // 
 
-            Assert.AreEqual(20, LA.norm(a, 1));
-            Assert.AreEqual(7, LA.norm(b, 1));
-            Assert.GreaterOrEqual(0f, LA.norm(a, -1));
-            Assert.GreaterOrEqual(6, LA.norm(b, -1));
-            Assert.GreaterOrEqual(7.74596669f, LA.norm(a, 2));
-            Assert.GreaterOrEqual(7.34846922f, LA.norm(b, 2));
+            Assert.AreEqual(20f, (float)LA.norm(a, 1));
+            Assert.AreEqual(7f, (float)LA.norm(b, 1));
+            Assert.GreaterOrEqual(0f, (float)LA.norm(a, -1));
+            Assert.GreaterOrEqual(6, (float)LA.norm(b, -1));
+            Assert.GreaterOrEqual(7.74596669f, (float)LA.norm(a, 2));
+            Assert.GreaterOrEqual(7.34846922f, (float)LA.norm(b, 2));
 
             // >>> LA.norm(a, -2)
-            // nan
+            // 0.0
             // >>> LA.norm(b, -2)
             // 1.8570331885190563e-016
             // >>> LA.norm(a, 3)
             // 5.8480354764257312
             // >>> LA.norm(a, -3)
-            // nan
+            // 0.0
             // 
+            Assert.AreEqual(0f, (float)LA.norm(a, -2));
+            Assert.AreEqual(1.8570331885190563e-016f, (float)LA.norm(b, -2));
+            Assert.AreEqual(5.8480354764257312f, (float)LA.norm(a, 3));
+            Assert.AreEqual(0f, (float)LA.norm(a, -3));
 
-#if TODO
-            object given = null;
-            object expected = null;
-            given=  LA.norm(a, -2);
-            expected=
-                "nan";
-            Assert.AreEqual(expected, given.repr);
-            given=  LA.norm(b, -2);
-            expected=
-                "1.8570331885190563e-016";
-            Assert.AreEqual(expected, given.repr);
-            given=  LA.norm(a, 3);
-            expected=
-                "5.8480354764257312";
-            Assert.AreEqual(expected, given.repr);
-            given=  LA.norm(a, -3);
-            expected=
-                "nan";
-            Assert.AreEqual(expected, given.repr);
-#endif
+
             // Using the axis argument to compute vector norms:
 
             // >>> c = np.array([[ 1, 2, 3],
@@ -687,27 +672,21 @@ namespace Numpy.UnitTest
             // >>> LA.norm(c, ord=1, axis=1)
             // array([ 6.,  6.])
             // 
+            var c = np.array(new[,]{{ 1, 2, 3},{-1, 1, 4}});
+            given=  LA.norm(c, axis:0);
+            expected=
+                "array([1.41421356, 2.23606798, 5.        ])";
+            Assert.AreEqual(expected, given.repr);
+            given=  LA.norm(c, axis:1);
+            expected=
+                "array([3.74165739, 4.24264069])";
+            Assert.AreEqual(expected, given.repr);
+            given=  LA.norm(c, ord:1, axis:1);
+            expected=
+                "array([6., 6.])";
+            Assert.AreEqual(expected, given.repr);
 
-#if TODO
-            object given = null;
-            object expected = null;
-            given=  c = np.array([[ 1, 2, 3],;
-            expected=
-                "...               [-1, 1, 4]])";
-            Assert.AreEqual(expected, given.repr);
-            given=  LA.norm(c, axis=0);
-            expected=
-                "array([ 1.41421356,  2.23606798,  5.        ])";
-            Assert.AreEqual(expected, given.repr);
-            given=  LA.norm(c, axis=1);
-            expected=
-                "array([ 3.74165739,  4.24264069])";
-            Assert.AreEqual(expected, given.repr);
-            given=  LA.norm(c, ord=1, axis=1);
-            expected=
-                "array([ 6.,  6.])";
-            Assert.AreEqual(expected, given.repr);
-#endif
+
             // Using the axis argument to compute matrix norms:
 
             // >>> m = np.arange(8).reshape(2,2,2)
@@ -716,20 +695,16 @@ namespace Numpy.UnitTest
             // >>> LA.norm(m[0, :, :]), LA.norm(m[1, :, :])
             // (3.7416573867739413, 11.224972160321824)
             // 
-
-#if TODO
-            object given = null;
-            object expected = null;
-            given=  m = np.arange(8).reshape(2,2,2);
-            given=  LA.norm(m, axis=(1,2));
+            var m = np.arange(8).reshape(2,2,2);
+            given=  LA.norm(m, axis: new[]{1,2});
             expected=
-                "array([  3.74165739,  11.22497216])";
+                "array([ 3.74165739, 11.22497216])";
             Assert.AreEqual(expected, given.repr);
-            given=  LA.norm(m[0, :, :]), LA.norm(m[1, :, :]);
+            var given1= new[]{ LA.norm(m["0, :, :"]), LA.norm(m["1, :, :"])};
             expected=
                 "(3.7416573867739413, 11.224972160321824)";
-            Assert.AreEqual(expected, given.repr);
-#endif
+            Assert.AreEqual(expected, given1.repr());
+
         }
 
         [TestMethod]
