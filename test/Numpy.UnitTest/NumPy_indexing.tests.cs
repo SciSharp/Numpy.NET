@@ -160,13 +160,10 @@ namespace Numpy.UnitTest
                 "       [0, 4, 0],\n" +
                 "       [5, 6, 0]])";
             Assert.AreEqual(expected, given.repr);
-            given=  np.nonzero(x)[0];
+            var given1=  np.nonzero(x);
             expected=
-                "array([0, 1, 2, 2], dtype=int64)";
-            Assert.AreEqual(expected, given.repr);
-            given = np.nonzero(x)[1];
-            expected = "array([0, 1, 0, 1], dtype=int64)";
-            Assert.AreEqual(expected, given.repr);
+                "(array([0, 1, 2, 2], dtype=int64), array([0, 1, 0, 1], dtype=int64))";
+            Assert.AreEqual(expected, given1.repr());
 
             // >>> x[np.nonzero(x)]
             // array([3, 4, 5, 6])
@@ -189,6 +186,7 @@ namespace Numpy.UnitTest
                 "       [2, 0],\n" +
                 "       [2, 1]], dtype=int64)";
             Assert.AreEqual(expected, given.repr);
+
             // A common use for nonzero is to find the indices of an array, where
             // a condition is True.  Given an array a, the condition a > 3 is a
             // boolean array and since False is interpreted as 0, np.nonzero(a > 3)
@@ -202,20 +200,18 @@ namespace Numpy.UnitTest
             // >>> np.nonzero(a > 3)
             // (array([1, 1, 1, 2, 2, 2]), array([0, 1, 2, 0, 1, 2]))
             // 
-
-#if TODO
-             given = a = np.array({{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
-             given = a > 3;
-             expected =
+            var a = np.array(new [,]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
+            given = a > 3;
+            expected =
                 "array([[False, False, False],\n" +
                 "       [ True,  True,  True],\n" +
                 "       [ True,  True,  True]])";
             Assert.AreEqual(expected, given.repr);
-             given = np.nonzero(a > 3);
-             expected =
-                "(array([1, 1, 1, 2, 2, 2]), array([0, 1, 2, 0, 1, 2]))";
-            Assert.AreEqual(expected, given.repr);
-#endif
+            given1 = np.nonzero(a > 3);
+            expected =
+                "(array([1, 1, 1, 2, 2, 2], dtype=int64), array([0, 1, 2, 0, 1, 2], dtype=int64))";
+            Assert.AreEqual(expected, given1.repr());
+
             // Using this result to index a is equivalent to using the mask directly:
 
             // >>> a[np.nonzero(a > 3)]
@@ -223,29 +219,25 @@ namespace Numpy.UnitTest
             // >>> a[a > 3]  # prefer this spelling
             // array([4, 5, 6, 7, 8, 9])
             // 
+             given = a[np.nonzero(a > 3)];
+             expected =
+                "array([4, 5, 6, 7, 8, 9])";
+            Assert.AreEqual(expected, given.repr);
+            given = a[a > 3];  // prefer this spelling
+            expected =
+                "array([4, 5, 6, 7, 8, 9])";
+            Assert.AreEqual(expected, given.repr);
 
-#if TODO
-             given = a{np.nonzero(a > 3)};
-             expected =
-                "array([4, 5, 6, 7, 8, 9])";
-            Assert.AreEqual(expected, given.repr);
-             given = a[a > 3]  # prefer this spelling;
-             expected =
-                "array([4, 5, 6, 7, 8, 9])";
-            Assert.AreEqual(expected, given.repr);
-#endif
+            
             // nonzero can also be called as a method of the array.
 
             // >>> (a > 3).nonzero()
             // (array([1, 1, 1, 2, 2, 2]), array([0, 1, 2, 0, 1, 2]))
             // 
-
-#if TODO
-             given = (a > 3).nonzero();
+             given1 = (a > 3).nonzero();
              expected =
-                "(array([1, 1, 1, 2, 2, 2]), array([0, 1, 2, 0, 1, 2]))";
-            Assert.AreEqual(expected, given.repr);
-#endif
+                "(array([1, 1, 1, 2, 2, 2], dtype=int64), array([0, 1, 2, 0, 1, 2], dtype=int64))";
+            Assert.AreEqual(expected, given1.repr());
         }
 
 
