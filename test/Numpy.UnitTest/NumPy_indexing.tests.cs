@@ -152,19 +152,22 @@ namespace Numpy.UnitTest
             // (array([0, 1, 2, 2]), array([0, 1, 0, 1]))
             // 
             
-            #if TODO
-            var given=  x = np.array({{3, 0, 0}, {0, 4, 0}, {5, 6, 0}});
-             given=  x;
+            
+            var x = np.array(new [,]{{3, 0, 0}, {0, 4, 0}, {5, 6, 0}});
+            NDarray given=  x;
             var expected=
                 "array([[3, 0, 0],\n" +
                 "       [0, 4, 0],\n" +
                 "       [5, 6, 0]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.nonzero(x);
-             expected=
-                "(array([0, 1, 2, 2]), array([0, 1, 0, 1]))";
+            given=  np.nonzero(x)[0];
+            expected=
+                "array([0, 1, 2, 2], dtype=int64)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+            given = np.nonzero(x)[1];
+            expected = "array([0, 1, 0, 1], dtype=int64)";
+            Assert.AreEqual(expected, given.repr);
+
             // >>> x[np.nonzero(x)]
             // array([3, 4, 5, 6])
             // >>> np.transpose(np.nonzero(x))
@@ -173,25 +176,24 @@ namespace Numpy.UnitTest
             //        [2, 0],
             //        [2, 1])
             // 
-            
-            #if TODO
-             given=  x{np.nonzero(x)};
-             expected=
+
+
+             given = x[np.nonzero(x)];
+             expected =
                 "array([3, 4, 5, 6])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.transpose(np.nonzero(x));
-             expected=
+             given = np.transpose(np.nonzero(x));
+             expected =
                 "array([[0, 0],\n" +
                 "       [1, 1],\n" +
                 "       [2, 0],\n" +
-                "       [2, 1])";
+                "       [2, 1]], dtype=int64)";
             Assert.AreEqual(expected, given.repr);
-            #endif
             // A common use for nonzero is to find the indices of an array, where
             // a condition is True.  Given an array a, the condition a > 3 is a
             // boolean array and since False is interpreted as 0, np.nonzero(a > 3)
             // yields the indices of the a where the condition is true.
-            
+
             // >>> a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
             // >>> a > 3
             // array([[False, False, False],
@@ -200,53 +202,53 @@ namespace Numpy.UnitTest
             // >>> np.nonzero(a > 3)
             // (array([1, 1, 1, 2, 2, 2]), array([0, 1, 2, 0, 1, 2]))
             // 
-            
-            #if TODO
-             given=  a = np.array({{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
-             given=  a > 3;
-             expected=
+
+#if TODO
+             given = a = np.array({{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
+             given = a > 3;
+             expected =
                 "array([[False, False, False],\n" +
                 "       [ True,  True,  True],\n" +
                 "       [ True,  True,  True]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.nonzero(a > 3);
-             expected=
+             given = np.nonzero(a > 3);
+             expected =
                 "(array([1, 1, 1, 2, 2, 2]), array([0, 1, 2, 0, 1, 2]))";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Using this result to index a is equivalent to using the mask directly:
-            
+
             // >>> a[np.nonzero(a > 3)]
             // array([4, 5, 6, 7, 8, 9])
             // >>> a[a > 3]  # prefer this spelling
             // array([4, 5, 6, 7, 8, 9])
             // 
-            
-            #if TODO
-             given=  a{np.nonzero(a > 3)};
-             expected=
+
+#if TODO
+             given = a{np.nonzero(a > 3)};
+             expected =
                 "array([4, 5, 6, 7, 8, 9])";
             Assert.AreEqual(expected, given.repr);
-             given=  a[a > 3]  # prefer this spelling;
-             expected=
+             given = a[a > 3]  # prefer this spelling;
+             expected =
                 "array([4, 5, 6, 7, 8, 9])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // nonzero can also be called as a method of the array.
-            
+
             // >>> (a > 3).nonzero()
             // (array([1, 1, 1, 2, 2, 2]), array([0, 1, 2, 0, 1, 2]))
             // 
-            
-            #if TODO
-             given=  (a > 3).nonzero();
-             expected=
+
+#if TODO
+             given = (a > 3).nonzero();
+             expected =
                 "(array([1, 1, 1, 2, 2, 2]), array([0, 1, 2, 0, 1, 2]))";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void whereTest()
         {

@@ -1066,7 +1066,18 @@ namespace CodeMinion.ApiGenerator.NumPy
                     });
                 }
                     yield break;
+                case "transpose":
+                    if (decl.Arguments[0].Type == "array_like")
+                    {
+                        decl.Arguments[0].Type = "NDarray";
+                        yield return decl;
+                        yield return decl.Clone(f => { f.Arguments[0].Type = "NDarray[]"; });
+                    }
+                    else
+                        yield return decl;
+                    yield break;
             }
+
             // without args we don't need to consider possible overloads
             if (decl.Arguments.Count == 0)
             {

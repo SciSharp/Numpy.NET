@@ -413,6 +413,42 @@ namespace Numpy
         }
         
         /// <summary>
+        ///	Permute the dimensions of an array.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Use transpose(a, argsort(axes)) to invert the transposition of tensors
+        ///	when using the axes keyword argument.<br></br>
+        ///	
+        ///	Transposing a 1-D array returns an unchanged view of the original array.
+        /// </summary>
+        /// <param name="a">
+        ///	Input array.
+        /// </param>
+        /// <param name="axes">
+        ///	By default, reverse the dimensions, otherwise permute the axes
+        ///	according to the values given.
+        /// </param>
+        /// <returns>
+        ///	a with its axes permuted.<br></br>
+        ///	  A view is returned whenever
+        ///	possible.
+        /// </returns>
+        public static NDarray transpose(NDarray[] a, int[] axes = null)
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                a,
+            });
+            var kwargs=new PyDict();
+            if (axes!=null) kwargs["axes"]=ToPython(axes);
+            dynamic py = __self__.InvokeMethod("transpose", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
+        
+        /// <summary>
         ///	Convert inputs to arrays with at least one dimension.<br></br>
         ///	
         ///	Scalar inputs are converted to 1-dimensional arrays, whilst
