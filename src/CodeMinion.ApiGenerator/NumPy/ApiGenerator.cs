@@ -856,6 +856,7 @@ namespace CodeMinion.ApiGenerator.NumPy
             {
                 case "norm":
                 case "asscalar":
+                case "normal":
                     yield break;
                 case "all":
                 case "any":

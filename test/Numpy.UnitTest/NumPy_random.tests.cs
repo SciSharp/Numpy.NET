@@ -1304,54 +1304,28 @@ namespace Numpy.UnitTest
             // >>> mu, sigma = 0, 0.1 # mean and standard deviation
             // >>> s = np.random.normal(mu, sigma, 1000)
             // 
+            var (mu, sigma) = (0.0f, 0.1f); // mean and standard deviation;
+            var s = np.random.normal(mu, sigma, 1000);
 
-#if TODO
-            var given=  mu, sigma = 0, 0.1 # mean and standard deviation;
-             given=  s = np.random.normal(mu, sigma, 1000);
-#endif
             // Verify the mean and the variance:
 
             // >>> abs(mu - np.mean(s)) < 0.01
             // True
             // 
+            Assert.IsTrue( Math.Abs(mu - np.mean(s)) < 0.01);
 
-#if TODO
-             given=  abs(mu - np.mean(s)) < 0.01;
-            var expected=
-                "True";
-            Assert.AreEqual(expected, given.repr);
-#endif
-            // >>> abs(sigma - np.std(s, ddof=1)) < 0.01
+             // >>> abs(sigma - np.std(s, ddof=1)) < 0.01
             // True
             // 
+             Assert.IsTrue(Math.Abs(sigma - np.std(s, ddof: 1)) < 0.01);
 
-#if TODO
-             given=  abs(sigma - np.std(s, ddof=1)) < 0.01;
-             expected=
-                "True";
-            Assert.AreEqual(expected, given.repr);
-#endif
-            // Display the histogram of the samples, along with
-            // the probability density function:
+             // Two-by-four array of samples from N(3, 6.25):
 
-            // >>> import matplotlib.pyplot as plt
-            // >>> count, bins, ignored = plt.hist(s, 30, density=True)
-            // >>> plt.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) *
-            // ...                np.exp( - (bins - mu)**2 / (2 * sigma**2) ),
-            // ...          linewidth=2, color='r')
-            // >>> plt.show()
-            // 
+             // >>> np.random.normal(3, 2.5, size = (2, 4))
+             // array([[-4.49401501, 4.00950034, -1.81814867, 7.29718677],   # random
+             //    [ 0.39924804,  4.68456316,  4.99394529,  4.84057254]])  # random
 
-#if TODO
-             given=  import matplotlib.pyplot as plt;
-             given=  count, bins, ignored = plt.hist(s, 30, density=True);
-             given=  plt.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) *;
-             expected=
-                "...                np.exp( - (bins - mu)**2 / (2 * sigma**2) ),\n" +
-                "...          linewidth=2, color='r')";
-            Assert.AreEqual(expected, given.repr);
-             given=  plt.show();
-#endif
+             Assert.AreEqual(new Shape(2,4), np.random.normal(3, 2.5f, new []{2, 4}).shape );
         }
 
 
