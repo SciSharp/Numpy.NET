@@ -16,6 +16,12 @@ namespace Numpy.Models
 
         public int this[int n] => Dimensions[n];
 
+        public static implicit operator Shape(ValueTuple<int> tuple) => new Shape(tuple.Item1);
+        public static implicit operator Shape(ValueTuple<int,int> tuple) => new Shape(tuple.Item1, tuple.Item2);
+        public static implicit operator Shape(ValueTuple<int, int,int> tuple) => new Shape(tuple.Item1, tuple.Item2,tuple.Item3);
+        public static implicit operator Shape(ValueTuple<int, int, int, int> tuple) => new Shape(tuple.Item1, tuple.Item2, tuple.Item3, tuple.Item4);
+        public static implicit operator Shape(ValueTuple<int, int, int, int, int> tuple) => new Shape(tuple.Item1, tuple.Item2, tuple.Item3, tuple.Item4, tuple.Item5);
+
         #region Equality
 
         public static bool operator ==(Shape a, Shape b)

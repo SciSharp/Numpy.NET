@@ -45,6 +45,12 @@ namespace Numpy.Models
             return new Axis(axes);
         }
 
+        public static implicit operator Axis(ValueTuple<int> tuple) => new Axis(tuple.Item1);
+        public static implicit operator Axis(ValueTuple<int, int> tuple) => new Axis(tuple.Item1, tuple.Item2);
+        public static implicit operator Axis(ValueTuple<int, int, int> tuple) => new Axis(tuple.Item1, tuple.Item2, tuple.Item3);
+        public static implicit operator Axis(ValueTuple<int, int, int, int> tuple) => new Axis(tuple.Item1, tuple.Item2, tuple.Item3, tuple.Item4);
+        public static implicit operator Axis(ValueTuple<int, int, int, int, int> tuple) => new Axis(tuple.Item1, tuple.Item2, tuple.Item3, tuple.Item4, tuple.Item5);
+
         #region Equality
 
 
