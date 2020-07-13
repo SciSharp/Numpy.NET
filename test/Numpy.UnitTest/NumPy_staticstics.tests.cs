@@ -853,21 +853,18 @@ namespace Numpy.UnitTest
             // array([ 1.5,  3.5])
             // 
             
-            #if TODO
-            var given=  a = np.array({{1, 2}, {3, 4}});
-             given=  np.mean(a);
+            NDarray a = np.array(new [,]{{1, 2}, {3, 4}});
+            var given_scalar=  np.mean(a);
+            Assert.AreEqual(2.5, given_scalar);
+            var given=  np.mean(a, axis:0);
             var expected=
-                "2.5";
+                "array([2., 3.])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.mean(a, axis=0);
-             expected=
-                "array([ 2.,  3.])";
+            given=  np.mean(a, axis:1);
+            expected=
+                "array([1.5, 3.5])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.mean(a, axis=1);
-             expected=
-                "array([ 1.5,  3.5])";
-            Assert.AreEqual(expected, given.repr);
-            #endif
+            
             // In single precision, mean can be inaccurate:
             
             // >>> a = np.zeros((2, 512*512), dtype=np.float32)
@@ -877,27 +874,24 @@ namespace Numpy.UnitTest
             // 0.54999924
             // 
             
-            #if TODO
-             given=  a = np.zeros((2, 512*512), dtype=np.float32);
-             given=  a[0, :] = 1.0;
-             given=  a[1, :] = 0.1;
-             given=  np.mean(a);
-             expected=
-                "0.54999924";
-            Assert.AreEqual(expected, given.repr);
-            #endif
+             a = np.zeros((2, 512*512), dtype: np.float32);
+             a["0, :"] = (NDarray)1.0;
+             a["1, :"] = (NDarray)0.1;
+             given_scalar= Math.Round( np.mean(a), 8);
+             var expected_scalar=
+                0.54999924;
+            Assert.AreEqual(expected_scalar, given_scalar);
+
             // Computing the mean in float64 is more accurate:
             
             // >>> np.mean(a, dtype=np.float64)
             // 0.55000000074505806
             // 
             
-            #if TODO
-             given=  np.mean(a, dtype=np.float64);
-             expected=
-                "0.55000000074505806";
-            Assert.AreEqual(expected, given.repr);
-            #endif
+             given_scalar=  np.mean(a, dtype: np.float64);
+             expected_scalar=
+                0.55000000074505806;
+            Assert.AreEqual(expected_scalar, given_scalar);
         }
         
         

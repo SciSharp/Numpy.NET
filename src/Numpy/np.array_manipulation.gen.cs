@@ -685,7 +685,7 @@ namespace Numpy
         ///	 This is always a itself
         ///	or a view into a.
         /// </returns>
-        public static NDarray squeeze(NDarray a, int[] axis = null)
+        public static NDarray squeeze(NDarray a, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1549,7 +1549,7 @@ namespace Numpy
         ///	  Since a view is
         ///	returned, this operation is done in constant time.
         /// </returns>
-        public static NDarray flip(NDarray m, int[] axis = null)
+        public static NDarray flip(NDarray m, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1661,7 +1661,7 @@ namespace Numpy
         /// <returns>
         ///	Output array, with the same shape as a.
         /// </returns>
-        public static NDarray roll(NDarray a, int[] shift, int[] axis = null)
+        public static NDarray roll(NDarray a, int[] shift, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;

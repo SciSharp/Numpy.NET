@@ -769,7 +769,7 @@ namespace Numpy
         ///	Otherwise, the total number of non-zero values in the array
         ///	is returned.
         /// </returns>
-        public static NDarray<int> count_nonzero(NDarray a, int[] axis)
+        public static NDarray<int> count_nonzero(NDarray a, Axis axis)
         {
             //auto-generated code, do not change
             var __self__=self;

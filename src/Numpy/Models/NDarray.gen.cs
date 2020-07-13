@@ -820,7 +820,7 @@ namespace Numpy
         ///	 This is always a itself
         ///	or a view into a.
         /// </returns>
-        public NDarray squeeze(params int[] axis)
+        public NDarray squeeze(Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1361,7 +1361,7 @@ namespace Numpy
         ///	  Since a view is
         ///	returned, this operation is done in constant time.
         /// </returns>
-        public NDarray flip(params int[] axis)
+        public NDarray flip(Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1453,7 +1453,7 @@ namespace Numpy
         /// <returns>
         ///	Output array, with the same shape as a.
         /// </returns>
-        public NDarray roll(int[] shift, int[] axis = null)
+        public NDarray roll(int[] shift, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3465,7 +3465,7 @@ namespace Numpy
         ///	A new boolean or array is returned unless out is specified,
         ///	in which case a reference to out is returned.
         /// </returns>
-        public NDarray<bool> all(int[] axis, NDarray @out = null, bool? keepdims = null)
+        public NDarray<bool> all(Axis axis, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3547,7 +3547,7 @@ namespace Numpy
         ///	A new boolean or ndarray is returned unless out is specified,
         ///	in which case a reference to out is returned.
         /// </returns>
-        public NDarray<bool> any(int[] axis, NDarray @out = null, bool? keepdims = null)
+        public NDarray<bool> any(Axis axis, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -5731,7 +5731,7 @@ namespace Numpy
         ///	
         ///	Returns a reference to out if specified.
         /// </returns>
-        public NDarray prod(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
+        public NDarray prod(Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -5810,7 +5810,7 @@ namespace Numpy
         ///	  If an output array is specified, a reference to
         ///	out is returned.
         /// </returns>
-        public NDarray sum(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
+        public NDarray sum(Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -5871,7 +5871,7 @@ namespace Numpy
         ///	A new array holding the result is returned unless out is
         ///	specified, in which case it is returned.
         /// </returns>
-        public NDarray nanprod(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public NDarray nanprod(Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -5947,7 +5947,7 @@ namespace Numpy
         ///	size as a, and the same shape as a if axis is not None
         ///	or a is a 1-d array.
         /// </returns>
-        public NDarray nansum(int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public NDarray nansum(Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -6328,7 +6328,7 @@ namespace Numpy
         ///	
         ///	Each derivative has the same shape as f.
         /// </returns>
-        public NDarray gradient(NDarray varargs = null, int? edge_order = null, int[] axis = null)
+        public NDarray gradient(NDarray varargs = null, int? edge_order = null, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -9823,7 +9823,7 @@ namespace Numpy
         ///	Otherwise, the total number of non-zero values in the array
         ///	is returned.
         /// </returns>
-        public NDarray<int> count_nonzero(params int[] axis)
+        public NDarray<int> count_nonzero(Axis axis)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -9914,7 +9914,7 @@ namespace Numpy
         ///	scalar is returned.<br></br>
         ///	  The same dtype as a is returned.
         /// </returns>
-        public NDarray nanmin(int[] axis = null, NDarray @out = null, bool? keepdims = null)
+        public NDarray nanmin(Axis axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -9979,7 +9979,7 @@ namespace Numpy
         ///	returned.<br></br>
         ///	  The same dtype as a is returned.
         /// </returns>
-        public NDarray nanmax(int[] axis = null, NDarray @out = null, bool? keepdims = null)
+        public NDarray nanmax(Axis axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -10032,7 +10032,7 @@ namespace Numpy
         ///	A new array holding the result, unless out was
         ///	specified, in which case a reference to out is returned.
         /// </returns>
-        public NDarray ptp(int[] axis = null, NDarray @out = null, bool? keepdims = null)
+        public NDarray ptp(Axis axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -10112,7 +10112,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public NDarray<double> percentile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
+        public NDarray<double> percentile(NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -10272,7 +10272,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public NDarray<double> nanpercentile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
+        public NDarray<double> nanpercentile(NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -10425,7 +10425,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public NDarray<double> quantile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
+        public NDarray<double> quantile(NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -10574,7 +10574,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public NDarray<double> nanquantile(NDarray<float> q, int[] axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
+        public NDarray<double> nanquantile(NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -10705,7 +10705,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public NDarray<double> median(int[] axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = false)
+        public NDarray<double> median(Axis axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -10827,7 +10827,7 @@ namespace Numpy
         ///	integral, the previous rules still applies but the result dtype will
         ///	at least be float64.
         /// </returns>
-        public NDarray<double> average(int[] axis, NDarray weights = null, bool? returned = false)
+        public NDarray<double> average(Axis axis, NDarray weights = null, bool? returned = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -10960,7 +10960,7 @@ namespace Numpy
         ///	If out=None, returns a new array containing the mean values,
         ///	otherwise a reference to the output array is returned.
         /// </returns>
-        public NDarray<double> mean(int[] axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public NDarray<double> mean(Axis axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -11115,7 +11115,7 @@ namespace Numpy
         ///	If out is None, return a new array containing the standard deviation,
         ///	otherwise return a reference to the output array.
         /// </returns>
-        public NDarray<double> std(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
+        public NDarray<double> std(Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -11285,7 +11285,7 @@ namespace Numpy
         ///	If out=None, returns a new array containing the variance;
         ///	otherwise, a reference to the output array is returned.
         /// </returns>
-        public NDarray<double> @var(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
+        public NDarray<double> @var(Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -11434,7 +11434,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public NDarray<double> nanmedian(int[] axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = null)
+        public NDarray<double> nanmedian(Axis axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -11565,7 +11565,7 @@ namespace Numpy
         ///	 Nan is
         ///	returned for slices that contain only NaNs.
         /// </returns>
-        public NDarray<double> nanmean(int[] axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public NDarray<double> nanmean(Axis axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -11724,7 +11724,7 @@ namespace Numpy
         ///	ddof is &gt;= the number of non-NaN elements in a slice or the slice
         ///	contains only NaNs, then the result for that slice is NaN.
         /// </returns>
-        public NDarray<double> nanstd(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
+        public NDarray<double> nanstd(Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -11901,7 +11901,7 @@ namespace Numpy
         ///	number of non-NaN elements in a slice or the slice contains only
         ///	NaNs, then the result for that slice is NaN.
         /// </returns>
-        public NDarray<double> nanvar(int[] axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
+        public NDarray<double> nanvar(Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;

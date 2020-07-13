@@ -1368,7 +1368,7 @@ namespace Numpy
         ///	
         ///	Returns a reference to out if specified.
         /// </returns>
-        public static NDarray prod(NDarray a, int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
+        public static NDarray prod(NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1451,7 +1451,7 @@ namespace Numpy
         ///	  If an output array is specified, a reference to
         ///	out is returned.
         /// </returns>
-        public static NDarray sum(NDarray a, int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
+        public static NDarray sum(NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1518,7 +1518,7 @@ namespace Numpy
         ///	A new array holding the result is returned unless out is
         ///	specified, in which case it is returned.
         /// </returns>
-        public static NDarray nanprod(NDarray a, int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray nanprod(NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1600,7 +1600,7 @@ namespace Numpy
         ///	size as a, and the same shape as a if axis is not None
         ///	or a is a 1-d array.
         /// </returns>
-        public static NDarray nansum(NDarray a, int[] axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray nansum(NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2009,7 +2009,7 @@ namespace Numpy
         ///	
         ///	Each derivative has the same shape as f.
         /// </returns>
-        public static NDarray gradient(NDarray f, NDarray varargs = null, int? edge_order = null, int[] axis = null)
+        public static NDarray gradient(NDarray f, NDarray varargs = null, int? edge_order = null, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;

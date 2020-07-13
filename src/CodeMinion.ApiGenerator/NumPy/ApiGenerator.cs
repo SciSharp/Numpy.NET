@@ -62,6 +62,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                 TestFilesPath = Path.Combine(test_dir, "Numpy.UnitTest"),
                 Usings = { "using Numpy.Models;" },
                 ToPythonConversions = {
+                    "case Axis o: return o.Axes==null ? null : ToTuple(o.Axes);",
                     "case Shape o: return ToTuple(o.Dimensions);",
                     "case Slice o: return o.ToPython();",
                     "case PythonObject o: return o.PyObject;",
@@ -308,7 +309,24 @@ namespace CodeMinion.ApiGenerator.NumPy
                 PostProcess(decl);
                 // if necessary create overloads
                 foreach (var d in InferOverloads(decl))
+                {
+                    PostProcessOverloads(d);
                     api.Declarations.Add(d);
+                }
+            }
+        }
+
+        private void PostProcessOverloads(Function function)
+        {
+            foreach (var arg in function.Arguments)
+            {
+                if (arg.Name == "axis")
+                {
+                    if (arg.Type!="int[]")
+                        continue;
+                    if (arg.DefaultValue == null || arg.DefaultValue == "null")
+                        arg.Type = "Axis";
+                }
             }
         }
 
@@ -375,6 +393,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                 // if necessary create overloads
                 foreach (var d in InferOverloads(decl))
                 {
+                    PostProcessOverloads(d);
                     api.Declarations.Add(d);
                     // if this is an ndarray member, add it to the dynamic api also
                     if (ndarray_api != null && d.Arguments.FirstOrDefault()?.Type == "NDarray" && class_name == "numpy.")

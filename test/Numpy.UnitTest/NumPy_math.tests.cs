@@ -871,28 +871,27 @@ namespace Numpy.UnitTest
             // array([1, 5])
             // 
             
-            #if TODO
-            var given=  np.sum({0.5, 1.5});
+            var given=  np.sum(new[]{0.5, 1.5});
             var expected=
                 "2.0";
             Assert.AreEqual(expected, given.repr);
-             given=  np.sum({0.5, 0.7, 0.2, 1.5}, dtype=np.int32);
+             given=  np.sum(new[] { 0.5, 0.7, 0.2, 1.5}, dtype:np.int32);
              expected=
                 "1";
             Assert.AreEqual(expected, given.repr);
-             given=  np.sum({{0, 1}, {0, 5}});
+             given=  np.sum(new[,] { {0, 1}, {0, 5}});
              expected=
                 "6";
             Assert.AreEqual(expected, given.repr);
-             given=  np.sum({{0, 1}, {0, 5}}, axis=0);
+             given=  np.sum(new[,] { {0, 1}, {0, 5}}, axis:0);
              expected=
                 "array([0, 6])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.sum({{0, 1}, {0, 5}}, axis=1);
+             given=  np.sum(new[,] { {0, 1}, {0, 5}}, axis: 1);
              expected=
                 "array([1, 5])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+
             // If the accumulator is too small, overflow occurs:
             
             // >>> np.ones(128, dtype=np.int8).sum(dtype=np.int8)

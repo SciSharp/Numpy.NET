@@ -11,6 +11,7 @@ using System.Text;
 using Numpy.Models;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Python.Runtime;
 using Assert = NUnit.Framework.Assert;
 
 namespace Numpy.UnitTest
@@ -89,6 +90,7 @@ namespace Numpy.UnitTest
              given=  np.random.randint(5, size:new int[]{2, 4});
             Assert.LessOrEqual((int)given.max(), 4);
             Assert.GreaterOrEqual((int)given.min(), 0);
+            
         }
 
 

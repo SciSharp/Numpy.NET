@@ -86,6 +86,7 @@ namespace Numpy
                 // sequence types
                 case Array o: return ToTuple(o);
                 // special types from 'ToPythonConversions'
+                case Axis o: return o.Axes==null ? null : ToTuple(o.Axes);
                 case Shape o: return ToTuple(o.Dimensions);
                 case Slice o: return o.ToPython();
                 case PythonObject o: return o.PyObject;

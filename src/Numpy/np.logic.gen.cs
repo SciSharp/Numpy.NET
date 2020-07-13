@@ -67,7 +67,7 @@ namespace Numpy
         ///	A new boolean or array is returned unless out is specified,
         ///	in which case a reference to out is returned.
         /// </returns>
-        public static NDarray<bool> all(NDarray a, int[] axis, NDarray @out = null, bool? keepdims = null)
+        public static NDarray<bool> all(NDarray a, Axis axis, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -161,7 +161,7 @@ namespace Numpy
         ///	A new boolean or ndarray is returned unless out is specified,
         ///	in which case a reference to out is returned.
         /// </returns>
-        public static NDarray<bool> any(NDarray a, int[] axis, NDarray @out = null, bool? keepdims = null)
+        public static NDarray<bool> any(NDarray a, Axis axis, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
