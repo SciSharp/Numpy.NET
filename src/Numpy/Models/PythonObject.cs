@@ -7,7 +7,7 @@ namespace Numpy
 {
     public partial class PythonObject : IDisposable
     {
-        protected PyObject self; // can not be made readonly because of NDarray(IntPtr ... )
+        public PyObject self; // can not be made readonly because of NDarray(IntPtr ... )
         public dynamic PyObject => self;
 
         public IntPtr Handle => self.Handle;

@@ -28,6 +28,7 @@ namespace Numpy
 
         public static NDarray array(NDarray @object, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
         {
+            var __self__ = self;
             var args = ToTuple(new object[]
             {
                 @object,
@@ -42,8 +43,9 @@ namespace Numpy
             return ToCsharp<NDarray>(py);
         }
 
-        public static NDarray<T> array<T>(T[] @object, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
+        public static NDarray<T> array<T>(T[] @object, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null) where T : struct
         {
+            var __self__ = self;
             var type = @object.GetDtype();
             var ndarray = np.empty(new Shape(@object.Length), dtype: type, order: order); 
             if (@object.Length == 0)
@@ -70,6 +72,7 @@ namespace Numpy
 
         public static NDarray<T> array<T>(T[,] @object, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
         {
+            var __self__ = self;
             var d1_array = @object.Cast<T>().ToArray();
             var type = d1_array.GetDtype();
             var ndarray = np.empty(new Shape(@object.GetLength(0), @object.GetLength(1)), dtype: type, order: order);
@@ -97,6 +100,7 @@ namespace Numpy
 
         public static NDarray<T> array<T>(T[,,] data, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
         {
+            var __self__ = self;
             var d1_array = data.Cast<T>().ToArray();
             var type = d1_array.GetDtype();
             var ndarray = np.empty(new Shape(data.GetLength(0), data.GetLength(1), data.GetLength(2)), dtype: type, order: order);
@@ -122,9 +126,13 @@ namespace Numpy
             return new NDarray<T>(ndarray);
         }
 
-        public static NDarray array(string[] obj, int? itemsize = null, bool? copy = null, bool? unicode = null, string order = null)
+        public static NDarray array(string[] strings, int? itemsize = null, bool? copy = null, bool? unicode = null, string order = null)
         {
-            var args = ToTuple(obj);
+            var __self__ = self;
+            var args = new PyTuple(new PyObject[] { new PyList(strings.Select(s => new PyString(s) as PyObject).ToArray()) });
+            //var args = new PyList(new PyObject[0]);
+            //foreach (var s in strings)
+            //    args.Append(new PyString(s));
             var kwargs = new PyDict();
             if (itemsize != null) kwargs["itemsize"] = ToPython(itemsize);
             if (copy != null) kwargs["copy"] = ToPython(copy);
@@ -148,6 +156,7 @@ namespace Numpy
 
         public static NDarray array(IEnumerable<NDarray> arrays, Dtype dtype = null, bool? copy = null, string order = null, bool? subok = null, int? ndmin = null)
         {
+            var __self__ = self;
             var args = new PyTuple(new PyObject[]{ new PyList(arrays.Select(nd => nd.PyObject as PyObject).ToArray())});
             var kwargs = new PyDict();
             if (dtype != null) kwargs["dtype"] = ToPython(dtype);

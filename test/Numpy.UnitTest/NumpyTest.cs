@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Numpy;
 using Numpy.Models;
+using Python.Runtime;
 using Assert = NUnit.Framework.Assert;
 
 namespace Numpy.UnitTest
@@ -566,6 +567,33 @@ namespace Numpy.UnitTest
             //array([1, 2, 3, 4, 5], dtype = int64)
             var x = np.where(keep_idx > 4)[0];
             Assert.AreEqual("array([1, 2, 3, 4, 5], dtype=int64)", x.repr);
+        }
+
+        [TestMethod]
+        public void StringArray()
+        {
+            //>>> a = numpy.array(['apples', 'foobar', 'cowboy'])
+            //>>> a[2] = 'bananas'
+            //>>> a
+            //array(['apples', 'foobar', 'banana'], 
+            //      dtype = '|S6')
+            var a = np.array(new string[]{"apples", "foobar", "cowboy"});
+            Assert.AreEqual("array(['apples', 'foobar', 'cowboy'], dtype='<U6')", a.repr);
+            // todo: a[2]="banana";
+            a.self.SetItem(new PyInt(2), new PyString("banana"));
+            Assert.AreEqual("array(['apples', 'foobar', 'banana'], dtype='<U6')", a.repr);
+
+            //>>> a = numpy.array(['apples', 'foobar', 'cowboy'], dtype = object)
+            //>>> a
+            //array([apples, foobar, cowboy], dtype = object)
+            //>>> a[2] = 'bananas'
+            //>>> a
+            //array([apples, foobar, bananas], dtype = object)
+            a = np.array(new string[] { "apples", "foobar", "cowboy" }, dtype:np.object_);
+            Assert.AreEqual("array(['apples', 'foobar', 'cowboy'], dtype=object)", a.repr);
+            // todo: a[2]="banana";
+            a.self.SetItem(new PyInt(2), new PyString("banana"));
+            Assert.AreEqual("array(['apples', 'foobar', 'banana'], dtype=object)", a.repr);
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
