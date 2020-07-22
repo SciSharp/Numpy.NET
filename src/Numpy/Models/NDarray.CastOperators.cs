@@ -20,6 +20,7 @@ namespace Numpy
                 case long[] a: return np.array(a);
                 case float[] a: return np.array(a);
                 case double[] a: return np.array(a);
+                case string[] a: return np.array(a);
                 case byte[,] a: return np.array(a);
                 case bool[,] a: return np.array(a);
                 case short[,] a: return np.array(a);
@@ -27,6 +28,7 @@ namespace Numpy
                 case long[,] a: return np.array(a);
                 case float[,] a: return np.array(a);
                 case double[,] a: return np.array(a);
+                case string[,] a: return np.array(a);
                 case byte[,,] a: return np.array(a);
                 case bool[,,] a: return np.array(a);
                 case short[,,] a: return np.array(a);
@@ -34,6 +36,7 @@ namespace Numpy
                 case long[,,] a: return np.array(a);
                 case float[,,] a: return np.array(a);
                 case double[,,] a: return np.array(a);
+                case string[,,] a: return np.array(a);
             }
             throw new InvalidOperationException($"Unable to cast {array.GetType()} to NDarray");
         }

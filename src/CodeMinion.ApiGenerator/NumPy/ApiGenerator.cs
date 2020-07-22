@@ -672,14 +672,12 @@ namespace CodeMinion.ApiGenerator.NumPy
                     if (decl.Returns.Count==0)
                         decl.Returns.Add(new Argument(){Type = "NDarray"});
                     break;
-                case "meshgrid":
                 case "mat":
                 case "bmat":
                 case "block":
                 case "interp":
                 case "einsum_path":
                 case "cond":
-                case "ogrid":
                 case "get_state":
                 case "set_state":
                 case "genfromtxt":
@@ -839,6 +837,20 @@ namespace CodeMinion.ApiGenerator.NumPy
                     break;
                 case "column_stack":
                     decl.ManualOverride = true;
+                    break;
+                case "meshgrid":
+                    decl.ReturnType = "NDarray[]";
+                    decl.Arguments[0].Type = "NDarray[]";
+                    decl.Arguments[0].Name = "xi";
+                    decl.Arguments.RemoveAt(1);
+                    decl.Arguments[1].DefaultValue = "\"xy\"";
+                    break;
+                case "mgrid":
+                    decl.ReturnType = "NDarray[]";
+                    break;
+                case "ogrid":
+                    decl.ReturnType = "NDarray[]";
+                    decl.Arguments.Clear();
                     break;
             }
         }
@@ -1095,6 +1107,16 @@ namespace CodeMinion.ApiGenerator.NumPy
                     }
                     else
                         yield return decl;
+                    yield break;
+                case "meshgrid":
+                    yield return decl;
+                    yield return decl.Clone(f =>
+                    {
+                        f.Arguments[0].Type = "params NDarray[]";
+                        f.Arguments.RemoveAt(1);
+                        f.Arguments.RemoveAt(1);
+                        f.Arguments.RemoveAt(1);
+                    });
                     yield break;
             }
 

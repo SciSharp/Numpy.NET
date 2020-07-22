@@ -75,6 +75,9 @@
     <Compile Include="..\Numpy\Manual\np.linspace.cs">
       <Link>Manual\np.linspace.cs</Link>
     </Compile>
+    <Compile Include="..\Numpy\Manual\np.meshgrid.cs">
+      <Link>Manual\np.meshgrid.cs</Link>
+    </Compile>
     <Compile Include="..\Numpy\Manual\np.random.cs">
       <Link>Manual\np.random.cs</Link>
     </Compile>

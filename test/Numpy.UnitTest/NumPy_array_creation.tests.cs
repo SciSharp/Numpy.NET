@@ -486,8 +486,8 @@ namespace Numpy.UnitTest
             //array([[1, 2, 3],
             //       [1, 2, 3],
             //       [1, 2, 3]])
-            var a = np.array(new[] {1, 2, 3});
-            var b = np.array(new[]{a, a, a});
+            var a = np.array(new[] { 1, 2, 3 });
+            var b = np.array(new[] { a, a, a });
             Assert.AreEqual("array([[1, 2, 3],\n       [1, 2, 3],\n       [1, 2, 3]])", b.repr);
         }
 
@@ -1250,53 +1250,30 @@ namespace Numpy.UnitTest
             // array([[ 0.],
             //        [ 1.]])
             // 
-
-#if TODO
-            var given=  nx, ny = (3, 2);
-             given=  x = np.linspace(0, 1, nx);
-             given=  y = np.linspace(0, 1, ny);
-             given=  xv, yv = np.meshgrid(x, y);
-             given=  xv;
-            var expected=
-                "array([[ 0. ,  0.5,  1. ],\n" +
-                "       [ 0. ,  0.5,  1. ]])";
+            var (nx, ny) = (3, 2);
+            var x = np.linspace(0, 1, nx);
+            var y = np.linspace(0, 1, ny);
+            var xv_yv = np.meshgrid(x, y);
+            var given = xv_yv[0];
+            var expected =
+                "array([[0. , 0.5, 1. ],\n" +
+                "       [0. , 0.5, 1. ]])";
             Assert.AreEqual(expected, given.repr);
-             given=  yv;
-             expected=
-                "array([[ 0.,  0.,  0.],\n" +
-                "       [ 1.,  1.,  1.]])";
+            given = xv_yv[1];
+            expected =
+               "array([[0., 0., 0.],\n" +
+               "       [1., 1., 1.]])";
             Assert.AreEqual(expected, given.repr);
-             given=  xv, yv = np.meshgrid(x, y, sparse=True)  # make sparse output arrays;
-             given=  xv;
-             expected=
-                "array([[ 0. ,  0.5,  1. ]])";
+            xv_yv = np.meshgrid(new[] { x, y }, sparse: true);  // make sparse output arrays;
+            given = xv_yv[0];
+            expected =
+               "array([[0. , 0.5, 1. ]])";
             Assert.AreEqual(expected, given.repr);
-             given=  yv;
-             expected=
-                "array([[ 0.],\n" +
-                "       [ 1.]])";
+            given = xv_yv[1];
+            expected =
+                "array([[0.],\n" +
+                "       [1.]])";
             Assert.AreEqual(expected, given.repr);
-#endif
-            // meshgrid is very useful to evaluate functions on a grid.
-
-            // >>> import matplotlib.pyplot as plt
-            // >>> x = np.arange(-5, 5, 0.1)
-            // >>> y = np.arange(-5, 5, 0.1)
-            // >>> xx, yy = np.meshgrid(x, y, sparse=True)
-            // >>> z = np.sin(xx**2 + yy**2) / (xx**2 + yy**2)
-            // >>> h = plt.contourf(x,y,z)
-            // >>> plt.show()
-            // 
-
-#if TODO
-             given=  import matplotlib.pyplot as plt;
-             given=  x = np.arange(-5, 5, 0.1);
-             given=  y = np.arange(-5, 5, 0.1);
-             given=  xx, yy = np.meshgrid(x, y, sparse=True);
-             given=  z = np.sin(xx**2 + yy**2) / (xx**2 + yy**2);
-             given=  h = plt.contourf(x,y,z);
-             given=  plt.show();
-#endif
         }
 
 
@@ -1319,7 +1296,7 @@ namespace Numpy.UnitTest
             // 
 
 #if TODO
-            var given=  np.mgrid{0:5,0:5};
+            var given=  np.mgrid["0:5,0:5"];
             var expected=
                 "array([[[0, 0, 0, 0, 0],\n" +
                 "        [1, 1, 1, 1, 1],\n" +
