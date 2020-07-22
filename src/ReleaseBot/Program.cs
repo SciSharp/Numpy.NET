@@ -13,7 +13,7 @@ namespace ReleaseBot
 {
     class Program
     {
-        private const string V = "1.20"; // <--- numpy.net version!
+        private const string V = "1.21"; // <--- numpy.net version!
         private const string PythonNetVersion = "1";
 
         private const string ProjectPath = "../../../Numpy";
