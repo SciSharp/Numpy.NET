@@ -13,8 +13,8 @@ namespace ReleaseBot
 {
     class Program
     {
-        private const string V = "1.21"; // <--- numpy.net version!
-        private const string PythonNetVersion = "1";
+        private const string V = "1.22"; // <--- numpy.net version!
+        private const string PythonNetVersion = "2.5.1";
 
         private const string ProjectPath = "../../../Numpy";
         private const string ProjectName = "Numpy.csproj";
@@ -44,40 +44,43 @@ namespace ReleaseBot
                 new ReleaseSpec() { CPythonVersion = "2.7", Platform="Linux",   },
                 new ReleaseSpec() { CPythonVersion = "3.5", Platform="Linux",   },
                 new ReleaseSpec() { CPythonVersion = "3.6", Platform="Linux",   },
+                new ReleaseSpec() { CPythonVersion = "3.8", Platform="Linux",   },
                 new ReleaseSpec() { CPythonVersion = "3.7", Platform="Linux",   },
                 // mac
                 new ReleaseSpec() { CPythonVersion = "2.7", Platform="OSX",  },
                 new ReleaseSpec() { CPythonVersion = "3.5", Platform="OSX",  },
                 new ReleaseSpec() { CPythonVersion = "3.6", Platform="OSX",  },
+                new ReleaseSpec() { CPythonVersion = "3.8", Platform="OSX",   },
                 new ReleaseSpec() { CPythonVersion = "3.7", Platform="OSX",  },
                 // win
                 new ReleaseSpec() { CPythonVersion = "2.7", Platform="Win64",   },
                 new ReleaseSpec() { CPythonVersion = "3.5", Platform="Win64",   },
                 new ReleaseSpec() { CPythonVersion = "3.6", Platform="Win64",   },
+                new ReleaseSpec() { CPythonVersion = "3.8", Platform="Win64",   },
                 new ReleaseSpec() { CPythonVersion = "3.7", Platform="Win64",   },
-
             };
             foreach (var spec in specs)
             {
                 spec.Version = $"{spec.CPythonVersion}.{V}";
-                spec.PythonNetVersion = $"{spec.CPythonVersion}.{PythonNetVersion}";
+                spec.PythonNetVersion = $"{PythonNetVersion}";
                 spec.Description = string.Format(Description, spec.Platform, spec.CPythonVersion);
                 spec.PackageTags = Tags;
                 spec.RelativeProjectPath = ProjectPath2;
                 spec.ProjectName = ProjectName2;
+                var py = spec.CPythonVersion.Replace(".", "");
                 switch (spec.Platform)
                 {
                     case "Linux":
                         spec.PackageId = "Numpy.Bare.Mono";
-                        spec.PythonNet = "Python.Runtime.Mono";
+                        spec.PythonNet = $"pythonnet_netstandard_py{py}_linux";
                         break;
                     case "OSX":
                         spec.PackageId = "Numpy.Bare.OSX";
-                        spec.PythonNet = "Python.Runtime.OSX";
+                        spec.PythonNet = $"pythonnet_netstandard_py{py}_osx";
                         break;
                     case "Win64":
                         spec.PackageId = "Numpy.Bare";
-                        spec.PythonNet = "Python.Runtime.NETStandard";
+                        spec.PythonNet = $"pythonnet_netstandard_py{py}_win";
                         break;
                 }
                 spec.Process();
