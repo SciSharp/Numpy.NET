@@ -1016,7 +1016,7 @@ namespace CodeMinion.Core
             s.Out("//auto-generated");
             s.Out($"{(@static?"private static":"public")} PyObject ToPython(object obj)", () =>
             {
-                s.Out("if (obj == null) return Runtime.GetPyNone();");
+                s.Out("if (obj == null) return Runtime.None;");
                 s.Out("switch (obj)", () =>
                 {
                     s.Out("// basic types");

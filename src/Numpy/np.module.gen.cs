@@ -72,7 +72,7 @@ namespace Numpy
         //auto-generated
         private static PyObject ToPython(object obj)
         {
-            if (obj == null) return Runtime.GetPyNone();
+            if (obj == null) return Runtime.None;
             switch (obj)
             {
                 // basic types
