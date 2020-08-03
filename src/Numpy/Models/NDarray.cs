@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using Numpy.Models;
@@ -55,6 +56,7 @@ namespace Numpy
             else if (typeof(T) == typeof(float)) array = new float[size];
             else if (typeof(T) == typeof(double)) array = new double[size];
             else if (typeof(T) == typeof(bool)) array = new byte[size];
+            else if (typeof(T) == typeof(Complex)) array = new Complex[size];
             else
                 throw new InvalidOperationException(
                     "Can not copy the data with data type due to limitations of Marshal.Copy: " + typeof(T).Name);
@@ -77,6 +79,12 @@ namespace Numpy
                     break;
                 case double[] a:
                     Marshal.Copy(new IntPtr(ptr), a, 0, a.Length);
+                    break;
+                case Complex[] a:
+                    var real = this.real.GetData<double>();
+                    var imag = this.imag.GetData<double>();
+                    for(int i =0; i<a.Length; i++)
+                        a[i]=new Complex(real[i], imag[i]);
                     break;
             }
             // special handling for types that are not supported by Marshal.Copy: must be converted i.e. 1 => true, 0 => false
@@ -492,6 +500,32 @@ namespace Numpy
             if (!object.ReferenceEquals(array, null))
                 return np.array_equal(this, array);
             return base.Equals(obj);
+        }
+
+        public NDarray real
+        {
+            get
+            {
+                dynamic py = self.GetAttr("real");
+                return ToCsharp<NDarray>(py);
+            }
+            set
+            {
+                self.SetAttr("real", value.PyObject);
+            }
+        }
+
+        public NDarray imag
+        {
+            get
+            {
+                dynamic py = self.GetAttr("imag");
+                return ToCsharp<NDarray>(py);
+            }
+            set
+            {
+                self.SetAttr("imag", value.PyObject);
+            }
         }
     }
 

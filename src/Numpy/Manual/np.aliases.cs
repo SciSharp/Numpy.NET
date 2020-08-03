@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 using Numpy.Models;
+using Python.Runtime;
 
 namespace Numpy
 {
@@ -232,5 +234,10 @@ namespace Numpy
         {
             return np.empty(new Shape(shape));
         }
+
+        public static NDarray imag(Complex val) => np.asarray(val.Imaginary);
+
+        public static NDarray real(Complex val) => np.asarray(val.Real);
+
     }
 }

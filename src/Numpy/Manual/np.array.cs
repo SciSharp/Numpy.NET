@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using Numpy.Models;
@@ -23,6 +24,7 @@ namespace Numpy
         /// </returns>
         public static NDarray<T> array<T>(params T[] data) where T : struct
         {
+            var __self__ = self;
             return array(data, dtype:null);
         }
 
@@ -63,6 +65,19 @@ namespace Numpy
                 case bool[] a:
                     var bytes = a.Select(x => (byte)(x ? 1 : 0)).ToArray();
                     Marshal.Copy(bytes, 0, new IntPtr(ptr), a.Length);
+                    break;
+                case Complex[] a:
+                    var real = new double[@object.Length];
+                    var imag = new double[@object.Length];
+                    for (int i = 0; i < @object.Length; i++)
+                    {
+                        real[i] = a[i].Real;
+                        imag[i] = a[i].Imaginary;
+                    }
+                    var ndreal = np.array(real);
+                    var ndimag = np.array(imag);
+                    ndarray.real = ndreal;
+                    ndarray.imag = ndimag;
                     break;
             }
             if (dtype !=null || subok != null || ndmin != null)

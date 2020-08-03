@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Numpy;
@@ -594,6 +595,34 @@ namespace Numpy.UnitTest
             // todo: a[2]="banana";
             a.self.SetItem(new PyInt(2), new PyString("banana"));
             Assert.AreEqual("array(['apples', 'foobar', 'banana'], dtype=object)", a.repr);
+        }
+
+        [TestMethod]
+        public void ComplexNumbers()
+        {
+            //>>> a = np.array([1+2j, 3+4j, 5+6j])
+            //>>> a.imag
+            //array([2.,  4.,  6.])
+            var a = np.array(new Complex[] { new Complex(1, 2), new Complex(3,4), new Complex(5,6), });
+            Assert.AreEqual("array([1., 3., 5.])", a.real.repr);
+            Assert.AreEqual("array([2., 4., 6.])", a.imag.repr);
+            //>>> np.imag(a)
+            //array([2., 4., 6.])
+            //>>> np.real(a)
+            //array([1., 3., 5.])
+            Assert.AreEqual("array([1., 3., 5.])", np.real(a).repr);
+            Assert.AreEqual("array([2., 4., 6.])", np.imag(a).repr);
+            //>>> a.imag = np.array([8, 10, 12])
+            //>>> a
+            //array([1. +8.j,  3.+10.j,  5.+12.j])
+            a.imag = np.array(new []{8, 10, 12});
+            Assert.AreEqual("array([1. +8.j, 3.+10.j, 5.+12.j])", a.repr);
+            //>>> np.imag(1 + 1j)
+            //1.0
+            Assert.AreEqual(1.0, np.imag(new Complex(1, 1)).asscalar<double>());
+
+            var complexes = a.GetData<Complex>();
+            Assert.IsTrue(Enumerable.SequenceEqual(new Complex[] { new Complex(1, 2), new Complex(3, 4), new Complex(5, 6), }, complexes));
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools

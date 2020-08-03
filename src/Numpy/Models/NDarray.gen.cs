@@ -7997,42 +7997,6 @@ namespace Numpy
         }
         
         /// <summary>
-        ///	Return the real part of the complex argument.
-        /// </summary>
-        /// <returns>
-        ///	The real component of the complex argument.<br></br>
-        ///	 If val is real, the type
-        ///	of val is used for the output.<br></br>
-        ///	  If val has complex elements, the
-        ///	returned type is float.
-        /// </returns>
-        public NDarray real()
-        {
-            //auto-generated code, do not change
-            var __self__=self;
-            dynamic py = __self__.InvokeMethod("real");
-            return ToCsharp<NDarray>(py);
-        }
-        
-        /// <summary>
-        ///	Return the imaginary part of the complex argument.
-        /// </summary>
-        /// <returns>
-        ///	The imaginary component of the complex argument.<br></br>
-        ///	 If val is real,
-        ///	the type of val is used for the output.<br></br>
-        ///	  If val has complex
-        ///	elements, the returned type is float.
-        /// </returns>
-        public NDarray imag()
-        {
-            //auto-generated code, do not change
-            var __self__=self;
-            dynamic py = __self__.InvokeMethod("imag");
-            return ToCsharp<NDarray>(py);
-        }
-        
-        /// <summary>
         ///	Return the complex conjugate, element-wise.<br></br>
         ///	
         ///	The complex conjugate of a complex number is obtained by changing the

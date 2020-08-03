@@ -403,9 +403,10 @@ namespace CodeMinion.ApiGenerator.NumPy
                             // do not add to NDArray instance methods
                             case "copyto":
                             case "transpose":
-                                continue;
                             case "amax":
                             case "amin":
+                            case "real":
+                            case "imag":
                                 continue;
                         }
                         var dc = d.Clone<Function>();
@@ -882,12 +883,13 @@ namespace CodeMinion.ApiGenerator.NumPy
 
         private IEnumerable<Function> InferOverloads(Function decl)
         {
-            // don't generate at all:
             switch (decl.Name)
             {
                 case "norm":
                 case "asscalar":
                 case "normal":
+                case "meshgrid":
+                    // don't generate at all
                     yield break;
                 case "all":
                 case "any":
@@ -1108,16 +1110,16 @@ namespace CodeMinion.ApiGenerator.NumPy
                     else
                         yield return decl;
                     yield break;
-                case "meshgrid":
-                    yield return decl;
-                    yield return decl.Clone(f =>
-                    {
-                        f.Arguments[0].Type = "params NDarray[]";
-                        f.Arguments.RemoveAt(1);
-                        f.Arguments.RemoveAt(1);
-                        f.Arguments.RemoveAt(1);
-                    });
-                    yield break;
+                //case "meshgrid":
+                //    yield return decl;
+                //    yield return decl.Clone(f =>
+                //    {
+                //        f.Arguments[0].Type = "params NDarray[]";
+                //        f.Arguments.RemoveAt(1);
+                //        f.Arguments.RemoveAt(1);
+                //        f.Arguments.RemoveAt(1);
+                //    });
+                //    yield break;
             }
 
             // without args we don't need to consider possible overloads

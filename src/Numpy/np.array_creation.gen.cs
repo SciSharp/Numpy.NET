@@ -2839,7 +2839,7 @@ namespace Numpy
             dynamic py = __self__.InvokeMethod("geomspace", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }
-
+        
         /// <summary>
         ///	nd_grid instance which returns a dense multi-dimensional “meshgrid”.
         ///	
