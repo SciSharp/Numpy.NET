@@ -204,7 +204,12 @@ namespace Numpy
         /// Scalar representation of a. The output data type is the same type
         /// returned by the input’s item method.
         /// </returns>
-        public static T asscalar<T>(NDarray a) => self.InvokeMethod("asscalar", a.PyObject).As<T>();
+        public static T asscalar<T>(NDarray a)
+        {
+            if (typeof(T) == typeof(Complex))
+                return (T)(object) new Complex(a.real.asscalar<double>(), a.imag.asscalar<double>());
+            return self.InvokeMethod("asscalar", a.PyObject).As<T>();
+        }
 
     }
 }

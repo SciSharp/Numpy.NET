@@ -620,9 +620,14 @@ namespace Numpy.UnitTest
             //>>> np.imag(1 + 1j)
             //1.0
             Assert.AreEqual(1.0, np.imag(new Complex(1, 1)).asscalar<double>());
+            
+            // getting the complex numbers out again
+            var c = a.GetData<Complex>();
+            Assert.IsTrue(Enumerable.SequenceEqual(new Complex[] { new Complex(1, 8), new Complex(3, 10), new Complex(5, 12), }, c));
 
-            var complexes = a.GetData<Complex>();
-            Assert.IsTrue(Enumerable.SequenceEqual(new Complex[] { new Complex(1, 2), new Complex(3, 4), new Complex(5, 6), }, complexes));
+            // accessing scalar values
+            var b = new NDarray<Complex>(a);
+            Assert.AreEqual(new Complex(1, 8), b[0].asscalar<Complex>());
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
