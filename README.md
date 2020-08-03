@@ -232,7 +232,15 @@ var roots = np.sqrt(a); // => { 0.0, 1.0, 1.414, ..., 9.899, 9.950 }
 ```
 
 #### Complex numbers
-Converting complex results to and from NumPy is not implemented at all (yet). If you want to work on this, let us know.
+Numpy.NET supports complex numbers even though the notation in Python and C# is very different:
+```python
+>>> a = np.array([1+2j, 3+4j, 5+6j])
+```
+looks like this in C#
+```c#
+var a = np.array(new Complex[] { new Complex(1, 2), new Complex(3,4), new Complex(5,6), });
+```
+Access the real and imaginary components of a complex array via `a.real` and `a.imag` or copy the complex values of an ndarray into C# with `Complex[] c=a.GetData<Complex>();`.
 
 #### Functions clashing with their class name
 The function fft(...) in numpy.fft and random(...) in numpy.random had to be renamed because C#  doesn't allow a member to have the same name as its enclosing class. That's why in Numpy.NET these functions have been renamed with a trailing underscore like this: `np.fft.fft_(...)`
