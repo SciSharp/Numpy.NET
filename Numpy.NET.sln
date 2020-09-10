@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.645
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numpy", "src\Numpy\Numpy.csproj", "{D527C885-AD64-4499-9E92-F9A543C0D14B}"
 EndProject
@@ -25,11 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeMinion.Parser", "src\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeuralNetworkExample", "src\Examples\NeuralNetworkExample\NeuralNetworkExample.csproj", "{53CD5C07-7902-4761-B00B-0171AB6C7620}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiExample", "src\Examples\WebApiExample\WebApiExample.csproj", "{445655A8-E4FC-4257-9CA2-63D67D84F2A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiExample_netcore2.2", "src\Examples\WebApiExample\WebApiExample_netcore2.2.csproj", "{445655A8-E4FC-4257-9CA2-63D67D84F2A2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreTest", "src\Examples\NetCoreTest\NetCoreTest.csproj", "{84BCB8CA-6B29-48D8-BEEE-751C7547419E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numpy.Bare.Dotnet", "src\Numpy.Bare.Dotnet\Numpy.Bare.Dotnet.csproj", "{8E1BD94E-6AE4-46D9-B0BA-6AC0515AF0D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiExample_netcore3.1", "src\Examples\WebApiExample_netcore3.1\WebApiExample_netcore3.1.csproj", "{53C73261-DD84-47D1-A9BA-E553D34FF0A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{8E1BD94E-6AE4-46D9-B0BA-6AC0515AF0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E1BD94E-6AE4-46D9-B0BA-6AC0515AF0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E1BD94E-6AE4-46D9-B0BA-6AC0515AF0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C73261-DD84-47D1-A9BA-E553D34FF0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C73261-DD84-47D1-A9BA-E553D34FF0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C73261-DD84-47D1-A9BA-E553D34FF0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C73261-DD84-47D1-A9BA-E553D34FF0A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{53CD5C07-7902-4761-B00B-0171AB6C7620} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 		{445655A8-E4FC-4257-9CA2-63D67D84F2A2} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 		{84BCB8CA-6B29-48D8-BEEE-751C7547419E} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
+		{53C73261-DD84-47D1-A9BA-E553D34FF0A3} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EB08541-5168-443C-B524-A5CB7E7C613D}
