@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -628,6 +629,34 @@ namespace Numpy.UnitTest
             // accessing scalar values
             var b = new NDarray<Complex>(a);
             Assert.AreEqual(new Complex(1, 8), b[0].asscalar<Complex>());
+        }
+
+        [TestMethod]
+        public void IssueByXlient()
+        {
+            var points=new Point[]{ new Point(0,0), new Point(17, 4), new Point(2,22), new   Point(10, 7), };
+            int[,] Pts = new int[,]
+            {
+                {points[0].X, points[0].Y },
+                {points[1].X, points[1].Y },
+                {points[2].X, points[2].Y } ,
+                {points[3].X, points[3].Y }
+            };
+
+            // exception here / deadlock
+            Dtype dtype = Pts.GetDtype();
+
+            NDarray pts = np.array(Pts);
+            NDarray rectangle = np.zeros(new Shape(4, 2), dtype);
+
+
+            NDarray sum = np.sum(pts, 1);
+            NDarray differnce = np.diff(pts, axis: 1);
+
+            rectangle[0] = pts[sum.argmin()];
+            rectangle[2] = pts[sum.argmax()];
+            rectangle[1] = pts[differnce.argmin()];
+            rectangle[3] = pts[differnce.argmax()];
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
