@@ -56,6 +56,7 @@ Note that you must call a method of `np` before calling `PythonEngine.BeginAllow
 np.arange(1);
 PythonEngine.BeginAllowThreads();
 ```
+Also, if you do this, be sure to wrap any calls to Numpy in `using (Py.GIL()) { ... }` or else you'll get AccessViolationExceptions.
 
 ## Performance considerations
 
