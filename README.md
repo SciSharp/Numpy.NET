@@ -21,6 +21,8 @@ Just reference [Numpy.dll](https://www.nuget.org/packages/Numpy/) via Nuget, set
 ### Numpy.Bare.dll 
 In certain use cases you might not want the packaged Python and NumPy packages. In that case you reference [Numpy.Bare.dll](https://www.nuget.org/packages/Numpy.Bare/) via Nuget. Depending on the Numpy.Bare nuget version will need Python 3.5, 3.6 or 3.7 and Numpy 1.16 installed for it to work. The first two digits of the Numpy.Bare version indicate which Python version is needed for it to run (i.e. Numpy.Bare v3.6.1.1 needs Python 3.6 installed). If you are getting BadImageFormatException switch between x86 and x64 build settings.
 
+In other cases, you might want to control the install location of the Python installation or even set it up yourself instead of having the Numpy library do it. For those cases Numpy.Bare is also great. Check out the [custom installation example](https://github.com/SciSharp/Numpy.NET/tree/master/src/Examples/CustomInstallLocationExample) if you want to know how.
+
 ## How does it work?
 
 Numpy.NET uses [Python for .NET](http://pythonnet.github.io/) to call into the Python module `numpy`. However, this does not mean that it depends on a local Python installation! Numpy.NET.dll uses [Python.Included](https://github.com/henon/Python.Included) which packages embedded Python 3.7 and automatically deploys it in the user's home directory upon first execution. On subsequent runs, it will find Python already deployed and therefor doesn't install it again. Numpy.NET also packages the NumPy wheel and installs it into the embedded Python installation when not yet installed. 
