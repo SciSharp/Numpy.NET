@@ -649,7 +649,6 @@ namespace Numpy.UnitTest
             NDarray pts = np.array(Pts);
             NDarray rectangle = np.zeros(new Shape(4, 2), dtype);
 
-
             NDarray sum = np.sum(pts, 1);
             NDarray differnce = np.diff(pts, axis: 1);
 
@@ -657,6 +656,20 @@ namespace Numpy.UnitTest
             rectangle[2] = pts[sum.argmax()];
             rectangle[1] = pts[differnce.argmin()];
             rectangle[3] = pts[differnce.argmax()];
+        }
+
+        [TestMethod]
+        public void IssueByVolgaone()
+        {
+            var n = np.array(new float[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } });
+            var row0 = n[0]; //extract 1st row
+            Assert.AreEqual("array([1., 2., 3.], dtype=float32)", row0.repr);
+            var row0Data = row0.GetData<float>(); //this is correct - {1,2,3} 
+            Assert.AreEqual("1,2,3", string.Join(",", row0Data));
+            var col1 = n[":,1"]; //extract 1st column - NDarray is [2 5 8] as expected
+            Assert.AreEqual("array([2., 5., 8.], dtype=float32)", col1.repr);
+            var col1Data = col1.GetData();//this is wrong - {2,3,4}
+            Assert.AreEqual("2,5,8", string.Join(",", col1Data));
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
