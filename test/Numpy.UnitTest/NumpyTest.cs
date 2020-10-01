@@ -561,7 +561,7 @@ namespace Numpy.UnitTest
             //>>> bboxes.shape
             //(6, 4)
             var bboxes = np.empty(new Shape(999, 4));
-            var keep_idx = np.array(new[] {2, 6, 7, 8, 9, 13});
+            var keep_idx = np.array(new[] { 2, 6, 7, 8, 9, 13 });
             bboxes = bboxes[keep_idx];
             Assert.AreEqual("(6, 4)", bboxes.shape.ToString());
 
@@ -579,7 +579,7 @@ namespace Numpy.UnitTest
             //>>> a
             //array(['apples', 'foobar', 'banana'], 
             //      dtype = '|S6')
-            var a = np.array(new string[]{"apples", "foobar", "cowboy"});
+            var a = np.array(new string[] { "apples", "foobar", "cowboy" });
             Assert.AreEqual("array(['apples', 'foobar', 'cowboy'], dtype='<U6')", a.repr);
             // todo: a[2]="banana";
             a.self.SetItem(new PyInt(2), new PyString("banana"));
@@ -591,7 +591,7 @@ namespace Numpy.UnitTest
             //>>> a[2] = 'bananas'
             //>>> a
             //array([apples, foobar, bananas], dtype = object)
-            a = np.array(new string[] { "apples", "foobar", "cowboy" }, dtype:np.object_);
+            a = np.array(new string[] { "apples", "foobar", "cowboy" }, dtype: np.object_);
             Assert.AreEqual("array(['apples', 'foobar', 'cowboy'], dtype=object)", a.repr);
             // todo: a[2]="banana";
             a.self.SetItem(new PyInt(2), new PyString("banana"));
@@ -604,7 +604,7 @@ namespace Numpy.UnitTest
             //>>> a = np.array([1+2j, 3+4j, 5+6j])
             //>>> a.imag
             //array([2.,  4.,  6.])
-            var a = np.array(new Complex[] { new Complex(1, 2), new Complex(3,4), new Complex(5,6), });
+            var a = np.array(new Complex[] { new Complex(1, 2), new Complex(3, 4), new Complex(5, 6), });
             Assert.AreEqual("array([1., 3., 5.])", a.real.repr);
             Assert.AreEqual("array([2., 4., 6.])", a.imag.repr);
             //>>> np.imag(a)
@@ -616,12 +616,12 @@ namespace Numpy.UnitTest
             //>>> a.imag = np.array([8, 10, 12])
             //>>> a
             //array([1. +8.j,  3.+10.j,  5.+12.j])
-            a.imag = np.array(new []{8, 10, 12});
+            a.imag = np.array(new[] { 8, 10, 12 });
             Assert.AreEqual("array([1. +8.j, 3.+10.j, 5.+12.j])", a.repr);
             //>>> np.imag(1 + 1j)
             //1.0
             Assert.AreEqual(1.0, np.imag(new Complex(1, 1)).asscalar<double>());
-            
+
             // getting the complex numbers out again
             var c = a.GetData<Complex>();
             Assert.IsTrue(Enumerable.SequenceEqual(new Complex[] { new Complex(1, 8), new Complex(3, 10), new Complex(5, 12), }, c));
@@ -634,7 +634,7 @@ namespace Numpy.UnitTest
         [TestMethod]
         public void IssueByXlient()
         {
-            var points=new Point[]{ new Point(0,0), new Point(17, 4), new Point(2,22), new   Point(10, 7), };
+            var points = new Point[] { new Point(0, 0), new Point(17, 4), new Point(2, 22), new Point(10, 7), };
             int[,] Pts = new int[,]
             {
                 {points[0].X, points[0].Y },
@@ -670,6 +670,14 @@ namespace Numpy.UnitTest
             Assert.AreEqual("array([2., 5., 8.], dtype=float32)", col1.repr);
             var col1Data = col1.GetData();//this is wrong - {2,3,4}
             Assert.AreEqual("2,5,8", string.Join(",", col1Data));
+        }
+
+        [TestMethod]
+        public void IssueByNbustins()
+        {
+            int[,,,] iarr = new int[3, 25, 25, 3];
+            NDarray nd = np.array(iarr);
+            Assert.AreEqual(new Shape(3,25,25,3), nd.shape);
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
