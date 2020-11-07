@@ -37,6 +37,16 @@ namespace CodeMinion.ApiGenerator.NumPy
                 });
             });
         }
-        
+
+        public static void ConvertDict(CodeWriter s)
+        {
+            s.Out("private static PyDict ToDict(Dictionary<string, NDarray> d)", () =>
+            {
+                s.Out("var dict = new PyDict();");
+                s.Out("foreach (var pair in d)");
+                s.Out("    dict[new PyString(pair.Key)] = pair.Value.self;");
+                s.Out("return dict;");
+            });
+        }
     }
 }

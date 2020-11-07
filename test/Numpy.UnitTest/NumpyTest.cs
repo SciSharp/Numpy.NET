@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -679,6 +680,32 @@ namespace Numpy.UnitTest
             NDarray nd = np.array(iarr);
             Assert.AreEqual(new Shape(3,25,25,3), nd.shape);
         }
+
+        [TestMethod]
+        public void IssueByBanyc()
+        {
+            //a = np.array([[1, 2, 3], [4, 5, 6]])
+            //b = np.array([1, 2])
+            //np.savez('/tmp/123.npz', a = a, b = b)
+            //data = np.load('/tmp/123.npz')
+            //data['a']
+            //array([[1, 2, 3],
+            //[4, 5, 6]])
+            //data['b']
+            //array([1, 2])
+            //data.close()
+            var a = np.array(new[,] {{1, 2, 3}, {4, 5, 6}});
+            var b = np.array(new[] {1, 2});
+            string tempFile = Path.GetTempFileName() + ".npz";
+            Console.WriteLine(tempFile);
+            np.savez(tempFile, kwds:new Dictionary<string, NDarray>() {["a"]=a, ["b"]=b});
+            var data = np.load(tempFile, allow_pickle:true);
+            var a1 = new NDarray(data.self["a"]);
+            Console.WriteLine(a1.repr);
+            var b1 = new NDarray(data.self.GetItem("b"));
+            Console.WriteLine(b1.repr);
+        }
+
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays

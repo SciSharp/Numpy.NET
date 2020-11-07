@@ -74,7 +74,7 @@ namespace Numpy
         ///	 For .npz files, the returned instance
         ///	of NpzFile class must be closed to avoid leaking file descriptors.
         /// </returns>
-        public static NDarray load(string file, MemMapMode mmap_mode = null, bool? allow_pickle = true, bool? fix_imports = true, string encoding = "ASCII")
+        public static NDarray load(string file, MemMapMode mmap_mode = null, bool? allow_pickle = false, bool? fix_imports = true, string encoding = "ASCII")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -84,7 +84,7 @@ namespace Numpy
             });
             var kwargs=new PyDict();
             if (mmap_mode!=null) kwargs["mmap_mode"]=ToPython(mmap_mode);
-            if (allow_pickle!=true) kwargs["allow_pickle"]=ToPython(allow_pickle);
+            if (allow_pickle!=false) kwargs["allow_pickle"]=ToPython(allow_pickle);
             if (fix_imports!=true) kwargs["fix_imports"]=ToPython(fix_imports);
             if (encoding!="ASCII") kwargs["encoding"]=ToPython(encoding);
             dynamic py = __self__.InvokeMethod("load", pyargs, kwargs);

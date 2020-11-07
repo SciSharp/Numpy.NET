@@ -90,6 +90,7 @@ namespace Numpy
                 case Shape o: return ToTuple(o.Dimensions);
                 case Slice o: return o.ToPython();
                 case PythonObject o: return o.PyObject;
+                case Dictionary<string, NDarray> o: return ToDict(o);
                 default: throw new NotImplementedException($"Type is not yet supported: { obj.GetType().Name}. Add it to 'ToPythonConversions'");
             }
         }
@@ -165,6 +166,15 @@ namespace Numpy
                 case bool[,] arr: return np.array(arr.Cast<bool>().ToArray()).reshape(arr.GetLength(0), arr.GetLength(1));
                 default: throw new NotImplementedException($"Type {a.GetType()} not supported yet in ConvertArrayToNDarray.");
             }
+        }
+        
+        //auto-generated: SpecialConversions
+        private static PyDict ToDict(Dictionary<string, NDarray> d)
+        {
+            var dict = new PyDict();
+            foreach (var pair in d)
+                dict[new PyString(pair.Key)] = pair.Value.self;
+            return dict;
         }
     }
 }

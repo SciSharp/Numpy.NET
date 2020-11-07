@@ -66,6 +66,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                     "case Shape o: return ToTuple(o.Dimensions);",
                     "case Slice o: return o.ToPython();",
                     "case PythonObject o: return o.PyObject;",
+                    "case Dictionary<string, NDarray> o: return ToDict(o);",
                 },
                 ToCsharpConversions =
                 {
@@ -93,7 +94,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                     "   return (T) (object) rv;",
                     "case \"Matrix\": return (T)(object)new Matrix(pyobj);",
                 },
-                SpecialConversionGenerators = { SpecialGenerators.ConvertArrayToNDarray },
+                SpecialConversionGenerators = { SpecialGenerators.ConvertArrayToNDarray, SpecialGenerators.ConvertDict },
                 SharpToSharpConversions =
                 {
                     SpecialGenerators.ArrayToNDarrayConversion,
@@ -792,6 +793,8 @@ namespace CodeMinion.ApiGenerator.NumPy
                     break;
                 case "load":
                     decl.Arguments.First(x => x.Name == "mmap_mode").Type = "MemMapMode";
+                    // allow_pickle was changed in Numpy version 1.16.3: Made default False in response to CVE-2019-6446.
+                    decl.Arguments.First(x => x.Name == "allow_pickle").DefaultValue = "false";
                     break;
                 case "savez":
                 case "savez_compressed":
