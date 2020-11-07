@@ -1385,7 +1385,7 @@ namespace Numpy
         ///	A separator consisting only of spaces must match at least one
         ///	whitespace.
         /// </param>
-        public static void fromfile(string file, Dtype dtype = null, int count = -1, string sep = "")
+        public static NDarray fromfile(string file, Dtype dtype = null, int count = -1, string sep = "")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1398,6 +1398,7 @@ namespace Numpy
             if (count!=-1) kwargs["count"]=ToPython(count);
             if (sep!="") kwargs["sep"]=ToPython(sep);
             dynamic py = __self__.InvokeMethod("fromfile", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
         }
         
         /// <summary>

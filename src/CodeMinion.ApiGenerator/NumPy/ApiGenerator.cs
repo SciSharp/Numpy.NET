@@ -858,6 +858,9 @@ namespace CodeMinion.ApiGenerator.NumPy
                     decl.ReturnType = "NDarray[]";
                     decl.Arguments.Clear();
                     break;
+                case "fromfile":
+                    decl.ReturnType = "NDarray";
+                    break;
             }
         }
 
