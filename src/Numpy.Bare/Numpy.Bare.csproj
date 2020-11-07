@@ -42,6 +42,7 @@
     <Compile Include="..\Numpy\Manual\np.meshgrid.cs" Link="Manual\np.meshgrid.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.random.cs" Link="Manual\np.random.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.resize.cs" Link="Manual\np.resize.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.save.cs" Link="Manual\np.save.cs" />
     <Compile Include="..\Numpy\Models\Axis.cs" Link="Models\Axis.cs"></Compile>
     <Compile Include="..\Numpy\Models\Constants.cs" Link="Models\Constants.cs"></Compile>
     <Compile Include="..\Numpy\Models\Dtype.cs" Link="Models\Dtype.cs"></Compile>

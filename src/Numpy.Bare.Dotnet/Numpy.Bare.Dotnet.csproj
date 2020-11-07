@@ -85,6 +85,9 @@
     <Compile Include="..\Numpy\Manual\np.resize.cs">
       <Link>Manual\np.resize.cs</Link>
     </Compile>
+    <Compile Include="..\Numpy\Manual\np.save.cs">
+      <Link>Manual\np.save.cs</Link>
+    </Compile>
     <Compile Include="..\Numpy\Models\Axis.cs">
       <Link>Models\Axis.cs</Link>
     </Compile>

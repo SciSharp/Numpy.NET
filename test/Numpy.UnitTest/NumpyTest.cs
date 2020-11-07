@@ -682,7 +682,7 @@ namespace Numpy.UnitTest
         }
 
         [TestMethod]
-        public void IssueByBanyc()
+        public void IssueByBanyc1()
         {
             //a = np.array([[1, 2, 3], [4, 5, 6]])
             //b = np.array([1, 2])
@@ -702,8 +702,27 @@ namespace Numpy.UnitTest
             var data = np.load(tempFile, allow_pickle:true);
             var a1 = new NDarray(data.self["a"]);
             Console.WriteLine(a1.repr);
-            var b1 = new NDarray(data.self.GetItem("b"));
+            var b1 = new NDarray(data.self["b"]);
             Console.WriteLine(b1.repr);
+            Assert.AreEqual("array([[1, 2, 3],\n       [4, 5, 6]])", a1.repr);
+            Assert.AreEqual(@"array([1, 2])", b1.repr);
+        }
+
+        [TestMethod]
+        public void IssueByBanyc2()
+        {
+            var a = np.array(new[,] { { 1, 2, 3 }, { 4, 5, 6 } });
+            var b = np.array(new[] { 1, 2 });
+            string tempFile = Path.GetTempFileName() + ".npz";
+            Console.WriteLine(tempFile);
+            np.savez(tempFile, new []{ a, b });
+            var data = np.load(tempFile, allow_pickle: true);
+            var a1 = new NDarray(data.self["arr_0"]);
+            Console.WriteLine(a1.repr);
+            var b1 = new NDarray(data.self["arr_1"]);
+            Console.WriteLine(b1.repr);
+            Assert.AreEqual("array([[1, 2, 3],\n       [4, 5, 6]])", a1.repr);
+            Assert.AreEqual(@"array([1, 2])", b1.repr);
         }
 
 

@@ -796,10 +796,12 @@ namespace CodeMinion.ApiGenerator.NumPy
                     // allow_pickle was changed in Numpy version 1.16.3: Made default False in response to CVE-2019-6446.
                     decl.Arguments.First(x => x.Name == "allow_pickle").DefaultValue = "false";
                     break;
+                case "save":
                 case "savez":
                 case "savez_compressed":
-                    decl.Arguments.First(x => x.Name == "args").Type = "NDarray[]";
-                    decl.Arguments.First(x => x.Name == "kwds").Type = "Dictionary<string, NDarray>";
+                    //    decl.Arguments.First(x => x.Name == "args").Type = "NDarray[]";
+                    //    decl.Arguments.First(x => x.Name == "kwds").Type = "Dictionary<string, NDarray>";
+                    decl.ManualOverride = true; // do not generate an implementation
                     break;
                 case "savetxt":
                     decl.Arguments.First(x => x.Name == "fmt").DefaultValue = "null";
