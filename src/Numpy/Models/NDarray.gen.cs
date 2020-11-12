@@ -396,36 +396,6 @@ namespace Numpy
         }
         
         /// <summary>
-        ///	Returns a view of the array with axes transposed.<br></br>
-        ///	
-        ///	For a 1-D array, this has no effect.<br></br>
-        ///	 (To change between column and
-        ///	row vectors, first cast the 1-D array into a matrix object.)
-        ///	For a 2-D array, this is the usual matrix transpose.<br></br>
-        ///	
-        ///	For an n-D array, if axes are given, their order indicates how the
-        ///	axes are permuted (see Examples).<br></br>
-        ///	 If axes are not provided and
-        ///	a.shape = (i[0], i[1], ... i[n-2], i[n-1]), then
-        ///	a.transpose().shape = (i[n-1], i[n-2], ... i[1], i[0]).
-        /// </summary>
-        /// <returns>
-        ///	View of a, with axes suitably permuted.
-        /// </returns>
-        public NDarray transpose(params int[] axes)
-        {
-            //auto-generated code, do not change
-            var __self__=self;
-            var pyargs=ToTuple(new object[]
-            {
-            });
-            var kwargs=new PyDict();
-            if (axes!=null) kwargs["axes"]=ToPython(axes);
-            dynamic py = __self__.InvokeMethod("transpose", pyargs, kwargs);
-            return ToCsharp<NDarray>(py);
-        }
-        
-        /// <summary>
         ///	Return a copy of the array collapsed into one dimension.
         /// </summary>
         /// <param name="order">

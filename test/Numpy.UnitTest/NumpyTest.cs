@@ -725,6 +725,59 @@ namespace Numpy.UnitTest
             Assert.AreEqual(@"array([1, 2])", b1.repr);
         }
 
+        [TestMethod]
+        public void IssueByBanyc3()
+        {
+            //>>> a = np.ones((1, 2, 3, 4))
+            //>>> a
+            //array([[[[1., 1., 1., 1.],
+            //         [1., 1., 1., 1.],
+            //         [1., 1., 1., 1.]],
+
+            //        [[1., 1., 1., 1.],
+            //         [1., 1., 1., 1.],
+            //         [1., 1., 1., 1.]]]])
+            //>>> c = np.transpose(a, (0, 2, 3, 1))
+            //>>> c
+            //array([[[[1., 1.],
+            //         [1., 1.],
+            //         [1., 1.],
+            //         [1., 1.]],
+
+            //        [[1., 1.],
+            //         [1., 1.],
+            //         [1., 1.],
+            //         [1., 1.]],
+
+            //        [[1., 1.],
+            //         [1., 1.],
+            //         [1., 1.],
+            //         [1., 1.]]]])
+            //>>> b = a.transpose((0, 2, 3, 1))
+            //>>> b
+            //array([[[[1., 1.],
+            //         [1., 1.],
+            //         [1., 1.],
+            //         [1., 1.]],
+
+            //        [[1., 1.],
+            //         [1., 1.],
+            //         [1., 1.],
+            //         [1., 1.]],
+
+            //        [[1., 1.],
+            //         [1., 1.],
+            //         [1., 1.],
+            //         [1., 1.]]]])
+            //>>>
+            NDarray a = np.ones(1, 2, 3, 4);
+            NDarray c = np.transpose(a, new int[] { 0, 2, 3, 1 });
+
+            string s = "array([[[[1., 1.],\n         [1., 1.],\n         [1., 1.],\n         [1., 1.]],\n\n        [[1., 1.],\n         [1., 1.],\n         [1., 1.],\n         [1., 1.]],\n\n        [[1., 1.],\n         [1., 1.],\n         [1., 1.],\n         [1., 1.]]]])";
+            Assert.AreEqual(s, c.repr);
+            NDarray b = a.transpose(0, 2, 3, 1);
+            Assert.AreEqual(s, b.repr);
+        }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays

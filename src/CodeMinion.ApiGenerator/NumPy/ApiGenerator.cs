@@ -291,6 +291,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                 {
                     case "sort":
                     case "partition":
+                    case "transpose":
                         continue;
                 }
                 var decl = new Function() { Name = func_name, ClassName = class_name.TrimEnd('.') };
