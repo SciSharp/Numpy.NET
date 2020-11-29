@@ -779,8 +779,29 @@ namespace Numpy.UnitTest
             Assert.AreEqual(s, b.repr);
         }
 
+        [TestMethod]
+        public void IssueBybeanels01()
+        {
+            //sample = [np.array([[1., 2., 3.]]),np.array([[4., 5., 6.]]),np.array([[7., 8., 9.]])]
+            //for test in sample:
+            //    n = np.argmax(test[0])
+            //    print(n)
+            //# expected: 
+            //# 2
+            //# 2
+            //# 2
+            var result = new List<int>();
+            var nc = np.array(new[] {np.array(new[] {1, 2, 3}), np.array(new[] {4, 5, 6}), np.array(new[] {7, 8, 9})});
+            for (int i = 0; i < nc.len; i++)
+            {
+                var n = np.argmax(nc[i]).asscalar<int>();
+                result.Add(n);
+            }
+            Assert.AreEqual("2, 2, 2", string.Join(", ", result));
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
-        // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
-        // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
-    }
+    // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
+    // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
+}
 }
