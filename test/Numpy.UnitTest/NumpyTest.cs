@@ -800,8 +800,53 @@ namespace Numpy.UnitTest
             Assert.AreEqual("2, 2, 2", string.Join(", ", result));
         }
 
+        [TestMethod]
+        public void IssueBybeanels01a()
+        {
+            //sample = [np.array([[1., 2., 3.]]),np.array([[4., 5., 6.]]),np.array([[7., 8., 9.]])]
+            //for test in sample:
+            //    n = np.argmax(test[0])
+            //    print(n)
+            //# expected: 
+            //# 2
+            //# 2
+            //# 2
+            var result = new List<int>();
+            var nc = np.array(new[] { np.array(new[] { 1, 2, 3 }), np.array(new[] { 4, 5, 6 }), np.array(new[] { 7, 8, 9 }) });
+            for (int i = 0; i < nc.len; i++)
+            {
+                var n = np.argmax(nc[i]).asscalar<int>();
+                result.Add(n);
+            }
+            Assert.AreEqual("2, 2, 2", string.Join(", ", result));
+        }
+
+        [TestMethod]
+        public void IssueByMatteo_0()
+        {
+            //>>> x = np.array([0, 1, 2, 3])
+            //>>> y = np.array([-1, 0.2, 0.9, 2.1])
+            //>>> A = np.vstack([x, np.ones(len(x))]).T
+            //>>> A
+            //array([[0., 1.],
+            //       [1., 1.],
+            //       [2., 1.],
+            //       [3., 1.]])
+            //>>> np.linalg.lstsq(A, y, rcond = None)
+            //(array([1.  , -0.95]), array([0.05]), 2, array([4.10003045, 1.09075677]))
+            var x= np.array(new[] { 0, 1, 2, 3 });
+            var y= np.array(new[] { -1, 0.2, 0.9, 2.1 });
+            var A = np.vstack(x, np.ones(x.len)).T;
+            Assert.AreEqual("array([[0., 1.],\n       [1., 1.],\n       [2., 1.],\n       [3., 1.]])", A.repr);
+            var tuple=np.linalg.lstsq(A, y, null);
+            Assert.AreEqual("array([ 1.  , -0.95])", tuple.Item1.repr);
+            Assert.AreEqual("array([0.05])", tuple.Item2.repr);
+            Assert.AreEqual(2, tuple.Item3);
+            Assert.AreEqual("array([4.10003045, 1.09075677])", tuple.Item4.repr);
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
-    // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
-    // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
-}
+        // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
+        // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
+    }
 }
