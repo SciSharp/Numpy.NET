@@ -13145,5 +13145,30 @@ namespace Numpy
             return ToCsharp<NDarray>(py);
         }
         
+        /// <summary>
+        ///	Return the roots of a polynomial with coefficients given in p.<br></br>
+        ///	
+        ///	The values in the rank-1 array p are coefficients of a polynomial.<br></br>
+        ///	
+        ///	If the length of p is n+1 then the polynomial is described by:
+        ///	
+        ///	Notes
+        ///	
+        ///	The algorithm relies on computing the eigenvalues of the
+        ///	companion matrix [1].<br></br>
+        ///	
+        ///	References
+        /// </summary>
+        /// <returns>
+        ///	An array containing the roots of the polynomial.
+        /// </returns>
+        public NDarray roots()
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            dynamic py = __self__.InvokeMethod("roots");
+            return ToCsharp<NDarray>(py);
+        }
+        
     }
 }

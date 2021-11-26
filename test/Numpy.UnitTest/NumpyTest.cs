@@ -845,6 +845,18 @@ namespace Numpy.UnitTest
             Assert.AreEqual("array([4.10003045, 1.09075677])", tuple.Item4.repr);
         }
 
+        [TestMethod]
+        public void IssueByDecemberDream()
+        {
+            //a = np.array([1, 2, -2, -4, 0])
+            //np.roots(a)
+            //# returns array([ 1.41421356, -2., -1.41421356, 0.])            
+            var a = np.array(new[] { 1, 2, -2, -4, 0 });
+            var b = np.roots(a);
+            Assert.AreEqual("array([ 1.41421356, -2.        , -1.41421356,  0.        ])", b.repr);
+        }
+
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs

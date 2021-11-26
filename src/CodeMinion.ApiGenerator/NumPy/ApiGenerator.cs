@@ -252,6 +252,15 @@ namespace CodeMinion.ApiGenerator.NumPy
             var window_api = new StaticApi() { PartialName = "window", StaticName = "np", ImplName = "NumPy", PythonModule = "numpy", };
             _generator.StaticApis.Add(window_api);
             ParseNumpyApi(window_api, "routines.window.html");
+            // ----------------------------------------------------
+            // Other functions
+            // ----------------------------------------------------
+            var other_api = new StaticApi() { PartialName = "other", StaticName = "np", ImplName = "NumPy", PythonModule = "numpy", };
+            _generator.StaticApis.Add(other_api);
+            var links = new[]{
+                "numpy.roots.html"
+            };
+            ParseSinglePages(other_api, links);
 
             // ----------------------------------------------------
             // generate Numpy
@@ -357,71 +366,90 @@ namespace CodeMinion.ApiGenerator.NumPy
             _generator.TestFiles.Add(testfile);
             foreach (var html_doc in docs)
             {
-                var doc = html_doc.Doc;
-                // declaration
-                var h1 = doc.DocumentNode.Descendants("h1").FirstOrDefault();
-                if (h1 == null)
-                    continue;
-                var dl = doc.DocumentNode.Descendants("dl").FirstOrDefault();
-                //if (dl == null || dl.Attributes["class"]?.Value != "function") continue;
-                var class_name = doc.DocumentNode.Descendants("code").FirstOrDefault(x => x.Attributes["class"]?.Value == "descclassname")?.InnerText;
-                if (class_name == null)
-                    continue;
-                var func_name = doc.DocumentNode.Descendants("code")
-                    .First(x => x.Attributes["class"]?.Value == "descname").InnerText;
-                if (parsed_api_functions.Contains(class_name + "." + func_name))
-                    continue;
-                parsed_api_functions.Add(class_name + "." + func_name);
-                var decl = new Function() { Tag = link, Name = func_name, ClassName = class_name.TrimEnd('.') };
-                // function description
-                var dd = dl.Descendants("dd").FirstOrDefault();
-                decl.Description = ParseDescription(dd);
-                var table = doc.DocumentNode.Descendants("table")
-                    .FirstOrDefault(x => x.Attributes["class"]?.Value == "docutils field-list");
-                if (table == null)
-                    continue;
-                //if (decl.Name == "copyto")
-                //    Debugger.Break();
-                // arguments
-                ParseArguments(html_doc, table, decl);
-
-                // return type(s)
-                ParseReturnTypes(html_doc, table, decl);
-
-                PostProcess(decl);
-                if (!decl.CommentOut)
-                    _function_count++;
-
-                // if necessary create overloads
-                foreach (var d in InferOverloads(decl))
-                {
-                    PostProcessOverloads(d);
-                    api.Declarations.Add(d);
-                    // if this is an ndarray member, add it to the dynamic api also
-                    if (ndarray_api != null && d.Arguments.FirstOrDefault()?.Type == "NDarray" && class_name == "numpy.")
-                    {
-                        switch (decl.Name)
-                        {
-                            // do not add to NDArray instance methods
-                            case "copyto":
-                            case "transpose":
-                            case "amax":
-                            case "amin":
-                            case "real":
-                            case "imag":
-                                continue;
-                        }
-                        var dc = d.Clone<Function>();
-                        dc.Arguments.RemoveAt(0);
-                        //dc.ForwardToStaticImpl = "NumPy.Instance";
-                        ndarray_api.Declarations.Add(dc);
-                    }
-                }
-                // see if there are any examples which we can convert to test cases
-                var testcase = ParseTests(doc, decl);
-                if (testcase != null)
-                    testfile.TestCases.Add(testcase);
+                ParseNumpyDocPage(api, link, html_doc, testfile);
             }
+        }
+
+        private void ParseSinglePages(StaticApi api, params string[] links)
+        {
+            var docs = links.Select(x=>GetHtml("generated/"+x));
+            var testfile = new TestFile() { Name = $"{api.ImplName}_{api.PartialName}" };
+            _generator.TestFiles.Add(testfile);
+            foreach (var html_doc in docs)
+            {
+                ParseNumpyDocPage(api, "single pages", html_doc, testfile);
+            }
+        }
+
+        private void ParseNumpyDocPage(StaticApi api, string link, HtmlDoc html_doc, TestFile testfile)
+        {
+            var doc = html_doc.Doc;
+            // declaration
+            var h1 = doc.DocumentNode.Descendants("h1").FirstOrDefault();
+            if (h1 == null)
+                return;
+            var dl = doc.DocumentNode.Descendants("dl").FirstOrDefault();
+            //if (dl == null || dl.Attributes["class"]?.Value != "function") continue;
+            var class_name = doc.DocumentNode.Descendants("code")
+                .FirstOrDefault(x => x.Attributes["class"]?.Value == "descclassname")?.InnerText;
+            if (class_name == null)
+                return;
+            var func_name = doc.DocumentNode.Descendants("code")
+                .First(x => x.Attributes["class"]?.Value == "descname").InnerText;
+            if (parsed_api_functions.Contains(class_name + "." + func_name))
+                return;
+            parsed_api_functions.Add(class_name + "." + func_name);
+            var decl = new Function() { Tag = link, Name = func_name, ClassName = class_name.TrimEnd('.') };
+            // function description
+            var dd = dl.Descendants("dd").FirstOrDefault();
+            decl.Description = ParseDescription(dd);
+            var table = doc.DocumentNode.Descendants("table")
+                .FirstOrDefault(x => x.Attributes["class"]?.Value == "docutils field-list");
+            if (table == null)
+                return;
+            //if (decl.Name == "copyto")
+            //    Debugger.Break();
+            // arguments
+            ParseArguments(html_doc, table, decl);
+
+            // return type(s)
+            ParseReturnTypes(html_doc, table, decl);
+
+            PostProcess(decl);
+            if (!decl.CommentOut)
+                _function_count++;
+
+            // if necessary create overloads
+            foreach (var d in InferOverloads(decl))
+            {
+                PostProcessOverloads(d);
+                api.Declarations.Add(d);
+                // if this is an ndarray member, add it to the dynamic api also
+                if (ndarray_api != null && d.Arguments.FirstOrDefault()?.Type == "NDarray" && class_name == "numpy.")
+                {
+                    switch (decl.Name)
+                    {
+                        // do not add to NDArray instance methods
+                        case "copyto":
+                        case "transpose":
+                        case "amax":
+                        case "amin":
+                        case "real":
+                        case "imag":
+                            continue;
+                    }
+
+                    var dc = d.Clone<Function>();
+                    dc.Arguments.RemoveAt(0);
+                    //dc.ForwardToStaticImpl = "NumPy.Instance";
+                    ndarray_api.Declarations.Add(dc);
+                }
+            }
+
+            // see if there are any examples which we can convert to test cases
+            var testcase = ParseTests(doc, decl);
+            if (testcase != null)
+                testfile.TestCases.Add(testcase);
         }
 
         private TestCase ParseTests(HtmlDocument doc, Function decl)
@@ -1542,7 +1570,8 @@ namespace CodeMinion.ApiGenerator.NumPy
                 doc.Doc = new HtmlDocument();
                 doc.Doc.Load(doc.Filename);
                 doc.Text = doc.Doc.Text;
-                return doc;
+                if (!doc.Text.Contains("404 Not Found"))
+                    return doc;
             }
             var web = new HtmlWeb();
             doc.Doc = web.Load(BaseUrl + relative_url);
