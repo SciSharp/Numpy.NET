@@ -856,6 +856,20 @@ namespace Numpy.UnitTest
             Assert.AreEqual("array([ 1.41421356, -2.        , -1.41421356,  0.        ])", b.repr);
         }
 
+        [TestMethod]
+        public void IssueByDecemberDream2()
+        {
+            NDarray test = np.array(new int[,] { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 }, { 9, 10, 11 } });
+            NDarray rows = np.array(new int[,] { { 0, 0 }, { 3, 3 } });
+            NDarray cols = np.array(new int[,] { { 0, 2 }, { 0, 2 } });
+
+            var b = test[rows, cols];
+            // should return
+            // [[0, 2],
+            //  [9, 11]]
+            Assert.AreEqual("array([[ 0,  2],\n       [ 9, 11]])", b.repr);
+        }
+
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
