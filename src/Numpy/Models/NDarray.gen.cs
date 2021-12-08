@@ -1070,58 +1070,6 @@ namespace Numpy
         }
         
         /// <summary>
-        ///	Insert values along the given axis before the given indices.<br></br>
-        ///	
-        ///	Notes
-        ///	
-        ///	Note that for higher dimensional inserts obj=0 behaves very different
-        ///	from obj=[0] just like arr[:,0,:] = values is different from
-        ///	arr[:,[0],:] = values.
-        /// </summary>
-        /// <param name="obj">
-        ///	Object that defines the index or indices before which values is
-        ///	inserted.<br></br>
-        ///	
-        ///	Support for multiple insertions when obj is a single scalar or a
-        ///	sequence with one element (similar to calling insert multiple
-        ///	times).
-        /// </param>
-        /// <param name="values">
-        ///	Values to insert into arr.<br></br>
-        ///	If the type of values is different
-        ///	from that of arr, values is converted to the type of arr.<br></br>
-        ///	
-        ///	values should be shaped so that arr[...,obj,...] = values
-        ///	is legal.
-        /// </param>
-        /// <param name="axis">
-        ///	Axis along which to insert values.<br></br>
-        ///	If axis is None then arr
-        ///	is flattened first.
-        /// </param>
-        /// <returns>
-        ///	A copy of arr with values inserted.<br></br>
-        ///	  Note that insert
-        ///	does not occur in-place: a new array is returned.<br></br>
-        ///	 If
-        ///	axis is None, out is a flattened array.
-        /// </returns>
-        public NDarray insert(int obj = 0, NDarray values = null, int? axis = null)
-        {
-            //auto-generated code, do not change
-            var __self__=self;
-            var pyargs=ToTuple(new object[]
-            {
-            });
-            var kwargs=new PyDict();
-            if (obj!=0) kwargs["obj"]=ToPython(obj);
-            if (values!=null) kwargs["values"]=ToPython(values);
-            if (axis!=null) kwargs["axis"]=ToPython(axis);
-            dynamic py = __self__.InvokeMethod("insert", pyargs, kwargs);
-            return ToCsharp<NDarray>(py);
-        }
-        
-        /// <summary>
         ///	Append values to the end of an array.
         /// </summary>
         /// <param name="values">

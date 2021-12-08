@@ -870,6 +870,13 @@ namespace Numpy.UnitTest
             Assert.AreEqual("array([[ 0,  2],\n       [ 9, 11]])", b.repr);
         }
 
+        [TestMethod]
+        public void IssueByAmpangboy()
+        {
+            var arr = np.array(1.0);
+            var result=np.insert(arr, 0, 1.0);
+            Assert.AreEqual("array([1., 1.])", result.repr);
+        }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays

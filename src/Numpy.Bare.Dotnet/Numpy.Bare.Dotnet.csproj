@@ -70,6 +70,9 @@
     <Compile Include="..\Numpy\Manual\np.delete.cs">
       <Link>Manual\np.delete.cs</Link>
     </Compile>
+    <Compile Include="..\Numpy\Manual\np.insert.cs">
+      <Link>Manual\np.insert.cs</Link>
+    </Compile>
     <Compile Include="..\Numpy\Manual\np.linalg.norm.cs">
       <Link>Manual\np.linalg.norm.cs</Link>
     </Compile>

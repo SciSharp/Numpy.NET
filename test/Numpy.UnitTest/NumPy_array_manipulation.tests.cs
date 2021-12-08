@@ -1579,17 +1579,17 @@ namespace Numpy.UnitTest
             //        [ 9, 10, 11, 12]])
             // 
 
-            NDarray given=  np.array(new[,]{{1,2,3,4}, {5,6,7,8}, {9,10,11,12}});
+            NDarray given = np.array(new[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } });
             var arr = given;
-            var expected=
+            var expected =
                 "array([[ 1,  2,  3,  4],\n" +
                 "       [ 5,  6,  7,  8],\n" +
                 "       [ 9, 10, 11, 12]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.delete(arr, 1, 0);
-             expected=
-                "array([[ 1,  2,  3,  4],\n" +
-                "       [ 9, 10, 11, 12]])";
+            given = np.delete(arr, 1, 0);
+            expected =
+               "array([[ 1,  2,  3,  4],\n" +
+               "       [ 9, 10, 11, 12]])";
             Assert.AreEqual(expected, given.repr);
 
             // >>> np.delete(arr, np.s_[::2], 1)
@@ -1601,15 +1601,15 @@ namespace Numpy.UnitTest
             // 
 
 
-             given=  np.delete(arr, new Slice("::2"), 1);
-             expected=
-                "array([[ 2,  4],\n" +
-                "       [ 6,  8],\n" +
-                "       [10, 12]])";
+            given = np.delete(arr, new Slice("::2"), 1);
+            expected =
+               "array([[ 2,  4],\n" +
+               "       [ 6,  8],\n" +
+               "       [10, 12]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.delete(arr, new [] {1,3,5}, null);
-             expected=
-                "array([ 1,  3,  5,  7,  8,  9, 10, 11, 12])";
+            given = np.delete(arr, new[] { 1, 3, 5 }, null);
+            expected =
+               "array([ 1,  3,  5,  7,  8,  9, 10, 11, 12])";
             Assert.AreEqual(expected, given.repr);
         }
 
@@ -1630,49 +1630,45 @@ namespace Numpy.UnitTest
             //        [3, 5, 3]])
             // 
 
-#if TODO
-            var given=  a = np.array({{1, 1}, {2, 2}, {3, 3}});
-             given=  a;
-            var expected=
+            NDarray a = np.array(new[,] { { 1, 1 }, { 2, 2 }, { 3, 3 } });
+            var given = a;
+            var expected =
                 "array([[1, 1],\n" +
                 "       [2, 2],\n" +
                 "       [3, 3]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.insert(a, 1, 5);
-             expected=
+            given = np.insert(a, 1, 5);
+            expected =
                 "array([1, 5, 1, 2, 2, 3, 3])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.insert(a, 1, 5, axis=1);
-             expected=
+            given = np.insert(a, 1, 5, axis: 1);
+            expected =
                 "array([[1, 5, 1],\n" +
                 "       [2, 5, 2],\n" +
                 "       [3, 5, 3]])";
             Assert.AreEqual(expected, given.repr);
-#endif
+
             // Difference between sequence and scalars:
 
             // >>> np.insert(a, [1], [[1],[2],[3]], axis=1)
             // array([[1, 1, 1],
             //        [2, 2, 2],
             //        [3, 3, 3]])
+            given = np.insert(a, np.array(1), np.array(new[,] { { 1 }, { 2 }, { 3 } }), axis: 1);
+            expected =
+               "array([[1, 1, 1],\n" +
+               "       [2, 2, 2],\n" +
+               "       [3, 3, 3]])";
+
             // >>> np.array_equal(np.insert(a, 1, [1, 2, 3], axis=1),
             // ...                np.insert(a, [1], [[1],[2],[3]], axis=1))
             // True
             // 
+            Assert.AreEqual(expected, given.repr);
+            var equal = np.array_equal(np.insert(a, 1, np.array(new[] { 1, 2, 3 }), axis: 1),
+                np.insert(a, np.array(1), np.array(new[,] { { 1 }, { 2 }, { 3 } }), axis: 1));
+            Assert.AreEqual(true, equal);
 
-#if TODO
-             given=  np.insert(a, {1}, {{1},{2},{3}}, axis=1);
-             expected=
-                "array([[1, 1, 1],\n" +
-                "       [2, 2, 2],\n" +
-                "       [3, 3, 3]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.array_equal(np.insert(a, 1, {1, 2, 3}, axis=1),;
-             expected=
-                "...                np.insert(a, [1], [[1],[2],[3]], axis=1))\n" +
-                "True";
-            Assert.AreEqual(expected, given.repr);
-#endif
             // >>> b = a.flatten()
             // >>> b
             // array([1, 1, 2, 2, 3, 3])
@@ -1680,37 +1676,35 @@ namespace Numpy.UnitTest
             // array([1, 1, 5, 6, 2, 2, 3, 3])
             // 
 
-#if TODO
-             given=  b = a.flatten();
-             given=  b;
-             expected=
-                "array([1, 1, 2, 2, 3, 3])";
+            var b = a.flatten();
+            given = b;
+            expected =
+               "array([1, 1, 2, 2, 3, 3])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.insert(b, {2, 2}, {5, 6});
-             expected=
-                "array([1, 1, 5, 6, 2, 2, 3, 3])";
+            given = np.insert(b, np.array(new[] { 2, 2 }), np.array(new[] { 5, 6 }));
+            expected =
+               "array([1, 1, 5, 6, 2, 2, 3, 3])";
             Assert.AreEqual(expected, given.repr);
-#endif
+
             // >>> np.insert(b, slice(2, 4), [5, 6])
             // array([1, 1, 5, 2, 6, 2, 3, 3])
             // 
 
-#if TODO
-             given=  np.insert(b, slice(2, 4), {5, 6});
-             expected=
-                "array([1, 1, 5, 2, 6, 2, 3, 3])";
+            given = np.insert(b, new Slice(2, 4), np.array(new[] { 5, 6 }));
+            expected =
+               "array([1, 1, 5, 2, 6, 2, 3, 3])";
             Assert.AreEqual(expected, given.repr);
-#endif
             // >>> np.insert(b, [2, 2], [7.13, False]) # type casting
             // array([1, 1, 7, 0, 2, 2, 3, 3])
             // 
 
-#if TODO
-             given=  np.insert(b, {2, 2}, {7.13, False}) # type casting;
-             expected=
+#if NOT_SUPPORTED
+            given = np.insert(b, np.array(new[] { 2, 2 }), np.array(new object[] { 7.13, false })); // type casting
+            expected=
                 "array([1, 1, 7, 0, 2, 2, 3, 3])";
             Assert.AreEqual(expected, given.repr);
 #endif
+
             // >>> x = np.arange(8).reshape(2, 4)
             // >>> idx = (1, 3)
             // >>> np.insert(x, idx, 999, axis=1)
@@ -1718,15 +1712,14 @@ namespace Numpy.UnitTest
             //        [  4, 999,   5,   6, 999,   7]])
             // 
 
-#if TODO
-             given=  x = np.arange(8).reshape(2, 4);
-             given=  idx = (1, 3);
-             given=  np.insert(x, idx, 999, axis=1);
-             expected=
-                "array([[  0, 999,   1,   2, 999,   3],\n" +
-                "       [  4, 999,   5,   6, 999,   7]])";
+
+            var x = np.arange(8).reshape(2, 4);
+            NDarray idx = np.array(1, 3);
+            given = np.insert(x, idx, np.array(999), axis: 1);
+            expected =
+               "array([[  0, 999,   1,   2, 999,   3],\n" +
+               "       [  4, 999,   5,   6, 999,   7]])";
             Assert.AreEqual(expected, given.repr);
-#endif
         }
 
 

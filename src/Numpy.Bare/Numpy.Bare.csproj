@@ -37,6 +37,7 @@
     <Compile Include="..\Numpy\Manual\np.concatenate.cs" Link="Manual\np.concatenate.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.constants.cs" Link="Manual\np.constants.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.delete.cs" Link="Manual\np.delete.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.insert.cs" Link="Manual\np.insert.cs" />
     <Compile Include="..\Numpy\Manual\np.linalg.norm.cs" Link="Manual\np.linalg.norm.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.linspace.cs" Link="Manual\np.linspace.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.meshgrid.cs" Link="Manual\np.meshgrid.cs"></Compile>

@@ -683,6 +683,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                 case "tobytes":
                 case "view":
                 case "resize":
+                case "insert":
                     decl.ManualOverride = true; // do not generate an implementation
                     break;
                 case "arange":
@@ -756,12 +757,6 @@ namespace CodeMinion.ApiGenerator.NumPy
                     var axes = decl.Arguments.First(x => x.Name == "axes");
                     axes.DefaultValue = "null";
                     axes.DefaultIfNull = "new int[] {0, 1}";
-                    break;
-                case "insert":
-                    var obj = decl.Arguments.First(x => x.Name == "obj");
-                    obj.DefaultValue = "0";
-                    var values = decl.Arguments.First(x => x.Name == "values");
-                    values.DefaultValue = "null";
                     break;
                 case "trapz":
                     var dx = decl.Arguments.First(x => x.Name == "dx");
