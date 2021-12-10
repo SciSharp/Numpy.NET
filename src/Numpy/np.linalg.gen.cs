@@ -503,9 +503,10 @@ namespace Numpy
             var __self__=self;
             var pyargs=ToTuple(new object[]
             {
-                subscripts,
-                operands,
-            });
+                subscripts
+            }
+            .Concat(operands)
+            .ToArray());
             var kwargs=new PyDict();
             if (@out!=null) kwargs["out"]=ToPython(@out);
             if (dtype!=null) kwargs["dtype"]=ToPython(dtype);
