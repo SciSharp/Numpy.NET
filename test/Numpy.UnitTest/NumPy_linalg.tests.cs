@@ -18,42 +18,42 @@ namespace Numpy.UnitTest
     [TestClass]
     public class NumPy_linalgTest : BaseTestCase
     {
-        
+
         [TestMethod]
         public void dotTest()
         {
             // >>> np.dot(3, 4)
             // 12
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.dot(3, 4);
             var expected=
                 "12";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Neither argument is complex-conjugated:
-            
+
             // >>> np.dot([2j, 3j], [2j, 3j])
             // (-13+0j)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.dot({2j, 3j}, {2j, 3j});
              expected=
                 "(-13+0j)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // For 2-D arrays it is the matrix product:
-            
+
             // >>> a = [[1, 0], [0, 1]]
             // >>> b = [[4, 1], [2, 2]]
             // >>> np.dot(a, b)
             // array([[4, 1],
             //        [2, 2]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = [[1, 0], [0, 1]];
              given=  b = [[4, 1], [2, 2]];
              given=  np.dot(a, b);
@@ -61,7 +61,7 @@ namespace Numpy.UnitTest
                 "array([[4, 1],\n" +
                 "       [2, 2]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.arange(3*4*5*6).reshape((3,4,5,6))
             // >>> b = np.arange(3*4*5*6)[::-1].reshape((5,4,6,3))
             // >>> np.dot(a, b)[2,3,2,1,2,2]
@@ -69,8 +69,8 @@ namespace Numpy.UnitTest
             // >>> sum(a[2,3,2,:] * b[1,2,:,2])
             // 499128
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(3*4*5*6).reshape((3,4,5,6));
              given=  b = np.arange(3*4*5*6){::-1}.reshape((5,4,6,3));
              given=  np.dot(a, b){2,3,2,1,2,2};
@@ -81,15 +81,15 @@ namespace Numpy.UnitTest
              expected=
                 "499128";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void multi_dotTest()
         {
             // multi_dot allows you to write:
-            
+
             // >>> from numpy.linalg import multi_dot
             // >>> # Prepare some data
             // >>> A = np.random.random(10000, 100)
@@ -99,8 +99,8 @@ namespace Numpy.UnitTest
             // >>> # the actual dot multiplication
             // >>> multi_dot([A, B, C, D])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  from numpy.linalg import multi_dot;
              given=  # Prepare some data;
              given=  A = np.random.random(10000, 100);
@@ -109,22 +109,22 @@ namespace Numpy.UnitTest
              given=  D = np.random.random(5, 333);
              given=  # the actual dot multiplication;
              given=  multi_dot([A, B, C, D]);
-            #endif
+#endif
             // instead of:
-            
+
             // >>> np.dot(np.dot(np.dot(A, B), C), D)
             // >>> # or
             // >>> A.dot(B).dot(C).dot(D)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.dot(np.dot(np.dot(A, B), C), D);
              given=  # or;
              given=  A.dot(B).dot(C).dot(D);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void vdotTest()
         {
@@ -135,8 +135,8 @@ namespace Numpy.UnitTest
             // >>> np.vdot(b, a)
             // (70+8j)
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({1+2j,3+4j});
              given=  b = np.array({5+6j,7+8j});
              given=  np.vdot(a, b);
@@ -147,9 +147,9 @@ namespace Numpy.UnitTest
              expected=
                 "(70+8j)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Note that higher-dimensional arrays are flattened!
-            
+
             // >>> a = np.array([[1, 4], [5, 6]])
             // >>> b = np.array([[4, 1], [2, 2]])
             // >>> np.vdot(a, b)
@@ -159,8 +159,8 @@ namespace Numpy.UnitTest
             // >>> 1*4 + 4*1 + 5*2 + 6*2
             // 30
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({{1, 4}, {5, 6}});
              given=  b = np.array({{4, 1}, {2, 2}});
              given=  np.vdot(a, b);
@@ -175,39 +175,39 @@ namespace Numpy.UnitTest
              expected=
                 "30";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void innerTest()
         {
             // Ordinary inner product for vectors:
-            
+
             // >>> a = np.array([1,2,3])
             // >>> b = np.array([0,1,0])
             // >>> np.inner(a, b)
             // 2
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({1,2,3});
              given=  b = np.array({0,1,0});
              given=  np.inner(a, b);
             var expected=
                 "2";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // A multidimensional example:
-            
+
             // >>> a = np.arange(24).reshape((2,3,4))
             // >>> b = np.arange(4)
             // >>> np.inner(a, b)
             // array([[ 14,  38,  62],
             //        [ 86, 110, 134]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(24).reshape((2,3,4));
              given=  b = np.arange(4);
              given=  np.inner(a, b);
@@ -215,29 +215,29 @@ namespace Numpy.UnitTest
                 "array([[ 14,  38,  62],\n" +
                 "       [ 86, 110, 134]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // An example where b is a scalar:
-            
+
             // >>> np.inner(np.eye(2), 7)
             // array([[ 7.,  0.],
             //        [ 0.,  7.]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.inner(np.eye(2), 7);
              expected=
                 "array([[ 7.,  0.],\n" +
                 "       [ 0.,  7.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void outerTest()
         {
             // Make a (very coarse) grid for computing a Mandelbrot set:
-            
+
             // >>> rl = np.outer(np.ones((5,)), np.linspace(-2, 2, 5))
             // >>> rl
             // array([[-2., -1.,  0.,  1.,  2.],
@@ -260,8 +260,8 @@ namespace Numpy.UnitTest
             //        [-2.-1.j, -1.-1.j,  0.-1.j,  1.-1.j,  2.-1.j],
             //        [-2.-2.j, -1.-2.j,  0.-2.j,  1.-2.j,  2.-2.j]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  rl = np.outer(np.ones((5,)), np.linspace(-2, 2, 5));
              given=  rl;
             var expected=
@@ -289,17 +289,17 @@ namespace Numpy.UnitTest
                 "       [-2.-1.j, -1.-1.j,  0.-1.j,  1.-1.j,  2.-1.j],\n" +
                 "       [-2.-2.j, -1.-2.j,  0.-2.j,  1.-2.j,  2.-2.j]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // An example using a “vector” of letters:
-            
+
             // >>> x = np.array(['a', 'b', 'c'], dtype=object)
             // >>> np.outer(x, [1, 2, 3])
             // array([[a, aa, aaa],
             //        [b, bb, bbb],
             //        [c, cc, ccc]], dtype=object)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  x = np.array({'a', 'b', 'c'}, dtype=object);
              given=  np.outer(x, {1, 2, 3});
              expected=
@@ -307,15 +307,15 @@ namespace Numpy.UnitTest
                 "       [b, bb, bbb],\n" +
                 "       [c, cc, ccc]], dtype=object)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void matmulTest()
         {
             // For 2-D arrays it is the matrix product:
-            
+
             // >>> a = np.array([[1, 0],
             // ...               [0, 1]])
             // >>> b = np.array([[4, 1], 
@@ -324,8 +324,8 @@ namespace Numpy.UnitTest
             // array([[4, 1],
             //        [2, 2]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({{1, 0},;
             var expected=
                 "...               [0, 1]])";
@@ -339,9 +339,9 @@ namespace Numpy.UnitTest
                 "array([[4, 1],\n" +
                 "       [2, 2]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // For 2-D mixed with 1-D, the result is the usual.
-            
+
             // >>> a = np.array([[1, 0],
             // ...               [0, 1]]
             // >>> b = np.array([1, 2])
@@ -350,8 +350,8 @@ namespace Numpy.UnitTest
             // >>> np.matmul(b, a)
             // array([1, 2])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({{1, 0},;
              expected=
                 "...               [0, 1]]";
@@ -365,9 +365,9 @@ namespace Numpy.UnitTest
              expected=
                 "array([1, 2])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Broadcasting is conventional for stacks of arrays
-            
+
             // >>> a = np.arange(2 * 2 * 4).reshape((2, 2, 4))
             // >>> b = np.arange(2 * 2 * 4).reshape((2, 4, 2))
             // >>> np.matmul(a,b).shape
@@ -377,8 +377,8 @@ namespace Numpy.UnitTest
             // >>> sum(a[0, 1, :] * b[0 , :, 1])
             // 98
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(2 * 2 * 4).reshape((2, 2, 4));
              given=  b = np.arange(2 * 2 * 4).reshape((2, 4, 2));
              given=  np.matmul(a,b).shape;
@@ -393,44 +393,44 @@ namespace Numpy.UnitTest
              expected=
                 "98";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Vector, vector returns the scalar inner product, but neither argument
             // is complex-conjugated:
-            
+
             // >>> np.matmul([2j, 3j], [2j, 3j])
             // (-13+0j)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.matmul({2j, 3j}, {2j, 3j});
              expected=
                 "(-13+0j)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Scalar multiplication raises an error.
-            
+
             // >>> np.matmul([1,2], 3)
             // Traceback (most recent call last):
             // ...
             // ValueError: matmul: Input operand 1 does not have enough dimensions ...
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.matmul({1,2}, 3);
              expected=
                 "Traceback (most recent call last):\n" +
                 "...\n" +
                 "ValueError: matmul: Input operand 1 does not have enough dimensions ...";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void tensordotTest()
         {
             // A “traditional” example:
-            
+
             // >>> a = np.arange(60.).reshape(3,4,5)
             // >>> b = np.arange(24.).reshape(4,3,2)
             // >>> c = np.tensordot(a,b, axes=([1,0],[0,1]))
@@ -456,8 +456,8 @@ namespace Numpy.UnitTest
             //        [ True,  True],
             //        [ True,  True]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.arange(60.).reshape(3,4,5);
              given=  b = np.arange(24.).reshape(4,3,2);
              given=  c = np.tensordot(a,b, axes=({1,0},{0,1}));
@@ -490,9 +490,9 @@ namespace Numpy.UnitTest
                 "       [ True,  True],\n" +
                 "       [ True,  True]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // An extended example taking advantage of the overloading of + and *:
-            
+
             // >>> a = np.array(range(1, 9))
             // >>> a.shape = (2, 2, 2)
             // >>> A = np.array(('a', 'b', 'c', 'd'), dtype=object)
@@ -505,8 +505,8 @@ namespace Numpy.UnitTest
             // array([[a, b],
             //        [c, d]], dtype=object)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array(range(1, 9));
              given=  a.shape = (2, 2, 2);
              given=  A = np.array(('a', 'b', 'c', 'd'), dtype=object);
@@ -520,25 +520,25 @@ namespace Numpy.UnitTest
                 "array([[a, b],\n" +
                 "       [c, d]], dtype=object)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.tensordot(a, A) # third argument default is 2 for double-contraction
             // array([abbcccdddd, aaaaabbbbbbcccccccdddddddd], dtype=object)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.tensordot(a, A) # third argument default is 2 for double-contraction;
              expected=
                 "array([abbcccdddd, aaaaabbbbbbcccccccdddddddd], dtype=object)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.tensordot(a, A, 1)
             // array([[[acc, bdd],
             //         [aaacccc, bbbdddd]],
             //        [[aaaaacccccc, bbbbbdddddd],
             //         [aaaaaaacccccccc, bbbbbbbdddddddd]]], dtype=object)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.tensordot(a, A, 1);
              expected=
                 "array([[[acc, bdd],\n" +
@@ -546,29 +546,29 @@ namespace Numpy.UnitTest
                 "       [[aaaaacccccc, bbbbbdddddd],\n" +
                 "        [aaaaaaacccccccc, bbbbbbbdddddddd]]], dtype=object)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.tensordot(a, A, 0) # tensor product (result too long to incl.)
             // array([[[[[a, b],
             //           [c, d]],
             //           ...
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.tensordot(a, A, 0) # tensor product (result too long to incl.);
              expected=
                 "array([[[[[a, b],\n" +
                 "          [c, d]],\n" +
                 "          ...";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.tensordot(a, A, (0, 1))
             // array([[[abbbbb, cddddd],
             //         [aabbbbbb, ccdddddd]],
             //        [[aaabbbbbbb, cccddddddd],
             //         [aaaabbbbbbbb, ccccdddddddd]]], dtype=object)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.tensordot(a, A, (0, 1));
              expected=
                 "array([[[abbbbb, cddddd],\n" +
@@ -576,15 +576,15 @@ namespace Numpy.UnitTest
                 "       [[aaabbbbbbb, cccddddddd],\n" +
                 "        [aaaabbbbbbbb, ccccdddddddd]]], dtype=object)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.tensordot(a, A, (2, 1))
             // array([[[abb, cdd],
             //         [aaabbbb, cccdddd]],
             //        [[aaaaabbbbbb, cccccdddddd],
             //         [aaaaaaabbbbbbbb, cccccccdddddddd]]], dtype=object)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.tensordot(a, A, (2, 1));
              expected=
                 "array([[[abb, cdd],\n" +
@@ -592,30 +592,30 @@ namespace Numpy.UnitTest
                 "       [[aaaaabbbbbb, cccccdddddd],\n" +
                 "        [aaaaaaabbbbbbbb, cccccccdddddddd]]], dtype=object)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.tensordot(a, A, ((0, 1), (0, 1)))
             // array([abbbcccccddddddd, aabbbbccccccdddddddd], dtype=object)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.tensordot(a, A, ((0, 1), (0, 1)));
              expected=
                 "array([abbbcccccddddddd, aabbbbccccccdddddddd], dtype=object)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.tensordot(a, A, ((2, 1), (1, 0)))
             // array([acccbbdddd, aaaaacccccccbbbbbbdddddddd], dtype=object)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.tensordot(a, A, ((2, 1), (1, 0)));
              expected=
                 "array([acccbbdddd, aaaaacccccccbbbbbbdddddddd], dtype=object)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void einsumTest()
         {
@@ -623,14 +623,12 @@ namespace Numpy.UnitTest
             // >>> b = np.arange(5)
             // >>> c = np.arange(6).reshape(2,3)
             // 
-            
-            #if TODO
-            var given=  a = np.arange(25).reshape(5,5);
-             given=  b = np.arange(5);
-             given=  c = np.arange(6).reshape(2,3);
-            #endif
+
+            var a = np.arange(25).reshape(5, 5);
+            var b = np.arange(5);
+            var c = np.arange(6).reshape(2, 3);
             // Trace of a matrix:
-            
+
             // >>> np.einsum('ii', a)
             // 60
             // >>> np.einsum(a, [0,0])
@@ -638,23 +636,24 @@ namespace Numpy.UnitTest
             // >>> np.trace(a)
             // 60
             // 
-            
-            #if TODO
-             given=  np.einsum('ii', a);
-            var expected=
+
+            var given = np.einsum("ii", a);
+            var expected =
                 "60";
+#if NOT_SUPPORTED
             Assert.AreEqual(expected, given.repr);
-             given=  np.einsum(a, {0,0});
-             expected=
-                "60";
+            given = np.einsum(new[] { a, (NDarray)np.array(0, 0) });
+            expected =
+               "60";
             Assert.AreEqual(expected, given.repr);
-             given=  np.trace(a);
-             expected=
-                "60";
+#endif
+            given = np.trace(a);
+            expected =
+               "60";
             Assert.AreEqual(expected, given.repr);
-            #endif
+
             // Extract the diagonal (requires explicit form):
-            
+
             // >>> np.einsum('ii->i', a)
             // array([ 0,  6, 12, 18, 24])
             // >>> np.einsum(a, [0,0], [0])
@@ -662,8 +661,8 @@ namespace Numpy.UnitTest
             // >>> np.diag(a)
             // array([ 0,  6, 12, 18, 24])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.einsum('ii->i', a);
              expected=
                 "array([ 0,  6, 12, 18, 24])";
@@ -676,9 +675,9 @@ namespace Numpy.UnitTest
              expected=
                 "array([ 0,  6, 12, 18, 24])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Sum over an axis (requires explicit form):
-            
+
             // >>> np.einsum('ij->i', a)
             // array([ 10,  35,  60,  85, 110])
             // >>> np.einsum(a, [0,1], [0])
@@ -686,8 +685,8 @@ namespace Numpy.UnitTest
             // >>> np.sum(a, axis=1)
             // array([ 10,  35,  60,  85, 110])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.einsum('ij->i', a);
              expected=
                 "array([ 10,  35,  60,  85, 110])";
@@ -700,16 +699,16 @@ namespace Numpy.UnitTest
              expected=
                 "array([ 10,  35,  60,  85, 110])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // For higher dimensional arrays summing a single axis can be done with ellipsis:
-            
+
             // >>> np.einsum('...j->...', a)
             // array([ 10,  35,  60,  85, 110])
             // >>> np.einsum(a, [Ellipsis,1], [Ellipsis])
             // array([ 10,  35,  60,  85, 110])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.einsum('...j->...', a);
              expected=
                 "array([ 10,  35,  60,  85, 110])";
@@ -718,9 +717,9 @@ namespace Numpy.UnitTest
              expected=
                 "array([ 10,  35,  60,  85, 110])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Compute a matrix transpose, or reorder any number of axes:
-            
+
             // >>> np.einsum('ji', c)
             // array([[0, 3],
             //        [1, 4],
@@ -738,8 +737,8 @@ namespace Numpy.UnitTest
             //        [1, 4],
             //        [2, 5]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.einsum('ji', c);
              expected=
                 "array([[0, 3],\n" +
@@ -764,9 +763,9 @@ namespace Numpy.UnitTest
                 "       [1, 4],\n" +
                 "       [2, 5]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Vector inner products:
-            
+
             // >>> np.einsum('i,i', b, b)
             // 30
             // >>> np.einsum(b, [0], b, [0])
@@ -774,8 +773,8 @@ namespace Numpy.UnitTest
             // >>> np.inner(b,b)
             // 30
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.einsum('i,i', b, b);
              expected=
                 "30";
@@ -788,9 +787,9 @@ namespace Numpy.UnitTest
              expected=
                 "30";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Matrix vector multiplication:
-            
+
             // >>> np.einsum('ij,j', a, b)
             // array([ 30,  80, 130, 180, 230])
             // >>> np.einsum(a, [0,1], b, [1])
@@ -800,8 +799,8 @@ namespace Numpy.UnitTest
             // >>> np.einsum('...j,j', a, b)
             // array([ 30,  80, 130, 180, 230])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.einsum('ij,j', a, b);
              expected=
                 "array([ 30,  80, 130, 180, 230])";
@@ -818,9 +817,9 @@ namespace Numpy.UnitTest
              expected=
                 "array([ 30,  80, 130, 180, 230])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Broadcasting and scalar multiplication:
-            
+
             // >>> np.einsum('..., ...', 3, c)
             // array([[ 0,  3,  6],
             //        [ 9, 12, 15]])
@@ -834,8 +833,8 @@ namespace Numpy.UnitTest
             // array([[ 0,  3,  6],
             //        [ 9, 12, 15]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.einsum('..., ...', 3, c);
              expected=
                 "array([[ 0,  3,  6],\n" +
@@ -856,9 +855,9 @@ namespace Numpy.UnitTest
                 "array([[ 0,  3,  6],\n" +
                 "       [ 9, 12, 15]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Vector outer product:
-            
+
             // >>> np.einsum('i,j', np.arange(2)+1, b)
             // array([[0, 1, 2, 3, 4],
             //        [0, 2, 4, 6, 8]])
@@ -869,8 +868,8 @@ namespace Numpy.UnitTest
             // array([[0, 1, 2, 3, 4],
             //        [0, 2, 4, 6, 8]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.einsum('i,j', np.arange(2)+1, b);
              expected=
                 "array([[0, 1, 2, 3, 4],\n" +
@@ -886,9 +885,9 @@ namespace Numpy.UnitTest
                 "array([[0, 1, 2, 3, 4],\n" +
                 "       [0, 2, 4, 6, 8]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Tensor contraction:
-            
+
             // >>> a = np.arange(60.).reshape(3,4,5)
             // >>> b = np.arange(24.).reshape(4,3,2)
             // >>> np.einsum('ijk,jil->kl', a, b)
@@ -910,8 +909,8 @@ namespace Numpy.UnitTest
             //        [ 4796.,  5162.],
             //        [ 4928.,  5306.]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(60.).reshape(3,4,5);
              given=  b = np.arange(24.).reshape(4,3,2);
              given=  np.einsum('ijk,jil->kl', a, b);
@@ -938,9 +937,9 @@ namespace Numpy.UnitTest
                 "       [ 4796.,  5162.],\n" +
                 "       [ 4928.,  5306.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Writeable returned arrays (since version 1.10.0):
-            
+
             // >>> a = np.zeros((3, 3))
             // >>> np.einsum('ii->i', a)[:] = 1
             // >>> a
@@ -948,8 +947,8 @@ namespace Numpy.UnitTest
             //        [ 0.,  1.,  0.],
             //        [ 0.,  0.,  1.]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.zeros((3, 3));
              given=  np.einsum('ii->i', a){:} = 1;
              given=  a;
@@ -958,9 +957,9 @@ namespace Numpy.UnitTest
                 "       [ 0.,  1.,  0.],\n" +
                 "       [ 0.,  0.,  1.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Example of ellipsis use:
-            
+
             // >>> a = np.arange(6).reshape((3,2))
             // >>> b = np.arange(12).reshape((4,3))
             // >>> np.einsum('ki,jk->ij', a, b)
@@ -973,8 +972,8 @@ namespace Numpy.UnitTest
             // array([[10, 28, 46, 64],
             //        [13, 40, 67, 94]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(6).reshape((3,2));
              given=  b = np.arange(12).reshape((4,3));
              given=  np.einsum('ki,jk->ij', a, b);
@@ -992,13 +991,13 @@ namespace Numpy.UnitTest
                 "array([[10, 28, 46, 64],\n" +
                 "       [13, 40, 67, 94]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Chained array operations. For more complicated contractions, speed ups
             // might be achieved by repeatedly computing a ‘greedy’ path or pre-computing the
             // ‘optimal’ path and repeatedly applying it, using an
             // einsum_path insertion (since version 1.12.0). Performance improvements can be
             // particularly significant with larger arrays:
-            
+
             // >>> a = np.ones(64).reshape(2,4,8)
             // # Basic `einsum`: ~1520ms  (benchmarked on 3.1GHz Intel i5.)
             // >>> for iteration in range(500):
@@ -1014,8 +1013,8 @@ namespace Numpy.UnitTest
             // >>> for iteration in range(500):
             // ...     np.einsum('ijk,ilm,njm,nlk,abc->',a,a,a,a,a, optimize=path)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.ones(64).reshape(2,4,8);
             // Basic `einsum`: ~1520ms  (benchmarked on 3.1GHz Intel i5.)
              given=  for iteration in range(500):;
@@ -1038,10 +1037,10 @@ namespace Numpy.UnitTest
              expected=
                 "...     np.einsum('ijk,ilm,njm,nlk,abc->',a,a,a,a,a, optimize=path)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void einsum_pathTest()
         {
@@ -1050,7 +1049,7 @@ namespace Numpy.UnitTest
             // element of the path (1, 2). The resulting tensor is added to the end
             // of the contraction and the remaining contraction (0, 1) is then
             // completed.
-            
+
             // >>> a = np.random.rand(2, 2)
             // >>> b = np.random.rand(2, 5)
             // >>> c = np.random.rand(5, 2)
@@ -1071,8 +1070,8 @@ namespace Numpy.UnitTest
             //    3                   kl,jk->jl                                ij,jl->il
             //    3                   jl,ij->il                                   il->il
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.random.rand(2, 2);
              given=  b = np.random.rand(2, 5);
              given=  c = np.random.rand(5, 2);
@@ -1096,23 +1095,23 @@ namespace Numpy.UnitTest
                 "   3                   kl,jk->jl                                ij,jl->il\n" +
                 "   3                   jl,ij->il                                   il->il";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // A more complex index transformation example.
-            
+
             // >>> I = np.random.rand(10, 10, 10, 10)
             // >>> C = np.random.rand(10, 10)
             // >>> path_info = np.einsum_path('ea,fb,abcd,gc,hd->efgh', C, C, I, C, C,
             //                                optimize='greedy')
             // 
-            
-            #if TODO
+
+#if TODO
              given=  I = np.random.rand(10, 10, 10, 10);
              given=  C = np.random.rand(10, 10);
              given=  path_info = np.einsum_path('ea,fb,abcd,gc,hd->efgh', C, C, I, C, C,;
              expected=
                 "                               optimize='greedy')";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> print(path_info[0])
             // ['einsum_path', (0, 2), (0, 3), (0, 2), (0, 1)]
             // >>> print(path_info[1])
@@ -1131,8 +1130,8 @@ namespace Numpy.UnitTest
             //    5               cdef,gc->defg                            hd,defg->efgh
             //    5               defg,hd->efgh                               efgh->efgh
             // 
-            
-            #if TODO
+
+#if TODO
              given=  print(path_info[0]);
              expected=
                 "['einsum_path', (0, 2), (0, 3), (0, 2), (0, 1)]";
@@ -1154,10 +1153,10 @@ namespace Numpy.UnitTest
                 "   5               cdef,gc->defg                            hd,defg->efgh\n" +
                 "   5               defg,hd->efgh                               efgh->efgh";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void matrix_powerTest()
         {
@@ -1173,8 +1172,8 @@ namespace Numpy.UnitTest
             // array([[ 0.,  1.],
             //        [-1.,  0.]])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  from numpy.linalg import matrix_power;
              given=  i = np.array({{0, 1}, {-1, 0}}) # matrix equiv. of the imaginary unit;
              given=  matrix_power(i, 3) # should = -i;
@@ -1192,9 +1191,9 @@ namespace Numpy.UnitTest
                 "array([[ 0.,  1.],\n" +
                 "       [-1.,  0.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Somewhat more sophisticated example
-            
+
             // >>> q = np.zeros((4, 4))
             // >>> q[0:2, 0:2] = -i
             // >>> q[2:4, 2:4] = i
@@ -1209,8 +1208,8 @@ namespace Numpy.UnitTest
             //        [ 0.,  0., -1.,  0.],
             //        [ 0.,  0.,  0., -1.]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  q = np.zeros((4, 4));
              given=  q[0:2, 0:2] = -i;
              given=  q[2:4, 2:4] = i;
@@ -1228,10 +1227,10 @@ namespace Numpy.UnitTest
                 "       [ 0.,  0., -1.,  0.],\n" +
                 "       [ 0.,  0.,  0., -1.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void kronTest()
         {
@@ -1240,8 +1239,8 @@ namespace Numpy.UnitTest
             // >>> np.kron([5,6,7], [1,10,100])
             // array([  5,  50, 500,   6,  60, 600,   7,  70, 700])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.kron({1,10,100}, {5,6,7});
             var expected=
                 "array([  5,   6,   7,  50,  60,  70, 500, 600, 700])";
@@ -1250,15 +1249,15 @@ namespace Numpy.UnitTest
              expected=
                 "array([  5,  50, 500,   6,  60, 600,   7,  70, 700])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> np.kron(np.eye(2), np.ones((2,2)))
             // array([[ 1.,  1.,  0.,  0.],
             //        [ 1.,  1.,  0.,  0.],
             //        [ 0.,  0.,  1.,  1.],
             //        [ 0.,  0.,  1.,  1.]])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.kron(np.eye(2), np.ones((2,2)));
              expected=
                 "array([[ 1.,  1.,  0.,  0.],\n" +
@@ -1266,7 +1265,7 @@ namespace Numpy.UnitTest
                 "       [ 0.,  0.,  1.,  1.],\n" +
                 "       [ 0.,  0.,  1.,  1.]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.arange(100).reshape((2,5,2,5))
             // >>> b = np.arange(24).reshape((2,3,4))
             // >>> c = np.kron(a,b)
@@ -1280,8 +1279,8 @@ namespace Numpy.UnitTest
             // >>> c[K] == a[I]*b[J]
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(100).reshape((2,5,2,5));
              given=  b = np.arange(24).reshape((2,3,4));
              given=  c = np.kron(a,b);
@@ -1298,10 +1297,10 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void qrTest()
         {
@@ -1317,8 +1316,8 @@ namespace Numpy.UnitTest
             // >>> np.allclose(r, np.triu(r3[:6,:6], k=0))
             // True
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.random.randn(9, 6);
              given=  q, r = np.linalg.qr(a);
              given=  np.allclose(a, np.dot(q, r))  # a does equal qr;
@@ -1336,31 +1335,31 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Example illustrating a common use of qr: solving of least squares
             // problems
-            
+
             // What are the least-squares-best m and y0 in y = y0 + mx for
             // the following data: {(0,1), (1,0), (1,2), (2,1)}. (Graph the points
             // and you’ll see that it should be y0 = 0, m = 1.)  The answer is provided
             // by solving the over-determined matrix equation Ax = b, where:
-            
+
             // A = array([[0, 1], [1, 1], [1, 1], [2, 1]])
             // x = array([[y0], [m]])
             // b = array([[1], [0], [2], [1]])
             // 
-            
-            #if TODO
+
+#if TODO
              expected=
                 "A = array([[0, 1], [1, 1], [1, 1], [2, 1]])\n" +
                 "x = array([[y0], [m]])\n" +
                 "b = array([[1], [0], [2], [1]])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // If A = qr such that q is orthonormal (which is always possible via
             // Gram-Schmidt), then x = inv(r) * (q.T) * b.  (In numpy practice,
             // however, we simply use lstsq.)
-            
+
             // >>> A = np.array([[0, 1], [1, 1], [1, 1], [2, 1]])
             // >>> A
             // array([[0, 1],
@@ -1373,8 +1372,8 @@ namespace Numpy.UnitTest
             // >>> np.dot(LA.inv(r), p)
             // array([  1.1e-16,   1.0e+00])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  A = np.array({{0, 1}, {1, 1}, {1, 1}, {2, 1}});
              given=  A;
              expected=
@@ -1390,10 +1389,10 @@ namespace Numpy.UnitTest
              expected=
                 "array([  1.1e-16,   1.0e+00])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void condTest()
         {
@@ -1422,8 +1421,8 @@ namespace Numpy.UnitTest
             // >>> min(LA.svd(a, compute_uv=0))*min(LA.svd(LA.inv(a), compute_uv=0))
             // 0.70710678118654746
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  from numpy import linalg as LA;
              given=  a = np.array({{1, 0, -1}, {0, 1, 0}, {1, 0, 1}});
              given=  a;
@@ -1468,10 +1467,10 @@ namespace Numpy.UnitTest
              expected=
                 "0.70710678118654746";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void matrix_rankTest()
         {
@@ -1486,8 +1485,8 @@ namespace Numpy.UnitTest
             // >>> matrix_rank(np.zeros((4,)))
             // 0
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  from numpy.linalg import matrix_rank;
              given=  matrix_rank(np.eye(4)) # Full rank matrix;
             var expected=
@@ -1506,15 +1505,15 @@ namespace Numpy.UnitTest
              expected=
                 "0";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void slogdetTest()
         {
             // The determinant of a 2-D array [[a, b], [c, d]] is ad - bc:
-            
+
             // >>> a = np.array([[1, 2], [3, 4]])
             // >>> (sign, logdet) = np.linalg.slogdet(a)
             // >>> (sign, logdet)
@@ -1522,8 +1521,8 @@ namespace Numpy.UnitTest
             // >>> sign * np.exp(logdet)
             // -2.0
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.array({{1, 2}, {3, 4}});
              given=  (sign, logdet) = np.linalg.slogdet(a);
              given=  (sign, logdet);
@@ -1534,9 +1533,9 @@ namespace Numpy.UnitTest
              expected=
                 "-2.0";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // Computing log-determinants for a stack of matrices:
-            
+
             // >>> a = np.array([ [[1, 2], [3, 4]], [[1, 2], [2, 1]], [[1, 3], [3, 1]] ])
             // >>> a.shape
             // (3, 2, 2)
@@ -1546,8 +1545,8 @@ namespace Numpy.UnitTest
             // >>> sign * np.exp(logdet)
             // array([-2., -3., -8.])
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.array({ {{1, 2}, {3, 4}}, {{1, 2}, {2, 1}}, {{1, 3}, {3, 1}} });
              given=  a.shape;
              expected=
@@ -1562,16 +1561,16 @@ namespace Numpy.UnitTest
              expected=
                 "array([-2., -3., -8.])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // This routine succeeds where ordinary det does not:
-            
+
             // >>> np.linalg.det(np.eye(500) * 0.1)
             // 0.0
             // >>> np.linalg.slogdet(np.eye(500) * 0.1)
             // (1, -1151.2925464970228)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  np.linalg.det(np.eye(500) * 0.1);
              expected=
                 "0.0";
@@ -1580,10 +1579,10 @@ namespace Numpy.UnitTest
              expected=
                 "(1, -1151.2925464970228)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void traceTest()
         {
@@ -1593,8 +1592,8 @@ namespace Numpy.UnitTest
             // >>> np.trace(a)
             // array([6, 8])
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  np.trace(np.eye(3));
             var expected=
                 "3.0";
@@ -1604,22 +1603,22 @@ namespace Numpy.UnitTest
              expected=
                 "array([6, 8])";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.arange(24).reshape((2,2,2,3))
             // >>> np.trace(a).shape
             // (2, 3)
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.arange(24).reshape((2,2,2,3));
              given=  np.trace(a).shape;
              expected=
                 "(2, 3)";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void tensorsolveTest()
         {
@@ -1632,8 +1631,8 @@ namespace Numpy.UnitTest
             // >>> np.allclose(np.tensordot(a, x, axes=3), b)
             // True
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.eye(2*3*4);
              given=  a.shape = (2*3, 4, 2, 3, 4);
              given=  b = np.random.randn(2*3, 4);
@@ -1646,10 +1645,10 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void tensorinvTest()
         {
@@ -1662,8 +1661,8 @@ namespace Numpy.UnitTest
             // >>> np.allclose(np.tensordot(ainv, b), np.linalg.tensorsolve(a, b))
             // True
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  a = np.eye(4*6);
              given=  a.shape = (4, 6, 8, 3);
              given=  ainv = np.linalg.tensorinv(a, ind=2);
@@ -1676,7 +1675,7 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
             // >>> a = np.eye(4*6)
             // >>> a.shape = (24, 8, 3)
             // >>> ainv = np.linalg.tensorinv(a, ind=1)
@@ -1686,8 +1685,8 @@ namespace Numpy.UnitTest
             // >>> np.allclose(np.tensordot(ainv, b, 1), np.linalg.tensorsolve(a, b))
             // True
             // 
-            
-            #if TODO
+
+#if TODO
              given=  a = np.eye(4*6);
              given=  a.shape = (24, 8, 3);
              given=  ainv = np.linalg.tensorinv(a, ind=1);
@@ -1700,10 +1699,10 @@ namespace Numpy.UnitTest
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
-        
+
+
         [TestMethod]
         public void LinAlgErrorTest()
         {
@@ -1718,8 +1717,8 @@ namespace Numpy.UnitTest
             //     raise LinAlgError('Singular matrix')
             // numpy.linalg.LinAlgError: Singular matrix
             // 
-            
-            #if TODO
+
+#if TODO
             var given=  from numpy import linalg as LA;
              given=  LA.inv(np.zeros((2,2)));
             var expected=
@@ -1732,8 +1731,8 @@ namespace Numpy.UnitTest
                 "    raise LinAlgError('Singular matrix')\n" +
                 "numpy.linalg.LinAlgError: Singular matrix";
             Assert.AreEqual(expected, given.repr);
-            #endif
+#endif
         }
-        
+
     }
 }

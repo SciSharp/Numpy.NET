@@ -684,6 +684,7 @@ namespace CodeMinion.ApiGenerator.NumPy
                 case "view":
                 case "resize":
                 case "insert":
+                case "einsum":
                     decl.ManualOverride = true; // do not generate an implementation
                     break;
                 case "arange":
@@ -746,12 +747,6 @@ namespace CodeMinion.ApiGenerator.NumPy
                     break;
                 case "correlate":
                     decl.Arguments.Remove(decl.Arguments.FirstOrDefault(x => x.Name == "old_behavior"));
-                    break;
-                case "einsum":
-                    var optimize = decl.Arguments.First(x => x.Name == "optimize");
-                    optimize.Type = "object";
-                    optimize.DefaultValue = "null";
-                    optimize.DefaultIfNull = "false";
                     break;
                 case "rot90":
                     var axes = decl.Arguments.First(x => x.Name == "axes");
