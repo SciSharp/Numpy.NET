@@ -640,7 +640,7 @@ namespace Numpy.UnitTest
             var given = np.einsum("ii", a);
             var expected =
                 "60";
-#if NOT_SUPPORTED
+#if TODO
             Assert.AreEqual(expected, given.repr);
             given = np.einsum(new[] { a, (NDarray)np.array(0, 0) });
             expected =
@@ -662,20 +662,20 @@ namespace Numpy.UnitTest
             // array([ 0,  6, 12, 18, 24])
             // 
 
+            given = np.einsum("ii->i", a);
+            expected =
+               "array([ 0,  6, 12, 18, 24])";
+            Assert.AreEqual(expected, given.repr);
 #if TODO
-             given=  np.einsum('ii->i', a);
-             expected=
-                "array([ 0,  6, 12, 18, 24])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.einsum(a, {0,0}, {0});
-             expected=
-                "array([ 0,  6, 12, 18, 24])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.diag(a);
+            given=  np.einsum(a, {0,0}, {0});
              expected=
                 "array([ 0,  6, 12, 18, 24])";
             Assert.AreEqual(expected, given.repr);
 #endif
+            given = np.diag(a);
+            expected =
+               "array([ 0,  6, 12, 18, 24])";
+            Assert.AreEqual(expected, given.repr);
             // Sum over an axis (requires explicit form):
 
             // >>> np.einsum('ij->i', a)
@@ -686,20 +686,21 @@ namespace Numpy.UnitTest
             // array([ 10,  35,  60,  85, 110])
             // 
 
-#if TODO
-             given=  np.einsum('ij->i', a);
-             expected=
-                "array([ 10,  35,  60,  85, 110])";
+            given = np.einsum("ij->i", a);
+            expected =
+               "array([ 10,  35,  60,  85, 110])";
             Assert.AreEqual(expected, given.repr);
+#if TODO
              given=  np.einsum(a, {0,1}, {0});
              expected=
                 "array([ 10,  35,  60,  85, 110])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.sum(a, axis=1);
-             expected=
-                "array([ 10,  35,  60,  85, 110])";
-            Assert.AreEqual(expected, given.repr);
 #endif
+
+            given = np.sum(a, axis: 1);
+            expected =
+               "array([ 10,  35,  60,  85, 110])";
+            Assert.AreEqual(expected, given.repr);
             // For higher dimensional arrays summing a single axis can be done with ellipsis:
 
             // >>> np.einsum('...j->...', a)
@@ -708,11 +709,11 @@ namespace Numpy.UnitTest
             // array([ 10,  35,  60,  85, 110])
             // 
 
-#if TODO
-             given=  np.einsum('...j->...', a);
-             expected=
-                "array([ 10,  35,  60,  85, 110])";
+            given = np.einsum("...j->...", a);
+            expected =
+               "array([ 10,  35,  60,  85, 110])";
             Assert.AreEqual(expected, given.repr);
+#if TODO
              given=  np.einsum(a, {Ellipsis,1}, {Ellipsis});
              expected=
                 "array([ 10,  35,  60,  85, 110])";
@@ -738,32 +739,33 @@ namespace Numpy.UnitTest
             //        [2, 5]])
             // 
 
+            given = np.einsum("ji", c);
+            expected =
+               "array([[0, 3],\n" +
+               "       [1, 4],\n" +
+               "       [2, 5]])";
+            Assert.AreEqual(expected, given.repr);
+            given = np.einsum("ij->ji", c);
+            expected =
+               "array([[0, 3],\n" +
+               "       [1, 4],\n" +
+               "       [2, 5]])";
+            Assert.AreEqual(expected, given.repr);
 #if TODO
-             given=  np.einsum('ji', c);
-             expected=
-                "array([[0, 3],\n" +
-                "       [1, 4],\n" +
-                "       [2, 5]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.einsum('ij->ji', c);
-             expected=
-                "array([[0, 3],\n" +
-                "       [1, 4],\n" +
-                "       [2, 5]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.einsum(c, {1,0});
-             expected=
-                "array([[0, 3],\n" +
-                "       [1, 4],\n" +
-                "       [2, 5]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.transpose(c);
+            given=  np.einsum(c, {1,0});
              expected=
                 "array([[0, 3],\n" +
                 "       [1, 4],\n" +
                 "       [2, 5]])";
             Assert.AreEqual(expected, given.repr);
 #endif
+            given = np.transpose(c);
+            expected =
+               "array([[0, 3],\n" +
+               "       [1, 4],\n" +
+               "       [2, 5]])";
+            Assert.AreEqual(expected, given.repr);
+
             // Vector inner products:
 
             // >>> np.einsum('i,i', b, b)
@@ -774,20 +776,21 @@ namespace Numpy.UnitTest
             // 30
             // 
 
-#if TODO
-             given=  np.einsum('i,i', b, b);
-             expected=
-                "30";
+            given = np.einsum("i,i", b, b);
+            expected =
+               "30";
             Assert.AreEqual(expected, given.repr);
+#if TODO
              given=  np.einsum(b, {0}, b, {0});
              expected=
                 "30";
             Assert.AreEqual(expected, given.repr);
-             given=  np.inner(b,b);
-             expected=
-                "30";
-            Assert.AreEqual(expected, given.repr);
 #endif
+            given = np.inner(b, b);
+            expected =
+               "30";
+            Assert.AreEqual(expected, given.repr);
+
             // Matrix vector multiplication:
 
             // >>> np.einsum('ij,j', a, b)
@@ -800,24 +803,25 @@ namespace Numpy.UnitTest
             // array([ 30,  80, 130, 180, 230])
             // 
 
-#if TODO
-             given=  np.einsum('ij,j', a, b);
-             expected=
-                "array([ 30,  80, 130, 180, 230])";
+            given = np.einsum("ij,j", a, b);
+            expected =
+               "array([ 30,  80, 130, 180, 230])";
             Assert.AreEqual(expected, given.repr);
+#if TODO
              given=  np.einsum(a, {0,1}, b, {1});
              expected=
                 "array([ 30,  80, 130, 180, 230])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.dot(a, b);
-             expected=
-                "array([ 30,  80, 130, 180, 230])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.einsum('...j,j', a, b);
-             expected=
-                "array([ 30,  80, 130, 180, 230])";
-            Assert.AreEqual(expected, given.repr);
 #endif
+            given = np.dot(a, b);
+            expected =
+               "array([ 30,  80, 130, 180, 230])";
+            Assert.AreEqual(expected, given.repr);
+            given = np.einsum("...j,j", a, b);
+            expected =
+               "array([ 30,  80, 130, 180, 230])";
+            Assert.AreEqual(expected, given.repr);
+
             // Broadcasting and scalar multiplication:
 
             // >>> np.einsum('..., ...', 3, c)
@@ -834,28 +838,28 @@ namespace Numpy.UnitTest
             //        [ 9, 12, 15]])
             // 
 
+            given = np.einsum("..., ...", np.asarray(3), c);
+            expected =
+               "array([[ 0,  3,  6],\n" +
+               "       [ 9, 12, 15]])";
+            Assert.AreEqual(expected, given.repr);
+            given = np.einsum(",ij", np.asarray(3), c);
+            expected =
+               "array([[ 0,  3,  6],\n" +
+               "       [ 9, 12, 15]])";
+            Assert.AreEqual(expected, given.repr);
 #if TODO
-             given=  np.einsum('..., ...', 3, c);
-             expected=
-                "array([[ 0,  3,  6],\n" +
-                "       [ 9, 12, 15]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.einsum(',ij', 3, c);
-             expected=
-                "array([[ 0,  3,  6],\n" +
-                "       [ 9, 12, 15]])";
-            Assert.AreEqual(expected, given.repr);
              given=  np.einsum(3, {Ellipsis}, c, {Ellipsis});
              expected=
                 "array([[ 0,  3,  6],\n" +
                 "       [ 9, 12, 15]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.multiply(3, c);
-             expected=
-                "array([[ 0,  3,  6],\n" +
-                "       [ 9, 12, 15]])";
-            Assert.AreEqual(expected, given.repr);
 #endif
+            given = np.multiply(np.asarray(3), c);
+            expected =
+               "array([[ 0,  3,  6],\n" +
+               "       [ 9, 12, 15]])";
+            Assert.AreEqual(expected, given.repr);
             // Vector outer product:
 
             // >>> np.einsum('i,j', np.arange(2)+1, b)
@@ -869,23 +873,24 @@ namespace Numpy.UnitTest
             //        [0, 2, 4, 6, 8]])
             // 
 
+
+            given = np.einsum("i,j", np.arange(2) + 1, b);
+            expected =
+               "array([[0, 1, 2, 3, 4],\n" +
+               "       [0, 2, 4, 6, 8]])";
+            Assert.AreEqual(expected, given.repr);
 #if TODO
-             given=  np.einsum('i,j', np.arange(2)+1, b);
-             expected=
-                "array([[0, 1, 2, 3, 4],\n" +
-                "       [0, 2, 4, 6, 8]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.einsum(np.arange(2)+1, {0}, b, {1});
-             expected=
-                "array([[0, 1, 2, 3, 4],\n" +
-                "       [0, 2, 4, 6, 8]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  np.outer(np.arange(2)+1, b);
+            given=  np.einsum(np.arange(2)+1, {0}, b, {1});
              expected=
                 "array([[0, 1, 2, 3, 4],\n" +
                 "       [0, 2, 4, 6, 8]])";
             Assert.AreEqual(expected, given.repr);
 #endif
+            given = np.outer(np.arange(2) + 1, b);
+            expected =
+               "array([[0, 1, 2, 3, 4],\n" +
+               "       [0, 2, 4, 6, 8]])";
+            Assert.AreEqual(expected, given.repr);
             // Tensor contraction:
 
             // >>> a = np.arange(60.).reshape(3,4,5)
@@ -910,17 +915,17 @@ namespace Numpy.UnitTest
             //        [ 4928.,  5306.]])
             // 
 
-#if TODO
-             given=  a = np.arange(60.).reshape(3,4,5);
-             given=  b = np.arange(24.).reshape(4,3,2);
-             given=  np.einsum('ijk,jil->kl', a, b);
-             expected=
-                "array([[ 4400.,  4730.],\n" +
-                "       [ 4532.,  4874.],\n" +
-                "       [ 4664.,  5018.],\n" +
-                "       [ 4796.,  5162.],\n" +
-                "       [ 4928.,  5306.]])";
+            given = a = np.arange(60.0).reshape(3, 4, 5);
+            given = b = np.arange(24.0).reshape(4, 3, 2);
+            given = np.einsum("ijk,jil->kl", a, b);
+            expected =
+               "array([[4400., 4730.],\n" +
+               "       [4532., 4874.],\n" +
+               "       [4664., 5018.],\n" +
+               "       [4796., 5162.],\n" +
+               "       [4928., 5306.]])";
             Assert.AreEqual(expected, given.repr);
+#if TODO
              given=  np.einsum(a, {0,1,2}, b, {1,0,3}, {2,3});
              expected=
                 "array([[ 4400.,  4730.],\n" +
@@ -929,7 +934,8 @@ namespace Numpy.UnitTest
                 "       [ 4796.,  5162.],\n" +
                 "       [ 4928.,  5306.]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.tensordot(a,b, axes=({1,0},{0,1}));
+
+            given =  np.tensordot(a,b, axes:new int[,]{{1,0},{0,1}});
              expected=
                 "array([[ 4400.,  4730.],\n" +
                 "       [ 4532.,  4874.],\n" +
@@ -938,6 +944,7 @@ namespace Numpy.UnitTest
                 "       [ 4928.,  5306.]])";
             Assert.AreEqual(expected, given.repr);
 #endif
+
             // Writeable returned arrays (since version 1.10.0):
 
             // >>> a = np.zeros((3, 3))
@@ -948,16 +955,16 @@ namespace Numpy.UnitTest
             //        [ 0.,  0.,  1.]])
             // 
 
-#if TODO
-             given=  a = np.zeros((3, 3));
-             given=  np.einsum('ii->i', a){:} = 1;
-             given=  a;
-             expected=
-                "array([[ 1.,  0.,  0.],\n" +
-                "       [ 0.,  1.,  0.],\n" +
-                "       [ 0.,  0.,  1.]])";
+
+            a = np.zeros((3, 3));
+            np.einsum("ii->i", a)[":"] = np.asarray(1);
+            given = a;
+            expected =
+               "array([[1., 0., 0.],\n" +
+               "       [0., 1., 0.],\n" +
+               "       [0., 0., 1.]])";
             Assert.AreEqual(expected, given.repr);
-#endif
+
             // Example of ellipsis use:
 
             // >>> a = np.arange(6).reshape((3,2))
@@ -973,25 +980,24 @@ namespace Numpy.UnitTest
             //        [13, 40, 67, 94]])
             // 
 
-#if TODO
-             given=  a = np.arange(6).reshape((3,2));
-             given=  b = np.arange(12).reshape((4,3));
-             given=  np.einsum('ki,jk->ij', a, b);
-             expected=
-                "array([[10, 28, 46, 64],\n" +
-                "       [13, 40, 67, 94]])";
+            given = a = np.arange(6).reshape((3, 2));
+            given = b = np.arange(12).reshape((4, 3));
+            given = np.einsum("ki,jk->ij", a, b);
+            expected =
+               "array([[10, 28, 46, 64],\n" +
+               "       [13, 40, 67, 94]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.einsum('ki,...k->i...', a, b);
-             expected=
-                "array([[10, 28, 46, 64],\n" +
-                "       [13, 40, 67, 94]])";
+            given = np.einsum("ki,...k->i...", a, b);
+            expected =
+               "array([[10, 28, 46, 64],\n" +
+               "       [13, 40, 67, 94]])";
             Assert.AreEqual(expected, given.repr);
-             given=  np.einsum('k...,jk', a, b);
-             expected=
-                "array([[10, 28, 46, 64],\n" +
-                "       [13, 40, 67, 94]])";
+            given = np.einsum("k...,jk", a, b);
+            expected =
+               "array([[10, 28, 46, 64],\n" +
+               "       [13, 40, 67, 94]])";
             Assert.AreEqual(expected, given.repr);
-#endif
+
             // Chained array operations. For more complicated contractions, speed ups
             // might be achieved by repeatedly computing a ‘greedy’ path or pre-computing the
             // ‘optimal’ path and repeatedly applying it, using an
