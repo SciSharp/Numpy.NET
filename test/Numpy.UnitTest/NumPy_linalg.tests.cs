@@ -1323,25 +1323,26 @@ namespace Numpy.UnitTest
             // True
             // 
 
+            {
+                var a = np.random.randn(9, 6);
+                var (q, r, _) = np.linalg.qr(a);
+                //Console.WriteLine("r: " + r.repr);
+                var given = np.allclose(a, np.dot(q, r)); // a does equal qr;
+                Assert.AreEqual(true, given);
+                (var r2, _, _) = np.linalg.qr(a, mode: "r");
+                //Console.WriteLine("r2: " + r2.repr);
+                (var r3, _, _) = np.linalg.qr(a, mode: "economic");
+                given = np.allclose(r, r2); // mode='r' returns the same r as mode='full';
+                Assert.AreEqual(true, given);
+            }
 #if TODO
-            var given=  a = np.random.randn(9, 6);
-             given=  q, r = np.linalg.qr(a);
-             given=  np.allclose(a, np.dot(q, r))  # a does equal qr;
-            var expected=
-                "True";
-            Assert.AreEqual(expected, given.repr);
-             given=  r2 = np.linalg.qr(a, mode='r');
-             given=  r3 = np.linalg.qr(a, mode='economic');
-             given=  np.allclose(r, r2)  # mode='r' returns the same r as mode='full';
+            // But only triu parts are guaranteed equal when mode='economic';
+            given=  np.allclose(r, np.triu(r3{:6,:6}, k=0));
              expected=
                 "True";
             Assert.AreEqual(expected, given.repr);
-             given=  # But only triu parts are guaranteed equal when mode='economic';
-             given=  np.allclose(r, np.triu(r3{:6,:6}, k=0));
-             expected=
-                "True";
-            Assert.AreEqual(expected, given.repr);
-#endif
+#endif 
+
             // Example illustrating a common use of qr: solving of least squares
             // problems
 
@@ -1355,13 +1356,6 @@ namespace Numpy.UnitTest
             // b = array([[1], [0], [2], [1]])
             // 
 
-#if TODO
-             expected=
-                "A = array([[0, 1], [1, 1], [1, 1], [2, 1]])\n" +
-                "x = array([[y0], [m]])\n" +
-                "b = array([[1], [0], [2], [1]])";
-            Assert.AreEqual(expected, given.repr);
-#endif
             // If A = qr such that q is orthonormal (which is always possible via
             // Gram-Schmidt), then x = inv(r) * (q.T) * b.  (In numpy practice,
             // however, we simply use lstsq.)
@@ -1376,26 +1370,30 @@ namespace Numpy.UnitTest
             // >>> q, r = LA.qr(A)
             // >>> p = np.dot(q.T, b)
             // >>> np.dot(LA.inv(r), p)
-            // array([  1.1e-16,   1.0e+00])
+            // array([  1.1e-16,   1.0e+00]) // <--- note henon: this result seems to be wrong in the documentation.
             // 
-
-#if TODO
-             given=  A = np.array({{0, 1}, {1, 1}, {1, 1}, {2, 1}});
-             given=  A;
-             expected=
-                "array([[0, 1],\n" +
-                "       [1, 1],\n" +
-                "       [1, 1],\n" +
-                "       [2, 1]])";
-            Assert.AreEqual(expected, given.repr);
-             given=  b = np.array({1, 0, 2, 1});
-             given=  q, r = LA.qr(A);
-             given=  p = np.dot(q.T, b);
-             given=  np.dot(LA.inv(r), p);
-             expected=
-                "array([  1.1e-16,   1.0e+00])";
-            Assert.AreEqual(expected, given.repr);
-#endif
+            {
+                var A = np.array(new[,] { { 0, 1 }, { 1, 1 }, { 1, 1 }, { 2, 1 } });
+                NDarray given = A;
+                var expected =
+                    "array([[0, 1],\n" +
+                    "       [1, 1],\n" +
+                    "       [1, 1],\n" +
+                    "       [2, 1]])";
+                Assert.AreEqual(expected, given.repr);
+                var b = np.array(new[]{ 1, 0, 2, 1 });
+                (var q, var r, _) = np.linalg.qr(A);
+                //Console.WriteLine("q:" + q.repr);
+                //Console.WriteLine("r:"+r.repr);
+                var p = np.dot(q.T, b);
+                //Console.WriteLine("p:" + p.repr);
+                var r_inv = np.linalg.inv(r);
+                //Console.WriteLine("r_inv:" + r_inv.repr);
+                given = np.dot(r_inv, p);
+                expected =
+                    "array([6.66133815e-16, 1.00000000e+00])";
+                Assert.AreEqual(expected, given.repr);
+            }
         }
 
 

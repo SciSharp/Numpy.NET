@@ -878,6 +878,13 @@ namespace Numpy.UnitTest
             Assert.AreEqual("array([1., 1.])", result.repr);
         }
 
+        [TestMethod]
+        public void IssueByBigpo()
+        {
+            var a = np.random.randn(3, 3);
+            var tmp = np.linalg.qr(a);
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs

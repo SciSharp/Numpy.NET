@@ -987,7 +987,7 @@ namespace CodeMinion.Core
         {
             s.Break();
             s.Out("//auto-generated");
-            s.Out($"{(@static?"private static":"public")} T ToCsharp<T>(dynamic pyobj)", () =>
+            s.Out($"{(@static?"internal static":"public")} T ToCsharp<T>(dynamic pyobj)", () =>
             {
                 s.Out("switch (typeof(T).Name)", () =>
                 {
@@ -1014,7 +1014,7 @@ namespace CodeMinion.Core
         {
             s.Break();
             s.Out("//auto-generated");
-            s.Out($"{(@static?"private static":"public")} PyObject ToPython(object obj)", () =>
+            s.Out($"{(@static?"internal static":"public")} PyObject ToPython(object obj)", () =>
             {
                 s.Out("if (obj == null) return Runtime.None;");
                 s.Out("switch (obj)", () =>
@@ -1045,7 +1045,7 @@ namespace CodeMinion.Core
         {
             s.Break();
             s.Out("//auto-generated");
-            s.Out($"{(@static ? "private static" : "public")} T SharpToSharp<T>(object obj)", () =>
+            s.Out($"{(@static ? "internal static" : "public")} T SharpToSharp<T>(object obj)", () =>
             {
                 s.Out("if (obj == null) return default(T);");
                 s.Out("switch (obj)", () =>

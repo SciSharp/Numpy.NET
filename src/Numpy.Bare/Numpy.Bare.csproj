@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
     <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
     <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>3.7.1.27</Version>
+    <Version>3.7.1.28</Version>
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
     <AssemblyVersion>3.7.1.4</AssemblyVersion>
   </PropertyGroup>
@@ -37,7 +37,7 @@
     <Compile Include="..\Numpy\Manual\np.concatenate.cs" Link="Manual\np.concatenate.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.constants.cs" Link="Manual\np.constants.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.delete.cs" Link="Manual\np.delete.cs"></Compile>
-    <Compile Include="..\Numpy\Manual\np.einsum.cs" Link="Manual\np.einsum.cs" />
+    <Compile Include="..\Numpy\Manual\np.einsum.cs" Link="Manual\np.einsum.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.insert.cs" Link="Manual\np.insert.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.linalg.norm.cs" Link="Manual\np.linalg.norm.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.linspace.cs" Link="Manual\np.linspace.cs"></Compile>

@@ -70,7 +70,7 @@ namespace Numpy
         }
         
         //auto-generated
-        private static PyObject ToPython(object obj)
+        internal static PyObject ToPython(object obj)
         {
             if (obj == null) return Runtime.None;
             switch (obj)
@@ -96,7 +96,7 @@ namespace Numpy
         }
         
         //auto-generated
-        private static T ToCsharp<T>(dynamic pyobj)
+        internal static T ToCsharp<T>(dynamic pyobj)
         {
             switch (typeof(T).Name)
             {
@@ -138,7 +138,7 @@ namespace Numpy
         }
         
         //auto-generated
-        private static T SharpToSharp<T>(object obj)
+        internal static T SharpToSharp<T>(object obj)
         {
             if (obj == null) return default(T);
             switch (obj)

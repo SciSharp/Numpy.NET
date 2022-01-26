@@ -57,5 +57,16 @@ namespace Numpy
         {
            throw new NotImplementedException();
         }
+
+        public static bool IsNDarray(dynamic py)
+        {
+            return np.ToCsharp<string>(py.__class__.__name__) == "ndarray";
+        }
+
+        public static bool IsTuple(dynamic py)
+        {
+            return np.ToCsharp<string>(py.__class__.__name__) == "tuple";
+        }
+
     }
 }

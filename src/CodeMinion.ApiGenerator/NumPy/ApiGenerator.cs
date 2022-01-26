@@ -912,6 +912,7 @@ namespace CodeMinion.ApiGenerator.NumPy
         {
             switch (decl.Name)
             {
+                case "qr":
                 case "norm":
                 case "asscalar":
                 case "normal":
