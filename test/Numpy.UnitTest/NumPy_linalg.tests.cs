@@ -1360,17 +1360,17 @@ namespace Numpy.UnitTest
             // Gram-Schmidt), then x = inv(r) * (q.T) * b.  (In numpy practice,
             // however, we simply use lstsq.)
 
-            // >>> A = np.array([[0, 1], [1, 1], [1, 1], [2, 1]])
-            // >>> A
-            // array([[0, 1],
-            //        [1, 1],
-            //        [1, 1],
-            //        [2, 1]])
-            // >>> b = np.array([1, 0, 2, 1])
-            // >>> q, r = LA.qr(A)
-            // >>> p = np.dot(q.T, b)
-            // >>> np.dot(LA.inv(r), p)
-            // array([  1.1e-16,   1.0e+00]) // <--- note henon: this result seems to be wrong in the documentation.
+            //A = np.array([[0, 1], [1, 1], [1, 1], [2, 1]])
+            //A
+            //array([[0, 1],
+            //       [1, 1],
+            //       [1, 1],
+            //       [2, 1]])
+            //b = np.array([1, 2, 2, 3])
+            //q, r = np.linalg.qr(A)
+            //p = np.dot(q.T, b)
+            //np.dot(np.linalg.inv(r), p)
+            //array([  1.,   1.]) 
             // 
             {
                 var A = np.array(new[,] { { 0, 1 }, { 1, 1 }, { 1, 1 }, { 2, 1 } });
@@ -1381,17 +1381,13 @@ namespace Numpy.UnitTest
                     "       [1, 1],\n" +
                     "       [2, 1]])";
                 Assert.AreEqual(expected, given.repr);
-                var b = np.array(new[]{ 1, 0, 2, 1 });
+                var b = np.array(new[]{ 1, 2, 2, 3 });
                 (var q, var r, _) = np.linalg.qr(A);
-                //Console.WriteLine("q:" + q.repr);
-                //Console.WriteLine("r:"+r.repr);
                 var p = np.dot(q.T, b);
                 //Console.WriteLine("p:" + p.repr);
                 var r_inv = np.linalg.inv(r);
-                //Console.WriteLine("r_inv:" + r_inv.repr);
                 given = np.dot(r_inv, p);
-                expected =
-                    "array([6.66133815e-16, 1.00000000e+00])";
+                expected = "array([1., 1.])";
                 Assert.AreEqual(expected, given.repr);
             }
         }
