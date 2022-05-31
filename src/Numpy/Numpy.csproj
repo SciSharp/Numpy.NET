@@ -14,8 +14,10 @@
     <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
     <PackageTags>Data science, Machine Learning, ML, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
     <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>3.7.1.28</Version>
+    <Version>3.10.1.29</Version>
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
+    <AssemblyVersion>3.10.0.0</AssemblyVersion>
+    <FileVersion>3.10.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,16 +29,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\numpy-1.16.3-cp37-cp37m-win_amd64.whl"></None>
+    <None Remove="Resources\numpy-1.21.3-cp310-cp310-win_amd64.whl"></None>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\numpy-1.16.3-cp37-cp37m-win_amd64.whl"></EmbeddedResource>
+    <EmbeddedResource Include="Resources\numpy-1.21.3-cp310-cp310-win_amd64.whl"></EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0"></PackageReference>
-    <PackageReference Include="Python.Included" Version="3.7.3.13"></PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0"></PackageReference>
+    <PackageReference Include="Python.Included" Version="3.10.0-preview2"></PackageReference>
   </ItemGroup>
 
 </Project>
