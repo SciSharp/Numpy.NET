@@ -41,6 +41,7 @@
     <Compile Include="..\Numpy\Manual\np.insert.cs" Link="Manual\np.insert.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.linalg.norm.cs" Link="Manual\np.linalg.norm.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.linspace.cs" Link="Manual\np.linspace.cs"></Compile>
+    <Compile Include="..\Numpy\Manual\np.math.cs" Link="Manual\np.math.cs" />
     <Compile Include="..\Numpy\Manual\np.meshgrid.cs" Link="Manual\np.meshgrid.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.random.cs" Link="Manual\np.random.cs"></Compile>
     <Compile Include="..\Numpy\Manual\np.resize.cs" Link="Manual\np.resize.cs"></Compile>

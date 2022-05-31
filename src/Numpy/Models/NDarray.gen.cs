@@ -6252,9 +6252,9 @@ namespace Numpy
             var __self__=self;
             var pyargs=ToTuple(new object[]
             {
+                varargs,
             });
             var kwargs=new PyDict();
-            if (varargs!=null) kwargs["varargs"]=ToPython(varargs);
             if (edge_order!=null) kwargs["edge_order"]=ToPython(edge_order);
             if (axis!=null) kwargs["axis"]=ToPython(axis);
             dynamic py = __self__.InvokeMethod("gradient", pyargs, kwargs);

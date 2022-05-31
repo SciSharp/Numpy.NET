@@ -1138,16 +1138,8 @@ namespace CodeMinion.ApiGenerator.NumPy
                     else
                         yield return decl;
                     yield break;
-                //case "meshgrid":
-                //    yield return decl;
-                //    yield return decl.Clone(f =>
-                //    {
-                //        f.Arguments[0].Type = "params NDarray[]";
-                //        f.Arguments.RemoveAt(1);
-                //        f.Arguments.RemoveAt(1);
-                //        f.Arguments.RemoveAt(1);
-                //    });
-                //    yield break;
+                case "gradient": // don't generate. 
+                    yield break;
             }
 
             // without args we don't need to consider possible overloads

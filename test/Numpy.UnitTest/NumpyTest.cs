@@ -885,6 +885,40 @@ namespace Numpy.UnitTest
             var tmp = np.linalg.qr(a);
         }
 
+        [TestMethod]
+        public void IssueByAllenP()
+        {
+            //>>> dx = 4.0
+            //>>> dy = 5.0
+            //>>> zX =[[1, 2, 3],[4,5,6],[8,9,0]]
+            //>>> np.gradient(zX, dx, dy)
+            //[array([[0.75, 0.75, 0.75],
+            //       [0.875, 0.875, -0.375],
+            //       [1.   , 1.   , -1.5]]), array([[0.2, 0.2, 0.2],
+            //       [ 0.2,  0.2,  0.2],
+            //       [ 0.2, -0.8, -1.8]])]
+            var zX = new NDarray(new[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 8, 9, 0 } });
+            var result=np.gradient(zX, new List<double> { 4.0, 5.0 });
+            var expected = @"[array([[ 0.75 ,  0.75 ,  0.75 ],
+       [ 0.875,  0.875, -0.375],
+       [ 1.   ,  1.   , -1.5  ]]), array([[ 0.2,  0.2,  0.2],
+       [ 0.2,  0.2,  0.2],
+       [ 0.2, -0.8, -1.8]])]".Replace("\r","");
+            Assert.AreEqual(expected,result.repr);
+        }
+
+        [TestMethod]
+        public void PrimitiveConversion()
+        {
+            dynamic np = Numpy.np.dynamic_self;
+            Assert.AreEqual(3, (new PyInt(3)).As<int>());
+            Assert.AreEqual(1_000_000_000_000_000, new PyInt(1_000_000_000_000_000).As<long>());
+            Console.WriteLine(((dynamic)new PyInt(1_000_000_000_000_000)).__class__); // => <class 'int'>
+            Console.WriteLine(np.int64(1_000_000_000_000_000).__class__); // => <class 'numpy.int64'>
+            Assert.AreEqual(3, (np.int32(3).item() as PyObject).As<int>()); 
+            Assert.AreEqual(1_000_000_000_000_000, (np.int64(1_000_000_000_000_000).item() as PyObject).As<long>());
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs

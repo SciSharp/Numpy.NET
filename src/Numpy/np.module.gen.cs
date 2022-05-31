@@ -41,7 +41,7 @@ namespace Numpy
             Installer.SetupPython(force).Wait();
             #endif
             #if PYTHON_INCLUDED
-            Installer.InstallWheel(typeof(np).Assembly, "numpy-1.16.3-cp37-cp37m-win_amd64.whl").Wait();
+            Installer.InstallWheel(typeof(np).Assembly, "numpy-1.21.3-cp310-cp310-win_amd64.whl").Wait();
             #endif
             PythonEngine.Initialize();
             var mod = Py.Import("numpy");
@@ -77,7 +77,7 @@ namespace Numpy
             {
                 // basic types
                 case int o: return new PyInt(o);
-                case long o: return new PyLong(o);
+                case long o: return new PyInt(o);
                 case float o: return new PyFloat(o);
                 case double o: return new PyFloat(o);
                 case string o: return new PyString(o);
@@ -123,15 +123,20 @@ namespace Numpy
                    for (int i = 0; i < len; i++)
                        rv[i] = ToCsharp<NDarray>(po[i]);
                    return (T) (object) rv;
-                case "Matrix": return (T)(object)new Matrix(pyobj);
+                case "Matrix": 
+                    return (T)(object)new Matrix(pyobj);
                 default:
-                try
-                {
-                    return pyobj.As<T>();
+                try {
+                    var pyClass = $"{pyobj.__class__}";
+                    if (pyClass == "<class 'str'>")
+                        return (T)(object)pyobj.ToString();
+                    if (pyClass.StartsWith("<class 'numpy"))
+                        return (pyobj.item() as PyObject).As<T>();
+                    return (pyobj as PyObject).As<T>();
                 }
                 catch (Exception e)
                 {
-                    throw new NotImplementedException($"conversion from {typeof(T).Name} to {pyobj.__class__} not implemented", e);
+                    throw new NotImplementedException($"conversion from {pyobj.__class__} to {typeof(T).Name} not implemented", e);
                     return default(T);
                 }
             }

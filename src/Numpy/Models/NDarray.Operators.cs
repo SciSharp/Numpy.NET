@@ -199,7 +199,7 @@ namespace Numpy
         public static NDarray operator /(ValueType obj, NDarray a)
         {
             if (operator_module == null)
-                operator_module = PythonEngine.ImportModule("operator");
+                operator_module = Py.Import("operator");
             return new NDarray(operator_module.InvokeMethod("__truediv__", obj.ToPython(), a.self));
         }
 

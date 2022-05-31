@@ -39,7 +39,7 @@ namespace Numpy
             {
                 // basic types
                 case int o: return new PyInt(o);
-                case long o: return new PyLong(o);
+                case long o: return new PyInt(o);
                 case float o: return new PyFloat(o);
                 case double o: return new PyFloat(o);
                 case string o: return new PyString(o);

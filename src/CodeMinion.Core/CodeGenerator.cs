@@ -997,11 +997,13 @@ namespace CodeMinion.Core
                         s.Out(@case);
                     }
                     s.Out("default:");
+                    s.Out("var pyClass = $\"{pyobj.__class__}\";");
+                    s.Out("if (pyClass == \"<class 'str'>\")", () => s.Out("return (T)(object)pyobj.ToString();"));
+                    s.Out("if (pyClass.StartsWith(\"<class 'numpy\"))", () => s.Out("return (pyobj.item() as PyObject).As<T>();"));
                     s.Out("try", () => s.Out("return pyobj.As<T>();"));
                     s.Out("catch (Exception e)", () =>
                     {
-                        s.Out(
-                            "throw new NotImplementedException($\"conversion from {typeof(T).Name} to {pyobj.__class__} not implemented\", e);");
+                        s.Out("throw new NotImplementedException($\"conversion from {pyobj.__class__} to {typeof(T).Name} not implemented\", e);");
                         s.Out("return default(T);");
                     });
                 });
