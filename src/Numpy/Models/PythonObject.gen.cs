@@ -87,13 +87,22 @@ namespace Numpy
                    return (T) (object) rv;
                 case "Matrix": return (T)(object)new Matrix(pyobj);
                 default:
+                var pyClass = $"{pyobj.__class__}";
+                if (pyClass == "<class 'str'>")
+                {
+                    return (T)(object)pyobj.ToString();
+                }
+                if (pyClass.StartsWith("<class 'numpy"))
+                {
+                    return (pyobj.item() as PyObject).As<T>();
+                }
                 try
                 {
                     return pyobj.As<T>();
                 }
                 catch (Exception e)
                 {
-                    throw new NotImplementedException($"conversion from {typeof(T).Name} to {pyobj.__class__} not implemented", e);
+                    throw new NotImplementedException($"conversion from {pyobj.__class__} to {typeof(T).Name} not implemented", e);
                     return default(T);
                 }
             }

@@ -123,16 +123,20 @@ namespace Numpy
                    for (int i = 0; i < len; i++)
                        rv[i] = ToCsharp<NDarray>(po[i]);
                    return (T) (object) rv;
-                case "Matrix": 
-                    return (T)(object)new Matrix(pyobj);
+                case "Matrix": return (T)(object)new Matrix(pyobj);
                 default:
-                try {
-                    var pyClass = $"{pyobj.__class__}";
-                    if (pyClass == "<class 'str'>")
-                        return (T)(object)pyobj.ToString();
-                    if (pyClass.StartsWith("<class 'numpy"))
-                        return (pyobj.item() as PyObject).As<T>();
-                    return (pyobj as PyObject).As<T>();
+                var pyClass = $"{pyobj.__class__}";
+                if (pyClass == "<class 'str'>")
+                {
+                    return (T)(object)pyobj.ToString();
+                }
+                if (pyClass.StartsWith("<class 'numpy"))
+                {
+                    return (pyobj.item() as PyObject).As<T>();
+                }
+                try
+                {
+                    return pyobj.As<T>();
                 }
                 catch (Exception e)
                 {

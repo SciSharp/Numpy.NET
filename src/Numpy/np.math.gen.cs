@@ -1946,7 +1946,7 @@ namespace Numpy
             dynamic py = __self__.InvokeMethod("ediff1d", pyargs, kwargs);
             return ToCsharp<NDarray>(py);
         }
-
+        
         /// <summary>
         ///	Return the cross product of two (arrays of) vectors.<br></br>
         ///	

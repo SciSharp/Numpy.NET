@@ -1023,7 +1023,7 @@ namespace CodeMinion.Core
                 {
                     s.Out("// basic types");
                     s.Out("case int o: return new PyInt(o);");
-                    s.Out("case long o: return new PyLong(o);");
+                    s.Out("case long o: return new PyInt(o);");
                     s.Out("case float o: return new PyFloat(o);");
                     s.Out("case double o: return new PyFloat(o);");
                     s.Out("case string o: return new PyString(o);");
