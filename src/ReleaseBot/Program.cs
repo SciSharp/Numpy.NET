@@ -13,8 +13,9 @@ namespace ReleaseBot
 {
     class Program
     {
-        private const string V = "1.28"; // <--- numpy.net version!
-        private const string PythonNetVersion = "2.5.1";
+        private const string V = "1.29"; // <--- numpy.net version!
+        private const string PythonNetVersion = "3.0.0";
+        private const string NumpyVersion = "1.21.3";
 
         private const string ProjectPath = "../../../Numpy";
         private const string ProjectName = "Numpy.csproj";
@@ -22,7 +23,7 @@ namespace ReleaseBot
         private const string ProjectPath2 = "../../../Numpy.Bare";
         private const string ProjectName2 = "Numpy.Bare.csproj";
 
-        private const string Description = "C# bindings for NumPy on {0} - a fundamental library for scientific computing, machine learning and AI. Does require Python {1} with NumPy 1.16 installed!";
+        private const string Description = "C# bindings for NumPy on {0} - a fundamental library for scientific computing, machine learning and AI. Does require Python {1} with NumPy {2} installed!";
         private const string Tags = "Data science, Machine Learning, ML, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, BLAS, Vector, Matrix, Python";
 
         static void Main(string[] args)
@@ -31,60 +32,61 @@ namespace ReleaseBot
             ProcessNumpy();
 
             // ==> Numpy Bare
+            // TODO: release numpy bare for the new Pythonnet 3.0.0
+            //// first delete old packages as to not upload them again
+            //foreach (var nuget in Directory.GetFiles(Path.Combine(ProjectPath2, "bin", "Release"), "*.nupkg"))
+            //{
+            //    File.Delete(nuget);
+            //}
 
-            // first delete old packages as to not upload them again
-            foreach (var nuget in Directory.GetFiles(Path.Combine(ProjectPath2, "bin", "Release"), "*.nupkg"))
-            {
-                File.Delete(nuget);
-            }
-
-            var specs = new ReleaseSpec[]
-            {
-                // linux                
-                new ReleaseSpec() { CPythonVersion = "2.7", Platform="Linux",   },
-                new ReleaseSpec() { CPythonVersion = "3.5", Platform="Linux",   },
-                new ReleaseSpec() { CPythonVersion = "3.6", Platform="Linux",   },
-                new ReleaseSpec() { CPythonVersion = "3.8", Platform="Linux",   },
-                new ReleaseSpec() { CPythonVersion = "3.7", Platform="Linux",   },
-                // mac
-                new ReleaseSpec() { CPythonVersion = "2.7", Platform="OSX",  },
-                new ReleaseSpec() { CPythonVersion = "3.5", Platform="OSX",  },
-                new ReleaseSpec() { CPythonVersion = "3.6", Platform="OSX",  },
-                new ReleaseSpec() { CPythonVersion = "3.8", Platform="OSX",   },
-                new ReleaseSpec() { CPythonVersion = "3.7", Platform="OSX",  },
-                // win
-                new ReleaseSpec() { CPythonVersion = "2.7", Platform="Win64",   },
-                new ReleaseSpec() { CPythonVersion = "3.5", Platform="Win64",   },
-                new ReleaseSpec() { CPythonVersion = "3.6", Platform="Win64",   },
-                new ReleaseSpec() { CPythonVersion = "3.8", Platform="Win64",   },
-                new ReleaseSpec() { CPythonVersion = "3.7", Platform="Win64",   },
-            };
-            foreach (var spec in specs)
-            {
-                spec.Version = $"{spec.CPythonVersion}.{V}";
-                spec.PythonNetVersion = $"{PythonNetVersion}";
-                spec.Description = string.Format(Description, spec.Platform, spec.CPythonVersion);
-                spec.PackageTags = Tags;
-                spec.RelativeProjectPath = ProjectPath2;
-                spec.ProjectName = ProjectName2;
-                var py = spec.CPythonVersion.Replace(".", "");
-                switch (spec.Platform)
-                {
-                    case "Linux":
-                        spec.PackageId = "Numpy.Bare.Mono";
-                        spec.PythonNet = $"pythonnet_netstandard_py{py}_linux";
-                        break;
-                    case "OSX":
-                        spec.PackageId = "Numpy.Bare.OSX";
-                        spec.PythonNet = $"pythonnet_netstandard_py{py}_osx";
-                        break;
-                    case "Win64":
-                        spec.PackageId = "Numpy.Bare";
-                        spec.PythonNet = $"pythonnet_netstandard_py{py}_win";
-                        break;
-                }
-                spec.Process();
-            }
+            //var specs = new ReleaseSpec[]
+            //{
+            //    // linux                
+            //    new ReleaseSpec() { CPythonVersion = "2.7", Platform="Linux",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.5", Platform="Linux",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.6", Platform="Linux",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.8", Platform="Linux",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.7", Platform="Linux",   },
+            //    // mac
+            //    new ReleaseSpec() { CPythonVersion = "2.7", Platform="OSX",  },
+            //    new ReleaseSpec() { CPythonVersion = "3.5", Platform="OSX",  },
+            //    new ReleaseSpec() { CPythonVersion = "3.6", Platform="OSX",  },
+            //    new ReleaseSpec() { CPythonVersion = "3.8", Platform="OSX",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.7", Platform="OSX",  },
+            //    // win
+            //    new ReleaseSpec() { CPythonVersion = "2.7", Platform="Win64",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.5", Platform="Win64",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.6", Platform="Win64",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.8", Platform="Win64",   },
+            //    new ReleaseSpec() { CPythonVersion = "3.7", Platform="Win64",   },
+            //};
+            //foreach (var spec in specs)
+            //{
+            //    spec.Version = $"{spec.CPythonVersion}.{V}";
+            //    spec.PythonNetVersion = $"{PythonNetVersion}";
+            //    spec.NumpyVersion = NumpyVersion;
+            //    spec.Description = string.Format(Description, spec.Platform, spec.CPythonVersion, spec.NumpyVersion);
+            //    spec.PackageTags = Tags;
+            //    spec.RelativeProjectPath = ProjectPath2;
+            //    spec.ProjectName = ProjectName2;
+            //    var py = spec.CPythonVersion.Replace(".", "");
+            //    switch (spec.Platform)
+            //    {
+            //        case "Linux":
+            //            spec.PackageId = "Numpy.Bare.Mono";
+            //            spec.PythonNet = $"pythonnet_netstandard_py{py}_linux";
+            //            break;
+            //        case "OSX":
+            //            spec.PackageId = "Numpy.Bare.OSX";
+            //            spec.PythonNet = $"pythonnet_netstandard_py{py}_osx";
+            //            break;
+            //        case "Win64":
+            //            spec.PackageId = "Numpy.Bare";
+            //            spec.PythonNet = $"pythonnet_netstandard_py{py}_win";
+            //            break;
+            //    }
+            //    spec.Process();
+            //}
 
             var key = File.ReadAllText("../../nuget.key").Trim();
             foreach (var nuget in Directory.GetFiles(Path.Combine(ProjectPath2, "bin", "Release"), "*.nupkg"))
@@ -111,7 +113,7 @@ namespace ReleaseBot
 
             var spec = new ReleaseSpec()
             {
-                Version = $"3.7.{V}",
+                Version = $"3.10.{V}",
                 ProjectName = ProjectName,
                 RelativeProjectPath = ProjectPath,
                 PackageId = "Numpy",
@@ -187,6 +189,9 @@ namespace ReleaseBot
         /// Uses Python.Included
         /// </summary>
         public bool UsePythonIncluded { get; set; }
+
+        // Numpy Version
+        public string NumpyVersion { get; set; }
 
         public void Process()
         {
