@@ -18,10 +18,14 @@ namespace Numpy
 {
     public static partial class np
     {
-        
+        static np()
+        {
+            ReInitializeLazySelf(); 
+        }
+
         public static PyObject self => _lazy_self.Value;
-        
-        private static Lazy<PyObject> _lazy_self = new Lazy<PyObject>(() => 
+        private static Lazy<PyObject> _lazy_self = default; 
+        private static void ReInitializeLazySelf() => _lazy_self = new Lazy<PyObject>(() =>
         {
             try
             {
@@ -32,9 +36,8 @@ namespace Numpy
                 // retry to fix the installation by forcing a repair, if Python.Included is used.
                 return InstallAndImport(force: true);
             }
-        }
-        );
-        
+        });
+
         private static PyObject InstallAndImport(bool force = false)
         {
             #if PYTHON_INCLUDED
@@ -43,6 +46,7 @@ namespace Numpy
             #if PYTHON_INCLUDED
             Installer.InstallWheel(typeof(np).Assembly, "numpy-1.21.3-cp310-cp310-win_amd64.whl").Wait();
             #endif
+            PythonEngine.AddShutdownHandler(() => ReInitializeLazySelf()); 
             PythonEngine.Initialize();
             var mod = Py.Import("numpy");
             return mod;
