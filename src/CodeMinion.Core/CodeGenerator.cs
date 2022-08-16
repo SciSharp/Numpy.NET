@@ -900,7 +900,7 @@ namespace CodeMinion.Core
             {
                 s.Out($"public static partial class {StaticModuleName}", () =>
                 {
-                    s.Out("public static np()", () =>
+                    s.Out("static np()", () =>
                     {
                         s.Out("ReInitializeLazySelf();");
                     });
