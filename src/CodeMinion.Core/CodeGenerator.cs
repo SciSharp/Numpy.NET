@@ -900,10 +900,15 @@ namespace CodeMinion.Core
             {
                 s.Out($"public static partial class {StaticModuleName}", () =>
                 {
+                    s.Out("static np()", () =>
+                    {
+                        s.Out("ReInitializeLazySelf();");
+                    });
                     s.Break();
                     s.Out("public static PyObject self => _lazy_self.Value;");
                     s.Break();
-                    s.Out($"private static Lazy<PyObject> _lazy_self = new Lazy<PyObject>(() => ", () =>
+                    s.Out($"private static Lazy<PyObject> _lazy_self = default;"); 
+                    s.Out($"private static void ReInitializeLazySelf() => _lazy_self = new Lazy<PyObject>(() => ", () =>
                     {
                         s.Out("try", () =>
                             {
@@ -925,6 +930,7 @@ namespace CodeMinion.Core
                         s.Out(@"#endif");
                         foreach (var generator in InitializationGenerators)
                             generator(s);
+                        s.Out("PythonEngine.AddShutdownHandler(() => ReInitializeLazySelf());");
                         s.Out("PythonEngine.Initialize();");
                         s.Out($"var mod = Py.Import(\"{PythonModuleName}\");");
                         s.Out("return mod;");
