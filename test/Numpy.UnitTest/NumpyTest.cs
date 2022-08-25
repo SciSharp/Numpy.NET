@@ -919,6 +919,24 @@ namespace Numpy.UnitTest
             Assert.AreEqual(1_000_000_000_000_000, (np.int64(1_000_000_000_000_000).item() as PyObject).As<long>());
         }
 
+        [TestMethod]
+        public void IssueByMegawattFs()
+        {
+            var arr = np.array(new int[] { 1, 2, 3, 4, 5 });
+            var slice0 = new Slice(2, 4);
+            var arr4 = arr[slice0];
+            Assert.AreEqual("array([3, 4])", arr4.repr);
+            var slice1 = new Slice(2, -1);
+            var arr5 = arr[slice1];
+            Assert.AreEqual("array([3, 4])", arr5.repr);
+            var arr1 = arr["2:4"];
+            Assert.AreEqual("array([3, 4])", arr1.repr);
+            var arr2 = arr[":4"];
+            Assert.AreEqual("array([1, 2, 3, 4])", arr2.repr);
+            var arr3 = arr[":-1"];
+            Assert.AreEqual("array([1, 2, 3, 4])", arr3.repr);
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
