@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Numpy;
 using Numpy.Models;
@@ -32,8 +33,7 @@ namespace Numpy.UnitTest
         public unsafe void create_from_pointer_without_copying()
         {
             IntPtr pointer = IntPtr.Zero;
-            try
-            {
+            try {
                 var dtype = np.int32;
                 const int length = 1024;
                 pointer = Marshal.AllocHGlobal(length);
@@ -49,8 +49,7 @@ namespace Numpy.UnitTest
                 var truth2 = a.Equals(b);
                 Assert.AreEqual(b, a);
             }
-            finally
-            {
+            finally {
                 if (pointer != IntPtr.Zero)
                     Marshal.FreeHGlobal(pointer);
             }
@@ -678,7 +677,7 @@ namespace Numpy.UnitTest
         {
             int[,,,] iarr = new int[3, 25, 25, 3];
             NDarray nd = np.array(iarr);
-            Assert.AreEqual(new Shape(3,25,25,3), nd.shape);
+            Assert.AreEqual(new Shape(3, 25, 25, 3), nd.shape);
         }
 
         [TestMethod]
@@ -694,12 +693,12 @@ namespace Numpy.UnitTest
             //data['b']
             //array([1, 2])
             //data.close()
-            var a = np.array(new[,] {{1, 2, 3}, {4, 5, 6}});
-            var b = np.array(new[] {1, 2});
+            var a = np.array(new[,] { { 1, 2, 3 }, { 4, 5, 6 } });
+            var b = np.array(new[] { 1, 2 });
             string tempFile = Path.GetTempFileName() + ".npz";
             Console.WriteLine(tempFile);
-            np.savez(tempFile, kwds:new Dictionary<string, NDarray>() {["a"]=a, ["b"]=b});
-            var data = np.load(tempFile, allow_pickle:true);
+            np.savez(tempFile, kwds: new Dictionary<string, NDarray>() { ["a"] = a, ["b"] = b });
+            var data = np.load(tempFile, allow_pickle: true);
             var a1 = new NDarray(data.self["a"]);
             Console.WriteLine(a1.repr);
             var b1 = new NDarray(data.self["b"]);
@@ -715,7 +714,7 @@ namespace Numpy.UnitTest
             var b = np.array(new[] { 1, 2 });
             string tempFile = Path.GetTempFileName() + ".npz";
             Console.WriteLine(tempFile);
-            np.savez(tempFile, new []{ a, b });
+            np.savez(tempFile, new[] { a, b });
             var data = np.load(tempFile, allow_pickle: true);
             var a1 = new NDarray(data.self["arr_0"]);
             Console.WriteLine(a1.repr);
@@ -791,9 +790,8 @@ namespace Numpy.UnitTest
             //# 2
             //# 2
             var result = new List<int>();
-            var nc = np.array(new[] {np.array(new[] {1, 2, 3}), np.array(new[] {4, 5, 6}), np.array(new[] {7, 8, 9})});
-            for (int i = 0; i < nc.len; i++)
-            {
+            var nc = np.array(new[] { np.array(new[] { 1, 2, 3 }), np.array(new[] { 4, 5, 6 }), np.array(new[] { 7, 8, 9 }) });
+            for (int i = 0; i < nc.len; i++) {
                 var n = np.argmax(nc[i]).asscalar<int>();
                 result.Add(n);
             }
@@ -813,8 +811,7 @@ namespace Numpy.UnitTest
             //# 2
             var result = new List<int>();
             var nc = np.array(new[] { np.array(new[] { 1, 2, 3 }), np.array(new[] { 4, 5, 6 }), np.array(new[] { 7, 8, 9 }) });
-            for (int i = 0; i < nc.len; i++)
-            {
+            for (int i = 0; i < nc.len; i++) {
                 var n = np.argmax(nc[i]).asscalar<int>();
                 result.Add(n);
             }
@@ -834,11 +831,11 @@ namespace Numpy.UnitTest
             //       [3., 1.]])
             //>>> np.linalg.lstsq(A, y, rcond = None)
             //(array([1.  , -0.95]), array([0.05]), 2, array([4.10003045, 1.09075677]))
-            var x= np.array(new[] { 0, 1, 2, 3 });
-            var y= np.array(new[] { -1, 0.2, 0.9, 2.1 });
+            var x = np.array(new[] { 0, 1, 2, 3 });
+            var y = np.array(new[] { -1, 0.2, 0.9, 2.1 });
             var A = np.vstack(x, np.ones(x.len)).T;
             Assert.AreEqual("array([[0., 1.],\n       [1., 1.],\n       [2., 1.],\n       [3., 1.]])", A.repr);
-            var tuple=np.linalg.lstsq(A, y, null);
+            var tuple = np.linalg.lstsq(A, y, null);
             Assert.AreEqual("array([ 1.  , -0.95])", tuple.Item1.repr);
             Assert.AreEqual("array([0.05])", tuple.Item2.repr);
             Assert.AreEqual(2, tuple.Item3);
@@ -874,7 +871,7 @@ namespace Numpy.UnitTest
         public void IssueByAmpangboy()
         {
             var arr = np.array(1.0);
-            var result=np.insert(arr, 0, 1.0);
+            var result = np.insert(arr, 0, 1.0);
             Assert.AreEqual("array([1., 1.])", result.repr);
         }
 
@@ -898,13 +895,13 @@ namespace Numpy.UnitTest
             //       [ 0.2,  0.2,  0.2],
             //       [ 0.2, -0.8, -1.8]])]
             var zX = new NDarray(new[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 8, 9, 0 } });
-            var result=np.gradient(zX, new List<double> { 4.0, 5.0 });
+            var result = np.gradient(zX, new List<double> { 4.0, 5.0 });
             var expected = @"[array([[ 0.75 ,  0.75 ,  0.75 ],
        [ 0.875,  0.875, -0.375],
        [ 1.   ,  1.   , -1.5  ]]), array([[ 0.2,  0.2,  0.2],
        [ 0.2,  0.2,  0.2],
-       [ 0.2, -0.8, -1.8]])]".Replace("\r","");
-            Assert.AreEqual(expected,result.repr);
+       [ 0.2, -0.8, -1.8]])]".Replace("\r", "");
+            Assert.AreEqual(expected, result.repr);
         }
 
         [TestMethod]
@@ -915,7 +912,7 @@ namespace Numpy.UnitTest
             Assert.AreEqual(1_000_000_000_000_000, new PyInt(1_000_000_000_000_000).As<long>());
             Console.WriteLine(((dynamic)new PyInt(1_000_000_000_000_000)).__class__); // => <class 'int'>
             Console.WriteLine(np.int64(1_000_000_000_000_000).__class__); // => <class 'numpy.int64'>
-            Assert.AreEqual(3, (np.int32(3).item() as PyObject).As<int>()); 
+            Assert.AreEqual(3, (np.int32(3).item() as PyObject).As<int>());
             Assert.AreEqual(1_000_000_000_000_000, (np.int64(1_000_000_000_000_000).item() as PyObject).As<long>());
         }
 
@@ -935,6 +932,25 @@ namespace Numpy.UnitTest
             Assert.AreEqual("array([1, 2, 3, 4])", arr2.repr);
             var arr3 = arr[":-1"];
             Assert.AreEqual("array([1, 2, 3, 4])", arr3.repr);
+        }
+
+        [TestMethod]
+        public async Task IssueByMrCOrrupted()
+        {
+            Dictionary<string, NDarray> arrays = new Dictionary<string, NDarray>();
+            arrays["a"] = np.arange(6).reshape(2, 3);
+            arrays["b"] = np.arange(3);
+
+            var filename = Path.Combine(Path.GetTempPath(), "test.npz");
+            np.savez_compressed(filename, null, arrays);
+            var archive = np.load(filename);
+            Console.WriteLine(archive.repr);
+            var a = new NDarray( archive.PyObject["a"]);
+            var b = new NDarray( archive.PyObject["b"]);
+            Console.WriteLine(a.repr);
+            Console.WriteLine(b.repr);
+            Assert.AreEqual("array([[0, 1, 2],\n       [3, 4, 5]])", a.repr);
+            Assert.AreEqual(@"array([0, 1, 2])", b.repr);
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
