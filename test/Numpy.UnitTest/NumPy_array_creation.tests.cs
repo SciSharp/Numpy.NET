@@ -356,6 +356,38 @@ namespace Numpy.UnitTest
         }
 
         [TestMethod]
+        public void arrayLeakTest()
+        {
+            var arr = new double[10_000_000];
+            using (var process = System.Diagnostics.Process.GetCurrentProcess())
+            {
+                long memStart;
+                long getMemAfterGc()
+                {
+                    GC.Collect(2, GCCollectionMode.Forced, true, true);
+                    process.Refresh();
+                    return process.PrivateMemorySize64;
+                }
+                long getOutstandingMem() => getMemAfterGc() - memStart;
+
+                var ones = np.ones(10_000_000); // python runtime warmup
+                ones.Dispose();
+
+                memStart = getMemAfterGc();
+
+                ones = np.ones(10_000_000);
+                Assert.IsTrue(getOutstandingMem() > 70_000_000);
+                ones.Dispose();
+                Assert.IsTrue(getOutstandingMem() < 1_000_000);
+
+                var array = np.array(arr);
+                Assert.IsTrue(getOutstandingMem() > 70_000_000);
+                array.Dispose();
+                Assert.IsTrue(getOutstandingMem() < 1_000_000);
+            }
+        }
+
+        [TestMethod]
         public void arrayTest()
         {
             // >>> np.array([1, 2, 3])
