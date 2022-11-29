@@ -52,7 +52,8 @@ namespace Numpy
             var ndarray = np.empty(new Shape(@object.Length), dtype: type, order: order); 
             if (@object.Length == 0)
                 return new NDarray<T>(ndarray);
-            long ptr = ndarray.PyObject.ctypes.data;
+            var ctypes = ndarray.PyObject.ctypes;
+            long ptr = ctypes.data;
             switch ((object)@object)
             {
                 case char[] a: Marshal.Copy(a, 0, new IntPtr(ptr), a.Length); break;
@@ -80,6 +81,7 @@ namespace Numpy
                     ndarray.imag = ndimag;
                     break;
             }
+            ctypes.Dispose();
             if (dtype !=null || subok != null || ndmin != null)
                 return new NDarray<T>(np.array(ndarray, dtype:dtype, copy: false, subok: subok, ndmin: ndmin));
             return new NDarray<T>(ndarray);
