@@ -42,6 +42,7 @@ namespace Numpy
             if (subok != null) kwargs["subok"] = ToPython(subok);
             if (ndmin != null) kwargs["ndmin"] = ToPython(ndmin);
             dynamic py = self.InvokeMethod("array", args, kwargs);
+            args.Dispose();
             return ToCsharp<NDarray>(py);
         }
 
@@ -82,8 +83,12 @@ namespace Numpy
                     break;
             }
             ctypes.Dispose();
-            if (dtype !=null || subok != null || ndmin != null)
-                return new NDarray<T>(np.array(ndarray, dtype:dtype, copy: false, subok: subok, ndmin: ndmin));
+            if (dtype != null || subok != null || ndmin != null)
+            {
+                var converted = np.array(ndarray, dtype: dtype, copy: false, subok: subok, ndmin: ndmin);
+                ndarray.Dispose();
+                return new NDarray<T>(converted);
+            }
             return new NDarray<T>(ndarray);
         }
 

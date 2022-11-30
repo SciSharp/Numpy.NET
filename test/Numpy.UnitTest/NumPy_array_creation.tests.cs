@@ -384,6 +384,11 @@ namespace Numpy.UnitTest
                 Assert.IsTrue(getOutstandingMem() > 70_000_000);
                 array.Dispose();
                 Assert.IsTrue(getOutstandingMem() < 1_000_000);
+
+                array = np.array(arr, np.float32);
+                Assert.IsTrue(getOutstandingMem() > 30_000_000);
+                array.Dispose();
+                Assert.IsTrue(getOutstandingMem() < 1_000_000);
             }
         }
 
