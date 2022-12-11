@@ -38,7 +38,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0"></PackageReference>
-    <PackageReference Include="Python.Included" Version="3.11.0"></PackageReference>
+    <PackageReference Include="Python.Included" Version="3.11.1"></PackageReference>
   </ItemGroup>
 
 </Project>
