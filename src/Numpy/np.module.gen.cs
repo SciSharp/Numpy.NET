@@ -46,7 +46,7 @@ namespace Numpy
             Installer.SetupPython(force).Wait();
             #endif
             #if PYTHON_INCLUDED
-            Installer.InstallWheel(typeof(np).Assembly, "numpy-1.21.3-cp310-cp310-win_amd64.whl").Wait();
+            Installer.InstallWheel(typeof(np).Assembly, "numpy-1.23.5-cp311-cp311-win_amd64.whl").Wait();
             #endif
             PythonEngine.AddShutdownHandler(() => ReInitializeLazySelf());
             PythonEngine.Initialize();

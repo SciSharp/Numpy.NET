@@ -29,16 +29,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\numpy-1.21.3-cp310-cp310-win_amd64.whl"></None>
+    <None Remove="Resources\numpy-1.23.5-cp311-cp311-win_amd64.whl" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\numpy-1.21.3-cp310-cp310-win_amd64.whl"></EmbeddedResource>
+    <EmbeddedResource Include="Resources\numpy-1.23.5-cp311-cp311-win_amd64.whl" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0"></PackageReference>
-    <PackageReference Include="Python.Included" Version="3.10.0-preview2"></PackageReference>
+    <PackageReference Include="Python.Included" Version="3.11.0"></PackageReference>
   </ItemGroup>
 
 </Project>
