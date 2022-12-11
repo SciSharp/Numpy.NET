@@ -13,9 +13,10 @@ namespace ReleaseBot
 {
     class Program
     {
-        private const string V = "1.30"; // <--- numpy.net version!
-        private const string PythonNetVersion = "3.0.0";
-        private const string NumpyVersion = "1.21.3";
+        private const string V = "1.31"; // <--- numpy.net version!
+        private const string PythonNetVersion = "3.0.1";
+        private const string PythonVersion = "3.11"; // relevant only for Numpy with included binaries
+        private const string NumpyVersion = "1.23.5";
 
         private const string ProjectPath = "../../../Numpy";
         private const string ProjectName = "Numpy.csproj";
@@ -113,7 +114,7 @@ namespace ReleaseBot
 
             var spec = new ReleaseSpec()
             {
-                Version = $"3.10.{V}",
+                Version = $"{PythonVersion}.{V}",
                 ProjectName = ProjectName,
                 RelativeProjectPath = ProjectPath,
                 PackageId = "Numpy",
