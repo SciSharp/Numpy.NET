@@ -8,7 +8,7 @@ namespace CodeMinion.ApiGenerator.NumPy
         public static void InitNumpyGenerator(CodeWriter s)
         {
             s.Out("#if PYTHON_INCLUDED");
-            s.Out("Installer.InstallWheel(typeof(np).Assembly, \"numpy-1.23.5-cp311-cp311-win_amd64.whl\").Wait();");
+            s.Out("Installer.InstallWheel(typeof(np).Assembly, \"numpy-1.23.5-cp311-cp311-win_amd64.whl\", force).Wait();");
             s.Out("#endif");
         }
 
