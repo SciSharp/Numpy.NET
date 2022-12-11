@@ -953,6 +953,14 @@ namespace Numpy.UnitTest
             Assert.AreEqual(@"array([0, 1, 2])", b.repr);
         }
 
+        [TestMethod]
+        public async Task AsscalarRemovedInNumpyV1_23()
+        {
+            Assert.AreEqual(143, new NDarray<int>(new int[]{143}).asscalar<int>());
+            Assert.AreEqual(143d, new NDarray<double>(new [] { 143d }).asscalar<double>());
+            Assert.AreEqual(143d, new NDarray<double>(new[] { 143d }).item());
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs

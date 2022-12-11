@@ -671,5 +671,12 @@ namespace Numpy
             }
         }
 
+        public T item()
+        {
+            if (typeof(T) == typeof(Complex))
+                return (T)(object)new Complex(real.asscalar<double>(), imag.asscalar<double>());
+            return self.InvokeMethod("item").As<T>();
+        }
+
     }
 }
