@@ -961,6 +961,30 @@ namespace Numpy.UnitTest
             Assert.AreEqual(143d, new NDarray<double>(new[] { 143d }).item());
         }
 
+        [TestMethod]
+        public async Task IssueByMaLichtenegger()
+        {
+            // byte array als uint32 array
+            var bytes = new byte[] { 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0 };
+            var uints =np.zeros(new Shape(3), np.uint32);
+            Console.WriteLine(uints.repr);
+            var ctypes = uints.PyObject.ctypes;
+            long ptr = ctypes.data;
+            Marshal.Copy(bytes, 0, new IntPtr(ptr), bytes.Length);
+            Console.WriteLine(uints.repr);
+            Assert.AreEqual("array([1, 2, 3], dtype=uint32)", uints.repr);
+            // byte array als float64 array
+            bytes = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0 };
+            var doubles = np.zeros(new Shape(2), np.float64);
+            Console.WriteLine(doubles.repr);
+            ctypes = doubles.PyObject.ctypes;
+            ptr = ctypes.data;
+            Marshal.Copy(bytes, 0, new IntPtr(ptr), bytes.Length);
+            Console.WriteLine(doubles.repr);
+            Assert.IsTrue(doubles[0].asscalar<double>() != 0);
+            Assert.IsTrue(doubles[1].asscalar<double>() == 0);
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
