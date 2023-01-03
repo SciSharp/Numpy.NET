@@ -17,6 +17,12 @@ namespace Numpy.UnitTest
     [TestClass]
     public class NumpyTest
     {
+        [AssemblyCleanup()]
+        public static void AssemblyCleanup()
+        {
+            PythonEngine.BeginAllowThreads();
+        }
+
         [TestMethod]
         public void empty()
         {
