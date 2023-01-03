@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30503.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numpy", "src\Numpy\Numpy.csproj", "{D527C885-AD64-4499-9E92-F9A543C0D14B}"
 EndProject
@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiExample_netcore3.1", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomInstallLocationExample", "src\Examples\CustomInstallLocationExample\CustomInstallLocationExample.csproj", "{BB0A367A-8A36-454F-9F92-2FD6DA665A39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlicingExample", "src\Examples\SlicingExample\SlicingExample.csproj", "{FB116716-8C1F-4926-86F9-03AE46C7FA58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlicingExample", "src\Examples\SlicingExample\SlicingExample.csproj", "{FB116716-8C1F-4926-86F9-03AE46C7FA58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExample", "WpfExample\WpfExample.csproj", "{BF447620-877B-4000-BF75-527AEF94F347}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,10 @@ Global
 		{FB116716-8C1F-4926-86F9-03AE46C7FA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB116716-8C1F-4926-86F9-03AE46C7FA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB116716-8C1F-4926-86F9-03AE46C7FA58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF447620-877B-4000-BF75-527AEF94F347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF447620-877B-4000-BF75-527AEF94F347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF447620-877B-4000-BF75-527AEF94F347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF447620-877B-4000-BF75-527AEF94F347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +125,7 @@ Global
 		{53C73261-DD84-47D1-A9BA-E553D34FF0A3} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 		{BB0A367A-8A36-454F-9F92-2FD6DA665A39} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 		{FB116716-8C1F-4926-86F9-03AE46C7FA58} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
+		{BF447620-877B-4000-BF75-527AEF94F347} = {25D84E98-E107-45C9-A0EC-0B25E24DA607}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EB08541-5168-443C-B524-A5CB7E7C613D}
