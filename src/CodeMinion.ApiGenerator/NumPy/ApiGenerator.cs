@@ -1140,6 +1140,10 @@ namespace CodeMinion.ApiGenerator.NumPy
                     yield break;
                 case "gradient": // don't generate. 
                     yield break;
+                case "split":
+                    yield return decl;
+                    yield return decl.Clone(f => { f.Arguments[1].Type = "int"; });
+                    yield break;
             }
 
             // without args we don't need to consider possible overloads

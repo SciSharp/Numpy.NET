@@ -955,6 +955,43 @@ namespace Numpy
         }
         
         /// <summary>
+        ///	Split an array into multiple sub-arrays.
+        /// </summary>
+        /// <param name="indices_or_sections">
+        ///	If indices_or_sections is an integer, N, the array will be divided
+        ///	into N equal arrays along axis.<br></br>
+        ///	If such a split is not possible,
+        ///	an error is raised.<br></br>
+        ///	
+        ///	If indices_or_sections is a 1-D array of sorted integers, the entries
+        ///	indicate where along axis the array is split.<br></br>
+        ///	For example,
+        ///	[2, 3] would, for axis=0, result in
+        ///	
+        ///	If an index exceeds the dimension of the array along axis,
+        ///	an empty sub-array is returned correspondingly.
+        /// </param>
+        /// <param name="axis">
+        ///	The axis along which to split, default is 0.
+        /// </param>
+        /// <returns>
+        ///	A list of sub-arrays.
+        /// </returns>
+        public NDarray[] split(int indices_or_sections, int? axis = 0)
+        {
+            //auto-generated code, do not change
+            var __self__=self;
+            var pyargs=ToTuple(new object[]
+            {
+                indices_or_sections,
+            });
+            var kwargs=new PyDict();
+            if (axis!=0) kwargs["axis"]=ToPython(axis);
+            dynamic py = __self__.InvokeMethod("split", pyargs, kwargs);
+            return ToCsharp<NDarray[]>(py);
+        }
+        
+        /// <summary>
         ///	Construct an array by repeating A the number of times given by reps.<br></br>
         ///	
         ///	If reps has length d, the result will have dimension of

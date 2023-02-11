@@ -991,6 +991,29 @@ namespace Numpy.UnitTest
             Assert.IsTrue(doubles[1].asscalar<double>() == 0);
         }
 
+        [TestMethod]
+        public async Task IssueByMartinDevans()
+        {
+            //>>> x = np.arange(9)
+            //>>> np.split(x, 3)
+            //[array([0, 1, 2]), array([3, 4, 5]), array([6, 7, 8])]
+            var x = np.arange(9);
+            var b = np.split(x, 3).repr();
+            var a = "(array([0, 1, 2]), array([3, 4, 5]), array([6, 7, 8]))";
+            Assert.AreEqual(a, b);
+            //>>> x = np.arange(8.0)
+            //>>> np.split(x, [3, 5, 6, 10])
+            //[array([0., 1., 2.]),
+            //array([3., 4.]),
+            //array([5.]),
+            //array([6., 7.]),
+            //array([], dtype = float64)]
+            x = np.arange(8);
+            b = np.split(x, new[] { 3, 5, 6, 10 }).repr();
+            a = "(array([0, 1, 2]), array([3, 4]), array([5]), array([6, 7]), array([], dtype=int32))";
+            Assert.AreEqual(a, b);
+        }
+
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs

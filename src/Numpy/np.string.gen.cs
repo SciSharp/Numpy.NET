@@ -680,6 +680,43 @@ namespace Numpy
         public static partial class core {
             public static partial class defchararray {
                 /// <summary>
+                ///	For each element in a, return a list of the words in the
+                ///	string, using sep as the delimiter string.<br></br>
+                ///	
+                ///	Calls str.split element-wise.
+                /// </summary>
+                /// <param name="sep">
+                ///	If sep is not specified or None, any whitespace string is a
+                ///	separator.
+                /// </param>
+                /// <param name="maxsplit">
+                ///	If maxsplit is given, at most maxsplit splits are done.
+                /// </param>
+                /// <returns>
+                ///	Array of list objects
+                /// </returns>
+                public static NDarray split(string[] a, int? sep = null, int? maxsplit = null)
+                {
+                    //auto-generated code, do not change
+                    var core = self.GetAttr("core");
+                    var defchararray = core.GetAttr("defchararray");
+                    var __self__=defchararray;
+                    var pyargs=ToTuple(new object[]
+                    {
+                        a,
+                    });
+                    var kwargs=new PyDict();
+                    if (sep!=null) kwargs["sep"]=ToPython(sep);
+                    if (maxsplit!=null) kwargs["maxsplit"]=ToPython(maxsplit);
+                    dynamic py = __self__.InvokeMethod("split", pyargs, kwargs);
+                    return ToCsharp<NDarray>(py);
+                }
+            }
+        }
+        
+        public static partial class core {
+            public static partial class defchararray {
+                /// <summary>
                 ///	For each element in a, return a list of the lines in the
                 ///	element, breaking at line boundaries.<br></br>
                 ///	
