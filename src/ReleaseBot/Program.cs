@@ -13,7 +13,7 @@ namespace ReleaseBot
 {
     class Program
     {
-        private const string V = "1.31"; // <--- numpy.net version!
+        private const string V = "1.32"; // <--- numpy.net version!
         private const string PythonNetVersion = "3.0.1";
         private const string PythonVersion = "3.11"; // relevant only for Numpy with included binaries
         private const string NumpyVersion = "1.23.5";
