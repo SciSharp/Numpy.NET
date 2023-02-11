@@ -55,7 +55,7 @@ namespace Numpy
         ///	
         ///	If multiple inputs are array_like, they all must have the same shape.
         /// </returns>
-        public static NDarray fv(NDarray rate, NDarray nper, NDarray pmt, NDarray pv, string @when = "end")
+        public static NDarray fv(this NDarray rate, NDarray nper, NDarray pmt, NDarray pv, string @when = "end")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -103,7 +103,7 @@ namespace Numpy
         /// <returns>
         ///	Present value of a series of payments or investments.
         /// </returns>
-        public static NDarray pv(NDarray rate, NDarray nper, NDarray pmt, NDarray fv = null, string @when = "end")
+        public static NDarray pv(this NDarray rate, NDarray nper, NDarray pmt, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -206,7 +206,7 @@ namespace Numpy
         ///	 If multiple inputs are array_like, they all must have
         ///	the same shape.
         /// </returns>
-        public static NDarray pmt(NDarray rate, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
+        public static NDarray pmt(this NDarray rate, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -246,7 +246,7 @@ namespace Numpy
         /// <param name="when">
         ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
-        public static void ppmt(NDarray rate, NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
+        public static void ppmt(this NDarray rate, NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -303,7 +303,7 @@ namespace Numpy
         ///	 If multiple inputs are array_like, they all must have
         ///	the same shape.
         /// </returns>
-        public static NDarray ipmt(NDarray rate, NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
+        public static NDarray ipmt(this NDarray rate, NDarray per, NDarray nper, NDarray pv, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -358,7 +358,7 @@ namespace Numpy
         /// <returns>
         ///	Internal Rate of Return for periodic input values.
         /// </returns>
-        public static float irr(NDarray values)
+        public static float irr(this NDarray values)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -389,7 +389,7 @@ namespace Numpy
         /// <returns>
         ///	Modified internal rate of return
         /// </returns>
-        public static float mirr(NDarray values, ValueType finance_rate, ValueType reinvest_rate)
+        public static float mirr(this NDarray values, ValueType finance_rate, ValueType reinvest_rate)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -430,7 +430,7 @@ namespace Numpy
         /// <param name="when">
         ///	When payments are due (‘begin’ (1) or ‘end’ (0))
         /// </param>
-        public static void nper(NDarray rate, NDarray pmt, NDarray pv, NDarray fv = null, string @when = "end")
+        public static void nper(this NDarray rate, NDarray pmt, NDarray pv, NDarray fv = null, string @when = "end")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -497,7 +497,7 @@ namespace Numpy
         /// <param name="maxiter">
         ///	Maximum iterations in finding the solution
         /// </param>
-        public static void rate(NDarray nper, NDarray pmt, NDarray pv, NDarray fv, string @when = "end", double? guess = null, double? tol = null, int? maxiter = 100)
+        public static void rate(this NDarray nper, NDarray pmt, NDarray pv, NDarray fv, string @when = "end", double? guess = null, double? tol = null, int? maxiter = 100)
         {
             //auto-generated code, do not change
             var __self__=self;

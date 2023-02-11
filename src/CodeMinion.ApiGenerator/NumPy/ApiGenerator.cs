@@ -431,18 +431,17 @@ namespace CodeMinion.ApiGenerator.NumPy
                     {
                         // do not add to NDArray instance methods
                         case "copyto":
-                        case "transpose":
-                        case "amax":
-                        case "amin":
-                        case "real":
-                        case "imag":
+                        //case "transpose":
+                        //case "amax":
+                        //case "amin":
+                        //case "real":
+                        //case "imag":
                             continue;
                     }
-
-                    var dc = d.Clone<Function>();
-                    dc.Arguments.RemoveAt(0);
-                    //dc.ForwardToStaticImpl = "NumPy.Instance";
-                    ndarray_api.Declarations.Add(dc);
+                    decl.IsExtensionFunction = true;
+                    //var dc = d.Clone<Function>();
+                    //dc.Arguments.RemoveAt(0);
+                    //ndarray_api.Declarations.Add(dc);
                 }
             }
 

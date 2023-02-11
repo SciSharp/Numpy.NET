@@ -61,7 +61,7 @@ namespace Numpy
         /// <returns>
         ///	The values ar1[in1d] are in ar2.
         /// </returns>
-        public static NDarray in1d(NDarray ar1, NDarray ar2, bool? assume_unique = false, bool? invert = false)
+        public static NDarray in1d(this NDarray ar1, NDarray ar2, bool? assume_unique = false, bool? invert = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -113,7 +113,7 @@ namespace Numpy
         ///	The indices of the first occurrences of the common values in ar2.
         ///	Only provided if return_indices is True.
         /// </returns>
-        public static (NDarray, NDarray, NDarray) intersect1d(NDarray ar2, NDarray ar1, bool assume_unique = false, bool return_indices = false)
+        public static (NDarray, NDarray, NDarray) intersect1d(this NDarray ar2, NDarray ar1, bool assume_unique = false, bool return_indices = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -180,7 +180,7 @@ namespace Numpy
         ///	 The values element[isin]
         ///	are in test_elements.
         /// </returns>
-        public static NDarray isin(NDarray element, NDarray test_elements, bool? assume_unique = false, bool? invert = false)
+        public static NDarray isin(this NDarray element, NDarray test_elements, bool? assume_unique = false, bool? invert = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -217,7 +217,7 @@ namespace Numpy
         ///	is sorted when assume_unique=False, but otherwise only sorted
         ///	if the input is sorted.
         /// </returns>
-        public static NDarray setdiff1d(NDarray ar1, NDarray ar2, bool assume_unique = false)
+        public static NDarray setdiff1d(this NDarray ar1, NDarray ar2, bool assume_unique = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -253,7 +253,7 @@ namespace Numpy
         ///	Sorted 1D array of unique values that are in only one of the input
         ///	arrays.
         /// </returns>
-        public static NDarray setxor1d(NDarray ar2, NDarray ar1, bool assume_unique = false)
+        public static NDarray setxor1d(this NDarray ar2, NDarray ar1, bool assume_unique = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -285,7 +285,7 @@ namespace Numpy
         /// <returns>
         ///	Unique, sorted union of the input arrays.
         /// </returns>
-        public static NDarray union1d(NDarray ar2, NDarray ar1)
+        public static NDarray union1d(this NDarray ar2, NDarray ar1)
         {
             //auto-generated code, do not change
             var __self__=self;

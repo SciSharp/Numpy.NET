@@ -110,7 +110,7 @@ namespace Numpy
         ///	Padded array of rank equal to array with shape increased
         ///	according to pad_width.
         /// </returns>
-        public static NDarray pad(NDarray array, NDarray pad_width, string mode, int[] stat_length = null, int[] constant_values = null, int[] end_values = null, string reflect_type = null)
+        public static NDarray pad(this NDarray array, NDarray pad_width, string mode, int[] stat_length = null, int[] constant_values = null, int[] end_values = null, string reflect_type = null)
         {
             //auto-generated code, do not change
             var __self__=self;

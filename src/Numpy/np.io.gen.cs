@@ -579,7 +579,7 @@ namespace Numpy
         /// <returns>
         ///	String representation of the array.
         /// </returns>
-        public static string array2string(NDarray a, int? max_line_width = null, int? precision = null, bool? suppress_small = null, string separator = " ", string prefix = "", string suffix = "", dict of callables formatter = null, int? threshold = null, int? edgeitems = null, string sign = null, string floatmode = null, string or False legacy = null)
+        public static string array2string(this NDarray a, int? max_line_width = null, int? precision = null, bool? suppress_small = null, string separator = " ", string prefix = "", string suffix = "", dict of callables formatter = null, int? threshold = null, int? edgeitems = null, string sign = null, string floatmode = null, string or False legacy = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -630,7 +630,7 @@ namespace Numpy
         /// <returns>
         ///	The string representation of an array.
         /// </returns>
-        public static string array_repr(NDarray arr, int? max_line_width = null, int? precision = null, bool? suppress_small = null)
+        public static string array_repr(this NDarray arr, int? max_line_width = null, int? precision = null, bool? suppress_small = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -674,7 +674,7 @@ namespace Numpy
         ///	numbers smaller (in absolute value) than 5e-9 are represented as
         ///	zero.
         /// </param>
-        public static void array_str(NDarray a, int? max_line_width = null, int? precision = null, bool? suppress_small = null)
+        public static void array_str(this NDarray a, int? max_line_width = null, int? precision = null, bool? suppress_small = null)
         {
             //auto-generated code, do not change
             var __self__=self;

@@ -49,7 +49,7 @@ namespace Numpy
         ///	
         ///	If out is given, then it is returned.
         /// </returns>
-        public static NDarray dot(NDarray a, NDarray b, NDarray @out = null)
+        public static NDarray dot(this NDarray a, NDarray b, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -144,7 +144,7 @@ namespace Numpy
         ///	  Can be an int, float, or
         ///	complex depending on the types of a and b.
         /// </returns>
-        public static NDarray vdot(NDarray a, NDarray b)
+        public static NDarray vdot(this NDarray a, NDarray b)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -183,7 +183,7 @@ namespace Numpy
         /// <returns>
         ///	out.shape = a.shape[:-1] + b.shape[:-1]
         /// </returns>
-        public static NDarray inner(NDarray b, NDarray a)
+        public static NDarray inner(this NDarray b, NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -222,7 +222,7 @@ namespace Numpy
         /// <returns>
         ///	out[i, j] = a[i] * b[j]
         /// </returns>
-        public static NDarray outer(NDarray a, NDarray b, NDarray @out = null)
+        public static NDarray outer(this NDarray a, NDarray b, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -267,7 +267,7 @@ namespace Numpy
         ///	
         ///	This is a scalar only when both x1, x2 are 1-d vectors.
         /// </returns>
-        public static NDarray matmul(NDarray x2, NDarray x1, NDarray @out = null)
+        public static NDarray matmul(this NDarray x2, NDarray x1, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -312,7 +312,7 @@ namespace Numpy
         /// <param name="a">
         ///	Tensors to “dot”.
         /// </param>
-        public static NDarray tensordot(NDarray b, NDarray a, int[] axes = null)
+        public static NDarray tensordot(this NDarray b, NDarray a, int[] axes = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -441,7 +441,7 @@ namespace Numpy
         ///	
         ///	In the common 2-D case (N=1), the block structure can be visualized:
         /// </summary>
-        public static NDarray kron(NDarray b, NDarray a)
+        public static NDarray kron(this NDarray b, NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -694,7 +694,7 @@ namespace Numpy
         ///	  If a has
         ///	larger dimensions, then an array of sums along diagonals is returned.
         /// </returns>
-        public static NDarray trace(NDarray a, int? offset = 0, int? axis2 = null, int? axis1 = null, Dtype dtype = null, NDarray @out = null)
+        public static NDarray trace(this NDarray a, int? offset = 0, int? axis2 = null, int? axis1 = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;

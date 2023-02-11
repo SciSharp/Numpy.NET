@@ -1095,7 +1095,7 @@ namespace Numpy
         /// <returns>
         ///	The modified Bessel function evaluated at each of the elements of x.
         /// </returns>
-        public static NDarray i0(NDarray x)
+        public static NDarray i0(this NDarray x)
         {
             //auto-generated code, do not change
             var __self__=self;

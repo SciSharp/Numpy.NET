@@ -90,7 +90,7 @@ namespace Numpy
         /// <returns>
         ///	Array of the same type and shape as a.
         /// </returns>
-        public static NDarray sort(NDarray a, int? axis = -1, string kind = "quicksort", string order = null)
+        public static NDarray sort(this NDarray a, int? axis = -1, string kind = "quicksort", string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -133,7 +133,7 @@ namespace Numpy
         /// <returns>
         ///	Array of indices that sort the keys along the specified axis.
         /// </returns>
-        public static NDarray lexsort(NDarray keys, int? axis = -1)
+        public static NDarray lexsort(this NDarray keys, int? axis = -1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -191,7 +191,7 @@ namespace Numpy
         ///	More generally, np.take_along_axis(a, index_array, axis=a) always
         ///	yields the sorted a, irrespective of dimensionality.
         /// </returns>
-        public static NDarray argsort(NDarray a, int? axis = -1, string kind = "quicksort", string order = null)
+        public static NDarray argsort(this NDarray a, int? axis = -1, string kind = "quicksort", string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -258,7 +258,7 @@ namespace Numpy
         /// <returns>
         ///	Array of the same type and shape as a.
         /// </returns>
-        public static NDarray msort(NDarray a)
+        public static NDarray msort(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -280,7 +280,7 @@ namespace Numpy
         /// <returns>
         ///	Always returns a sorted complex array.
         /// </returns>
-        public static NDarray sort_complex(NDarray a)
+        public static NDarray sort_complex(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -363,7 +363,7 @@ namespace Numpy
         /// <returns>
         ///	Array of the same type and shape as a.
         /// </returns>
-        public static NDarray partition(NDarray a, int[] kth, int? axis = -1, string kind = "introselect", string order = null)
+        public static NDarray partition(this NDarray a, int[] kth, int? axis = -1, string kind = "introselect", string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -431,7 +431,7 @@ namespace Numpy
         ///	More generally, np.take_along_axis(a, index_array, axis=a) always
         ///	yields the partitioned a, irrespective of dimensionality.
         /// </returns>
-        public static NDarray argpartition(NDarray a, int[] kth, int? axis = -1, string kind = "introselect", string order = null)
+        public static NDarray argpartition(this NDarray a, int[] kth, int? axis = -1, string kind = "introselect", string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -473,7 +473,7 @@ namespace Numpy
         ///	 It has the same shape as a.shape
         ///	with the dimension along axis removed.
         /// </returns>
-        public static NDarray argmax(NDarray a, int? axis = null, NDarray @out = null)
+        public static NDarray argmax(this NDarray a, int? axis = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -505,7 +505,7 @@ namespace Numpy
         /// <returns>
         ///	An array of indices or a single index value.
         /// </returns>
-        public static NDarray nanargmax(NDarray a, int? axis = null)
+        public static NDarray nanargmax(this NDarray a, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -544,7 +544,7 @@ namespace Numpy
         ///	 It has the same shape as a.shape
         ///	with the dimension along axis removed.
         /// </returns>
-        public static NDarray argmin(NDarray a, int? axis = null, NDarray @out = null)
+        public static NDarray argmin(this NDarray a, int? axis = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -576,7 +576,7 @@ namespace Numpy
         /// <returns>
         ///	An array of indices or a single index value.
         /// </returns>
-        public static NDarray nanargmin(NDarray a, int? axis = null)
+        public static NDarray nanargmin(this NDarray a, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -608,7 +608,7 @@ namespace Numpy
         ///	Indices of elements that are non-zero.<br></br>
         ///	 Indices are grouped by element.
         /// </returns>
-        public static NDarray argwhere(NDarray a)
+        public static NDarray argwhere(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -633,7 +633,7 @@ namespace Numpy
         ///	Output array, containing the indices of the elements of a.ravel()
         ///	that are non-zero.
         /// </returns>
-        public static NDarray flatnonzero(NDarray a)
+        public static NDarray flatnonzero(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -691,7 +691,7 @@ namespace Numpy
         /// <returns>
         ///	Array of insertion points with the same shape as v.
         /// </returns>
-        public static NDarray<int> searchsorted(NDarray a, NDarray v, string side = "left", NDarray sorter = null)
+        public static NDarray<int> searchsorted(this NDarray a, NDarray v, string side = "left", NDarray sorter = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -726,7 +726,7 @@ namespace Numpy
         /// <returns>
         ///	Rank 1 array of values from arr where condition is True.
         /// </returns>
-        public static NDarray extract(NDarray condition, NDarray arr)
+        public static NDarray extract(this NDarray condition, NDarray arr)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -769,7 +769,7 @@ namespace Numpy
         ///	Otherwise, the total number of non-zero values in the array
         ///	is returned.
         /// </returns>
-        public static NDarray<int> count_nonzero(NDarray a, Axis axis)
+        public static NDarray<int> count_nonzero(this NDarray a, Axis axis)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -806,7 +806,7 @@ namespace Numpy
         ///	Otherwise, the total number of non-zero values in the array
         ///	is returned.
         /// </returns>
-        public static int count_nonzero(NDarray a)
+        public static int count_nonzero(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;

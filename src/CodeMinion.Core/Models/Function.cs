@@ -12,6 +12,11 @@ namespace CodeMinion.Core.Models
         public bool IsConstructor { get; set; }
 
         /// <summary>
+        /// Generate only the static function which also serves as an extension function
+        /// </summary>
+        public bool IsExtensionFunction { get; set; } = false;
+
+        /// <summary>
         /// Generic type parameters of the function
         /// </summary>
         public string[] Generics { get; set; } = null;

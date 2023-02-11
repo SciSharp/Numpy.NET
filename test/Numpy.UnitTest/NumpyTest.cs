@@ -1001,6 +1001,7 @@ namespace Numpy.UnitTest
             var b = np.split(x, 3).repr();
             var a = "(array([0, 1, 2]), array([3, 4, 5]), array([6, 7, 8]))";
             Assert.AreEqual(a, b);
+            Assert.AreEqual(a, x.split(3, axis: -1).repr());
             //>>> x = np.arange(8.0)
             //>>> np.split(x, [3, 5, 6, 10])
             //[array([0., 1., 2.]),
@@ -1012,6 +1013,7 @@ namespace Numpy.UnitTest
             b = np.split(x, new[] { 3, 5, 6, 10 }).repr();
             a = "(array([0, 1, 2]), array([3, 4]), array([5]), array([6, 7]), array([], dtype=int32))";
             Assert.AreEqual(a, b);
+            Assert.AreEqual(a, x.split(new[] { 3, 5, 6, 10 }).repr());
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools

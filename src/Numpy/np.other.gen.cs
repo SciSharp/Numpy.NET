@@ -39,7 +39,7 @@ namespace Numpy
         /// <returns>
         ///	An array containing the roots of the polynomial.
         /// </returns>
-        public static NDarray roots(NDarray p)
+        public static NDarray roots(this NDarray p)
         {
             //auto-generated code, do not change
             var __self__=self;

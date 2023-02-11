@@ -90,7 +90,7 @@ namespace CodeMinion.Core
                     var prefix_str = "";
                     if (prefix && levels > 0)
                         prefix_str = string.Join("_", class_names.Skip(1)) + "_";
-                    s.Out($"public {(@static ? "static ":"")}{retval} {EscapeName(prefix_str + decl.Name)}{func.SharpOnlyPostfix}{generics}({arguments})");
+                    s.Out($"public {(@static ? "static ":"")}{retval} {EscapeName(prefix_str + decl.Name)}{func.SharpOnlyPostfix}{generics}({(@static && func.IsExtensionFunction ? "this " : "")}{arguments})");
                     s.Block(() =>
                     {
                         GenerateFunctionBody(func, s, prefix_str);
@@ -596,7 +596,8 @@ namespace CodeMinion.Core
                         {
                             if (decl.ManualOverride || decl.Ignore)
                                 continue;
-                            GenerateApiFunction(decl, s);
+                            if (decl is Function && !(decl as Function).IsExtensionFunction)
+                                GenerateApiFunction(decl, s);
                         }
                         catch (Exception e)
                         {

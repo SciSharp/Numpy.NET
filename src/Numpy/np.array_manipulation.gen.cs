@@ -144,7 +144,7 @@ namespace Numpy
         ///	  Note there is no guarantee of the memory layout (C- or
         ///	Fortran- contiguous) of the returned array.
         /// </returns>
-        public static NDarray reshape(NDarray a, Shape newshape, string order = null)
+        public static NDarray reshape(this NDarray a, Shape newshape, string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -218,7 +218,7 @@ namespace Numpy
         ///	Note that matrices are special cased for backward compatibility, if a
         ///	is a matrix, then y is a 1-D ndarray.
         /// </returns>
-        public static NDarray ravel(NDarray a, string order = null)
+        public static NDarray ravel(this NDarray a, string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -285,7 +285,7 @@ namespace Numpy
         ///	Array with moved axes.<br></br>
         ///	 This array is a view of the input array.
         /// </returns>
-        public static NDarray moveaxis(NDarray a, int[] source, int[] destination)
+        public static NDarray moveaxis(this NDarray a, int[] source, int[] destination)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -327,7 +327,7 @@ namespace Numpy
         ///	NumPy versions a view of a is returned only if the order of the
         ///	axes is changed, otherwise the input array is returned.
         /// </returns>
-        public static NDarray rollaxis(NDarray a, int axis, int? start = 0)
+        public static NDarray rollaxis(this NDarray a, int axis, int? start = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -361,7 +361,7 @@ namespace Numpy
         ///	versions a view of a is returned only if the order of the
         ///	axes is changed, otherwise the input array is returned.
         /// </returns>
-        public static NDarray swapaxes(NDarray a, int axis1, int axis2)
+        public static NDarray swapaxes(this NDarray a, int axis1, int axis2)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -398,7 +398,7 @@ namespace Numpy
         ///	  A view is returned whenever
         ///	possible.
         /// </returns>
-        public static NDarray transpose(NDarray a, int[] axes = null)
+        public static NDarray transpose(this NDarray a, int[] axes = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -434,7 +434,7 @@ namespace Numpy
         ///	  A view is returned whenever
         ///	possible.
         /// </returns>
-        public static NDarray transpose(NDarray[] a, int[] axes = null)
+        public static NDarray transpose(this NDarray[] a, int[] axes = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -552,7 +552,7 @@ namespace Numpy
         ///	Amongst others, it has shape and nd properties, and
         ///	may be used as an iterator.
         /// </returns>
-        public static NDarray broadcast(NDarray in2, NDarray in1)
+        public static NDarray broadcast(this NDarray in2, NDarray in1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -588,7 +588,7 @@ namespace Numpy
         ///	 Furthermore, more than one element of a
         ///	broadcasted array may refer to a single memory location.
         /// </returns>
-        public static NDarray broadcast_to(NDarray array, Shape shape, bool? subok = false)
+        public static NDarray broadcast_to(this NDarray array, Shape shape, bool? subok = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -653,7 +653,7 @@ namespace Numpy
         ///	 The number of dimensions is one greater than that of
         ///	the input array.
         /// </returns>
-        public static NDarray expand_dims(NDarray a, int axis)
+        public static NDarray expand_dims(this NDarray a, int axis)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -685,7 +685,7 @@ namespace Numpy
         ///	 This is always a itself
         ///	or a view into a.
         /// </returns>
-        public static NDarray squeeze(NDarray a, Axis axis = null)
+        public static NDarray squeeze(this NDarray a, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -713,7 +713,7 @@ namespace Numpy
         /// <returns>
         ///	The input a as a float ndarray.
         /// </returns>
-        public static NDarray asfarray(NDarray a, Dtype dtype = null)
+        public static NDarray asfarray(this NDarray a, Dtype dtype = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -739,7 +739,7 @@ namespace Numpy
         /// <returns>
         ///	The input a in Fortran, or column-major, order.
         /// </returns>
-        public static NDarray asfortranarray(NDarray a, Dtype dtype = null)
+        public static NDarray asfortranarray(this NDarray a, Dtype dtype = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -779,7 +779,7 @@ namespace Numpy
         ///	  If a is a subclass of ndarray, a base
         ///	class ndarray is returned.
         /// </returns>
-        public static NDarray asarray_chkfinite(NDarray a, Dtype dtype = null, string order = null)
+        public static NDarray asarray_chkfinite(this NDarray a, Dtype dtype = null, string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -818,7 +818,7 @@ namespace Numpy
         /// <param name="requirements">
         ///	The requirements list can be any of the following
         /// </param>
-        public static NDarray require(NDarray a, Dtype dtype, string[] requirements = null)
+        public static NDarray require(this NDarray a, Dtype dtype, string[] requirements = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1118,7 +1118,7 @@ namespace Numpy
         /// <returns>
         ///	A list of sub-arrays.
         /// </returns>
-        public static NDarray[] split(NDarray ary, int[] indices_or_sections, int? axis = 0)
+        public static NDarray[] split(this NDarray ary, int[] indices_or_sections, int? axis = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1159,7 +1159,7 @@ namespace Numpy
         /// <returns>
         ///	A list of sub-arrays.
         /// </returns>
-        public static NDarray[] split(NDarray ary, int indices_or_sections, int? axis = 0)
+        public static NDarray[] split(this NDarray ary, int indices_or_sections, int? axis = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1205,7 +1205,7 @@ namespace Numpy
         /// <returns>
         ///	The tiled output array.
         /// </returns>
-        public static NDarray tile(NDarray A, NDarray reps)
+        public static NDarray tile(this NDarray A, NDarray reps)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1239,7 +1239,7 @@ namespace Numpy
         ///	Output array which has the same shape as a, except along
         ///	the given axis.
         /// </returns>
-        public static NDarray repeat(NDarray a, int[] repeats, int? axis = null)
+        public static NDarray repeat(this NDarray a, int[] repeats, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1286,7 +1286,7 @@ namespace Numpy
         ///	 If axis is None, out is
         ///	a flattened array.
         /// </returns>
-        public static NDarray delete(NDarray arr, Slice obj, int? axis = null)
+        public static NDarray delete(this NDarray arr, Slice obj, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1327,7 +1327,7 @@ namespace Numpy
         ///	filled.<br></br>
         ///	  If axis is None, out is a flattened array.
         /// </returns>
-        public static NDarray append(NDarray arr, NDarray values, int? axis = null)
+        public static NDarray append(this NDarray arr, NDarray values, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1358,7 +1358,7 @@ namespace Numpy
         ///	The result of trimming the input.<br></br>
         ///	 The input data type is preserved.
         /// </returns>
-        public static NDarray trim_zeros(NDarray filt, string trim = "fb")
+        public static NDarray trim_zeros(this NDarray filt, string trim = "fb")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1480,7 +1480,7 @@ namespace Numpy
         /// <returns>
         ///	The sorted unique values.
         /// </returns>
-        public static NDarray[] unique(NDarray ar, bool return_index, bool return_inverse, bool return_counts, int? axis = null)
+        public static NDarray[] unique(this NDarray ar, bool return_index, bool return_inverse, bool return_counts, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1534,7 +1534,7 @@ namespace Numpy
         ///	  Since a view is
         ///	returned, this operation is done in constant time.
         /// </returns>
-        public static NDarray flip(NDarray m, Axis axis = null)
+        public static NDarray flip(this NDarray m, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1568,7 +1568,7 @@ namespace Numpy
         ///	  Since a view
         ///	is returned, this operation is .
         /// </returns>
-        public static NDarray fliplr(NDarray m)
+        public static NDarray fliplr(this NDarray m)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1602,7 +1602,7 @@ namespace Numpy
         ///	  Since a view is
         ///	returned, this operation is .
         /// </returns>
-        public static NDarray flipud(NDarray m)
+        public static NDarray flipud(this NDarray m)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1646,7 +1646,7 @@ namespace Numpy
         /// <returns>
         ///	Output array, with the same shape as a.
         /// </returns>
-        public static NDarray roll(NDarray a, int[] shift, Axis axis = null)
+        public static NDarray roll(this NDarray a, int[] shift, Axis axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1685,7 +1685,7 @@ namespace Numpy
         /// <returns>
         ///	A rotated view of m.
         /// </returns>
-        public static NDarray rot90(NDarray m, int k = 1, int[] axes = null)
+        public static NDarray rot90(this NDarray m, int k = 1, int[] axes = null)
         {
             //auto-generated code, do not change
             var __self__=self;

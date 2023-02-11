@@ -51,7 +51,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray bitwise_and(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray bitwise_and(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -99,7 +99,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray bitwise_or(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray bitwise_or(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -147,7 +147,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray bitwise_xor(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray bitwise_xor(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -208,7 +208,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray invert(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray invert(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -301,7 +301,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray right_shift(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray right_shift(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -338,7 +338,7 @@ namespace Numpy
         ///	packed has the same number of dimensions as the input (unless axis
         ///	is None, in which case the output is 1-D).
         /// </returns>
-        public static NDarray packbits(NDarray myarray, int? axis = null)
+        public static NDarray packbits(this NDarray myarray, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -372,7 +372,7 @@ namespace Numpy
         /// <returns>
         ///	The elements are binary-valued (0 or 1).
         /// </returns>
-        public static NDarray unpackbits(NDarray myarray, int? axis = null)
+        public static NDarray unpackbits(this NDarray myarray, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;

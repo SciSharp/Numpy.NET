@@ -77,7 +77,7 @@ namespace Numpy
         ///	If axis is given, the result is an array of dimension
         ///	a.ndim - 1.
         /// </returns>
-        public static NDarray amin(NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
+        public static NDarray amin(this NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -152,7 +152,7 @@ namespace Numpy
         ///	If axis is given, the result is an array of dimension
         ///	a.ndim - 1.
         /// </returns>
-        public static NDarray amax(NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
+        public static NDarray amax(this NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -224,7 +224,7 @@ namespace Numpy
         ///	scalar is returned.<br></br>
         ///	  The same dtype as a is returned.
         /// </returns>
-        public static NDarray nanmin(NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray nanmin(this NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -295,7 +295,7 @@ namespace Numpy
         ///	returned.<br></br>
         ///	  The same dtype as a is returned.
         /// </returns>
-        public static NDarray nanmax(NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray nanmax(this NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -352,7 +352,7 @@ namespace Numpy
         ///	A new array holding the result, unless out was
         ///	specified, in which case a reference to out is returned.
         /// </returns>
-        public static NDarray ptp(NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray ptp(this NDarray a, Axis axis = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -436,7 +436,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static NDarray<double> percentile(NDarray a, NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
+        public static NDarray<double> percentile(this NDarray a, NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -511,7 +511,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static double percentile(NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
+        public static double percentile(this NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -605,7 +605,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static NDarray<double> nanpercentile(NDarray a, NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
+        public static NDarray<double> nanpercentile(this NDarray a, NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -682,7 +682,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static double nanpercentile(NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
+        public static double nanpercentile(this NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -767,7 +767,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static NDarray<double> quantile(NDarray a, NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
+        public static NDarray<double> quantile(this NDarray a, NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -842,7 +842,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static double quantile(NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
+        public static double quantile(this NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -925,7 +925,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static NDarray<double> nanquantile(NDarray a, NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
+        public static NDarray<double> nanquantile(this NDarray a, NDarray<float> q, Axis axis, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear", bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -991,7 +991,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static double nanquantile(NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
+        public static double nanquantile(this NDarray a, NDarray<float> q, NDarray @out = null, bool? overwrite_input = false, string interpolation = "linear")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1065,7 +1065,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static NDarray<double> median(NDarray a, Axis axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = false)
+        public static NDarray<double> median(this NDarray a, Axis axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1126,7 +1126,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static double median(NDarray a, NDarray @out = null, bool? overwrite_input = false)
+        public static double median(this NDarray a, NDarray @out = null, bool? overwrite_input = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1197,7 +1197,7 @@ namespace Numpy
         ///	integral, the previous rules still applies but the result dtype will
         ///	at least be float64.
         /// </returns>
-        public static NDarray<double> average(NDarray a, Axis axis, NDarray weights = null, bool? returned = false)
+        public static NDarray<double> average(this NDarray a, Axis axis, NDarray weights = null, bool? returned = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1258,7 +1258,7 @@ namespace Numpy
         ///	integral, the previous rules still applies but the result dtype will
         ///	at least be float64.
         /// </returns>
-        public static double average(NDarray a, NDarray weights = null, bool? returned = false)
+        public static double average(this NDarray a, NDarray weights = null, bool? returned = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1342,7 +1342,7 @@ namespace Numpy
         ///	If out=None, returns a new array containing the mean values,
         ///	otherwise a reference to the output array is returned.
         /// </returns>
-        public static NDarray<double> mean(NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray<double> mean(this NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1407,7 +1407,7 @@ namespace Numpy
         ///	If out=None, returns a new array containing the mean values,
         ///	otherwise a reference to the output array is returned.
         /// </returns>
-        public static double mean(NDarray a, Dtype dtype = null, NDarray @out = null)
+        public static double mean(this NDarray a, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1507,7 +1507,7 @@ namespace Numpy
         ///	If out is None, return a new array containing the standard deviation,
         ///	otherwise return a reference to the output array.
         /// </returns>
-        public static NDarray<double> std(NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
+        public static NDarray<double> std(this NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1589,7 +1589,7 @@ namespace Numpy
         ///	If out is None, return a new array containing the standard deviation,
         ///	otherwise return a reference to the output array.
         /// </returns>
-        public static double std(NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
+        public static double std(this NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1687,7 +1687,7 @@ namespace Numpy
         ///	If out=None, returns a new array containing the variance;
         ///	otherwise, a reference to the output array is returned.
         /// </returns>
-        public static NDarray<double> @var(NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
+        public static NDarray<double> @var(this NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1766,7 +1766,7 @@ namespace Numpy
         ///	If out=None, returns a new array containing the variance;
         ///	otherwise, a reference to the output array is returned.
         /// </returns>
-        public static double @var(NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
+        public static double @var(this NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1846,7 +1846,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static NDarray<double> nanmedian(NDarray a, Axis axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = null)
+        public static NDarray<double> nanmedian(this NDarray a, Axis axis, NDarray @out = null, bool? overwrite_input = false, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1907,7 +1907,7 @@ namespace Numpy
         ///	 If out is specified, that array is
         ///	returned instead.
         /// </returns>
-        public static double nanmedian(NDarray a, NDarray @out = null, bool? overwrite_input = false)
+        public static double nanmedian(this NDarray a, NDarray @out = null, bool? overwrite_input = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1987,7 +1987,7 @@ namespace Numpy
         ///	 Nan is
         ///	returned for slices that contain only NaNs.
         /// </returns>
-        public static NDarray<double> nanmean(NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray<double> nanmean(this NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2052,7 +2052,7 @@ namespace Numpy
         ///	 Nan is
         ///	returned for slices that contain only NaNs.
         /// </returns>
-        public static double nanmean(NDarray a, Dtype dtype = null, NDarray @out = null)
+        public static double nanmean(this NDarray a, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2156,7 +2156,7 @@ namespace Numpy
         ///	ddof is &gt;= the number of non-NaN elements in a slice or the slice
         ///	contains only NaNs, then the result for that slice is NaN.
         /// </returns>
-        public static NDarray<double> nanstd(NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
+        public static NDarray<double> nanstd(this NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2246,7 +2246,7 @@ namespace Numpy
         ///	ddof is &gt;= the number of non-NaN elements in a slice or the slice
         ///	contains only NaNs, then the result for that slice is NaN.
         /// </returns>
-        public static double nanstd(NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
+        public static double nanstd(this NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2343,7 +2343,7 @@ namespace Numpy
         ///	number of non-NaN elements in a slice or the slice contains only
         ///	NaNs, then the result for that slice is NaN.
         /// </returns>
-        public static NDarray<double> nanvar(NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
+        public static NDarray<double> nanvar(this NDarray a, Axis axis, Dtype dtype = null, NDarray @out = null, int? ddof = 0, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2431,7 +2431,7 @@ namespace Numpy
         ///	number of non-NaN elements in a slice or the slice contains only
         ///	NaNs, then the result for that slice is NaN.
         /// </returns>
-        public static double nanvar(NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
+        public static double nanvar(this NDarray a, Dtype dtype = null, NDarray @out = null, int? ddof = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2495,7 +2495,7 @@ namespace Numpy
         /// <returns>
         ///	The correlation coefficient matrix of the variables.
         /// </returns>
-        public static NDarray corrcoef(NDarray x, NDarray y = null, bool? rowvar = true)
+        public static NDarray corrcoef(this NDarray x, NDarray y = null, bool? rowvar = true)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2541,7 +2541,7 @@ namespace Numpy
         /// <returns>
         ///	Discrete cross-correlation of a and v.
         /// </returns>
-        public static NDarray correlate(NDarray v, NDarray a, string mode = "valid")
+        public static NDarray correlate(this NDarray v, NDarray a, string mode = "valid")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2630,7 +2630,7 @@ namespace Numpy
         /// <returns>
         ///	The covariance matrix of the variables.
         /// </returns>
-        public static NDarray cov(NDarray m, NDarray y = null, bool? rowvar = true, bool? bias = false, int? ddof = null, NDarray fweights = null, NDarray aweights = null)
+        public static NDarray cov(this NDarray m, NDarray y = null, bool? rowvar = true, bool? bias = false, int? ddof = null, NDarray fweights = null, NDarray aweights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2725,7 +2725,7 @@ namespace Numpy
         /// bin_edges
         ///	Return the bin edges (length(hist)+1).
         /// </returns>
-        public static (NDarray, NDarray) histogram(NDarray a, int? bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
+        public static (NDarray, NDarray) histogram(this NDarray a, int? bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2819,7 +2819,7 @@ namespace Numpy
         /// bin_edges
         ///	Return the bin edges (length(hist)+1).
         /// </returns>
-        public static (NDarray, NDarray) histogram(NDarray a, NDarray bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
+        public static (NDarray, NDarray) histogram(this NDarray a, NDarray bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2913,7 +2913,7 @@ namespace Numpy
         /// bin_edges
         ///	Return the bin edges (length(hist)+1).
         /// </returns>
-        public static (NDarray, NDarray) histogram(NDarray a, List<string> bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
+        public static (NDarray, NDarray) histogram(this NDarray a, List<string> bins = null, (float, float)? range = null, bool? normed = null, NDarray weights = null, bool? density = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2997,7 +2997,7 @@ namespace Numpy
         /// yedges
         ///	The bin edges along the second dimension.
         /// </returns>
-        public static (NDarray, NDarray, NDarray) histogram2d(NDarray x, NDarray y, int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
+        public static (NDarray, NDarray, NDarray) histogram2d(this NDarray x, NDarray y, int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3082,7 +3082,7 @@ namespace Numpy
         /// yedges
         ///	The bin edges along the second dimension.
         /// </returns>
-        public static (NDarray, NDarray, NDarray) histogram2d(NDarray x, NDarray y, NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
+        public static (NDarray, NDarray, NDarray) histogram2d(this NDarray x, NDarray y, NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3167,7 +3167,7 @@ namespace Numpy
         /// yedges
         ///	The bin edges along the second dimension.
         /// </returns>
-        public static (NDarray, NDarray, NDarray) histogram2d(NDarray x, NDarray y, List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
+        public static (NDarray, NDarray, NDarray) histogram2d(this NDarray x, NDarray y, List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3237,7 +3237,7 @@ namespace Numpy
         /// edges
         ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
-        public static (NDarray, NDarray) histogramdd(NDarray sample, int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
+        public static (NDarray, NDarray) histogramdd(this NDarray sample, int? bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3306,7 +3306,7 @@ namespace Numpy
         /// edges
         ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
-        public static (NDarray, NDarray) histogramdd(NDarray sample, NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
+        public static (NDarray, NDarray) histogramdd(this NDarray sample, NDarray bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3375,7 +3375,7 @@ namespace Numpy
         /// edges
         ///	A list of D arrays describing the bin edges for each dimension.
         /// </returns>
-        public static (NDarray, NDarray) histogramdd(NDarray sample, List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
+        public static (NDarray, NDarray) histogramdd(this NDarray sample, List<string> bins = null, (float, float)? range = null, bool? density = null, bool? normed = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3423,7 +3423,7 @@ namespace Numpy
         ///	
         ///	The length of out is equal to np.amax(x)+1.
         /// </returns>
-        public static NDarray bincount(NDarray x, NDarray weights = null, int? minlength = 0)
+        public static NDarray bincount(this NDarray x, NDarray weights = null, int? minlength = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3508,7 +3508,7 @@ namespace Numpy
         /// <returns>
         ///	The edges to pass into histogram
         /// </returns>
-        public static NDarray<float> histogram_bin_edges(NDarray a, int? bins = null, (float, float)? range = null, NDarray weights = null)
+        public static NDarray<float> histogram_bin_edges(this NDarray a, int? bins = null, (float, float)? range = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3594,7 +3594,7 @@ namespace Numpy
         /// <returns>
         ///	The edges to pass into histogram
         /// </returns>
-        public static NDarray<float> histogram_bin_edges(NDarray a, NDarray bins = null, (float, float)? range = null, NDarray weights = null)
+        public static NDarray<float> histogram_bin_edges(this NDarray a, NDarray bins = null, (float, float)? range = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3680,7 +3680,7 @@ namespace Numpy
         /// <returns>
         ///	The edges to pass into histogram
         /// </returns>
-        public static NDarray<float> histogram_bin_edges(NDarray a, List<string> bins = null, (float, float)? range = null, NDarray weights = null)
+        public static NDarray<float> histogram_bin_edges(this NDarray a, List<string> bins = null, (float, float)? range = null, NDarray weights = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3744,7 +3744,7 @@ namespace Numpy
         /// <returns>
         ///	Output array of indices, of same shape as x.
         /// </returns>
-        public static NDarray digitize(NDarray x, NDarray bins, bool? right = false)
+        public static NDarray digitize(this NDarray x, NDarray bins, bool? right = false)
         {
             //auto-generated code, do not change
             var __self__=self;

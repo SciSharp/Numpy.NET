@@ -67,7 +67,7 @@ namespace Numpy
         ///	A new boolean or array is returned unless out is specified,
         ///	in which case a reference to out is returned.
         /// </returns>
-        public static NDarray<bool> all(NDarray a, Axis axis, NDarray @out = null, bool? keepdims = null)
+        public static NDarray<bool> all(this NDarray a, Axis axis, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -98,7 +98,7 @@ namespace Numpy
         ///	A new boolean or array is returned unless out is specified,
         ///	in which case a reference to out is returned.
         /// </returns>
-        public static bool all(NDarray a)
+        public static bool all(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -161,7 +161,7 @@ namespace Numpy
         ///	A new boolean or ndarray is returned unless out is specified,
         ///	in which case a reference to out is returned.
         /// </returns>
-        public static NDarray<bool> any(NDarray a, Axis axis, NDarray @out = null, bool? keepdims = null)
+        public static NDarray<bool> any(this NDarray a, Axis axis, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -194,7 +194,7 @@ namespace Numpy
         ///	A new boolean or ndarray is returned unless out is specified,
         ///	in which case a reference to out is returned.
         /// </returns>
-        public static bool any(NDarray a)
+        public static bool any(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -250,7 +250,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray isfinite(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray isfinite(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -301,7 +301,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray<bool> isinf(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray<bool> isinf(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -346,7 +346,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray isnan(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray isnan(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -385,7 +385,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray isnat(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray isnat(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -434,7 +434,7 @@ namespace Numpy
         ///	 The
         ///	return value out is then a reference to that array.
         /// </returns>
-        public static NDarray isneginf(NDarray x, NDarray @out = null)
+        public static NDarray isneginf(this NDarray x, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -481,7 +481,7 @@ namespace Numpy
         ///	
         ///	The return value out is then a reference to that array.
         /// </returns>
-        public static NDarray isposinf(NDarray x, NDarray y = null)
+        public static NDarray isposinf(this NDarray x, NDarray y = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -507,7 +507,7 @@ namespace Numpy
         /// <returns>
         ///	Output array.
         /// </returns>
-        public static NDarray iscomplex(NDarray x)
+        public static NDarray iscomplex(this NDarray x)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -559,7 +559,7 @@ namespace Numpy
         /// <param name="a">
         ///	Input array.
         /// </param>
-        public static bool isfortran(NDarray a)
+        public static bool isfortran(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -584,7 +584,7 @@ namespace Numpy
         /// <returns>
         ///	Boolean array of same shape as x.
         /// </returns>
-        public static NDarray isreal(NDarray x)
+        public static NDarray isreal(this NDarray x)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -684,7 +684,7 @@ namespace Numpy
         ///	AND operation on corresponding elements of x1 and x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray logical_and(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray logical_and(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -729,7 +729,7 @@ namespace Numpy
         ///	OR operation on elements of x1 and x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray logical_or(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray logical_or(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -770,7 +770,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray<bool> logical_not(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray<bool> logical_not(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -816,7 +816,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray<bool> logical_xor(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray<bool> logical_xor(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -882,7 +882,7 @@ namespace Numpy
         ///	Returns True if the two arrays are equal within the given
         ///	tolerance; False otherwise.
         /// </returns>
-        public static bool allclose(NDarray b, NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
+        public static bool allclose(this NDarray b, NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -951,7 +951,7 @@ namespace Numpy
         ///	 If both a and b are scalars, returns a single
         ///	boolean value.
         /// </returns>
-        public static NDarray isclose(NDarray b, NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
+        public static NDarray isclose(this NDarray b, NDarray a, float rtol = 1e-05f, float atol = 1e-08f, bool equal_nan = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -980,7 +980,7 @@ namespace Numpy
         /// <returns>
         ///	Returns True if the arrays are equal.
         /// </returns>
-        public static bool array_equal(NDarray a2, NDarray a1)
+        public static bool array_equal(this NDarray a2, NDarray a1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1009,7 +1009,7 @@ namespace Numpy
         /// <returns>
         ///	True if equivalent, False otherwise.
         /// </returns>
-        public static bool array_equiv(NDarray a2, NDarray a1)
+        public static bool array_equiv(this NDarray a2, NDarray a1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1057,7 +1057,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray greater(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray greater(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1107,7 +1107,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray<bool> greater_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray<bool> greater_equal(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1157,7 +1157,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray less(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray less(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1207,7 +1207,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray less_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray less_equal(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1251,7 +1251,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray equal(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1295,7 +1295,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray not_equal(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray not_equal(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;

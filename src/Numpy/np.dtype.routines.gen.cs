@@ -119,7 +119,7 @@ namespace Numpy
         /// <returns>
         ///	The minimal data type.
         /// </returns>
-        public static Dtype min_scalar_type(NDarray a)
+        public static Dtype min_scalar_type(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -215,7 +215,7 @@ namespace Numpy
         /// <returns>
         ///	Data type code.
         /// </returns>
-        public static Dtype common_type(NDarray array2, NDarray array1)
+        public static Dtype common_type(this NDarray array2, NDarray array1)
         {
             //auto-generated code, do not change
             var __self__=self;

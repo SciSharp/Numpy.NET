@@ -132,7 +132,7 @@ namespace Numpy
         /// <returns>
         ///	Indices of elements that are non-zero.
         /// </returns>
-        public static NDarray[] nonzero(NDarray a)
+        public static NDarray[] nonzero(this NDarray a)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -169,7 +169,7 @@ namespace Numpy
         ///	An array with elements from x where condition is True, and elements
         ///	from y elsewhere.
         /// </returns>
-        public static NDarray @where(NDarray condition, NDarray y, NDarray x)
+        public static NDarray @where(this NDarray condition, NDarray y, NDarray x)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -198,7 +198,7 @@ namespace Numpy
         ///	An array with elements from x where condition is True, and elements
         ///	from y elsewhere.
         /// </returns>
-        public static NDarray[] @where(NDarray condition)
+        public static NDarray[] @where(this NDarray condition)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -359,7 +359,7 @@ namespace Numpy
         ///	Each array in the tuple has the same shape as the indices
         ///	array.
         /// </returns>
-        public static NDarray[] unravel_index(NDarray indices, Shape shape, string order = null)
+        public static NDarray[] unravel_index(this NDarray indices, Shape shape, string order = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -413,7 +413,7 @@ namespace Numpy
         ///	
         ///	Notes
         /// </summary>
-        public static void diag_indices_from(NDarray arr)
+        public static void diag_indices_from(this NDarray arr)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -524,7 +524,7 @@ namespace Numpy
         /// <param name="k">
         ///	Diagonal offset (see tril for details).
         /// </param>
-        public static void tril_indices_from(NDarray arr, int? k = 0)
+        public static void tril_indices_from(this NDarray arr, int? k = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -593,7 +593,7 @@ namespace Numpy
         /// <returns>
         ///	Indices for the upper-triangle of arr.
         /// </returns>
-        public static NDarray[] triu_indices_from(NDarray arr, int? k = 0)
+        public static NDarray[] triu_indices_from(this NDarray arr, int? k = 0)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -709,7 +709,7 @@ namespace Numpy
         ///	treated as if it had first been flattened to 1d, for consistency with
         ///	sort and argsort.
         /// </param>
-        public static NDarray take_along_axis(NDarray arr, NDarray indices, int? axis = null)
+        public static NDarray take_along_axis(this NDarray arr, NDarray indices, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -907,7 +907,7 @@ namespace Numpy
         ///	are removed, and a new axis inserted at the end corresponding to the
         ///	diagonal.
         /// </returns>
-        public static NDarray diagonal(NDarray a, int? offset = 0, int? axis1 = 0, int? axis2 = 1)
+        public static NDarray diagonal(this NDarray a, int? offset = 0, int? axis1 = 0, int? axis2 = 1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1059,7 +1059,7 @@ namespace Numpy
         ///	than N, it will be repeated, and if elements of a are to be masked,
         ///	this sequence must be non-empty.
         /// </param>
-        public static void place(NDarray arr, NDarray mask, NDarray vals)
+        public static void place(this NDarray arr, NDarray mask, NDarray vals)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1099,7 +1099,7 @@ namespace Numpy
         ///	Note
         ///	that this disables indexing with negative numbers.
         /// </param>
-        public static void put(NDarray a, NDarray ind, NDarray v, string mode = "raise")
+        public static void put(this NDarray a, NDarray ind, NDarray v, string mode = "raise")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1151,7 +1151,7 @@ namespace Numpy
         ///	If axis is None, the destination
         ///	array is treated as if a flattened 1d view had been created of it.
         /// </param>
-        public static void put_along_axis(NDarray arr, NDarray indices, NDarray[] values, int axis)
+        public static void put_along_axis(this NDarray arr, NDarray indices, NDarray[] values, int axis)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1187,7 +1187,7 @@ namespace Numpy
         ///	If values is smaller
         ///	than a it will be repeated.
         /// </param>
-        public static void putmask(NDarray a, NDarray mask, NDarray values)
+        public static void putmask(this NDarray a, NDarray mask, NDarray values)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1229,7 +1229,7 @@ namespace Numpy
         ///	with this option.<br></br>
         ///	This affects only tall matrices.
         /// </param>
-        public static void fill_diagonal(NDarray a, ValueType val, bool wrap = false)
+        public static void fill_diagonal(this NDarray a, ValueType val, bool wrap = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1317,7 +1317,7 @@ namespace Numpy
         ///	buffers.<br></br>
         ///	Set to 0 for the default value.
         /// </param>
-        public static void nditer(NDarray op, string[] flags = null, list of list of str op_flags = null, dtype or tuple of dtype(s) op_dtypes = null, string order = null, string casting = null, list of list of ints op_axes = null, tuple of ints itershape = null, int? buffersize = null)
+        public static void nditer(this NDarray op, string[] flags = null, list of list of str op_flags = null, dtype or tuple of dtype(s) op_dtypes = null, string order = null, string casting = null, list of list of ints op_axes = null, tuple of ints itershape = null, int? buffersize = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1346,7 +1346,7 @@ namespace Numpy
         /// <param name="arr">
         ///	Input array.
         /// </param>
-        public static void ndenumerate(NDarray arr)
+        public static void ndenumerate(this NDarray arr)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1401,7 +1401,7 @@ namespace Numpy
         /// <returns>
         ///	An nditer for each item in axes, outermost first
         /// </returns>
-        public static tuple of nditer nested_iters(NDarray op, int[] axes = null)
+        public static tuple of nditer nested_iters(this NDarray op, int[] axes = null)
         {
             //auto-generated code, do not change
             var __self__=self;

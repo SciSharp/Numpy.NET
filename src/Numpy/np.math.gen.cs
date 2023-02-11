@@ -62,7 +62,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray sin(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray sin(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -116,7 +116,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray cos(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray cos(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -172,7 +172,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray tan(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray tan(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -239,7 +239,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray arcsin(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray arcsin(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -309,7 +309,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray arccos(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray arccos(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -376,7 +376,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray arctan(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray arctan(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -425,7 +425,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray hypot(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray hypot(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -495,7 +495,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray arctan2(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray arctan2(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -536,7 +536,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray degrees(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray degrees(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -575,7 +575,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray radians(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray radians(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -614,7 +614,7 @@ namespace Numpy
         /// <returns>
         ///	Output array.
         /// </returns>
-        public static NDarray unwrap(NDarray p, float? discont = 3.141592653589793f, int? axis = -1)
+        public static NDarray unwrap(this NDarray p, float? discont = 3.141592653589793f, int? axis = -1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -657,7 +657,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray deg2rad(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray deg2rad(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -700,7 +700,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray rad2deg(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray rad2deg(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -758,7 +758,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray sinh(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray sinh(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -799,7 +799,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray cosh(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray cosh(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -848,7 +848,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray tanh(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray tanh(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -907,7 +907,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray arcsinh(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray arcsinh(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -964,7 +964,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray arccosh(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray arccosh(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1023,7 +1023,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray arctanh(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray arctanh(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1082,7 +1082,7 @@ namespace Numpy
         ///	separately.<br></br>
         ///	  The result of rounding a float is a float.
         /// </returns>
-        public static NDarray around(NDarray a, int? decimals = 0, NDarray @out = null)
+        public static NDarray around(this NDarray a, int? decimals = 0, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1121,7 +1121,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray rint(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray rint(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1152,7 +1152,7 @@ namespace Numpy
         /// <returns>
         ///	The array of rounded numbers
         /// </returns>
-        public static NDarray fix(NDarray x, NDarray y = null)
+        public static NDarray fix(this NDarray x, NDarray y = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1200,7 +1200,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray floor(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray floor(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1243,7 +1243,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray ceil(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray ceil(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1289,7 +1289,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray trunc(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray trunc(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1368,7 +1368,7 @@ namespace Numpy
         ///	
         ///	Returns a reference to out if specified.
         /// </returns>
-        public static NDarray prod(NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
+        public static NDarray prod(this NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1451,7 +1451,7 @@ namespace Numpy
         ///	  If an output array is specified, a reference to
         ///	out is returned.
         /// </returns>
-        public static NDarray sum(NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
+        public static NDarray sum(this NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null, ValueType initial = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1518,7 +1518,7 @@ namespace Numpy
         ///	A new array holding the result is returned unless out is
         ///	specified, in which case it is returned.
         /// </returns>
-        public static NDarray nanprod(NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray nanprod(this NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1600,7 +1600,7 @@ namespace Numpy
         ///	size as a, and the same shape as a if axis is not None
         ///	or a is a 1-d array.
         /// </returns>
-        public static NDarray nansum(NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
+        public static NDarray nansum(this NDarray a, Axis axis = null, Dtype dtype = null, NDarray @out = null, bool? keepdims = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1652,7 +1652,7 @@ namespace Numpy
         ///	A new array holding the result is returned unless out is
         ///	specified, in which case a reference to out is returned.
         /// </returns>
-        public static NDarray cumprod(NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
+        public static NDarray cumprod(this NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1708,7 +1708,7 @@ namespace Numpy
         ///	result has the same size as a, and the same shape as a if
         ///	axis is not None or a is a 1-d array.
         /// </returns>
-        public static NDarray cumsum(NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
+        public static NDarray cumsum(this NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1759,7 +1759,7 @@ namespace Numpy
         ///	A new array holding the result is returned unless out is
         ///	specified, in which case it is returned.
         /// </returns>
-        public static NDarray nancumprod(NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
+        public static NDarray nancumprod(this NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1815,7 +1815,7 @@ namespace Numpy
         ///	size as a, and the same shape as a if axis is not None
         ///	or a is a 1-d array.
         /// </returns>
-        public static NDarray nancumsum(NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
+        public static NDarray nancumsum(this NDarray a, int? axis = null, Dtype dtype = null, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1894,7 +1894,7 @@ namespace Numpy
         ///	 A notable exception is datetime64, which
         ///	results in a timedelta64 output array.
         /// </returns>
-        public static NDarray diff(NDarray a, int? n = 1, int? axis = -1, NDarray append = null, NDarray prepend = null)
+        public static NDarray diff(this NDarray a, int? n = 1, int? axis = -1, NDarray append = null, NDarray prepend = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1932,7 +1932,7 @@ namespace Numpy
         ///	The differences.<br></br>
         ///	 Loosely, this is ary.flat[1:] - ary.flat[:-1].
         /// </returns>
-        public static NDarray ediff1d(NDarray ary, NDarray to_end = null, NDarray to_begin = null)
+        public static NDarray ediff1d(this NDarray ary, NDarray to_end = null, NDarray to_begin = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -1994,7 +1994,7 @@ namespace Numpy
         /// <returns>
         ///	Vector cross product(s).
         /// </returns>
-        public static NDarray cross(NDarray a, NDarray b, int? axisa = -1, int? axisb = -1, int? axisc = -1, int? axis = null)
+        public static NDarray cross(this NDarray a, NDarray b, int? axisa = -1, int? axisb = -1, int? axisc = -1, int? axis = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2048,7 +2048,7 @@ namespace Numpy
         /// <returns>
         ///	Definite integral as approximated by trapezoidal rule.
         /// </returns>
-        public static float trapz(NDarray y, NDarray x = null, float? dx = 1.0f, int? axis = -1)
+        public static float trapz(this NDarray y, NDarray x = null, float? dx = 1.0f, int? axis = -1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2105,7 +2105,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray exp(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray exp(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2149,7 +2149,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray expm1(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray expm1(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2190,7 +2190,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray exp2(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray exp2(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2254,7 +2254,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray log(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray log(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2315,7 +2315,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray log10(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray log10(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2372,7 +2372,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray log2(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray log2(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2436,7 +2436,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray log1p(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray log1p(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2489,7 +2489,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray logaddexp(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray logaddexp(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2542,7 +2542,7 @@ namespace Numpy
         ///	Base-2 logarithm of 2**x1 + 2**x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray logaddexp2(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray logaddexp2(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2585,7 +2585,7 @@ namespace Numpy
         /// <returns>
         ///	sinc(x), which has the same shape as the input.
         /// </returns>
-        public static NDarray sinc(NDarray x)
+        public static NDarray sinc(this NDarray x)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2622,7 +2622,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray signbit(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray signbit(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2668,7 +2668,7 @@ namespace Numpy
         ///	The values of x1 with the sign of x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray copysign(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray copysign(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2728,7 +2728,7 @@ namespace Numpy
         ///	Integer exponents of 2.
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static (NDarray, NDarray) frexp(NDarray x, NDarray out1 = null, NDarray out2 = null, NDarray @out = null, NDarray @where = null)
+        public static (NDarray, NDarray) frexp(this NDarray x, NDarray out1 = null, NDarray out2 = null, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2781,7 +2781,7 @@ namespace Numpy
         ///	The result of x1 * 2**x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray ldexp(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray ldexp(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2823,7 +2823,7 @@ namespace Numpy
         ///	The next representable values of x1 in the direction of x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray nextafter(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray nextafter(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2872,7 +2872,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray spacing(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray spacing(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2900,7 +2900,7 @@ namespace Numpy
         ///	The lowest common multiple of the absolute value of the inputs
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray lcm(NDarray x2, NDarray x1)
+        public static NDarray lcm(this NDarray x2, NDarray x1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2927,7 +2927,7 @@ namespace Numpy
         ///	The greatest common divisor of the absolute value of the inputs
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray gcd(NDarray x2, NDarray x1)
+        public static NDarray gcd(this NDarray x2, NDarray x1)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -2978,7 +2978,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray @add(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray @add(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3027,7 +3027,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray reciprocal(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray reciprocal(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3058,7 +3058,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray positive(NDarray x)
+        public static NDarray positive(this NDarray x)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3095,7 +3095,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray negative(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray negative(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3141,7 +3141,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray multiply(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray multiply(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3200,7 +3200,7 @@ namespace Numpy
         /// <returns>
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray divide(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray divide(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3247,7 +3247,7 @@ namespace Numpy
         ///	The bases in x1 raised to the exponents in x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray power(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray power(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3294,7 +3294,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray subtract(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray subtract(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3353,7 +3353,7 @@ namespace Numpy
         /// <returns>
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray true_divide(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray true_divide(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3399,7 +3399,7 @@ namespace Numpy
         ///	y = floor(x1/x2)
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray floor_divide(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray floor_divide(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3450,7 +3450,7 @@ namespace Numpy
         ///	The bases in x1 raised to the exponents in x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray float_power(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray float_power(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3507,7 +3507,7 @@ namespace Numpy
         ///	The remainder of the division of x1 by x2.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray fmod(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray fmod(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3561,7 +3561,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray mod(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray mod(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3612,7 +3612,7 @@ namespace Numpy
         ///	Integral part of x.
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static (NDarray, NDarray) modf(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static (NDarray, NDarray) modf(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3665,7 +3665,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray remainder(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray remainder(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3717,7 +3717,7 @@ namespace Numpy
         ///	Element-wise remainder from floor division.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static (NDarray, NDarray) divmod(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static (NDarray, NDarray) divmod(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3746,7 +3746,7 @@ namespace Numpy
         ///	The counterclockwise angle from the positive real axis on
         ///	the complex plane, with dtype as numpy.float64.
         /// </returns>
-        public static NDarray angle(NDarray z, bool? deg = false)
+        public static NDarray angle(this NDarray z, bool? deg = false)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3773,7 +3773,7 @@ namespace Numpy
         ///	  If val has complex elements, the
         ///	returned type is float.
         /// </returns>
-        public static NDarray real(NDarray val)
+        public static NDarray real(this NDarray val)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3799,7 +3799,7 @@ namespace Numpy
         ///	  If val has complex
         ///	elements, the returned type is float.
         /// </returns>
-        public static NDarray imag(NDarray val)
+        public static NDarray imag(this NDarray val)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3839,7 +3839,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray conj(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray conj(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3889,7 +3889,7 @@ namespace Numpy
         /// <returns>
         ///	Discrete, linear convolution of a and v.
         /// </returns>
-        public static NDarray convolve(NDarray a, NDarray v, string mode = "full")
+        public static NDarray convolve(this NDarray a, NDarray v, string mode = "full")
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -3945,7 +3945,7 @@ namespace Numpy
         ///	&lt; a_min are replaced with a_min, and those &gt; a_max
         ///	with a_max.
         /// </returns>
-        public static NDarray clip(NDarray a, NDarray a_min, NDarray a_max, NDarray @out = null)
+        public static NDarray clip(this NDarray a, NDarray a_min, NDarray a_max, NDarray @out = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4001,7 +4001,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray sqrt(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray sqrt(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4043,7 +4043,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray cbrt(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray cbrt(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4082,7 +4082,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray square(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray square(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4125,7 +4125,7 @@ namespace Numpy
         ///	absolute value is .
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray absolute(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray absolute(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4171,7 +4171,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray fabs(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray fabs(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4226,7 +4226,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if x is a scalar.
         /// </returns>
-        public static NDarray sign(NDarray x, NDarray @out = null, NDarray @where = null)
+        public static NDarray sign(this NDarray x, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4275,7 +4275,7 @@ namespace Numpy
         ///	The output array, element-wise Heaviside step function of x1.
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray heaviside(NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
+        public static NDarray heaviside(this NDarray x1, NDarray x2, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4339,7 +4339,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray maximum(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray maximum(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4403,7 +4403,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray minimum(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray minimum(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4466,7 +4466,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray fmax(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray fmax(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4529,7 +4529,7 @@ namespace Numpy
         ///	
         ///	This is a scalar if both x1 and x2 are scalars.
         /// </returns>
-        public static NDarray fmin(NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
+        public static NDarray fmin(this NDarray x2, NDarray x1, NDarray @out = null, NDarray @where = null)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4579,7 +4579,7 @@ namespace Numpy
         ///	 If copy is False, this may
         ///	be x itself.
         /// </returns>
-        public static NDarray nan_to_num(NDarray x, bool? copy = true)
+        public static NDarray nan_to_num(this NDarray x, bool? copy = true)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4618,7 +4618,7 @@ namespace Numpy
         ///	  If a
         ///	has complex elements, the returned type is float.
         /// </returns>
-        public static NDarray real_if_close(NDarray a, float tol = 100)
+        public static NDarray real_if_close(this NDarray a, float tol = 100)
         {
             //auto-generated code, do not change
             var __self__=self;
@@ -4675,7 +4675,7 @@ namespace Numpy
         /// <returns>
         ///	The interpolated values, same shape as x.
         /// </returns>
-        public static float or complex (corresponding to fp) or ndarray interp(NDarray x, 1-D sequence of floats xp, 1-D sequence of float or complex fp, optional float or complex corresponding to fp left = null, optional float or complex corresponding to fp right = null, None or float period = null)
+        public static float or complex (corresponding to fp) or ndarray interp(this NDarray x, 1-D sequence of floats xp, 1-D sequence of float or complex fp, optional float or complex corresponding to fp left = null, optional float or complex corresponding to fp right = null, None or float period = null)
         {
             //auto-generated code, do not change
             var __self__=self;
