@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -1014,6 +1014,36 @@ namespace Numpy.UnitTest
             a = "(array([0, 1, 2]), array([3, 4]), array([5]), array([6, 7]), array([], dtype=int32))";
             Assert.AreEqual(a, b);
             Assert.AreEqual(a, x.split(new[] { 3, 5, 6, 10 }).repr());
+        }
+
+
+        [TestMethod]
+        public async Task F16Workaround()
+        {
+            // use byte array to create float16 array
+
+            // numbers in float16:
+            // 0 01111 0000000000 = 2^0 * (1 + 0/1024) = 1 
+            // 1 01111 0000000000 = -1 * 2 ^ 0 * (1 + 0 / 1024) = -1
+            // 0 11110 1111111111 = -1^(0) * 2^(15) * (1 + 1023/1024) ≈ 65504
+            // see: https://devblogs.microsoft.com/dotnet/introducing-the-half-type/
+
+            // these bytes in binary notation correspond to f16 numbers 1, -1 and 65504 (float16 max value)
+            // note, the bytes are in reversed order to the bits shown above
+            var bytes = new byte[] { 
+                0b00000000, 0b00111100, // 1
+                0b00000000, 0b10111100, // -1
+                0b11111111, 0b01111011, // 65504
+            };
+            var floats = np.zeros(new Shape(3), np.float16);
+            Console.WriteLine(floats.repr);
+            // note, the using prevents a mem-leak with ctypes
+            using (var ctypes = floats.PyObject.ctypes) { 
+                long ptr = ctypes.data;
+                Marshal.Copy(bytes, 0, new IntPtr(ptr), bytes.Length);
+            }
+            Console.WriteLine(floats.repr);
+            Assert.AreEqual("array([ 1.00e+00, -1.00e+00,  6.55e+04], dtype=float16)", floats.repr);
         }
 
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools

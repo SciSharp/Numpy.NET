@@ -62,6 +62,7 @@ namespace Numpy
                 case short[] a: Marshal.Copy(a, 0, new IntPtr(ptr), a.Length); break;
                 case int[] a: Marshal.Copy(a, 0, new IntPtr(ptr), a.Length); break;
                 case long[] a: Marshal.Copy(a, 0, new IntPtr(ptr), a.Length); break;
+                //case Half[] a: Marshal.Copy(a, 0, new IntPtr(ptr), a.Length); break;
                 case float[] a: Marshal.Copy(a, 0, new IntPtr(ptr), a.Length); break;
                 case double[] a: Marshal.Copy(a, 0, new IntPtr(ptr), a.Length); break;
                 case bool[] a:
