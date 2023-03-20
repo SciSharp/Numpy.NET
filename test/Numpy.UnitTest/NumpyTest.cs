@@ -1046,6 +1046,53 @@ namespace Numpy.UnitTest
             Assert.AreEqual("array([ 1.00e+00, -1.00e+00,  6.55e+04], dtype=float16)", floats.repr);
         }
 
+
+        [TestMethod]
+        public async Task IssueByTimiil()
+        {
+            //>>> img = np.arange(27).reshape(3, 3, 3)
+            //>>> img
+            //array([[[0, 1, 2],
+            //        [ 3,  4,  5],
+            //        [ 6,  7,  8]],
+
+            //       [[ 9, 10, 11],
+            //        [12, 13, 14],
+            //        [15, 16, 17]],
+
+            //       [[18, 19, 20],
+            //        [21, 22, 23],
+            //        [24, 25, 26]]])
+            //>>> fft_img = np.fft.fft2(img)
+            //>>> fft_img = np.fft.fftshift(fft_img)
+            //>>> fft_img
+            //array([[[0. + 0.j, -13.5 - 7.79422863j, 0. + 0.j],
+            //        [ -4.5 - 2.59807621j, 198. + 0.j        ,  -4.5 + 2.59807621j],
+            //        [  0. + 0.j        , -13.5 + 7.79422863j,   0. + 0.j        ]],
+
+            //       [[  0. + 0.j        , -13.5 - 7.79422863j,   0. + 0.j        ],
+            //        [ -4.5 - 2.59807621j,  36. + 0.j        ,  -4.5 + 2.59807621j],
+            //        [  0. + 0.j        , -13.5 + 7.79422863j,   0. + 0.j        ]],
+
+            //       [[  0. + 0.j        , -13.5 - 7.79422863j,   0. + 0.j        ],
+            //        [ -4.5 - 2.59807621j, 117. + 0.j        ,  -4.5 + 2.59807621j],
+            //        [  0. + 0.j        , -13.5 + 7.79422863j,   0. + 0.j        ]]])
+            var img = np.arange(27).reshape(3, 3, 3);
+            var fft_img = np.fft.fft2(img);
+            fft_img = np.fft.fftshift(fft_img);
+            Console.WriteLine(fft_img.repr);
+            Assert.AreEqual(@"array([[[  0. +0.j        , -13.5-7.79422863j,   0. +0.j        ],
+        [ -4.5-2.59807621j, 198. +0.j        ,  -4.5+2.59807621j],
+        [  0. +0.j        , -13.5+7.79422863j,   0. +0.j        ]],
+
+       [[  0. +0.j        , -13.5-7.79422863j,   0. +0.j        ],
+        [ -4.5-2.59807621j,  36. +0.j        ,  -4.5+2.59807621j],
+        [  0. +0.j        , -13.5+7.79422863j,   0. +0.j        ]],
+
+       [[  0. +0.j        , -13.5-7.79422863j,   0. +0.j        ],
+        [ -4.5-2.59807621j, 117. +0.j        ,  -4.5+2.59807621j],
+        [  0. +0.j        , -13.5+7.79422863j,   0. +0.j        ]]])".Replace("\r", ""), fft_img.repr);
+        }
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
         // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
