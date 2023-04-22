@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/SciSharp/Numpy.NET</RepositoryUrl>
     <PackageTags>Data science, Machine Learning, AI, Scientific Computing, NumPy, Linear Algebra, FFT, SVD, Matrix, Python</PackageTags>
     <PackageLicenseUrl>https://github.com/SciSharp/Numpy.NET/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>3.7.1.28</Version>
+    <Version>3.11.1.33</Version>
     <PackageIconUrl>https://github.com/SciSharp/Numpy.NET/blob/master/doc/img/numpy.net.icon128.png?raw=true</PackageIconUrl>
     <AssemblyVersion>3.7.1.4</AssemblyVersion>
   </PropertyGroup>
@@ -86,8 +86,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0"></PackageReference>
-    <PackageReference Include="pythonnet_netstandard_py37_win" Version="2.5.1"></PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0"></PackageReference>
+    <PackageReference Include="pythonnet" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
