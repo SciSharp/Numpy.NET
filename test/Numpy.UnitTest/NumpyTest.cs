@@ -351,14 +351,14 @@ namespace Numpy.UnitTest
                 "       [[15, 16, 17, 18, 19],\n" +
                 "        [20, 21, 22, 23, 24],\n" +
                 "        [25, 26, 27, 28, 29]]])",
-                 x.repr);
+                x.repr);
             var b = np.array(new[,] { { true, true, false }, { false, true, true } });
             Assert.AreEqual(
                 "array([[ 0,  1,  2,  3,  4],\n" +
                 "       [ 5,  6,  7,  8,  9],\n" +
                 "       [20, 21, 22, 23, 24],\n" +
                 "       [25, 26, 27, 28, 29]])",
-            x[b].repr);
+                x[b].repr);
         }
 
         [TestMethod]
@@ -641,12 +641,11 @@ namespace Numpy.UnitTest
         public void IssueByXlient()
         {
             var points = new Point[] { new Point(0, 0), new Point(17, 4), new Point(2, 22), new Point(10, 7), };
-            int[,] Pts = new int[,]
-            {
-                {points[0].X, points[0].Y },
-                {points[1].X, points[1].Y },
-                {points[2].X, points[2].Y } ,
-                {points[3].X, points[3].Y }
+            int[,] Pts = new int[,] {
+                { points[0].X, points[0].Y },
+                { points[1].X, points[1].Y },
+                { points[2].X, points[2].Y },
+                { points[3].X, points[3].Y }
             };
 
             // exception here / deadlock
@@ -674,7 +673,7 @@ namespace Numpy.UnitTest
             Assert.AreEqual("1,2,3", string.Join(",", row0Data));
             var col1 = n[":,1"]; //extract 1st column - NDarray is [2 5 8] as expected
             Assert.AreEqual("array([2., 5., 8.], dtype=float32)", col1.repr);
-            var col1Data = col1.GetData();//this is wrong - {2,3,4}
+            var col1Data = col1.GetData(); //this is wrong - {2,3,4}
             Assert.AreEqual("2,5,8", string.Join(",", col1Data));
         }
 
@@ -951,8 +950,8 @@ namespace Numpy.UnitTest
             np.savez_compressed(filename, null, arrays);
             var archive = np.load(filename);
             Console.WriteLine(archive.repr);
-            var a = new NDarray( archive.PyObject["a"]);
-            var b = new NDarray( archive.PyObject["b"]);
+            var a = new NDarray(archive.PyObject["a"]);
+            var b = new NDarray(archive.PyObject["b"]);
             Console.WriteLine(a.repr);
             Console.WriteLine(b.repr);
             Assert.AreEqual("array([[0, 1, 2],\n       [3, 4, 5]])", a.repr);
@@ -962,8 +961,8 @@ namespace Numpy.UnitTest
         [TestMethod]
         public async Task AsscalarRemovedInNumpyV1_23()
         {
-            Assert.AreEqual(143, new NDarray<int>(new int[]{143}).asscalar<int>());
-            Assert.AreEqual(143d, new NDarray<double>(new [] { 143d }).asscalar<double>());
+            Assert.AreEqual(143, new NDarray<int>(new int[] { 143 }).asscalar<int>());
+            Assert.AreEqual(143d, new NDarray<double>(new[] { 143d }).asscalar<double>());
             Assert.AreEqual(143d, new NDarray<double>(new[] { 143d }).item());
         }
 
@@ -972,7 +971,7 @@ namespace Numpy.UnitTest
         {
             // byte array als uint32 array
             var bytes = new byte[] { 1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0 };
-            var uints =np.zeros(new Shape(3), np.uint32);
+            var uints = np.zeros(new Shape(3), np.uint32);
             Console.WriteLine(uints.repr);
             var ctypes = uints.PyObject.ctypes;
             long ptr = ctypes.data;
@@ -1030,7 +1029,7 @@ namespace Numpy.UnitTest
 
             // these bytes in binary notation correspond to f16 numbers 1, -1 and 65504 (float16 max value)
             // note, the bytes are in reversed order to the bits shown above
-            var bytes = new byte[] { 
+            var bytes = new byte[] {
                 0b00000000, 0b00111100, // 1
                 0b00000000, 0b10111100, // -1
                 0b11111111, 0b01111011, // 65504
@@ -1038,7 +1037,7 @@ namespace Numpy.UnitTest
             var floats = np.zeros(new Shape(3), np.float16);
             Console.WriteLine(floats.repr);
             // note, the using prevents a mem-leak with ctypes
-            using (var ctypes = floats.PyObject.ctypes) { 
+            using (var ctypes = floats.PyObject.ctypes) {
                 long ptr = ctypes.data;
                 Marshal.Copy(bytes, 0, new IntPtr(ptr), bytes.Length);
             }
@@ -1093,8 +1092,31 @@ namespace Numpy.UnitTest
         [ -4.5-2.59807621j, 117. +0.j        ,  -4.5+2.59807621j],
         [  0. +0.j        , -13.5+7.79422863j,   0. +0.j        ]]])".Replace("\r", ""), fft_img.repr);
         }
-        // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
-        // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
-        // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
+
+        [TestMethod]
+        public void IssueByPandath()
+        {
+            //>>> grid = np.array([[1, 2, 3, 0, 0, 4], [5, 6, 7, 0, 0, 8]])
+            //>>> xs, ys = np.where(grid == 0)
+            //>>> xs
+            //array([0, 0, 1, 1], dtype = int64)
+            //>>> ys
+            //array([3, 4, 3, 4], dtype = int64)
+
+            var grid = np.array(new[,] {{ 1, 2, 3, 0, 0, 4 }, { 5, 6, 7, 0, 0, 8 } });
+            var result = np.where(grid.equals(0));
+            Console.WriteLine(result[0].repr);
+            Console.WriteLine(result[1].repr);
+            Assert.AreEqual("array([0, 0, 1, 1], dtype=int64)", result[0].repr);
+            Assert.AreEqual("array([3, 4, 3, 4], dtype=int64)", result[1].repr);
+        }
     }
+
+
+
+
+    // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#structural-indexing-tools
+    // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#assigning-values-to-indexed-arrays
+    // TODO:  https://docs.scipy.org/doc/numpy/user/basics.indexing.html?highlight=slice#dealing-with-variable-numbers-of-indices-within-programs
+
 }
