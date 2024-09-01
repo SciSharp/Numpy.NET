@@ -290,6 +290,14 @@ namespace Numpy
         }
 
         /// <summary>
+        /// Return self&value.
+        /// </summary>
+        public static NDarray operator &(NDarray a, NDarray b)
+        {
+            return new NDarray(a.self.InvokeMethod("__and__", b.self));
+        }
+
+        /// <summary>
         /// Return self|value.
         /// </summary>
         public static NDarray operator |(NDarray a, int obj)
@@ -298,11 +306,27 @@ namespace Numpy
         }
 
         /// <summary>
+        /// Return self|value.
+        /// </summary>
+        public static NDarray operator |(NDarray a, NDarray b)
+        {
+            return new NDarray(a.self.InvokeMethod("__or__", b.self));
+        }
+
+        /// <summary>
         /// Return self^value.
         /// </summary>
         public static NDarray operator ^(NDarray a, int obj)
         {
             return new NDarray(a.self.InvokeMethod("__xor__", obj.ToPython()));
+        }
+
+        /// <summary>
+        /// Return self^value.
+        /// </summary>
+        public static NDarray operator ^(NDarray a, NDarray b)
+        {
+            return new NDarray(a.self.InvokeMethod("__xor__", b.self));
         }
 
         //------------------------------

@@ -1103,12 +1103,29 @@ namespace Numpy.UnitTest
             //>>> ys
             //array([3, 4, 3, 4], dtype = int64)
 
-            var grid = np.array(new[,] {{ 1, 2, 3, 0, 0, 4 }, { 5, 6, 7, 0, 0, 8 } });
+            var grid = np.array(new[,] { { 1, 2, 3, 0, 0, 4 }, { 5, 6, 7, 0, 0, 8 } });
             var result = np.where(grid.equals(0));
             Console.WriteLine(result[0].repr);
             Console.WriteLine(result[1].repr);
             Assert.AreEqual("array([0, 0, 1, 1], dtype=int64)", result[0].repr);
             Assert.AreEqual("array([3, 4, 3, 4], dtype=int64)", result[1].repr);
+        }
+
+        [TestMethod]
+        public void IssueByXiaozhu1988()
+        {
+            //>>> data = np.array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120])
+            //>>> (data >= 50) & (data < 100)
+            //array([False, False, False, False,  True,  True,  True,  True,  True,
+            //       False, False, False])
+
+            var data = np.array(new[] { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 });
+            Console.WriteLine(((data >= 50) & (data < 100)).repr);
+            Assert.AreEqual("array([False, False, False, False,  True,  True,  True,  True,  True,\n       False, False, False])", ((data >= 50) & (data < 100)).repr);
+            Console.WriteLine(((data >= 50) | (data < 100)).repr);
+            Assert.AreEqual("array([ True,  True,  True,  True,  True,  True,  True,  True,  True,\n        True,  True,  True])", ((data >= 50) | (data < 100)).repr);
+            Console.WriteLine(((data >= 50) ^ (data < 100)).repr);
+            Assert.AreEqual("array([ True,  True,  True,  True, False, False, False, False, False,\n        True,  True,  True])", ((data >= 50) ^ (data < 100)).repr);
         }
     }
 
