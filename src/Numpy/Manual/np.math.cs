@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using Numpy;
@@ -165,5 +166,97 @@ namespace Numpy
             return ToCsharp<NDarray>(py);
         }
 
+        /// <summary>
+        ///	One-dimensional linear interpolation.<br></br>
+        ///	
+        ///	Returns the one-dimensional piecewise linear interpolant to a function
+        ///	with given discrete data points (xp, fp), evaluated at x.<br></br>
+        ///	
+        ///	Notes
+        ///	
+        ///	Does not check that the x-coordinate sequence xp is increasing.<br></br>
+        ///	
+        ///	If xp is not increasing, the results are nonsense.<br></br>
+        ///	
+        ///	A simple check for increasing is:
+        /// </summary>
+        /// <param name="x">
+        ///	The x-coordinates at which to evaluate the interpolated values.
+        /// </param>
+        /// <param name="xp">
+        ///	The x-coordinates of the data points, must be increasing if argument
+        ///	period is not specified.<br></br>
+        ///	Otherwise, xp is internally sorted after
+        ///	normalizing the periodic boundaries with xp = xp % period.
+        /// </param>
+        /// <param name="fp">
+        ///	The y-coordinates of the data points, same length as xp.
+        /// </param>
+        /// <param name="left">
+        ///	Value to return for x &lt; xp[0], default is fp[0].
+        /// </param>
+        /// <param name="right">
+        ///	Value to return for x &gt; xp[-1], default is fp[-1].
+        /// </param>
+        /// <param name="period">
+        ///	A period for the x-coordinates.<br></br>
+        ///	This parameter allows the proper
+        ///	interpolation of angular x-coordinates.<br></br>
+        ///	Parameters left and right
+        ///	are ignored if period is specified.
+        /// </param>
+        /// <returns>
+        ///	The interpolated values, same shape as x.
+        /// </returns>
+        public static NDarray interp(this NDarray x, IReadOnlyCollection<float> xp, IReadOnlyCollection<float> fp, float? left = null, float? right = null, float? period = null)
+        {
+            var __self__ = self;
+            var pyargs = ToTuple(new object[]
+            {
+                x,
+                xp,
+                fp,
+            });
+            var kwargs = new PyDict();
+            if (left != null) kwargs["left"] = ToPython(left);
+            if (right != null) kwargs["right"] = ToPython(right);
+            if (period != null) kwargs["period"] = ToPython(period);
+            dynamic py = __self__.InvokeMethod("interp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
+
+        public static float interp(float x, IReadOnlyCollection<float> xp, IReadOnlyCollection<float> fp, float? left = null, float? right = null, float? period = null)
+        {
+            var __self__ = self;
+            var pyargs = ToTuple(new object[]
+            {
+                x,
+                xp,
+                fp,
+            });
+            var kwargs = new PyDict();
+            if (left != null) kwargs["left"] = ToPython(left);
+            if (right != null) kwargs["right"] = ToPython(right);
+            if (period != null) kwargs["period"] = ToPython(period);
+            dynamic py = __self__.InvokeMethod("interp", pyargs, kwargs);
+            return ToCsharp<float>(py);
+        }
+
+        public static NDarray interp(this NDarray x, IReadOnlyCollection<float> xp, Complex[] fp, Complex? left = null, Complex? right = null, float? period = null)
+        {
+            var __self__ = self;
+            var pyargs = ToTuple(new object[]
+            {
+                x,
+                xp,
+                np.array(fp),
+            });
+            var kwargs = new PyDict();
+            if (left != null) kwargs["left"] = ToPython(left);
+            if (right != null) kwargs["right"] = ToPython(right);
+            if (period != null) kwargs["period"] = ToPython(period);
+            dynamic py = __self__.InvokeMethod("interp", pyargs, kwargs);
+            return ToCsharp<NDarray>(py);
+        }
     }
 }
